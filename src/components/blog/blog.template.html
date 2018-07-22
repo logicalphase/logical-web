@@ -1,0 +1,122 @@
+<app-location
+    route="{{route}}"
+    url-space-regex="^[[rootPath]]blog\/">
+</app-location>
+
+<app-route
+    route="{{route}}"
+    pattern="[[rootPath]]blog/:page"
+    data="{{routeData}}"
+    tail="{{subroute}}">
+</app-route>
+
+<iron-ajax 
+  id="ts_posts" 
+  auto 
+  url="https://localhost:10443/api/contents?type=Article" 
+  loading="{{loading}}" 
+  handle-as="json"
+  last-response="{{ajaxResponse}}"></iron-ajax>
+
+<article id="ts-site" class="ts-blog">
+  <header class="hero">
+    <div class="ts-max-width-standard">
+      <h1 class="paper-font-display2 paper-font-light">HyperPress Blog</h1>
+      <h2 class="paper-font-title paper-font-light">Helpful resources to help you build and maintain a superior web presence.</h2>
+    </div>
+  </header>
+
+  <div class="ts-content-wrapper">
+    <section class="content background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
+      <div class="columns">
+        <main class="main">
+          <paper-material elevation="1" class="container narrow">
+            <paper-radio-group id="change_order" selected="timestamp" on-paper-radio-group-changed="orderChanged">
+              <paper-radio-button name="timestamp">Order by Date</paper-radio-button>
+              <paper-radio-button name="title">Order by Title</paper-radio-button>
+            </paper-radio-group>
+          </paper-material>
+
+          <template id="resource_loader" is="dom-if" if="{{loading}}">
+            <div class="loader-wrapper">
+              <paper-spinner id="spinner" alt="Loading resources" active></paper-spinner>
+              <span>[[_getLoadingText(type)]]</span>
+            </div>
+          </template>
+          
+          <div class="ts-grid-wrapper-standard">
+            <div class="ts-grid-wrapper-auto-fill">
+              <template is="dom-repeat" items="{{ajaxResponse.data}}" loading="{{loading}}">
+                <a id="{{item.id}}" href="/blog/{{item.slug}}/" class="flex-hover-card" track-type="navigateTo" track-name="/solutions/headlessWordPress">
+                  <div class="inner ">
+                    <h3 class="paper-font-headline">{{item.title}}</h3>
+                    <p>{{item.excerpt}}</p>
+                    <p class="fine-print">Published&nbsp; {{_timeAgo(item.timestamp)}}</p>
+                  </div>
+                  <div class="ts-read-more">Read Article
+                    <div class="social_container">
+                      <div class="social_share">
+                        <div class="slide-icons slide-left">
+                          <paper-icon-button icon="ts-icons:googleplus" class="social-icon gplus-icon" data-href$="http://plus.google.com/share?url=https://themesurgeons.com/blog/{{item.slug}}/" on-click="_getDataHref"></paper-icon-button>
+                          <paper-icon-button icon="ts-icons:blogger" class="social-icon blogger-icon" data-href$="http://www.blogger.com/blog-this.g?u=https://themesurgeons.com/blog/{{item.slug}}/" on-click="_getDataHref"></paper-icon-button>
+                          <paper-icon-button icon="ts-icons:twitter" class="social-icon twitter-icon" data-href$="http://twitter.com/share?url=https://themesurgeons.com/blog/{{item.slug}}/" on-click="_getDataHref"></paper-icon-button>
+                          <paper-icon-button icon="ts-icons:linkedin" class="social-icon linkedin-icon" data-href$="http://www.linkedin.com/cws/share?url=https://themesurgeons.com/blog/{{item.slug}}/" on-click="_getDataHref"></paper-icon-button>
+                          <paper-icon-button icon="ts-icons:facebook" class="social-icon facebook-icon" data-href$="http://www.facebook.com/sharer.php?u=https://themesurgeons.com/blog/{{item.slug}}/" on-click="_getDataHref"></paper-icon-button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </template>
+            </div>
+          </div>
+      </main>
+      <aside class="sidebar">
+        <div class="nav">
+          <div class="sticky">
+            <ul class="right-side-nav l-space-bottom-5">
+              <li>
+                <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="more-about-serverless">Solutions Menu</h3>
+              </li>
+              <li>
+                <a track-type="pagespeedOptimization" track-name="web-page" track-metadata-position="body" href="/solutions/pagespeed/">Pagespeed Optimization</a>
+              </li>
+              <li>
+                <a track-type="mobileFirst" track-name="web-page" track-metadata-position="body" href="/solutions/design/">Mobile First Design</a>
+              </li>
+              <li>
+                <a track-type="emergencyResponse" track-name="web-page" track-metadata-position="body" href="/solutions/emergency/">Emergency Response</a>
+              </li>
+              <li>
+                <a track-type="security" track-name="web-page" track-metadata-position="body" href="/solutions/security/">WordPress Security</a>
+              </li>
+              <li>
+                <a track-type="migrations" track-name="web-page" track-metadata-position="body" href="/solutions/migrations/">WordPress Migrations</a>
+              </li>
+              <li>
+                <a track-type="preventiveCare" track-name="web-page" track-metadata-position="body" href="/solutions/care/">Preventive Care</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</div>
+</article>
+<iron-pages
+    selected="[[page]]"
+    attr-for-selected="name"
+    fallback-selection="index"
+    role="main">
+  <div name="index" class="card">
+    <h1 class="paper-font-headline paper-font-light">HyperPress Blog</h1>
+    <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+    <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+    <paper-input placeholder="Insert a kebab-case route..." value="{{dynamicPath}}"></paper-input>
+    <a href="[[rootPath]]blog/[[dynamicPath]]" class="button">
+
+    </a>
+  </div>
+  <ts-blog-subview name="blog-subview" dynamic-path="[[dynamicPath]]"></ts-blog-subview>
+</iron-pages>

@@ -1,0 +1,245 @@
+@import '../_variables.scss';
+:host {
+  display: block;
+  padding: 0px;
+
+  h1 {
+    margin: 0 0 5px -3px;
+    color: #77909c;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+  --app-grid-columns: 3;
+  --app-grid-gutter: 12px;
+}
+
+paper-input {
+  width: 320px;
+  max-width: 100%;
+  display: inline-block;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.ts-read-more {
+  padding: 13px 28px;
+}
+
+.ts-read-more .social_container {
+  float: right;
+  padding: 0px;
+  margin-top: -10px;
+}
+
+.social-icon {
+  height: 32px;
+  width: 32px;
+}
+
+.gplus-icon{
+  height:39px;
+  width:39px;
+}
+
+.gplus-icon:hover {
+  color: $googleplus;
+}
+.blogger-icon:hover {
+  color: $blogger;
+}
+.twitter-icon:hover {
+  color: $twitter;
+}
+.facebook-icon:hover {
+ color: $facebook;
+}
+.linkedin-icon:hover {
+  color: $linkedin;
+}
+
+#axis:hover .slide-left {
+  transform: translate(-350px, 0);
+  -webkit-transform: translate(-350px, 0);
+  /** Safari & Chrome **/
+  -o-transform: translate(-350px, 0);
+  /** Opera **/
+  -moz-transform: translate(-350px, 0);
+  /** Firefox **/
+}
+
+.text-uppercase {
+  border-top: 1px solid #e4e4e4;
+  display: block;
+  padding: 16px 28px;
+}
+
+#ts-site.ts-blog {
+  background: #ffffff url('/images/bg/wordpress-logo.svg') no-repeat;
+  background-size: 50%;
+  background-position: 110% -80px;
+  background-attachment: scroll;
+}
+
+#ts-site.ts-blog .hero {
+  padding: 14px;
+}
+
+#ts-site.ts-blog .hero>div {
+  padding: 44px 20px 0 24px;
+}
+
+#ts-site.home .hero {
+  padding: 20px 64px 30px 96px;
+}
+
+
+
+.ts-grid-wrapper-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  justify-items: left;
+}
+
+.flex-hover-card {
+  width: 100%;
+}
+
+.inner {
+  padding: 20px 28px 0;
+  min-height:10px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.sidebar {
+  background-color: #fff;
+  width: 210px;
+  margin-left: 34px;
+  margin-top: 46px;
+}
+
+#ts-site .nav li h3 {
+  color: #4a5960;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 10px 0 16px;
+  padding-bottom: 0;
+  padding-left: 20px;
+}
+
+#ts-site .nav li {
+  margin-right: 17px;
+}
+
+ul.right-side-nav {
+  list-style: none;
+  padding-left: 0px;
+}
+
+#ts-site .nav li a {
+  padding-left: 20px;
+}
+
+#resource_loader {
+  margin-top: -80px;
+}
+
+.loader-wrapper {
+  text-align: center;
+}
+
+.collapse-content {
+  padding: 15px;
+  border: 1px solid #dedede;
+}
+
+paper-radio-group {
+  margin: 0px 0px 0px 24px;
+}
+
+paper-checkbox {
+  display: block;
+  margin-bottom: 4px;
+  --paper-checkbox-label-color: white;
+  --paper-checkbox-unchecked-color: white;
+}
+
+paper-icon-button {
+  color: var(--paper-grey-600);
+}
+
+paper-icon-button.white {
+  color: white !important;
+}
+
+paper-spinner {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+  /* Make the spinner align vertically with the loading text. */
+  top: 4px;
+}
+
+paper-fab.label {
+  font-size: 20px;
+}
+
+paper-fab.purple {
+  --paper-fab-background: var(--paper-purple-300);
+  --paper-fab-keyboard-focus-background: var(--paper-purple-500);
+  float: right;
+}
+
+@media screen and (min-width: 700px) {
+  .ts-grid-wrapper-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  #ts-site .ts-pad-left-38+.ts-showcase-image,
+  #ts-site .ts-pad-right-38+.ts-showcase-image {
+    max-width: 304px;
+  }
+  #ts-site.ts-blog {
+    background-size: 30%;
+    background-position: 95% -10px;
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: $phone) {
+  .ts-content-wrapper {
+    padding-left:0;
+    padding-right:10px;
+  }
+  .ts-grid-wrapper-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  .flex-hover-card {
+    width: 350px;
+  }
+  .content {
+    padding: 0 !important;
+  }
+  #ts-site {
+    background-size: 45% !important;
+    background-position: 110% 30px !important;
+  }
+  #ts-site.ts-blog .hero>div {
+    padding: 30px 0px 0 10px;
+    h1.paper-font-display2 {
+      font-size: 42px;
+      line-height: 44px;
+      padding-right: 120px;
+      margin-left: -3px;
+    }
+    h2.paper-font-title {
+      font-size: 16px;
+      white-space: normal;
+      padding-right: 120px;
+    }
+  }
+}
