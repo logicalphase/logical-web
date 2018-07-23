@@ -1,5 +1,5 @@
-.idea/
 build/
-**/node_modules/
-**/*.log
-.firebaserc
+node_modules/
+test/integration/screenshots-current
+yarn.lock
+.DS_Store
