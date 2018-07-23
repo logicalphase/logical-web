@@ -20,7 +20,7 @@ matrix:
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
     script:
-    - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then npm run test:sauce; fi
+    - polymer test
     after_script: greenkeeper-lockfile-upload
 env:
   global:
