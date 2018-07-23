@@ -3,10 +3,9 @@ import { repeat } from 'lit-html/lib/repeat.js';
 import { until } from 'lit-html/lib/until.js';
 import { SharedStyles } from './shared-styles.js';
 import { PageViewElement } from './page-view-element.js';
-import 'date-fns/esm/formatDistance';
 
 import './ts-icons.js';
-import { format } from 'date-fns/esm/fp';
+import 'date-fns/esm/fp';
 
 
 class TSBlog extends PageViewElement {
@@ -342,8 +341,9 @@ class TSBlog extends PageViewElement {
                               )}
                           </ul> `; 
                         }),
-                      html`<span> 💁‍ Getting some posts... </span> `
-                    )}
+                      html`
+                        <span> 💁‍ Getting some posts... </span> 
+                      `)};
                 </div>
               </main>
               <aside class="sidebar">
@@ -380,95 +380,6 @@ class TSBlog extends PageViewElement {
         </article>
       }
     `;    
-  }
-  static get properties() {
-    return {
-      show: {
-          type: Boolean,
-          value: false
-      },
-      type: {
-          type: String,
-          value: ''
-      },
-      loading: {
-          type: Boolean,
-          notify: true,
-          value: false
-      },
-      opened: {
-        type: Boolean,
-        reflectToAttribute: true
-      },
-      page: {
-        type: String,
-        reflectToAttribute: true,
-        observer: '_pageChanged',
-      },
-      route: Object,
-      routeData: Object,
-      subroute: Object,
-      dynamicPath: String,
-      toggle: {
-        type: Boolean,
-        reflectToAttribute: true,
-        observer: '_toggle',
-      },
-    };
-  }
-    /** 
-   * Let's assign an event listener to each social media icon button
-   * that, on-tap, grabs the correct URL + Params for the specific
-   * service, and triggers a new window to open so users can post
-   * the URL and comments to their own social media accounts.
-   * 
-   * In TypeScript, we must imperatively declare an event.target against
-   * the type of Element of Object being targeted. 
-   * See: https://goo.gl/vaW8Mr
-   */
-  _getDataHref(e) {
-    const target = e.target;
-    const tssocialurl = e.target.dataset.href;
-    console.log("data-href is:  " + tssocialurl);
-    window.open(
-      tssocialurl, 
-      "_blank", 
-      "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500");
-  }
-  
-  stripHTML(html) {
-      const tmp = this.createElement("div");
-      tmp.innerHTML = html;
-      return tmp.textContent || tmp.innerText || '';
-  }
-
-  _getLoadingText(type) {
-    return type ? 'Loading ' + type + '...' : 'Loading...';
-  }
-
-  _getText(opened) {
-    return opened ? 'Collapse' : 'Expand';
-  }
-
-  formatTimestamp(value) {
-    if (value) {
-        const date = new Date(Date.parse(value)),
-            months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 
-            'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        return months[date.getMonth()] + ' ' + 
-        date.getDate() + ', ' + date.getFullYear();
-    }
-  }
-
-  orderChanged() {
-    const filter = this.$.change_order.selected;
-    //alert("Order list by " + filter);
-    const params = {
-      "order": "asc",
-      "timestamp": filter
-    };
-    this.$.ts_posts.params = params;
-    this.$.ts_posts.generateRequest();
   }
 }
 window.customElements.define('ts-blog', TSBlog);

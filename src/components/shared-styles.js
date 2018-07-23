@@ -1,15 +1,11 @@
-import {
-  html
-} from '@polymer/lit-element';
-import {
-  PageViewElement
-} from './page-view-element.js';
+import { html } from '@polymer/lit-element';
+import './page-view-element.js';
 
 export const SharedStyles = html `
  
 <style>
   :host {
-
+    display:none;
   }
   /* All screens smaller than 460px wide */
 
@@ -316,9 +312,7 @@ export const SharedStyles = html `
   /* Base Classes */
 
   .nav {
-    width: initial;
-    display: inline;
-    float: left; }
+    display: inline; }
 
   .sticky {
     display: none; } 
