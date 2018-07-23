@@ -3,6 +3,11 @@ matrix:
   include:
   - node_js: '9'
     os: osx
+  before_install:
+  # package-lock.json was introduced in npm@5
+  - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+  - npm install -g greenkeeper-lockfile
+  install: npm install
     script: npm run test:integration
   - node_js: '9'
     sudo: required
@@ -12,11 +17,13 @@ matrix:
       chrome: stable
       firefox: latest
     before_script:
+    - greenkeeper-lockfile-update
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
     script:
     - npm run test:unit
     - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then npm run test:sauce; fi
+    after_script: greenkeeper-lockfile-upload
 env:
   global:
   - secure: C+/z9HB1amzxgntbpkNhjcWeYFt6uagVAp2TuceInyzCpwD8A9mOG+X3pfBX8A0OJnKchSduXbcUzcg8Rw2ZVR/RZajkzWUnInFNeFm4WMgHZFQxc+pHq9o5UyCw+Q237+S5IdC+WI0lfAGh3+5OeGvS+JoC3jUarYb6UlCybgfkqA+Zo0wy6Xyjisb3vYKPnmmF+Ki5fkzwLqpkcqQI3zZQZimTZHNwGOJO6ib2uEEjaCVhvG1XKDlF8M+07arE97hKOJEEKIHHPOaPtABw634OfwbiS5lPHlb626VD+ry08P1FH7mg3XM+XdUS7T+o3Lb2RScjA5jetF27s2E9mK467zIw60kC5e8eDx8/uJWlx/c3jT4nQQ+epjTp7M5lbOQBYiQttGureaWHSVVvUJKTrSN8CxceV7Zmia1N9dtC3o2CEDZyrbJ5+2tR8POkUZkz5XHNhHg0/U/vq0dm3LjhOGfyKCqD4o1qS2ytdzPVu2fwHdD63NxU1pKPeYNcO3aKASTgUJpPWA4j/JQWWNF/HTUU6NMO3ihKxX+ZeenX/wtvSrurNIFhIqf81hr0iRYVH+pMOZ7shfr65w6GgllQjO2gFz8IZyc0t9I5CJnOVyhHfgdVj4XgeTHaxDalYE/eB/ny1unxbG/c+6v06pHWJ9HNXFd5VXPTmtNu1m8=
