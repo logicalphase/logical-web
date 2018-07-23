@@ -8,7 +8,6 @@ matrix:
   - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
   - npm install -g greenkeeper-lockfile
   install: npm install
-    script: npm run test:integration
   - node_js: '9'
     sudo: required
     os: linux
@@ -21,7 +20,6 @@ matrix:
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
     script:
-    - npm run test:unit
     - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then npm run test:sauce; fi
     after_script: greenkeeper-lockfile-upload
 env:
