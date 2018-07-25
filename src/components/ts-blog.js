@@ -1,4 +1,4 @@
-import { html } from 'lit-html/lib/lit-extended';
+import { html,render } from 'lit-html/lit-html.js';
 import { repeat } from 'lit-html/lib/repeat.js';
 import { until } from 'lit-html/lib/until.js';
 import { SharedStyles } from './shared-styles.js';
@@ -353,10 +353,10 @@ class TSBlog extends PageViewElement {
                                       <div class="social_container">
                                         <div class="social_share">
                                           <div class="slide-icons slide-left">
-                                            <span class="social-icon gplus-icon" data-href="http://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/" onclick="${(e) => this._getDataHref(e)}">${GooglePlus}</span>
-                                            <span class="social-icon twitter-icon" data-href="http://twitter.com/share?url=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Twitter}</span>
-                                            <span class="social-icon linkedin-icon" data-href="http://www.linkedin.com/cws/share?url=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Linkedin}</span>
-                                            <span class="social-icon facebook-icon" data-href="http://www.facebook.com/sharer.php?u=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Facebook}</span>
+                                            <span class="social-icon gplus-icon" .data-href="http://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/" onclick="${(e) => this._getDataHref(e)}">${GooglePlus}</span>
+                                            <span class="social-icon twitter-icon" .data-href="http://twitter.com/share?url=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Twitter}</span>
+                                            <span class="social-icon linkedin-icon" .data-href="http://www.linkedin.com/cws/share?url=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Linkedin}</span>
+                                            <span class="social-icon facebook-icon" .data-href="http://www.facebook.com/sharer.php?u=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Facebook}</span>
                                           </div>
                                         </div>
                                       </div>
@@ -410,7 +410,7 @@ class TSBlog extends PageViewElement {
     `;    
   }
   _getDataHref(e) {
-    const tssocialurl = e.target.dataset.href;
+    const tssocialurl = e.currentTarget.dataset.href;
     alert("response is:  " + tssocialurl);
     return false;
     window.open(
