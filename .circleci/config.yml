@@ -36,7 +36,7 @@ jobs:
 wordkflows:
   version: 2
   - lockfile
-  - job1:
+  - job:
     requires:
     - lockfile
 # tests complete!
