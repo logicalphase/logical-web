@@ -33,10 +33,3 @@ jobs:
             
     # run tests!
     - run: npm install
-wordkflows:
-  version: 2
-  - lockfile
-  - job:
-    requires:
-    - lockfile
-# tests complete!
