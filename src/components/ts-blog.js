@@ -1,14 +1,19 @@
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-html/lib/lit-extended';
 import { repeat } from 'lit-html/lib/repeat.js';
 import { until } from 'lit-html/lib/until.js';
 import { SharedStyles } from './shared-styles.js';
 import { PageViewElement } from './page-view-element.js';
-
-import './ts-icons.js';
-import 'date-fns/esm/fp';
-
+import { formatDistance } from 'date-fns/esm';
+import {
+  Calendar, 
+  GooglePlus,
+  Twitter,
+  Facebook,
+  Linkedin
+ } from './ts-icons.js';
 
 class TSBlog extends PageViewElement {
+  
   _render(props) {
     return html `
       ${SharedStyles}
@@ -39,8 +44,8 @@ class TSBlog extends PageViewElement {
           font-size: 42px;
           line-height: 44px;
           padding-right: 0px; }
-        
-       h2.paper-font-title {
+            
+        h2.paper-font-title {
           font-size: 22px;
           white-space: normal;
           padding-right: 0px; }
@@ -48,15 +53,17 @@ class TSBlog extends PageViewElement {
         h3 {
           padding-top: 20px; }
 
-        paper-input {
-          width: 320px;
+        .columns {
+          max-width: 987px;
+          margin: 0 auto;
+          padding-top: 34px; }
+
+        .ts-content-grid-box {
           max-width: 100%;
-          display: inline-block;
         }
 
-        ul {
-          padding: 0;
-          list-style: none;
+        .ts-content-grid-box p {
+          max-width: 620px;
         }
 
         .ts-read-more {
@@ -70,24 +77,28 @@ class TSBlog extends PageViewElement {
         }
 
         .social-icon {
-          height: 26px;
-          width: 26px;
+          margin-left:5px;
+          fill:  #888;
         }
 
         .gplus-icon:hover {
-          color:  #db4437;
+          fill:  #db4437;
         }
         .blogger-icon:hover {
-          color: #fb8f3d;
+          fill: #fb8f3d;
         }
         .twitter-icon:hover {
-          color: #1da1f2;
+          fill: #1da1f2;
         }
         .facebook-icon:hover {
-        color: #3b5998;
+          fill: #3b5998;
         }
         .linkedin-icon:hover {
-          color:  #007bb5;
+          fill:  #007bb5;
+        }
+
+        .ts-blog-meta-calendar svg{
+          vertical-align: middle;
         }
 
         #axis:hover .slide-left {
@@ -130,21 +141,34 @@ class TSBlog extends PageViewElement {
           justify-items: left;
         }
 
+        .ts-blog-list-item {
+          margin-bottom: 24px;
+        }
+
         .flex-hover-card {
           width: 100%;
         }
-
+        
         .inner {
           padding: 20px 28px 0;
           min-height:10px;
           border-bottom: 1px solid #e4e4e4;
         }
 
+        .small-print {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          font-size: 14px !important;
+          font-weight: 400 !important;
+          padding-left: 0px;
+          line-height: 14px;
+        }
+
         .sidebar {
           background-color: #fff;
           width: 210px;
           margin-left: 34px;
-          margin-top: 46px;
+          margin-top: 5px;
         }
 
         #ts-site .nav li h3 {
@@ -267,19 +291,17 @@ class TSBlog extends PageViewElement {
             z-index: 1;
           }
 
-          p.fine-print:first-child {
-            margin-top: 24px;
-          }
-
-          .fine-print {
+          .small-print {
             margin-top: 20px;
             margin-bottom: 10px;
-            font-size: 12px;
-            padding-left: 24px;
+            font-size: 14px !important;
+            padding-left: 0px;
             line-height: 14px;
           }
+          
         }
         @media (max-width: 800px) {
+
           #ts-site.ts-blog {
             background-size: 40% !important;
             background-position: 100% 120px !important; }
@@ -288,7 +310,10 @@ class TSBlog extends PageViewElement {
             float: none !important;
             margin: 24px 30px 5px; 
           }
-        } 
+
+          .small-print {
+            font-size: 14px !important; }
+        }
         </style>
         <article id="ts-site" class="ts-blog">
         <header class="hero">
@@ -311,39 +336,43 @@ class TSBlog extends PageViewElement {
                       .then(res => res.json())
                       .then(items => {
                         return html`
-                          <ul>
-                            ${repeat(
-                              items.data,
-                              item => item.data,
-                              item => {
-                                return html`
-                                  <a id="${item.id}" href="/${item.slug}/" class="flex-hover-card" track-type="navigateTo" track-name="/solutions/headlessWordPress">
-                                    <div class="inner ">
+                          ${repeat(
+                            items.data,
+                            item => item.data,
+                            item => {
+                              return html`
+                                <div class="ts-blog-list-item">
+                                <a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
+                                  <div class="flex-hover-card">
+                                    <div class="inner">
                                       <h3 class="paper-font-headline">${item.title}</h3>
-                                        <p>${item.excerpt}</p>
-                                        <p class="fine-print">Published&nbsp; ${item.timestamp}</p>
+                                      <p>${item.excerpt}</p>
+                                      <p class="small-print"><i class="ts-blog-meta-calendar">${Calendar}</i> Published&nbsp; ${formatDistance(new Date(item.timestamp), new Date())} ago.</p>
                                     </div>
                                     <div class="ts-read-more">Read Article
                                       <div class="social_container">
                                         <div class="social_share">
                                           <div class="slide-icons slide-left">
-                                            <paper-icon-button icon="ts-icons:googleplus" class="social-icon gplus-icon" data-href$="http://plus.google.com/share?url=https://themesurgeons.com/blog/${item.slug}/" on-click=""></paper-icon-button>
-                                            <paper-icon-button icon="" class="social-icon blogger-icon" data-href$="http://www.blogger.com/blog-this.g?u=https://themesurgeons.com/blog/${item.slug}/" on-click=""></paper-icon-button>
-                                            <paper-icon-button icon="" class="social-icon twitter-icon" data-href$="http://twitter.com/share?url=https://themesurgeons.com/blog/${item.slug}/" on-click=""></paper-icon-button>
-                                            <paper-icon-button icon="" class="social-icon linkedin-icon" data-href$="http://www.linkedin.com/cws/share?url=https://themesurgeons.com/blog/${item.slug}/" on-click=""></paper-icon-button>
-                                            <paper-icon-button icon="" class="social-icon facebook-icon" data-href$="http://www.facebook.com/sharer.php?u=https://themesurgeons.com/blog/${item.slug}/" on-click=""></paper-icon-button>
+                                            <span class="social-icon gplus-icon" data-href="http://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/" onclick="${(e) => this._getDataHref(e)}">${GooglePlus}</span>
+                                            <span class="social-icon twitter-icon" data-href="http://twitter.com/share?url=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Twitter}</span>
+                                            <span class="social-icon linkedin-icon" data-href="http://www.linkedin.com/cws/share?url=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Linkedin}</span>
+                                            <span class="social-icon facebook-icon" data-href="http://www.facebook.com/sharer.php?u=https://themesurgeons.com/${item.slug}/" on-click="getDataHref">${Facebook}</span>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
-                                  </a> `;
+                                  </div>
+                                </a>
+                                </div>`;
                                 }
                               )}
-                          </ul> `; 
-                        }),
-                      html`
-                        <span> 💁‍ Getting some posts... </span> 
-                      `)};
+                              </ul>
+                            `;
+                          }),
+                        html`
+                          <span>💁‍ Getting some users...</span>
+                        `
+                      )}
                 </div>
               </main>
               <aside class="sidebar">
@@ -378,8 +407,16 @@ class TSBlog extends PageViewElement {
             </section>
           </div>
         </article>
-      }
     `;    
+  }
+  _getDataHref(e) {
+    const tssocialurl = e.target.dataset.href;
+    alert("response is:  " + tssocialurl);
+    return false;
+    window.open(
+      tssocialurl, 
+      "_blank", 
+      "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500");
   }
 }
 window.customElements.define('ts-blog', TSBlog);

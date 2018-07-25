@@ -124,3 +124,13 @@ export const updateDrawerState = (opened) => (dispatch, getState) => {
     });
   }
 }
+
+export const getDataHref = (e) => {
+  const target = e.target;
+  const tssocialurl = e.target.dataset.href;
+  console.log("data-href is:  " + tssocialurl);
+  window.open(
+    tssocialurl, 
+    "_blank", 
+    "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500");
+}
