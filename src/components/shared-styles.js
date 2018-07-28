@@ -1,5 +1,4 @@
 import { html } from '@polymer/lit-element';
-import './page-view-element.js';
 
 export const SharedStyles = html `
  
@@ -20,21 +19,18 @@ export const SharedStyles = html `
   h1, h2, h3, h4, h5, h6, a {
     text-rendering: optimizeLegibility; }
 
-  h1 {
-    font-size:48px;
-    line-height: 56px;
-    letter-spacing: -.018em;
-    color: var(--app-secondary-color); }
-
-  h2 {
-    font-size: 34px;
-    font-weight: 400;
-    letter-spacing: -.01em;
-    line-height: 40px;
-    color: var(--app-secondary-color); }
+  h1.paper-font-display2 {
+    font-size: 42px;
+    line-height: 44px;
+    padding-right: 0px; }
+      
+  h2.paper-font-title {
+    font-size: 22px;
+    white-space: normal;
+    padding-right: 0px; }
 
   h3 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: -.012em;
     line-height: 26px; 

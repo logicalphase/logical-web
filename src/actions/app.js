@@ -17,7 +17,6 @@ export const CLOSE_SNACKBAR = 'CLOSE_SNACKBAR';
 export const navigate = (path) => (dispatch) => {
   // Extract the page name from path.
   const page = path === '/' ? 'home' : path.slice(1);
-
   // Any other info you might want to extract from the path (like page type),
   // you can do here
   dispatch(loadPage(page));
@@ -30,45 +29,45 @@ const loadPage = (page) => async (dispatch) => {
   switch (page) {
     case 'home':
       await
-      import ('../components/ts-home.js');
+      import ('../components/home/ts-home.js');
       // Put code here that you want it to run every time when
       // navigate to home page and ts-home.js is loaded
       break;
+    case 'blog':
+      await
+      import ('../components/blog/ts-blog.js');
+      break;
     case 'solutions':
       await
-      import ('../components/ts-solutions.js');
+      import ('../components/solutions/ts-solutions.js');
       break;
     case 'care':
       await
-      import ('../components/ts-care.js');
-      break;
-    case 'blog':
-      await
-      import ('../components/ts-blog.js');
+      import ('../components/solutions/care/ts-care.js');
       break;
     case 'design':
       await
-      import ('../components/ts-design.js');
+      import ('../components/solutions/design/ts-design.js');
       break;
     case 'emergency':
       await
-      import ('../components/ts-emergency.js');
+      import ('../components/solutions/emergency/ts-emergency.js');
       break;
     case 'migrations':
       await
-      import ('../components/ts-migrations.js');
+      import ('../components/solutions/migrations/ts-migrations.js');
       break;
     case 'pagespeed':
       await
-      import ('../components/ts-pagespeed.js');
+      import ('../components/solutions/pagespeed/ts-pagespeed.js');
       break;
     case 'privacy':
       await
-      import ('../components/ts-privacy.js');
+      import ('../components/privacy/ts-privacy.js');
       break;
     case 'security':
       await
-      import ('../components/ts-security.js');
+      import ('../components/solutions/security/ts-security.js');
       break;
     default:
       page = 'view404';
@@ -123,14 +122,4 @@ export const updateDrawerState = (opened) => (dispatch, getState) => {
       opened
     });
   }
-}
-
-export const getDataHref = (e) => {
-  const target = e.target;
-  const tssocialurl = e.target.dataset.href;
-  console.log("data-href is:  " + tssocialurl);
-  window.open(
-    tssocialurl, 
-    "_blank", 
-    "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500");
 }

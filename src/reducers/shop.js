@@ -176,6 +176,7 @@ export const cartTotalSelector = createSelector(
       const item = products[id];
       total += item.price * cart.quantityById[id];
     }
+    // @ts-ignore
     return parseFloat(Math.round(total * 100) / 100).toFixed(2);
   }
 );

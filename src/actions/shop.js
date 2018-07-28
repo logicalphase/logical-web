@@ -29,8 +29,8 @@ export const getAllProducts = () => (dispatch, getState) => {
 
   // You could reformat the data in the right format as well:
   const products = PRODUCT_LIST.reduce((obj, product) => {
-    obj[product.id] = product
-    return obj
+    obj[product.id] = product;
+    return obj;
   }, {});
 
   dispatch({

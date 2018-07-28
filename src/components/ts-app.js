@@ -1,22 +1,20 @@
+// @ts-nocheck
 import { LitElement, html } from '@polymer/lit-element';
 
-import '@polymer/app-layout/app-drawer/app-drawer.js';
-import '@polymer/app-layout/app-header/app-header.js';
-import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
-import '@polymer/app-layout/app-toolbar/app-toolbar.js';
-import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings.js';
-//import {
-//  Button
-//} from '@material/mwc-button';
+import '@polymer/app-layout/app-drawer/app-drawer';
+import '@polymer/app-layout/app-header/app-header';
+import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
+import '@polymer/app-layout/app-toolbar/app-toolbar';
+import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 
 import { menuIcon, magnifyIcon } from './ts-icons.js';
 import './snack-bar.js';
 
-import { connect } from 'pwa-helpers/connect-mixin.js';
-import { installRouter } from 'pwa-helpers/router.js';
-import { installOfflineWatcher } from 'pwa-helpers/network.js';
-import { installMediaQueryWatcher } from 'pwa-helpers/media-query.js';
-import { updateMetadata } from 'pwa-helpers/metadata.js';
+import { connect } from 'pwa-helpers/connect-mixin';
+import { installRouter } from 'pwa-helpers/router';
+import { installOfflineWatcher } from 'pwa-helpers/network';
+import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
+import { updateMetadata } from 'pwa-helpers/metadata';
 
 import { store } from '../store.js';
 import {
@@ -32,22 +30,23 @@ class TSApp extends connect(store)(LitElement) {
     return html`
     <style>
       :host {
-        --app-drawer-width: 326px;
         display: block;
 
+        --app-drawer-width: 326px;
+        
         --app-primary-color: #a434b7;
-        --app-secondary-color: #111111;
+        --app-secondary-color: #000;
         --app-dark-text-color: var(--app-secondary-color);
-        --app-light-text-color: white;
+        --app-light-text-color: #ffffff;
         --app-section-even-color: #f7f7f7;
-        --app-section-odd-color: white;
+        --app-section-odd-color: #ffffff;
 
-        --app-header-background-color: white;
+        --app-header-background-color: #ffffff;
         --app-header-text-color: var(--app-dark-text-color);
         --app-header-selected-color: var(--app-primary-color);
 
         --app-drawer-background-color: var(--app-light-text-color);
-        --app-drawer-text-color: #111111;
+        --app-drawer-text-color: var(--app-secondary-color);
         --app-drawer-selected-color: var(--app-primary-color);
 
         --border-grey: #e0e0e0;
@@ -57,7 +56,6 @@ class TSApp extends connect(store)(LitElement) {
         --footer-text: #f7f7f7;
         --section-background-light-grey: #f5f5f5;
       }
-
 
       [hidden] {
         display: none !important; }
@@ -158,15 +156,8 @@ class TSApp extends connect(store)(LitElement) {
         background: #f9edfc; }
 
       .button.button-secondary-cta:hover, .button.button-secondary-cta:active {
-        color: #fff;
-        var(--shadow-elevation-6dp); }
-
-      .flex {
-        -ms-flex: 1 1 0.000000001px;
-        -webkit-flex: 1;
-        flex: 1;
-        -webkit-flex-basis: 0.000000001px;
-        flex-basis: 0.000000001px; }
+        color: #ffffff;
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
 
       .toolbar-top {
         background-color: var(--app-header-background-color); }
@@ -297,11 +288,9 @@ class TSApp extends connect(store)(LitElement) {
         <app-toolbar class="desktop-menu toolbar-list" sticky>
           <nav class="main-navigation" role="navigation">
             <a selected?="${_page === 'home'}" href="/">Home</a>
-            <a selected?="${_page ===
-              'solutions'}" href="/solutions">Solutions</a>
+            <a selected?="${_page === 'solutions'}" href="/solutions">Solutions</a>
             <a selected?="${_page === 'blog'}" href="/blog">Blog</a>
-            <a style="float:right" selected?="${_page ===
-              'support'}" href="/support">Support</a>
+            <a style="float:right" selected?="${_page === 'support'}" href="/support">Support</a>
           </nav>
         </app-toolbar>
       </app-header>
@@ -309,24 +298,17 @@ class TSApp extends connect(store)(LitElement) {
 
     <!-- Drawer content -->
     <app-drawer id="drawer" opened="${_drawerOpened}"
-        on-opened-changed="${e =>
-          store.dispatch(updateDrawerState(e.target.opened))}">
+        on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
       <app-toolbar>HyperPress <span class="sub-tagline paper-font-body2"> by PRESS MEDICS</span></app-toolbar>
       <nav class="drawer-list">
         <a selected?="${_page === 'home'}" href="/">Home</a>
         <a selected?="${_page === 'solutions'}" href="/solutions">Solutions</a>
-        <a class="submenu" selected?="${_page ===
-          'design'}" href="/design">Progressive Web Design</a>
-        <a class="submenu" selected?="${_page ===
-          'pagespeed'}" href="/pagespeed">PageSpeed Optimization</a>
-        <a class="submenu" selected?="${_page ===
-          'emergency'}" href="/emergency">WordPress 911</a>
-        <a class="submenu" selected?="${_page ===
-          'security'}" href="/security">HyperSecurity Services</a>
-        <a class="submenu" selected?="${_page ===
-          'care'}" href="/care">WordPress Preventive Care</a>
-        <a class="submenu" selected?="${_page ===
-          'migrations'}" href="/migrations">WordPress Migrations</a>
+        <a class="submenu" selected?="${_page === 'design'}" href="/design">Progressive Web Design</a>
+        <a class="submenu" selected?="${_page === 'pagespeed'}" href="/pagespeed">PageSpeed Optimization</a>
+        <a class="submenu" selected?="${_page === 'emergency'}" href="/emergency">WordPress 911</a>
+        <a class="submenu" selected?="${_page === 'security'}" href="/security">HyperSecurity Services</a>
+        <a class="submenu" selected?="${_page === 'care'}" href="/care">WordPress Preventive Care</a>
+        <a class="submenu" selected?="${_page === 'migrations'}" href="/migrations">WordPress Migrations</a>
         <a selected?="${_page === 'blog'}" href="/blog">Blog</a>
         <a selected?="${_page === 'privacy'}" href="/privacy">Privacy</a>
         <a selected?="${_page === 'contact'}" href="/contact">Contact</a>
@@ -336,28 +318,23 @@ class TSApp extends connect(store)(LitElement) {
     <!-- Main content -->
     <main class="main-content">
       <ts-home class="page" active?="${_page === 'home'}"></ts-home>
-      <ts-solutions class="page" active?="${_page ===
-        'solutions'}"></ts-solutions>
+      <ts-solutions class="page" active?="${_page === 'solutions'}"></ts-solutions>
       <ts-care class="page" active?="${_page === 'care'}"></ts-care>
       <ts-design class="page" active?="${_page === 'design'}"></ts-design>
-      <ts-emergency class="page" active?="${_page ===
-        'emergency'}"></ts-emergency>
-      <ts-migrations class="page" active?="${_page ===
-        'migrations'}"></ts-migrations>
-      <ts-pagespeed class="page" active?="${_page ===
-        'pagespeed'}"></ts-pagespeed>
+      <ts-emergency class="page" active?="${_page === 'emergency'}"></ts-emergency>
+      <ts-migrations class="page" active?="${_page === 'migrations'}"></ts-migrations>
+      <ts-pagespeed class="page" active?="${_page === 'pagespeed'}"></ts-pagespeed>
       <ts-privacy class="page" active?="${_page === 'privacy'}"></ts-privacy>
       <ts-security class="page" active?="${_page === 'security'}"></ts-security>
       <ts-blog class="page" active?="${_page === 'blog'}"></ts-blog>
       <ts-view404 class="page" active?="${_page === 'view404'}"></ts-view404>
     </main>
-
+      
     <footer>
       <p>Made with \u2764\uFE0F by Pressmedics. Powered by Google</p>
     </footer>
 
-    <snack-bar active?="${_snackbarOpened}">
-        Site is currently ${_offline ? 'offline' : 'online'}.</snack-bar>
+    <snack-bar active?="${_snackbarOpened}">Site is currently ${_offline ? 'offline' : 'online'}.</snack-bar>
     `;
   }
 
@@ -379,13 +356,9 @@ class TSApp extends connect(store)(LitElement) {
   }
 
   _firstRendered() {
-    installRouter(location =>
-      store.dispatch(navigate(window.decodeURIComponent(location.pathname)))
-    );
+    installRouter(location => store.dispatch(navigate(window.decodeURIComponent(location.pathname))));
     installOfflineWatcher(offline => store.dispatch(updateOffline(offline)));
-    installMediaQueryWatcher(`(min-width: 460px)`, matches =>
-      store.dispatch(updateLayout(matches))
-    );
+    installMediaQueryWatcher(`(min-width: 460px)`, matches => store.dispatch(updateLayout(matches)));
   }
 
   _didRender(properties, changeList) {
