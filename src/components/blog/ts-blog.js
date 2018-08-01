@@ -1,9 +1,7 @@
+import { PageViewElement } from '../page-view-element.js';
 import { html } from 'lit-html';
 import { repeat } from 'lit-html/lib/repeat';
 import { until } from 'lit-html/lib/until';
-import { SharedStyles } from '../shared-styles.js';
-import { BlogStyles } from './ts-blog-css';
-import { PageViewElement } from '../page-view-element.js';
 import { formatDistance } from 'date-fns/esm';
 import {
   Calendar, 
@@ -12,14 +10,29 @@ import {
   Facebook,
   Linkedin
 } from '../ts-icons.js';
-
+import { SharedStyles } from '../shared-styles.js';
+import { BlogStyles } from './ts-blog-css.js';
 class TSBlog extends PageViewElement {
-  
+
+  _getDataHref(e) {
+    let link = e.currentTarget.link;
+    // Pop a new window for specific social media platform
+    window.open(
+      link, 
+      "_blank", 
+      "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500"
+    );
+  }
+
   _render(props) {
+    
+    let url = new Request('http://localhost:8080/api/contents?type=Article');
+  
     return html `
       ${SharedStyles}
       ${BlogStyles}
-        <article id="ts-site" class="ts-blog">
+
+      <article id="ts-site" class="ts-blog">
         <header class="hero">
           <div class="ts-max-width-standard">
             <h1 class="paper-font-display2 paper-font-light">WordPress Blog</h1>
@@ -36,7 +49,7 @@ class TSBlog extends PageViewElement {
               <main class="main">
                 <div class="ts-content-grid-box">
                   ${until(
-                    fetch('http://localhost:8080/api/contents?type=Article')
+                    fetch(url)
                       .then(res => res.json())
                       .then(items => {
                         return html`
@@ -46,9 +59,9 @@ class TSBlog extends PageViewElement {
                             item => {
                               return html`
                                 <div class="ts-blog-list-item">
-                                    <div class="flex-hover-card">
-                                      <a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
-                                      <div class="category-vertical-lr">${item.category[0]}</div>
+                                  <div class="flex-hover-card">
+                                    <a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
+                                    <div class="category-vertical-lr">${item.category[0]}</div>
                                       <div class="inner">
                                         <h3 class="paper-font-headline">${item.title}</h3>
                                         <p>${item.excerpt}</p>
@@ -68,7 +81,6 @@ class TSBlog extends PageViewElement {
                                         </div>
                                       </div>
                                     </div>
-                                 
                                 </div>
                               `;
                             }
@@ -89,13 +101,13 @@ class TSBlog extends PageViewElement {
                         <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="more-about-serverless">Blog Categories</h3>
                       </li>
                       <li>
-                        <a track-type="categoryPageSpeed" track-name="blog-page" track-metadata-position="body" href="#">PageSpeed Optimization</a>
+                        <a id="pagespeed" track-type="categoryPageSpeed" track-name="blog-page" track-metadata-position="body" href="#">PageSpeed Optimization</a>
                       </li>
                       <li>
-                        <a track-type="categoryWordPress" track-name="blog-page" track-metadata-position="body" href="#">Securing WordPress</a>
+                        <a id="security" track-type="categoryWordPress" track-name="blog-page" track-metadata-position="body" href="#">Securing WordPress</a>
                       </li>
                       <li>
-                        <a track-type="categoryHosting" track-name="blog-page" track-metadata-position="body" href="#">Hosting WordPress</a>
+                        <a id="hosting" track-type="categoryHosting" track-name="blog-page" track-metadata-position="body" href="#">Hosting WordPress</a>
                       </li>
                     </ul>
                   </div>
@@ -104,16 +116,7 @@ class TSBlog extends PageViewElement {
             </section>
           </div>
         </article>
-    `;    
-  }
-  _getDataHref(e) {
-    const link = e.currentTarget.link;
-    // Pop a new window for specific social media platform
-    window.open(
-      link, 
-      "_blank", 
-      "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500"
-    );
+    `;
   }
 }
 window.customElements.define('ts-blog', TSBlog);

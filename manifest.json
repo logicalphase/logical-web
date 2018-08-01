@@ -1,11 +1,11 @@
 {
-  "name": "My App",
-  "short_name": "My App",
-  "description": "My App description",
+  "name": "HyperPress by Pressmedics",
+  "short_name": "HyperPress",
+  "description": "Functionally superior, lightning fast, PWA",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#3f51b5",
-  "background_color": "#3f51b5",
+  "theme_color": "#a434b7",
+  "background_color": "#a434b7",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",

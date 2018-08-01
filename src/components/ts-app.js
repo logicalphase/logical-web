@@ -6,16 +6,13 @@ import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
-
-import { menuIcon, magnifyIcon } from './ts-icons.js';
-import './snack-bar.js';
-
 import { connect } from 'pwa-helpers/connect-mixin';
 import { installRouter } from 'pwa-helpers/router';
 import { installOfflineWatcher } from 'pwa-helpers/network';
 import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { updateMetadata } from 'pwa-helpers/metadata';
-
+import { menuIcon } from './ts-icons.js';
+import './snack-bar.js';
 import { store } from '../store.js';
 import {
   navigate,

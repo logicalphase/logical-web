@@ -1,13 +1,6 @@
-import { PageViewElement } from '../../page-view-element';
 import { html } from 'lit-html';
-import { SharedStyles } from '../../shared-styles';
-import { EmergencyStyles } from './ts-emergency-css';
 
-class TSEmergency extends PageViewElement {
-  _render(props) {
-    return html `
-      ${SharedStyles}
-      ${EmergencyStyles}
+export const EmergencyTemplate = html `
         <article id="ts-site" class="ts-emergency">
         <header class="hero">
           <div class="ts-max-width-standard">
@@ -75,6 +68,13 @@ class TSEmergency extends PageViewElement {
         </div>
       </article>
     `;
-  }
+
+_getDataHref(e) {
+  let link = e.currentTarget.link;
+  // Pop a new window for specific social media platform
+  window.open(
+    link, 
+    "_blank", 
+    "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500"
+  );
 }
-window.customElements.define('ts-emergency', TSEmergency);
