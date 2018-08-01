@@ -1,6 +1,5 @@
 build/
 node_modules/
-hyperpress.com/
 test/integration/screenshots-current
 yarn.lock
 cert.pem
