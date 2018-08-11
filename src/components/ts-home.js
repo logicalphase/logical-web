@@ -1,6 +1,6 @@
-import { PageViewElement } from '../page-view-element.js';
+import { PageViewElement } from './page-view-element.js';
 import { html } from 'lit-html';
-import { SharedStyles } from '../shared-styles.js';
+import { SharedStyles } from './shared-styles.js';
 
 class TSHome extends PageViewElement {
   _render(props) {

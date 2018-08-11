@@ -366,6 +366,7 @@ class TSApp extends connect(store)(LitElement) {
         description: pageTitle
         // This object also takes an image property, that points to an img src.
       });
+      window.scrollTo(0, 0);
     }
   }
 

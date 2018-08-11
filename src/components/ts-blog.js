@@ -1,4 +1,4 @@
-import { PageViewElement } from '../page-view-element.js';
+import { PageViewElement } from './page-view-element.js';
 import { html } from 'lit-html';
 import { repeat } from 'lit-html/lib/repeat';
 import { until } from 'lit-html/lib/until';
@@ -9,8 +9,8 @@ import {
   Twitter,
   Facebook,
   Linkedin
-} from '../ts-icons.js';
-import { SharedStyles } from '../shared-styles.js';
+} from './ts-icons.js';
+import { SharedStyles } from './shared-styles.js';
 class TSBlog extends PageViewElement {
 
   _render(props) {

@@ -1,6 +1,6 @@
-import { PageViewElement } from '../../page-view-element';
+import { PageViewElement } from './page-view-element';
 import { html } from 'lit-html';
-import { SharedStyles } from '../../shared-styles';
+import { SharedStyles } from './shared-styles';
 
 class TSEmergency extends PageViewElement {
   _render(props) {

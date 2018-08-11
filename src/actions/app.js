@@ -29,45 +29,45 @@ const loadPage = (page) => async (dispatch) => {
   switch (page) {
     case 'home':
       await
-      import ('../components/home/ts-home.js');
+      import ('../components/ts-home.js');
       // Put code here that you want it to run every time when
       // navigate to home page and ts-home.js is loaded
       break;
     case 'blog':
       await
-      import ('../components/blog/ts-blog.js');
+      import ('../components/ts-blog.js');
       break;
     case 'solutions':
       await
-      import ('../components/solutions/ts-solutions.js');
+      import ('../components/ts-solutions.js');
       break;
     case 'care':
       await
-      import ('../components/solutions/care/ts-care.js');
+      import ('../components/ts-care.js');
       break;
     case 'design':
       await
-      import ('../components/solutions/design/ts-design.js');
+      import ('../components/ts-design.js');
       break;
     case 'emergency':
       await
-      import ('../components/solutions/emergency/ts-emergency.js');
+      import ('../components/ts-emergency.js');
       break;
     case 'migrations':
       await
-      import ('../components/solutions/migrations/ts-migrations.js');
+      import ('../components/ts-migrations.js');
       break;
     case 'pagespeed':
       await
-      import ('../components/solutions/pagespeed/ts-pagespeed.js');
+      import ('../components/ts-pagespeed.js');
       break;
     case 'privacy':
       await
-      import ('../components/privacy/ts-privacy.js');
+      import ('../components/ts-privacy.js');
       break;
     case 'security':
       await
-      import ('../components/solutions/security/ts-security.js');
+      import ('../components/ts-security.js');
       break;
     default:
       page = 'view404';
