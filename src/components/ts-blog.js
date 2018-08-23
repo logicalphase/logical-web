@@ -2,20 +2,43 @@ import { PageViewElement } from './page-view-element.js';
 import { html } from 'lit-html';
 import { repeat } from 'lit-html/lib/repeat';
 import { until } from 'lit-html/lib/until';
+import { connect } from 'pwa-helpers/connect-mixin.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
+
+import './ts-item.js';
+
+// This element is connected to the redux store.
+import { store } from '../store.js';
+
+import { fetchArticles } from '../actions/articles.js';
+import { refreshPage } from '../actions/app.js';
+import { articles, itemListSelector } from '../reducers/articles.js';
 import { formatDistance } from 'date-fns/esm';
-import {
-  Calendar, 
+
+// We are lazy loading its reducer.
+store.addReducers({
+  articles
+});
+
+import { 
+  Calendar,
   GooglePlus,
   Twitter,
   Facebook,
   Linkedin
 } from './ts-icons.js';
 import { SharedStyles } from './shared-styles.js';
-class TSBlog extends PageViewElement {
+class TSBlog extends connect(store)(PageViewElement) {
+  _render({  
+    item, 
+    _data 
+  }) {
 
-  _render(props) {
-    
-    let url = new Request('http://localhost:8080/api/contents?type=Article');
+    // @ts-ignore
+    updateMetadata({
+      title: `HyperPress Articles`,
+      description: 'WordPress How to\'s, tutorials, and pro tips to get the most from your site'
+    });
   
     return html `
       ${SharedStyles}
@@ -85,16 +108,6 @@ class TSBlog extends PageViewElement {
         vertical-align: bottom;
       }
 
-      #axis:hover .slide-left {
-        transform: translate(-350px, 0);
-        -webkit-transform: translate(-350px, 0);
-        /** Safari & Chrome **/
-        -o-transform: translate(-350px, 0);
-        /** Opera **/
-        -moz-transform: translate(-350px, 0);
-        /** Firefox **/
-      }
-
       .text-uppercase {
         border-top: 1px solid #e4e4e4;
         display: block;
@@ -146,6 +159,42 @@ class TSBlog extends PageViewElement {
         font-weight: 400 !important;
         padding-left: 0px;
         line-height: 14px;
+      }
+ 
+      #resource_loader {
+        margin-top: -80px;
+      }
+
+      .loader-wrapper {
+        text-align: center;
+      }
+
+      .collapse-content {
+        padding: 15px;
+        border: 1px solid #dedede;
+      }
+
+      .category-vertical-lr {
+        float: right;
+        min-height:185px;
+        position:relative;
+        width: 20px;
+        padding:0 3px 0 4px;
+        font-size: 14px;
+        letter-spacing: .08em;
+        text-align:center;
+        text-transform: uppercase;
+        writing-mode: vertical-rl;
+        background-color:rgba(192,192,192,0.8);
+        color: #fff;
+      }
+
+      .category-vertical-lr a {
+        color: #fff;
+      }
+
+      [hidden] {
+        display: none !important;
       }
 
       .sidebar {
@@ -241,6 +290,14 @@ class TSBlog extends PageViewElement {
           padding-right: 32px;
         }
 
+        .small-print {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          font-size: 14px !important;
+          padding-left: 0px;
+          line-height: 14px;
+        }
+
         #ts-site.ts-showcase.is-split-left .ts-showcase-image {
           right: 0;
         }
@@ -257,13 +314,6 @@ class TSBlog extends PageViewElement {
           z-index: 1;
         }
 
-        .small-print {
-          margin-top: 20px;
-          margin-bottom: 10px;
-          font-size: 14px !important;
-          padding-left: 0px;
-          line-height: 14px;
-        }
       }
       @media (max-width: 800px) {
         #ts-site.ts-blog {
@@ -274,7 +324,6 @@ class TSBlog extends PageViewElement {
           float: none !important;
           margin: 24px 30px 5px; 
         }
-
         .category-vertical-lr {
           height: auto;
           width: 20px;
@@ -303,48 +352,32 @@ class TSBlog extends PageViewElement {
             <div class="columns">
               <main class="main">
                 <div class="ts-content-grid-box">
-                  ${until(
-                    fetch(url)
-                      .then(res => res.json())
-                      .then(items => {
-                        return html`
-                          ${repeat(
-                            items.data,
-                            item => item.data,
-                            item => {
-                              return html`
-                                <div class="ts-blog-list-item">
-                                  <div class="flex-hover-card">
-                                    <a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
-                                    <div class="category-vertical-lr">${item.category[0]}</div>
-                                      <div class="inner">
-                                        <h3 class="paper-font-headline">${item.title}</h3>
-                                        <p>${item.excerpt}</p>
-                                        <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Published&nbsp; ${formatDistance(new Date(item.timestamp), new Date())} ago.</p>
-                                      </div>
-                                      </a>
-                                      <div class="ts-read-more"><a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
-                                        <div class="social_container">
-                                          <div class="social_share">
-                                            <div class="slide-icons slide-left">
-                                              <span class="social-icon gplus-icon" .link=${ `http://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/` } @click=${(e)=> this._getDataHref(e)}>${GooglePlus}</span>
-                                              <span class="social-icon twitter-icon" .link=${ `http://twitter.com/share?url=https://themesurgeons.com/${item.slug}/` } @click=${(e)=> this._getDataHref(e)}>${Twitter}</span>
-                                              <span class="social-icon linkedin-icon" .link=${ `http://www.linkedin.com/cws/share?url=https://themesurgeons.com/${ item.slug }/` } @click=${(e)=> this._getDataHref(e)}>${Linkedin}</span>
-                                              <span class="social-icon facebook-icon" .link=${ `http://www.facebook.com/sharer.php?u=https://themesurgeons.com/${ item.slug }/` } @click=${(e)=> this._getDataHref(e)}>${Facebook}</span>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                              `;
-                            }
-                          )}
-                        `;
-                      }),
-                    html`
-                      <span>💁‍ Getting some posts...</span>
-                    `
+                  ${repeat(_data, (item) => html`
+                    <div class="ts-blog-list-item">
+                      <div class="flex-hover-card">
+                        <a id="${item.id}" href="/article/${item.id}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
+                          <div class="category-vertical-lr">${item.category}</div>
+                          <div class="inner">
+                            <h3 class="paper-font-headline">${item.title}</h3>
+                            <p>${item.excerpt}</p>
+                            <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Published&nbsp; ${formatDistance(new Date(item.timestamp), new Date())} ago.</p>
+                          </div>
+                        </a>
+                        <div class="ts-read-more"><a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
+                          <div class="social_container">
+                            <div class="social_share">
+                              <div class="slide-icons slide-left">
+                                <span class="social-icon gplus-icon" .link=${ `http://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/` } @click=${(e)=> this._getDataHref(e)}>${GooglePlus}</span>
+                                <span class="social-icon twitter-icon" .link=${ `http://twitter.com/share?url=https://themesurgeons.com/${item.slug}/` } @click=${(e)=> this._getDataHref(e)}>${Twitter}</span>
+                                <span class="social-icon linkedin-icon" .link=${ `http://www.linkedin.com/cws/share?url=https://themesurgeons.com/${ item.slug }/` } @click=${(e)=> this._getDataHref(e)}>${Linkedin}</span>
+                                <span class="social-icon facebook-icon" .link=${ `http://www.facebook.com/sharer.php?u=https://themesurgeons.com/${ item.slug }/` } @click=${(e)=> this._getDataHref(e)}>${Facebook}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  `
                   )}
                 </div>
               </main>
@@ -373,6 +406,20 @@ class TSBlog extends PageViewElement {
         </article>
     `;
   }
+  static get properties() { return {
+    _query: String,
+    _data: Array,
+    _showOffline: Boolean
+  }}
+
+  // This is called every time something is updated in the store.
+  _stateChanged(state) {
+    this._query = state.articles.query;
+    this._data = itemListSelector(state);
+    this._showOffline = state.app.offline && state.articles.failure;
+  }
+
+
   _getDataHref(e) {
     let link = e.currentTarget.link;
     // Pop a new window for specific social media platform
@@ -384,3 +431,5 @@ class TSBlog extends PageViewElement {
   }
 }
 window.customElements.define('ts-blog', TSBlog);
+
+export { fetchArticles, refreshPage };

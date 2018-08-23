@@ -65,11 +65,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta property="og:site_name" content="ts-app">
   <meta property="og:image" content="images/manifest/icon-144x144.png" />
   <!-- 
-  <script>
-    ShadyDOM = {
-      force: true
-    };
-  </script>
+
 
   Load Google Fonts loaded async-->
   <script type="text/javascript">
@@ -117,11 +113,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
+    ts-app[unresolved] {
+        display: block;
+        min-height: 101vh;
+        line-height: 66px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        padding: 0 16px;
+        overflow: visible;
+      }
   </style>
 </head>
 
 <body class="mdc-typography">
-  <ts-app appTitle="HyperPress"></ts-app>
+  <ts-app appTitle="HyperPress" unresolved></ts-app>
   <noscript>
     Please enable JavaScript to view this website.
   </noscript>

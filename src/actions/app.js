@@ -9,33 +9,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 export const UPDATE_PAGE = 'UPDATE_PAGE';
+export const RECEIVE_LAZY_RESOURCES = 'RECEIVE_LAZY_RESOURCES';
 export const UPDATE_OFFLINE = 'UPDATE_OFFLINE';
 export const UPDATE_DRAWER_STATE = 'UPDATE_DRAWER_STATE';
 export const OPEN_SNACKBAR = 'OPEN_SNACKBAR';
 export const CLOSE_SNACKBAR = 'CLOSE_SNACKBAR';
+export const UPDATE_SUBTITLE = 'UPDATE_SUBTITLE';
 
-export const navigate = (path) => (dispatch) => {
+export const navigate = (location) => (dispatch) => {
   // Extract the page name from path.
-  const page = path === '/' ? 'home' : path.slice(1);
   // Any other info you might want to extract from the path (like page type),
-  // you can do here
-  dispatch(loadPage(page));
+  // you can do here.
+  const pathname = location.pathname;
+  const parts = pathname.slice(1).split('/');
+  const page = parts[0] || 'home';
+  // post id is in the path: /detail/{postId}
+  const articleId = parts[1];
 
-  // Close the drawer - in case the *path* change came from a link in the drawer.
-  dispatch(updateDrawerState(false));
+  let query = 'Article';
+
+  dispatch(loadPage(page, query, articleId));
 };
 
-const loadPage = (page) => async (dispatch) => {
-  switch (page) {
+const loadPage = (page, query, articleId) => async (dispatch, getState) => {
+  let module;
+  switch(page) {
     case 'home':
-      await
-      import ('../components/ts-home.js');
-      // Put code here that you want it to run every time when
-      // navigate to home page and ts-home.js is loaded
       break;
     case 'blog':
-      await
-      import ('../components/ts-blog.js');
+      module = await import('../components/ts-blog.js');
+      // Put code here that you want it to run every time when
+      // navigate to explore page and post-explore.js is loaded.
+      //
+      // In this case, we want to dispatch searchArticles action.
+      // In post-explore.js module it exports searchArticles so we can call the function here.
+      dispatch(module.fetchArticles(query));
+      break;
+    case 'article':
+      module = await import('../components/ts-article.js');
+      // Fetch the article info for the given article id.
+      await dispatch(module.fetchArticle(articleId));
+      // Wait for to check if the article id is valid.
+      if (isFetchArticleFailed(getState().article)) {
+        page = '404';
+      }
       break;
     case 'solutions':
       await
@@ -76,6 +93,24 @@ const loadPage = (page) => async (dispatch) => {
   }
 
   dispatch(updatePage(page));
+
+  const lazyLoadComplete = getState().app.lazyResourcesLoaded;
+  // load lazy resources after render and set `lazyLoadComplete` when done.
+  if (!lazyLoadComplete) {
+    requestAnimationFrame(async () => {
+      await import('../components/lazy-resources.js');
+      dispatch({
+        type: RECEIVE_LAZY_RESOURCES
+      });
+    });
+  }
+}
+
+
+export const refreshPage = () => (dispatch, getState) => {
+  const state = getState();
+  // load page using the current state
+  dispatch(loadPage(state.app.page, state.articles && state.articles.query, state.article && state.article.id));
 }
 
 const updatePage = (page) => {
@@ -83,6 +118,10 @@ const updatePage = (page) => {
     type: UPDATE_PAGE,
     page
   };
+}
+
+const isFetchArticleFailed = (article) => {
+  return !article.isFetching && article.failure;
 }
 
 let snackbarTimer;
@@ -122,4 +161,16 @@ export const updateDrawerState = (opened) => (dispatch, getState) => {
       opened
     });
   }
+}
+
+export const updateSubTitle = (subTitle) => {
+  return {
+    type: UPDATE_SUBTITLE,
+    subTitle
+  }
+}
+
+export const updateLocationURL = (url) => (dispatch) => {
+  window.history.pushState({}, '', url);
+  dispatch(navigate(window.location));
 }

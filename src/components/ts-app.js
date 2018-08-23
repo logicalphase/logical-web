@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { LitElement, html } from '@polymer/lit-element';
 
-import '@polymer/app-layout/app-drawer/app-drawer';
+//import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
@@ -12,8 +12,12 @@ import { installOfflineWatcher } from 'pwa-helpers/network';
 import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { updateMetadata } from 'pwa-helpers/metadata';
 import { menuIcon } from './ts-icons.js';
+
+import './ts-home.js';
+
 import './snack-bar.js';
 import { store } from '../store.js';
+
 import {
   navigate,
   updateOffline,
@@ -22,8 +26,24 @@ import {
 } from '../actions/app.js';
 
 class TSApp extends connect(store)(LitElement) {
-  _render({ appTitle, _page, _drawerOpened, _snackbarOpened, _offline }) {
+  _render({ 
+    appTitle, 
+    _page, 
+    _lazyResourcesLoaded,
+    _lastVisitedListPage,
+    _query, 
+    _data,
+    _item,
+    _articleId, 
+    _drawerOpened, 
+    _snackbarOpened, 
+    _offline 
+  }) {
+
+    const backHref = _page === 'detail' ? (_lastVisitedListPage === `/blog`) : `/article/${_articleId}`;
+    const query = _page === 'blog' ? '' : _query;
     // Anything that's related to rendering should be done in here.
+
     return html`
     <style>
       :host {
@@ -324,6 +344,7 @@ class TSApp extends connect(store)(LitElement) {
       <ts-privacy class="page" active?="${_page === 'privacy'}"></ts-privacy>
       <ts-security class="page" active?="${_page === 'security'}"></ts-security>
       <ts-blog class="page" active?="${_page === 'blog'}"></ts-blog>
+      <ts-article class="page" active?="${_page === 'article'}"></ts-article>
       <ts-view404 class="page" active?="${_page === 'view404'}"></ts-view404>
     </main>
       
@@ -339,9 +360,13 @@ class TSApp extends connect(store)(LitElement) {
     return {
       appTitle: String,
       _page: String,
+      _lastVisitedListPage: Boolean,
       _drawerOpened: Boolean,
       _snackbarOpened: Boolean,
-      _offline: Boolean
+      _offline: Boolean,
+      _data: Object,
+      _item: Object,
+      _articleId: String
     };
   }
 
@@ -353,9 +378,10 @@ class TSApp extends connect(store)(LitElement) {
   }
 
   _firstRendered() {
-    installRouter(location => store.dispatch(navigate(window.decodeURIComponent(location.pathname))));
+    installRouter((location) => store.dispatch(navigate(location)));
     installOfflineWatcher(offline => store.dispatch(updateOffline(offline)));
     installMediaQueryWatcher(`(min-width: 460px)`, matches => store.dispatch(updateLayout(matches)));
+    this.removeAttribute('unresolved');
   }
 
   _didRender(properties, changeList) {
@@ -372,9 +398,15 @@ class TSApp extends connect(store)(LitElement) {
 
   _stateChanged(state) {
     this._page = state.app.page;
+    this._lazyResourcesLoaded = state.app.lazyResourcesLoaded;
+    this._lastVisitedListPage = state.app.lastVisitedListPage;
     this._offline = state.app.offline;
     this._snackbarOpened = state.app.snackbarOpened;
     this._drawerOpened = state.app.drawerOpened;
+    this._data = state.article && state.article.data;
+    this._item = state.article && state.article.item;
+    this._query = state.articles && state.articles.query;
+    this._articleId = state.article && state.article.id;
   }
 }
 

@@ -52,6 +52,10 @@ export const SharedStyles = html `
     font-weight: 300;
     line-height: 26px; }
 
+  strong {
+    font-weight:500;
+  }
+
   a { 
     color: #a434b7;
     text-decoration: none; }
@@ -64,6 +68,29 @@ export const SharedStyles = html `
 
   section {
     margin: 0; }
+
+  th {
+    font-weight:500;
+  }
+
+  .article-button {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 8px 44px;
+    border: 2px solid var(--app-dark-text-color);
+    box-sizing: border-box;
+    background-color: transparent;
+    color: var(--app-dark-text-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .article-button:active {
+    background-color: var(--app-dark-text-color);
+    color: #FFF;
+  }
 
   /* Material Design Styles */
 
