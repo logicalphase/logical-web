@@ -1,11 +1,12 @@
 import { PageViewElement } from './page-view-element';
 import { html } from 'lit-html';
+import { render } from 'lit-html/lib/render';
 import { SharedStyles } from './shared-styles';
 
 class TSCare extends PageViewElement {
   _render(props) {
-    return html `
-      ${ SharedStyles }
+    return html`
+      ${ SharedStyles}
       <style>
       :host {
         display: block;

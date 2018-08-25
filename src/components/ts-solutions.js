@@ -1,11 +1,10 @@
-import { PageViewElement } from './page-view-element';
-import { html } from 'lit-html';
+import { PageViewElement, html } from './page-view-element';
 import { SharedStyles } from './shared-styles';
 
 class TSSolutions extends PageViewElement {
   _render(props) {
     return html`
-      ${ SharedStyles }
+      ${ SharedStyles}
       <style>
       :host {
           display: block;

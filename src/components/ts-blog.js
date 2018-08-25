@@ -1,11 +1,8 @@
 import { PageViewElement } from './page-view-element.js';
-import { html } from 'lit-html';
-import { repeat } from 'lit-html/lib/repeat';
-import { until } from 'lit-html/lib/until';
+import { html } from 'lit-html/lit-html.js';
+import { repeat } from 'lit-html/directives/repeat.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
-
-import './ts-item.js';
 
 // This element is connected to the redux store.
 import { store } from '../store.js';
@@ -20,7 +17,7 @@ store.addReducers({
   articles
 });
 
-import { 
+import {
   Calendar,
   GooglePlus,
   Twitter,
@@ -29,9 +26,8 @@ import {
 } from './ts-icons.js';
 import { SharedStyles } from './shared-styles.js';
 class TSBlog extends connect(store)(PageViewElement) {
-  _render({  
-    item, 
-    _data 
+  _render({
+    _data
   }) {
 
     // @ts-ignore
@@ -39,8 +35,8 @@ class TSBlog extends connect(store)(PageViewElement) {
       title: `HyperPress Articles`,
       description: 'WordPress How to\'s, tutorials, and pro tips to get the most from your site'
     });
-  
-    return html `
+
+    return html`
       ${SharedStyles}
       <style>
       :host {
@@ -363,22 +359,21 @@ class TSBlog extends connect(store)(PageViewElement) {
                             <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Published&nbsp; ${formatDistance(new Date(item.timestamp), new Date())} ago.</p>
                           </div>
                         </a>
-                        <div class="ts-read-more"><a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
+                        <div class="ts-read-more"><a id="${item.id}" href="/${item.id}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
                           <div class="social_container">
                             <div class="social_share">
                               <div class="slide-icons slide-left">
-                                <span class="social-icon gplus-icon" .link=${ `http://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/` } @click=${(e)=> this._getDataHref(e)}>${GooglePlus}</span>
-                                <span class="social-icon twitter-icon" .link=${ `http://twitter.com/share?url=https://themesurgeons.com/${item.slug}/` } @click=${(e)=> this._getDataHref(e)}>${Twitter}</span>
-                                <span class="social-icon linkedin-icon" .link=${ `http://www.linkedin.com/cws/share?url=https://themesurgeons.com/${ item.slug }/` } @click=${(e)=> this._getDataHref(e)}>${Linkedin}</span>
-                                <span class="social-icon facebook-icon" .link=${ `http://www.facebook.com/sharer.php?u=https://themesurgeons.com/${ item.slug }/` } @click=${(e)=> this._getDataHref(e)}>${Facebook}</span>
+                                <span class="social-icon gplus-icon" .link=${ `http://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
+                                <span class="social-icon twitter-icon" .link=${ `http://twitter.com/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
+                                <span class="social-icon linkedin-icon" .link=${ `http://www.linkedin.com/cws/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
+                                <span class="social-icon facebook-icon" .link=${ `http://www.facebook.com/sharer.php?u=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                  </div>
-                  `
-                  )}
+                    </div>
+                  `)}
                 </div>
               </main>
               <aside class="sidebar">
@@ -406,11 +401,13 @@ class TSBlog extends connect(store)(PageViewElement) {
         </article>
     `;
   }
-  static get properties() { return {
-    _query: String,
-    _data: Array,
-    _showOffline: Boolean
-  }}
+  static get properties() {
+    return {
+      _query: String,
+      _data: Array,
+      _showOffline: Boolean
+    }
+  }
 
   // This is called every time something is updated in the store.
   _stateChanged(state) {
@@ -424,8 +421,8 @@ class TSBlog extends connect(store)(PageViewElement) {
     let link = e.currentTarget.link;
     // Pop a new window for specific social media platform
     window.open(
-      link, 
-      "_blank", 
+      link,
+      "_blank",
       "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500"
     );
   }

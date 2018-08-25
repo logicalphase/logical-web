@@ -1,12 +1,12 @@
-import { PageViewElement } from './page-view-element.js';
-import { html } from 'lit-html';
+
+import { html, render } from 'lit-html';
 import { SharedStyles } from './shared-styles.js';
 
-class TSHome extends PageViewElement {
-  _render(props) {
+class TSHome extends HTMLElement {
+  render() {
     return html`
 
-    ${ SharedStyles }
+    ${ SharedStyles}
     <style>
     :host {
         display: block;

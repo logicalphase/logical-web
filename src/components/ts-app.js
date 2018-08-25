@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { LitElement, html } from '@polymer/lit-element';
+import { html } from '@polymer/lit-element';
 
 //import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-header/app-header';
@@ -26,18 +25,18 @@ import {
 } from '../actions/app.js';
 
 class TSApp extends connect(store)(LitElement) {
-  _render({ 
-    appTitle, 
-    _page, 
+  _render({
+    appTitle,
+    _page,
     _lazyResourcesLoaded,
     _lastVisitedListPage,
-    _query, 
+    _query,
     _data,
     _item,
-    _articleId, 
-    _drawerOpened, 
-    _snackbarOpened, 
-    _offline 
+    _articleId,
+    _drawerOpened,
+    _snackbarOpened,
+    _offline
   }) {
 
     const backHref = _page === 'detail' ? (_lastVisitedListPage === `/blog`) : `/article/${_articleId}`;

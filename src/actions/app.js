@@ -33,16 +33,11 @@ export const navigate = (location) => (dispatch) => {
 
 const loadPage = (page, query, articleId) => async (dispatch, getState) => {
   let module;
-  switch(page) {
+  switch (page) {
     case 'home':
       break;
     case 'blog':
       module = await import('../components/ts-blog.js');
-      // Put code here that you want it to run every time when
-      // navigate to explore page and post-explore.js is loaded.
-      //
-      // In this case, we want to dispatch searchArticles action.
-      // In post-explore.js module it exports searchArticles so we can call the function here.
       dispatch(module.fetchArticles(query));
       break;
     case 'article':
@@ -56,40 +51,40 @@ const loadPage = (page, query, articleId) => async (dispatch, getState) => {
       break;
     case 'solutions':
       await
-      import ('../components/ts-solutions.js');
+        import('../components/ts-solutions.js');
       break;
     case 'care':
       await
-      import ('../components/ts-care.js');
+        import('../components/ts-care.js');
       break;
     case 'design':
       await
-      import ('../components/ts-design.js');
+        import('../components/ts-design.js');
       break;
     case 'emergency':
       await
-      import ('../components/ts-emergency.js');
+        import('../components/ts-emergency.js');
       break;
     case 'migrations':
       await
-      import ('../components/ts-migrations.js');
+        import('../components/ts-migrations.js');
       break;
     case 'pagespeed':
       await
-      import ('../components/ts-pagespeed.js');
+        import('../components/ts-pagespeed.js');
       break;
     case 'privacy':
       await
-      import ('../components/ts-privacy.js');
+        import('../components/ts-privacy.js');
       break;
     case 'security':
       await
-      import ('../components/ts-security.js');
+        import('../components/ts-security.js');
       break;
     default:
       page = 'view404';
       await
-      import ('../components/ts-view404.js');
+        import('../components/ts-view404.js');
   }
 
   dispatch(updatePage(page));
