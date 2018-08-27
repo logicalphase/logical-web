@@ -24,7 +24,7 @@
     "@material/mwc-button": "^0.1.2",
     "@material/mwc-checkbox": "^0.1.2",
     "@material/radio": "^0.38.1",
-    "@material/typography": "^0.38.0",
+    "@material/typography": "^0.39.0",
     "@mdi/font": "^2.6.95",
     "@polymer/app-layout": "^3.0.0-pre.21",
     "@polymer/iron-icon": "^3.0.0-pre.21",
