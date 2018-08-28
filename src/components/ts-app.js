@@ -1,6 +1,6 @@
-import { html } from '@polymer/lit-element';
+import { LitElement, html } from '@polymer/lit-element';
 
-//import '@polymer/app-layout/app-drawer/app-drawer';
+import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
@@ -18,32 +18,31 @@ import './snack-bar.js';
 import { store } from '../store.js';
 
 import {
-  navigate,
-  updateOffline,
-  updateDrawerState,
-  updateLayout
+    navigate,
+    updateOffline,
+    updateDrawerState,
+    updateLayout
 } from '../actions/app.js';
 
 class TSApp extends connect(store)(LitElement) {
-  _render({
-    appTitle,
-    _page,
-    _lazyResourcesLoaded,
-    _lastVisitedListPage,
-    _query,
-    _data,
-    _item,
-    _articleId,
-    _drawerOpened,
-    _snackbarOpened,
-    _offline
-  }) {
+    render() {
+        let {
+            appTitle,
+            _page,
+            _lazyResourcesLoaded,
+            _lastVisitedListPage,
+            _query,
+            _articleId,
+            _drawerOpened,
+            _snackbarOpened,
+            _offline
+        } = this;
 
-    const backHref = _page === 'detail' ? (_lastVisitedListPage === `/blog`) : `/article/${_articleId}`;
-    const query = _page === 'blog' ? '' : _query;
-    // Anything that's related to rendering should be done in here.
+        const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog`) : `/article/${ _articleId }`;
+        const query = _page === 'blog' ? '' : _query;
+        // Anything that's related to rendering should be done in here.
 
-    return html`
+        return html `
     <style>
       :host {
         display: block;
@@ -293,8 +292,8 @@ class TSApp extends connect(store)(LitElement) {
     <app-header-layout id="ts-appheaderlayout" has-scrolling-region>
       <app-header slot="header" condenses reveals effects="waterfall">
         <app-toolbar class="masthead">
-          <button class="menu-btn" title="Menu" on-click="${_ => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
-          <div class="ts-title" main-title>HyperPress
+          <button class="menu-btn" title="Menu" @on-click="${_ => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
+          <div class="ts-title" main-title>${appTitle}
             <span class="paper-font-body2">by PRESS MEDICS</span>
           </div>
           <div class="cta-header toolbar-list">
@@ -303,110 +302,113 @@ class TSApp extends connect(store)(LitElement) {
         </app-toolbar>
         <app-toolbar class="desktop-menu toolbar-list" sticky>
           <nav class="main-navigation" role="navigation">
-            <a selected?="${_page === 'home'}" href="/">Home</a>
-            <a selected?="${_page === 'solutions'}" href="/solutions">Solutions</a>
-            <a selected?="${_page === 'blog'}" href="/blog">Blog</a>
-            <a style="float:right" selected?="${_page === 'support'}" href="/support">Support</a>
+            <a ?selected="${_page === 'home'}" href="/">Home</a>
+            <a ?selected="${_page === 'solutions'}" href="/solutions">Solutions</a>
+            <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
+            <a style="float:right" ?selected="${_page === 'support'}" href="/support">Support</a>
           </nav>
         </app-toolbar>
       </app-header>
     </app-header-layout>
 
     <!-- Drawer content -->
-    <app-drawer id="drawer" opened="${_drawerOpened}"
-        on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
+    <app-drawer id="drawer" .opened="${_drawerOpened}"
+        @on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
       <app-toolbar>HyperPress <span class="sub-tagline paper-font-body2"> by PRESS MEDICS</span></app-toolbar>
       <nav class="drawer-list">
-        <a selected?="${_page === 'home'}" href="/">Home</a>
-        <a selected?="${_page === 'solutions'}" href="/solutions">Solutions</a>
-        <a class="submenu" selected?="${_page === 'design'}" href="/design">Progressive Web Design</a>
-        <a class="submenu" selected?="${_page === 'pagespeed'}" href="/pagespeed">PageSpeed Optimization</a>
-        <a class="submenu" selected?="${_page === 'emergency'}" href="/emergency">WordPress 911</a>
-        <a class="submenu" selected?="${_page === 'security'}" href="/security">HyperSecurity Services</a>
-        <a class="submenu" selected?="${_page === 'care'}" href="/care">WordPress Preventive Care</a>
-        <a class="submenu" selected?="${_page === 'migrations'}" href="/migrations">WordPress Migrations</a>
-        <a selected?="${_page === 'blog'}" href="/blog">Blog</a>
-        <a selected?="${_page === 'privacy'}" href="/privacy">Privacy</a>
-        <a selected?="${_page === 'contact'}" href="/contact">Contact</a>
+        <a ?selected="${_page === 'home'}" href="/">Home</a>
+        <a ?selected="${_page === 'solutions'}" href="/solutions">Solutions</a>
+        <a class="submenu" ?selected="${_page === 'design'}" href="/design">Progressive Web Design</a>
+        <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">PageSpeed Optimization</a>
+        <a class="submenu" ?selected="${_page === 'emergency'}" href="/emergency">WordPress 911</a>
+        <a class="submenu" ?selected="${_page === 'security'}" href="/security">HyperSecurity Services</a>
+        <a class="submenu" ?selected="${_page === 'care'}" href="/care">WordPress Preventive Care</a>
+        <a class="submenu" ?selected="${_page === 'migrations'}" href="/migrations">WordPress Migrations</a>
+        <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
+        <a ?selected="${_page === 'privacy'}" href="/privacy">Privacy</a>
+        <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
       </nav>
     </app-drawer>
 
     <!-- Main content -->
     <main class="main-content">
-      <ts-home class="page" active?="${_page === 'home'}"></ts-home>
-      <ts-solutions class="page" active?="${_page === 'solutions'}"></ts-solutions>
-      <ts-care class="page" active?="${_page === 'care'}"></ts-care>
-      <ts-design class="page" active?="${_page === 'design'}"></ts-design>
-      <ts-emergency class="page" active?="${_page === 'emergency'}"></ts-emergency>
-      <ts-migrations class="page" active?="${_page === 'migrations'}"></ts-migrations>
-      <ts-pagespeed class="page" active?="${_page === 'pagespeed'}"></ts-pagespeed>
-      <ts-privacy class="page" active?="${_page === 'privacy'}"></ts-privacy>
-      <ts-security class="page" active?="${_page === 'security'}"></ts-security>
-      <ts-blog class="page" active?="${_page === 'blog'}"></ts-blog>
-      <ts-article class="page" active?="${_page === 'article'}"></ts-article>
-      <ts-view404 class="page" active?="${_page === 'view404'}"></ts-view404>
+      <ts-home class="page" ?active="${_page === 'home'}"></ts-home>
+      <ts-solutions class="page" ?active="${_page === 'solutions'}"></ts-solutions>
+      <ts-care class="page" ?active="${_page === 'care'}"></ts-care>
+      <ts-design class="page" ?active="${_page === 'design'}"></ts-design>
+      <ts-emergency class="page" ?active="${_page === 'emergency'}"></ts-emergency>
+      <ts-migrations class="page" ?active="${_page === 'migrations'}"></ts-migrations>
+      <ts-pagespeed class="page" ?active="${_page === 'pagespeed'}"></ts-pagespeed>
+      <ts-privacy class="page" ?active="${_page === 'privacy'}"></ts-privacy>
+      <ts-security class="page" ?active="${_page === 'security'}"></ts-security>
+      <ts-blog class="page" ?active="${_page === 'blog'}"></ts-blog>
+      <ts-article class="page" ?active="${_page === 'article'}"></ts-article>
+      <ts-view404 class="page" ?active="${_page === 'view404'}"></ts-view404>
     </main>
       
     <footer>
       <p>Made with \u2764\uFE0F by Pressmedics. Powered by Google</p>
     </footer>
 
-    <snack-bar active?="${_snackbarOpened}">Site is currently ${_offline ? 'offline' : 'online'}.</snack-bar>
+    <snack-bar ?active="${_snackbarOpened}">Site is currently ${_offline ? 'offline' : 'online'}.</snack-bar>
     `;
-  }
-
-  static get properties() {
-    return {
-      appTitle: String,
-      _page: String,
-      _lastVisitedListPage: Boolean,
-      _drawerOpened: Boolean,
-      _snackbarOpened: Boolean,
-      _offline: Boolean,
-      _data: Object,
-      _item: Object,
-      _articleId: String
-    };
-  }
-
-  constructor() {
-    super();
-    // To force all event listeners for gestures to be passive.
-    // See https://www.polymer-project.org/2.0/docs/devguide/gesture-events#use-passive-gesture-listeners
-    setPassiveTouchGestures(true);
-  }
-
-  _firstRendered() {
-    installRouter((location) => store.dispatch(navigate(location)));
-    installOfflineWatcher(offline => store.dispatch(updateOffline(offline)));
-    installMediaQueryWatcher(`(min-width: 460px)`, matches => store.dispatch(updateLayout(matches)));
-    this.removeAttribute('unresolved');
-  }
-
-  _didRender(properties, changeList) {
-    if ('_page' in changeList) {
-      const pageTitle = properties.appTitle + ' - ' + changeList._page;
-      updateMetadata({
-        title: pageTitle,
-        description: pageTitle
-        // This object also takes an image property, that points to an img src.
-      });
-      window.scrollTo(0, 0);
     }
-  }
 
-  _stateChanged(state) {
-    this._page = state.app.page;
-    this._lazyResourcesLoaded = state.app.lazyResourcesLoaded;
-    this._lastVisitedListPage = state.app.lastVisitedListPage;
-    this._offline = state.app.offline;
-    this._snackbarOpened = state.app.snackbarOpened;
-    this._drawerOpened = state.app.drawerOpened;
-    this._data = state.article && state.article.data;
-    this._item = state.article && state.article.item;
-    this._query = state.articles && state.articles.query;
-    this._articleId = state.article && state.article.id;
-  }
+    static get properties() {
+        return {
+            appTitle: { type: String },
+            _page: { type: String },
+            _lastVisitedListPage: { type: Boolean },
+            _drawerOpened: { type: Boolean },
+            _snackbarOpened: { type: Boolean },
+            _offline: { type: Boolean },
+            _data: { type: Object },
+            _item: { type: Object },
+            _articleId: { type: String }
+        };
+    }
+
+    constructor() {
+        super();
+        // To force all event listeners for gestures to be passive.
+        // See https://www.polymer-project.org/2.0/docs/devguide/gesture-events#use-passive-gesture-listeners
+        setPassiveTouchGestures(true);
+    }
+
+    firstRendered() {
+        installRouter((location) => store.dispatch(navigate(location)));
+        installOfflineWatcher((offline) => store.dispatch(updateOffline(offline)));
+        installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`,
+            (matches) => store.dispatch(updateLayout(matches)));
+        this.removeAttribute('unresolved');
+    }
+
+    update(changedProps) {
+        super.update(changedProps);
+        if (changedProps.has('_page')) {
+            const pageTitle = this.appTitle + ' - ' + this._page;
+            // @ts-ignore
+            updateMetadata({
+                title: pageTitle,
+                description: pageTitle
+                    // This object also takes an image property, that points to an img src.
+            });
+            window.scrollTo(0, 0);
+        }
+    }
+
+    _stateChanged(state) {
+        this._page = state.app.page;
+        this._lazyResourcesLoaded = state.app.lazyResourcesLoaded;
+        this._lastVisitedListPage = state.app.lastVisitedListPage;
+        this._offline = state.app.offline;
+        this._snackbarOpened = state.app.snackbarOpened;
+        this._drawerOpened = state.app.drawerOpened;
+        this._data = state.article && state.article.data;
+        this._item = state.article && state.article.item;
+        this._query = state.articles && state.articles.query;
+        this._articleId = state.article && state.article.id;
+    }
 }
 
 window.customElements.define('ts-app', TSApp);

@@ -13,8 +13,8 @@ import { LitElement, html } from '@polymer/lit-element';
 import { SharedStyles } from './shared-styles.js';
 
 class TSOffline extends LitElement {
-  _render() {
-    return html`
+    render() {
+        return html `
       ${SharedStyles}
       <style>
         :host {
@@ -28,11 +28,11 @@ class TSOffline extends LitElement {
         <button class="article-button" on-click="${() => this._refresh()}">Try Again...</button>
       </section>
     `;
-  }
+    }
 
-  _refresh() {
-    this.dispatchEvent(new CustomEvent('refresh', {composed: true}));
-  }
+    _refresh() {
+        this.dispatchEvent(new CustomEvent('refresh', { composed: true }));
+    }
 }
 
 window.customElements.define('ts-offline', TSOffline);

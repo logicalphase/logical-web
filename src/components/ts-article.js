@@ -8,7 +8,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-import { html } from '@polymer/lit-element';
+import { LitElement, html } from '@polymer/lit-element';
 
 import { repeat } from 'lit-html/directives/repeat.js';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
@@ -30,32 +30,37 @@ import { article, articleSelector } from '../reducers/article.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
-  article
+    article
 });
 
 class TSDetail extends connect(store)(LitElement) {
-  _render({ _data, _lastVisitedListPage, _showOffline }) {
-    // Don't render if there is no item.
-    if (!_data) {
-      return;
-    }
+        render() {
+                let {
+                    _data,
+                    _lastVisitedListPage,
+                    _showOffline
+                } = this;
+                // Don't render if there is no item.
+                if (!_data) {
+                    return;
+                }
 
-    const item = _data;
-    const title = item.title;
-    const author = 'John Teague';
-    const date = formatDistance(new Date(item.timestamp), new Date());
-    const thumbnail = item.photo;
-    //const slug = thumbnail.slug;
-    const categories = item.category || [];
+                const item = _data;
+                const title = item.title;
+                const author = 'John Teague';
+                const date = formatDistance(new Date(item.timestamp), new Date());
+                const thumbnail = item.photo;
+                //const slug = thumbnail.slug;
+                const categories = item.category || [];
 
-    // @ts-ignore
-    updateMetadata({
-      title: `${title} - Articles`,
-      description: item.excerpt,
-      image: thumbnail
-    });
+                // @ts-ignore
+                updateMetadata({
+                    title: `${title} - Articles`,
+                    description: item.excerpt,
+                    image: thumbnail
+                });
 
-    return html`
+                return html `
       ${SharedStyles}
       <style>
         :host {
@@ -200,10 +205,10 @@ class TSDetail extends connect(store)(LitElement) {
           }
         }
       </style>
-      <section .hidden="${_showOffline}">
+      <section ?hidden="${_showOffline}">
         <div class="item">
           <div class="cover" hero>
-            <img src="${thumbnail}" alt="${title}" />
+            <img .src="${thumbnail}" .alt="${title}" />
             <h2 class="title">${title}</h2>
             <div class="item-item" .hidden="${!author}">By ${author} - Published: ${date} agos.</div>
           </div>
@@ -221,16 +226,16 @@ class TSDetail extends connect(store)(LitElement) {
           </ul>
         </div>
       </section>
-      <ts-offline .hidden?="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
+      <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
     `;
   }
 
   static get properties() {
     return {
-      _item: Object,
-      _data: Object,
-      _lastVisitedListPage: Boolean,
-      _showOffline: Boolean
+      _item: { type: Object },
+      _data: { type: Object },
+      _lastVisitedListPage: { type: Boolean },
+      _showOffline:{ type: Boolean }
     }
   }
 

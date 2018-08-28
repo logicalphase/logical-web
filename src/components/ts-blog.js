@@ -1,5 +1,4 @@
-import { PageViewElement } from './page-view-element.js';
-import { html } from 'lit-html/lit-html.js';
+import { LitElement, html } from '@polymer/lit-element';
 import { repeat } from 'lit-html/directives/repeat.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
@@ -14,29 +13,32 @@ import { formatDistance } from 'date-fns/esm';
 
 // We are lazy loading its reducer.
 store.addReducers({
-  articles
+    articles
 });
 
 import {
-  Calendar,
-  GooglePlus,
-  Twitter,
-  Facebook,
-  Linkedin
+    Calendar,
+    GooglePlus,
+    Twitter,
+    Facebook,
+    Linkedin
 } from './ts-icons.js';
 import { SharedStyles } from './shared-styles.js';
-class TSBlog extends connect(store)(PageViewElement) {
-  _render({
-    _data
-  }) {
+class TSBlog extends connect(store)(LitElement) {
+        render() {
+                let {
+                    _data,
+                    _query,
+                    _showOffline
+                } = this;
 
-    // @ts-ignore
-    updateMetadata({
-      title: `HyperPress Articles`,
-      description: 'WordPress How to\'s, tutorials, and pro tips to get the most from your site'
-    });
+                // @ts-ignore
+                updateMetadata({
+                    title: `HyperPress Articles`,
+                    description: 'WordPress How to\'s, tutorials, and pro tips to get the most from your site'
+                });
 
-    return html`
+                return html `
       ${SharedStyles}
       <style>
       :host {

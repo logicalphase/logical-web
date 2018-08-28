@@ -1,9 +1,9 @@
-import { PageViewElement, html } from './page-view-element';
+import { LitElement, html } from '@polymer/lit-element';
 import { SharedStyles } from './shared-styles';
 
-class TSSolutions extends PageViewElement {
-  _render(props) {
-    return html`
+class TSSolutions extends LitElement {
+    render(props) {
+        return html `
       ${ SharedStyles}
       <style>
       :host {
@@ -135,6 +135,6 @@ class TSSolutions extends PageViewElement {
         </section>
       </article>
     `;
-  }
+    }
 }
 window.customElements.define('ts-solutions', TSSolutions);

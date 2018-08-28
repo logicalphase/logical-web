@@ -34,7 +34,7 @@ store.addReducers({
 });
 
 class TSDetail extends connect(store)(PageViewElement) {
-  _render({ _data, _lastVisitedListPage, _showOffline }) {
+  render({ _data, _lastVisitedListPage, _showOffline }) {
     // Don't render if there is no item.
     if (!_data) {
       return;

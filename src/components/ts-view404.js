@@ -1,10 +1,9 @@
-import { PageViewElement } from './page-view-element.js';
-import { html } from 'lit-html';
+import { LitElement, html } from '@polymer/lit-element';
 import { SharedStyles } from './shared-styles.js';
 
-class MyView404 extends PageViewElement {
-  _render(props) {
-    return html `
+class MyView404 extends LitElement {
+    render(props) {
+        return html `
       ${SharedStyles}
       <style>
       :host {
@@ -19,7 +18,7 @@ class MyView404 extends PageViewElement {
         </p>
       </section>
     `;
-  }
+    }
 }
 
 window.customElements.define('ts-view404', MyView404);

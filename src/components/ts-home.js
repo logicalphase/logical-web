@@ -1,10 +1,9 @@
+import { LitElement, html } from '@polymer/lit-element';
+import { SharedStyles } from './shared-styles';
 
-import { html, render } from 'lit-html';
-import { SharedStyles } from './shared-styles.js';
-
-class TSHome extends HTMLElement {
-  render() {
-    return html`
+class TSHome extends LitElement {
+    render() {
+        return html `
 
     ${ SharedStyles}
     <style>
@@ -137,6 +136,6 @@ class TSHome extends HTMLElement {
     </section>
   </article>
   `;
-  }
+    }
 }
 window.customElements.define('ts-home', TSHome);
