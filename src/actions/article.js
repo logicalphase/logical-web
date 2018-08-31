@@ -30,7 +30,7 @@ export const fetchArticle = (id) => (dispatch, getState) => {
         if (data.error) {
           dispatch(failArticle(id));
         } else {
-          dispatch(receiveArticle(id, data.data));
+          dispatch(receiveArticle(id, data.data[0]));
         }
       })
       .catch((e) => dispatch(failArticle(id)));

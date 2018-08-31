@@ -1,12 +1,12 @@
 {
-  "name": "pwa-starter-kit",
+  "name": "pressmedics",
   "version": "0.8.0",
   "flat": true,
   "contributors": [
-    "The Polymer Authors"
+    "Polymer and Pressmedics Authors"
   ],
   "license": "BSD-3-Clause",
-  "repository": "Polymer/pwa-starter-kit",
+  "repository": "hyperpress/pressmedics",
   "scripts": {
     "start": "polymer serve",
     "build": "npm run build:prpl-server && npm run build:static",
@@ -20,25 +20,25 @@
     "test:regenerate_screenshots": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=15000"
   },
   "dependencies": {
-    "@material/elevation": "^0.38.0",
+    "@material/elevation": "^0.39.0",
     "@material/mwc-button": "^0.1.2",
     "@material/mwc-checkbox": "^0.1.2",
     "@material/radio": "^0.38.1",
     "@material/typography": "^0.39.0",
     "@mdi/font": "^2.6.95",
-    "@polymer/app-layout": "^3.0.0-pre.21",
-    "@polymer/iron-icon": "^3.0.0-pre.21",
-    "@polymer/iron-icons": "^3.0.0-pre.21",
-    "@polymer/iron-iconset-svg": "^3.0.0-pre.21",
-    "@polymer/lit-element": "latest",
-    "@polymer/paper-icon-button": "^3.0.0-pre.21",
-    "@webcomponents/webcomponentsjs": "^2.0.4",
+    "@polymer/app-layout": "^3.0.0-pre.25",
+    "@polymer/iron-icon": "^3.0.0-pre.25",
+    "@polymer/iron-icons": "^3.0.0-pre.25",
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.25",
+    "@polymer/lit-element": "dev",
+    "@polymer/paper-icon-button": "^3.0.0-pre.25",
+    "@webcomponents/webcomponentsjs": "^2.1.1",
     "app-header": "^1.0.9",
     "date-fns": "^2.0.0-alpha.11",
     "fresh": "^0.5.2",
     "growl": "^1.10.5",
     "https-proxy-agent": "^2.2.1",
-    "lit-html": "github:Polymer/lit-html.git",
+    "lit-html": "latest",
     "material-design-icons": "^3.0.1",
     "mime": "^2.3.1",
     "moment": "^2.22.2",
@@ -51,7 +51,7 @@
     "update": "^0.7.4"
   },
   "devDependencies": {
-    "axe-core": "^3.0.3",
+    "axe-core": "^3.1.1",
     "chai": "^4.1.2",
     "del": "^3.0.0",
     "gulp": "^4.0.0",

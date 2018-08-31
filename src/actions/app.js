@@ -9,7 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 export const UPDATE_PAGE = 'UPDATE_PAGE';
-export const RECEIVE_LAZY_RESOURCES = 'RECEIVE_LAZY_RESOURCES';
 export const UPDATE_OFFLINE = 'UPDATE_OFFLINE';
 export const UPDATE_DRAWER_STATE = 'UPDATE_DRAWER_STATE';
 export const OPEN_SNACKBAR = 'OPEN_SNACKBAR';
@@ -33,77 +32,62 @@ export const navigate = (location) => (dispatch) => {
 
 const loadPage = (page, query, articleId) => async (dispatch, getState) => {
   let module;
-  switch(page) {
+  switch (page) {
     case 'home':
       break;
     case 'blog':
       module = await import('../components/ts-blog.js');
-      // Put code here that you want it to run every time when
-      // navigate to explore page and post-explore.js is loaded.
-      //
-      // In this case, we want to dispatch searchArticles action.
-      // In post-explore.js module it exports searchArticles so we can call the function here.
       dispatch(module.fetchArticles(query));
       break;
     case 'article':
       module = await import('../components/ts-article.js');
-      // Fetch the article info for the given article id.
       await dispatch(module.fetchArticle(articleId));
-      // Wait for to check if the article id is valid.
       if (isFetchArticleFailed(getState().article)) {
         page = '404';
       }
       break;
     case 'solutions':
       await
-      import ('../components/ts-solutions.js');
+        import('../components/ts-solutions.js');
       break;
     case 'care':
       await
-      import ('../components/ts-care.js');
+        import('../components/ts-care.js');
       break;
     case 'design':
       await
-      import ('../components/ts-design.js');
+        import('../components/ts-design.js');
       break;
     case 'emergency':
       await
-      import ('../components/ts-emergency.js');
+        import('../components/ts-emergency.js');
       break;
     case 'migrations':
       await
-      import ('../components/ts-migrations.js');
+        import('../components/ts-migrations.js');
       break;
     case 'pagespeed':
       await
-      import ('../components/ts-pagespeed.js');
+        import('../components/ts-pagespeed.js');
       break;
     case 'privacy':
       await
-      import ('../components/ts-privacy.js');
+        import('../components/ts-privacy.js');
       break;
     case 'security':
       await
-      import ('../components/ts-security.js');
+        import('../components/ts-security.js');
       break;
     default:
-      page = 'view404';
-      await
-      import ('../components/ts-view404.js');
+      page = '404';
+  }
+
+  if (page === '404') {
+    import('../components/ts-view404.js');
   }
 
   dispatch(updatePage(page));
 
-  const lazyLoadComplete = getState().app.lazyResourcesLoaded;
-  // load lazy resources after render and set `lazyLoadComplete` when done.
-  if (!lazyLoadComplete) {
-    requestAnimationFrame(async () => {
-      await import('../components/lazy-resources.js');
-      dispatch({
-        type: RECEIVE_LAZY_RESOURCES
-      });
-    });
-  }
 }
 
 

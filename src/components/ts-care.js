@@ -1,11 +1,12 @@
 import { PageViewElement } from './page-view-element';
-import { html } from 'lit-html';
+import { LitElement, html } from '@polymer/lit-element';
+import { render } from 'lit-html/lib/render';
 import { SharedStyles } from './shared-styles';
 
 class TSCare extends PageViewElement {
-  _render(props) {
-    return html `
-      ${ SharedStyles }
+    render(props) {
+        return html `
+      ${ SharedStyles}
       <style>
       :host {
         display: block;
@@ -168,6 +169,6 @@ class TSCare extends PageViewElement {
         </div>
       </article> 
     `;
-  }
+    }
 }
 window.customElements.define('ts-care', TSCare);
