@@ -34,35 +34,35 @@ store.addReducers({
 });
 
 class TSDetail extends connect(store)(LitElement) {
-        render() {
-                let {
-                    _data,
-                    _lastVisitedListPage,
-                    _showOffline
-                } = this;
-                // Don't render if there is no item.
-                if (!_data) {
-                    return;
-                }
+  render() {
+    let {
+        _data,
+        _lastVisitedListPage,
+        _showOffline
+    } = this;
+    // Don't render if there is no item.
+    //if (!_data) {
+    //  return;
+    //}
 
-                const item = _data;
-                const title = item.title;
-                const author = 'John Teague';
-                const date = formatDistance(new Date(item.timestamp), new Date());
-                const thumbnail = item.photo;
-                //const slug = thumbnail.slug;
-                const categories = item.category || [];
+    const item = _data;
+    const title = item.title;
+    const author = 'John Teague';
+    const date = formatDistance(new Date(item.timestamp), new Date());
+    const thumbnail = item.photo;
+    //const slug = thumbnail.slug;
+    const categories = item.category || [];
 
-                // @ts-ignore
-                updateMetadata({
-                    title: `${title} - Articles`,
-                    description: item.excerpt,
-                    image: thumbnail
-                });
+    // @ts-ignore
+    updateMetadata({
+      title: `${title} - Articles`,
+      description: item.excerpt,
+      image: thumbnail
+    });
 
-                return html `
-      ${SharedStyles}
-      <style>
+  return html `
+    ${SharedStyles}
+    <style>
         :host {
           display: block;
           padding: 24px 16px;
@@ -232,7 +232,6 @@ class TSDetail extends connect(store)(LitElement) {
 
   static get properties() {
     return {
-      _item: { type: Object },
       _data: { type: Object },
       _lastVisitedListPage: { type: Boolean },
       _showOffline:{ type: Boolean }

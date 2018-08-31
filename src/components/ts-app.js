@@ -18,31 +18,30 @@ import './snack-bar.js';
 import { store } from '../store.js';
 
 import {
-    navigate,
-    updateOffline,
-    updateDrawerState,
-    updateLayout
+  navigate,
+  updateOffline,
+  updateDrawerState,
+  updateLayout
 } from '../actions/app.js';
 
 class TSApp extends connect(store)(LitElement) {
-    render() {
-        let {
-            appTitle,
-            _page,
-            _lazyResourcesLoaded,
-            _lastVisitedListPage,
-            _query,
-            _articleId,
-            _drawerOpened,
-            _snackbarOpened,
-            _offline
-        } = this;
+  render() {
+    let {
+      appTitle,
+      _page,
+      _lastVisitedListPage,
+      _query,
+      _articleId,
+      _drawerOpened,
+      _snackbarOpened,
+      _offline
+    } = this;
 
-        const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog`) : `/article/${ _articleId }`;
-        const query = _page === 'blog' ? '' : _query;
-        // Anything that's related to rendering should be done in here.
+    const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog`) : `/article/${ _articleId }`;
+    const query = _page === 'blog' ? '' : _query;
+    // Anything that's related to rendering should be done in here.
 
-        return html `
+    return html `
     <style>
       :host {
         display: block;
@@ -292,9 +291,9 @@ class TSApp extends connect(store)(LitElement) {
     <app-header-layout id="ts-appheaderlayout" has-scrolling-region>
       <app-header slot="header" condenses reveals effects="waterfall">
         <app-toolbar class="masthead">
-          <button class="menu-btn" title="Menu" @on-click="${_ => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
+          <button class="menu-btn" title="Menu" @click="${_ => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
           <div class="ts-title" main-title>${appTitle}
-            <span class="paper-font-body2">by PRESS MEDICS</span>
+            <span class="paper-font-body2">by PRESSMEDICS</span>
           </div>
           <div class="cta-header toolbar-list">
             <a class="button button-primary-cta" data-customizer="global-nav-trial-button" href="">Login</a>
@@ -313,7 +312,7 @@ class TSApp extends connect(store)(LitElement) {
 
     <!-- Drawer content -->
     <app-drawer id="drawer" .opened="${_drawerOpened}"
-        @on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
+        @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
       <app-toolbar>HyperPress <span class="sub-tagline paper-font-body2"> by PRESS MEDICS</span></app-toolbar>
       <nav class="drawer-list">
         <a ?selected="${_page === 'home'}" href="/">Home</a>
@@ -343,7 +342,7 @@ class TSApp extends connect(store)(LitElement) {
       <ts-security class="page" ?active="${_page === 'security'}"></ts-security>
       <ts-blog class="page" ?active="${_page === 'blog'}"></ts-blog>
       <ts-article class="page" ?active="${_page === 'article'}"></ts-article>
-      <ts-view404 class="page" ?active="${_page === 'view404'}"></ts-view404>
+      <ts-view404 class="page" ?active="${_page === '404'}"></ts-view404>
     </main>
       
     <footer>
@@ -355,59 +354,58 @@ class TSApp extends connect(store)(LitElement) {
     }
 
     static get properties() {
-        return {
-            appTitle: { type: String },
-            _page: { type: String },
-            _lastVisitedListPage: { type: Boolean },
-            _drawerOpened: { type: Boolean },
-            _snackbarOpened: { type: Boolean },
-            _offline: { type: Boolean },
-            _data: { type: Object },
-            _item: { type: Object },
-            _articleId: { type: String }
-        };
+      return {
+        appTitle: { type: String },
+        _page: { type: String },
+        _lastVisitedListPage: { type: Boolean },
+        _drawerOpened: { type: Boolean },
+        _snackbarOpened: { type: Boolean },
+        _offline: { type: Boolean },
+        _data: { type: Object },
+        _item: { type: Object },
+        _articleId: { type: String }
+      };
     }
 
     constructor() {
-        super();
-        // To force all event listeners for gestures to be passive.
-        // See https://www.polymer-project.org/2.0/docs/devguide/gesture-events#use-passive-gesture-listeners
-        setPassiveTouchGestures(true);
+      super();
+      // To force all event listeners for gestures to be passive.
+      // See https://www.polymer-project.org/2.0/docs/devguide/gesture-events#use-passive-gesture-listeners
+      setPassiveTouchGestures(true);
     }
 
     firstRendered() {
-        installRouter((location) => store.dispatch(navigate(location)));
-        installOfflineWatcher((offline) => store.dispatch(updateOffline(offline)));
-        installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`,
-            (matches) => store.dispatch(updateLayout(matches)));
-        this.removeAttribute('unresolved');
+      installRouter((location) => store.dispatch(navigate(location)));
+      installOfflineWatcher((offline) => store.dispatch(updateOffline(offline)));
+      installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`,
+          (matches) => store.dispatch(updateLayout(matches)));
+      this.removeAttribute('unresolved');
     }
 
     update(changedProps) {
-        super.update(changedProps);
-        if (changedProps.has('_page')) {
-            const pageTitle = this.appTitle + ' - ' + this._page;
-            // @ts-ignore
-            updateMetadata({
-                title: pageTitle,
-                description: pageTitle
-                    // This object also takes an image property, that points to an img src.
-            });
-            window.scrollTo(0, 0);
-        }
+      super.update(changedProps);
+      if (changedProps.has('_page')) {
+        const pageTitle = this.appTitle + ' - ' + this._page;
+        // @ts-ignore
+        updateMetadata({
+          title: pageTitle,
+          description: pageTitle
+              // This object also takes an image property, that points to an img src.
+        });
+        window.scrollTo(0, 0);
+      }
     }
 
     _stateChanged(state) {
-        this._page = state.app.page;
-        this._lazyResourcesLoaded = state.app.lazyResourcesLoaded;
-        this._lastVisitedListPage = state.app.lastVisitedListPage;
-        this._offline = state.app.offline;
-        this._snackbarOpened = state.app.snackbarOpened;
-        this._drawerOpened = state.app.drawerOpened;
-        this._data = state.article && state.article.data;
-        this._item = state.article && state.article.item;
-        this._query = state.articles && state.articles.query;
-        this._articleId = state.article && state.article.id;
+      this._page = state.app.page;
+      this._lastVisitedListPage = state.app.lastVisitedListPage;
+      this._offline = state.app.offline;
+      this._snackbarOpened = state.app.snackbarOpened;
+      this._drawerOpened = state.app.drawerOpened;
+      this._data = state.article && state.article.data;
+      this._item = state.article && state.article.item;
+      this._query = state.articles && state.articles.query;
+      this._articleId = state.article && state.article.id;
     }
 }
 
