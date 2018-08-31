@@ -23,7 +23,7 @@
     "@material/elevation": "^0.39.0",
     "@material/mwc-button": "^0.1.2",
     "@material/mwc-checkbox": "^0.1.2",
-    "@material/radio": "^0.39.0",
+    "@material/radio": "^0.38.1",
     "@material/typography": "^0.39.0",
     "@mdi/font": "^2.6.95",
     "@polymer/app-layout": "^3.0.0-pre.25",
