@@ -13,7 +13,7 @@ import {
   REQUEST_ARTICLES, RECEIVE_ARTICLES, FAIL_ARTICLES,
 } from '../actions/articles.js';
 
-export const articles = (state = {query: null}, action) => {
+export const articles = (state = { query: null }, action) => {
   switch (action.type) {
     case REQUEST_ARTICLES:
       return {
@@ -27,9 +27,9 @@ export const articles = (state = {query: null}, action) => {
       return {
         ...state,
         data: action.data.reduce((obj, item) => {
-            obj[item.id] = item;
-            return obj;
-          }, {}),
+          obj[item.id] = item;
+          return obj;
+        }, {}),
         failure: false,
         isFetching: false
       };
@@ -50,6 +50,6 @@ export const itemsSelector = state => state.articles && state.articles.data;
 export const itemListSelector = createSelector(
   itemsSelector,
   (data) => {
-    return data ? Object.keys(data).map(key => data[key]) : [{},{}];
+    return data ? Object.keys(data).map(key => data[key]) : [{}, {}];
   }
 );

@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html } from '@polymer/lit-element';
 
 export const SharedStyles = html `
  
@@ -497,7 +497,7 @@ export const SharedStyles = html `
     background: #f7f7f7;
     display: flex;
     flex-direction: column;
-    padding: 0 24px 0 34px; }
+    padding: 0 24px 0 44px; }
 
   .content {
     flex: 1;

@@ -8,10 +8,10 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-import { LitElement, html } from '@polymer/lit-element';
-
-import { repeat } from 'lit-html/directives/repeat.js';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { html } from '@polymer/lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { repeat } from 'lit-html/lib/repeat.js';
+import { unsafeHTML } from 'lit-html/lib/unsafe-html.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { formatDistance } from 'date-fns/esm';
@@ -30,39 +30,34 @@ import { article, articleSelector } from '../reducers/article.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
-    article
+  article
 });
 
-class TSDetail extends connect(store)(LitElement) {
-  render() {
-    let {
-        _data,
-        _lastVisitedListPage,
-        _showOffline
-    } = this;
+class TSDetail extends connect(store)(PageViewElement) {
+  render({ _data, _lastVisitedListPage, _showOffline }) {
     // Don't render if there is no item.
-    //if (!_data) {
-    //  return;
-    //}
+    if (!_data) {
+      return;
+    }
 
-    const item = _data;
-    const title = item.title;
+    const info = _data;
+    const title = info.title;
     const author = 'John Teague';
-    const date = formatDistance(new Date(item.timestamp), new Date());
-    const thumbnail = item.photo;
+    const date = formatDistance(new Date(info.timestamp), new Date());
+    const thumbnail = info.photo;
     //const slug = thumbnail.slug;
-    const categories = item.category || [];
+    const categories = info.category || [];
 
     // @ts-ignore
     updateMetadata({
       title: `${title} - Articles`,
-      description: item.excerpt,
-      image: thumbnail
+      description: info.excerpt,
+      image: info.thumbnail
     });
 
-  return html `
-    ${SharedStyles}
-    <style>
+    return html`
+      ${SharedStyles}
+      <style>
         :host {
           display: block;
           padding: 24px 16px;
@@ -76,7 +71,7 @@ class TSDetail extends connect(store)(LitElement) {
           box-sizing: border-box;
           font-weight: 300;
         }
-        .item {
+        .info {
           display: flex;
           padding-bottom: 16px;
           border-bottom: 1px solid #c5c5c5;
@@ -96,7 +91,7 @@ class TSDetail extends connect(store)(LitElement) {
           margin: 0 auto;
           
         }
-        .item-desc {
+        .info-desc {
           display: flex;
           flex-direction: column;
           flex: 1;
@@ -112,7 +107,7 @@ class TSDetail extends connect(store)(LitElement) {
           font-weight: 300;
           line-height: 1.2;
         }
-        .item-item {
+        .info-item {
           padding-top: 8px;
         }
         .desc {
@@ -178,10 +173,10 @@ class TSDetail extends connect(store)(LitElement) {
           section {
             margin: 0 auto;
           }
-          .item {
+          .info {
             padding-bottom: 24px;
           }
-          .item-desc {
+          .info-desc {
             margin-left: 24px;
           }
           .title {
@@ -205,19 +200,19 @@ class TSDetail extends connect(store)(LitElement) {
           }
         }
       </style>
-      <section ?hidden="${_showOffline}">
-        <div class="item">
+      <section hidden?="${_showOffline}">
+        <div class="info">
           <div class="cover" hero>
-            <img .src="${thumbnail}" .alt="${title}" />
+            <img src="${thumbnail}" alt="${title}" />
             <h2 class="title">${title}</h2>
-            <div class="item-item" .hidden="${!author}">By ${author} - Published: ${date} agos.</div>
+            <div class="info-item" hidden?="${!author}">By ${author} - Published: ${date} agos.</div>
           </div>
         </div>
         <div class="desc">
           <h3>Description</h3>
-          ${unsafeHTML(item.body || item.subtitle || 'None')}
+          ${unsafeHTML(info.body || info.subtitle || 'None')}
         </div>
-        <div class="desc" .hidden?="${categories.length === 0}">
+        <div class="desc" hidden?="${categories.length === 0}">
           <h3>Categories</h3>
           <ul>
             ${repeat(categories, (item) => html`
@@ -226,21 +221,20 @@ class TSDetail extends connect(store)(LitElement) {
           </ul>
         </div>
       </section>
-      <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
+      <ts-offline hidden?="${!_showOffline}" on-refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
     `;
   }
 
-  static get properties() {
-    return {
-      _data: { type: Object },
-      _lastVisitedListPage: { type: Boolean },
-      _showOffline:{ type: Boolean }
-    }
-  }
+  static get properties() { return {
+    _item: Object,
+    _data: Object,
+    _lastVisitedListPage: Boolean,
+    _showOffline: Boolean
+  }}
 
   // This is called every time something is updated in the store.
   _stateChanged(state) {
-    this._data = articleSelector(state);
+    this._item = articleSelector(state);
     this._lastVisitedListPage = state.app.lastVisitedListPage;
     this._showOffline = state.app.offline && state.article.failure;
   }

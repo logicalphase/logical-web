@@ -1,12 +1,11 @@
-import { PageViewElement } from './page-view-element.js';
-import { html } from 'lit-html';
-import { SharedStyles } from './shared-styles.js';
+import { LitElement, html } from '@polymer/lit-element';
+import { SharedStyles } from './shared-styles';
 
-class TSHome extends PageViewElement {
-  _render(props) {
-    return html`
+class TSHome extends LitElement {
+    render() {
+        return html `
 
-    ${ SharedStyles }
+    ${ SharedStyles}
     <style>
     :host {
         display: block;
@@ -137,6 +136,6 @@ class TSHome extends PageViewElement {
     </section>
   </article>
   `;
-  }
+    }
 }
 window.customElements.define('ts-home', TSHome);
