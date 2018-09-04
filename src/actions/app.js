@@ -23,14 +23,14 @@ export const navigate = (location) => (dispatch) => {
   const parts = pathname.slice(1).split('/');
   const page = parts[0] || 'home';
   // post id is in the path: /detail/{postId}
-  const articleId = parts[1];
+  const articleSlug = parts[1];
 
   let query = 'Article';
 
-  dispatch(loadPage(page, query, articleId));
+  dispatch(loadPage(page, query, articleSlug));
 };
 
-const loadPage = (page, query, articleId) => async (dispatch, getState) => {
+const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
   let module;
   switch (page) {
     case 'home':
@@ -41,7 +41,7 @@ const loadPage = (page, query, articleId) => async (dispatch, getState) => {
       break;
     case 'article':
       module = await import('../components/ts-article.js');
-      await dispatch(module.fetchArticle(articleId));
+      await dispatch(module.fetchArticle(articleSlug));
       if (isFetchArticleFailed(getState().article)) {
         page = '404';
       }
@@ -94,7 +94,7 @@ const loadPage = (page, query, articleId) => async (dispatch, getState) => {
 export const refreshPage = () => (dispatch, getState) => {
   const state = getState();
   // load page using the current state
-  dispatch(loadPage(state.app.page, state.articles && state.articles.query, state.article && state.article.id));
+  dispatch(loadPage(state.app.page, state.articles && state.articles.query, state.article && state.article.slug));
 }
 
 const updatePage = (page) => {

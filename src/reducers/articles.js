@@ -26,8 +26,8 @@ export const articles = (state = { query: null }, action) => {
     case RECEIVE_ARTICLES:
       return {
         ...state,
-        data: action.data.reduce((obj, item) => {
-          obj[item.id] = item;
+        data: action.data.reduce((obj, data) => {
+          obj[data.slug] = data;
           return obj;
         }, {}),
         failure: false,

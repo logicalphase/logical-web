@@ -67,7 +67,7 @@ class TSDetail extends connect(store)(LitElement) {
           display: block;
           padding: 24px 16px;
         }
-        h2 {
+        h1, h2 {
           font-weight: 300;
           margin-bottom: 20px;
         }
@@ -209,15 +209,14 @@ class TSDetail extends connect(store)(LitElement) {
         <div class="item">
           <div class="cover" hero>
             <img .src="${thumbnail}" .alt="${title}" />
-            <h2 class="title">${title}</h2>
-            <div class="item-item" .hidden="${!author}">By ${author} - Published: ${date} agos.</div>
+            <h1 class="title">${title}</h1>
+            <div class="item-item" ?hidden="${!author}">By ${author} - Published: ${date} agos.</div>
           </div>
         </div>
         <div class="desc">
-          <h3>Description</h3>
           ${unsafeHTML(item.body || item.subtitle || 'None')}
         </div>
-        <div class="desc" .hidden?="${categories.length === 0}">
+        <div class="desc" ?hidden="${categories.length === 0}">
           <h3>Categories</h3>
           <ul>
             ${repeat(categories, (item) => html`
@@ -232,7 +231,7 @@ class TSDetail extends connect(store)(LitElement) {
 
   static get properties() {
     return {
-      _data: { type: Object },
+      _data: { type: Array },
       _lastVisitedListPage: { type: Boolean },
       _showOffline:{ type: Boolean }
     }

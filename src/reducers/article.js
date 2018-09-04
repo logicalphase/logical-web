@@ -19,7 +19,7 @@ export const article = (state = {}, action) => {
     case REQUEST_ARTICLE:
       return {
         ...state,
-        id: action.id,
+        slug: action.slug,
         failure: false,
         isFetching: true
       };
@@ -41,14 +41,14 @@ export const article = (state = {}, action) => {
   }
 }
 
-const idSelector = state => state.article.id;
+const idSelector = state => state.article.slug;
 const itemSelector = state => state.article.data;
 
 export const articleSelector = createSelector(
   idSelector,
   itemsSelector,
   itemSelector,
-  (id, data, item) => {
-    return data && data[id] || data || item;
+  (slug, data, item) => {
+    return data && data[slug] || data || item;
   }
 );

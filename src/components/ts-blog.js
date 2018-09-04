@@ -82,7 +82,6 @@ class TSBlog extends connect(store)(LitElement) {
       padding: 0px;
     }
     .social-icon {
-      margin-left:7px;
       fill:  #888;
     }
     .gplus-icon:hover {
@@ -352,7 +351,7 @@ class TSBlog extends connect(store)(LitElement) {
                 ${repeat(_data, (item) => html`
                   <div class="ts-blog-list-item">
                     <div class="flex-hover-card">
-                      <a id="${item.id}" href="/article/${item.id}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
+                      <a id="${item.id}" href="/article/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
                         <div class="category-vertical-lr">${item.category}</div>
                         <div class="inner">
                           <h3 class="paper-font-headline">${item.title}</h3>
@@ -360,7 +359,7 @@ class TSBlog extends connect(store)(LitElement) {
                           <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Published&nbsp; ${formatDistance(new Date(item.timestamp), new Date())} ago.</p>
                         </div>
                       </a>
-                      <div class="ts-read-more"><a id="${item.id}" href="/${item.id}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
+                      <div class="ts-read-more"><a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
                         <div class="social_container">
                           <div class="social_share">
                             <div class="slide-icons slide-left">
@@ -407,7 +406,7 @@ class TSBlog extends connect(store)(LitElement) {
       _query: { type: String },
       _data: { type: Object },
       _showOffline: { type: Boolean }
-    }
+    };
   }
 
   // This is called every time something is updated in the store.

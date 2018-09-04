@@ -31,13 +31,13 @@ class TSApp extends connect(store)(LitElement) {
       _page,
       _lastVisitedListPage,
       _query,
-      _articleId,
+      _articleSlug,
       _drawerOpened,
       _snackbarOpened,
       _offline
     } = this;
 
-    const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog`) : `/article/${ _articleId }`;
+    const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog`) : `/article/${ _articleSlug }`;
     const query = _page === 'blog' ? '' : _query;
     // Anything that's related to rendering should be done in here.
 
@@ -363,7 +363,7 @@ class TSApp extends connect(store)(LitElement) {
         _offline: { type: Boolean },
         _data: { type: Object },
         _item: { type: Object },
-        _articleId: { type: String }
+        _articleSlug: { type: String }
       };
     }
 
@@ -405,7 +405,7 @@ class TSApp extends connect(store)(LitElement) {
       this._data = state.article && state.article.data;
       this._item = state.article && state.article.item;
       this._query = state.articles && state.articles.query;
-      this._articleId = state.article && state.article.id;
+      this._articleSlug = state.article && state.article.slug;
     }
 }
 

@@ -12,49 +12,49 @@ export const REQUEST_ARTICLE = 'REQUEST_ARTICLE';
 export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
 export const FAIL_ARTICLE = 'FAIL_ARTICLE';
 
-export const fetchArticle = (id) => (dispatch, getState) => {
-  dispatch(requestArticle(id));
+export const fetchArticle = (slug) => (dispatch, getState) => {
+  dispatch(requestArticle(slug));
   const state = getState();
-  const article = state.articles && state.articles.data && state.articles.data[id];
+  const article = state.articles && state.articles.data && state.articles.data[slug];
   if (article) {
     // article found in state.articles.items or state.favorites.items
-    dispatch(receiveArticle(id));
+    dispatch(receiveArticle(slug));
     // let the calling code know there's nothing to wait for.
     return Promise.resolve();
   } else {
     // fetch article data given the article id.
     // also return a promise to wait for.
-    return fetch(`http://localhost:8080/api/content?type=Article&id=${id}`)
+    return fetch(`http://localhost:8080/api/content?slug=${slug}`)
       .then(res => res.json())
       .then(data => {
         if (data.error) {
-          dispatch(failArticle(id));
+          dispatch(failArticle(slug));
         } else {
-          dispatch(receiveArticle(id, data.data[0]));
+          dispatch(receiveArticle(slug, data.data[0]));
         }
       })
-      .catch((e) => dispatch(failArticle(id)));
+      .catch((e) => dispatch(failArticle(slug)));
   }
 };
 
-const requestArticle = (id) => {
+const requestArticle = (slug) => {
   return {
     type: REQUEST_ARTICLE,
-    id
+    slug
   };
 };
 
-const receiveArticle = (id, data) => {
+const receiveArticle = (slug, data) => {
   return {
     type: RECEIVE_ARTICLE,
-    id,
+    slug,
     data
   };
 };
 
-const failArticle = (id) => {
+const failArticle = (slug) => {
   return {
     type: FAIL_ARTICLE,
-    id
+    slug
   };
 };
