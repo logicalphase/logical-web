@@ -2,15 +2,28 @@
 [![CircleCI](https://circleci.com/gh/hyperpress/pressmedics.svg?style=svg&circle-token=a56a8a61431cb26b7f1a29d42b44f776e48620fe)](https://circleci.com/gh/hyperpress/pressmedics)
 
 
-# pressmedics.com site built with Polymer 3 and lit-html
+# HyperPres by pressmedics.com built with Polymer 3, lit-element, and lit-html
 
-- all the PWA goodness (manifest, service worker)
-- a responsive layout
-- application theming
-- example of using Redux for state management
-- offline UI
-- simple routing solution
-- fast time-to-interactive and first-paint through the PRPL pattern
-- easy deployment to prpl-server or static hosting
-- unit and integrating testing starting points
-- documentation about other advanced patterns.
+IMPORTANT: This project makes use of bleeding edge technologies, many of which are in early stages of development, subject to significant breaking changes. It should not considered safe for production use. 
+
+- PWA goodness (manifest, service worker)
+- Based on Polymer 3 / Lit-Element PWA Starter Kit and Books example by @frankiefu, and lit-html by @justin and contributors
+- Responsive layout
+- Application theming
+- Redux for state management
+- Offline UI
+- Redux routing solution
+- Blog list and article views based on Ponzu or WordPress REST API
+- Fast time-to-interactive and first-paint through the PRPL pattern
+- Easy deployment to prpl-server or static hosting
+- Unit and integrating testing starting points
+
+# TODO List
+
+- Add favorites custom favorites feature
+- Add Chrome microphone search feature
+- Clean up element and shared CSS
+- Add authentication via Firebase
+- Add push notification via Firebase
+- Add contact form
+- Add services order form
