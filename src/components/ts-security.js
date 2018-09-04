@@ -1,9 +1,8 @@
-import { PageViewElement } from './page-view-element';
 import { LitElement, html } from '@polymer/lit-element';
 import { SharedStyles } from './shared-styles';
-class TSSecurity extends PageViewElement {
-    render(props) {
-        return html `
+class TSSecurity extends LitElement {
+  render(props) {
+    return html `
       ${ SharedStyles }
       <style>
       :host {

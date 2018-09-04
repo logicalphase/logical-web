@@ -122,14 +122,18 @@ export const showSnackbar = () => (dispatch) => {
 };
 
 export const updateOffline = (offline) => (dispatch, getState) => {
-  // Show the snackbar, unless this is the first load of the page.
-  if (getState().app.offline !== undefined) {
-    dispatch(showSnackbar());
-  }
+  const prev = getState().app.offline;
   dispatch({
     type: UPDATE_OFFLINE,
     offline
   });
+  if (prev !== undefined) {
+    dispatch(showSnackbar());
+  }
+  //  automatically refresh when you come back online (offline was true and now is false)
+  if (prev === true && offline === false) {
+    dispatch(refreshPage());
+  }
 };
 
 export const updateLayout = (wide) => (dispatch, getState) => {

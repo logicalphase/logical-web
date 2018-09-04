@@ -2,8 +2,8 @@ import { LitElement, html } from '@polymer/lit-element';
 import { SharedStyles } from './shared-styles.js';
 
 class TSView404 extends LitElement {
-    render(props) {
-        return html `
+  render(props) {
+    return html `
       ${SharedStyles}
       <style>
       :host {
@@ -18,9 +18,9 @@ class TSView404 extends LitElement {
       <section>
         <h2 class="title">Oops! You hit a 404</h2>
         <p>The page you're looking for doesn't seem to exist. Head back <a href="/">home</a> and try again?</p>
-      </section>
-    `;
-    }
+    </section>
+  `;
+  }
 }
 
 window.customElements.define('ts-view404', TSView404);

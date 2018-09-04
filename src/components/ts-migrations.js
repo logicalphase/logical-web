@@ -1,9 +1,8 @@
-import { PageViewElement } from './page-view-element';
 import { LitElement, html } from '@polymer/lit-element';
 import { SharedStyles } from './shared-styles';
-class TSMigrations extends PageViewElement {
-    render(props) {
-        return html `
+class TSMigrations extends LitElement {
+  render(props) {
+    return html `
       ${ SharedStyles }
       <style>
       :host {
@@ -187,6 +186,6 @@ class TSMigrations extends PageViewElement {
         </div>
       </article>
     `;
-    }
+  }
 }
 window.customElements.define('ts-migrations', TSMigrations);

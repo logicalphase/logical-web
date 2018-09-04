@@ -26,7 +26,7 @@ import {
 
 class TSApp extends connect(store)(LitElement) {
   render() {
-    let {
+    const {
       appTitle,
       _page,
       _lastVisitedListPage,
@@ -155,6 +155,13 @@ class TSApp extends connect(store)(LitElement) {
       .button-secondary-cta, .button-primary-cta {
         line-height: 30px;
         max-height: 30px; }
+
+      .chip-button {
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        border: 1px solid #a434b7 !important;
+      }
 
       .button.button-primary-cta {
         background: transparent;
@@ -296,7 +303,7 @@ class TSApp extends connect(store)(LitElement) {
             <span class="paper-font-body2">by PRESSMEDICS</span>
           </div>
           <div class="cta-header toolbar-list">
-            <a class="button button-primary-cta" data-customizer="global-nav-trial-button" href="">Login</a>
+            <a class="button button-primary-cta chip-button" data-customizer="global-nav-trial-button" href="">Login</a>
           </div>
         </app-toolbar>
         <app-toolbar class="desktop-menu toolbar-list" sticky>

@@ -9,7 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 import { LitElement, html } from '@polymer/lit-element';
-
 import { repeat } from 'lit-html/directives/repeat.js';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
@@ -35,11 +34,12 @@ store.addReducers({
 
 class TSDetail extends connect(store)(LitElement) {
   render() {
-    let {
-        _data,
-        _lastVisitedListPage,
-        _showOffline
+    const {
+      _data,
+      _lastVisitedListPage,
+      _showOffline
     } = this;
+    
     // Don't render if there is no item.
     //if (!_data) {
     //  return;
@@ -50,7 +50,7 @@ class TSDetail extends connect(store)(LitElement) {
     const author = 'John Teague';
     const date = formatDistance(new Date(item.timestamp), new Date());
     const thumbnail = item.photo;
-    //const slug = thumbnail.slug;
+    const slug = item.slug;
     const categories = item.category || [];
 
     // @ts-ignore

@@ -9,7 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 import { LitElement, html } from '@polymer/lit-element';
-
 import { SharedStyles } from './shared-styles.js';
 
 class TSOffline extends LitElement {
@@ -24,7 +23,7 @@ class TSOffline extends LitElement {
         }
       </style>
       <section>
-        <h3>Oops! You are offline and the request resource is unavailable.</h3>
+        <h3>Uh oh! You are offline and the request resource is unavailable.</h3>
         <button class="article-button" @click="${() => this._refresh()}">Try Again...</button>
       </section>
     `;
