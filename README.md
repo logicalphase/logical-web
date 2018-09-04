@@ -2,7 +2,7 @@
 [![CircleCI](https://circleci.com/gh/hyperpress/pressmedics.svg?style=svg&circle-token=a56a8a61431cb26b7f1a29d42b44f776e48620fe)](https://circleci.com/gh/hyperpress/pressmedics)
 
 
-# HyperPres by pressmedics.com built with Polymer 3, lit-element, and lit-html
+# pressmedics.com built with Polymer 3, lit-element, and lit-html
 
 IMPORTANT: This project makes use of bleeding edge technologies, many of which are in early stages of development, subject to significant breaking changes. It should not considered safe for production use. 
 
