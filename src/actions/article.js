@@ -25,6 +25,7 @@ export const fetchArticle = (slug) => (dispatch, getState) => {
     // fetch article data given the article id.
     // also return a promise to wait for.
     return fetch(`http://localhost:8080/api/content?slug=${slug}`)
+    
       .then(res => res.json())
       .then(data => {
         if (data.error) {

@@ -35,15 +35,16 @@ store.addReducers({
 class TSDetail extends connect(store)(LitElement) {
   render() {
     const {
+      isFetching,
       _data,
       _lastVisitedListPage,
       _showOffline
     } = this;
     
     // Don't render if there is no item.
-    //if (!_data) {
-    //  return;
-    //}
+    if (!_data) {
+      return html `Loading. . .`;
+    }
 
     const item = _data;
     const title = item.title;
@@ -231,10 +232,11 @@ class TSDetail extends connect(store)(LitElement) {
 
   static get properties() {
     return {
+      isFetching: Boolean,
       _data: { type: Array },
       _lastVisitedListPage: { type: Boolean },
       _showOffline:{ type: Boolean }
-    }
+    };
   }
 
   // This is called every time something is updated in the store.
