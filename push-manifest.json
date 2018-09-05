@@ -27,12 +27,12 @@
       "weight": 1
     }
   },
-  "/view2": {
+  "/blog": {
     "src/components/ts-app.js": {
       "type": "script",
       "weight": 1
     },
-    "src/components/ts-view2.js": {
+    "src/components/ts-blog.js": {
       "type": "script",
       "weight": 1
     },
@@ -41,12 +41,12 @@
       "weight": 1
     }
   },
-  "/view3": {
+  "/article": {
     "src/components/ts-app.js": {
       "type": "script",
       "weight": 1
     },
-    "src/components/ts-view3.js": {
+    "src/components/ts-article.js": {
       "type": "script",
       "weight": 1
     },
