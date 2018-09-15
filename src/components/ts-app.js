@@ -394,7 +394,7 @@ class TSApp extends connect(store)(LitElement) {
       }
     }
 
-    firstRendered() {
+    firstUpdated() {
       installRouter((location) => store.dispatch(navigate(location)));
       installOfflineWatcher((offline) => store.dispatch(updateOffline(offline)));
       installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`,
