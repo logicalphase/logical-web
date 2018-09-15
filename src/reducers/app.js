@@ -1,12 +1,19 @@
-import { UPDATE_PAGE, UPDATE_OFFLINE,
+import { UPDATE_PAGE, RECEIVE_LAZY_RESOURCES, UPDATE_OFFLINE,
          OPEN_SNACKBAR, CLOSE_SNACKBAR, UPDATE_DRAWER_STATE } from '../actions/app.js';
 
 const app = (state = {drawerOpened: false}, action) => {
   switch (action.type) {
     case UPDATE_PAGE:
+      const p = action.page;
       return {
         ...state,
-        page: action.page
+        page: p,
+        lastVisitedListPage: p === 'blog' ? p : state.lastVisitedListPage
+      };
+    case RECEIVE_LAZY_RESOURCES:
+      return {
+        ...state,
+        lazyResourcesLoaded: true
       };
     case UPDATE_OFFLINE:
       return {

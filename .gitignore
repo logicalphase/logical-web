@@ -2,5 +2,6 @@ build/
 node_modules/
 test/integration/screenshots-current
 yarn.lock
-*.pem
+cert.pem
+key.pem
 .DS_Store

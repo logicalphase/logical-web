@@ -1,10 +1,13 @@
 import { LitElement, html } from '@polymer/lit-element';
 
-import '@polymer/app-layout/app-drawer/app-drawer';
+//import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
-import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
+
+import './ts-home.js';
+import './snack-bar.js';
+
 import { connect } from 'pwa-helpers/connect-mixin';
 import { installRouter } from 'pwa-helpers/router';
 import { installOfflineWatcher } from 'pwa-helpers/network';
@@ -12,14 +15,13 @@ import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { updateMetadata } from 'pwa-helpers/metadata';
 import { menuIcon } from './ts-icons.js';
 
-import './ts-home.js';
-
-import './snack-bar.js';
 import { store } from '../store.js';
 
 import {
   navigate,
+  updateLocationURL,
   updateOffline,
+  showSnackbar,
   updateDrawerState,
   updateLayout
 } from '../actions/app.js';
@@ -29,12 +31,13 @@ class TSApp extends connect(store)(LitElement) {
     const {
       appTitle,
       _page,
+      _lazyResourcesLoaded,
       _lastVisitedListPage,
       _query,
+      _offline,
       _articleSlug,
       _drawerOpened,
-      _snackbarOpened,
-      _offline
+      _snackbarOpened
     } = this;
 
     const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog`) : `/article/${ _articleSlug }`;
@@ -356,7 +359,8 @@ class TSApp extends connect(store)(LitElement) {
       <p>Made with \u2764\uFE0F by Pressmedics. Powered by Google</p>
     </footer>
 
-    <snack-bar ?active="${_snackbarOpened}">Site is currently ${_offline ? 'offline' : 'online'}.</snack-bar>
+    <snack-bar ?active="${_snackbarOpened}">
+        You are now ${_offline ? 'offline' : 'online'}.</snack-bar>
     `;
     }
 
@@ -364,29 +368,16 @@ class TSApp extends connect(store)(LitElement) {
       return {
         appTitle: { type: String },
         _page: { type: String },
+        _lazyResourcesLoaded: Boolean,
         _lastVisitedListPage: { type: Boolean },
+        _offline: { type: Boolean },
         _drawerOpened: { type: Boolean },
         _snackbarOpened: { type: Boolean },
-        _offline: { type: Boolean },
+        _updateOffline: { type: Boolean },
         _data: { type: Object },
         _item: { type: Object },
         _articleSlug: { type: String }
       };
-    }
-
-    constructor() {
-      super();
-      // To force all event listeners for gestures to be passive.
-      // See https://www.polymer-project.org/2.0/docs/devguide/gesture-events#use-passive-gesture-listeners
-      setPassiveTouchGestures(true);
-    }
-
-    firstRendered() {
-      installRouter((location) => store.dispatch(navigate(location)));
-      installOfflineWatcher((offline) => store.dispatch(updateOffline(offline)));
-      installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`,
-          (matches) => store.dispatch(updateLayout(matches)));
-      this.removeAttribute('unresolved');
     }
 
     update(changedProps) {
@@ -403,8 +394,17 @@ class TSApp extends connect(store)(LitElement) {
       }
     }
 
+    firstUpdated() {
+      installRouter((location) => store.dispatch(navigate(location)));
+      installOfflineWatcher((offline) => store.dispatch(updateOffline(offline)));
+      installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`,
+          (matches) => store.dispatch(updateLayout(matches)));
+      this.removeAttribute('unresolved');
+    }
+
     _stateChanged(state) {
       this._page = state.app.page;
+      this._lazyResourcesLoaded = state.app.lazyResourcesLoaded;
       this._lastVisitedListPage = state.app.lastVisitedListPage;
       this._offline = state.app.offline;
       this._snackbarOpened = state.app.snackbarOpened;

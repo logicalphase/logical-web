@@ -4,11 +4,17 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { formatDistance } from 'date-fns/esm';
-//import { Calendar } from './ts-icons.js';
+import {
+  GooglePlus,
+  Twitter,
+  Facebook,
+  Linkedin
+} from './ts-icons.js';
 
 import { SharedStyles } from './shared-styles.js';
 
 import './ts-offline.js';
+import './ts-image.js';
 
 // This element is connected to the redux store.
 import { store } from '../store.js';
@@ -46,8 +52,8 @@ class TSDetail extends connect(store)(LitElement) {
 
     // @ts-ignore
     updateMetadata({
-      title: `${title} - Articles`,
-      description: item.excerpt,
+      title: `${title} - HyperPress Blog Article`,
+      description: title,
       image: thumbnail
     });
 
@@ -58,9 +64,18 @@ class TSDetail extends connect(store)(LitElement) {
           display: block;
           padding: 24px 16px;
         }
+
         h1, h2 {
           font-weight: 300;
           margin-bottom: 20px;
+        }
+
+        h3 {
+          margin: 24px 0;
+        }
+
+        strong {
+          font-weight: 500;
         }
         section {
           max-width: 748px;
@@ -78,14 +93,7 @@ class TSDetail extends connect(store)(LitElement) {
 
         .cover > article-image {
           display: block;
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          width: 100%;
           margin: 0 auto;
-          
         }
         .item-desc {
           display: flex;
@@ -99,30 +107,39 @@ class TSDetail extends connect(store)(LitElement) {
         }
         .title {
           margin: 14px 0 4px;
-          font-size: 24px;
+          font-size: 1.35rem;
           font-weight: 300;
           line-height: 1.2;
         }
         .item-item {
           padding-top: 8px;
+          padding-bottom: 14px;
         }
         .desc {
           padding: 8px 0;
-          font-size: 15px;
-          line-height: 1.8;
         }
         .desc > h3 {
-          font-size: 15px;
+          font-size: 24px;
           font-weight: 300;
+          text-align: left;
         }
         .desc > ul {
-          margin-bottom: 0;
+          margin-bottom: 24px;
         }
+
+        .desc img {
+          border: 4px solid #efefef;
+          border-radius: 2px;
+          padding: 4px;
+        }
+
         .desc .alignleft {
-          padding: 0 24px 0 0;
+          margin: 24px;
+          float: none;
         }
         .desc .alignright {
-          padding: 0 0 0 24px;
+          margin: 24px;
+          float: none;
         }
         article-rating {
           margin-right: 6px;
@@ -158,6 +175,29 @@ class TSDetail extends connect(store)(LitElement) {
           height: 32px;
           margin-right: 8px;
         }
+        .ts-read-more .social_container {
+          float: right;
+          padding: 0px;
+          margin-top: -89px;
+        }
+        .social-icon {
+          fill:  #888;
+        }
+        .gplus-icon:hover {
+          fill:  #db4437;
+        }
+        .blogger-icon:hover {
+          fill: #fb8f3d;
+        }
+        .twitter-icon:hover {
+          fill: #1da1f2;
+        }
+        .facebook-icon:hover {
+          fill: #3b5998;
+        }
+        .linkedin-icon:hover {
+          fill:  #007bb5;
+        }
         [hidden] {
           display: none !important;
         }
@@ -170,14 +210,14 @@ class TSDetail extends connect(store)(LitElement) {
             margin: 0 auto;
           }
           .item {
-            padding-bottom: 24px;
+            padding-bottom: 8px;
           }
           .item-desc {
             margin-left: 24px;
           }
           .title {
             margin-bottom: 8px;
-            font-size: 24px;
+            font-size: 2rem;
             line-height: 1.3;
           }
           .fav-btn-container,
@@ -194,26 +234,46 @@ class TSDetail extends connect(store)(LitElement) {
           .desc {
             padding: 16px 0;
           }
+          .desc .alignleft {
+            margin: 0 24px 0 0;
+            float: left;
+          }
+          .desc .alignright {
+            margin: 4px 0 0 24px;
+            float:right;
+          }
         }
       </style>
       <section ?hidden="${_showOffline}">
         <div class="item">
           <div class="cover" hero>
-            <img .src="${thumbnail}" .alt="${title}" />
+            <article-image .src="${thumbnail}" .alt="${title}" ></article-image>
             <h1 class="title">${title}</h1>
-            <div class="item-item" ?hidden="${!author}">By ${author} - Published: ${date} agos.</div>
+          <div class="item-item" ?hidden="${!author}">By ${author} - Published: ${date} ago.</div>
           </div>
         </div>
         <div class="desc">
+
           ${unsafeHTML(item.body || item.subtitle || 'None')}
         </div>
-        <div class="desc" ?hidden="${categories.length === 0}">
-          <h3>Categories</h3>
+        <div class="desc ts-read-more" ?hidden="${categories.length === 0}">
+          <h4>Category</h4>
           <ul>
             ${repeat(categories, (item) => html`
               <li>${item}</li>
             `)}
           </ul>
+          <div class="social_container">
+            <h4>Share me!</h4>
+            <div class="social_share">
+              <div class="slide-icons slide-left">
+                <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
+                <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
+                <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
+                <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
@@ -234,6 +294,16 @@ class TSDetail extends connect(store)(LitElement) {
     this._data = articleSelector(state);
     this._lastVisitedListPage = state.app.lastVisitedListPage;
     this._showOffline = state.app.offline && state.article.failure;
+  }
+
+  _getDataHref(e) {
+    let link = e.currentTarget.link;
+    // Pop a new window for specific social media platform
+    window.open(
+      link,
+      "_blank",
+      "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500"
+    );
   }
 }
 
