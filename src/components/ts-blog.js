@@ -37,6 +37,7 @@ class TSBlog extends connect(store)(LitElement) {
       title: `HyperPress Articles`,
       description: 'WordPress How to\'s, tutorials, and pro tips to get the most from your site'
     });
+
     return html `
     ${SharedStyles}
     <style>
@@ -61,6 +62,9 @@ class TSBlog extends connect(store)(LitElement) {
       background: none; 
       padding: 34px;
       text-align: center; }
+
+    .ts-content-wrapper {
+      padding: 0 24px 0 24px; }
 
     .columns {
       max-width: 987px;
@@ -143,7 +147,7 @@ class TSBlog extends connect(store)(LitElement) {
     }
 
     .inner {
-      padding: 20px 28px 0;
+      padding: 20px 40px 0 14px;
       min-height:165px;
       border-bottom: 1px solid #e4e4e4;
     }
@@ -239,7 +243,7 @@ class TSBlog extends connect(store)(LitElement) {
 
     .category-vertical-lr {
       float: right;
-      min-height:185px;
+      min-height: 318px;
       position:relative;
       width: 20px;
       padding:0 3px 0 4px;
@@ -268,6 +272,14 @@ class TSBlog extends connect(store)(LitElement) {
         min-height: 270px;
         padding: 14px;
         position: relative;
+      }
+
+      .inner {
+        padding: 20px 28px 0;
+      }
+
+      .category-vertical-lr {
+        min-height:185px;
       }
 
       .solutions-section-height {
@@ -363,10 +375,10 @@ class TSBlog extends connect(store)(LitElement) {
                         <div class="social_container">
                           <div class="social_share">
                             <div class="slide-icons slide-left">
-                              <span class="social-icon gplus-icon" .link=${ `http://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
-                              <span class="social-icon twitter-icon" .link=${ `http://twitter.com/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
-                              <span class="social-icon linkedin-icon" .link=${ `http://www.linkedin.com/cws/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
-                              <span class="social-icon facebook-icon" .link=${ `http://www.facebook.com/sharer.php?u=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
+                              <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
+                              <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
+                              <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
+                              <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
                             </div>
                           </div>
                         </div>

@@ -30,10 +30,10 @@ export const SharedStyles = html `
     padding-right: 0px; }
 
   h3 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     letter-spacing: -.012em;
-    line-height: 26px; 
+    line-height: 31px; 
     text-align: center;}
 
   h4 {
@@ -48,9 +48,9 @@ export const SharedStyles = html `
 
   p {
     margin: 0 0 25px 0;
-    font-size: 1em;
+    font-size: 1.15rem;
     font-weight: 300;
-    line-height: 26px; }
+    line-height: 1.618; }
 
   strong {
     font-weight:500;
@@ -579,7 +579,8 @@ export const SharedStyles = html `
 
   li, li p {
     margin: 8px 0;
-    padding: 0; }
+    padding: 0; 
+    font-size: 1.15rem; }
 
   #ts-site ul.body-checks {
     list-style: none;
@@ -696,7 +697,14 @@ export const SharedStyles = html `
   @media (min-width: 460px) {
     h3 {
       text-align: left;
+      font-size: 20px;
+      line-spacing: 28;
     }
+
+    p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.618; }
 
     figure {
       margin-top: 0px; }
