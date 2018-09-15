@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@material/elevation": "^0.39.0",
+    "@material/mwc-button": "^0.1.2",
+    "@material/mwc-checkbox": "^0.2.0",
     "@material/mwc-button": "^0.2.0",
     "@material/mwc-checkbox": "^0.1.2",
     "@material/radio": "^0.39.1",
