@@ -434,7 +434,7 @@ class TSContact extends LitElement {
       }),
       headers: {
         "content-type": "application/json",
-        "authorization": "Bearer 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",
+        "authorization": "",
         "Access-Control-Allow-Origin": "https://sendgrid.api-docs.io"
       }
     });
