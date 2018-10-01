@@ -72,6 +72,8 @@ class TSApp extends connect(store)(LitElement) {
         --footer-background-secondary-grey: #37424b;
         --footer-text: #f7f7f7;
         --section-background-light-grey: #f5f5f5;
+
+        --app-accent-color: #a434b7;
       }
 
       [hidden] {
@@ -314,6 +316,7 @@ class TSApp extends connect(store)(LitElement) {
             <a ?selected="${_page === 'home'}" href="/">Home</a>
             <a ?selected="${_page === 'solutions'}" href="/solutions">Solutions</a>
             <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
+            <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
             <a style="float:right" ?selected="${_page === 'support'}" href="/support">Support</a>
           </nav>
         </app-toolbar>
@@ -352,6 +355,7 @@ class TSApp extends connect(store)(LitElement) {
       <ts-security class="page" ?active="${_page === 'security'}"></ts-security>
       <ts-blog class="page" ?active="${_page === 'blog'}"></ts-blog>
       <ts-article class="page" ?active="${_page === 'article'}"></ts-article>
+      <ts-contact class="page" ?active="${_page === 'contact'}"></ts-contact>
       <ts-view404 class="page" ?active="${_page === '404'}"></ts-view404>
     </main>
       

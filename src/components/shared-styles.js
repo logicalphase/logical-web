@@ -497,7 +497,7 @@ export const SharedStyles = html `
     background: #f7f7f7;
     display: flex;
     flex-direction: column;
-    padding: 0 24px 0 44px; }
+    padding: 0 24px 0 24px; }
 
   .content {
     flex: 1;
@@ -524,7 +524,6 @@ export const SharedStyles = html `
     text-decoration:none; }
 
   .ts-content-grid-box {
-    padding:0 14px 10px 0;
     min-height: 230px; 
     text-align: center; }
 
@@ -732,6 +731,13 @@ export const SharedStyles = html `
 
     #ts-site .ts-pad-top-6 {
       padding-top: 5; }
+
+    .ts-content-wrapper {
+      min-height: 100vh;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      padding: 0 24px 0 56px; }
 
     .ts-grid-wrapper-standard {
       margin: auto auto;

@@ -2,9 +2,12 @@ export const UPDATE_PAGE = 'UPDATE_PAGE';
 export const RECEIVE_LAZY_RESOURCES = 'RECEIVE_LAZY_RESOURCES';
 export const UPDATE_OFFLINE = 'UPDATE_OFFLINE';
 export const UPDATE_DRAWER_STATE = 'UPDATE_DRAWER_STATE';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const OPEN_SNACKBAR = 'OPEN_SNACKBAR';
 export const CLOSE_SNACKBAR = 'CLOSE_SNACKBAR';
 export const UPDATE_SUBTITLE = 'UPDATE_SUBTITLE';
+export const SET_ANNOUNCER_LABEL = 'SET_ANNOUNCER_LABEL';
+export const CLEAR_ANNOUNCER_LABEL = 'CLEAR_ANNOUNCER_LABEL';
 
 export const navigate = (location) => (dispatch) => {
   // Extract the page name from path.
@@ -69,6 +72,10 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
       await
         import('../components/ts-security.js');
       break;
+    case 'contact':
+      await
+        import('../components/ts-contact.js');
+      break;
     default:
       page = '404';
   }
@@ -90,7 +97,6 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
     });
   }
 }
-
 
 export const refreshPage = () => (dispatch, getState) => {
   const state = getState();
@@ -163,3 +169,27 @@ export const updateLocationURL = (url) => (dispatch) => {
   window.history.pushState({}, '', url);
   dispatch(navigate(window.location));
 }
+
+const setAnnouncerLabel = (label) => {
+  return {
+    type: SET_ANNOUNCER_LABEL,
+    label
+  };
+};
+
+const clearAnnouncerLabel = () => {
+  return {
+    type: CLEAR_ANNOUNCER_LABEL
+  };
+};
+
+let announcerTimer = 0;
+
+export const announceLabel = (label) => (dispatch) => {
+  dispatch(clearAnnouncerLabel());
+  // Debounce announcements.
+  clearTimeout(announcerTimer);
+  announcerTimer = setTimeout(() => {
+    dispatch(setAnnouncerLabel(label));
+  }, 300);
+};
