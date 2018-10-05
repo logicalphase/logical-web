@@ -22,6 +22,7 @@ export const navigate = (location) => (dispatch) => {
   let query = 'Article';
 
   dispatch(loadPage(page, query, articleSlug));
+  dispatch(updateDrawerState(false));
 };
 
 const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {

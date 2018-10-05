@@ -505,11 +505,6 @@ export const SharedStyles = html `
     display: flex;
     flex-wrap: wrap; }
 
-  .columns {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1; }
-
   .main {
     flex: 1;
     background: #f7f7f7; }
@@ -790,6 +785,11 @@ export const SharedStyles = html `
     .ts-right {
       float: right;
       margin: 24px 30px 5px; }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1; }  
   }
 </style>
 `;

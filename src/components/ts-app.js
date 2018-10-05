@@ -325,7 +325,7 @@ class TSApp extends connect(store)(LitElement) {
 
     <!-- Drawer content -->
     <app-drawer id="drawer" .opened="${_drawerOpened}"
-        @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
+        @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
       <app-toolbar>HyperPress <span class="sub-tagline paper-font-body2"> by PRESS MEDICS</span></app-toolbar>
       <nav class="drawer-list">
         <a ?selected="${_page === 'home'}" href="/">Home</a>
