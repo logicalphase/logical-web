@@ -31,7 +31,7 @@
     "@material/mwc-checkbox": "^0.2.0",
     "@material/radio": "^0.39.3",
     "@material/textfield": "^0.39.3",
-    "@material/typography": "^0.39.0",
+    "@material/typography": "^0.40.1",
     "@mdi/font": "^2.7.94",
     "@polymer/app-layout": "^3.0.1",
     "@polymer/iron-icon": "^3.0.1",
