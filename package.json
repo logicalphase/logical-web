@@ -30,7 +30,7 @@
     "@material/mwc-button": "^0.2.0",
     "@material/mwc-checkbox": "^0.2.0",
     "@material/radio": "^0.39.3",
-    "@material/textfield": "^0.39.3",
+    "@material/textfield": "^0.40.1",
     "@material/typography": "^0.39.0",
     "@mdi/font": "^2.7.94",
     "@polymer/app-layout": "^3.0.1",
