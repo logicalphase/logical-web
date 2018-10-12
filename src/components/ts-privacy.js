@@ -29,7 +29,26 @@ class TSPrivacy extends LitElement {
         }
       }
 
+      /* Smaller than 460 */
 
+      ul {
+        padding-bottom: 24px;
+      }
+
+      .hero {
+        margin-top: 24px;
+      }
+
+      .text-headline {
+        padding-top:24px;
+      }
+
+      .ts-content-wrapper, 
+      .ts-content-grid-box {
+        background-color: #fff;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
       .table-responsive-vertical {
         max-width: 100%
       }
@@ -87,8 +106,6 @@ class TSPrivacy extends LitElement {
       .table-hover tbody > tr:hover {
         background-color: #f9edfc;
       }
-
-      /* Smaller than 460 */
       li.childlist {
         margin-left:16px;
         list-style-type: square;
@@ -113,10 +130,6 @@ class TSPrivacy extends LitElement {
 
         color: #111; }
 
-      .ts-privacy p {
-        color: #111;
-      }
-
       .ts-privacy .ts-content-grid-box h2 {
         text-transform: uppercase;
         font-size: 26px;
@@ -137,37 +150,34 @@ class TSPrivacy extends LitElement {
           background-position: 100% 90px;
           background-attachment: fixed;
         }
-
+        .ts-privacy p {
+          text-align: left;
+        }
         .ts-privacy .main{
           padding-top: 44px;
         }
-
         #ts-site.ts-privacy .hero {
           min-height: 270px;
           padding: 14px;
           position: relative;
         }
-
         .ts-content-body {
           margin-bottom: 24px
         }
-
         .ts-content-body h3 {
           margin-bottom: 16px;
         }
         .ts-content-grid-box p {
+          text-align: left;
           margin-bottom:16px;
+          max-width: 100%;
+          margin-right: 24px;
         }
-
-        .ts-content-grid-box p, .ts-content-grid-box h3, .ts-content-grid-box ul {
-          max-width: 725px !important; 
-          text-align: left; }
-
         .ts-privacy .ts-content-grid-box {
           min-height: 40px !important; 
           text-align: left;
           background-color: #ffffff;
-          padding: 24px;
+          padding: 24px 34px 24px 44px;
           margin-bottom: 24px; 
           margin-right: 44px; }
 
@@ -227,7 +237,7 @@ class TSPrivacy extends LitElement {
               <main class="main">
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">Introduction</h2>
-                  <p>Thank you for reviewing our privacy statement. We are both <a href="https://gdpr-info.eu/chapter-4/">Controllers and Processors</a> of data and we want you to understand how and why we collect, store, and use data for our business purposes and to comply with legal requirements. For simplicity, using the term "We" and "Our" means the same as the below listed Entities Covered section.</p>
+                  <p>We are both <a href="https://gdpr-info.eu/chapter-4/">Controllers and Processors</a> of data and we want you to understand how and why we collect, store, and use data for our business purposes and to comply with legal requirements. For simplicity, using the term "We" and "Our" means the same as the below listed Entities Covered section.</p>
                   <h3>Compliance with GDPR regardless of location</h3>
                   <p>In the interest of treating the privacy of all of our customers and visitors with equal respect, we have, to the legal extent possible, adopted the European Union's <a href="https://gdpr-info.eu/">General Data Protection Regulations (GDPR)</a> regarding how we manage customer privacy and their data. We reserve the right to ammend this privacy statement if changes become necessary.</p>
                   <h4>How to contact us with privacy questions or concerns</h4>
@@ -441,7 +451,7 @@ class TSPrivacy extends LitElement {
                   <h4>Routine internal audit</h4>
                   <p>We perform routine and unanounced audits using our own internal methods and by third party security assets. These audits are designed to test our systems for vulnerabilites, and ensure that employees, customers and others follow our security policies and guidelines. We use what we learn from these audits to correct deficiencies and vulnerabilities and correct poor security practices by the people who use them.</p>
                   <h4>Google Cloud Platform physical and virtual security</h4>
-                  <p>One of the primary reasons why we chose Google as our Internet as a Service (IaaS) provider is because of the extraordinary level and focus they have on physical and virtual security. They employ some of the world's foremost experts in information, application, and network security. We use their model in creating our own. You can learn more about Google Cloud security: <a href="https://cloud.google.com/security/overview/whitepaper">https://cloud.google.com/security/overview/whitepaper</a>.</p>
+                  <p>One of the primary reasons why we chose Google as our Internet as a Service (IaaS) provider is because of the extraordinary level and focus they have on physical and virtual security. They employ some of the world's foremost experts in information, application, and network security. We use their model in creating our own. Learn more about <a href="https://cloud.google.com/security/overview/whitepaper">Google Cloud security</a>.</p>
                 </div>
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">Sharing of personally identifying information</h2>
