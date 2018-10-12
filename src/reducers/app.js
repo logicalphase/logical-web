@@ -1,5 +1,14 @@
-import { UPDATE_PAGE, RECEIVE_LAZY_RESOURCES, UPDATE_OFFLINE,
-         OPEN_SNACKBAR, CLOSE_SNACKBAR, UPDATE_DRAWER_STATE } from '../actions/app.js';
+import { 
+  UPDATE_PAGE, 
+  RECEIVE_LAZY_RESOURCES, 
+  UPDATE_OFFLINE,
+  CLOSE_MODAL,
+  OPEN_SNACKBAR, 
+  CLOSE_SNACKBAR, 
+  UPDATE_DRAWER_STATE,
+  CLEAR_ANNOUNCER_LABEL,
+  SET_ANNOUNCER_LABEL
+} from '../actions/app.js';
 
 const app = (state = {drawerOpened: false}, action) => {
   switch (action.type) {
@@ -14,6 +23,21 @@ const app = (state = {drawerOpened: false}, action) => {
       return {
         ...state,
         lazyResourcesLoaded: true
+      };
+    case CLEAR_ANNOUNCER_LABEL:
+      return {
+        ...state,
+        announcerLabel: ''
+      };
+    case SET_ANNOUNCER_LABEL:
+      return {
+        ...state,
+        announcerLabel: action.label
+      };
+    case CLOSE_MODAL:
+      return {
+        ...state,
+        cartModalOpened: false
       };
     case UPDATE_OFFLINE:
       return {

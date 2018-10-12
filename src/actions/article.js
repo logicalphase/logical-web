@@ -14,8 +14,9 @@ export const fetchArticle = (slug) => (dispatch, getState) => {
   } else {
     // fetch article data given the article id.
     // also return a promise to wait for.
-    return fetch(`http://localhost:8080/api/content?slug=${slug}`)
-    
+    return fetch(`https://localhost:8080/api/content?slug=${slug}`, {
+        mode: "no-cors" // no-cors, cors, *same-origin
+      })    
       .then(res => res.json())
       .then(data => {
         if (data.error) {

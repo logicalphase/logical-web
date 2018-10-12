@@ -5,3 +5,5 @@ yarn.lock
 cert.pem
 key.pem
 .DS_Store
+sendgrid.env
+ts-contact.js

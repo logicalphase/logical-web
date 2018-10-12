@@ -4,7 +4,7 @@
 
 # pressmedics.com built with Polymer 3, lit-element, and lit-html
 
-IMPORTANT: This project makes use of bleeding edge technologies, many of which are in early stages of development, subject to significant breaking changes. It should not considered safe for production use. 
+IMPORTANT: This project makes use of bleeding edge technologies, many of which are in early stages of development, subject to significant breaking changes. It should not be considered safe for production use. 
 
 - PWA goodness (manifest, service worker)
 - Based on Polymer 3 / Lit-Element PWA Starter Kit and Books example by @frankiefu, and lit-html by @justin and contributors
