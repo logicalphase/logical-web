@@ -20,7 +20,7 @@
     "test:regenerate_screenshots": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=15000"
   },
   "dependencies": {
-    "@material/elevation": "^0.40.1",
+    "@material/elevation": "^0.41.0",
     "@material/mwc-button": "^0.3.1",
     "@material/mwc-checkbox": "^0.3.1",
     "@material/radio": "^0.40.1",
