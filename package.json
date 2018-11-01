@@ -20,12 +20,13 @@
     "test:regenerate_screenshots": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=15000"
   },
   "dependencies": {
-    "@material/elevation": "^0.40.1",
+    "@material/elevation": "^0.41.0",
     "@material/mwc-button": "^0.3.1",
     "@material/mwc-checkbox": "^0.3.1",
-    "@material/radio": "^0.40.1",
-    "@material/textfield": "^0.40.1",
-    "@material/typography": "^0.41.0",
+    "@material/textfield-0.41.0
+    "@material/textfield": "^0.41.0",
+    "@material/radio": "^0.41.0",
+    "@material/typography": "^0.40.1",
     "@mdi/font": "^3.0.39",
     "@polymer/app-layout": "^3.0.1",
     "@polymer/iron-icon": "^3.0.1",
