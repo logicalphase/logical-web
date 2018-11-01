@@ -1,8 +1,8 @@
 import { LitElement, html } from '@polymer/lit-element';
 
 //import '@polymer/app-layout/app-drawer/app-drawer';
-import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
+import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 
 import './ts-home.js';
@@ -304,7 +304,7 @@ class TSApp extends connect(store)(LitElement) {
       <app-header slot="header" condenses reveals effects="waterfall">
         <app-toolbar class="masthead">
           <button class="menu-btn" title="Menu" @click="${_ => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
-          <div class="ts-title" main-title>${appTitle}
+          <div class="ts-title" main-title>${this.appTitle}
             <span class="paper-font-body2">by PRESSMEDICS</span>
           </div>
           <div class="cta-header toolbar-list">
@@ -384,26 +384,24 @@ class TSApp extends connect(store)(LitElement) {
       };
     }
 
-    update(changedProps) {
-      super.update(changedProps);
-      if (changedProps.has('_page')) {
-        const pageTitle = this.appTitle + ' - ' + this._page;
-        // @ts-ignore
-        updateMetadata({
-          title: pageTitle,
-          description: pageTitle
-              // This object also takes an image property, that points to an img src.
-        });
-        window.scrollTo(0, 0);
-      }
-    }
-
     firstUpdated() {
       installRouter((location) => store.dispatch(navigate(location)));
       installOfflineWatcher((offline) => store.dispatch(updateOffline(offline)));
       installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`,
           (matches) => store.dispatch(updateLayout(matches)));
       this.removeAttribute('unresolved');
+    }
+
+    updated(changedProps) {
+      if (changedProps.has('_page')) {
+        const pageTitle = this.appTitle + ' - ' + this._page;
+        updateMetadata({
+          title: pageTitle,
+          description: pageTitle
+          // This object also takes an image property, that points to an img src.
+        });
+        window.scrollTo(0, 0);
+      }
     }
 
     _stateChanged(state) {

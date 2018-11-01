@@ -18,7 +18,7 @@ export const fetchArticles = (query) => (dispatch, getState) => {
   if (shouldFetchArticles(getState(), query)) {
     dispatch(requestArticles(query));
     if (query) {
-      fetch(`https://localhost:8080/api/contents?type=${query}`, {
+      fetch(`https://localhost:10443/api/contents?type=${query}`, {
           mode: "no-cors" // no-cors, cors, *same-origin
         }) 
         .then(res => res.json())
