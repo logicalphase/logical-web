@@ -52,7 +52,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "sendgrid-templated": "^1.0.0",
-    "stripe": "^6.12.1",
+    "stripe": "^6.15.0",
     "update": "^0.7.4"
   },
   "devDependencies": {
