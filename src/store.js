@@ -8,20 +8,16 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-import {
-  createStore,
-  compose,
-  applyMiddleware,
-  combineReducers
-} from 'redux';
+import { createStore, compose as origCompose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { lazyReducerEnhancer } from 'pwa-helpers/lazy-reducer-enhancer.js';
+import { lazyReducerEnhancer } from 'pwa-helpers/lazy-reducer-enhancer';
 
 import app from './reducers/app.js';
 
 // Sets up a Chrome extension for time travel debugging.
 // See https://github.com/zalmoxisus/redux-devtools-extension for more information.
-const devCompose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// @ts-ignore
+const compose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || origCompose;
 
 // Initializes the Redux store with a lazyReducerEnhancer (so that you can
 // lazily add reducers after the store has been created) and redux-thunk (so
@@ -29,10 +25,8 @@ const devCompose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // section of the wiki for more details:
 // https://github.com/Polymer/pwa-starter-kit/wiki/4.-Redux-and-state-management
 export const store = createStore(
-  state => state,
-  devCompose(
-    lazyReducerEnhancer(combineReducers),
-    applyMiddleware(thunk))
+  (state, action) => state,
+  compose(lazyReducerEnhancer(combineReducers), applyMiddleware(thunk))
 );
 
 // Initially loaded reducers.

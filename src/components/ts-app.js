@@ -1,6 +1,7 @@
 import { LitElement, html } from '@polymer/lit-element';
+import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings.js';
 
-//import '@polymer/app-layout/app-drawer/app-drawer';
+import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
@@ -382,6 +383,13 @@ class TSApp extends connect(store)(LitElement) {
         _item: { type: Object },
         _articleSlug: { type: String }
       };
+    }
+
+    constructor() {
+      super();
+      // To force all event listeners for gestures to be passive.
+      // See https://www.polymer-project.org/3.0/docs/devguide/settings#setting-passive-touch-gestures
+      setPassiveTouchGestures(true);
     }
 
     firstUpdated() {

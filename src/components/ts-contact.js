@@ -1,4 +1,5 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { html } from '@polymer/lit-element';
+import { PageViewElement } from './page-view-element.js';
 
 import { SharedStyles } from './shared-styles';
 import { TsFormStyle } from './ts-form-style';
@@ -8,7 +9,7 @@ import { TsTextAreaStyle } from './ts-textarea-style';
 import { announceLabel } from '../actions/app.js';
 
 
-class TSContact extends LitElement {
+class TSContact extends PageViewElement {
   render() {
     const requestip = location.hostname; 
     const { _response, _state, _waiting } = this;
@@ -338,12 +339,12 @@ class TSContact extends LitElement {
 
   static get properties() { return {
     _waiting: { type: Boolean },
-    _state: { type: String },
+    _type: { type: String },
     _response: { type: Object }
   };}
 
   _stateChanged(state) {
-    this._state = state.contact.state;
+    this._type = state.contact.type;
   }
 
 
@@ -399,42 +400,20 @@ class TSContact extends LitElement {
   _sendRequest(form) {
     this._waiting = true;
 
-    return fetch('https://api.sendgrid.com/v3/mail/send', {
+    return fetch('https://localhost:10443/api/content/create?type=Contact', {
       mode: 'no-cors',
       method: 'POST',
       body: JSON.stringify({
-        sandbox_mode: {
-          enable: true
-        }, 
-        personalizations: [
-          {
-          to: [
-            {
-            email: "john@gemservers.com",
-            name: "John Teague"
-            }
-            
-          ],
-          subject: form.elements.type.value,
-          content: [
-            {
-              text: form.elements.description.value
-            }
-          ],
-          from: {
-            email: "ts@themesurgeons.com",
-            name: "TS Support"
-          },
-          reply_to: {
-            email: form.elements.email.value,
-            name: form.elements.last_name.value
-          }
-        }
-      ]
+        // ccExpMonth: form.elements.ccExpMonth.value,
+        FirstName: form.elements.first_name.value,
+        LastName: form.elements.last_name.value,
+        Email: form.elements.email.value,
+        Subject: form.elements.type.value,
+        Website: form.elements.website.value,
+        Description: form.elements.description.value
       }),
       headers: {
-        "content-type": "application/json",
-        "Access-Control-Allow-Origin": "https://sendgrid.api-docs.io"
+        'Content-Type': 'multipart/form-data; boundary=------------------------d74496d66958873e--'
       }
     });
   }

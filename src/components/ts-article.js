@@ -1,4 +1,5 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { html } from '@polymer/lit-element';
+import { PageViewElement } from './page-view-element.js';
 import { repeat } from 'lit-html/directives/repeat.js';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
@@ -28,7 +29,7 @@ store.addReducers({
     article
 });
 
-class TSDetail extends connect(store)(LitElement) {
+class TSDetail extends connect(store)(PageViewElement) {
   render() {
     const {
       isFetching,
@@ -43,12 +44,13 @@ class TSDetail extends connect(store)(LitElement) {
     }
 
     const item = _data;
-    const title = item.title;
+    const title = item.title && item.title.rendered;
     const author = 'John Teague';
-    const date = formatDistance(new Date(item.timestamp), new Date());
-    const thumbnail = item.photo;
+    const date = formatDistance(new Date(item.date), new Date());
+    const thumbnail = item.dna_featured_image && item.dna_featured_image.media_details.file;
+    const alt = item.dna_featured_image && item.dna_featured_image.alt_text;
     const slug = item.slug;
-    const categories = item.category || [];
+    const categories = item.categories_names || [];
 
     // @ts-ignore
     updateMetadata({
@@ -114,9 +116,10 @@ class TSDetail extends connect(store)(LitElement) {
         .item-item {
           padding-top: 8px;
           padding-bottom: 14px;
+          font-size: 0.9rem;
         }
         .desc {
-          padding: 8px 0;
+          padding: 8px 0 22px 0;
         }
         .desc > h3 {
           font-size: 24px;
@@ -128,17 +131,16 @@ class TSDetail extends connect(store)(LitElement) {
         }
 
         .desc img {
-          border: 4px solid #efefef;
-          border-radius: 2px;
-          padding: 4px;
+          border-bottom: 4px solid #efefef;
+          padding: 6px;
         }
 
         .desc .alignleft {
-          margin: 24px;
+          margin-bottom: 22px;
           float: none;
         }
         .desc .alignright {
-          margin: 24px;
+          margin-bottom: 22px;
           float: none;
         }
         article-rating {
@@ -247,14 +249,14 @@ class TSDetail extends connect(store)(LitElement) {
       <section ?hidden="${_showOffline}">
         <div class="item">
           <div class="cover" hero>
-            <article-image .src="${thumbnail}" .alt="${title}" ></article-image>
+            <article-image .src="https://tscdn-themesurgesonslt.netdna-ssl.com/wp-content/uploads/${thumbnail}" .alt="${title}" ></article-image>
             <h1 class="title">${title}</h1>
           <div class="item-item" ?hidden="${!author}">By ${author} - Published: ${date} ago.</div>
           </div>
         </div>
         <div class="desc">
 
-          ${unsafeHTML(item.body || item.subtitle || 'None')}
+          ${unsafeHTML(item.content && item.content.rendered || item.subtitle || 'None')}
         </div>
         <div class="desc ts-read-more" ?hidden="${categories.length === 0}">
           <h4>Category</h4>
