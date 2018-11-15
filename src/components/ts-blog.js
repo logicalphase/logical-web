@@ -1,15 +1,20 @@
 import { LitElement, html } from '@polymer/lit-element';
-import { repeat } from 'lit-html/directives/repeat.js';
+import { formatDistance } from 'date-fns/esm';
+
 import { connect } from 'pwa-helpers/connect-mixin.js';
-import { updateMetadata } from 'pwa-helpers/metadata.js';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+
+
+
 
 // This element is connected to the redux store.
 import { store } from '../store.js';
-
 import { fetchArticles } from '../actions/articles.js';
 import { refreshPage } from '../actions/app.js';
 import { articles, itemListSelector } from '../reducers/articles.js';
-import { formatDistance } from 'date-fns/esm';
+
+import { repeat } from 'lit-html/directives/repeat.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
@@ -24,20 +29,29 @@ import {
     Linkedin
 } from './ts-icons.js';
 import { SharedStyles } from './shared-styles.js';
+
 class TSBlog extends connect(store)(LitElement) {
   render() {
-    let {
+    const {
       _data,
       _query,
       _showOffline
     } = this;
+
+    const item = _data;
+    const date_prefix = 'Published ';
+
+    // Don't render if there is no item.
+    if (!_data) {
+      return html `<p class="ts-loader">Loading. . .</p>`;
+    }
 
     // @ts-ignore
     updateMetadata({
       title: `HyperPress Articles`,
       description: 'WordPress How to\'s, tutorials, and pro tips to get the most from your site'
     });
-
+    
     return html `
     ${SharedStyles}
     <style>
@@ -174,25 +188,6 @@ class TSBlog extends connect(store)(LitElement) {
       border: 1px solid #dedede;
     }
 
-    .category-vertical-lr {
-      float: right;
-      min-height:185px;
-      position:relative;
-      width: 20px;
-      padding:0 3px 0 4px;
-      font-size: 14px;
-      letter-spacing: .08em;
-      text-align:center;
-      text-transform: uppercase;
-      writing-mode: vertical-rl;
-      background-color:rgba(192,192,192,0.8);
-      color: #fff;
-    }
-
-    .category-vertical-lr a {
-      color: #fff;
-    }
-
     [hidden] {
       display: none !important;
     }
@@ -243,7 +238,7 @@ class TSBlog extends connect(store)(LitElement) {
 
     .category-vertical-lr {
       float: right;
-      min-height: 318px;
+      min-height: 299px;
       position:relative;
       width: 20px;
       padding:0 3px 0 4px;
@@ -279,7 +274,7 @@ class TSBlog extends connect(store)(LitElement) {
       }
 
       .category-vertical-lr {
-        min-height:185px;
+        min-height:187px;
       }
 
       .solutions-section-height {
@@ -360,18 +355,18 @@ class TSBlog extends connect(store)(LitElement) {
           <div class="columns">
             <main class="main">
               <div class="ts-content-grid-box">
-                ${repeat(_data, (item) => html`
-                  <div class="ts-blog-list-item">
+              ${repeat(_data, (item) => html`
+                  <div class="ts-blog-list-item" ?hidden="${!_query}">
                     <div class="flex-hover-card">
                       <a id="${item.id}" href="/article/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
-                        <div class="category-vertical-lr">${item.category}</div>
+                        <div class="category-vertical-lr">${item.categories_names}</div>
                         <div class="inner">
-                          <h3 class="paper-font-headline">${item.title}</h3>
-                          <p>${item.excerpt}</p>
-                          <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Published&nbsp; ${formatDistance(new Date(item.timestamp), new Date())} ago.</p>
+                          <h3 class="paper-font-headline">${item.title && item.title.rendered}</h3>
+                          <p>${unsafeHTML(item.excerpt && item.excerpt.rendered)}</p>
+                          <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Published&nbsp; ${formatDistance(new Date(item.date), new Date())} </p>
                         </div>
                       </a>
-                      <div class="ts-read-more"><a id="${item.id}" href="/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
+                      <div class="ts-read-more"><a id="${item.id}" href="/article/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
                         <div class="social_container">
                           <div class="social_share">
                             <div class="slide-icons slide-left">

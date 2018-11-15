@@ -72,8 +72,16 @@ class TSDetail extends connect(store)(PageViewElement) {
           margin-bottom: 20px;
         }
 
+        h2 {
+          font-size: 1.15rem;
+        }
+
         h3 {
           margin: 24px 0;
+        }
+
+        ol li, ul li {
+          font-size:1rem;
         }
 
         strong {
@@ -109,14 +117,16 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
         .title {
           margin: 14px 0 4px;
-          font-size: 1.35rem;
+          font-size: 1.45rem;
           font-weight: 300;
           line-height: 1.2;
+          text-align: center;
         }
         .item-item {
           padding-top: 8px;
           padding-bottom: 14px;
           font-size: 0.9rem;
+          text-align: center;
         }
         .desc {
           padding: 8px 0 22px 0;
@@ -130,9 +140,25 @@ class TSDetail extends connect(store)(PageViewElement) {
           margin-bottom: 24px;
         }
 
+        .desc > ol {
+          padding-left: 20px;
+        }
+
+        .desc .wp-caption {
+          border: 4px solid #efefef;
+          padding: 5px;
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .desc .wp-caption-text {
+          font-size:0.9rem;
+          padding: 5px;
+          margin-bottom:5px;
+        }
+
         .desc img {
-          border-bottom: 4px solid #efefef;
-          padding: 6px;
+          padding: 1px;
         }
 
         .desc .alignleft {
@@ -208,11 +234,20 @@ class TSDetail extends connect(store)(PageViewElement) {
           :host {
             padding: 48px 24px 24px;
           }
+          h2 {
+            font-size: 1.5rem;
+          }
+          ol li, ul li {
+            font-size:1.1rem;
+          }
           section {
             margin: 0 auto;
           }
           .item {
             padding-bottom: 8px;
+          }
+          .item-item {
+            text-align: left;
           }
           .item-desc {
             margin-left: 24px;
@@ -221,6 +256,7 @@ class TSDetail extends connect(store)(PageViewElement) {
             margin-bottom: 8px;
             font-size: 2rem;
             line-height: 1.3;
+            text-align: left;
           }
           .fav-btn-container,
           .preview-btn-container {

@@ -48,7 +48,7 @@ export const SharedStyles = html `
 
   p {
     margin: 0 0 25px 0;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.618; }
 
@@ -696,7 +696,7 @@ export const SharedStyles = html `
     }
 
     p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 300;
     line-height: 1.618; }
 
