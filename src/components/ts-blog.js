@@ -72,13 +72,8 @@ class TSBlog extends connect(store)(LitElement) {
 
     /* Smaller than 460 */
 
-    .ts-blog .hero {
-      background: none; 
-      padding: 34px;
-      text-align: center; }
-
     .ts-content-wrapper {
-      padding: 0 24px 0 24px; }
+      padding: 0 24px 0 5px; }
 
     .columns {
       max-width: 987px;
@@ -129,22 +124,10 @@ class TSBlog extends connect(store)(LitElement) {
     }
 
     #ts-site.ts-blog {
-      background: #ffffff url('/images/bg/wordpress-logo.svg') no-repeat;
-      background-size: 50%;
-      background-position: 110% -80px;
+      background: #fff url(/images/header/ts-design-header.svg) no-repeat;
+      background-size: 90%;
+      background-position: 50% 10px;
       background-attachment: scroll;
-    }
-
-    #ts-site.ts-blog .hero {
-      padding: 14px;
-    }
-
-    #ts-site.ts-blog .hero>div {
-      padding: 44px 20px 0 24px;
-    }
-
-    #ts-site.home .hero {
-      padding: 20px 64px 30px 96px;
     }
 
     .ts-grid-wrapper-auto-fill {
@@ -157,7 +140,7 @@ class TSBlog extends connect(store)(LitElement) {
     }
 
     .flex-hover-card {
-      width: 100%;
+      min-width: 100%;
     }
 
     .inner {
@@ -238,7 +221,7 @@ class TSBlog extends connect(store)(LitElement) {
 
     .category-vertical-lr {
       float: right;
-      min-height: 299px;
+      height: calc(31%);
       position:relative;
       width: 20px;
       padding:0 3px 0 4px;
@@ -258,15 +241,9 @@ class TSBlog extends connect(store)(LitElement) {
     @media (min-width: 460px) {
       #ts-site.ts-blog {
         background: #fff url(/images/header/ts-design-header.svg) no-repeat;
-        background-size: 35%;
-        background-position: 100% 90px;
+        background-size: 30%;
+        background-position: 90% 120px;
         background-attachment: fixed;
-      }
-
-      #ts-site.ts-blog .hero {
-        min-height: 270px;
-        padding: 14px;
-        position: relative;
       }
 
       .inner {
@@ -274,7 +251,7 @@ class TSBlog extends connect(store)(LitElement) {
       }
 
       .category-vertical-lr {
-        min-height:187px;
+        height:189px;
       }
 
       .solutions-section-height {
@@ -319,16 +296,12 @@ class TSBlog extends connect(store)(LitElement) {
 
     }
     @media (max-width: 800px) {
-      #ts-site.ts-blog {
-        background-size: 40% !important;
-        background-position: 100% 120px !important; }
-
       .ts-right {
         float: none !important;
         margin: 24px 30px 5px; 
       }
       .category-vertical-lr {
-        height: auto;
+        height: calc(31%);
         width: 20px;
         float: right;
         writing-mode: vertical-rl;
