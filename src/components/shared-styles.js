@@ -48,7 +48,7 @@ export const SharedStyles = html `
 
   p {
     margin: 0 0 25px 0;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 300;
     line-height: 1.618; }
 
@@ -341,7 +341,7 @@ export const SharedStyles = html `
     display: none; } 
 
   #ts-site .hero>div {
-    padding: 0; 
+    padding: 20px 24px 30px 24px;
     text-align: center; }
 
   .hero-section p {
@@ -468,7 +468,7 @@ export const SharedStyles = html `
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1280px; }
+    max-width: 1024px; }
 
   #ts-site .ts-full-bleed-section, #ts-social-footer.ts-full-bleed-section {
     margin-left: -10000px;
@@ -692,8 +692,18 @@ export const SharedStyles = html `
     h3 {
       text-align: left;
       font-size: 20px;
-      line-spacing: 28;
     }
+
+    h1.paper-font-display2 {
+    font-size: 42px;
+    line-height: 44px;
+    padding-right: 120px;
+    margin-left: -3px; }
+
+    h2.mdc-typography--headline3 {
+    font-size: 16px;
+    white-space: normal;
+    padding-right: 120px; }
 
     p {
     font-size: 1.1rem;
@@ -710,12 +720,10 @@ export const SharedStyles = html `
       padding-top: 0px; }
 
     #ts-site .hero>div {
-      padding: 50px 0px 0 24px; 
-      text-align: left; }
-
-    #ts-site .hero {
-        min-height: 270px;
-        padding: 14px;
+      min-height: 270px;
+      padding: 14px;
+      padding: 50px 32px 0 32px;
+      text-align: left; 
     }
 
     .center-button {
@@ -736,7 +744,7 @@ export const SharedStyles = html `
 
     .ts-grid-wrapper-standard {
       margin: auto auto;
-      max-width: 960px; }
+      max-width: 1024px; }
     
     .ts-grid-wrapper-auto-fit {
       grid-gap: 16px;

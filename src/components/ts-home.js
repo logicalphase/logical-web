@@ -26,41 +26,11 @@ class TSHome extends LitElement {
             background-attachment: fixed;
         }
 
-        #ts-site.ts-home .hero {
-          padding-bottom: 34px;
-          padding: 14px;
-        }
-
-        #ts-site.ts-home .hero>div {
-            padding: 24px 10px 24px 10px;
-        }
-
-        #ts-site.home .hero {
-          padding: 20px 64px 30px 96px;
-        }
-
         @media (min-width: 460px) {
           #ts-site {
-            background-size: 35% !important;
-            background-position: 100% 60px !important; }
-
-          #ts-site.ts-home .hero {
-            min-height: 270px;
-            padding: 14px; }
-
-          #ts-site.ts-home .hero>div {
-              padding: 50px 20px 0 20px; }
-
-          h1.paper-font-display2 {
-              font-size: 42px;
-              line-height: 44px;
-              padding-right: 120px;
-              margin-left: -3px; }
-
-          h2.mdc-typography--headline3 {
-              font-size: 16px;
-              white-space: normal;
-              padding-right: 120px; }
+            background-size: 26% !important;
+            background-position: 86% 90px !important;
+          }
         } 
       </style>
       <article id="ts-site" class="ts-home">
