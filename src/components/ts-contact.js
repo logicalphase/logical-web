@@ -39,11 +39,6 @@ class TSContact extends PageViewElement {
 
     /* Smaller than 460 */
 
-    .ts-care .hero {
-      background: none; 
-      padding: 34px;
-      text-align: center; }
-
     h3 {
       padding-top: 20px; }
 
@@ -75,11 +70,6 @@ class TSContact extends PageViewElement {
         background-attachment: fixed;
       }
 
-      #ts-site.ts-care .hero {
-        min-height: 170px;
-        padding: 14px;
-        position: relative;
-      }
 
       .ts-contact-body {
         margin-bottom: 24px;

@@ -48,9 +48,8 @@ export const SharedStyles = html `
 
   p {
     margin: 0 0 25px 0;
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.618; }
+    font: 400 16px/24px Roboto, Sans-serif;
+    line-height: 28px; }
 
   strong {
     font-weight:500;
@@ -574,7 +573,7 @@ export const SharedStyles = html `
   li, li p {
     margin: 8px 0;
     padding: 0; 
-    font-size: 1.15rem; }
+    font-size: 1rem; }
 
   #ts-site ul.body-checks {
     list-style: none;
@@ -591,17 +590,17 @@ export const SharedStyles = html `
 
   #ts-site .nav li h3 {
     color: #4a5960;
-    font-size: 16px;
+    font-size: 1.15rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin: 42px 0 16px;
+    margin: 20px 0 16px;
     padding-bottom: 0; }
 
   #ts-site .nav li a {
     color: var(--app-secondary-color);
     display: block;
-    font-size: 13px;
+    font-size: 0.95rem;
     line-height: 40px;
     margin: 0;
     overflow: hidden;
@@ -658,7 +657,8 @@ export const SharedStyles = html `
     margin: 24px 0; }
 
   .flex-hover-card .inner>p {
-    font-size: 18px; }
+    font-size: 16px;
+    padding-top: 24px; }
 
   #ts-site .ts-pad-left-30 {
     padding-left: 240px; }
@@ -692,6 +692,7 @@ export const SharedStyles = html `
     h3 {
       text-align: left;
       font-size: 20px;
+      font-weight: 500px
     }
 
     h1.paper-font-display2 {
@@ -706,9 +707,8 @@ export const SharedStyles = html `
     padding-right: 120px; }
 
     p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.618; }
+    font: 400 16px/24px Roboto, Sans-serif;
+    line-height: 28px; }
 
     figure {
       margin-top: 0px; }
@@ -740,7 +740,7 @@ export const SharedStyles = html `
       background: #f7f7f7;
       display: flex;
       flex-direction: column;
-      padding: 0 24px 0 56px; }
+      padding: 0 24px 0 132px; }
 
     .ts-grid-wrapper-standard {
       margin: auto auto;
@@ -755,7 +755,7 @@ export const SharedStyles = html `
       text-align: left; }
 
     .inner {
-      min-height: 260px; 
+      min-height: 254px; 
       text-align: left; }
 
     .flex-hover-card .inner>h3 {

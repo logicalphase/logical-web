@@ -22,11 +22,6 @@ class TSPageSpeed extends LitElement {
       
       /* Smaller than 460 */
 
-      .ts-pagespeed .hero {
-        background: none; 
-        padding: 34px;
-        text-align: center; }
-
       h3 {
         padding-top: 20px; }
 
@@ -38,15 +33,9 @@ class TSPageSpeed extends LitElement {
       @media (min-width: 460px) {
         #ts-site.ts-pagespeed {
           background: #fff url(/images/header/ts-hero-pagespeed.svg) no-repeat;
-          background-size: 28%;
-          background-position: 100% 115px;
+          background-size: 24%;
+          background-position: 92% 115px;
           background-attachment: fixed;
-        }
-
-        #ts-site.ts-pagespeed .hero {
-          min-height: 270px;
-          padding: 14px;
-          position: relative;
         }
 
         .solutions-section-height {

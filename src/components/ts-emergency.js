@@ -23,26 +23,15 @@ class TSEmergency extends LitElement {
     
     /* Smaller than 460 */
 
-    .ts-emergency .hero {
-      background: none; 
-      padding: 34px;
-      text-align: center; }
-
     h3 {
       padding-top: 20px; }
 
     @media (min-width: 460px) {
       #ts-site.ts-emergency {
         background: #fff url(/images/header/ts-emergency-header.svg) no-repeat;
-        background-size: 35%;
-        background-position: 100% 90px;
+        background-size: 30%;
+        background-position: 89% 90px;
         background-attachment: fixed;
-      }
-
-      #ts-site.ts-emergency .hero {
-        min-height: 270px;
-        padding: 14px;
-        position: relative;
       }
 
       .solutions-section-height {

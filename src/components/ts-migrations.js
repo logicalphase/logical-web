@@ -22,11 +22,6 @@ class TSMigrations extends LitElement {
       
       /* Smaller than 460 */
 
-      .ts-migrations .hero {
-        background: none; 
-        padding: 34px;
-        text-align: center; }
-
       h3 {
         padding-top: 20px; }
 
@@ -38,15 +33,9 @@ class TSMigrations extends LitElement {
       @media (min-width: 460px) {
         #ts-site.ts-migrations {
           background: #fff url(/images/header/ts-migrations-header.svg) no-repeat;
-          background-size: 40%;
-          background-position: 100% 90px;
+          background-size: 35%;
+          background-position: 90% 110px;
           background-attachment: fixed;
-        }
-
-        #ts-site.ts-migrations .hero {
-          min-height: 270px;
-          padding: 14px;
-          position: relative;
         }
 
         .solutions-section-height {

@@ -336,7 +336,7 @@ class TSBlog extends connect(store)(LitElement) {
                         <div class="inner">
                           <h3 class="paper-font-headline">${item.title && item.title.rendered}</h3>
                           <p>${unsafeHTML(item.excerpt && item.excerpt.rendered)}</p>
-                          <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Published&nbsp; ${formatDistance(new Date(item.date), new Date())} </p>
+                          <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Updated ${formatDistance(new Date(item.date), new Date())} ago</p>
                         </div>
                       </a>
                       <div class="ts-read-more"><a id="${item.id}" href="/article/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>

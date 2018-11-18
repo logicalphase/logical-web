@@ -23,26 +23,15 @@ class TSCare extends LitElement {
 
     /* Smaller than 460 */
 
-    .ts-care .hero {
-      background: none; 
-      padding: 34px;
-      text-align: center; }
-
     h3 {
       padding-top: 20px; }
 
     @media (min-width: 460px) {
       #ts-site.ts-care {
         background: #fff url(/images/header/ts-care-header.svg) no-repeat;
-        background-size: 40%;
-        background-position: 100% 90px;
+        background-size: 35%;
+        background-position: 89% 110px;
         background-attachment: fixed;
-      }
-
-      #ts-site.ts-care .hero {
-        min-height: 270px;
-        padding: 14px;
-        position: relative;
       }
 
       .ts-content-body {
@@ -99,9 +88,9 @@ class TSCare extends LitElement {
       <header class="hero">
         <div class="ts-max-width-standard">
           <h1 class="paper-font-display2 paper-font-light">WordPress Preventive Care</h1>
-          <h2 class="paper-font-title paper-font-light">Lightning fast, functionally superior, masters of self-defense</h2>
+          <h2 class="paper-font-title paper-font-light">Complete protection and monitoring for WordPress</h2>
           <div class="center-button">
-            <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a PageSpeed Pro</a>
+            <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a WordPress Pro</a>
           </div>
         </div>
       </header>

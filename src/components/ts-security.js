@@ -22,11 +22,6 @@ class TSSecurity extends LitElement {
       
       /* Smaller than 460 */
 
-      .ts-security .hero {
-        background: none; 
-        padding: 34px;
-        text-align: center; }
-
       h3 {
         padding-top: 20px; }
 
@@ -34,14 +29,8 @@ class TSSecurity extends LitElement {
         #ts-site.ts-security {
           background: #fff url(/images/header/ts-security-header.svg) no-repeat;
           background-size: 35%;
-          background-position: 102% 120px;
+          background-position: 91% 120px;
           background-attachment: fixed;
-        }
-
-        #ts-site.ts-security .hero {
-          min-height: 270px;
-          padding: 14px;
-          position: relative;
         }
 
         .solutions-section-height {
@@ -102,10 +91,10 @@ class TSSecurity extends LitElement {
       <article id="ts-site" class="ts-security">
         <header class="hero">
           <div class="ts-max-width-standard">
-            <h1 class="paper-font-display2 paper-font-light">Site and Network Security Solutions</h1>
-            <h2 class="paper-font-title paper-font-light">Defense in depth security solutions that protect your data and reputation.</h2>
+            <h1 class="paper-font-display2 paper-font-light">Security Solutions</h1>
+            <h2 class="paper-font-title paper-font-light">Defense in depth security solutions for your data and reputation.</h2>
             <div class="center-button">
-              <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a PageSpeed Pro</a>
+              <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact Security Team</a>
             </div>
           </div>
         </header>

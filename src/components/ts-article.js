@@ -47,8 +47,8 @@ class TSDetail extends connect(store)(PageViewElement) {
     const title = item.title && item.title.rendered;
     const author = 'John Teague';
     const date = formatDistance(new Date(item.date), new Date());
-    const thumbnail = item.dna_featured_image && item.dna_featured_image.media_details.file;
-    const alt = item.dna_featured_image && item.dna_featured_image.alt_text;
+    const thumbnail = item.tsapi_featured_image && item.tsapi_featured_image.media_details.file;
+    const alt = item.tsapi_featured_image && item.tsapi_featured_image.alt_text;
     const slug = item.slug;
     const categories = item.categories_names || [];
 
@@ -68,7 +68,7 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
 
         h1, h2 {
-          font-weight: 300;
+          font-weight: 500;
           margin-bottom: 20px;
         }
 
@@ -132,8 +132,8 @@ class TSDetail extends connect(store)(PageViewElement) {
           padding: 8px 0 22px 0;
         }
         .desc > h3 {
-          font-size: 24px;
-          font-weight: 300;
+          font-size: 22px;
+          font-weight: 500;
           text-align: left;
         }
         .desc > ul {
@@ -152,9 +152,9 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
 
         .desc .wp-caption-text {
-          font-size:0.9rem;
-          padding: 5px;
-          margin-bottom:5px;
+            font-size: 0.9rem;
+            padding: 10px 0px;
+            margin-bottom: 0px;
         }
 
         .desc img {
@@ -238,7 +238,7 @@ class TSDetail extends connect(store)(PageViewElement) {
             font-size: 1.5rem;
           }
           ol li, ul li {
-            font-size:1.1rem;
+            font: 400 16px/24px Roboto, Sans-serif;
           }
           section {
             margin: 0 auto;
@@ -285,9 +285,9 @@ class TSDetail extends connect(store)(PageViewElement) {
       <section ?hidden="${_showOffline}">
         <div class="item">
           <div class="cover" hero>
-            <article-image .src="https://tscdn-themesurgesonslt.netdna-ssl.com/wp-content/uploads/${thumbnail}" .alt="${title}" ></article-image>
+            <article-image .src="https://api.themesurgeons.com/wp-content/uploads/${thumbnail}" .alt="${title}" ></article-image>
             <h1 class="title">${title}</h1>
-          <div class="item-item" ?hidden="${!author}">By ${author} - Published: ${date} ago.</div>
+          <div class="item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
           </div>
         </div>
         <div class="desc">
