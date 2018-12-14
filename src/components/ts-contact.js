@@ -25,19 +25,15 @@ class TSContact extends PageViewElement {
     :host {
       display: block;
       padding: 0px;
-      h1 {
-        margin: 0 0 5px -3px;
-        color: #77909c;
-      }
-      h2 {
-        margin-bottom: 40px;
-      }
-      ul {
-        margin-bottom:24px;
-      }
     }
 
     /* Smaller than 460 */
+
+    .hero {
+      background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
 
     h3 {
       padding-top: 20px; }
@@ -46,7 +42,7 @@ class TSContact extends PageViewElement {
       display: inline-block;
       box-sizing: border-box;
       border: 2px solid --app-secondary-color;
-      background-color: #FFF;
+      background-color: var(--app-light-text-color);
       font-size: 1rem;
       font-weight: 500;
       color: var(--app-secondary-color);
@@ -62,21 +58,36 @@ class TSContact extends PageViewElement {
       width:100%;
     }
 
+    ts-input, ts-select, ts-textarea {
+      width: 100%;
+    }
+
     @media (min-width: 460px) {
-      #ts-site.ts-care {
-        background: #fff url(/images/header/ts-care-header.svg) no-repeat;
-        background-size: 30%;
-        background-position: 95% 90px;
-        background-attachment: fixed;
+      ts-input, ts-select, ts-textarea {
+        margin-bottom: 20px;
+      }
+      paper-spinner-lite {
+        position: fixed;
+        top: calc(50% - 14px);
+        left: calc(50% - 14px);
       }
 
+      .ts-header-wrapper {
+        background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
+        background-size: contain;
+        background-position: 92% center;
+      }
+
+      .hero>div {
+        min-height: 120px;  
+      }
 
       .ts-contact-body {
         margin-bottom: 24px;
       }
 
       .ts-contact-wrapper {
-        background-color: #fff;
+        background-color: var(--app-light-text-color);
         border-top: 1px solid #ccc;
       }
 
@@ -88,49 +99,14 @@ class TSContact extends PageViewElement {
         padding-right: 32px;
       }
 
-      #ts-site .ts-showcase.is-split-left .ts-showcase-image {
-        right: 0;
-      }
-
-      #ts-site .ts-pad-left-38+.ts-showcase-image,
-      #ts-site .ts-pad-right-38+.ts-showcase-image {
-        max-width: 304px;
-      }
-
-      #ts-site .ts-showcase-image {
-        position: relative;
-        text-align: center;
-        top: 0;
-        z-index: 1;
-      }
-
-      p.fine-print:first-child {
-        margin-top: 24px;
-      }
-
-      .fine-print {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        font-size: 12px;
-        padding-left: 24px;
-        line-height: 14px;
-      }
       .main-frame {
         transition: opacity 0.5s;
       }
       .main-frame.waiting {
         opacity: 0.1;
       }
-      ts-input, ts-select {
+      ts-input, ts-select, ts-textarea {
         font-size: 1.15rem;
-      }
-      ts-select {
-        margin-bottom: 20px;
-      }
-      paper-spinner-lite {
-        position: fixed;
-        top: calc(50% - 14px);
-        left: calc(50% - 14px);
       }
       .billing-address-picker {
         margin: 28px 0;
@@ -165,8 +141,9 @@ class TSContact extends PageViewElement {
       .input-row > *:not(:first-child) {
         margin-left: 8px;
       }
-      .ts-select-label {
+      label.ts-select-label {
         line-height: 20px;
+        color: #ccc;
       }
       .order-summary-row {
         line-height: 24px;
@@ -176,36 +153,6 @@ class TSContact extends PageViewElement {
         margin: 30px 0;
       }
 
-      placeholder {
-        font-size:19px;
-      }
-
-      textarea {
-        display: block;
-        width: 100%;
-        border: 0;
-        background: white no-repeat;
-        font-size: 1rem;
-        font-family: 'Roboto', 'Noto', sans-serif;
-        
-        /* 2 imgs : 1px gray line (normal state) AND 2px green line (focus state) */
-        background-image: linear-gradient(to bottom, #a434b7, #a434b7), linear-gradient(to bottom, silver, silver);
-        /* sizes for the 2 images (default state) */
-        background-size: 0 2px, 100% 1px;
-        /* positions for the 2 images. Change both "50%" to "0%" or "100%" and tri again */
-        background-position: 50% 100%, 50% 100%;
-
-        /* animation solely on background-size */
-        transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-
-      }
-
-      textarea:focus{
-        /* sizes for the 2 images (focus state) */
-        background-size: 100% 2px, 100% 1px;
-        outline: none;
-      }
-      
       @media (max-width: 767px) {
       .grid {
           display: block;
@@ -221,13 +168,14 @@ class TSContact extends PageViewElement {
         float: none !important;
         margin: 24px 30px 5px; }
       } 
+
     }
     </style>
     <article id="ts-site" class="ts-care">
       <header class="hero">
-        <div class="ts-max-width-standard">
+        <div class="ts-header-wrapper">
           <h1 class="paper-font-display2 paper-font-light">Contact Us</h1>
-          <h2 class="paper-font-title paper-font-light">Touch base with one of our WordPress experts.</h2>
+          <h2 class="paper-font-title paper-font-light">Touch base with one of our WordPress experts</h2>
         </div>
       </header>
       <div class="ts-contact-wrapper">
@@ -271,12 +219,9 @@ class TSContact extends PageViewElement {
                     </ts-md-decorator>
                   </ts-input>
                   </div>
-                </section>
-                <section>
-                  <h2>Site and inquiry</h2>
                   <div class="column">
-                    <label id="typeLabel" class="ts-select-label">Subject</label>
                     <ts-select>
+                      <label id="typeLabel" class="ts-select-label">Subject</label>
                       <select id="type" name="type" required
                           autocomplete="contact type"
                           aria-labelledby="typeLabel typeHeading">
@@ -289,11 +234,15 @@ class TSContact extends PageViewElement {
                         <option value="migration">Site Migration</option>
                         <option value="press">Press Inquiry</option>
                       </select>
-                      <ts-md-decorator aria-hidden="true">
-                        <ts-underline></ts-underline>
+                      <ts-md-decorator aria-hidden="true">               
+                      <ts-underline></ts-underline>
                       </ts-md-decorator>
                     </ts-select>
                   </div>
+                </section>
+                <section>
+                  <h2>Site and inquiry</h2>
+
                   <div class="row input-row">
                     <ts-input>
                       <input type="url" id="website" name="website"
@@ -307,9 +256,13 @@ class TSContact extends PageViewElement {
                   </div>
                   <div class="row input-row">
                     <ts-textarea>
-                      <textarea id="description" name="description" placeholder="How Can we help you?"
-                          required aria-labelledby="DescriptionLabel"></textarea>
-                      <ts-md-decorator error-message="Invalid URL" aria-hidden="true"></ts-md-decorator>    
+                      <textarea id="description" name="description" 
+                          placeholder="Description" required 
+                          aria-labelledby="DescriptionLabel InfoHeading"></textarea>
+                      <ts-md-decorator error-message="Invalid Name" aria-hidden="true">
+                          <label ID="DescriptionLabel">Description</label>
+                          <ts-underline></ts-underline>
+                        </ts-md-decorator>
                     </ts-textarea>
                   </div>
                   <ts-button responsive id="submitBox">
@@ -333,7 +286,7 @@ class TSContact extends PageViewElement {
     _response: { type: Object }
   };}
 
-  _stateChanged(state) {
+  stateChanged(state) {
     this._type = state.contact.type;
   }
 

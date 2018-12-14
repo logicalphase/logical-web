@@ -1,49 +1,37 @@
-import { LitElement, html } from '@polymer/lit-element';
-import { formatDistance } from 'date-fns/esm';
+import { html } from '@polymer/lit-element';
+import { PageViewElement } from './page-view-element.js';
 
+import { until } from 'lit-html/directives/until.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
-
-
-
-
-// This element is connected to the redux store.
-import { store } from '../store.js';
-import { fetchArticles } from '../actions/articles.js';
-import { refreshPage } from '../actions/app.js';
-import { articles, itemListSelector } from '../reducers/articles.js';
 
 import { repeat } from 'lit-html/directives/repeat.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
+
+import './ts-item.js';
+
+// This element is connected to the redux store.
+import { store } from '../store.js';
+
+import { fetchArticles } from '../actions/articles.js';
+import { refreshPage } from '../actions/app.js';
+import { articles, itemListSelector } from '../reducers/articles.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
     articles
 });
 
-import {
-    Calendar,
-    GooglePlus,
-    Twitter,
-    Facebook,
-    Linkedin
-} from './ts-icons.js';
 import { SharedStyles } from './shared-styles.js';
 
-class TSBlog extends connect(store)(LitElement) {
+class TSBlog extends connect(store)(PageViewElement) {
   render() {
-    const {
-      _data,
-      _query,
-      _showOffline
-    } = this;
-
-    const item = _data;
-    const date_prefix = 'Published ';
+    const { _query, _data, _showOffline } = this;
 
     // Don't render if there is no item.
-    if (!_data) {
-      return html `<p class="ts-loader">Loading. . .</p>`;
+    if (_data) {
+      until(_data, html `<p class="ts-loader" style="padding-left: 34px;">Loading. . .</p>`);
+    } else {
+      return html `<p class="ts-loader" style="padding-left: 34px;">An error occurred while retrieving blog list. Please reload.</p>`;
     }
 
     // @ts-ignore
@@ -58,19 +46,19 @@ class TSBlog extends connect(store)(LitElement) {
     :host {
       display: block;
       padding: 0px;
-      h1 {
-        margin: 0 0 5px -3px;
-        color: #77909c;
-      }
-      h2 {
-        margin-bottom: 40px;
-      }
-      ul {
-        margin-bottom:24px;
-      }
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     /* Smaller than 460 */
+
+    .ts-header-wrapper {
+      background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
 
     .ts-content-wrapper {
       padding: 0 24px 0 5px; }
@@ -83,51 +71,9 @@ class TSBlog extends connect(store)(LitElement) {
     .ts-content-grid-box {
       max-width: 100%;
     }
+
     .ts-content-grid-box p {
-      max-width: 620px;
-    }
-    .ts-read-more {
-      padding: 13px 28px;
-      background-color: #fff;
-    }
-    .ts-read-more .social_container {
-      float: right;
-      padding: 0px;
-    }
-    .social-icon {
-      fill:  #888;
-    }
-    .gplus-icon:hover {
-      fill:  #db4437;
-    }
-    .blogger-icon:hover {
-      fill: #fb8f3d;
-    }
-    .twitter-icon:hover {
-      fill: #1da1f2;
-    }
-    .facebook-icon:hover {
-      fill: #3b5998;
-    }
-    .linkedin-icon:hover {
-      fill:  #007bb5;
-    }
-
-    .ts-blog-meta-calendar svg{
-      vertical-align: bottom;
-    }
-
-    .text-uppercase {
-      border-top: 1px solid #e4e4e4;
-      display: block;
-      padding: 16px 28px;
-    }
-
-    #ts-site.ts-blog {
-      background: #fff url(/images/header/ts-design-header.svg) no-repeat;
-      background-size: 90%;
-      background-position: 50% 10px;
-      background-attachment: scroll;
+      max-width: 580px;
     }
 
     .ts-grid-wrapper-auto-fill {
@@ -143,19 +89,8 @@ class TSBlog extends connect(store)(LitElement) {
       min-width: 100%;
     }
 
-    .inner {
-      padding: 20px 40px 0 14px;
-      min-height:165px;
-      border-bottom: 1px solid #e4e4e4;
-    }
-
-    .small-print {
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-size: 14px !important;
-      font-weight: 400 !important;
-      padding-left: 0px;
-      line-height: 14px;
+    .flex-hover-card .inner>p {
+      padding-top: 0px;
     }
 
     #resource_loader {
@@ -166,43 +101,35 @@ class TSBlog extends connect(store)(LitElement) {
       text-align: center;
     }
 
-    .collapse-content {
-      padding: 15px;
-      border: 1px solid #dedede;
-    }
-
-    [hidden] {
-      display: none !important;
-    }
-
     .sidebar {
-      background-color: #fff;
+      background-color: var(--app-light-text-color);
       width: 210px;
       margin-left: 34px;
       margin-top: 5px;
     }
 
-    #ts-site .nav li h3 {
+    .nav li h3 {
       color: #4a5960;
       font-size: 16px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      margin: 10px 0 16px;
+      margin: 0px 0px 16px;
       padding-bottom: 0;
       padding-left: 20px;
     }
 
-    #ts-site .nav li {
+    .nav li {
       margin-right: 17px;
     }
 
     ul.right-side-nav {
       list-style: none;
       padding-left: 0px;
+      margin-top: 0;
     }
 
-    #ts-site .nav li a {
+    .nav li a {
       padding-left: 20px;
     }
 
@@ -214,107 +141,19 @@ class TSBlog extends connect(store)(LitElement) {
       text-align: center;
     }
 
-    .collapse-content {
-      padding: 15px;
-      border: 1px solid #dedede;
-    }
-
-    .category-vertical-lr {
-      float: right;
-      height: calc(31%);
-      position:relative;
-      width: 20px;
-      padding:0 3px 0 4px;
-      font-size: 14px;
-      letter-spacing: .08em;
-      text-align:center;
-      text-transform: uppercase;
-      writing-mode: vertical-rl;
-      background-color:rgba(192,192,192,0.8);
-      color: #fff;
-    }
-
-    .category-vertical-lr a {
-      color: #fff;
-    }
-
     @media (min-width: 460px) {
-      #ts-site.ts-blog {
-        background: #fff url(/images/header/ts-design-header.svg) no-repeat;
-        background-size: 30%;
-        background-position: 90% 120px;
-        background-attachment: fixed;
+      .ts-header-wrapper {
+        background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
+        background-size: contain;
+        background-position: 94% center;
       }
-
-      .inner {
-        padding: 20px 28px 0;
-      }
-
-      .category-vertical-lr {
-        height:189px;
-      }
-
-      .solutions-section-height {
-        min-height:350px;
-      }
-
-      .ts-content-body {
-        margin-bottom: 24px
-      }
-
-      .ts-content-body h2 {
-        margin-bottom: 16px;
-      }
-
-      #ts-site .ts-pad-right-4 {
-        padding-right: 32px;
-      }
-
-      .small-print {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        font-size: 14px !important;
-        padding-left: 0px;
-        line-height: 14px;
-      }
-
-      #ts-site.ts-showcase.is-split-left .ts-showcase-image {
-        right: 0;
-      }
-
-      #ts-site .ts-pad-left-38+.ts-showcase-image,
-      #ts-site .ts-pad-right-38+.ts-showcase-image {
-        max-width: 304px;
-      }
-
-      #ts-site.ts-showcase-image {
-        position: relative;
-        text-align: center;
-        top: 0;
-        z-index: 1;
-      }
-
     }
-    @media (max-width: 800px) {
-      .ts-right {
-        float: none !important;
-        margin: 24px 30px 5px; 
-      }
-      .category-vertical-lr {
-        height: calc(31%);
-        width: 20px;
-        float: right;
-        writing-mode: vertical-rl;
-      }
 
-      .small-print {
-        font-size: 14px !important; }
-    }
     </style>
 
     <article id="ts-site" class="ts-blog">
       <header class="hero">
-        <div class="ts-max-width-standard">
+        <div class="ts-header-wrapper">
           <h1 class="paper-font-display2 paper-font-light">WordPress Blog</h1>
           <h2 class="paper-font-title paper-font-light">Pro tips for making the most of your WordPress site</h2>
           <div class="center-button">
@@ -327,30 +166,11 @@ class TSBlog extends connect(store)(LitElement) {
         <section class="content background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
           <div class="columns">
             <main class="main">
-              <div class="ts-content-grid-box">
-              ${repeat(_data, (item) => html`
-                  <div class="ts-blog-list-item" ?hidden="${!_query}">
+              <div class="ts-content-grid-box" ?hidden="${!_query}">
+                ${repeat(_data, (item) => html`
+                  <div class="ts-blog-list-item">
                     <div class="flex-hover-card">
-                      <a id="${item.id}" href="/article/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
-                        <div class="category-vertical-lr">${item.categories_names}</div>
-                        <div class="inner">
-                          <h3 class="paper-font-headline">${item.title && item.title.rendered}</h3>
-                          <p>${unsafeHTML(item.excerpt && item.excerpt.rendered)}</p>
-                          <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> Updated ${formatDistance(new Date(item.date), new Date())} ago</p>
-                        </div>
-                      </a>
-                      <div class="ts-read-more"><a id="${item.id}" href="/article/${item.slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
-                        <div class="social_container">
-                          <div class="social_share">
-                            <div class="slide-icons slide-left">
-                              <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
-                              <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
-                              <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
-                              <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${item.slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <ts-item .item="${item}"></ts-item>
                     </div>
                   </div>
                 `)}
@@ -363,15 +183,11 @@ class TSBlog extends connect(store)(LitElement) {
                     <li>
                       <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="more-about-serverless">Blog Categories</h3>
                     </li>
-                    <li>
-                      <a id="pagespeed" track-type="categoryPageSpeed" track-name="blog-page" track-metadata-position="body" href="#">PageSpeed Optimization</a>
-                    </li>
-                    <li>
-                      <a id="security" track-type="categoryWordPress" track-name="blog-page" track-metadata-position="body" href="#">Securing WordPress</a>
-                    </li>
-                    <li>
-                      <a id="hosting" track-type="categoryHosting" track-name="blog-page" track-metadata-position="body" href="#">Hosting WordPress</a>
-                    </li>
+                    ${repeat(_data, (item) => html`  
+                      <li>
+                        <a id="${item.categories_names}" track-type="category${item.categories_names}" track-name="blog-page" track-metadata-position="body" href="#">${item.categories_names}</a>
+                      </li>
+                    `)}
                   </ul>
                 </div>
               </aside>
@@ -384,26 +200,16 @@ class TSBlog extends connect(store)(LitElement) {
   static get properties() {
     return {
       _query: { type: String },
-      _data: { type: Object },
+      _data: { type: Array },
       _showOffline: { type: Boolean }
     };
   }
 
   // This is called every time something is updated in the store.
-  _stateChanged(state) {
+  stateChanged(state) {
     this._query = state.articles.query;
     this._data = itemListSelector(state);
     this._showOffline = state.app.offline && state.articles.failure;
-  }
-
-  _getDataHref(e) {
-    let link = e.currentTarget.link;
-    // Pop a new window for specific social media platform
-    window.open(
-      link,
-      "_blank",
-      "scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500"
-    );
   }
 }
 window.customElements.define('ts-blog', TSBlog);

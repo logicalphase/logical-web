@@ -14,34 +14,35 @@ export const TsTextAreaStyle = html`
 <style>
   ts-textarea {
     display: inline-block;
-    margin: 20px 0;
+    margin: 5px 0px 5px 0px;
   }
-  ts-textarea > input::-webkit-input-placeholder {
+  ts-textarea > textarea::-webkit-input-placeholder {
     color: transparent;
   }
-  ts-textarea > input::-moz-placeholder {
+  ts-textarea > textarea::-moz-placeholder {
     color: transparent;
   }
-  ts-textarea > input:-ms-input-placeholder {
+  ts-textarea > textarea:-ms-input-placeholder {
     color: transparent;
   }
-  ts-textarea > input::-ms-input-placeholder {
+  ts-textarea > textarea::-ms-input-placeholder {
     color: transparent;
   }
-  ts-textarea > input {
+  ts-textarea > textarea {
     font-size: 1em;
     font-weight: 300;
     color: var(--app-secondary-color);
     border: none;
-    padding: 8px 0;
+    padding: 0px 0px;
+    height: 14px;
     width: 100%;
     outline: none;
   }
-  ts-textarea > input:invalid {
+  ts-textarea > textarea:invalid {
     /* reset the default style in FF */
     box-shadow: none;
   }
-  textarea > ts-md-decorator {
+  ts-textarea > ts-md-decorator {
     display: block;
     height: 1px;
     width: 100%;
@@ -51,7 +52,7 @@ export const TsTextAreaStyle = html`
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
-  textarea ts-underline {
+  ts-textarea ts-underline {
     display: block;
     height: 2px;
     width: 100%;
@@ -65,8 +66,8 @@ export const TsTextAreaStyle = html`
     transition: -webkit-transform 0.2s ease-in;
     transition: transform 0.2s ease-in;
   }
-  /* input label */
-  textarea > ts-md-decorator > label {
+  /* textarea label */
+  ts-textarea > ts-md-decorator > label {
     display: block;
     pointer-events: none;
     opacity: 0.5;
@@ -84,7 +85,7 @@ export const TsTextAreaStyle = html`
     transform: translate3d(0px, -1.9em, 0px);
   }
   /* Error message */
-  textarea > ts-md-decorator::after {
+  ts-textarea > ts-md-decorator::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -95,49 +96,49 @@ export const TsTextAreaStyle = html`
     display: none;
     white-space: nowrap;
   }
-  textarea > input:focus + ts-md-decorator > ts-underline {
+  ts-textarea > textarea:focus + ts-md-decorator > ts-underline {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
   }
   /* Label: valid state */
-  textarea > input:focus + ts-md-decorator > label {
+  ts-textarea > textarea:focus + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
   }
-  textarea > input:optional:not(:placeholder-shown) + ts-md-decorator > label {
+  ts-textarea > textarea:optional:not(:placeholder-shown) + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
   }
-  _:-ms-lang(x), ts-textarea > input + ts-md-decorator > label {
+  _:-ms-lang(x), ts-textarea > textarea + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
   }
-  textarea > input:optional:-moz-ui-valid + ts-md-decorator > label {
+  ts-textarea > textarea:optional:-moz-ui-valid + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
   }
   /* Underline */
-  textarea > input:not(:focus):not(:placeholder-shown):invalid + ts-md-decorator > ts-underline {
+  ts-textarea > textarea:not(:focus):not(:placeholder-shown):invalid + ts-md-decorator > ts-underline {
     background-color: #dd2c00;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
   }
-  textarea > input:not(:focus):-moz-ui-invalid:invalid + ts-md-decorator > ts-underline {
+  ts-textarea > textarea:not(:focus):-moz-ui-invalid:invalid + ts-md-decorator > ts-underline {
     background-color: #dd2c00;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
   }
-  textarea > input[aria-invalid='true']:not(:valid) + ts-md-decorator > ts-underline {
+  ts-textarea > textarea[aria-invalid='true']:not(:valid) + ts-md-decorator > ts-underline {
     background-color: #dd2c00;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
@@ -145,36 +146,36 @@ export const TsTextAreaStyle = html`
     transition: transform 0.2s ease-out;
   }
   /* Error message */
-  textarea > input:not(:focus):not(:placeholder-shown):invalid + ts-md-decorator::after {
+  ts-textarea > textarea:not(:focus):not(:placeholder-shown):invalid + ts-md-decorator::after {
     display: block;
   }
-  textarea > input:not(:focus):-moz-ui-invalid:invalid + ts-md-decorator::after {
+  ts-textarea > textarea:not(:focus):-moz-ui-invalid:invalid + ts-md-decorator::after {
     display: block;
   }
-  textarea > input[aria-invalid='true']:not(:valid) + ts-md-decorator::after {
+  ts-textarea > textarea[aria-invalid='true']:not(:valid) + ts-md-decorator::after {
     display: block;
   }
   /* Error label */
-  textarea > input:not(:focus):not(:placeholder-shown):invalid + ts-md-decorator > label {
+  ts-textarea > textarea:not(:focus):not(:placeholder-shown):invalid + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
     color: #dd2c00;
   }
-  textarea > input:not(:focus):-moz-ui-invalid:invalid + ts-md-decorator > label {
+  ts-textarea > textarea:not(:focus):-moz-ui-invalid:invalid + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
     color: #dd2c00;
   }
-  textarea > input[aria-invalid='true']:not(:valid) + ts-md-decorator > label {
+  ts-textarea > textarea[aria-invalid='true']:not(:valid) + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
     color: #dd2c00;
   }
   /* Valid label */
-  textarea > input:not(:focus):required:valid + ts-md-decorator > label {
+  ts-textarea > textarea:not(:focus):required:valid + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;

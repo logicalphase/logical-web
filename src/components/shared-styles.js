@@ -10,8 +10,18 @@ export const SharedStyles = html `
 
   /* Base Styles */
 
+  /* Box model */
+  *,
+  *:after,
+  *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    color: --app-dark-text-color; }
+    color: var(--app-dark-text-color); 
+  }
 
   h1, h2, h3, h4, h5, h6, p {
     margin: 0 0 10px 0; }
@@ -48,7 +58,6 @@ export const SharedStyles = html `
 
   p {
     margin: 0 0 25px 0;
-    font: 400 16px/24px Roboto, Sans-serif;
     line-height: 28px; }
 
   strong {
@@ -56,7 +65,7 @@ export const SharedStyles = html `
   }
 
   a { 
-    color: #a434b7;
+    color: var(--app-primary-color);
     text-decoration: none; }
 
   a:active, a:hover {
@@ -88,7 +97,7 @@ export const SharedStyles = html `
   }
   .article-button:active {
     background-color: var(--app-dark-text-color);
-    color: #FFF;
+    color: var(--app-light-text-color);
   }
 
   /* Material Design Styles */
@@ -339,7 +348,7 @@ export const SharedStyles = html `
   .sticky {
     display: none; } 
 
-  #ts-site .hero>div {
+  .hero>div {
     padding: 20px 24px 30px 24px;
     text-align: center; }
 
@@ -350,7 +359,7 @@ export const SharedStyles = html `
     line-height: 26px; }
 
   .text-uppercase {
-    border-top: 1px solid #e4e4e4;
+    border-top: 1px solid var(--border-grey);
     display: block;
     padding: 16px 28px; 
     text-align: center; }
@@ -379,47 +388,47 @@ export const SharedStyles = html `
 
   .button.button-primary-cta {
     background: transparent;
-    border: 2px solid #a434b7;
-    color: #a434b7; }
+    border: 2px solid var(--app-primary-color);
+    color: var(--app-primary-color); }
 
   .button.button-secondary-cta {
-    background: #a434b7;
-    border: 2px solid #a434b7;
-    color: #fff; }
+    background: var(--app-primary-color);
+    border: 2px solid var(--app-primary-color);
+    color: var(--app-light-text-color); }
 
   .button.button-primary-cta:hover, .button.button-primary-cta:active {
-    background: #a434b7; }
+    background: var(--app-primary-color); }
 
   .button.button-secondary-cta:hover, .button.button-secondary-cta:active {
-    color: #fff;
+    color: var(--app-light-text-color);
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
 
-  #ts-site .button.button-logo.ts-button {
+  .button.button-logo.ts-button {
     background-image: url(/images/bg/icon-send.svg); }
 
-  #ts-site .button.button-logo {
+  .button.button-logo {
     font-size: 14px;
     font-weight: 500;
     line-height: 48px;
     padding: 0 48px 0 62px; }
 
-  .hero .button, #ts-site .button .button-logo {
-    background: #a434b7 16px 50% no-repeat;
-    color: #fff;
+  .hero .button, .button .button-logo {
+    background: var(--app-primary-color) 16px 50% no-repeat;
+    color: var(--app-light-text-color);
     padding: 0 40px 0 62px; }
 
-  #ts-site .button {
-    border-radius: 2px;
+  .button {
+    border-radius: 3px;
     font-weight: 500;
     margin: 0 16px 0 0;
     text-align: center;
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }
 
-  #ts-site .button:hover {
+  .button:hover {
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
 
-  #ts-site .button {
-    border-radius: 2px;
+  .button {
+    border-radius: 3px;
     box-sizing: border-box;
     display: inline-block;
     font-size: 14px;
@@ -433,56 +442,56 @@ export const SharedStyles = html `
     text-transform: uppercase;
     transition: box-shadow .3s, background-color .3s, color .3s, transform .3s; }
 
-  #ts-site .button-secondary-cta,  #ts-site .button-primary-cta {
+  .button-secondary-cta,  .button-primary-cta {
     line-height: 0px; }
 
-  #ts-site .button.button-primary-cta {
+  .button.button-primary-cta {
     background: transparent;
-    border: 2px solid #a434b7;
-    color: #fff; }
+    border: 2px solid var(--app-primary-color);
+    color: var(--app-light-text-color); }
 
-  #ts-site .button.button-secondary-cta {
-    background: #a434b7;
-    border: 2px solid #a434b7;
-    color: #fff;
+  .button.button-secondary-cta {
+    background: var(--app-primary-color);
+    border: 2px solid var(--app-primary-color);
+    color: var(--app-light-text-color);
     margin: 24px 0; 
     padding: 24px 24px; }
 
-  #ts-site .button.button-primary-cta:hover, #ts-site .button.button-primary-cta:active {
-    background: #a434b7; }
+  .button.button-primary-cta:hover, .button.button-primary-cta:active {
+    background: var(--app-primary-color); }
 
-  #ts-site .button.button-secondary-cta:hover, #ts-site .button.button-secondary-cta:active {
-    color: #fff;
+  .button.button-secondary-cta:hover, .button.button-secondary-cta:active {
+    color: var(--app-light-text-color);
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
 
   /* Classes - Section Layout */
 
-  #ts-site .background-servers {
+  .background-servers {
     background: linear-gradient(#253238, #3A464B);
     background-color: #253238;
     background-position: fixed;
-    color: #fff; }
+    color: var(--app-light-text-color); }
 
-  #ts-site .ts-max-width-standard {
+  .ts-max-width-standard {
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     max-width: 1024px; }
 
-  #ts-site .ts-full-bleed-section, #ts-social-footer.ts-full-bleed-section {
+  .ts-full-bleed-section, #ts-social-footer.ts-full-bleed-section, .ts-max-width-standard {
     margin-left: -10000px;
     margin-right: -10000px;
     padding-left: 10000px;
     padding-right: 10000px; }
 
-  #ts-site .background-grey {
-    background: #f7f7f7;
+  .background-grey {
+    background: var(--app-section-even-color);
     color: var(--app-dark-text-color); }
 
-  #ts-site .ts-pad-bottom-12 {
+  .ts-pad-bottom-12 {
     padding-bottom: 96px; }
 
-  #ts-site .ts-pad-top-6 {
+  .ts-pad-top-6 {
     padding-top: 3px; }
 
   .ts-content-body {
@@ -491,30 +500,34 @@ export const SharedStyles = html `
   /* CSS Grid - No, we're not using Flexbox this tume */
   /* Simple 1/3 - 2/3 two colum grid justified */
 
+  .ts-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px 0 24px; }
+
   .ts-content-wrapper {
     min-height: 100vh;
-    background: #f7f7f7;
+    background: var(--app-section-even-color);
     display: flex;
     flex-direction: column;
     padding: 0 24px 0 24px; }
 
   .content {
     flex: 1;
-    background: #f7f7f7;
+    background: var(--app-section-even-color);
     display: flex;
     flex-wrap: wrap; }
 
   .main {
     flex: 1;
-    background: #f7f7f7; }
+    background: var(--app-section-even-color); }
 
   .sidebar {
-    width: 293px;
-    background: #f7f7f7; }
+    background: var(--app-section-even-color); }
 
   .sidebar-selected {
-    background:#edf0f2;
-    color:#a434b7;
+    background: var(--app-nav-background);
+    color: var(--app-primary-color);
     text-decoration:none; }
 
   .ts-content-grid-box {
@@ -529,9 +542,8 @@ export const SharedStyles = html `
     margin: 0px; }
 
   .inner {
-    color: #111;
-    background-color: #fff;
-    min-height: 246px;
+    color: var(--app-secondary-color);
+    background-color: var(--app-light-text-color);
     padding: 40px 28px 0; }
 
   .inner {
@@ -558,15 +570,15 @@ export const SharedStyles = html `
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-items: center; }
 
-  #ts-site .l-space-bottom-5 {
+  .l-space-bottom-5 {
     margin-bottom: 40px; }
 
   ul.right-side-nav {
     list-style: none;
     padding-left: 10px; }
 
-  #ts-site .nav li {
-    border-bottom: 1px solid #eceff1;
+  .nav li {
+    border-bottom: 1px solid var(--border-grey);
     margin: 0;
     padding: 0; }
 
@@ -575,12 +587,12 @@ export const SharedStyles = html `
     padding: 0; 
     font-size: 1rem; }
 
-  #ts-site ul.body-checks {
+  ul.body-checks {
     list-style: none;
     margin-left: 0px;
     padding: 0 0 0 5px; }
 
-  #ts-site ul.body-checks li {
+  ul.body-checks li {
     background-image: url(/images/icons/ts-check-purple.svg);
     background-repeat: no-repeat;
     line-height: 30px;
@@ -588,8 +600,7 @@ export const SharedStyles = html `
     background-size: 22px 16px;
     background-position: 0px 8px; }
 
-  #ts-site .nav li h3 {
-    color: #4a5960;
+  .nav li h3 {
     font-size: 1.15rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -597,7 +608,7 @@ export const SharedStyles = html `
     margin: 20px 0 16px;
     padding-bottom: 0; }
 
-  #ts-site .nav li a {
+  .nav li a {
     color: var(--app-secondary-color);
     display: block;
     font-size: 0.95rem;
@@ -609,18 +620,18 @@ export const SharedStyles = html `
     text-overflow: ellipsis;
     white-space: nowrap; }
 
-  #ts-site .nav li a:hover{
-    background: #edf0f2;
-    color: #a434b7;
+  .nav li a:hover{
+    background: var(--app-nav-background);
+    color: var(--app-primary-color);
     text-decoration: none; }
 
-  #ts-site .l-pad-right-2 {
+  .l-pad-right-2 {
     padding-right: 16px; }
 
-  #ts-site .l-pad-left-2 {
+  .l-pad-left-2 {
     padding-left: 16px; }
 
-  #ts-site .text-uppercase {
+  .text-uppercase {
     text-transform: uppercase;
     border-top: 0px; }
 
@@ -629,7 +640,7 @@ export const SharedStyles = html `
   .flex-hover-card {
     box-sizing: border-box;
     margin-right: 20px;
-    background: #fff;
+    background: var(--app-light-text-color);
     border-radius: 2px;
     cursor: pointer;
     -ms-flex: 1;
@@ -657,16 +668,15 @@ export const SharedStyles = html `
     margin: 24px 0; }
 
   .flex-hover-card .inner>p {
-    font-size: 16px;
-    padding-top: 24px; }
+    padding-top: 14px; }
 
-  #ts-site .ts-pad-left-30 {
+  .ts-pad-left-30 {
     padding-left: 240px; }
 
-  #ts-site .ts-pad-right-38 {
+  .ts-pad-right-38 {
     padding-right: 304px; }
 
-  #ts-site .ts-showcase-content {
+  .ts-showcase-content {
     margin: 0 8px; }
 
   .text-uppercase {
@@ -689,6 +699,10 @@ export const SharedStyles = html `
   /* All screens larger than 460px */
 
   @media (min-width: 460px) {
+    header {
+      background-color: var(--app-light-text-color);
+    }
+
     h3 {
       text-align: left;
       font-size: 20px;
@@ -719,11 +733,13 @@ export const SharedStyles = html `
       max-width: 293px;
       padding-top: 0px; }
 
-    #ts-site .hero>div {
-      min-height: 270px;
+    .hero>div {
+      min-height: 180px;
       padding: 14px;
-      padding: 50px 32px 0 32px;
+      padding: 50px 62px 40px 62px;
+      margin-top: 4px;
       text-align: left; 
+      border-bottom: 1px solid var(--border-grey);
     }
 
     .center-button {
@@ -732,15 +748,16 @@ export const SharedStyles = html `
       text-align: left; 
       margin-top: 24px; }
 
-    #ts-site .ts-pad-top-6 {
-      padding-top: 5; }
+    .ts-pad-top-6 {
+      padding-top: 5px; }
 
     .ts-content-wrapper {
       min-height: 100vh;
-      background: #f7f7f7;
+      background: var(--app-section-even-color);
+      padding: 0 62px 0 62px;
       display: flex;
       flex-direction: column;
-      padding: 0 24px 0 132px; }
+    }
 
     .ts-grid-wrapper-standard {
       margin: auto auto;
@@ -755,7 +772,6 @@ export const SharedStyles = html `
       text-align: left; }
 
     .inner {
-      min-height: 254px; 
       text-align: left; }
 
     .flex-hover-card .inner>h3 {
@@ -764,9 +780,6 @@ export const SharedStyles = html `
 
     .inner p{
       text-align: left; }
-
-    .flex-hover-card .inner>p {
-      font-size: 17px; }
 
     .text-uppercase {
       text-transform: uppercase;
@@ -779,7 +792,6 @@ export const SharedStyles = html `
       margin-bottom: 5px; }
 
     .ts-grid-wrapper-auto-fill {
-      grid-gap: 24px;
       padding: 0px; }
 
     .ts-content-grid-box {

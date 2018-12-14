@@ -40,6 +40,6 @@ export const itemsSelector = state => state.articles && state.articles.data;
 export const itemListSelector = createSelector(
   itemsSelector,
   (data) => {
-    return data ? Object.keys(data).map(key => data[key]) : [{}, {}];
+    return data ? Object.keys(data).map(key => data[key]) : [];
   }
 );

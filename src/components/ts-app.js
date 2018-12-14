@@ -51,30 +51,28 @@ class TSApp extends connect(store)(LitElement) {
         display: block;
 
         --app-drawer-width: 326px;
-        
+
+        --border-grey: #e0e0e0;
         --app-primary-color: #a434b7;
-        --app-secondary-color: #000;
-        --app-dark-text-color: var(--app-secondary-color);
+        --app-secondary-color: #000000;
+        --app-nav-background: #edf0f2;
         --app-light-text-color: #ffffff;
         --app-section-even-color: #f7f7f7;
-        --app-section-odd-color: #ffffff;
+        --section-background-light-grey: #f5f5f5;
 
-        --app-header-background-color: #ffffff;
+        --app-accent-color: var(--app-primary-color);
+        --app-dark-text-color: var(--app-secondary-color);
+        --app-section-odd-color: var(--app-light-text-color);
+        --app-header-background-color: var(--app-light-text-color);
         --app-header-text-color: var(--app-dark-text-color);
         --app-header-selected-color: var(--app-primary-color);
-
         --app-drawer-background-color: var(--app-light-text-color);
         --app-drawer-text-color: var(--app-secondary-color);
         --app-drawer-selected-color: var(--app-primary-color);
 
-        --border-grey: #e0e0e0;
-
         --footer-background-grey: #303c42;
         --footer-background-secondary-grey: #37424b;
-        --footer-text: #f7f7f7;
-        --section-background-light-grey: #f5f5f5;
-
-        --app-accent-color: #a434b7;
+        --footer-text: var(--app-section-even-color);
       }
 
       [hidden] {
@@ -89,7 +87,7 @@ class TSApp extends connect(store)(LitElement) {
         text-align: left;
         background-color: var(--app-header-background-color);
         color: var(--app-header-text-color);
-        border-bottom: 1px solid #eee; }
+        border-bottom: 1px solid var(--border-grey); }
 
       nav {
         height: 46px; }
@@ -101,7 +99,7 @@ class TSApp extends connect(store)(LitElement) {
         z-index: 200; }
 
       .masthead {
-        background-color: #fff;
+        background-color: var(--app-light-text-color);
         padding: 0 14px 0 34px !important; }
 
       .ts-title {
@@ -113,8 +111,8 @@ class TSApp extends connect(store)(LitElement) {
 
       .desktop-menu {
         height: 46px;
-        background-color: #f7f7f7;
-        border-bottom: 1px solid #e0e0e0; }
+        background-color: var(--app-section-even-color);
+        border-bottom: 1px solid var(--border-grey); }
 
       .main-navigation a {
         display: inline-block;
@@ -129,7 +127,7 @@ class TSApp extends connect(store)(LitElement) {
         color: rgba(0, 0, 0, .54); }
 
       .main-navigation a:hover {
-        color: #a434b7; }
+        color: var(--app-primary-color); }
 
       .main-navigation a[selected] {
         color: rgba(0, 0, 0, .87);
@@ -138,7 +136,7 @@ class TSApp extends connect(store)(LitElement) {
 
       .button {
         border-radius: 2px;
-        color: #fff;
+        color: var(--app-light-text-color);
         cursor: pointer;
         display: inline-block;
         font-size: 16px;
@@ -166,24 +164,24 @@ class TSApp extends connect(store)(LitElement) {
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
-        border: 1px solid #a434b7 !important;
+        border: 1px solid var(--app-primary-color) !important;
       }
 
       .button.button-primary-cta {
         background: transparent;
-        border: 2px solid #a434b7;
-        color: #a434b7; }
+        border: 2px solid var(--app-primary-color);
+        color: var(--app-primary-color); }
 
       .button.button-secondary-cta {
-        background: #a434b7;
-        border: 2px solid #a434b7;
-        color: #fff; }
+        background: var(--app-primary-color);
+        border: 2px solid var(--app-primary-color);
+        color: var(--app-light-text-color); }
 
       .button.button-primary-cta:hover, .button.button-primary-cta:active {
         background: #f9edfc; }
 
       .button.button-secondary-cta:hover, .button.button-secondary-cta:active {
-        color: #ffffff;
+        color: var(--app-light-text-color);
         box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
 
       .toolbar-top {
@@ -237,10 +235,10 @@ class TSApp extends connect(store)(LitElement) {
         margin-right: 10px; }
 
       #drawer app-toolbar {
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid var(--border-grey);
         margin-bottom: 5px;
-        background-color: #a434b7;
-        color: #fff; }
+        background-color: var(--app-primary-color);
+        color: var(--app-light-text-color); }
 
       .drawer-list {
         box-sizing: border-box;
@@ -304,9 +302,9 @@ class TSApp extends connect(store)(LitElement) {
     <app-header-layout id="ts-appheaderlayout" has-scrolling-region>
       <app-header slot="header" condenses reveals effects="waterfall">
         <app-toolbar class="masthead">
-          <button class="menu-btn" title="Menu" @click="${_ => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
-          <div class="ts-title" main-title>${this.appTitle}
-            <span class="paper-font-body2">by PRESSMEDICS</span>
+          <button class="menu-btn" title="Menu" @click="${() => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
+          <div class="ts-title" main-title>${appTitle}
+            <span class="paper-font-body2">by THEME SURGEONS</span>
           </div>
           <div class="cta-header toolbar-list">
             <a class="button button-primary-cta chip-button" data-customizer="global-nav-trial-button" href="">Login</a>
@@ -325,9 +323,8 @@ class TSApp extends connect(store)(LitElement) {
     </app-header-layout>
 
     <!-- Drawer content -->
-    <app-drawer id="drawer" .opened="${_drawerOpened}"
-        @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
-      <app-toolbar>HyperPress <span class="sub-tagline paper-font-body2"> by PRESS MEDICS</span></app-toolbar>
+    <app-drawer .opened="${_drawerOpened}" ?hidden="${!_lazyResourcesLoaded}" @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
+      <app-toolbar>HyperPress <span class="sub-tagline paper-font-body2"> by THEME SURGEONS</span></app-toolbar>
       <nav class="drawer-list">
         <a ?selected="${_page === 'home'}" href="/">Home</a>
         <a ?selected="${_page === 'solutions'}" href="/solutions">Solutions</a>
@@ -361,7 +358,7 @@ class TSApp extends connect(store)(LitElement) {
     </main>
       
     <footer>
-      <p>Made with \u2764\uFE0F by Pressmedics. Powered by Google</p>
+      <p>Made with \u2764\uFE0F by Theme Surgeons. Powered by Google</p>
     </footer>
 
     <snack-bar ?active="${_snackbarOpened}">
@@ -412,7 +409,7 @@ class TSApp extends connect(store)(LitElement) {
       }
     }
 
-    _stateChanged(state) {
+    stateChanged(state) {
       this._page = state.app.page;
       this._lazyResourcesLoaded = state.app.lazyResourcesLoaded;
       this._lastVisitedListPage = state.app.lastVisitedListPage;

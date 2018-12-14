@@ -13,6 +13,7 @@ import {
 } from './ts-icons.js';
 
 import { SharedStyles } from './shared-styles.js';
+import { TsTableStyles } from './ts-table-style';
 
 import './ts-offline.js';
 import './ts-image.js';
@@ -60,7 +61,8 @@ class TSDetail extends connect(store)(PageViewElement) {
     });
 
   return html `
-    ${SharedStyles}
+    ${ SharedStyles }
+    ${ TsTableStyles }
     <style>
         :host {
           display: block;
@@ -90,7 +92,6 @@ class TSDetail extends connect(store)(PageViewElement) {
         section {
           max-width: 748px;
           box-sizing: border-box;
-          font-weight: 300;
         }
         .item {
           display: flex;
@@ -210,6 +211,8 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
         .social-icon {
           fill:  #888;
+          cursor: pointer;
+          margin-right: 5px;
         }
         .gplus-icon:hover {
           fill:  #db4437;
@@ -320,7 +323,7 @@ class TSDetail extends connect(store)(PageViewElement) {
 
   static get properties() {
     return {
-      isFetching: Boolean,
+      isFetching: { type: Boolean },
       _data: { type: Array },
       _lastVisitedListPage: { type: Boolean },
       _showOffline:{ type: Boolean }
@@ -328,7 +331,7 @@ class TSDetail extends connect(store)(PageViewElement) {
   }
 
   // This is called every time something is updated in the store.
-  _stateChanged(state) {
+  stateChanged(state) {
     this._data = articleSelector(state);
     this._lastVisitedListPage = state.app.lastVisitedListPage;
     this._showOffline = state.app.offline && state.article.failure;

@@ -14,7 +14,7 @@ export const TsInputStyle = html`
 <style>
   ts-input {
     display: inline-block;
-    margin: 20px 0;
+    margin: 5px 0px 5px 0px;
   }
   ts-input > input::-webkit-input-placeholder {
     color: transparent;
