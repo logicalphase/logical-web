@@ -42,10 +42,6 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
         page = '404';
       }
       break;
-    case 'solutions':
-      await
-        import('../components/ts-solutions.js');
-      break;
     case 'care':
       await
         import('../components/ts-care.js');

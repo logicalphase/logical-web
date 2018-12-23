@@ -72,6 +72,11 @@ class TSItem extends LitElement {
         padding: 16px 28px;
       }
 
+      a {
+          color: black;
+          text-decoration: none;
+      }
+
       .inner {
         padding: 20px 40px 0 14px;
         min-height:165px;
@@ -89,11 +94,12 @@ class TSItem extends LitElement {
 
       .category-vertical-lr {
         float: right;
-        height: calc(34%);
+        height: calc(100%);
         position:relative;
         width: 28px;
         padding:0 3px 0 4px;
         font-size: 14px;
+        font-weight: 500;
         letter-spacing: .08em;
         text-align:center;
         text-transform: uppercase;
@@ -115,11 +121,6 @@ class TSItem extends LitElement {
         .inner p {
           padding: 4px 0px 0px 0px;
           max-width: 570px;
-        }
-
-        a {
-          color: black;
-          text-decoration: none;
         }
 
         .flex-hover-card .inner>p {

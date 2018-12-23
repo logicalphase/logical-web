@@ -32,7 +32,9 @@ export const SharedStyles = html `
   h1.paper-font-display2 {
     font-size: 42px;
     line-height: 44px;
-    padding-right: 0px; }
+    padding-right: 0px; 
+    letter-spacing: .5px;
+  }
       
   h2.paper-font-title {
     font-size: 22px;
@@ -44,7 +46,9 @@ export const SharedStyles = html `
     font-weight: 400;
     letter-spacing: -.012em;
     line-height: 31px; 
-    text-align: center;}
+    text-align: center;
+    padding: 0 14px 0 14px;
+  }
 
   h4 {
     font-size: 16px;
@@ -57,9 +61,9 @@ export const SharedStyles = html `
     line-height: 24px; }
 
   p {
-    margin: 0 0 25px 0;
-    line-height: 28px; }
-
+    margin: 20px 24px 25px 24px;
+  }
+  
   strong {
     font-weight:500;
   }
@@ -79,6 +83,10 @@ export const SharedStyles = html `
 
   th {
     font-weight:500;
+  }
+
+  .center {
+    text-align: center !important;
   }
 
   .article-button {
@@ -503,14 +511,20 @@ export const SharedStyles = html `
   .ts-header-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 0 24px 0 24px; }
+    padding: 0 24px 0 24px; 
+    border-bottom: 1px solid var(--border-grey);
+  }
+
+  .ts-header-wrapper h1, .ts-header-wrapper h2 {
+    padding-bottom: 10px;
+  }
 
   .ts-content-wrapper {
     min-height: 100vh;
     background: var(--app-section-even-color);
     display: flex;
     flex-direction: column;
-    padding: 0 24px 0 24px; }
+    padding: 0 20px 0 5px; }
 
   .content {
     flex: 1;
@@ -542,16 +556,13 @@ export const SharedStyles = html `
     margin: 0px; }
 
   .inner {
+    text-align: center;
     color: var(--app-secondary-color);
     background-color: var(--app-light-text-color);
-    padding: 40px 28px 0; }
-
-  .inner {
-    text-align: center;
-  }
+    padding: 24px 28px 0; }
 
   .inner h3 {
-    margin: 24px 0;
+    margin: 5px 0;
   }
 
   .inner p{
@@ -590,12 +601,13 @@ export const SharedStyles = html `
   ul.body-checks {
     list-style: none;
     margin-left: 0px;
-    padding: 0 0 0 5px; }
+    padding: 0 24px 0 24px; 
+  }
 
   ul.body-checks li {
     background-image: url(/images/icons/ts-check-purple.svg);
     background-repeat: no-repeat;
-    line-height: 30px;
+    line-height: 24px;
     padding: 0 0 0 36px;
     background-size: 22px 16px;
     background-position: 0px 8px; }
@@ -665,10 +677,11 @@ export const SharedStyles = html `
 
   .flex-hover-card .inner>h3 {
     font-size: 22px;
-    margin: 24px 0; }
+    margin: 0px 0px 10px 0px; }
 
   .flex-hover-card .inner>p {
-    padding-top: 14px; }
+    padding-top: 14px;
+    margin: 0px; }
 
   .ts-pad-left-30 {
     padding-left: 240px; }
@@ -706,26 +719,37 @@ export const SharedStyles = html `
     h3 {
       text-align: left;
       font-size: 20px;
-      font-weight: 500px
+      font-weight: 500;
+      letter-spacing: .15px;
+      padding: 0;
     }
 
     h1.paper-font-display2 {
-    font-size: 42px;
-    line-height: 44px;
-    padding-right: 120px;
-    margin-left: -3px; }
+      font-size: 42px;
+      line-height: 44px;
+      padding-right: 120px;
+      margin-left: -3px; }
 
     h2.mdc-typography--headline3 {
-    font-size: 16px;
-    white-space: normal;
-    padding-right: 120px; }
+      font-size: 16px;
+      white-space: normal;
+      padding-right: 120px; }
 
     p {
-    font: 400 16px/24px Roboto, Sans-serif;
-    line-height: 28px; }
+      font: 300 16px/24px Roboto, Sans-serif;
+      margin: 0 0 25px 0;
+      line-height: 28px; }
+
+    ul.body-checks {
+      padding: 0 5px; 
+    }
 
     figure {
       margin-top: 0px; }
+
+    .center {
+      text-align: left !important;
+    }
 
     .sticky {
       display:block;
@@ -775,7 +799,7 @@ export const SharedStyles = html `
       text-align: left; }
 
     .flex-hover-card .inner>h3 {
-      margin: 14px 0;
+      margin: 0;
     }
 
     .inner p{
@@ -783,7 +807,9 @@ export const SharedStyles = html `
 
     .text-uppercase {
       text-transform: uppercase;
-      text-align: left; }
+      text-align: left; 
+      padding: 16px 28px 18px 28px;
+    }
 
     .ts-grid-wrapper-autofill, .ts-grid-wrapper-standard {
       padding: 10px; }

@@ -70,13 +70,14 @@ class TSApp extends connect(store)(LitElement) {
         --app-drawer-text-color: var(--app-secondary-color);
         --app-drawer-selected-color: var(--app-primary-color);
 
-        --footer-background-grey: #303c42;
-        --footer-background-secondary-grey: #37424b;
+        --footer-background-grey: #3c4043;
+        --footer-background-secondary-grey: #5f6368;;
         --footer-text: var(--app-section-even-color);
       }
 
       [hidden] {
-        display: none !important; }
+        display: none !important; 
+      }
 
       app-header {
         position: fixed;
@@ -87,52 +88,66 @@ class TSApp extends connect(store)(LitElement) {
         text-align: left;
         background-color: var(--app-header-background-color);
         color: var(--app-header-text-color);
-        border-bottom: 1px solid var(--border-grey); }
+        border-bottom: 1px solid var(--border-grey); 
+      }
 
       nav {
-        height: 46px; }
+        height: 46px; 
+      }
 
       /* We need to make sure when drawer is open
       it covers our app header. Otherwise there's
       menu button that is disabled */
       #drawer {
-        z-index: 200; }
+        z-index: 200; 
+      }
 
       .masthead {
         background-color: var(--app-light-text-color);
-        padding: 0 14px 0 34px !important; }
+        padding: 12px 8px;
+        height: inherit; 
+      }
 
       .ts-title {
-        margin-left: 0px; }
+        margin-left: 0px; 
+        font-weight: 300;
+        color: var(--app-secondary-color);
+      }
 
       .paper-font-body2 {
         font-size: 14px;
-        transform: uppercase; }
+        transform: uppercase; 
+      }
 
       .desktop-menu {
         height: 46px;
         background-color: var(--app-section-even-color);
-        border-bottom: 1px solid var(--border-grey); }
+        border-bottom: 1px solid var(--border-grey); 
+      }
 
       .main-navigation a {
         display: inline-block;
         margin: 0 20px;
         padding-top: 14px;
         height: 65%;
-        font-weight: 400; }
+        font-weight: 400; 
+      }
 
       .main-navigation a, .main-navigation a:visited {
         text-decoration: none;
         font-size: 14px;
-        color: rgba(0, 0, 0, .54); }
+        color: rgba(0, 0, 0, .54); 
+      }
 
       .main-navigation a:hover {
-        color: var(--app-primary-color); }
+        color: var(--app-primary-color); 
+      }
 
       .main-navigation a[selected] {
         color: rgba(0, 0, 0, .87);
         font-weight: 500;
-        border-bottom: 2px solid var(--app-primary-color); }
+        border-bottom: 2px solid var(--app-primary-color); 
+      }
 
       .button {
         border-radius: 2px;
@@ -150,15 +165,18 @@ class TSApp extends connect(store)(LitElement) {
         text-decoration: none;
         text-transform: uppercase;
         transition: box-shadow .3s, background-color .3s, color .3s, transform .3s;
-        will-change: background-color; }
+        will-change: background-color; 
+      }
 
       .cta-header {
         font-size: 14px;
-        margin-right: 24px; }
+        margin-right: 24px; 
+      }
 
       .button-secondary-cta, .button-primary-cta {
         line-height: 30px;
-        max-height: 30px; }
+        max-height: 30px; 
+      }
 
       .chip-button {
         -webkit-border-radius: 8px;
@@ -170,22 +188,27 @@ class TSApp extends connect(store)(LitElement) {
       .button.button-primary-cta {
         background: transparent;
         border: 2px solid var(--app-primary-color);
-        color: var(--app-primary-color); }
+        color: var(--app-primary-color); 
+      }
 
       .button.button-secondary-cta {
         background: var(--app-primary-color);
         border: 2px solid var(--app-primary-color);
-        color: var(--app-light-text-color); }
+        color: var(--app-light-text-color); 
+      }
 
       .button.button-primary-cta:hover, .button.button-primary-cta:active {
-        background: #f9edfc; }
+        background: #f9edfc; 
+      }
 
       .button.button-secondary-cta:hover, .button.button-secondary-cta:active {
         color: var(--app-light-text-color);
-        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); 
+      }
 
       .toolbar-top {
-        background-color: var(--app-header-background-color); }
+        background-color: var(--app-header-background-color); 
+      }
 
       [main-title] {
         font-family: 'Roboto';
@@ -194,21 +217,24 @@ class TSApp extends connect(store)(LitElement) {
         /* In the narrow layout, the toolbar is offset by the width of the
         drawer button, and the text looks not centered. Add a padding to
         match that button */
-        padding-right: 44px; }
+        padding-right: 44px; 
+      }
 
       .sub-tagline {
         margin-left:5px;
       }
 
       .toolbar-list {
-        display: none; }
+        display: none; 
+      }
 
       .toolbar-list > a {
         display: inline-block;
         color: var(--app-header-text-color);
         text-decoration: none;
         line-height: 30px;
-        padding: 0px 18px; }
+        padding: 0px 18px; 
+      }
 
       .toolbar-list > a[selected] {
         color: var(--app-header-selected-color);
@@ -219,26 +245,27 @@ class TSApp extends connect(store)(LitElement) {
         border: none;
         fill: var(--app-header-text-color);
         cursor: pointer;
-        height: 44px;
         width: 44px;
-        margin-left: -20px;
-        margin-right: 10px; }
+        padding-top: 5px;
+        margin: 0 10px 0 5px; 
+      }
 
       .search-btn {
         background: none;
         border: none;
         fill: var(--app-header-text-color);
         cursor: pointer;
-        height: 44px;
         width: 44px;
         margin-left: -20px;
-        margin-right: 10px; }
+        margin-right: 10px; 
+      }
 
       #drawer app-toolbar {
         border-bottom: 1px solid var(--border-grey);
         margin-bottom: 5px;
         background-color: var(--app-primary-color);
-        color: var(--app-light-text-color); }
+        color: var(--app-light-text-color); 
+      }
 
       .drawer-list {
         box-sizing: border-box;
@@ -246,56 +273,146 @@ class TSApp extends connect(store)(LitElement) {
         height: 100%;
         padding: 24px;
         background: var(--app-drawer-background-color);
-        position: relative; }
+        position: relative; 
+      }
 
       .drawer-list > a {
         display: block;
         text-decoration: none;
+        font: 400 14px/22px Roboto, sans-serif;
+        letter-spacing: 0.25px;
         color: var(--app-drawer-text-color);
-        line-height: 40px;
-        padding: 5px 14px; }
+        padding: 12px 8px 12px 0px; 
+      }
 
       .drawer-list .submenu {
-        padding-left:34px; }
+        padding-left: 24px; 
+      }
 
       .drawer-list > a[selected] {
-        color: var(--app-drawer-selected-color); }
+        color: var(--app-drawer-selected-color); 
+      }
 
       .main-content {
         padding-top: 64px;
         min-height: 100vh; }
 
       .page {
-        display: none; }
+        display: none; 
+      }
 
       .page[active] {
-        display: block; }
+        display: block; 
+      }
 
-      footer {
-        padding: 24px;
-        background: var(--app-header-text-color);
+      .devsite-footer-linkboxes-all-backup, .devsite-footer-linkbox-cloud {
+        background-color: var(--footer-background-grey);
+      }
+      .devsite-footer-linkboxes-all-backup {
+        background: #303c42;
+      }
+
+      .devsite-footer-linkboxes>nav::before {
+        background: var(--footer-background-grey);
+        border-bottom: solid 1px #80868b;
+        color: var(--footer-background-grey);
+        content: "HyperPress";
+        display: block;
+        height: 73px;
+        margin: 0 24px;
+      }
+
+      *, *:before, *:after {
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+      }
+      .devsite-nav {
+        font-size: 13px;
+      }
+
+      .devsite-utility-footer-nav {
+        color: #fff;
+        overflow: auto;
+        padding: 10px 24px;
+      }
+
+      .devsite-full-site-width, .devsite-toast-fill {
+        margin: 0 auto;
+        max-width: 1400px;
+      }
+
+      .devsite-footer-linkboxes-all-backup, .devsite-footer-linkbox-cloud {
+        background-color: var(--footer-background-grey) !important;
+      }
+
+      .devsite-footer-linkboxes-all-backup {
+        background: var(--footer-background-grey);
+      }
+
+      .devsite-footer-linkboxes {
+        background: #263238;
+        font: 14px/16px Roboto,sans-serif;
+      }
+
+      .devsite-utility-footer {
+        background: var(--footer-background-secondary-grey);
         color: var(--footer-text);
-        text-align: center; }
+        text-align: center; 
+      }
+
+      .devsite-utility-footer-nav-left {
+        float: left;
+      }
+
+      .devsite-utility-footer-link+.devsite-utility-footer-link::before {
+        content: '|';
+        margin: 0 8px;
+      }
+      footer nav{
+        height: inherit;
+      }
+
+      .devsite-utility-footer-link {
+        color: #dadce0;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration:none;
+      }
+
+      .devsite-utility-footer-links, .devsite-utility-footer-newsletter-signup-text {
+        font-weight: 500;
+        margin-right: 16px;
+      }
+
 
       /* Wide layout: when the viewport width is bigger than 460px, layout
       changes to a wide layout. */
       @media (min-width: 460px) {
         .toolbar-list {
-          display: block; }
+          display: block; 
+        }
+
+        .masthead {
+          padding: 12px 8px 12px 36px;
+        }
 
         .menu-btn {
-          display: none; }
+          display: none; 
+        }
 
         .toolbar-list > a {
-          padding: 0px 18px; }
+          padding: 0px 18px; 
+        }
 
         .main-content {
-          padding-top: 107px; }
+          padding-top: 107px; 
+        }
 
         /* The drawer button isn't shown in the wide layout, so we don't
         need to offset the title */
         [main-title] {
-          padding-right: 0px; }
+          padding-right: 0px; 
+        }
       }
     </style>
 
@@ -303,9 +420,7 @@ class TSApp extends connect(store)(LitElement) {
       <app-header slot="header" condenses reveals effects="waterfall">
         <app-toolbar class="masthead">
           <button class="menu-btn" title="Menu" @click="${() => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
-          <div class="ts-title" main-title>${appTitle}
-            <span class="paper-font-body2">by THEME SURGEONS</span>
-          </div>
+          <div class="ts-title" main-title>${appTitle}</div>
           <div class="cta-header toolbar-list">
             <a class="button button-primary-cta chip-button" data-customizer="global-nav-trial-button" href="">Login</a>
           </div>
@@ -313,7 +428,6 @@ class TSApp extends connect(store)(LitElement) {
         <app-toolbar class="desktop-menu toolbar-list" sticky>
           <nav class="main-navigation" role="navigation">
             <a ?selected="${_page === 'home'}" href="/">Home</a>
-            <a ?selected="${_page === 'solutions'}" href="/solutions">Solutions</a>
             <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
             <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
             <a style="float:right" ?selected="${_page === 'support'}" href="/support">Support</a>
@@ -324,10 +438,9 @@ class TSApp extends connect(store)(LitElement) {
 
     <!-- Drawer content -->
     <app-drawer .opened="${_drawerOpened}" ?hidden="${!_lazyResourcesLoaded}" @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
-      <app-toolbar>HyperPress <span class="sub-tagline paper-font-body2"> by THEME SURGEONS</span></app-toolbar>
+      <app-toolbar>${appTitle}</app-toolbar>
       <nav class="drawer-list">
         <a ?selected="${_page === 'home'}" href="/">Home</a>
-        <a ?selected="${_page === 'solutions'}" href="/solutions">Solutions</a>
         <a class="submenu" ?selected="${_page === 'design'}" href="/design">Progressive Web Design</a>
         <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">PageSpeed Optimization</a>
         <a class="submenu" ?selected="${_page === 'emergency'}" href="/emergency">WordPress 911</a>
@@ -343,7 +456,6 @@ class TSApp extends connect(store)(LitElement) {
     <!-- Main content -->
     <main class="main-content">
       <ts-home class="page" ?active="${_page === 'home'}"></ts-home>
-      <ts-solutions class="page" ?active="${_page === 'solutions'}"></ts-solutions>
       <ts-care class="page" ?active="${_page === 'care'}"></ts-care>
       <ts-design class="page" ?active="${_page === 'design'}"></ts-design>
       <ts-emergency class="page" ?active="${_page === 'emergency'}"></ts-emergency>
@@ -356,9 +468,22 @@ class TSApp extends connect(store)(LitElement) {
       <ts-contact class="page" ?active="${_page === 'contact'}"></ts-contact>
       <ts-view404 class="page" ?active="${_page === '404'}"></ts-view404>
     </main>
-      
-    <footer>
-      <p>Made with \u2764\uFE0F by Theme Surgeons. Powered by Google</p>
+    </article>
+    
+    <footer class="devsite-footer-linkboxes nocontent devsite-footer-linkboxes-all-backup">
+      <nav class="devsite-full-site-width">
+
+      </nav>
+    </footer>
+    <footer class="devsite-utility-footer">
+      <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+        <div class="devsite-utility-footer-nav-left">
+        <span class="devsite-footer-links">
+          <a class="devsite-utility-footer-link gc-analytics-event" href="/site-terms">Site Terms</a>
+          <a class="devsite-utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
+        </span>
+        </div>
+      </nav>
     </footer>
 
     <snack-bar ?active="${_snackbarOpened}">
