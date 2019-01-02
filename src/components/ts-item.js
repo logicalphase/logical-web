@@ -26,13 +26,17 @@ class TSItem extends LitElement {
     return html `
       <style>
       h3.paper-font-headline {
-        font-size: 1.5rem;
-        font-weight: 300;
+        font-size: 1.14rem;
+        font-weight: 400;
         margin: 10px 0;
       }
 
+      p {
+        word-spacing: 0.1rem;
+      }
+
       .ts-read-more {
-        padding: 13px 28px;
+        padding: 13px 24px;
         background-color: var(--app-light-text-color);
       }
       .ts-read-more a {
@@ -78,7 +82,7 @@ class TSItem extends LitElement {
       }
 
       .inner {
-        padding: 20px 40px 0 14px;
+        padding: 20px 55px 10px 24px;
         min-height:165px;
         border-bottom: 1px solid #e4e4e4;
       }
@@ -87,15 +91,15 @@ class TSItem extends LitElement {
         margin-top: 20px;
         margin-bottom: 10px;
         font-size: 14px !important;
-        font-weight: 400 !important;
+        font-weight: 300 !important;
         padding-left: 0px;
         line-height: 14px;
       }
 
       .category-vertical-lr {
         float: right;
-        height: calc(100%);
         position:relative;
+        min-height:186px;
         width: 28px;
         padding:0 3px 0 4px;
         font-size: 14px;
@@ -118,6 +122,12 @@ class TSItem extends LitElement {
           margin-right: 24px;
         }
 
+        h3.paper-font-headline {
+          font-size: 1.5rem;
+          font-weight: 300;
+          margin: 10px 0;
+        }
+
         .inner p {
           padding: 4px 0px 0px 0px;
           max-width: 570px;
@@ -132,7 +142,7 @@ class TSItem extends LitElement {
         }
 
         .category-vertical-lr {
-          height:186px;
+          min-height:186px;
         }
 
         .small-print {

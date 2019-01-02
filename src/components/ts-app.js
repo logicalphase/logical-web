@@ -437,7 +437,7 @@ class TSApp extends connect(store)(LitElement) {
     </app-header-layout>
 
     <!-- Drawer content -->
-    <app-drawer .opened="${_drawerOpened}" ?hidden="${!_lazyResourcesLoaded}" @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
+    <app-drawer id="drawer" .opened="${_drawerOpened}" @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
       <app-toolbar>${appTitle}</app-toolbar>
       <nav class="drawer-list">
         <a ?selected="${_page === 'home'}" href="/">Home</a>

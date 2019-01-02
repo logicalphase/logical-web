@@ -35,7 +35,7 @@ export const SharedStyles = html `
     padding-right: 0px; 
     letter-spacing: .5px;
   }
-      
+
   h2.paper-font-title {
     font-size: 22px;
     white-space: normal;
@@ -61,7 +61,8 @@ export const SharedStyles = html `
     line-height: 24px; }
 
   p {
-    margin: 20px 24px 25px 24px;
+    margin: 20px 20px 25px 20px;
+    word-spacing: 0.15rem;
   }
   
   strong {
@@ -106,6 +107,28 @@ export const SharedStyles = html `
   .article-button:active {
     background-color: var(--app-dark-text-color);
     color: var(--app-light-text-color);
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  .delayed-fade-in {
+    opacity: 0;
+    animation: fadeIn 1.4s forwards;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Material Design Styles */
@@ -524,7 +547,7 @@ export const SharedStyles = html `
     background: var(--app-section-even-color);
     display: flex;
     flex-direction: column;
-    padding: 0 20px 0 5px; }
+    padding: 0 5px 0 15px; }
 
   .content {
     flex: 1;
@@ -608,7 +631,7 @@ export const SharedStyles = html `
     background-image: url(/images/icons/ts-check-purple.svg);
     background-repeat: no-repeat;
     line-height: 24px;
-    padding: 0 0 0 36px;
+    padding: 5px 0 0 36px;
     background-size: 22px 16px;
     background-position: 0px 8px; }
 
@@ -728,7 +751,8 @@ export const SharedStyles = html `
       font-size: 42px;
       line-height: 44px;
       padding-right: 120px;
-      margin-left: -3px; }
+      margin-left: -3px; 
+    }
 
     h2.mdc-typography--headline3 {
       font-size: 16px;
@@ -738,7 +762,9 @@ export const SharedStyles = html `
     p {
       font: 300 16px/24px Roboto, Sans-serif;
       margin: 0 0 25px 0;
-      line-height: 28px; }
+      line-height: 28px; 
+      font-size: .95rem;
+    }
 
     ul.body-checks {
       padding: 0 5px; 

@@ -70,8 +70,9 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
 
         h1, h2 {
-          font-weight: 500;
+          font-weight: 400;
           margin-bottom: 20px;
+          margin: 20px 20px 25px 20px;
         }
 
         h2 {
@@ -79,15 +80,57 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
 
         h3 {
-          margin: 24px 0;
+          margin: 20px 20px 25px 20px;
+          padding: 0; 
+        }
+        ol {
+          margin-left: 20px;
+        }
+        ul{
+          margin-left: 10px;
         }
 
         ol li, ul li {
           font-size:1rem;
+          margin-right: 20px
+        }
+
+        li ul {
+          margin-left: -20px;
+        }
+
+        table {
+          margin: 10px 14px 15px 14px;
+        }
+
+        blockquote {
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 40px;
+          margin-inline-end: 40px;
+        }
+
+        blockquote p {
+          quotes: "“" "”";
+        }
+
+        blockquote p::before {
+          content: open-quote;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 62px;
+          color: var(--app-primary-color);
+          margin-left: -28px;
+          margin-bottom: -20px;
+        }
+        blockquote p::after {
+          display:none;
+          content: open-quote;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 62px;
         }
 
         strong {
-          font-weight: 500;
+          font-weight: 400;
         }
         section {
           max-width: 748px;
@@ -134,7 +177,7 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
         .desc > h3 {
           font-size: 22px;
-          font-weight: 500;
+          font-weight: 400;
           text-align: left;
         }
         .desc > ul {
@@ -153,9 +196,10 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
 
         .desc .wp-caption-text {
-            font-size: 0.9rem;
-            padding: 10px 0px;
-            margin-bottom: 0px;
+          font-size: 0.9rem;
+          padding: 0px 0px;
+          margin: 5px 14px 10px 14px;
+          line-height: normal;
         }
 
         .desc img {
@@ -237,11 +281,41 @@ class TSDetail extends connect(store)(PageViewElement) {
           :host {
             padding: 48px 24px 24px;
           }
+          h2, h3 {
+            margin: 20px 0px 25px 0px;
+            padding: 0;
+          }
+
           h2 {
             font-size: 1.5rem;
           }
+
+          ol {
+            margin-left: 14px;
+          }
+          ul{
+            margin-left: 0px;
+            padding-left: 24px;
+          }
+
+          li ul, li ol {
+            margin-left: 0px;
+          }
+
           ol li, ul li {
-            font: 400 16px/24px Roboto, Sans-serif;
+            font: 300 16px/24px Roboto, Sans-serif;
+          }
+          blockquote {
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 80px;
+            margin-inline-end: 80px;
+          }
+          blockquote p {
+            margin-bottom: 0px;
+          }
+          small {
+            margin-bottom: -24px;
           }
           section {
             margin: 0 auto;
@@ -289,12 +363,11 @@ class TSDetail extends connect(store)(PageViewElement) {
         <div class="item">
           <div class="cover" hero>
             <article-image .src="https://api.themesurgeons.com/wp-content/uploads/${thumbnail}" .alt="${title}" ></article-image>
-            <h1 class="title">${title}</h1>
-          <div class="item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
+            <h1 class="fade-in title">${title}</h1>
+          <div class=" fade-in item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
           </div>
         </div>
-        <div class="desc">
-
+        <div class="delayed-fade-in desc">
           ${unsafeHTML(item.content && item.content.rendered || item.subtitle || 'None')}
         </div>
         <div class="desc ts-read-more" ?hidden="${categories.length === 0}">

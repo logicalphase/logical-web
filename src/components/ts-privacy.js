@@ -29,12 +29,6 @@ class TSPrivacy extends LitElement {
         padding-top:24px;
       }
 
-      .ts-content-wrapper, 
-      .ts-content-grid-box {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
       li.childlist {
         margin-left:16px;
         list-style-type: square;
@@ -67,7 +61,7 @@ class TSPrivacy extends LitElement {
       }
 
       @media (min-width: 460px) {
-        .ts-header-wrapper {
+        .hero {
           background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
           background-size: contain;
           background-position: 93% center;
@@ -75,11 +69,14 @@ class TSPrivacy extends LitElement {
 
         aside {
           margin-top: 30px;
-          padding-right: 64px;
         }
 
         p {
           text-align: left;
+        }
+
+        ul.right-side-nav {
+          padding-left: 0px;
         }
 
         td:last-child {
@@ -105,20 +102,23 @@ class TSPrivacy extends LitElement {
           padding: 24px 34px 24px 34px;
           margin-bottom: 24px; 
           margin-right: 44px; }
-
-      }
-      @media (max-width: 800px) {
-        .ts-header-wrapper {
-          background-position: 94% center !important; }
-        .ts-right {
-          float: none !important;
-          margin: 24px 30px 5px;
+        
+        .sidebar {
+          background-color: var(--app-section-odd-color);
         }
-      }  
+        .sidebar h3 {
+          font-weight: 400;
+          padding-top: 24px;
+        }
+        .sidebar .text-uppercase {
+          padding-left: 14px;
+        }
+
+      } 
       </style>
       <article id="ts-site" class="ts-privacy">
         <header class="hero">
-          <div class="ts-header-wrapper">
+          <div class="ts-header-wrapper fade-in">
             <h1 class="paper-font-display2 paper-font-light">Privacy Statement</h1>
             <h2 class="paper-font-title paper-font-light">Privacy is built into our services</h2>
             <p>Effective date: 25 May 2018</p>
@@ -127,7 +127,7 @@ class TSPrivacy extends LitElement {
         <div class="ts-content-wrapper">
           <section class="content background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
             <div class="columns">
-              <main class="main">
+              <main class="main fade-in">
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">Introduction</h2>
                   <p>We are both <a href="https://gdpr-info.eu/chapter-4/">Controllers and Processors</a> of data and we want you to understand how and why we collect, store, and use data for our business purposes and to comply with legal requirements. For simplicity, using the term "We" and "Our" means the same as the below listed Entities Covered section.</p>
@@ -496,7 +496,7 @@ class TSPrivacy extends LitElement {
                   <div class="sticky">
                     <ul class="right-side-nav l-space-bottom-5">
                       <li>
-                        <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">PRIVACY STATEMENT</h3>
+                        <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">On this page</h3>
                       </li>
                       <li>
                         <a style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;" class="privacy" track-type="privacyStatement" track-name="web-page" track-metadata-position="sidebar" href="/privacy">Introduction</a>

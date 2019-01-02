@@ -54,7 +54,7 @@ class TSBlog extends connect(store)(PageViewElement) {
 
     /* Smaller than 460 */
 
-    .ts-header-wrapper {
+    .hero {
       background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
       background-size: contain;
       background-position: center center;
@@ -142,7 +142,7 @@ class TSBlog extends connect(store)(PageViewElement) {
     }
 
     @media (min-width: 460px) {
-      .ts-header-wrapper {
+      .hero {
         background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
         background-size: contain;
         background-position: 94% center;
@@ -153,7 +153,7 @@ class TSBlog extends connect(store)(PageViewElement) {
 
     <article id="ts-site" class="ts-blog">
       <header class="hero">
-        <div class="ts-header-wrapper">
+        <div class=" fade-in ts-header-wrapper">
           <h1 class="paper-font-display2 paper-font-light">WordPress Blog</h1>
           <h2 class="paper-font-title paper-font-light">Pro tips for making the most of your WordPress site</h2>
           <div class="center-button">
@@ -169,7 +169,7 @@ class TSBlog extends connect(store)(PageViewElement) {
               <div class="ts-content-grid-box" ?hidden="${!_query}">
                 ${repeat(_data, (item) => html`
                   <div class="ts-blog-list-item">
-                    <div class="flex-hover-card">
+                    <div class="delayed-fade-in flex-hover-card">
                       <ts-item .item="${item}"></ts-item>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ class TSBlog extends connect(store)(PageViewElement) {
             <aside class="sidebar">
               <div class="nav">
                 <div class="sticky">
-                  <ul class="right-side-nav l-space-bottom-5">
+                  <ul class="fade-in right-side-nav l-space-bottom-5">
                     <li>
                       <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="more-about-serverless">Blog Categories</h3>
                     </li>

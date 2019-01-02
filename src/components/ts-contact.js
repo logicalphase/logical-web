@@ -72,7 +72,7 @@ class TSContact extends PageViewElement {
         left: calc(50% - 14px);
       }
 
-      .ts-header-wrapper {
+      .hero {
         background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
         background-size: contain;
         background-position: 92% center;
@@ -173,12 +173,12 @@ class TSContact extends PageViewElement {
     </style>
     <article id="ts-site" class="ts-care">
       <header class="hero">
-        <div class="ts-header-wrapper">
+        <div class="ts-header-wrapper fade-in">
           <h1 class="paper-font-display2 paper-font-light">Contact Us</h1>
           <h2 class="paper-font-title paper-font-light">Touch base with one of our WordPress experts</h2>
         </div>
       </header>
-      <div class="ts-contact-wrapper">
+      <div class="ts-contact-wrapper delayed-fade-in">
         <div class="${_waiting ? 'main-frame waiting' : 'main-frame'}">
           <div state="init">
             <form id="contactForm">
