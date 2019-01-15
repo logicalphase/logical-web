@@ -12,18 +12,18 @@ import './ts-item.js';
 // This element is connected to the redux store.
 import { store } from '../store.js';
 
-import { fetchArticles } from '../actions/articles.js';
+import { fetchCategoryList } from '../actions/categories.js';
 import { refreshPage } from '../actions/app.js';
-import { articles, itemListSelector } from '../reducers/articles.js';
+import { categories, itemListSelector } from '../reducers/categories.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
-    articles
+    categories
 });
 
 import { SharedStyles } from './shared-styles.js';
 
-class TSBlog extends connect(store)(PageViewElement) {
+class TSCategory extends connect(store)(PageViewElement) {
   render() {
     const { _query, _data, _showOffline } = this;
 
@@ -185,7 +185,7 @@ class TSBlog extends connect(store)(PageViewElement) {
                     </li>
                     ${repeat(_data, (item) => html`  
                       <li>
-                        <a id="${item.categories_names}" track-type="category${item.categories_names}" track-name="blog-page" track-metadata-position="body" href="https://logicalphase.com/category/${item.categories_names}">${item.categories_names}</a>
+                        <a id="${item.categories_names}" track-type="category${item.categories_names}" track-name="blog-page" track-metadata-position="body" href="#">${item.categories_names}</a>
                       </li>
                     `)}
                   </ul>
@@ -207,11 +207,11 @@ class TSBlog extends connect(store)(PageViewElement) {
 
   // This is called every time something is updated in the store.
   stateChanged(state) {
-    this._query = state.articles.query;
+    this._query = state.categories.query;
     this._data = itemListSelector(state);
-    this._showOffline = state.app.offline && state.articles.failure;
+    this._showOffline = state.app.offline && state.categories.failure;
   }
 }
-window.customElements.define('ts-blog', TSBlog);
+window.customElements.define('ts-category', TSCategory);
 
-export { fetchArticles, refreshPage };
+export { fetchCategoryList, refreshPage };

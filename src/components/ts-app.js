@@ -1,4 +1,4 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { LitElement, html } from 'lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings.js';
 
 import '@polymer/app-layout/app-drawer/app-drawer';
@@ -41,8 +41,8 @@ class TSApp extends connect(store)(LitElement) {
       _snackbarOpened
     } = this;
 
-    const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog`) : `/article/${ _articleSlug }`;
-    const query = _page === 'blog' ? '' : _query;
+    const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog` || _lastVisitedListPage === `/category`) : `/article/${ _articleSlug }`;
+    const query = _page === 'blog' ? '' : _query || _page === 'category' ? '' : _query;
     // Anything that's related to rendering should be done in here.
 
     return html `
@@ -468,7 +468,6 @@ class TSApp extends connect(store)(LitElement) {
       <ts-contact class="page" ?active="${_page === 'contact'}"></ts-contact>
       <ts-view404 class="page" ?active="${_page === '404'}"></ts-view404>
     </main>
-    </article>
     
     <footer class="devsite-footer-linkboxes nocontent devsite-footer-linkboxes-all-backup">
       <nav class="devsite-full-site-width">

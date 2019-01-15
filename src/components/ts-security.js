@@ -1,4 +1,4 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { LitElement, html } from 'lit-element';
 import { SharedStyles } from './shared-styles';
 class TSSecurity extends LitElement {
   render(props) {

@@ -20,7 +20,7 @@ export const fetchArticles = (query) => (dispatch, getState) => {
   if (shouldFetchArticles(getState(), query)) {
     dispatch(requestArticles(query));
     if (query) {
-      fetch(`https://api.themesurgeons.com/wp-json/wp/v2/${query}/?per_page=5`, {
+      fetch(`https://api.themesurgeons.com/wp-json/wp/v2/${query}/?per_page=10`, {
 
         })
         .then(res => res.json())

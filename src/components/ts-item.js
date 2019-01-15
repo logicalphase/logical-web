@@ -1,4 +1,4 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { LitElement, html } from 'lit-element';
 import { formatDistance } from 'date-fns/esm';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
