@@ -1,3 +1,5 @@
+import { until } from "lit-html/directives/until";
+
 /**
 @license
 Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
@@ -18,11 +20,11 @@ export const fetchArticles = (query) => (dispatch, getState) => {
   if (shouldFetchArticles(getState(), query)) {
     dispatch(requestArticles(query));
     if (query) {
-      fetch(`https://localhost:8080/api/contents?type=${query}`, {
-          mode: "no-cors" // no-cors, cors, *same-origin
-        }) 
+      fetch(`https://api.themesurgeons.com/wp-json/wp/v2/${query}/?per_page=10`, {
+
+        })
         .then(res => res.json())
-        .then(data => dispatch(receiveArticles(query, data.data)))
+        .then(data => dispatch(receiveArticles(query, data)))
         .catch(() => dispatch(failArticles(query)));
     } else {
       // query is empty, clear the results

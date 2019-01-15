@@ -19,7 +19,8 @@ export const navigate = (location) => (dispatch) => {
   // post id is in the path: /detail/{postId}
   const articleSlug = parts[1];
 
-  let query = 'Article';
+  //let query = 'Article';
+  let query = 'posts';
 
   dispatch(loadPage(page, query, articleSlug));
   dispatch(updateDrawerState(false));
@@ -40,10 +41,6 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
       if (isFetchArticleFailed(getState().article)) {
         page = '404';
       }
-      break;
-    case 'solutions':
-      await
-        import('../components/ts-solutions.js');
       break;
     case 'care':
       await

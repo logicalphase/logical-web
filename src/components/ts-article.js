@@ -1,4 +1,5 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { html } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
 import { repeat } from 'lit-html/directives/repeat.js';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
@@ -12,6 +13,7 @@ import {
 } from './ts-icons.js';
 
 import { SharedStyles } from './shared-styles.js';
+import { TsTableStyles } from './ts-table-style';
 
 import './ts-offline.js';
 import './ts-image.js';
@@ -28,7 +30,7 @@ store.addReducers({
     article
 });
 
-class TSDetail extends connect(store)(LitElement) {
+class TSDetail extends connect(store)(PageViewElement) {
   render() {
     const {
       isFetching,
@@ -43,12 +45,13 @@ class TSDetail extends connect(store)(LitElement) {
     }
 
     const item = _data;
-    const title = item.title;
+    const title = item.title && item.title.rendered;
     const author = 'John Teague';
-    const date = formatDistance(new Date(item.timestamp), new Date());
-    const thumbnail = item.photo;
+    const date = formatDistance(new Date(item.date), new Date());
+    const thumbnail = item.tsapi_featured_image && item.tsapi_featured_image.media_details.file;
+    const alt = item.tsapi_featured_image && item.tsapi_featured_image.alt_text;
     const slug = item.slug;
-    const categories = item.category || [];
+    const categories = item.categories_names || [];
 
     // @ts-ignore
     updateMetadata({
@@ -58,7 +61,8 @@ class TSDetail extends connect(store)(LitElement) {
     });
 
   return html `
-    ${SharedStyles}
+    ${ SharedStyles }
+    ${ TsTableStyles }
     <style>
         :host {
           display: block;
@@ -66,21 +70,71 @@ class TSDetail extends connect(store)(LitElement) {
         }
 
         h1, h2 {
-          font-weight: 300;
+          font-weight: 400;
           margin-bottom: 20px;
+          margin: 20px 20px 25px 20px;
+        }
+
+        h2 {
+          font-size: 1.15rem;
         }
 
         h3 {
-          margin: 24px 0;
+          margin: 20px 20px 25px 20px;
+          padding: 0; 
+        }
+        ol {
+          margin-left: 20px;
+        }
+        ul{
+          margin-left: 10px;
+        }
+
+        ol li, ul li {
+          font-size:1rem;
+          margin-right: 20px
+        }
+
+        li ul {
+          margin-left: -20px;
+        }
+
+        table {
+          margin: 10px 14px 15px 14px;
+        }
+
+        blockquote {
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 40px;
+          margin-inline-end: 40px;
+        }
+
+        blockquote p {
+          quotes: "“" "”";
+        }
+
+        blockquote p::before {
+          content: open-quote;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 62px;
+          color: var(--app-primary-color);
+          margin-left: -28px;
+          margin-bottom: -20px;
+        }
+        blockquote p::after {
+          display:none;
+          content: open-quote;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 62px;
         }
 
         strong {
-          font-weight: 500;
+          font-weight: 400;
         }
         section {
           max-width: 748px;
           box-sizing: border-box;
-          font-weight: 300;
         }
         .item {
           display: flex;
@@ -107,38 +161,57 @@ class TSDetail extends connect(store)(LitElement) {
         }
         .title {
           margin: 14px 0 4px;
-          font-size: 1.35rem;
+          font-size: 1.45rem;
           font-weight: 300;
           line-height: 1.2;
+          text-align: center;
         }
         .item-item {
           padding-top: 8px;
           padding-bottom: 14px;
+          font-size: 0.9rem;
+          text-align: center;
         }
         .desc {
-          padding: 8px 0;
+          padding: 8px 0 22px 0;
         }
         .desc > h3 {
-          font-size: 24px;
-          font-weight: 300;
+          font-size: 22px;
+          font-weight: 400;
           text-align: left;
         }
         .desc > ul {
           margin-bottom: 24px;
         }
 
-        .desc img {
+        .desc > ol {
+          padding-left: 20px;
+        }
+
+        .desc .wp-caption {
           border: 4px solid #efefef;
-          border-radius: 2px;
-          padding: 4px;
+          padding: 5px;
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .desc .wp-caption-text {
+          font-size: 0.9rem;
+          padding: 0px 0px;
+          margin: 5px 14px 10px 14px;
+          line-height: normal;
+        }
+
+        .desc img {
+          padding: 1px;
         }
 
         .desc .alignleft {
-          margin: 24px;
+          margin-bottom: 22px;
           float: none;
         }
         .desc .alignright {
-          margin: 24px;
+          margin-bottom: 22px;
           float: none;
         }
         article-rating {
@@ -182,6 +255,8 @@ class TSDetail extends connect(store)(LitElement) {
         }
         .social-icon {
           fill:  #888;
+          cursor: pointer;
+          margin-right: 5px;
         }
         .gplus-icon:hover {
           fill:  #db4437;
@@ -206,11 +281,50 @@ class TSDetail extends connect(store)(LitElement) {
           :host {
             padding: 48px 24px 24px;
           }
+          h2, h3 {
+            margin: 20px 0px 25px 0px;
+            padding: 0;
+          }
+
+          h2 {
+            font-size: 1.5rem;
+          }
+
+          ol {
+            margin-left: 14px;
+          }
+          ul{
+            margin-left: 0px;
+            padding-left: 24px;
+          }
+
+          li ul, li ol {
+            margin-left: 0px;
+          }
+
+          ol li, ul li {
+            font: 300 16px/24px Roboto, Sans-serif;
+          }
+          blockquote {
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 80px;
+            margin-inline-end: 80px;
+          }
+          blockquote p {
+            margin-bottom: 0px;
+          }
+          small {
+            margin-bottom: -24px;
+          }
           section {
             margin: 0 auto;
           }
           .item {
             padding-bottom: 8px;
+          }
+          .item-item {
+            text-align: left;
           }
           .item-desc {
             margin-left: 24px;
@@ -219,6 +333,7 @@ class TSDetail extends connect(store)(LitElement) {
             margin-bottom: 8px;
             font-size: 2rem;
             line-height: 1.3;
+            text-align: left;
           }
           .fav-btn-container,
           .preview-btn-container {
@@ -247,14 +362,13 @@ class TSDetail extends connect(store)(LitElement) {
       <section ?hidden="${_showOffline}">
         <div class="item">
           <div class="cover" hero>
-            <article-image .src="${thumbnail}" .alt="${title}" ></article-image>
-            <h1 class="title">${title}</h1>
-          <div class="item-item" ?hidden="${!author}">By ${author} - Published: ${date} ago.</div>
+            <article-image .src="https://api.themesurgeons.com/wp-content/uploads/${thumbnail}" .alt="${title}" ></article-image>
+            <h1 class="fade-in title">${title}</h1>
+          <div class=" fade-in item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
           </div>
         </div>
-        <div class="desc">
-
-          ${unsafeHTML(item.body || item.subtitle || 'None')}
+        <div class="delayed-fade-in desc">
+          ${unsafeHTML(item.content && item.content.rendered || item.subtitle || 'None')}
         </div>
         <div class="desc ts-read-more" ?hidden="${categories.length === 0}">
           <h4>Category</h4>
@@ -282,7 +396,7 @@ class TSDetail extends connect(store)(LitElement) {
 
   static get properties() {
     return {
-      isFetching: Boolean,
+      isFetching: { type: Boolean },
       _data: { type: Array },
       _lastVisitedListPage: { type: Boolean },
       _showOffline:{ type: Boolean }
@@ -290,7 +404,7 @@ class TSDetail extends connect(store)(LitElement) {
   }
 
   // This is called every time something is updated in the store.
-  _stateChanged(state) {
+  stateChanged(state) {
     this._data = articleSelector(state);
     this._lastVisitedListPage = state.app.lastVisitedListPage;
     this._showOffline = state.app.offline && state.article.failure;

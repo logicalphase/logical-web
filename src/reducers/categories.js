@@ -1,11 +1,11 @@
 import { createSelector } from 'reselect';
 import {
-  REQUEST_ARTICLES, RECEIVE_ARTICLES, FAIL_ARTICLES,
-} from '../actions/articles.js';
+  REQUEST_CATEGORY_LIST, RECEIVE_CATEGORY_LIST, FAIL_CATEGORY_LIST,
+} from '../actions/categories.js';
 
-export const articles = (state = { query: null }, action) => {
+export const categories = (state = { query: null }, action) => {
   switch (action.type) {
-    case REQUEST_ARTICLES:
+    case REQUEST_CATEGORY_LIST:
       return {
         ...state,
         query: action.query,
@@ -13,7 +13,7 @@ export const articles = (state = { query: null }, action) => {
         failure: false,
         isFetching: true
       };
-    case RECEIVE_ARTICLES:
+    case RECEIVE_CATEGORY_LIST:
       return {
         ...state,
         data: action.data.reduce((obj, data) => {
@@ -23,7 +23,7 @@ export const articles = (state = { query: null }, action) => {
         failure: false,
         isFetching: false
       };
-    case FAIL_ARTICLES:
+    case FAIL_CATEGORY_LIST:
       return {
         ...state,
         data: null,
@@ -35,7 +35,7 @@ export const articles = (state = { query: null }, action) => {
   }
 }
 
-export const itemsSelector = state => state.articles && state.articles.data;
+export const itemsSelector = state => state.categories && state.categories.data;
 
 export const itemListSelector = createSelector(
   itemsSelector,

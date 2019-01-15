@@ -1,8 +1,9 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { LitElement, html } from 'lit-element';
+import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings.js';
 
-//import '@polymer/app-layout/app-drawer/app-drawer';
-import '@polymer/app-layout/app-header/app-header';
+import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
+import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 
 import './ts-home.js';
@@ -40,8 +41,8 @@ class TSApp extends connect(store)(LitElement) {
       _snackbarOpened
     } = this;
 
-    const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog`) : `/article/${ _articleSlug }`;
-    const query = _page === 'blog' ? '' : _query;
+    const backHref = _page === 'article' ? (_lastVisitedListPage === `/blog` || _lastVisitedListPage === `/category`) : `/article/${ _articleSlug }`;
+    const query = _page === 'blog' ? '' : _query || _page === 'category' ? '' : _query;
     // Anything that's related to rendering should be done in here.
 
     return html `
@@ -50,34 +51,33 @@ class TSApp extends connect(store)(LitElement) {
         display: block;
 
         --app-drawer-width: 326px;
-        
+
+        --border-grey: #e0e0e0;
         --app-primary-color: #a434b7;
-        --app-secondary-color: #000;
-        --app-dark-text-color: var(--app-secondary-color);
+        --app-secondary-color: #000000;
+        --app-nav-background: #edf0f2;
         --app-light-text-color: #ffffff;
         --app-section-even-color: #f7f7f7;
-        --app-section-odd-color: #ffffff;
+        --section-background-light-grey: #f5f5f5;
 
-        --app-header-background-color: #ffffff;
+        --app-accent-color: var(--app-primary-color);
+        --app-dark-text-color: var(--app-secondary-color);
+        --app-section-odd-color: var(--app-light-text-color);
+        --app-header-background-color: var(--app-light-text-color);
         --app-header-text-color: var(--app-dark-text-color);
         --app-header-selected-color: var(--app-primary-color);
-
         --app-drawer-background-color: var(--app-light-text-color);
         --app-drawer-text-color: var(--app-secondary-color);
         --app-drawer-selected-color: var(--app-primary-color);
 
-        --border-grey: #e0e0e0;
-
-        --footer-background-grey: #303c42;
-        --footer-background-secondary-grey: #37424b;
-        --footer-text: #f7f7f7;
-        --section-background-light-grey: #f5f5f5;
-
-        --app-accent-color: #a434b7;
+        --footer-background-grey: #3c4043;
+        --footer-background-secondary-grey: #5f6368;;
+        --footer-text: var(--app-section-even-color);
       }
 
       [hidden] {
-        display: none !important; }
+        display: none !important; 
+      }
 
       app-header {
         position: fixed;
@@ -88,56 +88,70 @@ class TSApp extends connect(store)(LitElement) {
         text-align: left;
         background-color: var(--app-header-background-color);
         color: var(--app-header-text-color);
-        border-bottom: 1px solid #eee; }
+        border-bottom: 1px solid var(--border-grey); 
+      }
 
       nav {
-        height: 46px; }
+        height: 46px; 
+      }
 
       /* We need to make sure when drawer is open
       it covers our app header. Otherwise there's
       menu button that is disabled */
       #drawer {
-        z-index: 200; }
+        z-index: 200; 
+      }
 
       .masthead {
-        background-color: #fff;
-        padding: 0 14px 0 34px !important; }
+        background-color: var(--app-light-text-color);
+        padding: 12px 8px;
+        height: inherit; 
+      }
 
       .ts-title {
-        margin-left: 0px; }
+        margin-left: 0px; 
+        font-weight: 300;
+        color: var(--app-secondary-color);
+      }
 
       .paper-font-body2 {
         font-size: 14px;
-        transform: uppercase; }
+        transform: uppercase; 
+      }
 
       .desktop-menu {
         height: 46px;
-        background-color: #f7f7f7;
-        border-bottom: 1px solid #e0e0e0; }
+        background-color: var(--app-section-even-color);
+        border-bottom: 1px solid var(--border-grey); 
+      }
 
       .main-navigation a {
         display: inline-block;
         margin: 0 20px;
         padding-top: 14px;
         height: 65%;
-        font-weight: 400; }
+        font-weight: 400; 
+      }
 
       .main-navigation a, .main-navigation a:visited {
         text-decoration: none;
         font-size: 14px;
-        color: rgba(0, 0, 0, .54); }
+        color: rgba(0, 0, 0, .54); 
+      }
 
       .main-navigation a:hover {
-        color: #a434b7; }
+        color: var(--app-primary-color); 
+      }
 
       .main-navigation a[selected] {
         color: rgba(0, 0, 0, .87);
         font-weight: 500;
-        border-bottom: 2px solid var(--app-primary-color); }
+        border-bottom: 2px solid var(--app-primary-color); 
+      }
 
       .button {
         border-radius: 2px;
-        color: #fff;
+        color: var(--app-light-text-color);
         cursor: pointer;
         display: inline-block;
         font-size: 16px;
@@ -151,42 +165,50 @@ class TSApp extends connect(store)(LitElement) {
         text-decoration: none;
         text-transform: uppercase;
         transition: box-shadow .3s, background-color .3s, color .3s, transform .3s;
-        will-change: background-color; }
+        will-change: background-color; 
+      }
 
       .cta-header {
         font-size: 14px;
-        margin-right: 24px; }
+        margin-right: 24px; 
+      }
 
       .button-secondary-cta, .button-primary-cta {
         line-height: 30px;
-        max-height: 30px; }
+        max-height: 30px; 
+      }
 
       .chip-button {
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         border-radius: 8px;
-        border: 1px solid #a434b7 !important;
+        border: 1px solid var(--app-primary-color) !important;
       }
 
       .button.button-primary-cta {
         background: transparent;
-        border: 2px solid #a434b7;
-        color: #a434b7; }
+        border: 2px solid var(--app-primary-color);
+        color: var(--app-primary-color); 
+      }
 
       .button.button-secondary-cta {
-        background: #a434b7;
-        border: 2px solid #a434b7;
-        color: #fff; }
+        background: var(--app-primary-color);
+        border: 2px solid var(--app-primary-color);
+        color: var(--app-light-text-color); 
+      }
 
       .button.button-primary-cta:hover, .button.button-primary-cta:active {
-        background: #f9edfc; }
+        background: #f9edfc; 
+      }
 
       .button.button-secondary-cta:hover, .button.button-secondary-cta:active {
-        color: #ffffff;
-        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
+        color: var(--app-light-text-color);
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); 
+      }
 
       .toolbar-top {
-        background-color: var(--app-header-background-color); }
+        background-color: var(--app-header-background-color); 
+      }
 
       [main-title] {
         font-family: 'Roboto';
@@ -195,21 +217,24 @@ class TSApp extends connect(store)(LitElement) {
         /* In the narrow layout, the toolbar is offset by the width of the
         drawer button, and the text looks not centered. Add a padding to
         match that button */
-        padding-right: 44px; }
+        padding-right: 44px; 
+      }
 
       .sub-tagline {
         margin-left:5px;
       }
 
       .toolbar-list {
-        display: none; }
+        display: none; 
+      }
 
       .toolbar-list > a {
         display: inline-block;
         color: var(--app-header-text-color);
         text-decoration: none;
         line-height: 30px;
-        padding: 0px 18px; }
+        padding: 0px 18px; 
+      }
 
       .toolbar-list > a[selected] {
         color: var(--app-header-selected-color);
@@ -220,26 +245,27 @@ class TSApp extends connect(store)(LitElement) {
         border: none;
         fill: var(--app-header-text-color);
         cursor: pointer;
-        height: 44px;
         width: 44px;
-        margin-left: -20px;
-        margin-right: 10px; }
+        padding-top: 5px;
+        margin: 0 10px 0 5px; 
+      }
 
       .search-btn {
         background: none;
         border: none;
         fill: var(--app-header-text-color);
         cursor: pointer;
-        height: 44px;
         width: 44px;
         margin-left: -20px;
-        margin-right: 10px; }
+        margin-right: 10px; 
+      }
 
       #drawer app-toolbar {
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid var(--border-grey);
         margin-bottom: 5px;
-        background-color: #a434b7;
-        color: #fff; }
+        background-color: var(--app-primary-color);
+        color: var(--app-light-text-color); 
+      }
 
       .drawer-list {
         box-sizing: border-box;
@@ -247,66 +273,154 @@ class TSApp extends connect(store)(LitElement) {
         height: 100%;
         padding: 24px;
         background: var(--app-drawer-background-color);
-        position: relative; }
+        position: relative; 
+      }
 
       .drawer-list > a {
         display: block;
         text-decoration: none;
+        font: 400 14px/22px Roboto, sans-serif;
+        letter-spacing: 0.25px;
         color: var(--app-drawer-text-color);
-        line-height: 40px;
-        padding: 5px 14px; }
+        padding: 12px 8px 12px 0px; 
+      }
 
       .drawer-list .submenu {
-        padding-left:34px; }
+        padding-left: 24px; 
+      }
 
       .drawer-list > a[selected] {
-        color: var(--app-drawer-selected-color); }
+        color: var(--app-drawer-selected-color); 
+      }
 
       .main-content {
         padding-top: 64px;
         min-height: 100vh; }
 
       .page {
-        display: none; }
+        display: none; 
+      }
 
       .page[active] {
-        display: block; }
+        display: block; 
+      }
 
-      footer {
-        padding: 24px;
-        background: var(--app-header-text-color);
+      .devsite-footer-linkboxes-all-backup, .devsite-footer-linkbox-cloud {
+        background-color: var(--footer-background-grey);
+      }
+      .devsite-footer-linkboxes-all-backup {
+        background: #303c42;
+      }
+
+      .devsite-footer-linkboxes>nav::before {
+        background: var(--footer-background-grey);
+        border-bottom: solid 1px #80868b;
+        color: var(--footer-background-grey);
+        content: "HyperPress";
+        display: block;
+        height: 73px;
+        margin: 0 24px;
+      }
+
+      *, *:before, *:after {
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+      }
+      .devsite-nav {
+        font-size: 13px;
+      }
+
+      .devsite-utility-footer-nav {
+        color: #fff;
+        overflow: auto;
+        padding: 10px 24px;
+      }
+
+      .devsite-full-site-width, .devsite-toast-fill {
+        margin: 0 auto;
+        max-width: 1400px;
+      }
+
+      .devsite-footer-linkboxes-all-backup, .devsite-footer-linkbox-cloud {
+        background-color: var(--footer-background-grey) !important;
+      }
+
+      .devsite-footer-linkboxes-all-backup {
+        background: var(--footer-background-grey);
+      }
+
+      .devsite-footer-linkboxes {
+        background: #263238;
+        font: 14px/16px Roboto,sans-serif;
+      }
+
+      .devsite-utility-footer {
+        background: var(--footer-background-secondary-grey);
         color: var(--footer-text);
-        text-align: center; }
+        text-align: center; 
+      }
+
+      .devsite-utility-footer-nav-left {
+        float: left;
+      }
+
+      .devsite-utility-footer-link+.devsite-utility-footer-link::before {
+        content: '|';
+        margin: 0 8px;
+      }
+      footer nav{
+        height: inherit;
+      }
+
+      .devsite-utility-footer-link {
+        color: #dadce0;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration:none;
+      }
+
+      .devsite-utility-footer-links, .devsite-utility-footer-newsletter-signup-text {
+        font-weight: 500;
+        margin-right: 16px;
+      }
+
 
       /* Wide layout: when the viewport width is bigger than 460px, layout
       changes to a wide layout. */
       @media (min-width: 460px) {
         .toolbar-list {
-          display: block; }
+          display: block; 
+        }
+
+        .masthead {
+          padding: 12px 8px 12px 36px;
+        }
 
         .menu-btn {
-          display: none; }
+          display: none; 
+        }
 
         .toolbar-list > a {
-          padding: 0px 18px; }
+          padding: 0px 18px; 
+        }
 
         .main-content {
-          padding-top: 107px; }
+          padding-top: 107px; 
+        }
 
         /* The drawer button isn't shown in the wide layout, so we don't
         need to offset the title */
         [main-title] {
-          padding-right: 0px; }
+          padding-right: 0px; 
+        }
       }
     </style>
 
     <app-header-layout id="ts-appheaderlayout" has-scrolling-region>
       <app-header slot="header" condenses reveals effects="waterfall">
         <app-toolbar class="masthead">
-          <button class="menu-btn" title="Menu" @click="${_ => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
-          <div class="ts-title" main-title>${appTitle}
-            <span class="paper-font-body2">by PRESSMEDICS</span>
-          </div>
+          <button class="menu-btn" title="Menu" @click="${() => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
+          <div class="ts-title" main-title>${appTitle}</div>
           <div class="cta-header toolbar-list">
             <a class="button button-primary-cta chip-button" data-customizer="global-nav-trial-button" href="">Login</a>
           </div>
@@ -314,7 +428,6 @@ class TSApp extends connect(store)(LitElement) {
         <app-toolbar class="desktop-menu toolbar-list" sticky>
           <nav class="main-navigation" role="navigation">
             <a ?selected="${_page === 'home'}" href="/">Home</a>
-            <a ?selected="${_page === 'solutions'}" href="/solutions">Solutions</a>
             <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
             <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
             <a style="float:right" ?selected="${_page === 'support'}" href="/support">Support</a>
@@ -324,12 +437,10 @@ class TSApp extends connect(store)(LitElement) {
     </app-header-layout>
 
     <!-- Drawer content -->
-    <app-drawer id="drawer" .opened="${_drawerOpened}"
-        @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
-      <app-toolbar>HyperPress <span class="sub-tagline paper-font-body2"> by PRESS MEDICS</span></app-toolbar>
+    <app-drawer id="drawer" .opened="${_drawerOpened}" @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
+      <app-toolbar>${appTitle}</app-toolbar>
       <nav class="drawer-list">
         <a ?selected="${_page === 'home'}" href="/">Home</a>
-        <a ?selected="${_page === 'solutions'}" href="/solutions">Solutions</a>
         <a class="submenu" ?selected="${_page === 'design'}" href="/design">Progressive Web Design</a>
         <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">PageSpeed Optimization</a>
         <a class="submenu" ?selected="${_page === 'emergency'}" href="/emergency">WordPress 911</a>
@@ -345,7 +456,6 @@ class TSApp extends connect(store)(LitElement) {
     <!-- Main content -->
     <main class="main-content">
       <ts-home class="page" ?active="${_page === 'home'}"></ts-home>
-      <ts-solutions class="page" ?active="${_page === 'solutions'}"></ts-solutions>
       <ts-care class="page" ?active="${_page === 'care'}"></ts-care>
       <ts-design class="page" ?active="${_page === 'design'}"></ts-design>
       <ts-emergency class="page" ?active="${_page === 'emergency'}"></ts-emergency>
@@ -358,9 +468,21 @@ class TSApp extends connect(store)(LitElement) {
       <ts-contact class="page" ?active="${_page === 'contact'}"></ts-contact>
       <ts-view404 class="page" ?active="${_page === '404'}"></ts-view404>
     </main>
-      
-    <footer>
-      <p>Made with \u2764\uFE0F by Pressmedics. Powered by Google</p>
+    
+    <footer class="devsite-footer-linkboxes nocontent devsite-footer-linkboxes-all-backup">
+      <nav class="devsite-full-site-width">
+
+      </nav>
+    </footer>
+    <footer class="devsite-utility-footer">
+      <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+        <div class="devsite-utility-footer-nav-left">
+        <span class="devsite-footer-links">
+          <a class="devsite-utility-footer-link gc-analytics-event" href="/site-terms">Site Terms</a>
+          <a class="devsite-utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
+        </span>
+        </div>
+      </nav>
     </footer>
 
     <snack-bar ?active="${_snackbarOpened}">
@@ -384,18 +506,11 @@ class TSApp extends connect(store)(LitElement) {
       };
     }
 
-    update(changedProps) {
-      super.update(changedProps);
-      if (changedProps.has('_page')) {
-        const pageTitle = this.appTitle + ' - ' + this._page;
-        // @ts-ignore
-        updateMetadata({
-          title: pageTitle,
-          description: pageTitle
-              // This object also takes an image property, that points to an img src.
-        });
-        window.scrollTo(0, 0);
-      }
+    constructor() {
+      super();
+      // To force all event listeners for gestures to be passive.
+      // See https://www.polymer-project.org/3.0/docs/devguide/settings#setting-passive-touch-gestures
+      setPassiveTouchGestures(true);
     }
 
     firstUpdated() {
@@ -406,7 +521,19 @@ class TSApp extends connect(store)(LitElement) {
       this.removeAttribute('unresolved');
     }
 
-    _stateChanged(state) {
+    updated(changedProps) {
+      if (changedProps.has('_page')) {
+        const pageTitle = this.appTitle + ' - ' + this._page;
+        updateMetadata({
+          title: pageTitle,
+          description: pageTitle
+          // This object also takes an image property, that points to an img src.
+        });
+        window.scrollTo(0, 0);
+      }
+    }
+
+    stateChanged(state) {
       this._page = state.app.page;
       this._lazyResourcesLoaded = state.app.lazyResourcesLoaded;
       this._lastVisitedListPage = state.app.lastVisitedListPage;

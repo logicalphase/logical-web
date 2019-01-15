@@ -1,111 +1,34 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { LitElement, html } from 'lit-element';
 import { SharedStyles } from './shared-styles';
+import { TsTableStyles } from './ts-table-style';
 
 class TSPrivacy extends LitElement {
   render(props) {
     return html `
       ${ SharedStyles }
+      ${ TsTableStyles }
       <style>
       :host {
         display: block;
         padding: 0px;
-        h1 {
-          margin: 0 0 5px -3px;
-          color: #77909c;
-        }
-        h2 {
-          margin-bottom: 40px;
-        }
-        ul {
-          margin-bottom:24px;
-        }
-        /* Box model */
-        *,
-        *:after,
-        *:before {
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-        }
       }
 
       /* Smaller than 460 */
 
-      ul {
-        padding-bottom: 24px;
+      .hero {
+        background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
+        background-size: contain;
+        background-position: center center;
       }
 
-      .hero {
-        margin-top: 24px;
+      ul {
+        padding-bottom: 24px;
       }
 
       .text-headline {
         padding-top:24px;
       }
 
-      .ts-content-wrapper, 
-      .ts-content-grid-box {
-        background-color: #fff;
-        padding-left: 14px;
-        padding-right: 14px;
-      }
-      .table-responsive-vertical {
-        max-width: 100%
-      }
-
-      .table {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 2rem;
-        background-color: #fff;
-      }
-      td, th {
-        text-align: left;
-        padding: .5rem;
-        vertical-align: top;
-        border-top: 0;
-      }
-      thead tr th {
-        font-weight: 400;
-        color: #222;
-        vertical-align: bottom;
-        border-bottom: 1px solid rgba(0,0,0,.12);
-      }
-      caption + thead,
-      colgroup + thead,
-      thead:first-child > tr:first-child th, td {
-        border-top: 0;
-      }
-      tbody + tbody {
-        border-top: 1px solid rgba(0,0,0,.12);
-      }
-
-      .table {
-        background-color: #fff;
-      }
-
-      .no-border {
-        border: 0;
-      }
-
-      .table-condensed thead, tbody, tfoot tr th, td {
-        padding: .5rem;
-      }
-
-      .table-bordered {
-        border: 0;
-      }
-      thead, tbody, tfoot tr th, td {
-        border: 0;
-        border-bottom: 1px solid #e0e0e0;
-      }
-
-      thead > tr  > th, > td {
-        border-bottom-width: 2px;
-      }
-      .table-hover tbody > tr:hover {
-        background-color: #f9edfc;
-      }
       li.childlist {
         margin-left:16px;
         list-style-type: square;
@@ -114,58 +37,57 @@ class TSPrivacy extends LitElement {
         font-weight:500;
       }
 
-      .ts-care .hero {
-        background: none; 
-        padding: 34px;
-        text-align: center; }
-
       h1.paper-font-display2 {
         font-size: 42px;
         line-height: 44px;
         padding-right: 0px; }
 
-      .ts-privacy h4 {
+      h4 {
         padding-top: 10px; 
         font-size:19px !important; 
+        color: var(--app-secondary-color); }
 
-        color: #111; }
-
-      .ts-privacy .ts-content-grid-box h2 {
+      .ts-content-grid-box h2 {
         text-transform: uppercase;
         font-size: 26px;
         font-weight:300;
-        color:#111;
+        color:var(--app-secondary-color);
       }
-      .ts-privacy .ts-content-grid-box h3 {
+      .ts-content-grid-box h3 {
         text-transform: uppercase;
         font-size: 18px;
         font-weight:500;
-        color:#111;
+        color:var(--app-secondary-color);
       }
 
       @media (min-width: 460px) {
-        #ts-site.ts-privacy {
-          background: #fff url(/images/header/ts-care-header.svg) no-repeat;
-          background-size: 40%;
-          background-position: 100% 90px;
-          background-attachment: fixed;
+        .hero {
+          background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
+          background-size: contain;
+          background-position: 93% center;
         }
-        .ts-privacy p {
+
+        aside {
+          margin-top: 30px;
+        }
+
+        p {
           text-align: left;
         }
-        .ts-privacy .main{
-          padding-top: 44px;
+
+        ul.right-side-nav {
+          padding-left: 0px;
         }
-        #ts-site.ts-privacy .hero {
-          min-height: 270px;
-          padding: 14px;
-          position: relative;
+
+        td:last-child {
+          white-space: nowrap;
         }
-        .ts-content-body {
-          margin-bottom: 24px
+
+        .hero>div {
+          min-height: 120px;
         }
-        .ts-content-body h3 {
-          margin-bottom: 16px;
+        .main{
+          padding-top: 24px;
         }
         .ts-content-grid-box p {
           text-align: left;
@@ -173,59 +95,30 @@ class TSPrivacy extends LitElement {
           max-width: 100%;
           margin-right: 24px;
         }
-        .ts-privacy .ts-content-grid-box {
+        .ts-content-grid-box {
           min-height: 40px !important; 
           text-align: left;
-          background-color: #ffffff;
-          padding: 24px 34px 24px 44px;
+          background-color: var(--app-light-text-color);
+          padding: 24px 34px 24px 34px;
           margin-bottom: 24px; 
           margin-right: 44px; }
-
-        #ts-site .ts-pad-right-4 {
-          padding-right: 32px;
+        
+        .sidebar {
+          background-color: var(--app-section-odd-color);
+        }
+        .sidebar h3 {
+          font-weight: 400;
+          padding-top: 24px;
+        }
+        .sidebar .text-uppercase {
+          padding-left: 14px;
         }
 
-        #ts-site .ts-showcase.is-split-left .ts-showcase-image {
-          right: 0;
-        }
-
-        #ts-site .ts-pad-left-38+.ts-showcase-image,
-        #ts-site .ts-pad-right-38+.ts-showcase-image {
-          max-width: 304px;
-        }
-
-        #ts-site .ts-showcase-image {
-          position: relative;
-          text-align: center;
-          top: 0;
-          z-index: 1;
-        }
-
-        p.fine-print:first-child {
-          margin-top: 24px;
-        }
-
-        .fine-print {
-          margin-top: 20px;
-          margin-bottom: 10px;
-          font-size: 12px;
-          padding-left: 24px;
-          line-height: 14px;
-        }
-      }
-      @media (max-width: 800px) {
-        #ts-site.ts-privacy {
-          background-position: 100% 140px !important; }
-
-        .ts-right {
-          float: none !important;
-          margin: 24px 30px 5px;
-        }
       } 
       </style>
       <article id="ts-site" class="ts-privacy">
         <header class="hero">
-          <div class="ts-max-width-standard">
+          <div class="ts-header-wrapper fade-in">
             <h1 class="paper-font-display2 paper-font-light">Privacy Statement</h1>
             <h2 class="paper-font-title paper-font-light">Privacy is built into our services</h2>
             <p>Effective date: 25 May 2018</p>
@@ -234,7 +127,7 @@ class TSPrivacy extends LitElement {
         <div class="ts-content-wrapper">
           <section class="content background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
             <div class="columns">
-              <main class="main">
+              <main class="main fade-in">
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">Introduction</h2>
                   <p>We are both <a href="https://gdpr-info.eu/chapter-4/">Controllers and Processors</a> of data and we want you to understand how and why we collect, store, and use data for our business purposes and to comply with legal requirements. For simplicity, using the term "We" and "Our" means the same as the below listed Entities Covered section.</p>
@@ -366,56 +259,56 @@ class TSPrivacy extends LitElement {
                           <td data-title="Name">PayPal</td>
                           <td data-title="Purpose">Payment processing and invoicing.</td>
                           <td data-title="Link">
-                            <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Stripe</td>
                           <td data-title="Purpose">Payment processing and invoicing.</td>
                           <td data-title="Link">
-                            <a href="https://stripe.com/us/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://stripe.com/us/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Google Cloud Platform</td>
                           <td data-title="Purpose">Hosting services and backup storage.</td>
                           <td data-title="Link">
-                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Google G Suite</td>
                           <td data-title="Purpose">Business communications and customer management.</td>
                           <td data-title="Link">
-                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Google Domains</td>
                           <td data-title="Purpose">Registration and administration of customer domain names.</td>
                           <td data-title="Link">
-                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Sendgrid</td>
                           <td data-title="Purpose">Business communications.</td>
                           <td data-title="Link">
-                            <a href="https://sendgrid.com/policies/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://sendgrid.com/policies/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Helpscout</td>
                           <td data-title="Purpose">Customer support management.</td>
                           <td data-title="Link">
-                            <a href="https://www.helpscout.net/company/legal/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://www.helpscout.net/company/legal/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td class="no-border" data-title="Name">IBM Softlayer / Webfaction</td>
                           <td class="no-border" data-title="Purpose">Hosting services</td>
                           <td class="no-border" data-title="Link">
-                            <a href="https://www.ibm.com/privacy/us/en/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://www.ibm.com/privacy/us/en/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                       </tbody>
@@ -513,84 +406,84 @@ class TSPrivacy extends LitElement {
                           <td data-title="Name">PayPal</td>
                           <td data-title="Purpose">Payment processing and invoicing.</td>
                           <td data-title="Link">
-                            <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Stripe</td>
                           <td data-title="Purpose">Payment processing and invoicing.</td>
                           <td data-title="Link">
-                            <a href="https://stripe.com/us/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://stripe.com/us/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Google Cloud Platform</td>
                           <td data-title="Purpose">Hosting services and backup storage.</td>
                           <td data-title="Link">
-                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Google Domains</td>
                           <td data-title="Purpose">Website traffic and usage analysis, and marketing.</td>
                           <td data-title="Link">
-                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Google Analytics</td>
                           <td data-title="Purpose">Website traffic and usage analysis, and marketing.</td>
                           <td data-title="Link">
-                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Google G Suite</td>
                           <td data-title="Purpose">Business communications and customer management.</td>
                           <td data-title="Link">
-                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Google Domains</td>
                           <td data-title="Purpose">Registration and administration of customer domain names.</td>
                           <td data-title="Link">
-                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://policies.google.com/privacy" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Sendgrid</td>
                           <td data-title="Purpose">Business communications.</td>
                           <td data-title="Link">
-                            <a href="https://sendgrid.com/policies/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://sendgrid.com/policies/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Stackpath</td>
                           <td data-title="Purpose">Content Distribution Network for our hosted services.</td>
                           <td data-title="Link">
-                            <a href="https://sendgrid.com/policies/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://sendgrid.com/policies/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">Helpscout</td>
                           <td data-title="Purpose">Customer support management.</td>
                           <td data-title="Link">
-                            <a href="https://www.helpscout.net/company/legal/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://www.helpscout.net/company/legal/privacy/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td data-title="Name">IBM Softlayer / Webfaction</td>
                           <td data-title="Purpose">Hosting services</td>
                           <td data-title="Link">
-                            <a href="https://www.ibm.com/privacy/us/en/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://www.ibm.com/privacy/us/en/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                         <tr>
                           <td class="no-border" data-title="Name">Github</td>
                           <td class="no-border" data-title="Purpose">Software application version control and testing.</td>
                           <td class="no-border" data-title="Link">
-                            <a href="https://help.github.com/articles/github-privacy-statement/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="#a434b7" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
+                            <a href="https://help.github.com/articles/github-privacy-statement/" target="_blank">Policy <svg style="vertical-align:middle;margin-top:-2px;width:18px;height:18px" viewBox="0 0 24 24"><path fill="var(--app-primary-color)" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" title="External link" /></svg></a>
                           </td>
                         </tr>
                       </tbody>
@@ -603,10 +496,10 @@ class TSPrivacy extends LitElement {
                   <div class="sticky">
                     <ul class="right-side-nav l-space-bottom-5">
                       <li>
-                        <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">PRIVACY STATEMENT</h3>
+                        <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">On this page</h3>
                       </li>
                       <li>
-                        <a style="background:#edf0f2;color:#a434b7;text-decoration:none;" class="privacy" track-type="privacyStatement" track-name="web-page" track-metadata-position="sidebar" href="/privacy">Introduction</a>
+                        <a style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;" class="privacy" track-type="privacyStatement" track-name="web-page" track-metadata-position="sidebar" href="/privacy">Introduction</a>
                       </li>
                       <li>
                         <a class="transparency" track-type="transparency" track-name="web-page" track-metadata-position="sidebar" href="/transparency">Entities Covered</a>

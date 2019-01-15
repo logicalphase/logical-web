@@ -8,13 +8,13 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 
 export const TsInputStyle = html`
 <style>
   ts-input {
     display: inline-block;
-    margin: 20px 0;
+    margin: 5px 0px 5px 0px;
   }
   ts-input > input::-webkit-input-placeholder {
     color: transparent;

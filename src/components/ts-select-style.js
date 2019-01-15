@@ -8,12 +8,13 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 
 export const TsSelectStyle = html`
 <style>
   ts-select {
     display: inline-block;
+    margin: 10px 0px 20px 0px;
     position: relative;
     /* create a layer to avoid invalidation from other controls*/
     -webkit-transform: translateZ(0);
@@ -21,7 +22,7 @@ export const TsSelectStyle = html`
   }
   ts-select > ts-md-decorator {
     display: block;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--border-grey);
     height: 1px;
     speak: none;
   }
@@ -42,7 +43,7 @@ export const TsSelectStyle = html`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: 8px 24px 8px 0;
+    padding: 20px 24px 20px 0;
     border: none;
     background-color: transparent;
     border-radius: 0;
@@ -83,7 +84,7 @@ export const TsSelectStyle = html`
   /* hide the focus ring in firefox */
   ts-select > select:focus:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 #000;
+    text-shadow: 0 0 0 var(--app-secondary-color);
   }
   ts-select > [prefix] {
     position: absolute;

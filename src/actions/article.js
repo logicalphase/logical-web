@@ -14,15 +14,15 @@ export const fetchArticle = (slug) => (dispatch, getState) => {
   } else {
     // fetch article data given the article id.
     // also return a promise to wait for.
-    return fetch(`https://localhost:8080/api/content?slug=${slug}`, {
-        mode: "no-cors" // no-cors, cors, *same-origin
+    return fetch(`https://api.themesurgeons.com/wp-json/wp/v2/posts?slug=${slug}`, {
+        //mode: "no-cors" // no-cors, cors, *same-origin
       })    
       .then(res => res.json())
       .then(data => {
         if (data.error) {
           dispatch(failArticle(slug));
         } else {
-          dispatch(receiveArticle(slug, data.data[0]));
+          dispatch(receiveArticle(slug, data[0]));
         }
       })
       .catch((e) => dispatch(failArticle(slug)));

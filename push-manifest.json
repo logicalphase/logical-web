@@ -13,20 +13,6 @@
       "weight": 1
     }
   },
-  "/solutions": {
-    "src/components/ts-app.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "src/components/ts-solutions.js": {
-      "type": "script",
-      "weight": 1
-    },
-    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
-      "type": "script",
-      "weight": 1
-    }
-  },
   "/blog": {
     "src/components/ts-app.js": {
       "type": "script",
