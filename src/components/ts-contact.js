@@ -295,12 +295,12 @@ class TSContact extends PageViewElement {
     const contactForm = this.shadowRoot.querySelector('#contactForm');
     if (this._validateForm(contactForm)) {
       this._sendRequest(contactForm)
-      .then(res => res.json())
-      .then(data => this._didReceiveResponse(data))
-      .catch(_ => this._didReceiveResponse({
-        error: 1,
-        errorMessage: 'Transaction failed.'
-      }));
+        .then(res => res.json())
+        .then(data => this._didReceiveResponse(data))
+        .catch(_ => this._didReceiveResponse({
+          error: 1,
+          errorMessage: 'Transaction failed.'
+        }));
     }
   }
 

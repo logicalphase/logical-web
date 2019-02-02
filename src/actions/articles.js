@@ -20,9 +20,7 @@ export const fetchArticles = (query) => (dispatch, getState) => {
   if (shouldFetchArticles(getState(), query)) {
     dispatch(requestArticles(query));
     if (query) {
-      fetch(`https://api.themesurgeons.com/wp-json/wp/v2/${query}/?per_page=10`, {
-
-        })
+      fetch(`https://api.themesurgeons.com/wp-json/wp/v2/${query}/?per_page=10`, {})
         .then(res => res.json())
         .then(data => dispatch(receiveArticles(query, data)))
         .catch(() => dispatch(failArticles(query)));
@@ -58,3 +56,5 @@ const failArticles = (query) => {
     query
   };
 };
+
+// Filters

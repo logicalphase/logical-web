@@ -17,14 +17,14 @@ class TSMigrations extends LitElement {
 
       .hero {
         background: var(--app-light-text-color) url(/images/header/ts-migrations-header.svg) no-repeat;
-        background-size: 380px;;
+        background-size: 380px;
         background-position: center top;
       }
 
       @media (min-width: 460px) {
         .hero {
           background: var(--app-light-text-color) url(/images/header/ts-migrations-header.svg) no-repeat;
-          background-size: 380px;;
+          background-size: 380px;
           background-position: 92% top;
         }
       }

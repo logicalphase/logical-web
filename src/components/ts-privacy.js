@@ -1,12 +1,12 @@
-import { LitElement, html } from 'lit-element';
-import { SharedStyles } from './shared-styles';
-import { TsTableStyles } from './ts-table-style';
+import { LitElement, html } from "lit-element";
+import { SharedStyles } from "./shared-styles";
+import { TsTableStyles } from "./ts-table-style";
 
 class TSPrivacy extends LitElement {
   render(props) {
-    return html `
-      ${ SharedStyles }
-      ${ TsTableStyles }
+    return html`
+      ${SharedStyles}
+      ${TsTableStyles}
       <style>
       :host {
         display: block;
@@ -525,6 +525,6 @@ class TSPrivacy extends LitElement {
         </div>
       </article>
     `;
-    }
+  }
 }
-window.customElements.define('ts-privacy', TSPrivacy);
+window.customElements.define("ts-privacy", TSPrivacy);
