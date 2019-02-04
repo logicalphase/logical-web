@@ -1,11 +1,13 @@
-import { LitElement, html } from 'lit-element';
-import { SharedStyles } from './shared-styles.js';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
+import { SharedStyles } from './shared-styles';
 
-class TSView404 extends LitElement {
-  render(props) {
-    return html `
-      ${SharedStyles}
-      <style>
+class TSView404 extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      css`
       :host {
         display: block;
         padding: 30px;
@@ -14,7 +16,17 @@ class TSView404 extends LitElement {
         font-weight: 300;
         margin-bottom: 20px;
       }
-      </style>
+      `
+    ];
+  } 
+
+  render() {
+    updateMetadata({
+      title: '404 Page Not Found - HyperPress',
+      description: 'The page you\'re looking for doesn\'t seem to exist'
+    });
+
+    return html`
       <section>
         <h2 class="title">Oops! You hit a 404</h2>
         <p>The page you're looking for doesn't seem to exist. Head back <a href="/">home</a> and try again?</p>

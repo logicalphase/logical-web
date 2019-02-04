@@ -1,10 +1,12 @@
-import { LitElement, html } from 'lit-element';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { SharedStyles } from './shared-styles';
-class TSMigrations extends LitElement {
-  render(props) {
-    return html `
-      ${ SharedStyles }
-      <style>
+class TSMigrations extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      css`
       :host {
         display: block;
         padding: 0px;
@@ -38,7 +40,17 @@ class TSMigrations extends LitElement {
           margin: 24px 30px 5px;
         }
       }    
-      </style>
+    `
+    ];
+  } 
+  
+  render() {
+    updateMetadata({
+      title: 'WordPress Relocation - HyperPress',
+      description: 'We\'re experts at relocating WordPress'
+    });
+
+    return html`
       <article id="ts-site" class="ts-migrations">
         <header class="hero">
           <div class="ts-header-wrapper fade-in">

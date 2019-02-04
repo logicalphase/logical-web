@@ -8,10 +8,9 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-import { html } from 'lit-element';
+import { css } from 'lit-element';
 
-export const TsCheckboxStyle = html`
-<style>
+export const TsCheckboxStyle = css`
   ts-checkbox {
     display: inline-block;
     width: 14px;
@@ -70,4 +69,4 @@ export const TsCheckboxStyle = html`
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
-</style>`;
+`;

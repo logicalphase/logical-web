@@ -1,11 +1,13 @@
-import { LitElement, html } from "lit-element";
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { SharedStyles } from "./shared-styles";
 
-class TSHome extends LitElement {
-  render() {
-    return html`
-      ${SharedStyles}
-      <style>
+class TSHome extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      css`
       :host {
         display: block;
         padding: 0px;
@@ -22,31 +24,31 @@ class TSHome extends LitElement {
         padding-top: 20px; }
 
       @keyframes FadeIn { 
-      0% {
-        opacity: 0;
-        transform: scale(.1);
+        0% {
+          opacity: 0;
+          transform: scale(.1);
+        }
+
+        85% {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
 
-      85% {
-        opacity: 1;
-        transform: scale(1.05);
+      .services .flex-hover-card {
+        animation: FadeIn 1s linear;
+        animation-fill-mode: both;
       }
-      100% {
-        transform: scale(1);
-      }
-    }
 
-    .services .flex-hover-card {
-      animation: FadeIn 1s linear;
-      animation-fill-mode: both;
-    }
-
-    .services .flex-hover-card:nth-child(1) { animation-delay: .3s }
-    .services .flex-hover-card:nth-child(2) { animation-delay: .6s }
-    .services .flex-hover-card:nth-child(3) { animation-delay: .9s }
-    .services .flex-hover-card:nth-child(4) { animation-delay: 1.0s }
-    .services .flex-hover-card:nth-child(5) { animation-delay: 1.3s }
-    .services .flex-hover-card:nth-child(6) { animation-delay: 1.6s }
+      .services .flex-hover-card:nth-child(1) { animation-delay: .3s }
+      .services .flex-hover-card:nth-child(2) { animation-delay: .6s }
+      .services .flex-hover-card:nth-child(3) { animation-delay: .9s }
+      .services .flex-hover-card:nth-child(4) { animation-delay: 1.0s }
+      .services .flex-hover-card:nth-child(5) { animation-delay: 1.3s }
+      .services .flex-hover-card:nth-child(6) { animation-delay: 1.6s }
 
       @media (min-width: 460px) {
         .hero {
@@ -55,8 +57,18 @@ class TSHome extends LitElement {
           background-position: 93% center;
         }
       }
-      </style>
-      <article id="ts-site" class="ts-home">
+      `
+    ];
+  } 
+  
+  render() {
+    updateMetadata({
+      title: 'Home - HyperPress',
+      description: 'Home page'
+    });
+
+    return html`
+    <article id="ts-site" class="ts-home">
       <header class="hero">
         <div class="fade-in ts-header-wrapper">
           <h1 class="paper-font-display2 paper-font-light">Making a Better WordPress</h1>
@@ -123,8 +135,8 @@ class TSHome extends LitElement {
               </div>
             </div>
           </div>
-        </section>
-      </article>
+      </section>
+    </article>
     `;
   }
 }

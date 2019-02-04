@@ -1,8 +1,7 @@
 
-import { html } from 'lit-element';
+import { css } from 'lit-element';
 
-export const TsTableStyles = html `
-  <style>
+export const TsTableStyles = css `
   .table {
     width: 100%;
     max-width: 100%;
@@ -60,5 +59,4 @@ export const TsTableStyles = html `
   .table-hover tbody > tr:hover {
     background-color: var(--app-section-even-color);
   }
-  </style>
 `;

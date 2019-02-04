@@ -1,8 +1,7 @@
-import { html } from 'lit-element';
+import { css } from 'lit-element';
 
-export const SharedStyles = html `
- 
-<style>
+
+export const SharedStyles = css `
   :host {
     display:none;
   }
@@ -863,5 +862,4 @@ export const SharedStyles = html `
       flex-wrap: wrap;
       flex: 1; }  
   }
-</style>
 `;

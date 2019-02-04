@@ -1,10 +1,13 @@
-import { LitElement, html } from 'lit-element';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { SharedStyles } from './shared-styles';
-class TSSecurity extends LitElement {
-  render(props) {
-    return html `
-      ${ SharedStyles }
-      <style>
+
+class TSSecurity extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      css`
       :host {
         display: block;
         padding: 0px;
@@ -38,7 +41,17 @@ class TSSecurity extends LitElement {
           margin: 24px 30px 5px;
         }
       }    
-      </style>
+    `
+    ];
+  }  
+
+  render() {
+    updateMetadata({
+      title: 'Security Solutions - HyperPress',
+      description: 'Defense in depth security that protect data and reputations'
+    });
+
+    return html`
       <article id="ts-site" class="ts-security">
         <header class="hero">
           <div class="ts-header-wrapper fade-in">

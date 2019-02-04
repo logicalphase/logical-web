@@ -1,10 +1,9 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 class ArticleImage extends LitElement {
-  render() {
-    const { alt, placeholder, src, _loaded } = this;
-    return html`
-      <style>
+  static get styles() {
+    return [
+      css`
         :host {
           display: block;
           position: relative;
@@ -34,7 +33,13 @@ class ArticleImage extends LitElement {
           opacity: 1;
           transition: 0.5s opacity;
         }
-      </style>
+      `
+    ];
+  } 
+  
+  render() {
+    const { alt, placeholder, src, _loaded } = this;
+    return html`
       <div id="placeholder" style="${placeholder ? `background-image: url('${placeholder}');` : ''}" ?loaded="${_loaded}">
         <img src="${src}" alt="${alt}"
             @load="${() => this._loaded = true}"
@@ -63,5 +68,4 @@ class ArticleImage extends LitElement {
     }
   }
 }
-
 customElements.define('article-image', ArticleImage);

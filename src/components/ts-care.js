@@ -1,43 +1,55 @@
-import { LitElement, html } from 'lit-element';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { SharedStyles } from './shared-styles';
 
-class TSCare extends LitElement {
-  render(props) {
-    return html `
-    ${ SharedStyles}
-    <style>
-    :host {
-      display: block;
-      padding: 0px;
-    }
-    /* Smaller than 460 */
+class TSCare extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      css`
+      :host {
+        display: block;
+        padding: 0px;
+      }
+        /* Smaller than 460 */
 
-    .hero {
-      background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
-      background-size: contain;
-      background-position: center center;
-    }
-
-    h3 {
-      padding-top: 20px; }
-
-    @media (min-width: 460px) {
-      .ts-header-wrapper {
+      .hero {
         background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
         background-size: contain;
-        background-position: 92% center;
+        background-position: center center;
       }
-    }
 
-    @media (max-width: 800px) {
-      .ts-header-wrapper {
-        background-position: 95% center !important; }
-      .ts-right {
-        float: none !important;
-        margin: 24px 30px 5px;
+      h3 {
+        padding-top: 20px; }
+
+      @media (min-width: 460px) {
+        .ts-header-wrapper {
+          background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
+          background-size: contain;
+          background-position: 92% center;
+        }
       }
-    }   
-    </style>
+
+      @media (max-width: 800px) {
+        .ts-header-wrapper {
+          background-position: 95% center !important; }
+        .ts-right {
+          float: none !important;
+          margin: 24px 30px 5px;
+        }
+      }   
+    `
+    ];
+  } 
+
+  render() {
+    updateMetadata({
+      title: 'WordPress Preventive Care Program - HyperPress',
+      description: 'omplete protection and monitoring for WordPress'
+    });
+
+    return html`
     <article id="ts-site" class="ts-care">
       <header class="hero">
         <div class="ts-header-wrapper fade-in">

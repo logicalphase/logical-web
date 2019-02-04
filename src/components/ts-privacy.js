@@ -1,13 +1,15 @@
-import { LitElement, html } from "lit-element";
-import { SharedStyles } from "./shared-styles";
-import { TsTableStyles } from "./ts-table-style";
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
+import { SharedStyles } from './shared-styles';
+import { TsTableStyles } from './ts-table-style';
 
-class TSPrivacy extends LitElement {
-  render(props) {
-    return html`
-      ${SharedStyles}
-      ${TsTableStyles}
-      <style>
+class TSPrivacy extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      TsTableStyles,
+      css`
       :host {
         display: block;
         padding: 0px;
@@ -113,9 +115,18 @@ class TSPrivacy extends LitElement {
         .sidebar .text-uppercase {
           padding-left: 14px;
         }
-
       } 
-      </style>
+    `
+    ];
+  } 
+
+  render() {
+    updateMetadata({
+      title: 'PageSpeed Optimizations - HyperPress',
+      description: 'About page'
+    });
+
+    return html`
       <article id="ts-site" class="ts-privacy">
         <header class="hero">
           <div class="ts-header-wrapper fade-in">

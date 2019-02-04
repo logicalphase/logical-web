@@ -8,10 +8,9 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-import { html } from 'lit-element';
+import { css } from 'lit-element';
 
-export const TsSelectStyle = html`
-<style>
+export const TsSelectStyle = css`
   ts-select {
     display: inline-block;
     margin: 10px 0px 20px 0px;
@@ -94,4 +93,4 @@ export const TsSelectStyle = html`
     color: var(--app-secondary-color);
     pointer-events: none;
   }
-</style>`;
+`;

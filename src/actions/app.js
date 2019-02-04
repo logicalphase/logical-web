@@ -107,8 +107,8 @@ const updatePage = page => {
   };
 };
 
-const isLoadingArticles = articles => {
-  return 
+const isFetchArticleFailed = (article) => {
+  return !article.isFetching && article.failure;
 }
 
 let snackbarTimer;

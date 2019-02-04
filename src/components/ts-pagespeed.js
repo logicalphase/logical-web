@@ -1,10 +1,12 @@
-import { LitElement, html } from 'lit-element';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { SharedStyles } from './shared-styles';
-class TSPageSpeed extends LitElement {
-  render(props) {
-    return html `
-      ${SharedStyles}
-      <style>
+class TSPageSpeed extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      css`
       :host {
         display: block;
         padding: 0px;
@@ -48,7 +50,17 @@ class TSPageSpeed extends LitElement {
           margin-bottom: -34px;
         }
       } 
-      </style>
+    `
+    ];
+  } 
+
+  render() {
+    updateMetadata({
+      title: 'PageSpeed Optimizations - HyperPress',
+      description: 'About page'
+    });
+
+    return html`
       <article id="ts-site" class="ts-pagespeed">
         <header class="hero">
           <div class="ts-header-wrapper fade-in">
@@ -127,6 +139,6 @@ class TSPageSpeed extends LitElement {
         </div>
       </article>
     `;
-    }
+  }
 }
 window.customElements.define('ts-pagespeed', TSPageSpeed);

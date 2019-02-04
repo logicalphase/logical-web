@@ -1,5 +1,3 @@
-import { until } from "lit-html/directives/until";
-
 /**
 @license
 Copyright (c) 2018 The Polymer Project Authors. All rights reserved.

@@ -8,10 +8,9 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-import { html } from 'lit-element';
+import { css } from 'lit-element';
 
-export const TsButtonStyle = html`
-<style>
+export const TsButtonStyle = css`
   ts-button {
     display: inline-block;
   }
@@ -62,4 +61,4 @@ export const TsButtonStyle = html`
       background-color: var(--app-accent-color);
     }
   }
-</style>`;
+`;

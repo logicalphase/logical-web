@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { repeat } from 'lit-html/directives/repeat.js';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
@@ -27,15 +27,317 @@ import { article, articleSelector } from '../reducers/article.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
-    article
+  article
 });
 
 class TSDetail extends connect(store)(PageViewElement) {
+  static get styles() {
+    return [
+      SharedStyles,
+      TsTableStyles,
+      css`
+
+      :host {
+        display: block;
+        padding: 24px 16px;
+      }
+
+      h1, h2 {
+        font-weight: 400;
+        margin-bottom: 20px;
+        margin: 20px 20px 25px 20px;
+      }
+
+      h2 {
+        font-size: 1.15rem;
+      }
+
+      h3 {
+        margin: 20px 20px 25px 20px;
+        padding: 0; 
+      }
+      ol {
+        margin-left: 20px;
+      }
+      ul{
+        margin-left: 10px;
+      }
+
+      ol li, ul li {
+        font-size:1rem;
+        margin-right: 20px
+      }
+
+      li ul {
+        margin-left: -20px;
+      }
+
+      table {
+        margin: 10px 14px 15px 14px;
+      }
+
+      blockquote {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 40px;
+        margin-inline-end: 40px;
+      }
+
+      blockquote p {
+        quotes: "“" "”";
+      }
+
+      blockquote p::before {
+        content: open-quote;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 62px;
+        color: var(--app-primary-color);
+        margin-left: -28px;
+        margin-bottom: -20px;
+      }
+      blockquote p::after {
+        display:none;
+        content: open-quote;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 62px;
+      }
+
+      strong {
+        font-weight: 400;
+      }
+      section {
+        max-width: 748px;
+        box-sizing: border-box;
+      }
+      .item {
+        display: flex;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #c5c5c5;
+      }
+      .cover {
+        position: relative;
+      }
+
+      .cover > article-image {
+        display: block;
+        margin: 0 auto;
+      }
+      .item-desc {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-left: 16px;
+        font-size: 14px;
+      }
+      .flex {
+        flex: 1;
+      }
+      .title {
+        margin: 14px 0 4px;
+        font-size: 1.45rem;
+        font-weight: 300;
+        line-height: 1.2;
+        text-align: center;
+      }
+      .item-item {
+        padding-top: 8px;
+        padding-bottom: 14px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .desc {
+        padding: 8px 0 22px 0;
+      }
+      .desc > h3 {
+        font-size: 22px;
+        font-weight: 400;
+        text-align: left;
+      }
+      .desc > ul {
+        margin-bottom: 24px;
+      }
+
+      .desc > ol {
+        padding-left: 20px;
+      }
+
+      .desc .wp-caption {
+        border: 4px solid #efefef;
+        padding: 5px;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .desc .wp-caption-text {
+        font-size: 0.9rem;
+        padding: 0px 0px;
+        margin: 5px 14px 10px 14px;
+        line-height: normal;
+      }
+
+      .desc img {
+        padding: 1px;
+      }
+
+      .desc .alignleft {
+        margin-bottom: 22px;
+        float: none;
+      }
+      .desc .alignright {
+        margin-bottom: 22px;
+        float: none;
+      }
+      article-rating {
+        margin-right: 6px;
+      }
+      .rating-container {
+        display: flex;
+        align-items: center;
+        padding: 16px 0;
+        border-bottom: 1px solid #c5c5c5;
+        font-size: 14px;
+      }
+      .fav-btn-container,
+      .preview-btn-container {
+        padding-top: 16px;
+      }
+      .fav-btn-container {
+        height: 32px;
+      }
+      .fav-button {
+        display: flex;
+        align-items: center;
+        width: 156px;
+        margin: 0 8px 0 0;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .fav-button > svg {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+      .ts-read-more .social_container {
+        float: right;
+        padding: 0px;
+        margin-top: -89px;
+      }
+      .social-icon {
+        fill:  #888;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+      .gplus-icon:hover {
+        fill:  #db4437;
+      }
+      .blogger-icon:hover {
+        fill: #fb8f3d;
+      }
+      .twitter-icon:hover {
+        fill: #1da1f2;
+      }
+      .facebook-icon:hover {
+        fill: #3b5998;
+      }
+      .linkedin-icon:hover {
+        fill:  #007bb5;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      /* desktop screen */
+      @media (min-width: 648px) {
+        :host {
+          padding: 48px 24px 24px;
+        }
+        h2, h3 {
+          margin: 20px 0px 25px 0px;
+          padding: 0;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        ol {
+          margin-left: 14px;
+        }
+        ul{
+          margin-left: 0px;
+          padding-left: 24px;
+        }
+
+        li ul, li ol {
+          margin-left: 0px;
+        }
+
+        ol li, ul li {
+          font: 300 16px/24px Roboto, Sans-serif;
+        }
+        blockquote {
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 80px;
+          margin-inline-end: 80px;
+        }
+        blockquote p {
+          margin-bottom: 0px;
+        }
+        small {
+          margin-bottom: -24px;
+        }
+        section {
+          margin: 0 auto;
+        }
+        .item {
+          padding-bottom: 8px;
+        }
+        .item-item {
+          text-align: left;
+        }
+        .item-desc {
+          margin-left: 24px;
+        }
+        .title {
+          margin-bottom: 8px;
+          font-size: 2rem;
+          line-height: 1.3;
+          text-align: left;
+        }
+        .fav-btn-container,
+        .preview-btn-container {
+          display: flex;
+          justify-content: flex-end;
+        }
+        .preview-btn-container {
+          padding-bottom: 24px;
+        }
+        .rating-container {
+          padding: 24px 0;
+        }
+        .desc {
+          padding: 16px 0;
+        }
+        .desc .alignleft {
+          margin: 0 24px 0 0;
+          float: left;
+        }
+        .desc .alignright {
+          margin: 4px 0 0 24px;
+          float:right;
+        }
+      }
+    `
+    ];
+  }
+
   render() {
     const {
-      isFetching,
       _data,
-      _lastVisitedListPage,
       _showOffline
     } = this;
     
@@ -60,309 +362,11 @@ class TSDetail extends connect(store)(PageViewElement) {
       image: thumbnail
     });
 
-  return html `
-    ${ SharedStyles }
-    ${ TsTableStyles }
-    <style>
-        :host {
-          display: block;
-          padding: 24px 16px;
-        }
-
-        h1, h2 {
-          font-weight: 400;
-          margin-bottom: 20px;
-          margin: 20px 20px 25px 20px;
-        }
-
-        h2 {
-          font-size: 1.15rem;
-        }
-
-        h3 {
-          margin: 20px 20px 25px 20px;
-          padding: 0; 
-        }
-        ol {
-          margin-left: 20px;
-        }
-        ul{
-          margin-left: 10px;
-        }
-
-        ol li, ul li {
-          font-size:1rem;
-          margin-right: 20px
-        }
-
-        li ul {
-          margin-left: -20px;
-        }
-
-        table {
-          margin: 10px 14px 15px 14px;
-        }
-
-        blockquote {
-          margin-block-start: 1em;
-          margin-block-end: 1em;
-          margin-inline-start: 40px;
-          margin-inline-end: 40px;
-        }
-
-        blockquote p {
-          quotes: "“" "”";
-        }
-
-        blockquote p::before {
-          content: open-quote;
-          font-family: 'Times New Roman', Times, serif;
-          font-size: 62px;
-          color: var(--app-primary-color);
-          margin-left: -28px;
-          margin-bottom: -20px;
-        }
-        blockquote p::after {
-          display:none;
-          content: open-quote;
-          font-family: 'Times New Roman', Times, serif;
-          font-size: 62px;
-        }
-
-        strong {
-          font-weight: 400;
-        }
-        section {
-          max-width: 748px;
-          box-sizing: border-box;
-        }
-        .item {
-          display: flex;
-          padding-bottom: 16px;
-          border-bottom: 1px solid #c5c5c5;
-        }
-        .cover {
-          position: relative;
-        }
-
-        .cover > article-image {
-          display: block;
-          margin: 0 auto;
-        }
-        .item-desc {
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-          margin-left: 16px;
-          font-size: 14px;
-        }
-        .flex {
-          flex: 1;
-        }
-        .title {
-          margin: 14px 0 4px;
-          font-size: 1.45rem;
-          font-weight: 300;
-          line-height: 1.2;
-          text-align: center;
-        }
-        .item-item {
-          padding-top: 8px;
-          padding-bottom: 14px;
-          font-size: 0.9rem;
-          text-align: center;
-        }
-        .desc {
-          padding: 8px 0 22px 0;
-        }
-        .desc > h3 {
-          font-size: 22px;
-          font-weight: 400;
-          text-align: left;
-        }
-        .desc > ul {
-          margin-bottom: 24px;
-        }
-
-        .desc > ol {
-          padding-left: 20px;
-        }
-
-        .desc .wp-caption {
-          border: 4px solid #efefef;
-          padding: 5px;
-          text-align: center;
-          margin: 0 auto;
-        }
-
-        .desc .wp-caption-text {
-          font-size: 0.9rem;
-          padding: 0px 0px;
-          margin: 5px 14px 10px 14px;
-          line-height: normal;
-        }
-
-        .desc img {
-          padding: 1px;
-        }
-
-        .desc .alignleft {
-          margin-bottom: 22px;
-          float: none;
-        }
-        .desc .alignright {
-          margin-bottom: 22px;
-          float: none;
-        }
-        article-rating {
-          margin-right: 6px;
-        }
-        .rating-container {
-          display: flex;
-          align-items: center;
-          padding: 16px 0;
-          border-bottom: 1px solid #c5c5c5;
-          font-size: 14px;
-        }
-        .fav-btn-container,
-        .preview-btn-container {
-          padding-top: 16px;
-        }
-        .fav-btn-container {
-          height: 32px;
-        }
-        .fav-button {
-          display: flex;
-          align-items: center;
-          width: 156px;
-          margin: 0 8px 0 0;
-          padding: 0;
-          background: transparent;
-          border: 0;
-          -webkit-appearance: none;
-          font-size: 12px;
-          cursor: pointer;
-        }
-        .fav-button > svg {
-          width: 32px;
-          height: 32px;
-          margin-right: 8px;
-        }
-        .ts-read-more .social_container {
-          float: right;
-          padding: 0px;
-          margin-top: -89px;
-        }
-        .social-icon {
-          fill:  #888;
-          cursor: pointer;
-          margin-right: 5px;
-        }
-        .gplus-icon:hover {
-          fill:  #db4437;
-        }
-        .blogger-icon:hover {
-          fill: #fb8f3d;
-        }
-        .twitter-icon:hover {
-          fill: #1da1f2;
-        }
-        .facebook-icon:hover {
-          fill: #3b5998;
-        }
-        .linkedin-icon:hover {
-          fill:  #007bb5;
-        }
-        [hidden] {
-          display: none !important;
-        }
-        /* desktop screen */
-        @media (min-width: 648px) {
-          :host {
-            padding: 48px 24px 24px;
-          }
-          h2, h3 {
-            margin: 20px 0px 25px 0px;
-            padding: 0;
-          }
-
-          h2 {
-            font-size: 1.5rem;
-          }
-
-          ol {
-            margin-left: 14px;
-          }
-          ul{
-            margin-left: 0px;
-            padding-left: 24px;
-          }
-
-          li ul, li ol {
-            margin-left: 0px;
-          }
-
-          ol li, ul li {
-            font: 300 16px/24px Roboto, Sans-serif;
-          }
-          blockquote {
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 80px;
-            margin-inline-end: 80px;
-          }
-          blockquote p {
-            margin-bottom: 0px;
-          }
-          small {
-            margin-bottom: -24px;
-          }
-          section {
-            margin: 0 auto;
-          }
-          .item {
-            padding-bottom: 8px;
-          }
-          .item-item {
-            text-align: left;
-          }
-          .item-desc {
-            margin-left: 24px;
-          }
-          .title {
-            margin-bottom: 8px;
-            font-size: 2rem;
-            line-height: 1.3;
-            text-align: left;
-          }
-          .fav-btn-container,
-          .preview-btn-container {
-            display: flex;
-            justify-content: flex-end;
-          }
-          .preview-btn-container {
-            padding-bottom: 24px;
-          }
-          .rating-container {
-            padding: 24px 0;
-          }
-          .desc {
-            padding: 16px 0;
-          }
-          .desc .alignleft {
-            margin: 0 24px 0 0;
-            float: left;
-          }
-          .desc .alignright {
-            margin: 4px 0 0 24px;
-            float:right;
-          }
-        }
-      </style>
+    return html `
       <section ?hidden="${_showOffline}">
         <div class="item">
           <div class="cover" hero>
-            <article-image .src="https://api.themesurgeons.com/wp-content/uploads/${thumbnail}" .alt="${title}" ></article-image>
+            <article-image .src="https://api.themesurgeons.com/wp-content/uploads/${thumbnail}" .alt="${alt}" ></article-image>
             <h1 class="fade-in title">${title}</h1>
           <div class=" fade-in item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
           </div>
@@ -396,7 +400,7 @@ class TSDetail extends connect(store)(PageViewElement) {
 
   static get properties() {
     return {
-      isFetching: { type: Boolean },
+      _isFetching: { type: Boolean },
       _data: { type: Array },
       _lastVisitedListPage: { type: Boolean },
       _showOffline:{ type: Boolean }

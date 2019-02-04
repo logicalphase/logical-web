@@ -8,10 +8,9 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-import { html } from 'lit-element';
+import { css } from 'lit-element';
 
-export const TsFormStyle = html`
-<style>
+export const TsFormStyle = css`
   :host {
     display: block;
   }
@@ -31,4 +30,4 @@ export const TsFormStyle = html`
     font-weight: 300;
     padding-bottom: 14px;
   }
-</style>`;
+`;

@@ -1,46 +1,58 @@
-import { LitElement, html } from 'lit-element';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { SharedStyles } from './shared-styles';
 
-class TSEmergency extends LitElement {
-  render(props) {
-    return html `
-    ${SharedStyles}
-    <style>
-    :host {
-      display: block;
-      padding: 0px;
-    }
-    /* Smaller than 460 */
+class TSEmergency extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      css`
+      :host {
+        display: block;
+        padding: 0px;
+      }
+      /* Smaller than 460 */
 
-    h3 {
-      padding-top: 20px; }
+      h3 {
+        padding-top: 20px; }
 
-    .hero {
-        background: var(--app-light-text-color) url(/images/header/ts-emergency-header.svg) no-repeat;
-        background-size: cover;
-        background-position: center center;
-    }
-
-    @media (min-width: 460px) {
       .hero {
-        background: var(--app-light-text-color) url(/images/header/ts-emergency-header.svg) no-repeat;
-        background-size: contain;
-        background-position: 92% center;
+          background: var(--app-light-text-color) url(/images/header/ts-emergency-header.svg) no-repeat;
+          background-size: cover;
+          background-position: center center;
       }
-      .ts-right {
-        margin-bottom: 24px;
-      }
-    }
 
-    @media (max-width: 800px) {
-      .ts-header-wrapper {
-        background-position: 95% center !important; }
-      .ts-right {
-        float: none !important;
-        margin: 24px 30px 5px;
+      @media (min-width: 460px) {
+        .hero {
+          background: var(--app-light-text-color) url(/images/header/ts-emergency-header.svg) no-repeat;
+          background-size: contain;
+          background-position: 92% center;
+        }
+        .ts-right {
+          margin-bottom: 24px;
+        }
       }
-    } 
-    </style>
+
+      @media (max-width: 800px) {
+        .ts-header-wrapper {
+          background-position: 95% center !important; }
+        .ts-right {
+          float: none !important;
+          margin: 24px 30px 5px;
+        }
+      } 
+    `
+    ];
+  }
+
+  render() {
+    updateMetadata({
+      title: 'WordPress Emergency Response Team - HyperPress',
+      description: 'When your site breaks down, we\'ve got you covered'
+    });
+
+    return html`
     <article id="ts-site" class="ts-emergency">
       <header class="hero">
         <div class="ts-header-wrapper fade-in">

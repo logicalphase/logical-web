@@ -1,4 +1,4 @@
-import { html } from "lit-element";
+import { html, css } from "lit-element";
 import { PageViewElement } from "./page-view-element.js";
 
 import { until } from "lit-html/directives/until.js";
@@ -24,25 +24,10 @@ store.addReducers({
 import { SharedStyles } from "./shared-styles.js";
 
 class TSBlog extends connect(store)(PageViewElement) {
-  render() {
-    const { _query, _data, _showOffline } = this;
-
-    // Don't render if there is no item.
-    if (_data) { 
-      until(_data, html`<p class="ts-loader" style="padding-left: 34px;">Loading. . .</p>`);
-    } else {
-      return html`<p class="ts-loader" style="padding-left: 34px;">An error occurred while retrieving blog list. Please reload.</p>`;
-    }
-
-    // @ts-ignore
-    updateMetadata({
-      title: `HyperPress Articles`,
-      description: "WordPress How to's, tutorials, and pro tips to get the most from your site"
-    });
-
-    return html`
-      ${SharedStyles}
-      <style>
+  static get styles() {
+    return [
+      SharedStyles,
+      css`
       :host {
         display: block;
         padding: 0px;
@@ -173,7 +158,25 @@ class TSBlog extends connect(store)(PageViewElement) {
           background-position: 94% center;
         }
       }
-    </style>
+      `
+    ];
+  }    
+      
+  render() {
+    const { _query, _data, _showOffline } = this;
+
+    // Don't render if there is no item.
+    if (_data) { 
+      until(_data, html`<p class="ts-loader" style="padding-left: 34px;">Loading. . .</p>`);
+    } else {
+      return html`<p class="ts-loader" style="padding-left: 34px;">An error occurred while retrieving blog list. Please reload.</p>`;
+    }
+    updateMetadata({
+      title: `HyperPress Articles`,
+      description: "WordPress How to's, tutorials, and pro tips to get the most from your site"
+    });
+
+    return html`
 
     <article id="ts-site" class="ts-blog">
       <header class="hero">
