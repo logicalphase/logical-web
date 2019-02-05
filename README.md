@@ -2,12 +2,12 @@
 [![CircleCI](https://circleci.com/gh/hyperpress/pressmedics.svg?style=svg&circle-token=a56a8a61431cb26b7f1a29d42b44f776e48620fe)](https://circleci.com/gh/hyperpress/pressmedics)
 
 
-# pressmedics.com built with Polymer 3, lit-element, and lit-html
+# HyperPress built with lit-element, and lit-html
 
 IMPORTANT: This project currently makes use of bleeding edge technologies and subject to significant breaking changes. It should not be considered safe for production use. 
 
 - PWA goodness (manifest, service worker)
-- Lit-Element @sorville, and lit-html by @justin and contributors
+- Lit-element @sorville, and lit-html by @justin and contributors
 - PWA Starter Kit and Books example by @frankiefu
 - Responsive layout
 - Application theming
