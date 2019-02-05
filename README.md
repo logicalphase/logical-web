@@ -28,4 +28,4 @@ IMPORTANT: This project currently makes use of bleeding edge technologies and su
 - Add push notification via Firebase
 - Add contact forms
 - Add services order form
-- Add additional wp-rest api integration (pages, customs)
+- Add additional wp-rest api endpoints (pages, customs)
