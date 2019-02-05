@@ -5,35 +5,35 @@ import {
 
 export const articles = (state = { query: null }, action) => {
   switch (action.type) {
-    case REQUEST_ARTICLES:
-      return {
-        ...state,
-        query: action.query,
-        data: null, // reset data
-        failure: false,
-        isFetching: true
-      };
-    case RECEIVE_ARTICLES:
-      return {
-        ...state,
-        data: action.data.reduce((obj, data) => {
-          obj[data.slug] = data;
-          return obj;
-        }, {}),
-        failure: false,
-        isFetching: false
-      };
-    case FAIL_ARTICLES:
-      return {
-        ...state,
-        data: null,
-        failure: true,
-        isFetching: false
-      };
-    default:
-      return state;
+  case REQUEST_ARTICLES:
+    return {
+      ...state,
+      query: action.query,
+      data: null, // reset data
+      failure: false,
+      isFetching: true
+    };
+  case RECEIVE_ARTICLES:
+    return {
+      ...state,
+      data: action.data.reduce((obj, data) => {
+        obj[data.slug] = data;
+        return obj;
+      }, {}),
+      failure: false,
+      isFetching: false
+    };
+  case FAIL_ARTICLES:
+    return {
+      ...state,
+      data: null,
+      failure: true,
+      isFetching: false
+    };
+  default:
+    return state;
   }
-}
+};
 
 export const itemsSelector = state => state.articles && state.articles.data;
 

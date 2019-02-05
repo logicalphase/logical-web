@@ -148,7 +148,6 @@ class TSItem extends LitElement {
           float: right;
           writing-mode: vertical-rl;
         }
-
         .small-print {
           font-size: 14px !important;
         }

@@ -40,7 +40,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
+        background: var(--app-light-text-color) url('/images/header/ts-design-header.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -94,7 +94,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       }
 
       .nav li h3 {
-        color: #4a5960;
+        color: var(--app-dark-text-color);
         font-size: 16px;
         overflow: hidden;
         text-overflow: ellipsis;
