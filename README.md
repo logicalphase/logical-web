@@ -4,16 +4,17 @@
 
 # pressmedics.com built with Polymer 3, lit-element, and lit-html
 
-IMPORTANT: This project makes use of bleeding edge technologies, many of which are in early stages of development, subject to significant breaking changes. It should not be considered safe for production use. 
+IMPORTANT: This project currently makes use of bleeding edge technologies and subject to significant breaking changes. It should not be considered safe for production use. 
 
 - PWA goodness (manifest, service worker)
-- Based on Polymer 3 / Lit-Element PWA Starter Kit and Books example by @frankiefu, and lit-html by @justin and contributors
+- Lit-Element @sorville, and lit-html by @justin and contributors
+- PWA Starter Kit and Books example by @frankiefu
 - Responsive layout
 - Application theming
 - Redux for state management
 - Offline UI
 - Redux routing solution
-- Blog list and article views based on Ponzu or WordPress REST API
+- Blog list and article views based on WordPress REST API
 - Fast time-to-interactive and first-paint through the PRPL pattern
 - Easy deployment to prpl-server or static hosting
 - Unit and integrating testing starting points
@@ -21,9 +22,10 @@ IMPORTANT: This project makes use of bleeding edge technologies, many of which a
 # TODO List
 
 - Add favorites custom favorites feature
-- Add Chrome microphone search feature
+- Add search and Chrome microphone search feature
 - Clean up element and shared CSS
 - Add authentication via Firebase
 - Add push notification via Firebase
-- Add contact form
+- Add contact forms
 - Add services order form
+- Add additional wp-rest api integration (pages, customs)
