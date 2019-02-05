@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 
 import { SharedStyles } from './shared-styles';
@@ -10,167 +10,174 @@ import { announceLabel } from '../actions/app.js';
 
 
 class TSContact extends PageViewElement {
-  render() {
-    const requestip = location.hostname; 
-    const { _response, _state, _waiting } = this;
-    return html `
+  static get styles() {
+    return [
+      SharedStyles,
+      TsFormStyle,
+      TsInputStyle,
+      TsSelectStyle,
+      TsTextAreaStyle,
+      css`
 
-    ${ SharedStyles }
-    ${ TsFormStyle }
-    ${ TsInputStyle }
-    ${ TsSelectStyle }
-    ${ TsTextAreaStyle }
- 
-    <style>
-    :host {
-      display: block;
-      padding: 0px;
-    }
-
-    /* Smaller than 460 */
-
-    .hero {
-      background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
-      background-size: contain;
-      background-position: center center;
-    }
-
-    h3 {
-      padding-top: 20px; }
-
-    ts-button > * {
-      display: inline-block;
-      box-sizing: border-box;
-      border: 2px solid --app-secondary-color;
-      background-color: var(--app-light-text-color);
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--app-secondary-color);
-      margin: 0;
-      padding: 8px 44px;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      border-radius: 0;
-      outline: none;
-      -webkit-appearance: none;
-      margin-top:14px;
-      width:100%;
-    }
-
-    ts-input, ts-select, ts-textarea {
-      width: 100%;
-    }
-
-    @media (min-width: 460px) {
-      ts-input, ts-select, ts-textarea {
-        margin-bottom: 20px;
+      :host {
+        display: block;
+        padding: 0px;
       }
-      paper-spinner-lite {
-        position: fixed;
-        top: calc(50% - 14px);
-        left: calc(50% - 14px);
+
+      /* Smaller than 460 */
+
+      #contactForm {
+        margin-top: 40px;
       }
 
       .hero {
         background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
         background-size: contain;
-        background-position: 92% center;
+        background-position: center center;
       }
 
-      .hero>div {
-        min-height: 120px;  
-      }
+      h3 {
+        padding-top: 20px; }
 
-      .ts-contact-body {
-        margin-bottom: 24px;
-      }
-
-      .ts-contact-wrapper {
+      ts-button > * {
+        display: inline-block;
+        box-sizing: border-box;
+        border: 2px solid --app-secondary-color;
         background-color: var(--app-light-text-color);
-        border-top: 1px solid #ccc;
-      }
-
-      .ts-contact-body h2 {
-        margin-bottom: 16px;
-      }
-
-      #ts-site .ts-pad-right-4 {
-        padding-right: 32px;
-      }
-
-      .main-frame {
-        transition: opacity 0.5s;
-      }
-      .main-frame.waiting {
-        opacity: 0.1;
-      }
-      ts-input, ts-select, ts-textarea {
-        font-size: 1.15rem;
-      }
-      .billing-address-picker {
-        margin: 28px 0;
-        height: 20px;
-        display: flex;
-      }
-      .billing-address-picker > label {
-        margin-left: 12px;
-      }
-      .grid {
-        margin-top: 40px;
-        display: flex;
-      }
-      .grid > section {
-        flex: 1;
-      }
-      .grid > section:not(:first-child) {
-        margin-left: 80px;
-      }
-      .row {
-        display: flex;
-        align-items: flex-end;
-      }
-      .column {
-        display: flex;
-        flex-direction: column;
-      }
-      .row > .flex,
-      .input-row > * {
-        flex: 1;
-      }
-      .input-row > *:not(:first-child) {
-        margin-left: 8px;
-      }
-      label.ts-select-label {
-        line-height: 20px;
-        color: #ccc;
-      }
-      .order-summary-row {
-        line-height: 24px;
-      }
-      .total-row {
+        font-size: 1rem;
         font-weight: 500;
-        margin: 30px 0;
+        color: var(--app-secondary-color);
+        margin: 0;
+        padding: 8px 44px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 0;
+        outline: none;
+        -webkit-appearance: none;
+        margin-top:14px;
+        width:100%;
       }
 
-      @media (max-width: 767px) {
-      .grid {
-          display: block;
-          margin-top: 0;
-        }
-      .grid > section:not(:first-child) {
-          margin-left: 0;
-        }
-      #ts-site.ts-care {
-        background-position: 100% 140px !important; }
+      ts-input, ts-select, ts-textarea {
+        width: 100%;
+      }
 
-      .ts-right {
-        float: none !important;
-        margin: 24px 30px 5px; }
-      } 
+      @media (min-width: 460px) {
+        ts-input, ts-select, ts-textarea {
+          margin-bottom: 20px;
+        }
+        paper-spinner-lite {
+          position: fixed;
+          top: calc(50% - 14px);
+          left: calc(50% - 14px);
+        }
 
-    }
-    </style>
+        .hero {
+          background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
+          background-size: contain;
+          background-position: 92% center;
+        }
+
+        .hero>div {
+          min-height: 120px;  
+        }
+
+        .ts-contact-body {
+          margin-bottom: 24px;
+        }
+
+        .ts-contact-wrapper {
+          background-color: var(--app-light-text-color);
+          border-top: 1px solid #ccc;
+        }
+
+        .ts-contact-body h2 {
+          margin-bottom: 16px;
+        }
+
+        #ts-site .ts-pad-right-4 {
+          padding-right: 32px;
+        }
+
+        .main-frame {
+          transition: opacity 0.5s;
+        }
+        .main-frame.waiting {
+          opacity: 0.1;
+        }
+        ts-input, ts-select, ts-textarea {
+          font-size: 1.15rem;
+        }
+        .billing-address-picker {
+          margin: 28px 0;
+          height: 20px;
+          display: flex;
+        }
+        .billing-address-picker > label {
+          margin-left: 12px;
+        }
+        .grid {
+          margin-top: 40px;
+          display: flex;
+        }
+        .grid > section {
+          flex: 1;
+        }
+        .grid > section:not(:first-child) {
+          margin-left: 80px;
+        }
+        .row {
+          display: flex;
+          align-items: flex-end;
+        }
+        .column {
+          display: flex;
+          flex-direction: column;
+        }
+        .row > .flex,
+        .input-row > * {
+          flex: 1;
+        }
+        .input-row > *:not(:first-child) {
+          margin-left: 8px;
+        }
+        label.ts-select-label {
+          line-height: 20px;
+          color: #ccc;
+        }
+        .order-summary-row {
+          line-height: 24px;
+        }
+        .total-row {
+          font-weight: 500;
+          margin: 30px 0;
+        }
+
+        @media (max-width: 767px) {
+        .grid {
+            display: block;
+            margin-top: 0;
+          }
+        .grid > section:not(:first-child) {
+            margin-left: 0;
+          }
+        #ts-site.ts-care {
+          background-position: 100% 140px !important; }
+
+        .ts-right {
+          float: none !important;
+          margin: 24px 30px 5px; }
+        } 
+      }
+    `
+    ];
+  } 
+
+  render() {
+    const requestip = location.hostname; 
+    const { _response, _state, _waiting } = this;
+    return html `
     <article id="ts-site" class="ts-care">
       <header class="hero">
         <div class="ts-header-wrapper fade-in">
@@ -185,7 +192,6 @@ class TSContact extends PageViewElement {
               <input type="hidden" id="requestip" name="requestip" value="${ requestip }">
               <div class="subsection grid">
                 <section>
-                  <h2 id="accountInfoHeading">About you</h2>
                   <div class="row input-row">
                     <ts-input>
                     <input type="text" id="first_name" name="first_name" pattern=".{3,}"
@@ -221,7 +227,6 @@ class TSContact extends PageViewElement {
                   </div>
                   <div class="column">
                     <ts-select>
-                      <label id="typeLabel" class="ts-select-label">Subject</label>
                       <select id="type" name="type" required
                           autocomplete="contact type"
                           aria-labelledby="typeLabel typeHeading">
@@ -241,8 +246,6 @@ class TSContact extends PageViewElement {
                   </div>
                 </section>
                 <section>
-                  <h2>Site and inquiry</h2>
-
                   <div class="row input-row">
                     <ts-input>
                       <input type="url" id="website" name="website"
@@ -255,7 +258,7 @@ class TSContact extends PageViewElement {
                     </ts-input>
                   </div>
                   <div class="row input-row">
-                    <ts-textarea>
+                    <ts-textarea style="margin-top:20px;">
                       <textarea id="description" name="description" 
                           placeholder="Description" required 
                           aria-labelledby="DescriptionLabel InfoHeading"></textarea>
@@ -361,7 +364,7 @@ class TSContact extends PageViewElement {
     });
   }
 
-   /**
+  /**
    * Handles the response from the server by checking the response status
    * and transitioning to the success or error UI.
    */
