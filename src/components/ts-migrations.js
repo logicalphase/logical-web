@@ -57,7 +57,7 @@ class TSMigrations extends PageViewElement {
             <h1 class="paper-font-display2 paper-font-light">WordPress Migrations</h1>
             <h2 class="paper-font-title paper-font-light">We're experts at relocating WordPress.</h2>
             <div class="center-button">
-              <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a WordPress Pro</a>
+              <a href="/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a WordPress Pro</a>
             </div>
           </div>
         </header>
@@ -80,7 +80,7 @@ class TSMigrations extends PageViewElement {
                   <li>Monitor DNS propagation</li>
                   <li>Testing site on your new host</li>
                 </ul>
-                <a class="button button-secondary-cta shadow-4dp" data-customizer="pagespeed-order-form" href="/migration-order-form">Move WordPress to New Hosting</a>
+                <a class="button button-secondary-cta shadow-4dp" data-customizer="pagespeed-order-form" href="/contact/">Move WordPress to New Hosting</a>
               </div>
               <div class="ts-content-grid-box">
                 <figure class="mobile-spacing">
@@ -88,7 +88,7 @@ class TSMigrations extends PageViewElement {
                 </figure>
                 <h3 class="text-headline">Migrating to WordPress</h3>
                 <p>You've heard great things about WordPress, but your site was built using some other software or content mangement system (CMS). The idea of trying to move your site into WordPress seems impossibly complex. Well, don't let that stop you. We built tools that automate importing your content into a brand new WordPress instance, quickly, safely, and without error. So, if you're ready to move to WordPress, we'll make it happen.</p>
-                <a class="button button-secondary-cta shadow-4dp" data-customizer="pagespeed-order-form" href="/migration-order-form">Migrate My Site to WordPress</a>
+                <a class="button button-secondary-cta shadow-4dp" data-customizer="pagespeed-order-form" href="/contact/">Migrate My Site to WordPress</a>
               </div>
             </main>
             <aside class="sidebar">

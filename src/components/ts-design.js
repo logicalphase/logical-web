@@ -91,7 +91,7 @@ class TSDesign extends PageViewElement {
                 <h3 class="text-headline">Collaboration: Getting to Know You and Your Goals</h3>
                 <p>Before we write a single line of code, we spend as much time as possible getting to know you and your customers. Understanding your products and services, your target market, and your goals provide us with the insights we need to create a unique and extraordinary experience for your users.</p>
                 <p>We're fully committed to creating a long term partnership with your success in mind. If you're ready to leave your competition behind, let's talk.</p>
-                <a class="button button-secondary-cta shadow-4dp" data-customizer="design-inquiry-form" href="/design-inquiry-form">Contact our Design Team</a>
+                <a class="button button-secondary-cta shadow-4dp" data-customizer="design-inquiry-form" href="/contact/">Contact our Design Team</a>
               </div>
             </main>
             <aside class="sidebar">

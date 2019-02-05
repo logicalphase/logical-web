@@ -184,7 +184,7 @@ class TSBlog extends connect(store)(PageViewElement) {
           <h1 class="paper-font-display2 paper-font-light">WordPress Blog</h1>
           <h2 class="paper-font-title paper-font-light">Pro tips for making the most of your WordPress site</h2>
           <div class="center-button">
-            <a href="https://themesurgeons.com/contact/" 
+            <a href="/contact/" 
               class="button button-large button-logo ts-button" 
               track-type="navigateTo" track-name="home"
               track-metadata-position="banner">Contact a WordPress Pro

@@ -59,7 +59,7 @@ class TSEmergency extends PageViewElement {
           <h1 class="paper-font-display2 paper-font-light">WordPress 911</h1>
           <h2 class="paper-font-title paper-font-light">When your site breaks down, we've got you covered</h2>
           <div class="center-button">
-            <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home"
+            <a href="/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home"
               track-metadata-position="banner">Contact a WordPress Pro</a>
           </div>
         </div>
@@ -83,7 +83,7 @@ class TSEmergency extends PageViewElement {
                     <li>Follow up examination</li>
                     <li>All work guaranteed</li>
                   </ul>
-                <a class="button button-secondary-cta shadow-4dp" data-customizer="pagespeed-order-form" href="/pagespeed-order-form">Contact WordPress 911</a>
+                <a class="button button-secondary-cta shadow-4dp" data-customizer="pagespeed-order-form" href="/contact/">Contact WordPress 911</a>
               </div>
             </main>
             <aside class="sidebar">

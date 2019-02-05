@@ -67,7 +67,7 @@ class TSPageSpeed extends PageViewElement {
             <h1 class="paper-font-display2 paper-font-light">PageSpeed Optimization</h1>
             <h2 class="paper-font-title paper-font-light">Lightning fast, functionally superior, masters of self-defense</h2>
             <div class="center-button">
-              <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a PageSpeed Pro</a>
+              <a href="/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a PageSpeed Pro</a>
             </div>
           </div>
         </header>
@@ -102,7 +102,7 @@ class TSPageSpeed extends PageViewElement {
                   
                   <h4 class="paper-font-subhead">But wait, there's more!</h4>
                   <p>We'll monitor your site and periodically stop by and make adjustments for one year after we optimize it. No other service offers that.</p>
-                  <a class="button button-secondary-cta shadow-4dp" data-customizer="pagespeed-order-form" href="/pagespeed-order-form">Order Optimization</a>
+                  <a class="button button-secondary-cta shadow-4dp" data-customizer="pagespeed-order-form" href="/contact/">Order Optimization</a>
                 </div>
               </main>
               <aside class="sidebar">

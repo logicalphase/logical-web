@@ -74,7 +74,7 @@ class TSHome extends PageViewElement {
           <h1 class="paper-font-display2 paper-font-light">Making a Better WordPress</h1>
           <h2 class="paper-font-title paper-font-light">Lightning fast, functionally superior, masters of self-defense</h2>
           <div class="center-button">
-            <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button mdc-button--raised" track-type="navigateTo" track-name="home"
+            <a href="/contact/" class="button button-large button-logo ts-button mdc-button--raised" track-type="navigateTo" track-name="home"
               track-metadata-position="banner">Contact a WordPress Pro</a>
           </div>
         </div>

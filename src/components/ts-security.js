@@ -58,7 +58,7 @@ class TSSecurity extends PageViewElement {
             <h1 class="paper-font-display2 paper-font-light">Security Solutions</h1>
             <h2 class="paper-font-title paper-font-light">Defense in depth security that protect data and reputations.</h2>
             <div class="center-button">
-              <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact Security Team</a>
+              <a href="/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact Security Team</a>
             </div>
           </div>
         </header>
@@ -100,7 +100,7 @@ class TSSecurity extends PageViewElement {
                     <li>Provides full documentation and proactive recommendations</li>
                   </ul>
                   <p>If you think you've suffered a security breach, don't wait. Contact us right away.</p>
-                  <a class="button button-secondary-cta shadow-4dp" data-customizer="sirt-inquiry-form" href="/sirt-inquiry">Security Incident Response</a>
+                  <a class="button button-secondary-cta shadow-4dp" data-customizer="site-inquiry-form" href="/contact/">Security Incident Response</a>
                 </div>
                 <div class="ts-content-grid-box">
                   <figure>
@@ -120,7 +120,7 @@ class TSSecurity extends PageViewElement {
                     <li>Fake account, spam bot, and comment spam prevention</li>
                   </ul>
                   <p>Protect your organization against loss of revenue, limit legal liability, and serious harm to your reputation. Contact us today for a no obligation consultation.</p>
-                  <a class="button button-secondary-cta shadow-4dp" data-customizer="hyperdefense-inquiry-form" href="/hyperdefense-inquiry">HyperDefense Security Services</a>
+                  <a class="button button-secondary-cta shadow-4dp" data-customizer="hyperdefense-inquiry-form" href="/contact/">HyperDefense Security Services</a>
                 </div>
               </main>
               <aside class="sidebar">

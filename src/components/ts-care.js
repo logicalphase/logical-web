@@ -56,7 +56,7 @@ class TSCare extends PageViewElement {
           <h1 class="paper-font-display2 paper-font-light">WordPress Preventive Care</h1>
           <h2 class="paper-font-title paper-font-light">Complete protection and monitoring for WordPress</h2>
           <div class="center-button">
-            <a href="https://themesurgeons.com/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a WordPress Pro</a>
+            <a href="/contact/" class="button button-large button-logo ts-button" track-type="navigateTo" track-name="home" track-metadata-position="banner">Contact a WordPress Pro</a>
           </div>
         </div>
       </header>
@@ -83,7 +83,7 @@ class TSCare extends PageViewElement {
                   <li>Advanced security and spam protection</li>
                   <li>No contract required, optional annual renewal</li>
                 </ul>
-                <a class="button button-secondary-cta" data-customizer="pagespeed-order-form" href="/wapc-order-form">Order WordPress Preventive Care</a>
+                <a class="button button-secondary-cta" data-customizer="pagespeed-order-form" href="/contact/">Order WordPress Preventive Care</a>
                 <p class="fine-print"> * Dropbox, Google Cloud, Google Drive, Amazon S3, Microsoft Azure</p>
                 <p class="fine-print">** Some Premium themes and plugins not eligible for auto-updating not included.</p>
               </div>
