@@ -35,9 +35,6 @@ class TSPageSpeed extends PageViewElement {
           background-size: contain;
           background-position: 95% center;
         }
-        .ts-right {
-          margin-bottom: 24px;
-        }
       }
 
       @media (max-width: 800px) {

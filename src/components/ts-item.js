@@ -168,13 +168,14 @@ class TSItem extends LitElement {
     const date_postfix = " ago.";
 
     return html`
-    <a id="${id}" href="/article/${slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress" >
-      <div class="category-vertical-lr">${category}</div>
-      <div class="inner">
-        <h3 class="paper-font-headline">${title}</h3> ${excerpt}
-        <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> ${ date_prefix + date + date_postfix }</p>
-      </div>
-    </a>
+    
+    <div class="category-vertical-lr">${category}</div>
+    <div class="inner">
+      <a id="${id}" href="/article/${slug}/" aria_label="Read ${title}" track-type="navigateTo" track-name="/solutions/headlessWordPress" ><h3 class="paper-font-headline">${title}</h3></a> 
+      ${excerpt}
+      <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> ${ date_prefix + date + date_postfix }</p>
+    </div>
+    
     <div class="ts-read-more"><a id="${id}" href="/article/${slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
       <div class="social_container">
         <div class="social_share">

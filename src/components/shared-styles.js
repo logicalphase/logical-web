@@ -60,8 +60,8 @@ export const SharedStyles = css `
     line-height: 24px; }
 
   p {
-    margin: 20px 20px 25px 20px;
-    word-spacing: 0.15rem;
+    line-height: 28px;
+    margin: 0 0 16px 0;
   }
   
   strong {
@@ -69,11 +69,22 @@ export const SharedStyles = css `
   }
 
   a { 
-    color: var(--app-primary-color);
-    text-decoration: none; }
+    background-color: transparent;
+    color: var(--app-link-color);
+    text-decoration: none; 
+    font-weight: 600;
+    margin-bottom: 5px;
+    border-bottom: 4px solid var(--app-link-color);
+    transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, transform 0.3s;
+    will-change: background-color
+  }
 
   a:active, a:hover {
-    outline: 0; }
+    outline: 0; 
+    color: var(--app-primary-color);
+    border-color: var(--app-primary-color);
+  }
+
 
   article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block; }
@@ -102,10 +113,12 @@ export const SharedStyles = css `
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    border-bottom: none;
   }
   .article-button:active {
     background-color: var(--app-dark-text-color);
     color: var(--app-light-text-color);
+    border-bottom: none;
   }
 
   .fade-in {
@@ -447,12 +460,9 @@ export const SharedStyles = css `
     color: var(--app-light-text-color);
     padding: 0 40px 0 62px; }
 
-  .button {
-    border-radius: 3px;
-    font-weight: 500;
-    margin: 0 16px 0 0;
-    text-align: center;
-    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }
+  .button a, .button a:hover {
+    border-bottom:none !important;
+  }
 
   .button:hover {
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
@@ -462,14 +472,16 @@ export const SharedStyles = css `
     box-sizing: border-box;
     display: inline-block;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     height: auto;
-    letter-spacing: .01em;
+    letter-spacing: .05em;
     margin: 0;
     overflow: hidden;
     padding: 0 16px;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); 
     transition: box-shadow .3s, background-color .3s, color .3s, transform .3s; }
 
   .button-secondary-cta,  .button-primary-cta {
@@ -516,7 +528,7 @@ export const SharedStyles = css `
 
   .background-grey {
     background: var(--app-section-even-color);
-    color: var(--app-dark-text-color); }
+  }
 
   .ts-pad-bottom-12 {
     padding-bottom: 96px; }
@@ -561,10 +573,16 @@ export const SharedStyles = css `
   .sidebar {
     background: var(--app-section-even-color); }
 
+  .sidebar a, .sidebar a:hover {
+    border-bottom: none;
+    font-weight: normal;
+  }
+
   .sidebar-selected {
     background: var(--app-nav-background);
     color: var(--app-primary-color);
-    text-decoration:none; }
+    text-decoration:none; 
+    border-bottom: none; }
 
   .ts-content-grid-box {
     min-height: 230px; 
@@ -676,7 +694,6 @@ export const SharedStyles = css `
     margin-right: 20px;
     background: var(--app-light-text-color);
     border-radius: 2px;
-    cursor: pointer;
     -ms-flex: 1;
     flex: 1;
     letter-spacing: .01em;
@@ -758,13 +775,6 @@ export const SharedStyles = css `
       white-space: normal;
       padding-right: 120px; }
 
-    p {
-      font: 300 16px/24px Roboto, Sans-serif;
-      margin: 0 0 25px 0;
-      line-height: 28px; 
-      font-size: .95rem;
-    }
-
     ul.body-checks {
       padding: 0 5px; 
     }
@@ -795,7 +805,12 @@ export const SharedStyles = css `
       margin: 0 auto;
       width: 100%;
       text-align: left; 
-      margin-top: 24px; }
+      margin-top: 24px; 
+    }
+
+    .button a, .center-button a {
+      border-bottom:none;
+    }
 
     .ts-pad-top-6 {
       padding-top: 5px; }

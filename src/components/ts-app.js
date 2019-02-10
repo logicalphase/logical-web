@@ -36,6 +36,7 @@ class TSApp extends connect(store)(LitElement) {
 
         --border-grey: #e0e0e0;
         --app-primary-color: #a434b7;
+        --app-link-color: #a434b7d1;
         --app-secondary-color: #000000;
         --app-nav-background: #edf0f2;
         --app-light-text-color: #ffffff;
