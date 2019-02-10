@@ -234,7 +234,6 @@ class TSApp extends connect(store)(LitElement) {
       .menu-btn {
         background: none;
         border: none;
-        fill: var(--app-header-text-color);
         cursor: pointer;
         width: 44px;
         padding-top: 5px;
@@ -477,7 +476,7 @@ class TSApp extends connect(store)(LitElement) {
         }
 
         input[type=search] {
-          background: #ededed url(/images/bg/icon-search.svg) no-repeat 9px 6px;
+          background: #ededed url('/images/bg/icon-search.svg') no-repeat 9px 6px;
           border: solid 1px #ccc;
           padding: 7px 10px 7px 32px;
           width: 140px;
