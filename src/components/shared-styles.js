@@ -72,9 +72,9 @@ export const SharedStyles = css `
     background-color: transparent;
     color: var(--app-link-color);
     text-decoration: none; 
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 5px;
-    border-bottom: 4px solid var(--app-link-color);
+    border-bottom: 3px solid var(--app-link-color);
     transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, transform 0.3s;
     will-change: background-color
   }
@@ -545,7 +545,7 @@ export const SharedStyles = css `
   .ts-header-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 0 24px 0 24px; 
+    padding: 0 24px 6px 24px; 
     border-bottom: 1px solid var(--border-grey);
   }
 
@@ -600,6 +600,10 @@ export const SharedStyles = css `
     color: var(--app-secondary-color);
     background-color: var(--app-light-text-color);
     padding: 24px 28px 0; }
+
+  .inner a {
+    font-size: 0.9rem;
+  }
 
   .inner h3 {
     margin: 5px 0;
@@ -794,9 +798,7 @@ export const SharedStyles = css `
 
     .hero>div {
       min-height: 180px;
-      padding: 14px;
-      padding: 50px 62px 40px 62px;
-      margin-top: 4px;
+      padding: 50px 62px 46px 62px;
       text-align: left; 
       border-bottom: 1px solid var(--border-grey);
     }
@@ -846,6 +848,7 @@ export const SharedStyles = css `
       text-align: left; }
 
     .text-uppercase {
+      font-size:0.9rem;
       text-transform: uppercase;
       text-align: left; 
       padding: 16px 28px 18px 28px;

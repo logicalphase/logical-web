@@ -15,7 +15,7 @@ class TSHome extends PageViewElement {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url(/images/bg/wordpress-logo.svg) no-repeat;
+        background: var(--app-light-text-color) url('/images/bg/wordpress-logo.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -25,6 +25,15 @@ class TSHome extends PageViewElement {
 
       a.ts-card-link {
         color: var(--app-primary-color);
+        margin-bottom: 4px;
+      }
+
+      .text-uppercase:hover {
+        border-bottom: 4px solid var(--app-link-color);
+      }
+
+      .text-uppercase {
+        border-bottom: 4px solid var(--app-light-text-color);
       }
 
       @keyframes FadeIn { 
@@ -42,26 +51,19 @@ class TSHome extends PageViewElement {
         }
       }
 
-      .services .flex-hover-card {
-        animation: FadeIn 1s linear;
-        animation-fill-mode: both;
-      }
 
-      .services .flex-hover-card:nth-child(1) { animation-delay: .3s }
-      .services .flex-hover-card:nth-child(2) { animation-delay: .6s }
-      .services .flex-hover-card:nth-child(3) { animation-delay: .9s }
-      .services .flex-hover-card:nth-child(4) { animation-delay: 1.0s }
-      .services .flex-hover-card:nth-child(5) { animation-delay: 1.3s }
-      .services .flex-hover-card:nth-child(6) { animation-delay: 1.6s }
 
       @media (min-width: 460px) {
         .hero {
-          background: var(--app-light-text-color) url(/images/bg/wordpress-logo.svg) no-repeat;
+          background: var(--app-light-text-color) url('/images/bg/wordpress-logo.svg') no-repeat;
           background-size: contain;
           background-position: 93% center;
         }
+        a.ts-card-link:hover {
+          border-bottom: 3px solid var(--app-link-color);
+        }
       }
-      `
+    `
     ];
   } 
   
@@ -87,15 +89,13 @@ class TSHome extends PageViewElement {
         <iron-selector selected="[[page]]" attr-for-selected="name" class="main-navigation" role="navigation">
           <div class="ts-grid-wrapper-standard">
               <div class="services ts-grid-wrapper-auto-fill">
-          
                 <div class="flex-hover-card">
                   <div class="inner">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 120 120" width="62" height="62"><defs><path d="M162.75 147.5L290.75 147.5L290.75 275.5L162.75 275.5L162.75 147.5Z" id="ciiZWmCYs"></path><clipPath id="cliplXMfN6MQQ"><use xlink:href="#ciiZWmCYs" opacity="1"></use></clipPath><path d="M107.75 5.63C112.03 5.63 115.5 9.1 115.5 13.38C115.5 33.83 115.5 87.42 115.5 107.87C115.5 112.15 112.03 115.63 107.75 115.63C87.3 115.63 33.7 115.63 13.25 115.63C8.97 115.63 5.5 112.15 5.5 107.87C5.5 87.42 5.5 33.83 5.5 13.38C5.5 9.1 8.97 5.63 13.25 5.63C33.7 5.63 87.3 5.63 107.75 5.63Z" id="gb34TyWTK"></path><path d="M115.5 19.47L5.5 19.47" id="hJnqWCPd8"></path><path d="M18.19 11.5C18.19 13.16 16.85 14.5 15.19 14.5C13.54 14.5 12.19 13.16 12.19 11.5C12.19 9.84 13.54 8.5 15.19 8.5C16.85 8.5 18.19 9.84 18.19 11.5Z" id="cHpqFYBGb"></path><path d="M28.19 11.5C28.19 13.16 26.85 14.5 25.19 14.5C23.54 14.5 22.19 13.16 22.19 11.5C22.19 9.84 23.54 8.5 25.19 8.5C26.85 8.5 28.19 9.84 28.19 11.5Z" id="dZ3lVVCpk"></path><path d="M95.5 70.88C95.5 90.19 79.82 105.88 60.5 105.88C41.18 105.88 25.5 90.19 25.5 70.88C25.5 51.56 41.18 35.88 60.5 35.88C79.82 35.88 95.5 51.56 95.5 70.88Z" id="fWvbPXTs6"></path><path d="M60.5 35.03L60.5 31.83L60.5 30.1" id="aplUVhHCy"></path><path d="M31.23 44.47L37.83 38.53L39.75 40.66L33.16 46.6L31.23 44.47Z" id="dNUlCZFfO"></path><path d="M37.56 44.66L36.39 43.26L34.74 41.3" id="e2pklwoNgs"></path><path d="M64 70.29C64 72.22 62.43 73.79 60.5 73.79C58.57 73.79 57 72.22 57 70.29C57 68.35 58.57 66.79 60.5 66.79C62.43 66.79 64 68.35 64 70.29Z" id="bjYq6XmHx"></path><path d="M60.5 43.01L60.5 41.17L60.5 39.6" id="g1Yldu1Cmy"></path><path d="M60.5 102.47L60.5 100.64L60.5 99.06" id="b5whlaaaY1"></path><path d="M33.23 70.29L29.23 70.29" id="bwCKSIC"></path><path d="M92 70.29L88 70.29" id="a1id8SzC8"></path><path d="M60.5 44.66L60.5 44.66L62.63 69.62L58.38 69.62L60.5 44.66Z" id="bcgCWyIIl"></path><path d="M54.88 29.75L65.63 29.75L65.63 34L54.88 34L54.88 29.75Z" id="e5k6gXsxhZ"></path></defs><g><g><g><g clip-path="url(#cliplXMfN6MQQ)" opacity="1"></g></g><g><use xlink:href="#gb34TyWTK" opacity="1" fill="var(--app-light-text-color)" fill-opacity="0"></use><g><use xlink:href="#gb34TyWTK" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="2" stroke-opacity="1"></use></g></g><g><g><use xlink:href="#hJnqWCPd8" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="2" stroke-opacity="1"></use></g></g><g><use xlink:href="#cHpqFYBGb" opacity="1" fill="var(--app-primary-color)" fill-opacity="1"></use></g><g><use xlink:href="#dZ3lVVCpk" opacity="1" fill="var(--app-primary-color)" fill-opacity="1"></use></g><g><use xlink:href="#fWvbPXTs6" opacity="1" fill="var(--app-primary-color)" fill-opacity="0"></use><g><use xlink:href="#fWvbPXTs6" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="2" stroke-opacity="1"></use></g></g><g><g><use xlink:href="#aplUVhHCy" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="5" stroke-opacity="1"></use></g></g><g><use xlink:href="#dNUlCZFfO" opacity="1" fill="var(--app-primary-color)" fill-opacity="1"></use></g><g><g><use xlink:href="#e2pklwoNgs" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="4" stroke-opacity="1"></use></g></g><g><use xlink:href="#bjYq6XmHx" opacity="1" fill="var(--app-primary-color)" fill-opacity="1"></use></g><g><g><use xlink:href="#g1Yldu1Cmy" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="2" stroke-opacity="1"></use></g></g><g><g><use xlink:href="#b5whlaaaY1" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="2" stroke-opacity="1"></use></g></g><g><g><use xlink:href="#bwCKSIC" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="2" stroke-opacity="1"></use></g></g><g><g><use xlink:href="#a1id8SzC8" opacity="1" fill-opacity="0" stroke="var(--app-primary-color)" stroke-width="2" stroke-opacity="1"></use></g></g><g><use xlink:href="#bcgCWyIIl" opacity="1" fill="var(--app-primary-color)" fill-opacity="1"></use></g><g><use xlink:href="#e5k6gXsxhZ" opacity="1" fill="var(--app-primary-color)" fill-opacity="1"></use></g></g></g></svg>
                     <h3 id="optimizations" class="mdc-typography--headline3">PageSpeed Optimization</h3>
-                    <p>We supercharge WordPress sites to deliver lightning fast, secure, content
-                      to any screen.</p>
+                    <p>We supercharge WordPress sites to deliver lightning fast, secure, content to any screen.</p>
                   </div>
-                  <a href="/pagespeed" aria_label="Learn more about WordPress PageSpeed optimizations" class="ts-card-link" track-type="navigateTo" track-name="solutions/pageSpeed"><span class=" text-uppercase">Learn More</span></a>
+                  <a href="/pagespeed" aria-label="Learn more about WordPress PageSpeed optimizations" class="ts-card-link" track-type="navigateTo" track-name="solutions/pageSpeed"><span class=" text-uppercase">More about PageSpeed</span></a>
                 </div>
                 <div class="flex-hover-card">
                   <div class="inner">
@@ -103,7 +103,7 @@ class TSHome extends PageViewElement {
                     <h3 id="mobile-applications" class="mdc-typography--headline3">Mobile Web Design</h3>
                     <p>Transform WordPress into a responsive, instant loading, progressive web application.</p>
                   </div>
-                  <a id="tsDesign" href="/design" aria_label="How we create progressive web apps" class="ts-card-link" track-type="navigateTo" track-name="solutions/headlessWordPress"><span class="text-uppercase">Learn More</span></a>
+                  <a id="tsDesign" href="/design" aria-label="How we create progressive web apps" class="ts-card-link" track-type="navigateTo" track-name="solutions/headlessWordPress"><span class="text-uppercase">More about design</span></a>
                 </div>
                 <div class="flex-hover-card">
                   <div class="inner">
@@ -111,7 +111,7 @@ class TSHome extends PageViewElement {
                     <h3 id="emergencies" class="mdc-typography--headline3">Emergency Response</h3>
                     <p>Site emergency? Our WordPress experts will have you back up and running in no time.</p>
                   </div>
-                  <a href="/emergency" aria_label="Learn how we fix broken WordPress sites" class="ts-card-link" track-type="navigateTo" track-name="solutions/emergencyResponse"><span class="text-uppercase">Learn More</span></a>
+                  <a href="/emergency" aria-label="Learn how we fix broken WordPress sites" class="ts-card-link" track-type="navigateTo" track-name="solutions/emergencyResponse"><span class="text-uppercase">About WordPress repairs</span></a>
                 </div>
                 <div class="flex-hover-card">
                   <div class="inner">
@@ -119,7 +119,7 @@ class TSHome extends PageViewElement {
                     <h3 id="security" class="mdc-typography--headline3">Security</h3>
                     <p>We investigate, audit, restore compromised sites, mitigate loss, and prevent attacks.</p>
                   </div>
-                  <a href="/security" aria_label="Learn more about security services" class="ts-card-link" track-type="navigateTo" track-name="solutions/security"><span class="text-uppercase">Learn More</span></a>
+                  <a href="/security" aria-label="Learn more about security services" class="ts-card-link" track-type="navigateTo" track-name="solutions/security"><span class="text-uppercase">More about security </span></a>
                 </div>
                 <div class="flex-hover-card">
                   <div class="inner">
@@ -127,7 +127,7 @@ class TSHome extends PageViewElement {
                     <h3 id="preventivecare" class="mdc-typography--headline3">Preventive Care</h3>
                     <p>We monitor, protect, and maintain your site round the clock, and answer your questions.</p>
                   </div>
-                  <a href="/care" aria_label="More about WordPress preventive care program" class="ts-card-link" track-type="navigateTo" track-name="solutions/preventiveCare"><span class="text-uppercase">Learn More</span></a>
+                  <a href="/care" aria-label="More about WordPress preventive care program" class="ts-card-link" track-type="navigateTo" track-name="solutions/preventiveCare"><span class="text-uppercase">About preventive care</span></a>
                 </div>
                 <div class="flex-hover-card">
                   <div class="inner">
@@ -135,7 +135,7 @@ class TSHome extends PageViewElement {
                     <h3 id="migrations" class="mdc-typography--headline3">Site Migrations</h3>
                     <p>Regardless of size, we'll safely and quickly move your WordPress site to it's new home</p>
                   </div>
-                  <a href="/migrations" aria_label="Learn how we migrate WordPress sites" class="ts-card-link" track-type="navigateTo" track-name="solutions/wordpressMigrations"><span class="text-uppercase">Learn More</span></a>
+                  <a href="/migrations" aria-label="Learn how we migrate WordPress sites" class="ts-card-link" track-type="navigateTo" track-name="solutions/wordpressMigrations"><span class="text-uppercase">About WordPress migrations</span></a>
                 </div>
               </div>
             </div>

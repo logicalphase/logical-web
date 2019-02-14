@@ -146,10 +146,10 @@ class TSBlog extends connect(store)(PageViewElement) {
         animation-fill-mode: both;
       }
 
-      .ts-blog-list-item .flex-hover-card:nth-child(1) { animation-delay: 0.1s }
-      .ts-blog-list-item .flex-hover-card:nth-child(2) { animation-delay: 0.3s }
-      .ts-blog-list-item .flex-hover-card:nth-child(3) { animation-delay: 0.6s }
-      .ts-blog-list-item .flex-hover-card:nth-child(4) { animation-delay: 0.9s }
+      .ts-blog-list-item .flex-hover-card:nth-child(1) { animation-delay: 0.0s }
+      .ts-blog-list-item .flex-hover-card:nth-child(2) { animation-delay: 1.0s }
+      .ts-blog-list-item .flex-hover-card:nth-child(3) { animation-delay: 1.8s }
+      .ts-blog-list-item .flex-hover-card:nth-child(4) { animation-delay: 2.6s }
 
       @media (min-width: 460px) {
         .hero {
