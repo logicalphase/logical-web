@@ -468,10 +468,13 @@ class TSApp extends connect(store)(LitElement) {
         box-shadow: 0 0 5px rgba(164,52,183,.5);
       }
 
-      input:-moz-placeholder {
-        color: var(--form-text-color);
-      }
+      input:-moz-placeholder,
       input::-webkit-input-placeholder {
+        color: var(--footer-background-secondary-grey);
+      }
+      
+      input:-moz-placeholder:focus,
+      input::-webkit-input-placeholder:focus {
         color: var(--form-text-color);
       }
 
@@ -497,9 +500,9 @@ class TSApp extends connect(store)(LitElement) {
         }
 
         input[type=search] {
-          background: var(--form-field-background-color) url('/images/bg/icon-search.svg') no-repeat 9px 6px;
+          background: var(--form-field-background-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
           border: solid 1px var(--form-border-color);
-          padding: 7px 10px 7px 32px;
+          padding: 5px 10px 5px 32px;
           width: 140px;
           margin-top: 0;
           margin-bottom: 0;
@@ -573,7 +576,7 @@ class TSApp extends connect(store)(LitElement) {
             </div>
             <div class="cta-header toolbar-list">
               <form style="float:right">
-	              <input type="search" aria-label="Search box" placeholder="Search ${appTitle}">
+	              <input type="search" aria-label="Search box" placeholder="Search">
               </form>
             </div>
           </app-toolbar>
@@ -596,7 +599,7 @@ class TSApp extends connect(store)(LitElement) {
         </app-toolbar>
         <nav class="drawer-list">
           <form>
-	          <input type="search" tabindex="-1" placeholder="Search ${appTitle}">
+	          <input type="search" tabindex="-1" placeholder="Search">
           </form>
           <a ?selected="${_page === "home"}" href="/">Home</a>
           <a class="submenu" ?selected="${_page === "design"}" href="/design">Progressive Web Design</a>

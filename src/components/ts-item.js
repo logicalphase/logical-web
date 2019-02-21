@@ -171,7 +171,7 @@ class TSItem extends LitElement {
     
     <div class="category-vertical-lr">${category}</div>
     <div class="inner">
-      <a id="${id}" href="/article/${slug}/" aria_label="Read ${title}" track-type="navigateTo" track-name="/solutions/headlessWordPress" ><h3 class="paper-font-headline">${title}</h3></a> 
+      <a href="/article/${slug}/" aria_label="Read ${title}" track-type="navigateTo" track-name="/solutions/headlessWordPress" ><h3 class="paper-font-headline">${title}</h3></a> 
       ${excerpt}
       <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> ${ date_prefix + date + date_postfix }</p>
     </div>

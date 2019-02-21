@@ -70,19 +70,17 @@ export const SharedStyles = css `
 
   a { 
     background-color: transparent;
-    color: var(--app-link-color);
+    color: var(--app-primary-color);
     text-decoration: none; 
     font-weight: 500;
     margin-bottom: 5px;
-    border-bottom: 3px solid var(--app-link-color);
-    transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, transform 0.3s;
+    border-bottom: 3px solid var(--app-primary-color);
     will-change: background-color
   }
 
-  a:active, a:hover {
+  a:hover {
     outline: 0; 
-    color: var(--app-primary-color);
-    border-color: var(--app-primary-color);
+    border-bottom: 0px;
   }
 
 

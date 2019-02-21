@@ -6,30 +6,30 @@ import {
 
 export const article = (state = {}, action) => {
   switch (action.type) {
-    case REQUEST_ARTICLE:
-      return {
-        ...state,
-        slug: action.slug,
-        failure: false,
-        isFetching: true
-      };
-    case RECEIVE_ARTICLE:
-      return {
-        ...state,
-        data: action.data,
-        failure: false,
-        isFetching: false
-      };
-    case FAIL_ARTICLE:
-      return {
-        ...state,
-        failure: true,
-        isFetching: false
-      };
-    default:
-      return state;
+  case REQUEST_ARTICLE:
+    return {
+      ...state,
+      slug: action.slug,
+      failure: false,
+      isFetching: true
+    };
+  case RECEIVE_ARTICLE:
+    return {
+      ...state,
+      data: action.data,
+      failure: false,
+      isFetching: false
+    };
+  case FAIL_ARTICLE:
+    return {
+      ...state,
+      failure: true,
+      isFetching: false
+    };
+  default:
+    return state;
   }
-}
+};
 
 const idSelector = state => state.article.slug;
 const itemSelector = state => state.article.data;
