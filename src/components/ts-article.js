@@ -39,13 +39,12 @@ class TSDetail extends connect(store)(PageViewElement) {
 
       :host {
         display: block;
-        padding: 24px 16px;
+        padding: 0px;
       }
 
       h1, h2 {
         font-weight: 400;
-        margin-bottom: 20px;
-        margin: 20px 20px 25px 20px;
+        margin: 14px 0px 14px 0px
       }
 
       h2 {
@@ -53,27 +52,28 @@ class TSDetail extends connect(store)(PageViewElement) {
       }
 
       h3 {
-        margin: 20px 20px 25px 20px;
         padding: 0; 
       }
       ol {
-        margin-left: 20px;
+        margin-left: 0px;
+        padding-left: 0px;
       }
       ul{
-        margin-left: 10px;
+        margin-left: 0px;
+        padding-left: 24px;
       }
 
       ol li, ul li {
         font-size:1rem;
-        margin-right: 20px
+        margin-right: 10px
       }
 
       li ul {
-        margin-left: -20px;
+        margin-left: 0px;
       }
 
       table {
-        margin: 10px 14px 15px 14px;
+        margin: 0px;
       }
 
       blockquote {
@@ -81,6 +81,7 @@ class TSDetail extends connect(store)(PageViewElement) {
         margin-block-end: 1em;
         margin-inline-start: 40px;
         margin-inline-end: 40px;
+        font-size: 1.5rem;
       }
 
       blockquote p {
@@ -108,6 +109,9 @@ class TSDetail extends connect(store)(PageViewElement) {
       section {
         max-width: 748px;
         box-sizing: border-box;
+      }
+      .content-wrapper {
+        padding: 10px 24px;
       }
       .item {
         display: flex;
@@ -276,7 +280,7 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
 
         ol li, ul li {
-          font: 300 16px/24px Roboto, Sans-serif;
+          font: 400 16px/24px Roboto, Sans-serif;
         }
         blockquote {
           margin-block-start: 1em;
@@ -292,6 +296,9 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
         section {
           margin: 0 auto;
+        }
+        .content-wrapper {
+          padding: 0px;
         }
         .item {
           padding-bottom: 8px;
@@ -371,24 +378,26 @@ class TSDetail extends connect(store)(PageViewElement) {
           <div class=" fade-in item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
           </div>
         </div>
-        <div class="delayed-fade-in desc">
-          ${unsafeHTML(item.content && item.content.rendered || item.subtitle || 'None')}
-        </div>
-        <div class="desc ts-read-more" ?hidden="${categories.length === 0}">
-          <h4>Category</h4>
-          <ul>
-            ${repeat(categories, (item) => html`
-              <li>${item}</li>
-            `)}
-          </ul>
-          <div class="social_container">
-            <h4>Share me!</h4>
-            <div class="social_share">
-              <div class="slide-icons slide-left">
-                <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
-                <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
-                <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
-                <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
+        <div class="content-wrapper">
+          <div class="delayed-fade-in desc">
+            ${unsafeHTML(item.content && item.content.rendered || item.subtitle || 'None')}
+          </div>
+          <div class="desc ts-read-more" ?hidden="${categories.length === 0}">
+            <h4>Category</h4>
+            <ul>
+              ${repeat(categories, (item) => html`
+                <li>${item}</li>
+              `)}
+            </ul>
+            <div class="social_container">
+              <h4>Share me!</h4>
+              <div class="social_share">
+                <div class="slide-icons slide-left">
+                  <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
+                  <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
+                  <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
+                  <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
+                </div>
               </div>
             </div>
           </div>

@@ -94,6 +94,7 @@ class TSApp extends connect(store)(LitElement) {
         background-color: var(--app-light-text-color);
         padding: 12px 8px;
         height: inherit;
+        align-items: center;
       }
 
       .ts-title {
@@ -241,8 +242,8 @@ class TSApp extends connect(store)(LitElement) {
         border: none;
         cursor: pointer;
         width: 44px;
-        padding-top: 5px;
-        margin: 0 10px 0 5px;
+        padding-top: 6px;
+        margin-left: auto;
       }
 
       .search-btn {
@@ -304,19 +305,17 @@ class TSApp extends connect(store)(LitElement) {
         padding: 10px 24px;
         background: var(--app-drawer-background-color);
         position: relative;
+        text-align: left;
+        overflow-y: auto;
       }
 
       .drawer-list > a {
         display: block;
         text-decoration: none;
-        font: 400 14px/22px Roboto, sans-serif;
-        letter-spacing: 0.25px;
+        font: 400 16px/24px Roboto, sans-serif;
         color: var(--app-drawer-text-color);
-        padding: 12px 8px 12px 0px;
-      }
-
-      .drawer-list .submenu {
-        padding-left: 24px;
+        letter-spacing: 0.25px;
+        padding: 0.6rem 8px 0.6rem 0px;
       }
 
       .drawer-list > a[selected] {
@@ -324,7 +323,7 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       .main-content {
-        padding-top: 64px;
+        padding-top: 59px;
         min-height: 100vh;
       }
 
@@ -432,6 +431,8 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       input[type=search] {
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
         -webkit-appearance: textfield;
         -webkit-box-sizing: content-box;
         font-family: inherit;
@@ -482,7 +483,8 @@ class TSApp extends connect(store)(LitElement) {
         display: block;
         height: auto;
         width: 141px;
-        text-align:center;
+        text-align: left;
+        margin-left: 12px;
       }
 
       img {
@@ -525,6 +527,7 @@ class TSApp extends connect(store)(LitElement) {
           display: block;
           height: auto;
           width: 161px;
+          margin-left: 0px;
         }
 
         .menu-btn {
@@ -567,10 +570,10 @@ class TSApp extends connect(store)(LitElement) {
       <app-header-layout id="ts-appheaderlayout" has-scrolling-region>
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar class="masthead">
-            <button class="menu-btn" title="Menu" @click="${() => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
             <a href="/" alt="${appTitle} home">
               <img class="ts-brand-site-logo" src="/images/hyperpress-logo-254x46.png" alt="${appTitle}">  
             </a>
+            
             <div class="ts-title" main-title>
               <span class="devsite-site-name">${appTitle}</span>
             </div>
@@ -579,6 +582,7 @@ class TSApp extends connect(store)(LitElement) {
 	              <input type="search" aria-label="Search box" placeholder="Search">
               </form>
             </div>
+            <button class="menu-btn" title="Menu" @click="${() => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
           </app-toolbar>
           <app-toolbar class="desktop-menu toolbar-list" sticky>
             <nav class="main-navigation" role="navigation">
@@ -593,7 +597,7 @@ class TSApp extends connect(store)(LitElement) {
 
       <!-- Drawer content -->
       <app-drawer id="drawer" .opened="${_drawerOpened}" ?hidden="${!_lazyResourcesLoaded}" 
-          @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
+          @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" align="right" swipe-open>
         <app-toolbar>
           ${appTitle}
         </app-toolbar>
@@ -605,10 +609,10 @@ class TSApp extends connect(store)(LitElement) {
           <a class="submenu" ?selected="${_page === "design"}" href="/design">Progressive Web Design</a>
           <a class="submenu" ?selected="${_page === "pagespeed"}" href="/pagespeed">PageSpeed Optimization</a>
           <a class="submenu" ?selected="${_page === "emergency"}" href="/emergency">WordPress 911</a>
-          <a class="submenu" ?selected="${_page === "security"}" href="/security">HyperSecurity Services</a>
-          <a class="submenu" ?selected="${_page === "care"}" href="/care">WordPress Preventive Care</a>
+          <a class="submenu" ?selected="${_page === "security"}" href="/security">Security Services</a>
+          <a class="submenu" ?selected="${_page === "care"}" href="/care">Preventive Care</a>
           <a class="submenu" ?selected="${_page === "migrations"}" href="/migrations">WordPress Migrations</a>
-          <a ?selected="${_page === "blog"}" href="/blog">Blog</a>
+          <a ?selected="${_page === "blog"}" href="/blog">HyperPress Blog</a>
           <a ?selected="${_page === "privacy"}" href="/privacy">Privacy</a>
           <a ?selected="${_page === "contact"}" href="/contact">Contact</a>
         </nav>

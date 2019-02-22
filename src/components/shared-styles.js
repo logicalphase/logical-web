@@ -63,7 +63,7 @@ export const SharedStyles = css `
     line-height: 28px;
     margin: 0 0 16px 0;
   }
-  
+
   strong {
     font-weight:500;
   }

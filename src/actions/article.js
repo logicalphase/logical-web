@@ -15,8 +15,8 @@ export const fetchArticle = (slug) => (dispatch, getState) => {
     // fetch article data given the article id.
     // also return a promise to wait for.
     return fetch(`https://api.themesurgeons.com/wp-json/wp/v2/posts?slug=${slug}`, {
-        //mode: "no-cors" // no-cors, cors, *same-origin
-      })    
+    //mode: "no-cors" // no-cors, cors, *same-origin
+    })    
       .then(res => res.json())
       .then(data => {
         if (data.error) {
