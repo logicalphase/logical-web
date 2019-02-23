@@ -166,14 +166,18 @@ class TSDetail extends connect(store)(PageViewElement) {
         padding-left: 20px;
       }
 
-      .desc figcaption {
+      .desc .wp-caption {
         border: 4px solid #efefef;
-        font-size: 0.9rem;
-        padding: 8px 9px;
-        margin: 5px 14px 10px 14px;
-        line-height: normal;
+        padding: 5px;
         text-align: center;
         margin: 0 auto;
+      }
+
+      .desc .wp-caption-text {
+        font-size: 0.9rem;
+        padding: 0px 0px;
+        margin: 5px 14px 10px 14px;
+        line-height: normal;
       }
 
       .desc img {
@@ -337,6 +341,14 @@ class TSDetail extends connect(store)(PageViewElement) {
         }
         .desc {
           padding: 16px 0;
+        }
+        .desc .alignleft {
+          margin: 0 24px 0 0;
+          float: left;
+        }
+        .desc .alignright {
+          margin: 4px 0 0 24px;
+          float:right;
         }
       }
     `

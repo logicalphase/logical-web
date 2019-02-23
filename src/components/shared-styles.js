@@ -64,6 +64,23 @@ export const SharedStyles = css `
     margin: 0 0 16px 0;
   }
 
+  ol {
+    margin-left: 14px;
+  }
+  ul{
+    margin-left: 0px;
+    padding-left: 24px;
+  }
+
+  li ul, li ol {
+    margin-left: 0px;
+  }
+
+  ol li, ul li {
+    font: 400 16px/24px Roboto, Sans-serif;
+    line-height: 28px;
+  }
+
   strong {
     font-weight:500;
   }
@@ -84,8 +101,12 @@ export const SharedStyles = css `
   }
 
 
-  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary, img {
     display: block; }
+
+  .entry .entry-content .wp-block-image {
+    max-width: 100%;
+  }
 
   section {
     margin: 0; }
@@ -94,8 +115,55 @@ export const SharedStyles = css `
     font-weight:500;
   }
 
-  .center {
-    text-align: center !important;
+  img {
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
+  }
+
+  figure {
+    margin: 1em 0;
+    /* Extra wide images within figure tags don't overflow the content area. */
+  }
+
+  /*--------------------------------------------------------------
+  # Alignments
+  --------------------------------------------------------------*/
+
+  .alignleft img,
+  .alignright img,
+  .alignleft figcaption,
+  .alignright figcaption {
+    max-width: 50%;
+    width: 50%;
+  }
+
+  .alignleft figcaption {
+    clear: left;
+  }
+
+  .alignright figcaption {
+    clear: right;
+  }
+
+  .alignleft img,
+  .alignleft figcaption {
+    float: left;
+    margin-right: 1.5em;
+  }
+
+  .alignright img,
+  .alignright figcaption {
+    float: right;
+    margin-left: 1.5em;
+  }
+
+  .aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .article-button {
@@ -405,21 +473,17 @@ export const SharedStyles = css `
     padding: 16px 28px; 
     text-align: center; }
 
-  .left {
-    float: left;
-    margin-left: 5px; }
+  .entry-content .alignfull {
+    margin-left  : calc( -100vw / 2 + 100% / 2 );
+    margin-right : calc( -100vw / 2 + 100% / 2 );
+    max-width    : 100vw;
+  }
 
-  .ts-left {
-    float: left;
-    margin: 24px 0 24px;
-    padding-right: 50px; }
-
-  .ts-right {
-    float: none;
-    margin: 24px 30px 5px; }
-
-  .ts-left img {
-    margin-top: 14px; }
+  .entry-content .alignwide {
+    margin-left  : -100px;
+    margin-right : -100px;
+    max-width    : 1024px;
+  }
 
   /* Classes - Custom Buttons */
 
@@ -780,9 +844,6 @@ export const SharedStyles = css `
     ul.body-checks {
       padding: 0 5px; 
     }
-
-    figure {
-      margin-top: 0px; }
 
     .center {
       text-align: left !important;
