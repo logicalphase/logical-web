@@ -87,33 +87,7 @@ class TSEmergency extends PageViewElement {
               </div>
             </main>
             <aside class="sidebar">
-              <div class="nav">
-                <div class="sticky">
-                  <ul class="right-side-nav l-space-bottom-5">
-                    <li>
-                      <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="more-about-serverless">Solutions Menu</h3>
-                    </li>
-                    <li>
-                      <a class="pagespeed" track-type="pagespeedOptimization" track-name="web-page" track-metadata-position="sidebar" href="/pagespeed">Pagespeed Optimization</a>
-                    </li>
-                    <li>
-                      <a class="design" track-type="detailResponse" track-name="web-page" track-metadata-position="sidebar" href="/design">Mobile First Design</a>
-                    </li>
-                    <li>
-                      <a style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;" track-type="emergencyResponse" track-name="web-page" track-metadata-position="sidebar" href="/emergency">Emergency Response</a>
-                    </li>
-                    <li>
-                      <a class="security" track-type="security" track-name="web-page" track-metadata-position="sidebar" href="/security">WordPress Security</a>
-                    </li>
-                    <li>
-                      <a class="migrations" track-type="migrations" track-name="web-page" track-metadata-position="sidebar" href="/migrations">WordPress Migrations</a>
-                    </li>
-                    <li>
-                      <a class="care" track-type="preventiveCare" track-name="web-page" track-metadata-position="sidebar" href="/care">Preventive Care</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <ts-sidebar-nav></ts-sidebar-nav>
             </aside>     
           </div>
         </section>

@@ -122,49 +122,7 @@ export const SharedStyles = css `
     /* Adhere to container width. */
   }
 
-  figure {
-    margin: 1em 0;
-    /* Extra wide images within figure tags don't overflow the content area. */
-  }
 
-  /*--------------------------------------------------------------
-  # Alignments
-  --------------------------------------------------------------*/
-
-  .alignleft img,
-  .alignright img,
-  .alignleft figcaption,
-  .alignright figcaption {
-    max-width: 50%;
-    width: 50%;
-  }
-
-  .alignleft figcaption {
-    clear: left;
-  }
-
-  .alignright figcaption {
-    clear: right;
-  }
-
-  .alignleft img,
-  .alignleft figcaption {
-    float: left;
-    margin-right: 1.5em;
-  }
-
-  .alignright img,
-  .alignright figcaption {
-    float: right;
-    margin-left: 1.5em;
-  }
-
-  .aligncenter {
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   .article-button {
     display: inline-block;
@@ -470,8 +428,7 @@ export const SharedStyles = css `
   .text-uppercase {
     border-top: 1px solid var(--border-grey);
     display: block;
-    padding: 16px 28px; 
-    text-align: center; }
+    text-align: left; }
 
   .entry-content .alignfull {
     margin-left  : calc( -100vw / 2 + 100% / 2 );
@@ -799,7 +756,7 @@ export const SharedStyles = css `
 
   .text-uppercase {
     text-transform: uppercase;
-    text-align: center; }
+  }
 
   .mdc-button--raised {
       box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
@@ -910,7 +867,6 @@ export const SharedStyles = css `
       font-size:0.9rem;
       text-transform: uppercase;
       text-align: left; 
-      padding: 16px 28px 18px 28px;
     }
 
     .ts-grid-wrapper-autofill, .ts-grid-wrapper-standard {
