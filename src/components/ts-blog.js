@@ -99,7 +99,7 @@ class TSBlog extends connect(store)(PageViewElement) {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        margin: 0px 0px 16px;
+        margin: 5px 0px 5px;
         padding-bottom: 0;
         padding-left: 20px;
       }
