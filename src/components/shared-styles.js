@@ -743,7 +743,9 @@ export const SharedStyles = css `
 
   .flex-hover-card .inner>p {
     padding-top: 14px;
-    margin: 0px; }
+    margin: 0px; 
+    font-size: 14px;
+  }
 
   .ts-pad-left-30 {
     padding-left: 240px; }
