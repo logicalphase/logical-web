@@ -28,6 +28,11 @@ class TSHome extends PageViewElement {
         margin-bottom: 4px;
       }
 
+      .ts-card-link span {
+          padding: 14px 5px 14px 14px;
+          text-align: center;
+      }
+
       .text-uppercase:hover {
         border-bottom: 4px solid var(--app-link-color);
       }
@@ -59,6 +64,10 @@ class TSHome extends PageViewElement {
           background-size: contain;
           background-position: 93% center;
         }
+        .ts-card-link span {
+          padding: 14px 5px 14px 14px;
+          text-align: left;
+      }
         .ts-card-link span {
           padding: 14px 5px 14px 26px;
         }

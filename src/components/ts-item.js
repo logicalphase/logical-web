@@ -36,8 +36,14 @@ class TSItem extends LitElement {
         float: right;
         padding: 0px;
       }
+
+      .small-print .social-icon {
+        padding-left: 0px;
+      }
+
       .social-icon {
         fill: #888;
+        padding-left: 7px;
       }
       .gplus-icon:hover {
         fill: #db4437;
@@ -72,7 +78,6 @@ class TSItem extends LitElement {
 
       .inner {
         padding: 20px 55px 10px 24px;
-
         border-bottom: 1px solid #e4e4e4;
       }
 
