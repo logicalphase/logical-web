@@ -856,7 +856,8 @@ export const SharedStyles = css `
       text-align: left; }
 
     .inner {
-      text-align: left; }
+      text-align: left;
+      margin-right: 0px; }
 
     .flex-hover-card .inner>h3 {
       margin: 0;

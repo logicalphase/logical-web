@@ -81,7 +81,7 @@ class TSItem extends LitElement {
         left: 0;
         right: 0;
         top: 0;
-        bottom: 50px;
+        bottom: 40px;
         text-align: center;
         writing-mode: tb-rl;
         margin: 12px;
@@ -108,8 +108,7 @@ class TSItem extends LitElement {
 
       @media (min-width: 460px) {
         .inner {
-          padding: 20px 28px 0;
-          margin-right: 24px;
+          margin-right: 0px;
         }
 
         h3.paper-font-headline {
