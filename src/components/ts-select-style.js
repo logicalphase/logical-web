@@ -48,7 +48,7 @@ export const TsSelectStyle = css`
     border-radius: 0;
     font-size: 1em;
     font-weight: 300;
-    color: var(--app-secondary-color);
+    color: var(--form-text-color);
     overflow: hidden;
     margin: 0;
     outline: none;

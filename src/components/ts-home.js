@@ -59,6 +59,9 @@ class TSHome extends PageViewElement {
           background-size: contain;
           background-position: 93% center;
         }
+        .ts-card-link span {
+          padding: 14px 5px 14px 26px;
+        }
         a.ts-card-link:hover {
           border-bottom: 3px solid var(--app-link-color);
         }

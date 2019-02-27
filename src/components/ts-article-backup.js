@@ -15,7 +15,6 @@ import {
 
 import { SharedStyles } from './shared-styles.js';
 import { TsTableStyles } from './ts-table-style';
-import { TsWordPressStyles } from './ts-wp-style';
 
 import './ts-offline.js';
 import './ts-image.js';
@@ -37,7 +36,6 @@ class TSDetail extends connect(store)(PageViewElement) {
     return [
       SharedStyles,
       TsTableStyles,
-      TsWordPressStyles,
       css`
 
       :host {
@@ -106,6 +104,9 @@ class TSDetail extends connect(store)(PageViewElement) {
         font-size: 62px;
       }
 
+      strong {
+        font-weight: 400;
+      }
       section {
         max-width: 748px;
         box-sizing: border-box;
@@ -165,6 +166,32 @@ class TSDetail extends connect(store)(PageViewElement) {
         padding-left: 20px;
       }
 
+      .desc .wp-caption {
+        border: 4px solid #efefef;
+        padding: 5px;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .desc .wp-caption-text {
+        font-size: 0.9rem;
+        padding: 0px 0px;
+        margin: 5px 14px 10px 14px;
+        line-height: normal;
+      }
+
+      .desc img {
+        padding: 1px;
+      }
+
+      .desc .alignleft {
+        margin-bottom: 22px;
+        float: none;
+      }
+      .desc .alignright {
+        margin-bottom: 22px;
+        float: none;
+      }
       article-rating {
         margin-right: 6px;
       }
@@ -315,6 +342,14 @@ class TSDetail extends connect(store)(PageViewElement) {
         .desc {
           padding: 16px 0;
         }
+        .desc .alignleft {
+          margin: 0 24px 0 0;
+          float: left;
+        }
+        .desc .alignright {
+          margin: 4px 0 0 24px;
+          float:right;
+        }
       }
     `
     ];
@@ -351,7 +386,7 @@ class TSDetail extends connect(store)(PageViewElement) {
       <section ?hidden="${_showOffline}">
         <div class="item">
           <div class="cover" hero>
-            <article-image .src="https://api.hyperpress.app/wp-content/uploads/${thumbnail}" .alt="${alt}" ></article-image>
+            <article-image .src="https://api.themesurgeons.com/wp-content/uploads/${thumbnail}" .alt="${alt}" ></article-image>
             <h1 class="fade-in title">${title}</h1>
           <div class=" fade-in item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
           </div>

@@ -72,34 +72,35 @@ class TSItem extends LitElement {
 
       .inner {
         padding: 20px 55px 10px 24px;
-        min-height: 165px;
+
         border-bottom: 1px solid #e4e4e4;
+      }
+
+      .inner .category {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 50px;
+        text-align: center;
+        writing-mode: tb-rl;
+        margin: 12px;
+        font-size: 16px;
+        color: var(--app-primary-color);
+        font-weight: 500;
+        letter-spacing: .25px;
+        text-transform: uppercase;
       }
 
       .small-print {
         margin-top: 20px;
         margin-bottom: 10px;
-        font-size: 14px !important;
-        font-weight: 300 !important;
+        font-size: 14px;
         padding-left: 0px;
         line-height: 14px;
       }
 
-      .category-vertical-lr {
-        float: right;
-        position: relative;
-        min-height: 186px;
-        width: 28px;
-        padding: 0 3px 0 4px;
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.08em;
-        text-align: center;
-        text-transform: uppercase;
-        writing-mode: vertical-rl;
-        background-color: var(--app-primary-color);
-        color: var(--app-light-text-color);
-      }
+
 
       .category-vertical-lr a {
         color: var(--app-light-text-color);
@@ -130,9 +131,7 @@ class TSItem extends LitElement {
           margin: 0 0 14px;
         }
 
-        .category-vertical-lr {
-          min-height: 186px;
-        }
+
 
         .small-print {
           margin-top: 14px;
@@ -142,16 +141,7 @@ class TSItem extends LitElement {
           line-height: 14px;
         }
       }
-      @media (max-width: 800px) {
-        .category-vertical-lr {
-          width: 28px;
-          float: right;
-          writing-mode: vertical-rl;
-        }
-        .small-print {
-          font-size: 14px !important;
-        }
-      }
+
       `
     ];
   } 
@@ -169,9 +159,9 @@ class TSItem extends LitElement {
 
     return html`
     
-    <div class="category-vertical-lr">${category}</div>
     <div class="inner">
-      <a id="${id}" href="/article/${slug}/" aria_label="Read ${title}" track-type="navigateTo" track-name="/solutions/headlessWordPress" ><h3 class="paper-font-headline">${title}</h3></a> 
+      <span class="category">${category}</span>
+      <a href="/article/${slug}/" aria_label="Read ${title}" track-type="navigateTo" track-name="/solutions/headlessWordPress" ><h3 class="paper-font-headline">${title}</h3></a> 
       ${excerpt}
       <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> ${ date_prefix + date + date_postfix }</p>
     </div>

@@ -257,7 +257,7 @@ class TSPrivacy extends PageViewElement {
                   <p>We store personally identifying information on the following third-party partner services, and those third party partner services may have privacy policies that may or may not be as strong as Ours. We have added links to each of those partner's privacy policy so you can review those policies.</p>
                   <div class="table-responsive-vertical mdc-elevation--z1">
                     <!-- Table starts here -->
-                    <table id="table" class="table table-hover table-mc-light-blue">
+                    <table id="vendors_list_one" class="table table-hover table-mc-light-blue">
                       <thead>
                         <tr>
                           <th>Name</th>
@@ -404,7 +404,7 @@ class TSPrivacy extends PageViewElement {
                   <p>We partner with several third party businesses that meet our standards of data collection, use, security, and privacy. These partner businesses maintain their own separate privacy policies, and we have prepared the following list of those partners, why we partner with them, and a link to their specific privacy policies.</p>
                   <div class="table-responsive-vertical mdc-elevation--z1">
                     <!-- Table starts here -->
-                    <table id="table" class="table table-hover table-mc-light-blue">
+                    <table id="vendors_list_two" class="table table-hover table-mc-light-blue">
                       <thead>
                         <tr>
                           <th>Name</th>

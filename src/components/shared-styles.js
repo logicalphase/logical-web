@@ -63,31 +63,50 @@ export const SharedStyles = css `
     line-height: 28px;
     margin: 0 0 16px 0;
   }
-  
+
+  ol {
+    margin-left: 14px;
+  }
+  ul{
+    margin-left: 0px;
+    padding-left: 24px;
+  }
+
+  li ul, li ol {
+    margin-left: 0px;
+  }
+
+  ol li, ul li {
+    font: 400 16px/24px Roboto, Sans-serif;
+    line-height: 28px;
+  }
+
   strong {
     font-weight:500;
   }
 
   a { 
     background-color: transparent;
-    color: var(--app-link-color);
+    color: var(--app-primary-color);
     text-decoration: none; 
     font-weight: 500;
     margin-bottom: 5px;
-    border-bottom: 3px solid var(--app-link-color);
-    transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, transform 0.3s;
+    border-bottom: 3px solid var(--app-primary-color);
     will-change: background-color
   }
 
-  a:active, a:hover {
+  a:hover {
     outline: 0; 
-    color: var(--app-primary-color);
-    border-color: var(--app-primary-color);
+    border-bottom: 0px;
   }
 
 
-  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary, img {
     display: block; }
+
+  .entry .entry-content .wp-block-image {
+    max-width: 100%;
+  }
 
   section {
     margin: 0; }
@@ -96,9 +115,14 @@ export const SharedStyles = css `
     font-weight:500;
   }
 
-  .center {
-    text-align: center !important;
+  img {
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
   }
+
+
 
   .article-button {
     display: inline-block;
@@ -404,24 +428,19 @@ export const SharedStyles = css `
   .text-uppercase {
     border-top: 1px solid var(--border-grey);
     display: block;
-    padding: 16px 28px; 
-    text-align: center; }
+    text-align: left; }
 
-  .left {
-    float: left;
-    margin-left: 5px; }
+  .entry-content .alignfull {
+    margin-left  : calc( -100vw / 2 + 100% / 2 );
+    margin-right : calc( -100vw / 2 + 100% / 2 );
+    max-width    : 100vw;
+  }
 
-  .ts-left {
-    float: left;
-    margin: 24px 0 24px;
-    padding-right: 50px; }
-
-  .ts-right {
-    float: none;
-    margin: 24px 30px 5px; }
-
-  .ts-left img {
-    margin-top: 14px; }
+  .entry-content .alignwide {
+    margin-left  : -100px;
+    margin-right : -100px;
+    max-width    : 1024px;
+  }
 
   /* Classes - Custom Buttons */
 
@@ -724,7 +743,9 @@ export const SharedStyles = css `
 
   .flex-hover-card .inner>p {
     padding-top: 14px;
-    margin: 0px; }
+    margin: 0px; 
+    font-size: 14px;
+  }
 
   .ts-pad-left-30 {
     padding-left: 240px; }
@@ -737,7 +758,7 @@ export const SharedStyles = css `
 
   .text-uppercase {
     text-transform: uppercase;
-    text-align: center; }
+  }
 
   .mdc-button--raised {
       box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
@@ -782,9 +803,6 @@ export const SharedStyles = css `
     ul.body-checks {
       padding: 0 5px; 
     }
-
-    figure {
-      margin-top: 0px; }
 
     .center {
       text-align: left !important;
@@ -851,7 +869,6 @@ export const SharedStyles = css `
       font-size:0.9rem;
       text-transform: uppercase;
       text-align: left; 
-      padding: 16px 28px 18px 28px;
     }
 
     .ts-grid-wrapper-autofill, .ts-grid-wrapper-standard {

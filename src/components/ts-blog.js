@@ -153,7 +153,7 @@ class TSBlog extends connect(store)(PageViewElement) {
 
       @media (min-width: 460px) {
         .hero {
-          background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
+          background: var(--app-light-text-color) url('/images/header/ts-design-header.svg') no-repeat;
           background-size: contain;
           background-position: 94% center;
         }
