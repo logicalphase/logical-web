@@ -1,12 +1,4 @@
-/**
-@license
-Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-*/
+import { WP_REST_API_HOST, WP_REST_PATH } from "../../config/ts-config";
 
 export const REQUEST_ARTICLES = 'REQUEST_ARTICLES';
 export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES';
@@ -18,7 +10,7 @@ export const fetchArticles = (query) => (dispatch, getState) => {
   if (shouldFetchArticles(getState(), query)) {
     dispatch(requestArticles(query));
     if (query) {
-      fetch(`https://api.themesurgeons.com/wp-json/wp/v2/${query}/?per_page=10`, {})
+      fetch(`https://${WP_REST_API_HOST}/${WP_REST_PATH}/${query}/?per_page=10`, {})
         .then(res => res.json())
         .then(data => dispatch(receiveArticles(query, data)))
         .catch(() => dispatch(failArticles(query)));

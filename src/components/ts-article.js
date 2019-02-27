@@ -1,3 +1,5 @@
+import { WP_REST_API_HOST } from "../../config/ts-config";
+
 import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { repeat } from 'lit-html/directives/repeat.js';
@@ -351,7 +353,7 @@ class TSDetail extends connect(store)(PageViewElement) {
       <section ?hidden="${_showOffline}">
         <div class="item">
           <div class="cover" hero>
-            <article-image .src="https://api.hyperpress.app/wp-content/uploads/${thumbnail}" .alt="${alt}" ></article-image>
+            <article-image .src="https://${WP_REST_API_HOST}/wp-content/uploads/${thumbnail}" .alt="${alt}" ></article-image>
             <h1 class="fade-in title">${title}</h1>
           <div class=" fade-in item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
           </div>
