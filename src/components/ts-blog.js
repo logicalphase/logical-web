@@ -47,7 +47,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       }
 
       .ts-content-wrapper {
-        padding: 0 24px 0 5px; }
+        padding: 0; }
 
       .columns {
         max-width: 987px;
