@@ -42,13 +42,14 @@ export const TsSelectStyle = css`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: 0px 24px 20px 0;
+    padding: 0px 24px 10px 0;
     border: none;
     background-color: transparent;
     border-radius: 0;
     font-size: 1em;
     font-weight: 300;
     color: var(--form-text-color);
+    opacity: 1;
     overflow: hidden;
     margin: 0;
     outline: none;
@@ -91,6 +92,7 @@ export const TsSelectStyle = css`
     top: calc(50% - 8px);
     line-height: 16px;
     color: var(--app-secondary-color);
+    opacity: 1;
     pointer-events: none;
   }
 `;

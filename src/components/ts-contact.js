@@ -31,7 +31,7 @@ class TSContact extends PageViewElement {
       }
 
       .hero {
-        background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
+        background: var(--app-light-text-color) url('/images/header/ts-care-header.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -42,7 +42,7 @@ class TSContact extends PageViewElement {
       ts-button > * {
         display: inline-block;
         box-sizing: border-box;
-        border: 2px solid --app-secondary-color;
+        border: 2px solid var(--app-secondary-color);
         background-color: var(--app-light-text-color);
         font-size: 1rem;
         font-weight: 500;
@@ -74,7 +74,7 @@ class TSContact extends PageViewElement {
         }
 
         .hero {
-          background: var(--app-light-text-color) url(/images/header/ts-care-header.svg) no-repeat;
+          background: var(--app-light-text-color) url('/images/header/ts-care-header.svg') no-repeat;
           background-size: contain;
           background-position: 92% center;
         }

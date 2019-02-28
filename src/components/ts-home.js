@@ -97,7 +97,7 @@ class TSHome extends PageViewElement {
           </div>
         </div>
       </header>
-      <section class="background-grey full4-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
+      <section class="background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="main-navigation" role="navigation">
           <div class="ts-grid-wrapper-standard">
               <div class="services ts-grid-wrapper-auto-fill">

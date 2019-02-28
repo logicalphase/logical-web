@@ -122,8 +122,6 @@ export const SharedStyles = css `
     /* Adhere to container width. */
   }
 
-
-
   .article-button {
     display: inline-block;
     margin-right: 8px;
@@ -574,23 +572,19 @@ export const SharedStyles = css `
 
   .ts-content-wrapper {
     min-height: 100vh;
-    background: var(--app-section-even-color);
+    background: var(--app-main-background-color);
     display: flex;
     flex-direction: column;
     padding: 0 5px 0 15px; }
 
   .content {
     flex: 1;
-    background: var(--app-section-even-color);
     display: flex;
     flex-wrap: wrap; }
 
   .main {
     flex: 1;
-    background: var(--app-section-even-color); }
-
-  .sidebar {
-    background: var(--app-section-even-color); }
+  }
 
   .sidebar a, .sidebar a:hover {
     border-bottom: none;
@@ -668,7 +662,7 @@ export const SharedStyles = css `
   }
 
   ul.body-checks li {
-    background-image: url(/images/icons/ts-check-purple.svg);
+    background-image: url('/images/icons/ts-check-purple.svg');
     background-repeat: no-repeat;
     line-height: 24px;
     padding: 5px 0 0 36px;
@@ -696,7 +690,7 @@ export const SharedStyles = css `
     white-space: nowrap; }
 
   .nav li a:hover{
-    background: var(--app-nav-background);
+    background: var(--app-section-even-color);
     color: var(--app-primary-color);
     text-decoration: none; }
 
@@ -715,7 +709,7 @@ export const SharedStyles = css `
   .flex-hover-card {
     box-sizing: border-box;
     margin-right: 20px;
-    background: var(--app-light-text-color);
+    background: var(--app-main-background-color);
     border-radius: 2px;
     -ms-flex: 1;
     flex: 1;
@@ -837,7 +831,7 @@ export const SharedStyles = css `
 
     .ts-content-wrapper {
       min-height: 100vh;
-      background: var(--app-section-even-color);
+      background: var(--app-main-background-color);
       padding: 0 62px 0 62px;
       display: flex;
       flex-direction: column;

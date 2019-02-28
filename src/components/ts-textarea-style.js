@@ -69,7 +69,7 @@ export const TsTextAreaStyle = css`
   ts-textarea > ts-md-decorator > label {
     display: block;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 1;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

@@ -78,6 +78,7 @@ class TSItem extends LitElement {
 
       .inner {
         padding: 20px 55px 10px 24px;
+        background-color: #ffffff;
         border-bottom: 1px solid #e4e4e4;
       }
 
@@ -164,13 +165,13 @@ class TSItem extends LitElement {
     return html`
     
     <div class="inner">
-      <span class="category">${category}</span>
-      <a href="/article/${slug}/" aria_label="Read ${title}" track-type="navigateTo" track-name="/solutions/headlessWordPress" ><h3 class="paper-font-headline">${title}</h3></a> 
+      <h3 class="paper-font-headline">${title}</h3>
       ${excerpt}
       <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> ${ date_prefix + date + date_postfix }</p>
+      <span class="category">${category}</span>
     </div>
     
-    <div class="ts-read-more"><a id="${id}" href="/article/${slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
+    <div class="ts-read-more"><a id="${id}" aria-label="Read ${title}" href="/article/${slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
       <div class="social_container">
         <div class="social_share">
           <div class="slide-icons slide-left">

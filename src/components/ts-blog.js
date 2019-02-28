@@ -8,6 +8,7 @@ import { repeat } from "lit-html/directives/repeat.js";
 import { updateMetadata } from "pwa-helpers/metadata.js";
 
 import "./ts-item.js";
+import "./ts-offline.js";
 
 // This element is connected to the redux store.
 import { store } from "../store.js";
@@ -141,13 +142,18 @@ class TSBlog extends connect(store)(PageViewElement) {
         }
       }
 
-      .ts-blog-list-item .flex-hover-card {
-        animation: FadeIn 1s linear;
+      .ts-blog-list-item .flex-hover-card:nth-child(0) {
+        animation-delay: 0.0s;
+        animation: FadeIn 0.5s ease;
         animation-fill-mode: both;
       }
 
-      .ts-blog-list-item .flex-hover-card:nth-child(1) { animation-delay: 0.0s }
-      .ts-blog-list-item .flex-hover-card:nth-child(2) { animation-delay: 1.0s }
+      .ts-blog-list-item .flex-hover-card:nth-child(1) {
+        animation-delay: 1.6s;
+        animation: FadeIn 0.5s ease;
+        animation-fill-mode: both;
+      }
+
       .ts-blog-list-item .flex-hover-card:nth-child(3) { animation-delay: 1.8s }
       .ts-blog-list-item .flex-hover-card:nth-child(4) { animation-delay: 2.6s }
 
@@ -219,11 +225,12 @@ class TSBlog extends connect(store)(PageViewElement) {
                       </li>
                     `)}
                   </ul>
-                <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
+                </div>
               </div>
             </aside>
           </div>
         </section>
+        <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
       </div>
     </article>
     `;

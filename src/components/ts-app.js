@@ -41,6 +41,7 @@ class TSApp extends connect(store)(LitElement) {
         --app-nav-background: #edf0f2;
         --app-light-text-color: #ffffff;
         --app-section-even-color: #f7f7f7;
+        --app-main-background-color: #ffffff;
         --section-background-light-grey: #f5f5f5;
         --icon-grey-color: #3c4043;
 
@@ -58,8 +59,8 @@ class TSApp extends connect(store)(LitElement) {
         --app-drawer-text-color: var(--app-secondary-color);
         --app-drawer-selected-color: var(--app-primary-color);
 
-        --footer-background-grey: var(--icon-grey-color);
         --footer-background-secondary-grey: #5f6368;
+        --footer-background-grey: var(--icon-grey-color);
         --footer-text: var(--app-light-text-color);
       }
 
@@ -543,7 +544,7 @@ class TSApp extends connect(store)(LitElement) {
         }
 
         input[type=search] {
-          background: var(--form-field-background-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
+          background: var(--app-section-even-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
           border: solid 1px var(--form-border-color);
           padding: 5px 10px 5px 32px;
           width: 140px;

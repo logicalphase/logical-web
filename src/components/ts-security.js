@@ -66,7 +66,7 @@ class TSSecurity extends PageViewElement {
           </div>
         </header>
         <div class="ts-content-wrapper">
-          <section class="content background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
+          <section class="content full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
             <div class="columns">
               <main class="main delayed-fade-in">
                 <div class="ts-content-grid-box">

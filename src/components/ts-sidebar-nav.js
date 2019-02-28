@@ -24,7 +24,6 @@ class TSSideBarNav extends connect(store)(LitElement) {
       }
 
       .nav a[selected] {
-        background:#edf0f2;
         color:var(--app-primary-color);
         text-decoration:none;
       }

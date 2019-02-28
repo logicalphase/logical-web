@@ -11,7 +11,8 @@ export const articles = (state = { query: null }, action) => {
       query: action.query,
       data: null, // reset data
       failure: false,
-      isFetching: true
+      isFetching: true,
+      loading: true
     };
   case RECEIVE_ARTICLES:
     return {
@@ -21,14 +22,16 @@ export const articles = (state = { query: null }, action) => {
         return obj;
       }, {}),
       failure: false,
-      isFetching: false
+      isFetching: false,
+      loading: false
     };
   case FAIL_ARTICLES:
     return {
       ...state,
       data: null,
       failure: true,
-      isFetching: false
+      isFetching: false,
+      loading: false
     };
   default:
     return state;
