@@ -59,6 +59,11 @@ class TSDetail extends connect(store)(PageViewElement) {
       h3 {
         padding: 0; 
       }
+
+      p {
+          font-weight: 300;
+      }
+      
       ol {
         margin-left: 0px;
         padding-left: 0px;
