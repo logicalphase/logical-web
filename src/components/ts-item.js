@@ -16,12 +16,14 @@ class TSItem extends LitElement {
       css`
       h3.paper-font-headline {
         font-size: 1.14rem;
-        font-weight: 400;
+        font-weight: 500;
         margin: 10px 0;
+        color: var(--app-dark-text-color);
       }
 
       p {
-        word-spacing: 0.1rem;
+        word-spacing: 0.1px;
+        font-size: 14px;
       }
 
       .ts-read-more {
@@ -113,14 +115,18 @@ class TSItem extends LitElement {
       }
 
       @media (min-width: 460px) {
+        p {
+          word-spacing: 0.1px;
+          font-size: 15px;
+        }
         .inner {
           margin-right: 0px;
         }
 
         h3.paper-font-headline {
           font-size: 1.5rem;
-          font-weight: 300;
           margin: 10px 0;
+          color: var(--app-dark-text-color);
         }
 
         .inner p {
@@ -135,8 +141,6 @@ class TSItem extends LitElement {
         .flex-hover-card .inner > h3 {
           margin: 0 0 14px;
         }
-
-
 
         .small-print {
           margin-top: 14px;

@@ -262,6 +262,9 @@ class TSDetail extends connect(store)(PageViewElement) {
         :host {
           padding: 48px 24px 24px;
         }
+        p {
+          font-weight: 300;
+        }
         h2, h3 {
           margin: 20px 0px 25px 0px;
           padding: 0;

@@ -623,7 +623,9 @@ export const SharedStyles = css `
   }
 
   .inner p{
-    text-align: center; }
+    text-align: center; 
+    font-size: 14px;
+  }
 
   .ts-grid-wrapper-auto-fill {
     display: grid;
@@ -858,7 +860,9 @@ export const SharedStyles = css `
     }
 
     .inner p{
-      text-align: left; }
+      text-align: left; 
+      font-size: 14px;
+    }
 
     .text-uppercase {
       font-size:0.9rem;

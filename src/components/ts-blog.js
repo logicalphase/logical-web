@@ -47,7 +47,9 @@ class TSBlog extends connect(store)(PageViewElement) {
       }
 
       .ts-content-wrapper {
-        padding: 0; }
+        padding: 0px 24px 0px 5px; 
+        background: var(--section-background-light-grey);
+      }
 
       .columns {
         max-width: 987px;
@@ -162,6 +164,10 @@ class TSBlog extends connect(store)(PageViewElement) {
           background: var(--app-light-text-color) url('/images/header/ts-design-header.svg') no-repeat;
           background-size: contain;
           background-position: 94% center;
+        }
+        .ts-content-wrapper {
+          padding: 0; 
+          background: var(--section-background-light-grey);
         }
       }
       `
