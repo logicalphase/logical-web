@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+
 import { setPassiveTouchGestures } from "@polymer/polymer/lib/utils/settings.js";
 
 import "@polymer/app-layout/app-drawer/app-drawer";
@@ -450,7 +451,7 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       input[type=search] {
-        background: var(--app-section-even-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
+        background: var(--app-section-even-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/bg/icon-search.svg') no-repeat 9px 8px;
         border: solid 1px var(--form-border-color);
         padding: 7px 10px 7px 38px;
         width: 230px;
@@ -544,7 +545,7 @@ class TSApp extends connect(store)(LitElement) {
         }
 
         input[type=search] {
-          background: var(--app-section-even-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
+          background: var(--app-section-even-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/bg/icon-search.svg') no-repeat 9px 8px;
           border: solid 1px var(--form-border-color);
           padding: 5px 10px 5px 32px;
           width: 140px;
@@ -605,15 +606,14 @@ class TSApp extends connect(store)(LitElement) {
       _snackbarOpened
     } = this;
 
-
-
+    
     return html`
       <!-- Header -->
       <app-header-layout id="ts-appheaderlayout" has-scrolling-region>
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar class="masthead">
             <a href="/" alt="${appTitle} home">
-              <img class="ts-brand-site-logo" src="/images/hyperpress-logo-254x46.png" alt="${appTitle}">  
+              <img rel="dns-prefetch" class="ts-brand-site-logo" src="https://cdn1-themesurgesonslt.netdna-ssl.com/images/hyperpress-logo-254x46.png" alt="${appTitle}">  
             </a>
             
             <div class="ts-title" main-title>

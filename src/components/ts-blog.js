@@ -41,7 +41,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url('/images/header/ts-design-header.svg') no-repeat;
+        background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-design-header.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -161,7 +161,7 @@ class TSBlog extends connect(store)(PageViewElement) {
 
       @media (min-width: 460px) {
         .hero {
-          background: var(--app-light-text-color) url('/images/header/ts-design-header.svg') no-repeat;
+          background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-design-header.svg') no-repeat;
           background-size: contain;
           background-position: 94% center;
         }

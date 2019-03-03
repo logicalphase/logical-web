@@ -19,7 +19,7 @@ class TSDesign extends PageViewElement {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url('/images/header/ts-design-header.svg') no-repeat;
+        background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-design-header.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -30,7 +30,7 @@ class TSDesign extends PageViewElement {
         padding-top: 20px; }
 
         .hero {
-          background: var(--app-light-text-color) url('/images/header/ts-design-header.svg') no-repeat;
+          background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-design-header.svg') no-repeat;
           background-size: contain;
           background-position: 96% center;
         }

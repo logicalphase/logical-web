@@ -11,6 +11,9 @@
 
   <base href="/">
 
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preconnect" href="https://api.hyperpress.app/" crossorigin>
+  
   <link rel="icon" href="images/favicon.ico">
 
   <!-- See https://goo.gl/OOhYW5 -->
@@ -47,9 +50,6 @@
   <meta property="og:site_name" content="HyperPress by Theme Surgeons">
   <meta property="og:image" content="images/manifest/icon-144x144.png" />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link rel="preconnect" href="https://api.hyperpress.app/" crossorigin>
- 
   <script>
     // Load and register pre-caching Service Worker
     if ('serviceWorker' in navigator) {
@@ -107,9 +107,10 @@
     <p>This site uses modern JavaScript to help load faster, and to provide you with the best interactive experience</p> 
     <p>enable JavaScript to view this website.</p>
   </noscript>
-
+  <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+  <script rel="preload" src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" as="script"></script>
   <!-- Built with love using PWA Starter Kit -->
-  <script type="module" src="src/components/ts-app.js" crossorigin></script>
+  <script rel="modulepreload " type="module" src="src/components/ts-app.js" crossorigin></script>
 </body>
 
 </html>

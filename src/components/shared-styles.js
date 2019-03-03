@@ -464,7 +464,7 @@ export const SharedStyles = css `
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
 
   .button.button-logo.ts-button {
-    background-image: url(/images/bg/icon-send.svg); }
+    background-image: url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/bg/icon-send.svg'); }
 
   .button.button-logo {
     font-size: 14px;
@@ -664,7 +664,7 @@ export const SharedStyles = css `
   }
 
   ul.body-checks li {
-    background-image: url('/images/icons/ts-check-purple.svg');
+    background-image: url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/icons/ts-check-purple.svg');
     background-repeat: no-repeat;
     line-height: 24px;
     padding: 5px 0 0 36px;

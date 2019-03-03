@@ -2,7 +2,8 @@
   "entrypoint": "index.html",
   "shell": "src/components/ts-app.js",
   "sources": [
-    "images/**/*"
+    "images/**/*",
+    "config/ts-config.js"
   ],
   "extraDependencies": [
     "manifest.json",
@@ -18,6 +19,41 @@
       ],
       "js": {
         "minify": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
+    },
+    {
+      "name": "es6-bundled",
+      "browserCapabilities": [
+        "es2015"
+      ],
+      "js": {
+        "compile": "es2015",
+        "minify": true,
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
+    },
+    {
+      "name": "es5-bundled",
+      "js": {
+        "compile": "es5",
+        "minify": true,
+        "transformModulesToAmd": true
       },
       "css": {
         "minify": true

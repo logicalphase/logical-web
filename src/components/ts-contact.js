@@ -31,7 +31,7 @@ class TSContact extends PageViewElement {
       }
 
       .hero {
-        background: var(--app-light-text-color) url('/images/header/ts-care-header.svg') no-repeat;
+        background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-care-header.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -74,7 +74,7 @@ class TSContact extends PageViewElement {
         }
 
         .hero {
-          background: var(--app-light-text-color) url('/images/header/ts-care-header.svg') no-repeat;
+          background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-care-header.svg') no-repeat;
           background-size: contain;
           background-position: 92% center;
         }
