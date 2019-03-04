@@ -20,8 +20,6 @@
   },
   "dependencies": {
     "@polymer/app-layout": "^3.0.2",
-    "@polymer/iron-overlay-behavior": "^3.0.2",
-    "@polymer/paper-icon-button": "^3.0.2",
     "@polymer/polymer": "^3.1.0",
     "@webcomponents/webcomponentsjs": "^2.2.7",
     "date-fns": "^2.0.0-alpha.25",
@@ -33,12 +31,11 @@
     "reselect": "^4.0.0"
   },
   "devDependencies": {
-    "@pika/web": "^0.2.0",
     "@polymer/test-fixture": "^4.0.2",
     "axe-core": "^3.1.2",
     "chai": "^4.2.0",
-    "del": "^3.0.0",
-    "eslint": "^5.14.1",
+    "del": "^4.0.0",
+    "eslint": "^5.15.0",
     "eslint-config-google": "^0.12.0",
     "eslint-plugin-lit": "^0.6.0",
     "gulp": "^4.0.0",
@@ -46,7 +43,7 @@
     "gulp-replace": "^1.0.0",
     "mocha": "^6.0.2",
     "pixelmatch": "^4.0.2",
-    "polymer-cli": "^1.9.6",
+    "polymer-cli": "^1.9.7",
     "polyserve": "^0.27.15",
     "prpl-server": "^1.4.0",
     "puppeteer": "^1.12.2",

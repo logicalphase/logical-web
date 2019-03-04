@@ -1,4 +1,6 @@
-import { html, css } from 'lit-element';
+import { HP_HOST } from './ts-config';
+
+import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 
 import { SharedStyles } from './shared-styles';
@@ -8,6 +10,7 @@ import { TsSelectStyle } from './ts-select-style';
 import { TsTextAreaStyle } from './ts-textarea-style';
 import { announceLabel } from '../actions/app.js';
 
+const cdnHost = unsafeCSS(HP_HOST);
 
 class TSContact extends PageViewElement {
   static get styles() {
@@ -31,7 +34,7 @@ class TSContact extends PageViewElement {
       }
 
       .hero {
-        background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-care-header.svg') no-repeat;
+        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-care-header-opt.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -74,8 +77,6 @@ class TSContact extends PageViewElement {
         }
 
         .hero {
-          background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-care-header.svg') no-repeat;
-          background-size: contain;
           background-position: 92% center;
         }
 

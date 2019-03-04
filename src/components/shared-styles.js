@@ -18,6 +18,11 @@ export const SharedStyles = css `
     box-sizing: border-box;
   }
 
+  figure.img-right {
+      float:none;
+      margin-right: auto auto;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     color: var(--app-dark-text-color); 
   }
@@ -120,6 +125,7 @@ export const SharedStyles = css `
     /* Make sure images are scaled correctly. */
     max-width: 100%;
     /* Adhere to container width. */
+    width: 100%
   }
 
   .article-button {
@@ -575,7 +581,7 @@ export const SharedStyles = css `
     background: var(--app-main-background-color);
     display: flex;
     flex-direction: column;
-    padding: 0 5px 0 15px; }
+    padding: 0 15px 0 15px; }
 
   .content {
     flex: 1;
@@ -660,7 +666,7 @@ export const SharedStyles = css `
   ul.body-checks {
     list-style: none;
     margin-left: 0px;
-    padding: 0 24px 0 24px; 
+    padding: 0 4px 0 4px; 
   }
 
   ul.body-checks li {
@@ -774,6 +780,11 @@ export const SharedStyles = css `
   @media (min-width: 460px) {
     header {
       background-color: var(--app-light-text-color);
+    }
+
+    figure.img-right {
+      float:right;
+      margin-right: 60px;
     }
 
     h3 {

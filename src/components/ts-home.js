@@ -1,7 +1,14 @@
-import { html, css } from 'lit-element';
+import { CDN_HOST_URL } from './ts-config';
+
+import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
-import { SharedStyles } from "./shared-styles";
+
+import './ts-sidebar-nav';
+
+import { SharedStyles } from './shared-styles';
+
+const cdnHost = unsafeCSS(CDN_HOST_URL);
 
 class TSHome extends PageViewElement {
   static get styles() {
@@ -15,7 +22,7 @@ class TSHome extends PageViewElement {
       /* Smaller than 460 */
 
       .hero {
-      background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/bg/wordpress-logo.svg') no-repeat;
+        background: var(--app-light-text-color) url('https://${cdnHost}/images/bg/wordpress-logo.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -60,8 +67,6 @@ class TSHome extends PageViewElement {
 
       @media (min-width: 460px) {
         .hero {
-          background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/bg/wordpress-logo.svg') no-repeat;
-          background-size: contain;
           background-position: 93% center;
         }
         .ts-card-link span {

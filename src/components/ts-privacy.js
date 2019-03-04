@@ -1,8 +1,15 @@
-import { html, css } from 'lit-element';
+import { HP_HOST } from './ts-config';
+
+import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
-import { SharedStyles } from './shared-styles';
 import { TsTableStyles } from './ts-table-style';
+
+import './ts-sidebar-nav';
+
+import { SharedStyles } from './shared-styles';
+
+const cdnHost = unsafeCSS(HP_HOST);
 
 class TSPrivacy extends PageViewElement {
   static get styles() {
@@ -18,13 +25,9 @@ class TSPrivacy extends PageViewElement {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
+        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-design-header.svg') no-repeat;
         background-size: contain;
         background-position: center center;
-      }
-
-      ul {
-        padding-bottom: 24px;
       }
 
       .text-headline {
@@ -46,27 +49,28 @@ class TSPrivacy extends PageViewElement {
 
       h4 {
         padding-top: 10px; 
-        font-size:19px !important; 
+        font-size: 20px !important; 
         color: var(--app-secondary-color); }
 
       .ts-content-grid-box h2 {
         text-transform: uppercase;
-        font-size: 26px;
-        font-weight:300;
+        font-size: 28px;
+        font-weight:400;
         color:var(--app-secondary-color);
       }
       .ts-content-grid-box h3 {
         text-transform: uppercase;
-        font-size: 18px;
-        font-weight:500;
+        font-size: 24px;
         color:var(--app-secondary-color);
       }
 
       @media (min-width: 460px) {
         .hero {
-          background: var(--app-light-text-color) url(/images/header/ts-design-header.svg) no-repeat;
-          background-size: contain;
-          background-position: 93% center;
+          background-position: 97% center;
+        }
+
+        h3 {
+          font-weight: 400;
         }
 
         aside {
@@ -101,9 +105,9 @@ class TSPrivacy extends PageViewElement {
           min-height: 40px !important; 
           text-align: left;
           background-color: var(--app-light-text-color);
-          padding: 24px 34px 24px 34px;
-          margin-bottom: 24px; 
-          margin-right: 44px; }
+          padding: 0px 34px 0px 34px;
+          margin-right: 44px; 
+        }
         
         .sidebar {
           background-color: var(--app-section-odd-color);

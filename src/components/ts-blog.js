@@ -1,4 +1,6 @@
-import { html, css } from "lit-element";
+import { HP_HOST } from './ts-config';
+
+import { html, css, unsafeCSS } from "lit-element";
 import { PageViewElement } from "./page-view-element.js";
 
 import { until } from "lit-html/directives/until.js";
@@ -24,6 +26,8 @@ store.addReducers({
 
 import { SharedStyles } from "./shared-styles.js";
 
+const cdnHost = unsafeCSS(HP_HOST);
+
 class TSBlog extends connect(store)(PageViewElement) {
   static get styles() {
     return [
@@ -41,7 +45,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-design-header.svg') no-repeat;
+        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-design-header-opt.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -161,8 +165,6 @@ class TSBlog extends connect(store)(PageViewElement) {
 
       @media (min-width: 460px) {
         .hero {
-          background: var(--app-light-text-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/header/ts-design-header.svg') no-repeat;
-          background-size: contain;
           background-position: 94% center;
         }
         .ts-content-wrapper {

@@ -765,7 +765,6 @@ class TSApp extends connect(store)(LitElement) {
 
   stateChanged(state) {
     this._page = state.app.page;
-    this._lazyResourcesLoaded = state.app.lazyResourcesLoaded;
     this._lastVisitedListPage = state.app.lastVisitedListPage;
     this._offline = state.app.offline;
     this._snackbarOpened = state.app.snackbarOpened;

@@ -1,4 +1,4 @@
-import { WP_REST_API_HOST } from "../../config/ts-config";
+import { WP_REST_API_HOST } from "./ts-config";
 
 import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';

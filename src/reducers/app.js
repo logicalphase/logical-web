@@ -1,6 +1,5 @@
 import { 
   UPDATE_PAGE, 
-  RECEIVE_LAZY_RESOURCES, 
   UPDATE_OFFLINE,
   CLOSE_MODAL,
   OPEN_SNACKBAR, 
@@ -18,11 +17,6 @@ const app = (state = {drawerOpened: false}, action) => {
       ...state,
       page: p,
       lastVisitedListPage: p === 'blog' ? p : state.lastVisitedListPage
-    };
-  case RECEIVE_LAZY_RESOURCES:
-    return {
-      ...state,
-      lazyResourcesLoaded: true
     };
   case CLEAR_ANNOUNCER_LABEL:
     return {
