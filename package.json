@@ -9,8 +9,10 @@
   "scripts": {
     "start": "polymer serve",
     "build": "polymer build --auto-base-path && gulp prpl-server",
+    "build:rollup": "rm -rf public && rollup -c && gulp rollup && gulp generate-service-worker",
     "build:static": "polymer build",
     "serve": "prpl-server --root server/build",
+    "serve:rollup": "polymer serve --port 3000 public",
     "serve:static": "polymer serve --port 5000 build/es5-bundled",
     "test": "npm run test:unit && npm run test:integration",
     "test:integration": "mocha test/integration --timeout=10000",
@@ -28,14 +30,15 @@
     "pwa-helpers": "^0.9.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "systemjs": "^3.0.1"
   },
   "devDependencies": {
     "@polymer/test-fixture": "^4.0.2",
-    "axe-core": "^3.1.2",
+    "axe-core": "^3.2.0",
     "chai": "^4.2.0",
     "del": "^4.0.0",
-    "eslint": "^5.15.0",
+    "eslint": "^5.15.1",
     "eslint-config-google": "^0.12.0",
     "eslint-plugin-lit": "^0.6.0",
     "gulp": "^4.0.0",
@@ -46,7 +49,7 @@
     "polymer-cli": "^1.9.7",
     "polyserve": "^0.27.15",
     "prpl-server": "^1.4.0",
-    "puppeteer": "^1.12.2",
+    "puppeteer": "^1.13.0",
     "wct-mocha": "^1.0.0"
   }
 }

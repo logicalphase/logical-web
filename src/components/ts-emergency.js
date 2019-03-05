@@ -1,4 +1,4 @@
-import { HP_HOST } from './ts-config';
+import { CDN_HOST_URL } from './ts-config';
 
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
@@ -8,7 +8,7 @@ import './ts-sidebar-nav';
 
 import { SharedStyles } from './shared-styles';
 
-const cdnHost = unsafeCSS(HP_HOST);
+const cdnHost = unsafeCSS(CDN_HOST_URL);
 
 class TSEmergency extends PageViewElement {
   static get styles() {
