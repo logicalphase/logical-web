@@ -26,45 +26,53 @@ import {
   updateLayout
 } from "../actions/app.js";
 
+import { TsTheme } from './ts-style-theme';
 class TSApp extends connect(store)(LitElement) {
   static get styles() {
     return [
+      TsTheme,
       css`
-      :host {
-        display: block;
 
-        --app-drawer-width: 326px;
-
-        --border-grey: #e0e0e0;
-        --app-primary-color: #a434b7;
-        --app-link-color: #a434b7d1;
-        --app-secondary-color: #000000;
-        --app-nav-background: #edf0f2;
-        --app-light-text-color: #ffffff;
-        --app-section-even-color: #f7f7f7;
-        --app-main-background-color: #ffffff;
-        --section-background-light-grey: #f5f5f5;
-        --icon-grey-color: #3c4043;
-
-        --form-border-color: #cccccc; 
-        --form-text-color: #999;
-        --form-field-background-color: #ededed;
-
-        --app-accent-color: var(--app-primary-color);
-        --app-dark-text-color: var(--app-secondary-color);
-        --app-section-odd-color: var(--app-light-text-color);
-        --app-header-background-color: var(--app-light-text-color);
-        --app-header-text-color: var(--app-dark-text-color);
-        --app-header-selected-color: var(--app-primary-color);
-        --app-drawer-background-color: var(--app-light-text-color);
-        --app-drawer-text-color: var(--app-secondary-color);
-        --app-drawer-selected-color: var(--app-primary-color);
-
-        --footer-background-secondary-grey: #5f6368;
-        --footer-background-grey: var(--icon-grey-color);
-        --footer-text: var(--app-light-text-color);
+      /*--------------------------------------------------------------
+      # Accessibility
+      --------------------------------------------------------------*/
+      /* Text meant only for screen readers. */
+      .screen-reader-text {
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        word-wrap: normal !important;
+        /* Many screen reader and browser combinations announce broken words as they would appear visually. */
       }
 
+      .screen-reader-text:focus {
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+        clip: auto !important;
+        color: #21759b;
+        display: block;
+        font-size: 14px;
+        font-size: 0.875rem;
+        font-weight: bold;
+        height: auto;
+        left: 5px;
+        line-height: normal;
+        padding: 15px 23px 14px;
+        text-decoration: none;
+        top: 5px;
+        width: auto;
+        z-index: 100000;
+        /* Above WP toolbar. */
+      }
+
+      /* Do not show the outline on the skip link target. */
+      #primary[tabindex="-1"]:focus {
+        outline: 0;
+      }
+      
       [hidden] {
         display: none !important;
       }
@@ -493,47 +501,6 @@ class TSApp extends connect(store)(LitElement) {
         border: 0;
         max-width: 100%;
       }
-
-      /*--------------------------------------------------------------
-      # Accessibility
-      --------------------------------------------------------------*/
-      /* Text meant only for screen readers. */
-      .screen-reader-text {
-        clip: rect(1px, 1px, 1px, 1px);
-        position: absolute !important;
-        height: 1px;
-        width: 1px;
-        overflow: hidden;
-        word-wrap: normal !important;
-        /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-      }
-
-      .screen-reader-text:focus {
-        background-color: #f1f1f1;
-        border-radius: 3px;
-        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-        clip: auto !important;
-        color: #21759b;
-        display: block;
-        font-size: 14px;
-        font-size: 0.875rem;
-        font-weight: bold;
-        height: auto;
-        left: 5px;
-        line-height: normal;
-        padding: 15px 23px 14px;
-        text-decoration: none;
-        top: 5px;
-        width: auto;
-        z-index: 100000;
-        /* Above WP toolbar. */
-      }
-
-      /* Do not show the outline on the skip link target. */
-      #primary[tabindex="-1"]:focus {
-        outline: 0;
-      }
-
 
       /* 
           Wide layout: when the viewport width is bigger than 460px, layout

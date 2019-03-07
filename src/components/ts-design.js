@@ -6,14 +6,19 @@ import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import './ts-sidebar-nav';
 
-import { SharedStyles } from './shared-styles';
+import { SharedStyles } from './ts-style-shared';
+import { TsButtonStyle } from './ts-style-button';
+import { TsElevationStyle } from './ts-style-elevation';
+import { TsTypographyStyle } from './ts-style-typography';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
-
 class TSDesign extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
+      TsButtonStyle,
+      TsElevationStyle,
+      TsTypographyStyle,
       css`
       :host {
         display: block;

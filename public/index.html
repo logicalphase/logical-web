@@ -112,16 +112,15 @@
     import('./dist/ts-app.js');
     window.supportsDynamicImport = true;
   </script>
-  <script>
-    function appendScript(src, cb) {
-      const script = document.createElement('script');
-      script.type = preload;
-      script.src = src;
-      script.as = script;
-      script.addEventListener('load', cb);
-      document.head.appendChild(script);
-    }
-    if (!window.supportsDynamicImport) {
+    <script>
+      function appendScript(src, cb) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.addEventListener('load', cb);
+        document.head.appendChild(script);
+      }
+
+      if (!window.supportsDynamicImport) {
       appendScript('node_modules/systemjs/dist/s.min.js', function() {
         appendScript('node_modules/regenerator-runtime/runtime.js', function() {
           appendScript('node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js', function() {

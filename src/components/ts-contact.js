@@ -3,11 +3,11 @@ import { HP_HOST } from './ts-config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 
-import { SharedStyles } from './shared-styles';
-import { TsFormStyle } from './ts-form-style';
-import { TsInputStyle } from './ts-input-style';
-import { TsSelectStyle } from './ts-select-style';
-import { TsTextAreaStyle } from './ts-textarea-style';
+import { SharedStyles } from './ts-style-shared';
+import { TsFormStyle } from './ts-style-form';
+import { TsInputStyle } from './ts-style-input';
+import { TsSelectStyle } from './ts-style-select';
+import { TsTextAreaStyle } from './ts-style-textarea';
 import { announceLabel } from '../actions/app.js';
 
 const cdnHost = unsafeCSS(HP_HOST);

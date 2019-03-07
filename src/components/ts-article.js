@@ -1,5 +1,3 @@
-import { WP_REST_API_HOST } from "./ts-config";
-
 import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { repeat } from 'lit-html/directives/repeat.js';
@@ -15,9 +13,11 @@ import {
   SubTitleIcon
 } from './ts-icons.js';
 
-import { SharedStyles } from './shared-styles.js';
-import { TsTableStyles } from './ts-table-style';
-import { TsWordPressStyles } from './ts-wp-style';
+import { SharedStyles } from './ts-style-shared';
+import { TsElevationStyle } from './ts-style-elevation';
+import { TsTypographyStyle } from './ts-style-typography';
+import { TsTableStyles } from './ts-style-table';
+import { TsWordPressStyles } from './ts-style-wp';
 
 import './ts-offline.js';
 import './ts-image.js';
@@ -39,6 +39,8 @@ class TSDetail extends connect(store)(PageViewElement) {
     return [
       SharedStyles,
       TsTableStyles,
+      TsElevationStyle,
+      TsTypographyStyle,
       TsWordPressStyles,
       css`
 
@@ -170,6 +172,27 @@ class TSDetail extends connect(store)(PageViewElement) {
 
       .desc > ol {
         padding-left: 20px;
+      }
+
+      .article-button {
+        display: inline-block;
+        margin-right: 8px;
+        padding: 8px 44px;
+        border: 2px solid var(--app-dark-text-color);
+        box-sizing: border-box;
+        background-color: transparent;
+        color: var(--app-dark-text-color);
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-bottom: none;
+      }
+      .article-button:active {
+        background-color: var(--app-dark-text-color);
+        color: var(--app-light-text-color);
+        border-bottom: none;
       }
 
       article-rating {

@@ -6,13 +6,19 @@ import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import './ts-sidebar-nav';
 
-import { SharedStyles } from './shared-styles';
+import { SharedStyles } from './ts-style-shared';
+import { TsButtonStyle } from './ts-style-button';
+import { TsElevationStyle } from './ts-style-elevation';
+import { TsTypographyStyle } from './ts-style-typography';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 class TSMigrations extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
+      TsButtonStyle,
+      TsElevationStyle,
+      TsTypographyStyle,
       css`
       :host {
         display: block;
@@ -25,14 +31,23 @@ class TSMigrations extends PageViewElement {
         padding-top: 20px; }
 
       .hero {
-      background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-migrations-header.svg') no-repeat;
+        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-migrations-header.svg') no-repeat;
         background-size: 380px;
         background-position: center top;
+      }
+
+      figure.img-right:first-of-type {
+        margin-top: -14px;
+        margin-bottom: -24px;
       }
 
       @media (min-width: 460px) {
         .hero {
           background-position: 92% top;
+        }
+        figure.img-right:first-of-type {
+          margin-top: 40px;
+          margin-bottom: 0;
         }
       }
 
@@ -70,7 +85,7 @@ class TSMigrations extends PageViewElement {
                 <figure class="img-right">
                   <img src="https://${cdnHost}/images/content/ts-migration-towp-200x200-opt.svg" alt="Migrating Existing Site to WordPress" />
                 </figure> 
-                <h3 class="text-headline">Moving WordPress can seem overwhelming, but we've got you covered</h3>
+                <h3 class="text-headline">Moving WordPress seem overwhelming?</h3>
                 <p>We've moved hundreds of WordPress sites to new hosting. We know exactly what needs to be done to eliminate downtime, protect your data, and complete all of other tasks needed to make your move a stress free one.</p>
                 <ul class="body-checks">
                   <li>Full backup of current site</li>

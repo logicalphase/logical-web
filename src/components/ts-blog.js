@@ -24,7 +24,10 @@ store.addReducers({
   articles
 });
 
-import { SharedStyles } from "./shared-styles.js";
+import { SharedStyles } from "./ts-style-shared";
+import { TsButtonStyle } from './ts-style-button';
+import { TsElevationStyle } from './ts-style-elevation';
+import { TsTypographyStyle } from './ts-style-typography';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
@@ -32,6 +35,9 @@ class TSBlog extends connect(store)(PageViewElement) {
   static get styles() {
     return [
       SharedStyles,
+      TsButtonStyle,
+      TsElevationStyle,
+      TsTypographyStyle,
       css`
       :host {
         display: block;

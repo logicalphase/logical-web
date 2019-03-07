@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit-element";
-import { SharedStyles } from "./shared-styles.js";
+import { SharedStyles } from "./ts-style-shared";
 
 import { connect } from "pwa-helpers/connect-mixin";
 import { installRouter } from "pwa-helpers/router";

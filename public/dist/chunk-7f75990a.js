@@ -1,2 +1,0 @@
-const e=({title:e,description:o,url:r,image:i,imageAlt:n})=>{e&&(document.title=e,t("property","og:title",e)),o&&(t("name","description",o),t("property","og:description",o)),i&&t("property","og:image",i),n&&t("property","og:image:alt",n),t("property","og:url",r=r||window.location.href)};function t(e,t,o){let r=document.head.querySelector(`meta[${e}="${t}"]`);r||((r=document.createElement("meta")).setAttribute(e,t),document.head.appendChild(r)),r.setAttribute("content",o||"")}export{e as a};
-//# sourceMappingURL=chunk-7f75990a.js.map

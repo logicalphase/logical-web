@@ -14,9 +14,10 @@ class TSItem extends LitElement {
   static get styles() {
     return [
       css`
+      
       h3.paper-font-headline {
         font-size: 1.14rem;
-        font-weight: 500;
+        font-weight: 400;
         margin: 10px 0;
         color: var(--app-dark-text-color);
       }

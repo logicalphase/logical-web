@@ -6,7 +6,10 @@ import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import './ts-sidebar-nav';
 
-import { SharedStyles } from './shared-styles';
+import { SharedStyles } from './ts-style-shared';
+import { TsButtonStyle } from './ts-style-button';
+import { TsElevationStyle } from './ts-style-elevation';
+import { TsTypographyStyle } from './ts-style-typography';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
@@ -14,6 +17,9 @@ class TSCare extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
+      TsButtonStyle,
+      TsElevationStyle,
+      TsTypographyStyle,
       css`
       :host {
         display: block;
@@ -27,10 +33,19 @@ class TSCare extends PageViewElement {
         background-position: center center;
       }
 
+      figure.img-right {
+        margin: 44px 0px 44px 0;
+      }
+
       @media (min-width: 460px) {
 
         h3 {
         padding-top: 20px; }
+
+        figure.img-right {
+          margin-top: 64px;
+          margin-right: 60px;
+        }
 
         .hero {
           background-position: 90% center;

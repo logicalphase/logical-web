@@ -3,11 +3,12 @@ import { CDN_HOST_URL } from './ts-config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
-import { TsTableStyles } from './ts-table-style';
+import { TsTableStyles } from './ts-style-table';
 
 import './ts-sidebar-nav';
 
-import { SharedStyles } from './shared-styles';
+import { SharedStyles } from './ts-style-shared';
+import { TsTypographyStyle } from './ts-style-typography';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
@@ -15,6 +16,7 @@ class TSPrivacy extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
+      TsTypographyStyle,
       TsTableStyles,
       css`
       :host {
