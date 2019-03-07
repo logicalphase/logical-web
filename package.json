@@ -9,7 +9,7 @@
   "scripts": {
     "start": "polymer serve",
     "build": "polymer build --auto-base-path && gulp prpl-server",
-    "build:rollup": "rm -rf public && rollup -c && gulp rollup && gulp generate-service-worker",
+    "build:rollup": "rm -rf public && rollup -c && gulp rollup && generate-service-worker",
     "build:static": "polymer build",
     "serve": "prpl-server --root server/build",
     "serve:rollup": "polymer serve --port 3000 public",
@@ -34,8 +34,12 @@
     "systemjs": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.3.4",
     "@polymer/test-fixture": "^4.0.2",
     "axe-core": "^3.2.0",
+    "babel-plugin-template-html-minifier": "^2.2.1",
     "chai": "^4.2.0",
     "del": "^4.0.0",
     "eslint": "^5.15.1",
@@ -44,12 +48,20 @@
     "gulp": "^4.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
+    "http-server": "^0.11.1",
     "mocha": "^6.0.2",
     "pixelmatch": "^4.0.2",
     "polymer-cli": "^1.9.7",
     "polyserve": "^0.27.15",
     "prpl-server": "^1.4.0",
     "puppeteer": "^1.13.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.4.1",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-minify-html-literals": "^1.2.2",
+    "rollup-plugin-modulepreload": "^1.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-terser": "^4.0.4",
     "wct-mocha": "^1.0.0"
   }
 }

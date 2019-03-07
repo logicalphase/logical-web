@@ -345,7 +345,7 @@ class TSDetail extends connect(store)(PageViewElement) {
     const title = item.title && item.title.rendered;
     const author = 'John Teague';
     const date = formatDistance(new Date(item.date), new Date());
-    const thumbnail = item.tsapi_featured_image && item.tsapi_featured_image.media_details.file;
+    const thumbnail = item.tsapi_featured_image && item.tsapi_featured_image.source_url;
     const alt = item.tsapi_featured_image && item.tsapi_featured_image.alt_text;
     const slug = item.slug;
     const categories = item.categories_names || [];
@@ -360,8 +360,8 @@ class TSDetail extends connect(store)(PageViewElement) {
     return html `
       <section ?hidden="${_showOffline}">
         <div class="item">
-          <div class="cover" hero>
-            <article-image .src="https://${WP_REST_API_HOST}/wp-content/uploads/${thumbnail}" .alt="${alt}" ></article-image>
+          <div class="cover">
+            <article-image .src="${thumbnail}" .alt="${alt}"></article-image>
             <h1 class="fade-in title">${title}</h1>
           <div class=" fade-in item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
           </div>

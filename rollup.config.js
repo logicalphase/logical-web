@@ -1,16 +1,23 @@
 import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
+import resolve from 'rollup-plugin-node-resolve';
+
+//const production = !process.env.ROLLUP_WATCH;
 
 export default [{
   input: './src/components/ts-app.js',
   output: [
     {
       dir: 'public/dist',
-      format: 'esm'
+      format: 'esm',
+      sourcemap: true
     }
   ],
   plugins: [
+    minifyHTML({
+      failOnError: true,
+    }),
     resolve({
       // use "jsnext:main" if possible
       // legacy field pointing to ES6 module in third-party libraries,
@@ -18,8 +25,7 @@ export default [{
       // - see: https://github.com/rollup/rollup/wiki/pkg.module
       jsnext: true,  // Default: false
     }),
-    minifyHTML(),
-
+    terser()
   ]
 },
 {
@@ -31,6 +37,9 @@ export default [{
     }
   ],
   plugins: [
+    minifyHTML({
+      failOnError: true,
+    }),
     resolve({
       // use "jsnext:main" if possible
       // legacy field pointing to ES6 module in third-party libraries,
@@ -43,6 +52,7 @@ export default [{
         ["@babel/preset-env", {"targets": {"ie": "11"}}]
       ],
       "plugins": ["@babel/plugin-syntax-dynamic-import"]
-    })
+    }),
+    terser()
   ]
 }];
