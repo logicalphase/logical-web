@@ -1,4 +1,4 @@
-import { WP_REST_API_HOST, WP_REST_PATH } from "../components/ts-config";
+import { WP_REST_API_HOST, WP_REST_PATH } from "../components/config";
 
 export const REQUEST_ARTICLE = 'REQUEST_ARTICLE';
 export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';

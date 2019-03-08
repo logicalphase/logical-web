@@ -1,4 +1,4 @@
-import { HP_HOST } from './ts-config';
+import { HP_HOST } from './config';
 
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
