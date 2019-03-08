@@ -2,7 +2,7 @@
   "name": "HyperPress by Pressmedics",
   "short_name": "HyperPress",
   "description": "Functionally superior, lightning fast, PWA",
-  "start_url": "https://hyperpress.app/",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#a434b7",
   "background_color": "#a434b7",

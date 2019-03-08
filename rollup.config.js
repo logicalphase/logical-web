@@ -1,6 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
+import { modulepreload } from 'rollup-plugin-modulepreload';
 import resolve from 'rollup-plugin-node-resolve';
 
 //const production = !process.env.ROLLUP_WATCH;
@@ -25,7 +26,11 @@ export default [{
       // - see: https://github.com/rollup/rollup/wiki/pkg.module
       jsnext: true,  // Default: false
     }),
-    terser()
+    terser(),
+    modulepreload({
+      prefix: 'modules',
+      index: 'public/index.html',
+    }),
   ]
 },
 {
@@ -53,6 +58,10 @@ export default [{
       ],
       "plugins": ["@babel/plugin-syntax-dynamic-import"]
     }),
-    terser()
+    terser(),
+    modulepreload({
+      prefix: 'modules',
+      index: 'public/index.html',
+    }),
   ]
 }];
