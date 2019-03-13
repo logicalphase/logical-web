@@ -1,8 +1,7 @@
 import babel from 'rollup-plugin-babel';
-import { terser } from 'rollup-plugin-terser';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
-import { modulepreload } from 'rollup-plugin-modulepreload';
 import resolve from 'rollup-plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
 
 //const production = !process.env.ROLLUP_WATCH;
 
@@ -11,8 +10,7 @@ export default [{
   output: [
     {
       dir: 'public/dist',
-      format: 'esm',
-      sourcemap: true
+      format: 'esm'
     }
   ],
   plugins: [
@@ -26,11 +24,7 @@ export default [{
       // - see: https://github.com/rollup/rollup/wiki/pkg.module
       jsnext: true,  // Default: false
     }),
-    terser(),
-    modulepreload({
-      prefix: 'modules',
-      index: 'public/index.html',
-    }),
+    terser()
   ]
 },
 {
@@ -58,10 +52,6 @@ export default [{
       ],
       "plugins": ["@babel/plugin-syntax-dynamic-import"]
     }),
-    terser(),
-    modulepreload({
-      prefix: 'modules',
-      index: 'public/index.html',
-    }),
+    terser()
   ]
 }];

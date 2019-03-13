@@ -6,8 +6,9 @@ export const TsTheme = css`
   --app-drawer-width: 326px;
 
   --border-grey: #e0e0e0;
-  --app-primary-color: #a434b7;
-  --app-link-color: #a434b7d1;
+  --app-primary-color: #8d008d;
+  --app-primary-hover-color: #600060;
+  --app-link-color: #8d008d;
   --app-secondary-color: #000000;
   --app-nav-background: #edf0f2;
   --app-light-text-color: #ffffff;

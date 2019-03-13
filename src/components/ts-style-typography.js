@@ -3,154 +3,276 @@
 import { css } from 'lit-element';
 
 export const TsTypographyStyle = css`
-  /* Material Design Typography */
-  .mdc-typography {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased; }
-
-  .mdc-typography--headline1 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 2.5rem;
-    line-height: 2.7rem;
-    font-weight: 300;
-    letter-spacing: -0.01562em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--headline2 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 1.75rem;
-    line-height: 1.75rem;
-    font-weight: 300;
-    letter-spacing: -0.00833em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--headline3 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 1.3rem;
-    line-height: 1.325rem;
+/* Material Design Typography */
+#ts-site .ts-display1 {
+    font-size: 40px;
     font-weight: 400;
-    letter-spacing: normal;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--headline4 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 2.125rem;
-    line-height: 2.5rem;
+    letter-spacing: 0;
+    line-height: 48px;
+    margin: 0;
+}
+@media all and (min-width: 600px) {
+  #ts-site .ts-display1 {
+      font-size: 72px;
+      letter-spacing: -0.5px;
+      line-height: 84px;
+  }
+}
+#ts-site .ts-display1 strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-display2 {
+    font-size: 40px;
     font-weight: 400;
-    letter-spacing: 0.00735em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--headline5 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    letter-spacing: 0;
+    line-height: 48px;
+    margin: 0;
+}
+@media all and (min-width: 600px) {
+  #ts-site .ts-display2 {
+      font-size: 64px;
+      letter-spacing: -0.5px;
+      line-height: 72px;
+  }
+}
+#ts-site .ts-display2 strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-display3 {
+    font-size: 36px;
     font-weight: 400;
-    letter-spacing: normal;
-    text-decoration: inherit;
-    text-transform: inherit; }
+    letter-spacing: 0;
+    line-height: 44px;
+    margin: 0;
+}
+@media all and (min-width: 600px) {
+  #ts-site .ts-display3 {
+    font-size: 56px;
+    letter-spacing: -0.5px;
+    line-height: 66px;
+  }
+}
 
-  .mdc-typography--headline6 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 1.25rem;
-    line-height: 2rem;
+#ts-site .ts-display3 strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+
+@media all and (min-width: 600px) {
+  #ts-site .ts-headline1 {
+      font-size: 48px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      line-height: 58px;
+  }
+}
+#ts-site .ts-headline1 strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-headline2 {
+    font-size: 32px;
     font-weight: 500;
-    letter-spacing: 0.0125em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--subtitle1 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-weight: 400;
-    letter-spacing: 0.00937em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--subtitle2 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    letter-spacing: 0;
+    line-height: 40px;
+    margin: 0;
+}
+@media all and (min-width: 600px) {
+  #ts-site .ts-headline2 {
+      font-size: 40px;
+      letter-spacing: -0.5px;
+      line-height: 52px;
+  }
+}
+#ts-site .ts-headline2 strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-headline3 {
+    font-size: 24px;
     font-weight: 500;
-    letter-spacing: 0.00714em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--body1 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.03125em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--body2 {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.01786em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--caption {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.03333em;
-    text-decoration: inherit;
-    text-transform: inherit; }
-
-  .mdc-typography--button {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 0.875rem;
-    line-height: 2.25rem;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0;
+}
+@media all and (min-width: 600px) {
+  #ts-site .ts-headline3 {
+      font-size: 32px;
+      line-height: 40px;
+  }
+}
+#ts-site .ts-headline3 strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-headline4 {
+    font-size: 20px;
     font-weight: 500;
-    letter-spacing: 0.08929em;
+    letter-spacing: 0;
+    line-height: 30px;
+    margin: 0;
+}
+@media all and (min-width: 600px) {
+  #ts-site .ts-headline4 {
+    font-size: 22px;
+  }
+}
+#ts-site .ts-headline4 strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-headline4 .ts-superscript {
+    font-size: 10px;
+    line-height: 1;
+}
+#ts-site .ts-quote-text {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 30px;
+}
+@media all and (min-width: 600px) {
+  #ts-site .ts-quote-text {
+    color: #202124;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+#ts-site .ts-quote-text strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-eyebrow {
+    color: #5f6368;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 0;
+    overflow: visible;
+    text-transform: uppercase;
+}
+#ts-site .ts-eyebrow strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-eyebrow--large {
+    font-family: Roboto Mono,  monospace;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 0;
+    overflow: visible;
+}
+#ts-site .ts-eyebrow--large strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+#ts-site .ts-subhead {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+@media all and (min-width: 600px) {
+  #ts-site .ts-subhead {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+#ts-site .ts-subhead strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit;
+}
+.ts-superscript {
+    color: #5f6368;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin: 0;
+    overflow: visible;
+    text-transform: uppercase;
+    left: 2px;
+    top: 0;
+    vertical-align: text-top;
+}
+.ts-body-text__large {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.ts-body-text__large .ts-superscript {
+    font-size: 10px;
+    line-height: 1;
+}
+.ts-body-text__title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.ts-body-text__title .ts-superscript {
+    font-size: 10px;
+    line-height: 1;
+}
+.ts-body-text, p {
+    color: #5f6368;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+}
+.ts-body-text .ts-superscript, p .ts-superscript {
+    font-size: 10px;
+    line-height: 1;
+}
+.ts-body-text__small {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.ts-body-text__small .ts-superscript {
+    font-size: 10px;
+    line-height: 1;
+}
+.ts-footnotes {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.35px;
+    line-height: 18px;
+}
+.ts-link {
+    color: #1a73e8;
     text-decoration: none;
-    text-transform: uppercase; }
-
-  .mdc-typography--overline {
-    font-family: Roboto, sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-size: 0.75rem;
-    line-height: 2rem;
-    font-weight: 500;
-    letter-spacing: 0.16667em;
-    text-decoration: none;
-    text-transform: uppercase; }
+}
+.ts-link:visited {
+    color: #7b1fa2;
+}
+.ts-link:focus, .ts-link:hover {
+    text-decoration: underline;
+}
+.ts-link:hover {
+    color: #174ea6;
+}
+.ts-link:focus {
+    background-color: rgba(32, 33, 36, .05);
+    color: #174ea6;
+    outline: 4px solid rgba(32, 33, 36, .05);
+}
+.ts-link--reversed {
+    color: #fff;
+    text-decoration: underline;
+}
+.ts-link--reversed:visited {
+    color: #fff;
+}
+.ts-link--reversed:focus, .ts-link--reversed:hover {
+    background-color: rgba(32, 33, 36, .05);
+    color: rgba(255, 255, 255, .7);
+    outline: 4px solid rgba(32, 33, 36, .05);
+}
 
   /* Custom Font Weights */
 

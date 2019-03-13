@@ -1,3 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 120 120" width="62" height="62"><defs><path d="M110.87 1.5C115.45 1.5 119.17 5.21 119.17 9.8C119.17 31.6 119.17 88.73 119.17 110.54C119.17 115.12 115.45 118.83 110.87 118.83C88.99 118.83 31.64 118.83 9.76 118.83C5.18 118.83 1.46 115.12 1.46 110.54C1.46 88.73 1.46 31.6 1.46 9.8C1.46 5.21 5.18 1.5 9.76 1.5C31.64 1.5 88.99 1.5 110.87 1.5Z" id="eRNcStffM"></path><path d="M69.73 23.06C81.72 23.06 91.44 35.76 91.44 51.42C91.44 52.01 91.42 52.6 91.39 53.18C100.05 55.56 106.42 63.54 106.42 73.02C106.42 73.02 106.42 73.02 106.42 73.02C106.42 84.37 97.28 93.58 86 93.58C80.88 93.58 39.91 93.58 34.79 93.58C23.51 93.58 14.37 84.37 14.37 73.02C14.37 73.02 14.37 73.02 14.37 73.02C14.37 63.12 21.32 54.85 30.57 52.9C31.4 42.16 38.33 33.79 46.77 33.79C48.62 33.79 50.4 34.19 52.06 34.93C56 27.75 62.45 23.06 69.73 23.06Z" id="h1aEcQa4Su"></path><path d="M49.4 54.67L33.33 67.6L49.4 80.54L49.4 72.13L71.39 72.13L71.39 80.54L87.46 67.6L71.39 54.67L71.39 63.08L49.4 63.08L49.4 54.67Z" id="bbUlP95xM"></path></defs><g><g><g><use xlink:href="#eRNcStffM" opacity="1" fill="#ffffff" fill-opacity="0"></use><g><use xlink:href="#eRNcStffM" opacity="1" fill-opacity="0" stroke="#a434b7" stroke-width="2" stroke-opacity="1"></use></g></g><g><use xlink:href="#h1aEcQa4Su" opacity="1" fill="#ffffff" fill-opacity="0"></use><g><use xlink:href="#h1aEcQa4Su" opacity="1" fill-opacity="0" stroke="#a434b7" stroke-width="2" stroke-opacity="1"></use></g></g><g><use xlink:href="#bbUlP95xM" opacity="1" fill="#ffffff" fill-opacity="0"></use><g><use xlink:href="#bbUlP95xM" opacity="1" fill-opacity="0" stroke="#a434b7" stroke-width="2" stroke-opacity="1"></use></g></g></g></g></svg>
+<svg width="62" height="62" version="1.1" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <path id="eRNcStffM" d="m110.87 1.5c4.58 0 8.3 3.71 8.3 8.3v100.74c0 4.58-3.72 8.29-8.3 8.29h-101.11c-4.58 0-8.3-3.71-8.3-8.29v-100.74c0-4.59 3.72-8.3 8.3-8.3h101.11z"/>
+  <path id="h1aEcQa4Su" d="m69.73 23.06c11.99 0 21.71 12.7 21.71 28.36 0 0.59-0.02 1.18-0.05 1.76 8.66 2.38 15.03 10.36 15.03 19.84 0 11.35-9.14 20.56-20.42 20.56h-51.21c-11.28 0-20.42-9.21-20.42-20.56 0-9.9 6.95-18.17 16.2-20.12 0.83-10.74 7.76-19.11 16.2-19.11 1.85 0 3.63 0.4 5.29 1.14 3.94-7.18 10.39-11.87 17.67-11.87z"/>
+  <path id="bbUlP95xM" d="m49.4 54.67-16.07 12.93 16.07 12.94v-8.41h21.99v8.41l16.07-12.94-16.07-12.93v8.41h-21.99v-8.41z"/>
+ </defs>
+ <use fill="#ffffff" fill-opacity="0" xlink:href="#eRNcStffM"/>
+ <use fill-opacity="0" stroke="#600060" stroke-width="2" xlink:href="#eRNcStffM"/>
+ <use fill="#ffffff" fill-opacity="0" xlink:href="#h1aEcQa4Su"/>
+ <use fill-opacity="0" stroke="#600060" stroke-width="2" xlink:href="#h1aEcQa4Su"/>
+ <use fill="#ffffff" fill-opacity="0" xlink:href="#bbUlP95xM"/>
+ <use fill-opacity="0" stroke="#600060" stroke-width="2" xlink:href="#bbUlP95xM"/>
+</svg>

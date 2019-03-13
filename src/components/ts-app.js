@@ -459,7 +459,7 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       input[type=search] {
-        background: var(--app-section-even-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/bg/icon-search.svg') no-repeat 9px 8px;
+        background: var(--app-section-even-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
         border: solid 1px var(--form-border-color);
         padding: 7px 10px 7px 38px;
         width: 230px;
@@ -512,7 +512,7 @@ class TSApp extends connect(store)(LitElement) {
         }
 
         input[type=search] {
-          background: var(--app-section-even-color) url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/bg/icon-search.svg') no-repeat 9px 8px;
+          background: var(--app-section-even-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
           border: solid 1px var(--form-border-color);
           padding: 5px 10px 5px 32px;
           width: 140px;
@@ -567,7 +567,6 @@ class TSApp extends connect(store)(LitElement) {
     const {
       appTitle,
       _page,
-      _lazyResourcesLoaded, 
       _offline,
       _drawerOpened,
       _snackbarOpened
@@ -606,7 +605,7 @@ class TSApp extends connect(store)(LitElement) {
 
       <!-- Drawer content -->
       <app-drawer id="drawer" .opened="${_drawerOpened}"  
-          @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" align="right" swipe-open>
+          @opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}" swipe-open>
         <app-toolbar>
           ${appTitle}
         </app-toolbar>
@@ -626,7 +625,6 @@ class TSApp extends connect(store)(LitElement) {
           <a ?selected="${_page === "contact"}" href="/contact">Contact</a>
         </nav>
       </app-drawer>
-
       <!-- Main content -->
       <main class="main-content">
         <ts-home class="page" ?active="${_page === "home"}"></ts-home>
@@ -731,6 +729,7 @@ class TSApp extends connect(store)(LitElement) {
   }
 
   stateChanged(state) {
+    this.appTitle = state.app.appTitle;
     this._page = state.app.page;
     this._lastVisitedListPage = state.app.lastVisitedListPage;
     this._offline = state.app.offline;

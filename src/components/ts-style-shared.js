@@ -19,14 +19,20 @@ export const SharedStyles = css `
 
   /* Base Styles */
 
+  body #ts-site {
+    color: #202124;
+  }
+
   figure.img-right {
       float:none;
-      margin: auto auto;
+      margin: 0;
   }
   figure.img-right img {
-      float:none;
-      margin: auto auto;
-      max-width: 80%;
+    float:none;
+    margin: auto auto;
+    max-width: 80%;
+    margin-top: 28px;
+    margin-bottom: 28px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -40,10 +46,11 @@ export const SharedStyles = css `
     text-rendering: optimizeLegibility; }
 
   h1.paper-font-display2 {
-    font-size: 42px;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 0;
     line-height: 44px;
-    padding-right: 0px; 
-    letter-spacing: .5px;
+    margin: 0;
   }
 
   h2.paper-font-title {
@@ -53,11 +60,10 @@ export const SharedStyles = css `
 
   h3 {
     font-size: 24px;
-    font-weight: 400;
-    letter-spacing: -.012em;
-    line-height: 31px; 
-    text-align: center;
-    padding: 0 14px 0 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0;
   }
 
   h4 {
@@ -71,8 +77,11 @@ export const SharedStyles = css `
     line-height: 24px; }
 
   p {
+    color: #5f6368;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 28px;
-    margin: 0 0 16px 0;
+    margin-top: 18px;
   }
 
   ol {
@@ -165,8 +174,8 @@ export const SharedStyles = css `
     display: none; } 
 
   .hero>div {
-    padding: 20px 24px 30px 24px;
-    text-align: center; }
+    padding: 0 24px 0 24px;
+  }
 
   .hero-section p {
     margin: 0 0 25px 0;
@@ -192,6 +201,151 @@ export const SharedStyles = css `
   }
 
   /* Classes - Section Layout */
+
+  .ts-section {
+      padding: 80px 0;
+  }
+  .ts-section--border {
+      border-top: 1px solid #dadce0;
+  }
+  .ts-section--no-padding-bottom {
+      padding-bottom: 0;
+  }
+  .ts-section--no-padding-top {
+      padding-top: 0;
+  }
+  .ts-section__header, .ts-section__spacer {
+      margin-bottom: 56px;
+  }
+
+  @media all and (max-width: 767px) {
+  .ts-copy .ts-grid--alternate {
+      display: block;
+  }
+  .ts-copy .ts-copy__img {
+      text-align: center;
+  }
+}
+.ts-copy .ts-eyebrow+.ts-headline1, .ts-copy .ts-eyebrow+.ts-headline2, .ts-copy .ts-eyebrow+.ts-headline3, .ts-copy .ts-eyebrow+.ts-headline4 {
+    padding-top: 12px;
+}
+.ts-copy__text {
+    margin: 24px 0 40px;
+    max-width: 600px;
+}
+.ts-copy__icon-row {
+    width: 100%}
+.ts-copy__icon-row svg {
+    fill: currentColor;
+    height: 100%;
+    width: 100%}
+.ts-copy__icon-row svg path {
+    fill: currentColor;
+}
+.ts-copy__icon-row img {
+    width: 100%}
+.ts-copy__icon-content--large {
+    height: 92px;
+    margin-bottom: 16px;
+    width: 92px;
+}
+.ts-copy__icon-content--medium {
+    height: 64px;
+    margin-bottom: 16px;
+    width: 64px;
+}
+.ts-copy__icon-content--small {
+    height: 32px;
+    margin-bottom: 16px;
+    width: 32px;
+}
+.ts-copy--three-column--center .ts-copy__icon-content--large, .ts-copy--three-column--center .ts-copy__icon-content--medium, .ts-copy--three-column--center .ts-copy__icon-content--small {
+    margin-left: auto;
+    margin-right: auto;
+}
+.ts-copy__icon-2up {
+    display: flex;
+}
+.ts-copy__icon-2up .ts-copy__icon-row {
+    flex: 0 0 80px;
+}
+.ts-copy--40-80 .ts-copy__eyebrow {
+    margin-bottom: 0;
+}
+.ts-copy__content {
+    min-height: 180px;
+}
+.ts-copy__content .ts-footnotes {
+    color: #bdc1c6;
+}
+.ts-copy__content--left {
+    margin-left: 0;
+}
+.ts-copy__content--center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%}
+.ts-copy__content--center img {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+.ts-copy__color-block {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    min-height: 180px;
+}
+.ts-copy__color-block--blue {
+    background-color: #4285f4;
+}
+.ts-copy__color-block--green {
+    background-color: #34a853;
+}
+.ts-copy__color-block--grey {
+    background-color: #f8f9fa;
+}
+.ts-copy__color-block--height {
+    min-height: inherit;
+}
+@media all and (min-width: 768px) {
+  .ts-copy .ts-grid--alternate {
+    grid-row-gap: 40px;
+  }
+  .ts-copy__text {
+      margin: 0 16px 0 0;
+  }
+  .ts-copy__img:not(.ts-copy--flipped)+.ts-copy__text {
+      margin-left: 16px;
+  }
+  .ts-copy--right {
+      order: 2;
+  }
+  .ts-copy--one-column .ts-copy__text {
+      max-width: none;
+  }
+  .ts-copy--three-column .ts-copy__text {
+      max-width: 344px;
+  }
+  .ts-copy--40-80 .ts-copy__text p:first-child {
+      margin-top: 32px;
+  }
+  .ts-copy--color-block .ts-grid__col {
+      margin: 0;
+      min-height: 420px;
+  }
+  .ts-copy--color-block .ts-grid__col .ts-copy__text {
+      margin-bottom: 80px;
+      margin-top: 80px;
+  }
+}
+@media all and (min-width: 1024px) {
+    .ts-copy__icon-2up .ts-copy__icon-row {
+    flex-basis: 110px;
+}
+
 
   .background-servers {
     background: linear-gradient(#253238, #3A464B);
@@ -234,16 +388,12 @@ export const SharedStyles = css `
     border-bottom: 1px solid var(--border-grey);
   }
 
-  .ts-header-wrapper h1, .ts-header-wrapper h2 {
-    padding-bottom: 10px;
-  }
-
   .ts-content-wrapper {
     min-height: 100vh;
     background: var(--app-main-background-color);
     display: flex;
     flex-direction: column;
-    padding: 0 15px 0 15px; }
+    padding: 20px 24px 30px 24px; }
 
   .content {
     flex: 1;
@@ -267,7 +417,7 @@ export const SharedStyles = css `
 
   .ts-content-grid-box {
     min-height: 230px; 
-    text-align: center; }
+    text-align: left; }
 
   .ts-content-grid-box p, .ts-content-grid-box ul {
     max-width: 525px; 
@@ -332,12 +482,16 @@ export const SharedStyles = css `
   }
 
   ul.body-checks li {
-    background-image: url('https://cdn1-themesurgesonslt.netdna-ssl.com/images/icons/ts-check-purple.svg');
+    background-image: url('/images/icons/ts-check-purple.svg');
+    fill: var(--app-primary-color);
     background-repeat: no-repeat;
     line-height: 24px;
     padding: 5px 0 0 36px;
-    background-size: 22px 16px;
-    background-position: 0px 8px; }
+    background-position: 0px 4px; }
+
+  .ts-icon{
+    fill: var(--app-primary-color);
+  }
 
   .nav li h3 {
     font-size: 1.15rem;
@@ -424,7 +578,15 @@ export const SharedStyles = css `
     text-transform: uppercase;
   }
 
+  .ts-hero .content-set {
+    margin: 40px 0;
+  }
 
+
+
+  .ts-products-and-solutions .card-cta-image .ts-button__set {
+    margin-bottom: 24px;
+  }
 
   /* All screens larger than 460px */
 
@@ -440,6 +602,8 @@ export const SharedStyles = css `
 
     figure.img-right img {
       max-width: 100%;
+      margin-top: 28px;
+      margin-bottom: 20px;
     }
 
     h3 {
@@ -480,7 +644,6 @@ export const SharedStyles = css `
       min-height: 180px;
       padding: 50px 62px 46px 62px;
       text-align: left; 
-      border-bottom: 1px solid var(--border-grey);
     }
 
     .ts-pad-top-6 {
