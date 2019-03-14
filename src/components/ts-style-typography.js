@@ -4,25 +4,26 @@ import { css } from 'lit-element';
 
 export const TsTypographyStyle = css`
 /* Material Design Typography */
-#ts-site .ts-display1 {
-    font-size: 40px;
+#ts-site .ts-headline1 {
+    font-size: 36px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 48px;
     margin: 0;
 }
 @media all and (min-width: 600px) {
-  #ts-site .ts-display1 {
-      font-size: 72px;
+  #ts-site .ts-headline1 {
+      font-size: 48px;
       letter-spacing: -0.5px;
       line-height: 84px;
+      margin: 0;
   }
 }
-#ts-site .ts-display1 strong {
+#ts-site .ts-headline1 strong {
     color: var(--app-primary-color);;
     font-weight: inherit;
 }
-#ts-site .ts-display2 {
+#ts-site .ts-headline2 {
     font-size: 40px;
     font-weight: 400;
     letter-spacing: 0;
@@ -30,17 +31,17 @@ export const TsTypographyStyle = css`
     margin: 0;
 }
 @media all and (min-width: 600px) {
-  #ts-site .ts-display2 {
+  #ts-site .ts-headline2 {
       font-size: 64px;
       letter-spacing: -0.5px;
       line-height: 72px;
   }
 }
-#ts-site .ts-display2 strong {
+#ts-site .ts-headline2 strong {
     color: var(--app-primary-color);;
     font-weight: inherit;
 }
-#ts-site .ts-display3 {
+#ts-site .ts-headline3 {
     font-size: 36px;
     font-weight: 400;
     letter-spacing: 0;
@@ -48,14 +49,14 @@ export const TsTypographyStyle = css`
     margin: 0;
 }
 @media all and (min-width: 600px) {
-  #ts-site .ts-display3 {
+  #ts-site .ts-headline3 {
     font-size: 56px;
     letter-spacing: -0.5px;
     line-height: 66px;
   }
 }
 
-#ts-site .ts-display3 strong {
+#ts-site .ts-headline3 strong {
     color: var(--app-primary-color);;
     font-weight: inherit;
 }
@@ -66,6 +67,7 @@ export const TsTypographyStyle = css`
       font-weight: 400;
       letter-spacing: -0.5px;
       line-height: 58px;
+      margin: 0;
   }
 }
 #ts-site .ts-headline1 strong {
@@ -219,7 +221,6 @@ export const TsTypographyStyle = css`
     line-height: 1;
 }
 .ts-body-text, p {
-    color: #5f6368;
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
@@ -244,11 +245,11 @@ export const TsTypographyStyle = css`
     line-height: 18px;
 }
 .ts-link {
-    color: #1a73e8;
+    color: var(--app-primary-color);
     text-decoration: none;
 }
 .ts-link:visited {
-    color: #7b1fa2;
+    color: var(--app-primary-color);
 }
 .ts-link:focus, .ts-link:hover {
     text-decoration: underline;

@@ -28,12 +28,6 @@ export const TsHomePageStyle = css`
   padding: 0 0 24px;
 }
 
-.ts-hero {
-  padding-bottom: 20px;
-  padding-top: 40px;
-  position: relative;
-}
-
 .ts-hero__card-container {
   box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
 }
@@ -114,7 +108,7 @@ export const TsHomePageStyle = css`
 }
 
 .ts-home-sections > section {
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 .ts-section--reversed {
@@ -239,8 +233,8 @@ export const TsHomePageStyle = css`
 }
 
 .ts-home-sections .ts-section-customers__container {
-  margin-top: 60px;
-  background-color: var(--app-primary-color);
+  margin-top: 0px;
+  background-color: var(--app-section-even-color);
 }
 
 #ts-site .ts-section-customers__container .ts-section-header {
@@ -330,7 +324,7 @@ export const TsHomePageStyle = css`
 }
 
 .ts-section--security {
-  background-image: url(/images/home/security-bg.jpg);
+  background-image: url('/images/home/security-bg.jpg');
   background-position: 50% top;
   background-repeat: no-repeat;
   background-size: auto 30%;
@@ -469,7 +463,6 @@ export const TsHomePageStyle = css`
     height: 80%;
     position: absolute;
     top: 0;
-    width: 200%;
     z-index: -1;
   }
 

@@ -189,7 +189,7 @@ export const TsCard = css`
 }
 
 .ts-card__content--featured {
-  color: #1a73e8;
+  color: var(--app-primary-color);
   margin-bottom: 24px;
   margin-top: 24px
 }

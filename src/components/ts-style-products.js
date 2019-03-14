@@ -82,26 +82,26 @@ export const TsProductStyle = css`
     text-decoration: none;
 }
 .ts-products-and-solutions .ts-product-card__title i {
-    color: #1a73e8;
+    color: var(--app-primary-color);
     font-size: 18px;
     line-height: 30px;
     vertical-align: middle;
 }
 .ts-products-and-solutions .ts-product-card__title i:visited {
-    color: #7b1fa2;
+    color: var(--app-primary-color);
 }
 .ts-products-and-solutions .ts-product-card__title i:focus, .ts-products-and-solutions .ts-product-card__title i:hover {
     color: #174ea6;
 }
 .ts-products-and-solutions .ts-product-card__headline {
-    color: #1a73e8;
+    color: var(--app-primary-color);
     display: inline-block;
     font: 400 16px/30px "Roboto", Arial, sans-serif;
     margin-top: 22px;
     padding: 2px 0;
 }
 .ts-products-and-solutions .ts-product-card__headline:visited {
-    color: #7b1fa2;
+    color: var(--app-primary-color);
 }
 .ts-products-and-solutions .ts-product-card__headline:focus, .ts-products-and-solutions .ts-product-card__headline:hover {
     color: #174ea6;
@@ -155,7 +155,7 @@ export const TsProductStyle = css`
   }
 }
 .ts-products-and-solutions .card-cta-image__secondary-link {
-    color: #1a73e8;
+    color: var(--app-primary-color);
     display: inline-block;
     font: 500 16px/22px "Roboto", Arial, sans-serif;
     margin-left: 16px;
@@ -194,7 +194,7 @@ export const TsProductStyle = css`
     border-bottom-width: 0;
 }
 .ts-products-and-solutions .card-cta-image.blue {
-    background-color: #1a73e8;
+    background-color: var(--app-primary-color);
 }
 .ts-products-and-solutions .card-cta-image.blue, .ts-products-and-solutions .card-cta-image.blue .card-cta-image__heading {
     color: #fff;
@@ -244,19 +244,6 @@ export const TsProductStyle = css`
 .ts-products-and-solutions .ts-product-banner__link:active, .ts-products-and-solutions .ts-product-banner__link:focus, .ts-products-and-solutions .ts-product-banner__link:hover, .ts-products-and-solutions .ts-product-banner__link:visited {
     color: #fff;
 }
-.devsite-full-width-page .devsite-main-content, .devsite-landing-page .devsite-main-content, .devsite-products-page .devsite-main-content {
-    padding: 0 24px;
-}
-@media all and (min-width: 600px) {
-  .devsite-full-width-page .devsite-main-content, .devsite-landing-page .devsite-main-content, .devsite-products-page .devsite-main-content {
-    padding: 0 40px;
-  }
-}
-@media all and (min-width: 1024px) {
-  .devsite-full-width-page .devsite-main-content, .devsite-landing-page .devsite-main-content, .devsite-products-page .devsite-main-content {
-    padding: 0 80px;
-  }
-}
 .ts-hero__products-and-solutions {
     margin-bottom: 40px;
 }
@@ -276,7 +263,7 @@ export const TsProductStyle = css`
       padding-bottom: 0;
   }
 }
-.devsite-article-body .ts-product-card__title .material-icons {
+.ts-article-body .ts-product-card__title .material-icons {
     vertical-align: middle;
 }
 .ts-products-home-page .ts-inner-content {

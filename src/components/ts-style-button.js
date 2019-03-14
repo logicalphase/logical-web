@@ -98,7 +98,7 @@ export const TsButtonStyle = css`
       padding: 0;
   }
   .ts-button--flat:visited {
-      color: #7b1fa2;
+      color: var(--app-primary-color);
   }
   .ts-button--flat:focus, .ts-button--flat:hover {
       color: var(--app-primary-color);

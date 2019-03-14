@@ -4,7 +4,144 @@ import { css } from 'lit-element';
 
 export const TsLayoutStyle = css`
 
-.hypersite-main-content {
+.ts-main-content {
+    margin: 40px auto;
+    max-width: 1400px;
+    padding: 0 24px;
+    position: relative
+}
+
+@media screen and (min-width:1201px) {
+    .ts-has-apix .ts-main-content {
+        margin-right: 400px;
+        max-width: 1000px;
+        padding-right: 0
+    }
+}
+
+@media screen and (min-width:1401px) {
+    .ts-has-apix .ts-main-content {
+        margin-right: calc((100% - 1400px)/2 + 400px);
+        max-width: 1000px
+    }
+}
+
+.ts-full-width-page .ts-main-content,
+.ts-landing-page .ts-main-content,
+.ts-products-page .ts-main-content {
+    max-width: 1592px;
+    padding: 0 120px
+}
+
+.ts-article-inner,
+.ts-main-content {
+    min-height: calc(100vh - 582px)
+}
+
+.ts-header-no-upper-tabs .ts-article-inner,
+.ts-header-no-upper-tabs .ts-main-content {
+    min-height: calc(100vh - 526px)
+}
+
+.ts-header-no-lower-tabs .ts-article-inner,
+.ts-header-no-lower-tabs .ts-main-content {
+    min-height: calc(100vh - 562px)
+}
+
+.ts-header-no-upper-tabs.ts-header-no-lower-tabs .ts-article-inner,
+.ts-header-no-upper-tabs.ts-header-no-lower-tabs .ts-main-content {
+    min-height: calc(100vh - 478px)
+}
+
+.ts-home-page.ts-header-no-upper-tabs.ts-header-no-lower-tabs .ts-main-content {
+    min-height: calc(100vh - 710px)
+}
+
+.ts-404.ts-header-no-upper-tabs .ts-article-inner,
+.ts-404.ts-header-no-upper-tabs .ts-main-content,
+.ts-404.ts-header-no-lower-tabs .ts-article-inner,
+.ts-404.ts-header-no-lower-tabs .ts-main-content,
+.ts-404.ts-header-no-upper-tabs.ts-header-no-lower-tabs .ts-article-inner,
+.ts-404.ts-header-no-upper-tabs.ts-header-no-lower-tabs .ts-main-content {
+    min-height: calc(100vh - 356px)
+}
+
+.ts-site-mask,
+.ui-widget-overlay {
+    background: #212121;
+    cursor: pointer;
+    display: none;
+    height: 100vh;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10011
+}
+
+.ui-widget-overlay {
+    display: block
+}
+
+.ts-article {
+    margin-left: 320px;
+    position: relative;
+    width: calc(100% - 496px)
+}
+
+@media screen and (min-width:1201px) {
+    .ts-has-apix .ts-article {
+        width: calc(100% - 272px);
+        margin-left: 256px
+    }
+}
+
+.ts-article-inner {
+    float: left;
+    width: 100%
+}
+
+@media screen and (max-width:1200px) {
+    .ts-section-nav+.ts-article,
+    .ts-section-nav+.ts-page-nav+.ts-article {
+        width: calc(100% - 296px)
+    }
+    .ts-article {
+        width: calc(100% - 496px)
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .ts-full-width-page .ts-main-content,
+    .ts-landing-page .ts-main-content,
+    .ts-products-page .ts-main-content {
+        padding: 0 80px
+    }
+    .ts-section-nav+.ts-article,
+    .ts-section-nav+.ts-page-nav+.ts-article {
+        margin-left: 320px
+    }
+    .ts-article {
+        margin: 0;
+        width: 100%
+    }
+}
+
+@media screen and (max-width:720px) {
+    .ts-full-width-page .ts-main-content,
+    .ts-landing-page .ts-main-content,
+    .ts-products-page .ts-main-content,
+    .ts-main-content {
+        padding: 0 16px
+    }
+    .ts-section-nav+.ts-article,
+    .ts-section-nav+.ts-page-nav+.ts-article {
+        margin: 0;
+        width: 100%
+    }
+}
+
+.hypersite-main-content  {
   padding: 0 24px;
 }
 
@@ -19,6 +156,19 @@ export const TsLayoutStyle = css`
       padding: 0 80px;
   }
 }
+
+.hypersite-full-width-page .hypersite-main-content {
+    margin-bottom: 0
+}
+
+.hypersite-full-width-page .hypersite-main-content {
+    margin: 0 auto
+}
+
+.hypersite-full-width-page .hypersite-banner {
+    margin-top: 0
+}
+
 
 @media all and (min-width: 1024px) {
   .ts-hero img.ts-hero__image--scaled {
@@ -96,8 +246,8 @@ export const TsLayoutStyle = css`
 .ts-full-bleed,
 .ts-full-bleed--bg,
 .ts-full-bleed--constrained {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw)
+  margin-left: calc(50% - 49.4vw);
+  margin-right: calc(50% - 49.4vw)
 }
 
 @media all and (min-width: 1024px) {
@@ -111,12 +261,26 @@ export const TsLayoutStyle = css`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%)
+  padding-left: calc(50vw - 49.4%);
+  padding-right: calc(50vw - 49.4%)
 }
 
 .ts-full-bleed p {
   color: inherit
+}
+
+.ts-full-width-page .ts-main-content, .ts-landing-page .ts-main-content, .ts-products-page .ts-main-content {
+    padding: 0 24px;
+}
+@media all and (min-width: 600px) {
+  .ts-full-width-page .ts-main-content, .ts-landing-page .ts-main-content, .ts-products-page .ts-main-content {
+    padding: 0 40px;
+  }
+}
+@media all and (min-width: 1024px) {
+  .ts-full-width-page .ts-main-content, .ts-landing-page .ts-main-content, .ts-products-page .ts-main-content {
+    padding: 0 80px;
+  }
 }
 
 
