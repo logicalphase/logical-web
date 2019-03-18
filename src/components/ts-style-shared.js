@@ -162,7 +162,6 @@ export const SharedStyles = css `
   .background-servers {
     background: linear-gradient(#253238, #3A464B);
     background-color: #253238;
-    background-position: fixed;
     color: var(--app-light-text-color); }
 
   .ts-max-width-standard {

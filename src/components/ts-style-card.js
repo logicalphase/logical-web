@@ -389,6 +389,5 @@ export const TsCard = css`
     .ts-card--product .ts-card__heading, .ts-card__arrow{
       padding-top: 24px;
     }
-
   }
 `;

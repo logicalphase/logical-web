@@ -1,15 +1,11 @@
-import { HP_HOST, CDN_HOST_URL } from "./config";
+import { HP_HOST } from "./config";
 
 import { html, css } from "lit-element";
 import { PageViewElement } from "./page-view-element.js";
 import { updateMetadata } from "pwa-helpers/metadata.js";
 
-import "./ts-sidebar-nav";
-import "./ts-header";
-
 import { TsLayoutStyle } from "./ts-style-layout";
 import { TsButtonStyle } from "./ts-style-button";
-import { TsElevationStyle } from "./ts-style-elevation";
 import { TsGridStyle } from "./ts-style-grid";
 import { TsTypographyStyle } from "./ts-style-typography";
 import { TsCard } from "./ts-style-card";
@@ -196,7 +192,7 @@ class TSHome extends PageViewElement {
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">PWA Design</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-pwa-62x-62.svg" alt="Progressive web application design">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="https://${HP_HOST}/design/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}design/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="progressive-design">Progressive Design</h2>
                       </a>
                     </header>
@@ -215,7 +211,7 @@ class TSHome extends PageViewElement {
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">Performance</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Pagespeed optimization service">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="https://${HP_HOST}/pagespeed/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="workloadMigration" track-metadata-position="body">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}pagespeed/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="workloadMigration" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="pagespeed-optimization">PageSpeed Optimization</h2>
                       </a>
                     </header>
@@ -234,7 +230,7 @@ class TSHome extends PageViewElement {
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">Repairs and Restoration</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-ambulance-62x62.svg" alt="WordPress repair and restoration">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="https://${HP_HOST}/emergency/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="emergencyResponse" track-metadata-position="body">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}emergency/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="emergencyResponse" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">Emergency Repairs</h2>
                       </a>
                     </header>
@@ -253,7 +249,7 @@ class TSHome extends PageViewElement {
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">Security</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-security-62x62.svg" alt="In depth security program">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="https://${HP_HOST}/security/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="securityResponse" track-metadata-position="body">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}security/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="securityResponse" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="security-response">Security Response Team</h2>
                       </a>
                     </header>
@@ -272,7 +268,7 @@ class TSHome extends PageViewElement {
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">Migration Services</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-migrations-62x62.svg" alt="WordPress migration">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="https://${HP_HOST}/migrations/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="wordpressRelocation" track-metadata-position="body">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}migrations/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="wordpressRelocation" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">WordPress Relocation</h2>
                       </a>
                     </header>

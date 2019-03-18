@@ -100,7 +100,6 @@ export const TsHomePageStyle = css`
   }
 
   .ts-home-sections .ts-section-customers__container {
-    margin-top: px;
     background-color: var(--app-section-even-color);
   }
 
