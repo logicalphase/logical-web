@@ -66,6 +66,10 @@ class TSBlog extends connect(store)(PageViewElement) {
         margin: 0 auto;
         padding-top: 34px; }
 
+      .sticky {
+        display:block;
+      }
+
       .ts-content-grid-box {
         max-width: 100%;
       }

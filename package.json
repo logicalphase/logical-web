@@ -29,7 +29,7 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "systemjs": "^3.0.1"
+    "systemjs": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -40,7 +40,7 @@
     "babel-plugin-template-html-minifier": "^2.2.1",
     "chai": "^4.2.0",
     "del": "^4.0.0",
-    "eslint": "^5.15.1",
+    "eslint": "^5.15.2",
     "eslint-config-google": "^0.12.0",
     "eslint-plugin-lit": "^0.6.0",
     "fs": "0.0.1-security",
@@ -50,8 +50,8 @@
     "http-server": "^0.11.1",
     "mocha": "^6.0.2",
     "pixelmatch": "^4.0.2",
-    "polymer-cli": "^1.9.6",
-    "polyserve": "^0.27.14",
+    "polymer-cli": "^1.9.7",
+    "polyserve": "^0.27.15",
     "prpl-server": "^1.4.0",
     "puppeteer": "^1.13.0",
     "rimraf": "^2.6.3",

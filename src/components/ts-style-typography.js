@@ -4,190 +4,225 @@ import { css } from 'lit-element';
 
 export const TsTypographyStyle = css`
 /* Material Design Typography */
-#ts-site .ts-headline1 {
-    font-size: 36px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 48px;
-    margin: 0;
-}
-@media all and (min-width: 600px) {
-  #ts-site .ts-headline1 {
-      font-size: 48px;
-      letter-spacing: -0.5px;
-      line-height: 84px;
-      margin: 0;
-  }
-}
-#ts-site .ts-headline1 strong {
-    color: var(--app-primary-color);;
-    font-weight: inherit;
-}
-#ts-site .ts-headline2 {
+
+#ts-site .ts-display1 {
     font-size: 40px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 48px;
-    margin: 0;
+    margin: 0
 }
+
 @media all and (min-width: 600px) {
-  #ts-site .ts-headline2 {
-      font-size: 64px;
-      letter-spacing: -0.5px;
-      line-height: 72px;
-  }
+    #ts-site .ts-display1 {
+        font-size: 72px;
+        letter-spacing: -0.5px;
+        line-height: 84px
+    }
 }
-#ts-site .ts-headline2 strong {
+
+#ts-site .ts-display1 strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
-#ts-site .ts-headline3 {
+
+#ts-site .ts-display2 {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 48px;
+    margin: 0
+}
+
+@media all and (min-width: 600px) {
+    #ts-site .ts-display2 {
+        font-size: 64px;
+        letter-spacing: -0.5px;
+        line-height: 72px
+    }
+}
+
+#ts-site .ts-display2 strong {
+    color: var(--app-primary-color);;
+    font-weight: inherit
+}
+
+#ts-site .ts-display3 {
     font-size: 36px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 44px;
-    margin: 0;
-}
-@media all and (min-width: 600px) {
-  #ts-site .ts-headline3 {
-    font-size: 56px;
-    letter-spacing: -0.5px;
-    line-height: 66px;
-  }
+    margin: 24px 0 0 -4px;
 }
 
-#ts-site .ts-headline3 strong {
+@media all and (min-width: 600px) {
+    #ts-site .ts-display3 {
+        font-size: 56px;
+        letter-spacing: -0.5px;
+        line-height: 66px
+    }
+}
+
+#ts-site .ts-display3 strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
+}
+
+#ts-site .ts-headline1 {
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 44px;
+    margin: 0
 }
 
 @media all and (min-width: 600px) {
-  #ts-site .ts-headline1 {
-      font-size: 48px;
-      font-weight: 400;
-      letter-spacing: -0.5px;
-      line-height: 58px;
-      margin: 0;
-  }
+    #ts-site .ts-headline1 {
+        font-size: 48px;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+        line-height: 58px
+    }
 }
+
 #ts-site .ts-headline1 strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
+
 #ts-site .ts-headline2 {
     font-size: 32px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 40px;
-    margin: 0;
+    margin: 0
 }
+
 @media all and (min-width: 600px) {
-  #ts-site .ts-headline2 {
-      font-size: 40px;
-      letter-spacing: -0.5px;
-      line-height: 52px;
-  }
+    #ts-site .ts-headline2 {
+        font-size: 40px;
+        letter-spacing: -0.5px;
+        line-height: 52px
+    }
 }
+
 #ts-site .ts-headline2 strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
+
 #ts-site .ts-headline3 {
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 32px;
-    margin: 0;
+    margin: 0
 }
+
 @media all and (min-width: 600px) {
-  #ts-site .ts-headline3 {
-      font-size: 32px;
-      line-height: 40px;
-  }
+    #ts-site .ts-headline3 {
+        font-size: 32px;
+        line-height: 40px
+    }
 }
+
 #ts-site .ts-headline3 strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
+
 #ts-site .ts-headline4 {
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 30px;
-    margin: 0;
+    margin: 24px 0 0 0;
+    color: #5f6368;
 }
+
 @media all and (min-width: 600px) {
-  #ts-site .ts-headline4 {
-    font-size: 22px;
-  }
+    #ts-site .ts-headline4 {
+        font-size: 22px
+    }
 }
+
 #ts-site .ts-headline4 strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
+
 #ts-site .ts-headline4 .ts-superscript {
     font-size: 10px;
-    line-height: 1;
+    line-height: 1
 }
+
 #ts-site .ts-quote-text {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0;
-    line-height: 30px;
+    line-height: 30px
 }
+
 @media all and (min-width: 600px) {
-  #ts-site .ts-quote-text {
-    color: #202124;
-    font-size: 30px;
-    line-height: 40px;
-  }
+    #ts-site .ts-quote-text {
+        color: #202124;
+        font-size: 30px;
+        line-height: 40px
+    }
 }
+
 #ts-site .ts-quote-text strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
+
 #ts-site .ts-eyebrow {
     color: #5f6368;
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1;
-    margin: 0;
     overflow: visible;
-    text-transform: uppercase;
+    text-transform: uppercase
 }
+
 #ts-site .ts-eyebrow strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
+
 #ts-site .ts-eyebrow--large {
-    font-family: Roboto Mono,  monospace;
+    font-family: Roboto Mono, monospace;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1;
     margin: 0;
-    overflow: visible;
+    overflow: visible
 }
+
 #ts-site .ts-eyebrow--large strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
+
 #ts-site .ts-subhead {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0;
-    line-height: 26px;
+    line-height: 26px
 }
+
 @media all and (min-width: 600px) {
-  #ts-site .ts-subhead {
-    font-size: 18px;
-    line-height: 30px;
-  }
+    #ts-site .ts-subhead {
+        font-size: 18px;
+        line-height: 30px
+    }
 }
+
 #ts-site .ts-subhead strong {
     color: var(--app-primary-color);;
-    font-weight: inherit;
+    font-weight: inherit
 }
 .ts-superscript {
     color: #5f6368;
@@ -255,11 +290,11 @@ export const TsTypographyStyle = css`
     text-decoration: underline;
 }
 .ts-link:hover {
-    color: #174ea6;
+    color: var(--app-primary-hover-color);
 }
 .ts-link:focus {
     background-color: rgba(32, 33, 36, .05);
-    color: #174ea6;
+    color: var(--app-primary-hover-color);
     outline: 4px solid rgba(32, 33, 36, .05);
 }
 .ts-link--reversed {
