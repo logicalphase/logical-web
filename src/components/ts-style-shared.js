@@ -61,7 +61,7 @@ export const SharedStyles = css `
   }
 
   section {
-    margin: 36px 0 0 0; 
+    margin: 24px 0 0 0; 
   }
 
   th {
@@ -158,7 +158,7 @@ export const SharedStyles = css `
   /* Classes - Section Layout */
 
   .ts-section {
-      padding: 80px 0;
+      padding: 42px 0;
   }
   .ts-section--border {
       border-top: 1px solid #dadce0;
@@ -276,6 +276,19 @@ export const SharedStyles = css `
 
   .ts-hero .content-set {
     margin: 50px 0 40px 0;
+    padding-bottom: 26px;
+  }
+
+  .ts-section--border {
+    margin-top: 32px;
+  }
+
+  .ts-section__header, .ts-section__spacer {
+    margin-bottom: 26px;
+  }
+
+  .ts-content-grid-image {
+    padding-bottom: 24px;
   }
 
   .ts-products-and-solutions 
@@ -326,7 +339,11 @@ export const SharedStyles = css `
       flex: 1; }  
 
     section {
-      margin: 102px 0 0 0; 
+      margin: 62px 0 0 0; 
+    }
+
+    .ts-section {
+      padding: 40px 0;
     }
   }
 

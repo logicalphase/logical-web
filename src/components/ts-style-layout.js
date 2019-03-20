@@ -23,6 +23,10 @@ export const TsLayoutStyle = css`
     text-align: right
 }
 
+.ts-section {
+  padding: 42px 0px;
+}
+
 @media screen and (min-width:1201px) {
     .ts-has-apix .ts-main-content {
         margin-right: 400px;

@@ -28,6 +28,7 @@ class TSDesign extends PageViewElement {
         display: block;
         padding: 0px;
       }
+
       /* Smaller than 460 */
 
       .hero {
@@ -35,6 +36,8 @@ class TSDesign extends PageViewElement {
         background-size: contain;
         background-position: center center;
       }
+
+
       @media (min-width: 460px) {
         h3 {
         padding-top: 20px; }
@@ -42,13 +45,13 @@ class TSDesign extends PageViewElement {
         .hero {
           background-position: 97% center;
         }
-        .solution-body-image {
-          max-width: 356px;
-          height: auto;
-        }
         section.ts-copy {
           margin: 0;
         }
+        .ts-grid-row-start {
+          grid-row-start: 1;
+        }
+
       }
 
         @media (max-width: 800px) {
@@ -87,19 +90,27 @@ class TSDesign extends PageViewElement {
             <div class="ts-section__spacer">
               <section class="ts-copy">
                 <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center">
-                  <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset" style="grid-row-start: 1;">
-                    <img src="/images/content/ts-pwa-design-200x200-opt.svg" srcset="/images/content/ts-pwa-design-200x200-opt.svg 2x" alt="Containerize On Prem Applications" />
+                  <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
+                    <img class="ts-content-grid-image" src="/images/content/ts-pwa-design-200x200-opt.svg" alt="Containerize On Prem Applications" />
                   </div>
-                  <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large" style="grid-row-start: 1;">
-                    <h3 class="ts-headline3" id="containerize-on-premises-applications-and-be-ts-ready">Engaging Experiences Regardless of Screen Size</h3>
+                  <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
+                    <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Engaging Experiences Regardless of Screen Size</h3>
                     <p>You've invested a great deal of time and money into creating products or services that amaze your customers. Finally, a WordPress web site worthy of your enterprise and your dreams. We leverage what's best about WordPress and combine it with a true progressive web application (PWA) frontend.</p>
-                    <p class="center">Progressive Web Applications are:</p>
-                    <ul class="body-checks">
-                      <li><span>Reliable</span> - Load instantly even in spotty internet conditions</li>
-                      <li><span>Smooth</span> - Quick smooth transitions and animations</li>
-                      <li><span>Engaging</span> - A natural, inviting, immersive user experience</li>
-                      <li><span>Secure</span> - Protected with SSL HTTPS encryption</li>
-                    </ul>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="ts-section ts-section--border">
+            <div class="ts-section__spacer">
+              <section class="ts-copy">
+                <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center">
+                  <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
+                    <img src="/images/content/ts-pwa-conversions-200x200-opt.svg" alt="Increased site traffic and conversions" />
+                  </div>
+                  <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
+                    <h3 class="ts-headline3" id="hyperpress-increases-traffic-conversions">HyperPress Increases Traffic and Conversions</h3>
+                    <p>We breath life into online vision. We create high-quality Progressive Web Applications using the same tools Google uses to build theirs, including <a href="https://www.polymer-project.org/">Polymer</a>, <a href="https://material.io/">Material Design</a>, and Golang. We also leverage <a href="https://wordpress.org">WordPress</a> REST API to build remarkable, reliable, and secure web experiences..</p>
                   </div>
                 </div>
               </section>
@@ -107,9 +118,9 @@ class TSDesign extends PageViewElement {
           </div>
           <div class="ts-section ts-section--border">
             <div class="ts-section__header ts-text-center ts-grid">
-            <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
-            <h2 class="ts-headline3" id="features">Progressive Web Applications Features</h2>
-            </div>
+              <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
+                <h2 class="ts-headline3" id="features">HyperPress Features</h2>
+              </div>
             </div>
             <section class="ts-copy">
               <div class="ts-grid--alternate ts-copy__inner ts-copy--two-column">
@@ -131,28 +142,6 @@ class TSDesign extends PageViewElement {
                 </div>
               </div>
             </section>
-          </div>
-          <div class="ts-section ts-section--border">
-            <div class="ts-section__spacer">
-              <section class="ts-copy">
-                <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center">
-                  <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset" style="grid-row-start: 1;">
-                    <img src="/images/content/ts-pwa-design-200x200-opt.svg" srcset="/images/content/ts-pwa-design-200x200-opt.svg 2x" alt="Containerize On Prem Applications" />
-                  </div>
-                  <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large" style="grid-row-start: 1;">
-                    <h3 class="ts-headline3" id="containerize-on-premises-applications-and-be-ts-ready">Engaging Experiences Regardless of Screen Size</h3>
-                    <p>You've invested a great deal of time and money into creating products or services that amaze your customers. Finally, a WordPress web site worthy of your enterprise and your dreams. We leverage what's best about WordPress and combine it with a true progressive web application (PWA) frontend.</p>
-                    <p class="center">Progressive Web Applications are:</p>
-                    <ul class="body-checks">
-                      <li><span>Reliable</span> - Load instantly even in spotty internet conditions</li>
-                      <li><span>Smooth</span> - Quick smooth transitions and animations</li>
-                      <li><span>Engaging</span> - A natural, inviting, immersive user experience</li>
-                      <li><span>Secure</span> - Protected with SSL HTTPS encryption</li>
-                    </ul>
-                  </div>
-                </div>
-              </section>
-            </div>
           </div>
         </article>
       </div>
