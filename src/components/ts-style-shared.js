@@ -141,6 +141,20 @@ export const SharedStyles = css `
     max-width    : 1024px;
   }
 
+  .sidebar {
+    background: var(--app-section-even-color); }
+
+  .sidebar a, .sidebar a:hover {
+    border-bottom: none;
+    font-weight: normal;
+  }
+
+  .sidebar-selected {
+    background: var(--app-nav-background);
+    color: var(--app-primary-color);
+    text-decoration:none; 
+    border-bottom: none; }
+
   /* Classes - Section Layout */
 
   .ts-section {
@@ -261,7 +275,7 @@ export const SharedStyles = css `
     text-decoration: none; }
 
   .ts-hero .content-set {
-    margin: 80px 0 40px 0;
+    margin: 50px 0 40px 0;
   }
 
   .ts-products-and-solutions 
@@ -287,6 +301,10 @@ export const SharedStyles = css `
 
     ul.body-checks {
       padding: 0 5px; 
+    }
+
+    .ts-hero .content-set {
+      margin: 80px 0 40px 0;
     }
 
     .ts-grid-wrapper-standard {

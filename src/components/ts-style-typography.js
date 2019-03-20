@@ -5,6 +5,15 @@ import { css } from 'lit-element';
 export const TsTypographyStyle = css`
 /* Material Design Typography */
 
+.paper-font-light {
+    font-weight: 300 !important; }
+
+.paper-font-medium {
+    font-weight: 400; }
+
+.paper-font-semibold {
+    font-weight: 500; }
+
 #ts-site .ts-display1 {
     font-size: 40px;
     font-weight: 400;

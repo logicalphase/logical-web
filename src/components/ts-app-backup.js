@@ -1,22 +1,23 @@
 import { LitElement, html, css } from 'lit-element';
+
 import { setPassiveTouchGestures } from "@polymer/polymer/lib/utils/settings.js";
+
+import "@polymer/app-layout/app-drawer/app-drawer";
+import "@polymer/app-layout/app-scroll-effects/effects/waterfall";
+import "@polymer/app-layout/app-header/app-header";
+import "@polymer/app-layout/app-toolbar/app-toolbar";
+
+import "./ts-home.js";
+import "./snack-bar.js";
 
 import { connect } from "pwa-helpers/connect-mixin";
 import { installRouter } from "pwa-helpers/router";
 import { installOfflineWatcher } from "pwa-helpers/network";
 import { installMediaQueryWatcher } from "pwa-helpers/media-query";
 import { updateMetadata } from "pwa-helpers/metadata";
-
 import { menuIcon } from "./ts-icons.js";
+
 import { store } from "../store.js";
-
-import "./ts-home.js";
-import "./snack-bar.js";
-
-import "@polymer/app-layout/app-drawer/app-drawer";
-import "@polymer/app-layout/app-scroll-effects/effects/waterfall";
-import "@polymer/app-layout/app-header/app-header";
-import "@polymer/app-layout/app-toolbar/app-toolbar";
 
 import {
   navigate,
@@ -92,8 +93,15 @@ class TSApp extends connect(store)(LitElement) {
         height: 46px;
       }
 
+      /* We need to make sure when drawer is open
+      it covers our app header. Otherwise there's
+      menu button that is disabled */
+      #drawer {
+        z-index: 200;
+      }
+
       .masthead {
-        background-color: var(--app-main-background-color);
+        background-color: var(--app-light-text-color);
         padding: 12px 8px;
         height: inherit;
         align-items: center;
@@ -141,9 +149,67 @@ class TSApp extends connect(store)(LitElement) {
         border-bottom: 2px solid var(--app-primary-color);
       }
 
+      .button {
+        border-radius: 2px;
+        color: var(--app-light-text-color);
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        line-height: 20px;
+        min-width: 100px;
+        padding: 0 20px;
+        margin-left: 10px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: box-shadow 0.3s, background-color 0.3s, color 0.3s,
+          transform 0.3s;
+        will-change: background-color;
+      }
+
       .cta-header {
         font-size: 14px;
         margin-right: 24px;
+      }
+
+      .button-secondary-cta,
+      .button-primary-cta {
+        line-height: 30px;
+        max-height: 30px;
+      }
+
+      .chip-button {
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--app-primary-color) !important;
+      }
+
+      .button.button-primary-cta {
+        background: transparent;
+        border: 2px solid var(--app-primary-color);
+        color: var(--app-primary-color);
+      }
+
+      .button.button-secondary-cta {
+        background: var(--app-primary-color);
+        border: 2px solid var(--app-primary-color);
+        color: var(--app-light-text-color);
+      }
+
+      .button.button-primary-cta:hover,
+      .button.button-primary-cta:active {
+        background: var(--app-nav-background);
+      }
+
+      .button.button-secondary-cta:hover,
+      .button.button-secondary-cta:active {
+        color: var(--app-light-text-color);
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+          0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 18px 0px rgba(0, 0, 0, 0.12);
       }
 
       .toolbar-top {
@@ -154,11 +220,9 @@ class TSApp extends connect(store)(LitElement) {
         font-family: "Roboto";
         text-transform: lowercase;
         font-size: 24px;
-        /* 
-          In the narrow layout, the toolbar is offset by the width of the
-          drawer button, and the text looks not centered. Add a padding to
-          match that button 
-        */
+        /* In the narrow layout, the toolbar is offset by the width of the
+      drawer button, and the text looks not centered. Add a padding to
+      match that button */
         padding-right: 44px;
       }
 
@@ -202,13 +266,39 @@ class TSApp extends connect(store)(LitElement) {
         margin-right: 10px;
       }
 
-      /* 
-        We need to make sure when drawer is open
-        it covers our app header. Otherwise there's
-        menu button that is disabled 
-      */
-      #drawer {
-        z-index: 200;
+      .back-btn,
+      .signin-btn {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        box-sizing: border-box;
+        background: none;
+        border: none;
+        fill: var(--app-header-text-color);
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .back-btn {
+        padding-left: 34px;
+        width: 200px;
+        vertical-align: text-bottom;
+      }
+
+      .signin-btn {
+        padding: 2px;
+        visibility: hidden;
+      }
+
+      .signin-btn[visible] {
+        visibility: visible;
+      }
+
+      .signin-btn > img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
       }
 
       #drawer app-toolbar {
@@ -255,15 +345,15 @@ class TSApp extends connect(store)(LitElement) {
         display: block;
       }
 
-      .hypersite-footer-linkboxes-all-backup,
-      .hypersite-footer-linkbox-cloud {
+      .devsite-footer-linkboxes-all-backup,
+      .devsite-footer-linkbox-cloud {
         background-color: var(--footer-background-grey);
       }
-      .hypersite-footer-linkboxes-all-backup {
+      .devsite-footer-linkboxes-all-backup {
         background: var(--footer-background-grey);
       }
 
-      .hypersite-footer-linkboxes > nav::before {
+      .devsite-footer-linkboxes > nav::before {
         background: var(--footer-background-grey);
         border-bottom: solid 1px var(--form-border-color);
         color: var(--footer-background-grey);
@@ -279,52 +369,52 @@ class TSApp extends connect(store)(LitElement) {
         -webkit-box-sizing: inherit;
         box-sizing: inherit;
       }
-      .hypersite-nav {
+      .devsite-nav {
         font-size: 13px;
       }
 
-      .hypersite-site-name {
+      .devsite-site-name {
           display: none;
       }
 
-      .hypersite-utility-footer-nav {
+      .devsite-utility-footer-nav {
         color: var(--app-light-text-color);
         overflow: auto;
         padding: 10px 24px;
       }
 
-      .hypersite-full-site-width,
-      .hypersite-toast-fill {
+      .devsite-full-site-width,
+      .devsite-toast-fill {
         margin: 0 auto;
         max-width: 1400px;
         color: var(--footer-text);
       }
 
-      .hypersite-footer-linkboxes-all-backup,
-      .hypersite-footer-linkbox-cloud {
+      .devsite-footer-linkboxes-all-backup,
+      .devsite-footer-linkbox-cloud {
         background-color: var(--footer-background-grey) !important;
       }
 
-      .hypersite-footer-linkboxes-all-backup {
+      .devsite-footer-linkboxes-all-backup {
         background: var(--footer-background-grey);
       }
 
-      .hypersite-footer-linkboxes {
+      .devsite-footer-linkboxes {
         background: #263238;
         font: 14px/16px Roboto, sans-serif;
       }
 
-      .hypersite-utility-footer {
+      .devsite-utility-footer {
         background: var(--footer-background-secondary-grey);
         color: var(--footer-text);
         text-align: center;
       }
 
-      .hypersite-utility-footer-nav-left {
+      .devsite-utility-footer-nav-left {
         float: left;
       }
 
-      .hypersite-utility-footer-link+.hypersite-utility-footer-link::before {
+      .devsite-utility-footer-link+.devsite-utility-footer-link::before {
         content: "|";
         padding-left: 6px;
         padding-right: 8px;
@@ -333,15 +423,15 @@ class TSApp extends connect(store)(LitElement) {
         height: inherit;
       }
 
-      .hypersite-utility-footer-link {
+      .devsite-utility-footer-link {
         color: var(--app-light-text-color);
         font-size: 14px;
         font-weight: 400;
         text-decoration: none;
       }
 
-      .hypersite-utility-footer-links,
-      .hypersite-utility-footer-newsletter-signup-text {
+      .devsite-utility-footer-links,
+      .devsite-utility-footer-newsletter-signup-text {
         font-weight: 500;
         margin-right: 16px;
       }
@@ -413,8 +503,8 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       /* 
-        Wide layout: when the viewport width is bigger than 460px, layout
-        changes to a wide layout. 
+          Wide layout: when the viewport width is bigger than 460px, layout
+          changes to a wide layout. 
       */
       @media (min-width: 460px) {
         .toolbar-list {
@@ -490,9 +580,10 @@ class TSApp extends connect(store)(LitElement) {
           <app-toolbar class="masthead">
             <a href="/" alt="${appTitle} home">
               <img rel="dns-prefetch" class="ts-brand-site-logo" src="https://cdn1-themesurgesonslt.netdna-ssl.com/images/hyperpress-logo-254x46.png" alt="${appTitle}">  
-            </a>           
+            </a>
+            
             <div class="ts-title" main-title>
-              <span class="hypersite-site-name">${appTitle}</span>
+              <span class="devsite-site-name">${appTitle}</span>
             </div>
             <div class="cta-header toolbar-list">
               <form style="float:right">
@@ -551,15 +642,15 @@ class TSApp extends connect(store)(LitElement) {
       </main>
 
       <!-- Footer content -->
-      <footer class="hypersite-footer-linkboxes nocontent hypersite-footer-linkboxes-all-backup">
-        <nav class="hypersite-full-site-width"></nav>
+      <footer class="devsite-footer-linkboxes nocontent devsite-footer-linkboxes-all-backup">
+        <nav class="devsite-full-site-width"></nav>
       </footer>
-      <footer class="hypersite-utility-footer">
-        <nav class="hypersite-utility-footer-nav hypersite-nav hypersite-full-site-width">
-          <div class="hypersite-utility-footer-nav-left">
-            <span class="hypersite-footer-links">
-              <a class="hypersite-utility-footer-link gc-analytics-event" href="/site-terms">Site Terms</a>
-              <a class="hypersite-utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
+      <footer class="devsite-utility-footer">
+        <nav class="devsite-utility-footer-nav devsite-nav devsite-full-site-width">
+          <div class="devsite-utility-footer-nav-left">
+            <span class="devsite-footer-links">
+              <a class="devsite-utility-footer-link gc-analytics-event" href="/site-terms">Site Terms</a>
+              <a class="devsite-utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
             </span>
           </div>
         </nav>

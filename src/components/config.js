@@ -10,8 +10,6 @@
   external providers
 */
 
-
-
 export const HP_HOST = window.location.href;
 export const WP_REST_API_HOST = 'api.hyperpress.app';
 export const WP_REST_PATH = 'wp-json/wp/v2';
