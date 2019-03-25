@@ -32,7 +32,7 @@ class TSPageSpeed extends PageViewElement {
       }
 
       .hero {
-        background: var(--app-light-text-color) url('/images/header/ts-pagespeed-header-opt.svg') no-repeat;
+        background: var(--app-reverse-text-color) url('/images/header/ts-pagespeed-header-opt.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }

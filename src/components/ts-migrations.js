@@ -31,7 +31,7 @@ class TSMigrations extends PageViewElement {
         padding-top: 20px; }
 
       .hero {
-        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-migrations-header.svg') no-repeat;
+        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-migrations-header.svg') no-repeat;
         background-size: 380px;
         background-position: center top;
       }

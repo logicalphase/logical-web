@@ -31,7 +31,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-display1 strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -52,7 +52,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-display2 strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -73,7 +73,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-display3 strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -95,7 +95,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-headline1 strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -116,7 +116,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-headline2 strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -136,7 +136,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-headline3 strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -146,7 +146,7 @@ export const TsTypographyStyle = css`
     letter-spacing: 0;
     line-height: 30px;
     margin: 24px 0 0 0;
-    color: #5f6368;
+    color: var(--app-primary-text-color);
 }
 
 @media all and (min-width: 600px) {
@@ -156,7 +156,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-headline4 strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -181,7 +181,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-quote-text strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -196,7 +196,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-eyebrow strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -211,7 +211,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-eyebrow--large strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 
@@ -230,7 +230,7 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-subhead strong {
-    color: var(--app-primary-color);;
+    color: var(--app-primary-color);
     font-weight: inherit
 }
 .ts-superscript {

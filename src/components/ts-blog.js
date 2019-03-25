@@ -50,14 +50,14 @@ class TSBlog extends connect(store)(PageViewElement) {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-design-header-opt.svg') no-repeat;
+        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-design-header-opt.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
 
       .ts-content-wrapper {
         padding: 0px 24px 0px 5px; 
-        background: var(--section-background-light-grey);
+        background: var(--app-primary-section-background-color);
       }
 
       .columns {
@@ -103,14 +103,14 @@ class TSBlog extends connect(store)(PageViewElement) {
       }
 
       .sidebar {
-        background-color: var(--app-light-text-color);
+        background-color: var(--app-reverse-text-color);
         width: 210px;
         margin-left: 34px;
         margin-top: 5px;
       }
 
       .nav li h3 {
-        color: var(--app-dark-text-color);
+        color: var(--app-primary-text-color);
         font-size: 16px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -178,7 +178,7 @@ class TSBlog extends connect(store)(PageViewElement) {
         }
         .ts-content-wrapper {
           padding: 0; 
-          background: var(--section-background-light-grey);
+          background: var(--app-primary-section-background-color);
         }
       }
       `

@@ -19,7 +19,7 @@ class TSItem extends LitElement {
         font-size: 1.14rem;
         font-weight: 400;
         margin: 10px 0;
-        color: var(--app-dark-text-color);
+        color: var(--app-primary-text-color);
       }
 
       p {
@@ -29,7 +29,7 @@ class TSItem extends LitElement {
 
       .ts-read-more {
         padding: 13px 24px;
-        background-color: var(--app-light-text-color);
+        background-color: var(--app-reverse-text-color);
       }
       .ts-read-more a {
         color: var(--app-primary-color);
@@ -69,7 +69,7 @@ class TSItem extends LitElement {
       }
 
       .text-uppercase {
-        border-top: 1px solid var(--app-light-text-color);
+        border-top: 1px solid var(--app-reverse-text-color);
         display: block;
         padding: 16px 28px;
       }
@@ -112,7 +112,7 @@ class TSItem extends LitElement {
 
 
       .category-vertical-lr a {
-        color: var(--app-light-text-color);
+        color: var(--app-reverse-text-color);
       }
 
       @media (min-width: 460px) {
@@ -127,7 +127,7 @@ class TSItem extends LitElement {
         h3.paper-font-headline {
           font-size: 1.5rem;
           margin: 10px 0;
-          color: var(--app-dark-text-color);
+          color: var(--app-primary-text-color);
         }
 
         .inner p {

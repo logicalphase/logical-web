@@ -32,7 +32,7 @@ class TSSecurity extends PageViewElement {
         padding-top: 20px; }
 
       .hero {
-        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-security-header.svg') no-repeat;
+        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-security-header.svg') no-repeat;
         background-size: 370px;
         background-position: center top;
       }

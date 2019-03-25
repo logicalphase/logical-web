@@ -13,7 +13,7 @@ export const TsSelectStyle = css`
   }
   ts-select > ts-md-decorator {
     display: block;
-    border-top: 1px solid var(--border-grey);
+    border-top: 1px solid var(--app-primary-border-color);
     height: 1px;
     speak: none;
   }
@@ -40,7 +40,7 @@ export const TsSelectStyle = css`
     border-radius: 0;
     font-size: 1em;
     font-weight: 300;
-    color: var(--form-text-color);
+    color: var(--app-form-text-color);
     opacity: 1;
     overflow: hidden;
     margin: 0;

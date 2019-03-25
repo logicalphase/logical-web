@@ -42,6 +42,9 @@ export const TsButtonStyle = css`
   }
   .ts-button--primary:hover {
     background-color: var(--app-primary-hover-color);
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
   }
   .ts-button--primary:active,
   .ts-button--primary:focus {
@@ -158,10 +161,16 @@ export const TsButtonStyle = css`
   .ts-button--flat__heading:focus,
   .ts-button--flat__heading:hover {
     color: #202124;
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
   }
   .ts-button--flat__heading:focus .ts-button__icon,
   .ts-button--flat__heading:hover .ts-button__icon {
     color: var(--app-primary-hover-color);
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
   }
   .ts-button--flat svg {
     fill: currentColor;
@@ -173,6 +182,9 @@ export const TsButtonStyle = css`
   }
   .ts-button--flat.ts-button--reversed:hover {
     color: rgba(255, 255, 255, 0.7);
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
   }
   .ts-button--flat.ts-button--reversed:focus {
     background-color: #f1f3f4;
@@ -194,6 +206,9 @@ export const TsButtonStyle = css`
   }
   .ts-button.ts-button--dark:hover {
     color: rgba(32, 33, 36, 0.7);
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
   }
   .ts-button.ts-button--dark:focus {
     background-color: rgba(32, 33, 36, 0.2);

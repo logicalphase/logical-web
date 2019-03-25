@@ -100,7 +100,7 @@ export const TsHomePageStyle = css`
   }
 
   .ts-home-sections .ts-section-customers__container {
-    background-color: var(--app-section-even-color);
+    background-color: var(--app-secondary-background-color);
   }
 
   #ts-site .ts-section-customers__container .ts-section-header {

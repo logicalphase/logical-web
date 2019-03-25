@@ -24,7 +24,7 @@ export const SharedStyles = css `
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: var(--app-dark-text-color); 
+    color: var(--app-primary-text-color); 
   }
 
   h1, h2, h3, h4, h5, h6, p {
@@ -46,6 +46,9 @@ export const SharedStyles = css `
   a:hover {
     outline: 0; 
     border-bottom: 0px;
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
   }
 
   p {
@@ -125,7 +128,7 @@ export const SharedStyles = css `
     line-height: 26px; }
 
   .text-uppercase {
-    border-top: 1px solid var(--border-grey);
+    border-top: 1px solid var(--app-primary-border-color);
     display: block;
     text-align: left; }
 
@@ -142,15 +145,18 @@ export const SharedStyles = css `
   }
 
   .sidebar {
-    background: var(--app-section-even-color); }
+    background: var(--app-secondary-background-color); }
 
   .sidebar a, .sidebar a:hover {
     border-bottom: none;
     font-weight: normal;
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
   }
 
   .sidebar-selected {
-    background: var(--app-nav-background);
+    background: var(--app-primary-navigation-background);
     color: var(--app-primary-color);
     text-decoration:none; 
     border-bottom: none; }
@@ -176,7 +182,7 @@ export const SharedStyles = css `
   .background-servers {
     background: linear-gradient(#253238, #3A464B);
     background-color: #253238;
-    color: var(--app-light-text-color); }
+    color: var(--app-reverse-text-color); }
 
   .ts-max-width-standard {
     box-sizing: border-box;
@@ -193,7 +199,7 @@ export const SharedStyles = css `
     padding-right: 10000px; }
 
   .background-grey {
-    background: var(--app-section-even-color);
+    background: var(--app-secondary-background-color);
   }
 
   .ts-pad-bottom-12 {
@@ -210,7 +216,7 @@ export const SharedStyles = css `
     padding-left: 10px; }
 
   .nav li {
-    border-bottom: 1px solid var(--border-grey);
+    border-bottom: 1px solid var(--app-primary-border-color);
     margin: 0;
     padding: 0; }
 
@@ -241,10 +247,13 @@ export const SharedStyles = css `
   .sidebar a:hover {
     border-bottom: none;
     font-weight: normal;
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;
   }
 
   .sidebar-selected {
-    background: var(--app-nav-background);
+    background: var(--app-primary-navigation-background);
     color: var(--app-primary-color);
     text-decoration:none; 
     border-bottom: none; }
@@ -270,9 +279,12 @@ export const SharedStyles = css `
     white-space: nowrap; }
 
   .nav li a:hover{
-    background: var(--app-section-even-color);
+    background: var(--app-secondary-background-color);
     color: var(--app-primary-color);
-    text-decoration: none; }
+    text-decoration: none; 
+    transition: background-color .3s ease-out;
+    -webkit-transition: background-color .3s ease-out;
+    -o-transition: background-color .3s ease-out;}
 
   .ts-hero .content-set {
     margin: 50px 0 40px 0;

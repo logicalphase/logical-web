@@ -178,10 +178,10 @@ class TSDetail extends connect(store)(PageViewElement) {
         display: inline-block;
         margin-right: 8px;
         padding: 8px 44px;
-        border: 2px solid var(--app-dark-text-color);
+        border: 2px solid var(--app-primary-text-color);
         box-sizing: border-box;
         background-color: transparent;
-        color: var(--app-dark-text-color);
+        color: var(--app-primary-text-color);
         font-size: 14px;
         font-weight: 500;
         text-align: center;
@@ -190,8 +190,8 @@ class TSDetail extends connect(store)(PageViewElement) {
         border-bottom: none;
       }
       .article-button:active {
-        background-color: var(--app-dark-text-color);
-        color: var(--app-light-text-color);
+        background-color: var(--app-primary-text-color);
+        color: var(--app-reverse-text-color);
         border-bottom: none;
       }
 

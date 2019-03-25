@@ -31,7 +31,7 @@ class TSEmergency extends PageViewElement {
         padding-top: 20px; }
 
       .hero {
-        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-emergency-header-opt.svg') no-repeat;
+        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-emergency-header-opt.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }

@@ -3,36 +3,48 @@ import { css } from 'lit-element';
 export const TsTheme = css`
 :host {
   display: block;
-  --app-drawer-width: 326px;
-
-  --border-grey: #e0e0e0;
+   
+  /* Theme Colors */
   --app-primary-color: #8d008d;
   --app-primary-hover-color: #600060;
-  --app-link-color: #8d008d;
   --app-secondary-color: #000000;
-  --app-nav-background: #edf0f2;
-  --app-light-text-color: #ffffff;
-  --app-section-even-color: #f7f7f7;
-  --app-main-background-color: #ffffff;
-  --section-background-light-grey: #f5f5f5;
-  --icon-grey-color: #3c4043;
 
-  --form-border-color: #cccccc; 
-  --form-text-color: #999;
-  --form-field-background-color: #ededed;
+  --app-primary-text-color: #212121;
+  --app-reverse-text-color: #ffffff;
+  --app-primary-border-color: #e0e0e0;
+  
+  --app-primary-background-color: #ffffff;
+  --app-secondary-background-color: #f7f7f7;
+  --app-primary-navigation-background: #edf0f2;
 
+  /* Link and Accent */
   --app-accent-color: var(--app-primary-color);
-  --app-dark-text-color: var(--app-secondary-color);
-  --app-section-odd-color: var(--app-light-text-color);
-  --app-header-background-color: var(--app-light-text-color);
-  --app-header-text-color: var(--app-dark-text-color);
-  --app-header-selected-color: var(--app-primary-color);
-  --app-drawer-background-color: var(--app-light-text-color);
+  --app-primary-link-color: var(--app-primary-color);
+  --app-primary-icon-color: #3c4043;
+  
+  /* Drawer */
+  --app-drawer-width: 326px;
+  --app-drawer-background-color: var(--app-reverse-text-color);
   --app-drawer-text-color: var(--app-secondary-color);
   --app-drawer-selected-color: var(--app-primary-color);
 
-  --footer-background-secondary-grey: #5f6368;
-  --footer-background-grey: var(--icon-grey-color);
-  --footer-text: var(--app-light-text-color);
+  /* App Header */
+  --app-header-background-color: var(--app-reverse-text-color);
+  --app-header-text-color: var(--app-primary-text-color);
+  --app-header-selected-color: var(--app-primary-color);
+
+  /* App Footer */
+  --app-footer-primary-background-color: var(--app-primary-icon-color);
+  --app-footer-secondary-background-color: #5f6368;
+  --app-footer-text-color: var(--app-reverse-text-color);
+
+  /* App Section Background Colors */
+  --app-primary-section-background-color: #f5f5f5;
+  --app-secondary-section-background-color: var(--app-reverse-text-color);
+  
+  /* Form Colors */
+  --app-form-border-color: #cccccc; 
+  --app-form-text-color: #999999;
+  --app-form-field-background-color: #ededed;
 }
 `;

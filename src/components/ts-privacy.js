@@ -27,7 +27,7 @@ class TSPrivacy extends PageViewElement {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-design-header.svg') no-repeat;
+        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-design-header.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -106,13 +106,13 @@ class TSPrivacy extends PageViewElement {
         .ts-content-grid-box {
           min-height: 40px !important; 
           text-align: left;
-          background-color: var(--app-light-text-color);
+          background-color: var(--app-reverse-text-color);
           padding: 0px 34px 0px 34px;
           margin-right: 44px; 
         }
         
         .sidebar {
-          background-color: var(--app-section-odd-color);
+          background-color: var(--app-secondary-section-background-color);
         }
         .sidebar h3 {
           font-weight: 400;

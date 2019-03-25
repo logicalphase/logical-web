@@ -6,7 +6,7 @@ export const TsTableStyles = css `
     width: 100%;
     max-width: 100%;
     margin-bottom: 2rem;
-    background-color: var(--app-light-text-color);
+    background-color: var(--app-reverse-text-color);
   }
   td, th {
     text-align: left;
@@ -30,7 +30,7 @@ export const TsTableStyles = css `
   }
 
   .table {
-    background-color: var(--app-light-text-color);
+    background-color: var(--app-reverse-text-color);
   }
 
   .table-responsive-vertical {
@@ -50,13 +50,13 @@ export const TsTableStyles = css `
   }
   thead, tbody, tfoot tr th, td {
     border: 0;
-    border-bottom: 1px solid var(--border-grey);
+    border-bottom: 1px solid var(--app-primary-border-color);
   }
 
   thead > tr  > th, > td {
     border-bottom-width: 2px;
   }
   .table-hover tbody > tr:hover {
-    background-color: var(--app-section-even-color);
+    background-color: var(--app-secondary-background-color);
   }
 `;

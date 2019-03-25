@@ -184,6 +184,7 @@ export const TsCard = css`
   }
 
   .ts-card__content .ts-headline4 {
+    color: var(--app-primary-color);
     padding-bottom: 16px;
   }
 

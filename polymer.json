@@ -7,9 +7,7 @@
   "extraDependencies": [
     "manifest.json",
     "webcomponents-loader.js",
-    "push-manifest.json",
-    "src/components/ts-home.js",
-    "node_modules/@webcomponents/webcomponentsjs/**"
+    "push-manifest.json"
   ],
   "builds": [
     {

@@ -28,7 +28,7 @@ class TSCare extends PageViewElement {
         /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-care-header-opt.svg') no-repeat;
+        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-care-header-opt.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }

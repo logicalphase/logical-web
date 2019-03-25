@@ -220,6 +220,10 @@ export const TsLayoutStyle = css`
   width: 160px
 }
 
+.ts-section-header__link {
+  padding-top: 60px;
+}
+
 @media all and (min-width: 600px) {
   .ts-hero .content-set hr {
       margin-top: 48px;

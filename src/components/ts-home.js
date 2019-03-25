@@ -1,6 +1,6 @@
 import { HP_HOST } from "./config";
 
-import { html, css } from "lit-element";
+import { html, css, unsafeCSS } from "lit-element";
 import { PageViewElement } from "./page-view-element.js";
 import { updateMetadata } from "pwa-helpers/metadata.js";
 
@@ -12,7 +12,7 @@ import { TsCard } from "./ts-style-card";
 import { SharedStyles } from "./ts-style-shared";
 import { TsHomePageStyle } from "./ts-style-homepage";
 
-//const cdnHost = unsafeCSS(CDN_HOST_URL);
+const displayType = css`block`;
 
 class TSHome extends PageViewElement {
   static get styles() {
@@ -26,7 +26,7 @@ class TSHome extends PageViewElement {
       TsHomePageStyle,
       css`
       :host {
-        display: block;
+        display: ${displayType};
         padding: 0px;
       }
       /* Smaller than 460 */
@@ -84,11 +84,27 @@ class TSHome extends PageViewElement {
         }
       }
 
+      @media (min-width: 460px) {
+
+        section.ts-copy {
+          margin: 0;
+        }
+
+        .ts-grid-row-start {
+          grid-row-start: 1;
+        }
+
+        .ts-content-grid-image {
+          padding: 44px 0 24px 0;
+        }
+
+      }
+
       @media only screen and (min-width: 1024px) {
         .wordpress-animated-bg {
           display: inline-block;
           position: relative;
-          top: 24px;
+          top: 16px;
           right: -40px;
           min-width: auto;
           min-height: 500px;
@@ -104,6 +120,7 @@ class TSHome extends PageViewElement {
           top: 54px;
           z-index: 0;
         }
+
       }
 
     `
@@ -124,9 +141,9 @@ class TSHome extends PageViewElement {
             <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
               <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                 <div class="fade-in content-set">
-                  <h1 class="ts-section-header__eyebrow ts-eyebrow">WordPress as a Service</h1>
-                  <h2 class="ts-display3">From design to delivery, we've got you covered</h2>
-                  <p class="ts-headline4 ts-why-google__intro-text">WordPress worthy of your enterprise. Engaging, instant loading, functionally superior, master of self-defense.</p>
+                  <h1 class="ts-section-header__eyebrow ts-eyebrow">HyperPress Publishing System</h1>
+                  <h2 class="ts-display3">From design to delivery: WordPress for writers.</h2>
+                  <p class="ts-headline4 ts-why-google__intro-text">Designed for professional online publishers. Create great content, grow your audience, monitize your work.</p>
                 </div>
               </header>
             </div>
@@ -175,28 +192,47 @@ class TSHome extends PageViewElement {
             </div>
           </div>
         </header>
+        <div class="ts-section ts-section--border">
+          <div class="ts-section__spacer">
+            <section class="ts-copy">
+              <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center">
+                <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
+                  <img class="ts-content-grid-image" src="/images/content/ts-security-vaccinated-200x200-opt.svg" alt="You own what you create, we store and deliver it" />
+                </div>
+                <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
+                  <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">You own what you create. We deliver it. Faster, farther, better.</h3>
+                  <p>You've invested time and energy into creating amazing content for your readers. Finally, a publishing platform worthy of your effort. HyperPress leverages what's best about WordPress content management combined with a beautiful progressive web application (PWA) frontend your readers will love. Own your content, decide when and how to monitize it.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
         <div class="ts-home-sections ts-home-v">
           <section>
             <iron-selector selected="[[page]]" attr-for-selected="name" class="main-navigation" role="navigation">
               <div class="ts-grid ts-grid__no-gap">
                 <header class="ts-grid__col is-6 is-4__large ts-section-header ts-section-header--solutions">
-                  <h1 class="ts-section-header__eyebrow ts-eyebrow">Smart Solutions</h1>
-                  <h2 class="ts-section-header__heading ts-headline3" id="wordpress-you-need-solutions-you-deserve">Smarter online solutions</h2>
-                  <div class="ts-button__set">
-                    <a href="/contact/" class="ts-button ts-button--primary" track-type="navigateTo" track-name="home"
-                      track-metadata-position="banner">Contact a WordPress Pro</a>
+                  <h1 class="ts-section-header__eyebrow ts-eyebrow">The HyperPress difference</h1>
+                  <h2 class="ts-section-header__heading ts-headline3" id="wordpress-you-need-solutions-you-deserve">A smarter online publishing platform</h2>
+                  <div class="ts-section-header__link">
+                    <a 
+                      href="/contact/" 
+                      class="ts-button ts-button--primary" 
+                      track-type="navigateTo" 
+                      track-name="home"
+                      track-metadata-position="banner">Contact a HyperPress expert</a>
                   </div>
                 </header>
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">PWA Design</h1>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">PWA Designed Frontend</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-pwa-62x-62.svg" alt="Progressive web application design">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}design/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="progressive-design">Progressive Design</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="progressive-web-frontend">Inviting and Engaging</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">We transform WordPress into responsive, instant loading, progressive web applications.</p>
+                    <p class="ts-card__body">HyperPress transforms WordPress into responsive, instant loading, accessible, progressive web application.</p>
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
@@ -209,13 +245,13 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">Performance</h1>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">Baked in Performance</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Pagespeed optimization service">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}pagespeed/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="workloadMigration" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="pagespeed-optimization">PageSpeed Optimization</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="pagespeed-optimization">Hyper Optimized Delivery</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">We supercharge WordPress sites to deliver lightning fast, secure, content to any screen.</p>
+                    <p class="ts-card__body">We've supercharged HyperPress to globally deliver lightning fast, secure content to any screen.</p>
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
@@ -228,13 +264,13 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">Repairs and Restoration</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-ambulance-62x62.svg" alt="WordPress repair and restoration">
+                      <h1 class="ts-card__eyebrow ts-eyebrow">HyperPress Reliability</h1>
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="Monitored and maintained">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}emergency/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="emergencyResponse" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">Emergency Repairs</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">Automated Health Checks</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">Site emergency? Our WordPress experts will have you back up and running in no time.</p>
+                    <p class="ts-card__body">We constantly monitor the health of your site taking immediate action to prevent service interruptions 24/7.</p>
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
@@ -247,13 +283,13 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">Security</h1>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">Preceisely Maintained</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-security-62x62.svg" alt="In depth security program">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}security/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="securityResponse" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="security-response">Security Response Team</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="security-response">Backups and Updates</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">We investigate, audit, restore compromised sites, mitigate loss, and prevent attacks.</p>
+                    <p class="ts-card__body">Focus on creating, leave the maintaining to us. Live encrypted backups of your content, always up-to-date, no muss, no fuss.</p>
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
@@ -272,7 +308,7 @@ class TSHome extends PageViewElement {
                         <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">WordPress Relocation</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">Regardless of size, we'll safely and quickly move your WordPress site to it's new home.</p>
+                    <p class="ts-card__body">Existing WordPress content? No problem. We'll safely move your content to it's new HyperPress home.</p>
                     <div class="ts-card__arrow">
                       <svg width="18px" height="18px" viewBox="0 0 18 18">
                         <title>Arrow</title>
@@ -281,8 +317,44 @@ class TSHome extends PageViewElement {
                       </svg>
                     </div>
                   </section>
+                </div>
               </div>
             </iron-selector>
+          </section>
+        </div>
+        <div class="ts-section ts-section--border">
+          <div class="ts-section__header ts-text-center ts-grid">
+            <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
+              <h2 class="ts-headline3" id="features">HyperPress Features</h2>
+            </div>
+          </div>
+          <section class="ts-copy">
+            <div class="ts-grid--alternate ts-copy__inner ts-copy--two-column">
+              <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
+                <h4 class="ts-headline4">WordPress Gutenberg goodness</h4>
+                <p>The latest WordPress backend dashboard streamlined for productive writing and publishing. Focus on great writing using great writing tools.</p>
+              </div>
+              <div class="ts-grid__col ts-copy__text is-6 is-5__large">
+                <h4 class="ts-headline4">Progressive Web Application (PWA).</h4>
+                <p>No more theme mess. Just our beautiful PWA frontend, built with Google LitElement, Material Design, and web components fully decoupled from WordPress.</p>
+              </div>
+              <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
+                <h4 class="ts-headline4">You own your content</h4>
+                <p>HyperPress doesn't capitalize on your content like other services. We don't use paywalls or advertisements&#8212;that's for your to decide. Moving your content is as easy as moving any other self-hosted WordPress site.</p>
+              </div>
+              <div class="ts-grid__col ts-copy__text is-6 is-5__large">
+                <h4 class="ts-headline4">Smooth and natural</h4>
+                <p>Quick smooth transitions and animations are baked right in to make for a more natural, pleasing application look and feel. No more janking, confusing view changes </p>
+              </div>
+              <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
+                <h4 class="ts-headline4">Installable and always up-to-date</h4>
+                <p>Users can optionally install your HyperPress PWA just like any native application. Best of all, PWAs don't take up any storage memory and they're updated to the latest version without any user effort.</p>
+              </div>
+              <div class="ts-grid__col ts-copy__text is-6 is-5__large">
+                <h4 class="ts-headline4">Fast loading and reliable</h4>
+                <p>HyperPress PWAs load instantly even in spotty internet conditions. Your readers can continue to read your posts offline uninterrupted.</p>
+              </div>
+            </div>
           </section>
         </div>
       </article>

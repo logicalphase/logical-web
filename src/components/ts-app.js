@@ -1,6 +1,9 @@
 import { LitElement, html, css } from 'lit-element';
 import { setPassiveTouchGestures } from "@polymer/polymer/lib/utils/settings.js";
 
+import "./ts-home.js";
+import "./snack-bar.js";
+
 import { connect } from "pwa-helpers/connect-mixin";
 import { installRouter } from "pwa-helpers/router";
 import { installOfflineWatcher } from "pwa-helpers/network";
@@ -9,9 +12,6 @@ import { updateMetadata } from "pwa-helpers/metadata";
 
 import { menuIcon } from "./ts-icons.js";
 import { store } from "../store.js";
-
-import "./ts-home.js";
-import "./snack-bar.js";
 
 import "@polymer/app-layout/app-drawer/app-drawer";
 import "@polymer/app-layout/app-scroll-effects/effects/waterfall";
@@ -85,7 +85,7 @@ class TSApp extends connect(store)(LitElement) {
         text-align: left;
         background-color: var(--app-header-background-color);
         color: var(--app-header-text-color);
-        border-bottom: 1px solid var(--border-grey);
+        border-bottom: 1px solid var(--app-primary-border-color);
       }
 
       nav {
@@ -93,7 +93,7 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       .masthead {
-        background-color: var(--app-main-background-color);
+        background-color: var(--app-primary-background-color);
         padding: 12px 8px;
         height: inherit;
         align-items: center;
@@ -112,8 +112,8 @@ class TSApp extends connect(store)(LitElement) {
 
       .desktop-menu {
         height: 46px;
-        background-color: var(--app-section-even-color);
-        border-bottom: 1px solid var(--border-grey);
+        background-color: var(--app-secondary-background-color);
+        border-bottom: 1px solid var(--app-primary-border-color);
       }
 
       .main-navigation a {
@@ -212,10 +212,10 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       #drawer app-toolbar {
-        border-bottom: 1px solid var(--border-grey);
+        border-bottom: 1px solid var(--app-primary-border-color);
         margin-bottom: 5px;
         background-color: var(--app-primary-color);
-        color: var(--app-light-text-color);
+        color: var(--app-reverse-text-color);
       }
 
       .drawer-list {
@@ -257,16 +257,16 @@ class TSApp extends connect(store)(LitElement) {
 
       .hypersite-footer-linkboxes-all-backup,
       .hypersite-footer-linkbox-cloud {
-        background-color: var(--footer-background-grey);
+        background-color: var(--app-footer-primary-background-color);
       }
       .hypersite-footer-linkboxes-all-backup {
-        background: var(--footer-background-grey);
+        background: var(--app-footer-primary-background-color);
       }
 
       .hypersite-footer-linkboxes > nav::before {
-        background: var(--footer-background-grey);
-        border-bottom: solid 1px var(--form-border-color);
-        color: var(--footer-background-grey);
+        background: var(--app-footer-primary-background-color);
+        border-bottom: solid 1px var(--app-form-border-color);
+        color: var(--app-footer-primary-background-color);
         content: "HyperPress";
         display: block;
         height: 73px;
@@ -288,7 +288,7 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       .hypersite-utility-footer-nav {
-        color: var(--app-light-text-color);
+        color: var(--app-reverse-text-color);
         overflow: auto;
         padding: 10px 24px;
       }
@@ -297,16 +297,16 @@ class TSApp extends connect(store)(LitElement) {
       .hypersite-toast-fill {
         margin: 0 auto;
         max-width: 1400px;
-        color: var(--footer-text);
+        color: var(--app-footer-text-color);
       }
 
       .hypersite-footer-linkboxes-all-backup,
       .hypersite-footer-linkbox-cloud {
-        background-color: var(--footer-background-grey) !important;
+        background-color: var(--app-footer-primary-background-color) !important;
       }
 
       .hypersite-footer-linkboxes-all-backup {
-        background: var(--footer-background-grey);
+        background: var(--app-footer-primary-background-color);
       }
 
       .hypersite-footer-linkboxes {
@@ -315,8 +315,8 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       .hypersite-utility-footer {
-        background: var(--footer-background-secondary-grey);
-        color: var(--footer-text);
+        background: var(--app-footer-secondary-background-color);
+        color: var(--app-footer-text-color);
         text-align: center;
       }
 
@@ -334,7 +334,7 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       .hypersite-utility-footer-link {
-        color: var(--app-light-text-color);
+        color: var(--app-reverse-text-color);
         font-size: 14px;
         font-weight: 400;
         text-decoration: none;
@@ -365,12 +365,12 @@ class TSApp extends connect(store)(LitElement) {
       }
 
       .search-icon {
-        fill: var(--icon-grey-color);
+        fill: var(--app-primary-icon-color);
       }
 
       input[type=search] {
-        background: var(--app-section-even-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
-        border: solid 1px var(--form-border-color);
+        background: var(--app-secondary-background-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
+        border: solid 1px var(--app-form-border-color);
         padding: 7px 10px 7px 38px;
         width: 230px;
         margin-top: 6px;
@@ -382,7 +382,7 @@ class TSApp extends connect(store)(LitElement) {
 
       input[type=search]:focus {
         width: 230px;
-        background-color: var(--app-light-text-color);
+        background-color: var(--app-reverse-text-color);
         border-color: var(--app-primary-color);
         -webkit-box-shadow: 0 0 5px rgba(164,52,183,.5);
         -moz-box-shadow: 0 0 5px rgba(164,52,183,.5);
@@ -391,12 +391,12 @@ class TSApp extends connect(store)(LitElement) {
 
       input:-moz-placeholder,
       input::-webkit-input-placeholder {
-        color: var(--footer-background-secondary-grey);
+        color: var(--app-footer-secondary-background-color);
       }
       
       input:-moz-placeholder:focus,
       input::-webkit-input-placeholder:focus {
-        color: var(--form-text-color);
+        color: var(--app-form-text-color);
       }
 
       .ts-brand-site-logo {
@@ -422,8 +422,8 @@ class TSApp extends connect(store)(LitElement) {
         }
 
         input[type=search] {
-          background: var(--app-section-even-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
-          border: solid 1px var(--form-border-color);
+          background: var(--app-secondary-background-color) url('/images/bg/icon-search.svg') no-repeat 9px 8px;
+          border: solid 1px var(--app-form-border-color);
           padding: 5px 10px 5px 32px;
           width: 140px;
           margin-top: 0;

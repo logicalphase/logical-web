@@ -6,23 +6,25 @@ import { updateMetadata } from "pwa-helpers/metadata.js";
 
 import "./ts-sidebar-nav";
 
-import { TsLayoutStyle } from "./ts-style-layout";
-import { TsButtonStyle } from "./ts-style-button";
-import { TsGridStyle } from "./ts-style-grid";
-import { TsCard } from "./ts-style-card";
 import { SharedStyles } from "./ts-style-shared";
 import { TsTypographyStyle } from "./ts-style-typography";
+import { TsLayoutStyle } from "./ts-style-layout";
+import { TsGridStyle } from "./ts-style-grid";
+import { TsCard } from "./ts-style-card";
+import { TsButtonStyle } from "./ts-style-button";
+
+
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 class TSDesign extends PageViewElement {
   static get styles() {
     return [
-      TsButtonStyle,
-      TsGridStyle,
-      TsLayoutStyle,
-      TsCard,
       SharedStyles,
       TsTypographyStyle,
+      TsLayoutStyle,
+      TsGridStyle,
+      TsCard,
+      TsButtonStyle,
       css`
       :host {
         display: block;
@@ -32,7 +34,7 @@ class TSDesign extends PageViewElement {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-design-header-opt.svg') no-repeat;
+        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-design-header-opt.svg') no-repeat;
         background-size: contain;
         background-position: center center;
       }
@@ -43,7 +45,8 @@ class TSDesign extends PageViewElement {
         padding-top: 20px; }
 
         .hero {
-          background-position: 97% center;
+          background-size: 300px;
+          background-position: 90% center;
         }
         section.ts-copy {
           margin: 0;
@@ -56,7 +59,7 @@ class TSDesign extends PageViewElement {
 
         @media (max-width: 800px) {
         .hero {
-          background-position: 95% center !important;
+          background-position: 97% center !important;
         }
       }   
       `
@@ -77,8 +80,9 @@ class TSDesign extends PageViewElement {
             <div class="ts-grid ts-grid__no-gap ts-hero__content fade-in">
               <div class="ts-grid__col is-12 ts-hero__1up-content is-1__large--offset is-8__large">
                 <div class="content-set">
-                  <h1 class="ts-headline1">Progressive Web Design for WordPress</h1>
-                  <p>Amazing user experiences delivered by web browsers.</p>
+                  <h1 class="ts-section-header__eyebrow ts-eyebrow">HyperPess Professional Publishing Platform</h1>
+                  <h2 class="ts-display3">HyperPress: WordPress for professionals</h2>
+                  <p>Focus on writing, monitize your content, grow your audience. We take care of everything else. HyperPress is what professional online publishing was meant to be.</p>
                   <div class="ts-button__set">
                     <a href="/contact/" class="ts-button ts-button--primary">Contact Design Team</a>
                   </div>
@@ -95,7 +99,7 @@ class TSDesign extends PageViewElement {
                   </div>
                   <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
                     <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Engaging Experiences Regardless of Screen Size</h3>
-                    <p>You've invested a great deal of time and money into creating products or services that amaze your customers. Finally, a WordPress web site worthy of your enterprise and your dreams. We leverage what's best about WordPress and combine it with a true progressive web application (PWA) frontend.</p>
+                    <p>You've invested a great deal of time and money into creating products or services that amaze your customers. Finally, a WordPress web site worthy of your enterprise and your dreams. HyperPress leverages what's best about WordPress, the editing workflow, and combines it with a beautiful progressive web application (PWA) frontend.</p>
                   </div>
                 </div>
               </section>
