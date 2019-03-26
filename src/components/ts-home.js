@@ -1,6 +1,6 @@
 import { HP_HOST } from "./config";
 
-import { html, css, unsafeCSS } from "lit-element";
+import { html, css } from "lit-element";
 import { PageViewElement } from "./page-view-element.js";
 import { updateMetadata } from "pwa-helpers/metadata.js";
 
@@ -9,6 +9,7 @@ import { TsButtonStyle } from "./ts-style-button";
 import { TsGridStyle } from "./ts-style-grid";
 import { TsTypographyStyle } from "./ts-style-typography";
 import { TsCard } from "./ts-style-card";
+import { TsElevationStyle } from "./ts-style-elevation";
 import { SharedStyles } from "./ts-style-shared";
 import { TsHomePageStyle } from "./ts-style-homepage";
 
@@ -22,6 +23,7 @@ class TSHome extends PageViewElement {
       TsTypographyStyle,
       TsLayoutStyle,
       TsCard,
+      TsElevationStyle,
       SharedStyles,
       TsHomePageStyle,
       css`
@@ -35,8 +37,34 @@ class TSHome extends PageViewElement {
         display: none;
       }
 
+      .hero {
+        background: var(--app-reverse-text-color) url('/images/header/home-page-mobile-opt.svg') no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+
+      .ts-section-right-image {
+        width: 100%;
+        height: auto;
+      }
+
+      #ts-site .ts-headline3 {
+        margin-top: 24px;
+      }
+
+      .ts-section-elevated-padding {
+          padding: 34px 24px 24px 24px;
+      }
+
       path {
         stroke-width: 2;
+      }
+
+      .purple-section-line {
+        stroke-dasharray: 1200 30;
+        stroke-dashoffset: 2700;
+        animation: draw 3s linear infinite;
+        animation-direction: alternate;
       }
 
       .purple-line {
@@ -86,6 +114,10 @@ class TSHome extends PageViewElement {
 
       @media (min-width: 460px) {
 
+        .hero {
+          background: none;
+        }
+
         section.ts-copy {
           margin: 0;
         }
@@ -97,7 +129,6 @@ class TSHome extends PageViewElement {
         .ts-content-grid-image {
           padding: 44px 0 24px 0;
         }
-
       }
 
       @media only screen and (min-width: 1024px) {
@@ -110,6 +141,15 @@ class TSHome extends PageViewElement {
           min-height: 500px;
         }
 
+        .ts-section-right-image {
+          width: 370px;
+          height: auto;
+        }
+
+        .ts-section-elevated-padding {
+          padding: 24px 0 24px 0;
+        }
+
         .ts-hero::before {
           height: 454px;
           width: 680px;
@@ -120,6 +160,8 @@ class TSHome extends PageViewElement {
           top: 54px;
           z-index: 0;
         }
+
+        
 
       }
 
@@ -195,12 +237,48 @@ class TSHome extends PageViewElement {
         <div class="ts-section ts-section--border">
           <div class="ts-section__spacer">
             <section class="ts-copy">
-              <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center">
+              <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center mdc-elevation--z20 ts-section-elevated-padding">
                 <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
-                  <img class="ts-content-grid-image" src="/images/content/ts-security-vaccinated-200x200-opt.svg" alt="You own what you create, we store and deliver it" />
+                  <svg class="ts-section-right-image" version="1.1" viewBox="2 122.3 637.26 349.3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                      <path id="aHIf0e791" d="m164.42 134.68v-0.42c0-5.83-4.95-10.6-10.99-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.83c6.04 0 10.98-4.77 10.98-10.6v-47.19c0-5.83-4.94-10.61-10.98-10.61h-50.4z"/>
+                      <path id="aebH7nnDc" d="m317.32 134.68v-0.42c0-5.83-4.94-10.6-10.98-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.82c6.04 0 10.99-4.77 10.99-10.6v-47.19c0-5.83-4.95-10.61-10.99-10.61h-50.4z"/>
+                      <path id="d1deglR8f3" d="m470.97 134.33v-0.42c0-5.84-4.94-10.61-10.98-10.61h-25.44c-6.04 0-10.99 4.77-10.99 10.61v11.02 24.05 23.14c0 5.83 4.95 10.61 10.99 10.61h86.82c6.04 0 10.98-4.78 10.98-10.61v-47.19c0-5.83-4.94-10.6-10.98-10.6h-50.4z"/>
+                      <path id="f3pTna63Hq" d="m33.52 438.46v-126.27c0-3.89 3.3-7.08 7.34-7.08h195.4c4.04 0 7.34 3.19 7.34 7.08v126.27h-210.08z"/>
+                      <path id="e2xrknzxtr" d="m5.74 462.6c-1.51 0-2.74 0.69-2.74 1.52v2.96c0 0.83 1.23 1.52 2.74 1.52h267.02c1.5 0 2.73-0.69 2.73-1.52v-2.96c0-0.83-1.23-1.52-2.73-1.52h-267.02z"/>
+                      <path id="d2zIsGwE5p" d="m394.29 438.46v-126.27c0-3.89 3.3-7.08 7.34-7.08h195.4c4.04 0 7.34 3.19 7.34 7.08v126.27h-210.08z"/>
+                      <path id="a5lG4suEpl" d="m511.16 355.62v-0.07l0.01-0.07v-0.07l0.01-0.06 0.02-0.07 0.01-0.06 0.02-0.07 0.04-0.12 0.12-0.24 0.03-0.05 0.04-0.06 0.16-0.2 0.05-0.05 0.2-0.16 0.06-0.04 0.05-0.03 0.06-0.04 0.12-0.06 0.06-0.02 0.06-0.03 0.07-0.02 0.06-0.02 0.07-0.02 0.07-0.01 0.06-0.01 0.14-0.02h0.07l0.07-0.01h6.93l0.08 0.01h0.07l0.14 0.02 0.06 0.01 0.07 0.01 0.07 0.02 0.06 0.02 0.07 0.02 0.06 0.03 0.06 0.02 0.12 0.06 0.06 0.04 0.05 0.03 0.06 0.04 0.2 0.16 0.05 0.05 0.16 0.2 0.04 0.06 0.03 0.05 0.12 0.24 0.04 0.12 0.02 0.07 0.01 0.06 0.01 0.07 0.01 0.06 0.02 0.14v0.07 17.56l6.93 7.53h-6.93v23.42h-15.43v-0.01-0.07-16.25-0.07-0.08l-0.03-0.21-0.06-0.21-0.02-0.06-0.03-0.07-0.03-0.06-0.03-0.07-0.03-0.06-0.04-0.06-0.03-0.06-0.04-0.05-0.04-0.06-0.05-0.05-0.04-0.05-0.15-0.15-0.06-0.04-0.05-0.04-0.06-0.04-0.05-0.04-0.06-0.04-0.06-0.03-0.07-0.03-0.12-0.06-0.28-0.08-0.21-0.03h-0.07-0.08-7.15-0.07-0.08l-0.21 0.03-0.14 0.04-0.06 0.02-0.07 0.02-0.07 0.03-0.18 0.09-0.18 0.12-0.1 0.08-0.2 0.2-0.04 0.05-0.04 0.06-0.04 0.05-0.04 0.06-0.03 0.06-0.04 0.06-0.03 0.07-0.03 0.06-0.02 0.07-0.03 0.06-0.04 0.14-0.04 0.28-0.01 0.08v0.07 16.25 0.07 0.01h-15.42v-23.42h-6.93l27.72-30.11 10.39 11.29v-6.27z"/>
+                      <path id="aj6LbcupC" d="m366.5 462.6c-1.5 0-2.73 0.69-2.73 1.52v2.96c0 0.83 1.23 1.52 2.73 1.52h267.02c1.51 0 2.74-0.69 2.74-1.52v-2.96c0-0.83-1.23-1.52-2.74-1.52h-267.02z"/>
+                      <path id="jOHMth2jB" d="m135.4 350.72 1.3 0.15 1.29 0.21 1.27 0.27 1.25 0.32 1.22 0.37 1.2 0.43 1.17 0.48 1.14 0.53 1.11 0.57 1.08 0.62 1.05 0.67 1.02 0.71 0.98 0.76 0.94 0.79 0.91 0.84 0.86 0.87 0.83 0.91 0.78 0.95 0.73 0.98 0.7 1.01 0.64 1.05 0.6 1.07 0.54 1.1 0.5 1.13 0.44 1.16 0.39 1.18 0.33 1.2 0.28 1.23 0.21 1.24 0.16 1.27 0.09 1.28 0.04 1.29-0.04 1.3-0.09 1.28-0.16 1.27-0.21 1.24-0.28 1.22-0.33 1.21-0.39 1.18-0.44 1.15-0.5 1.13-0.54 1.11-0.6 1.07-0.64 1.05-0.7 1.01-0.73 0.98-0.78 0.95-0.83 0.91-0.86 0.87-0.91 0.84-0.94 0.79-0.98 0.76-1.02 0.71-1.05 0.66-1.08 0.63-1.11 0.57-1.14 0.53-1.17 0.48-1.2 0.43-1.22 0.37-1.25 0.32-1.27 0.27-1.29 0.21-1.3 0.15-1.33 0.09-1.34 0.03-1.35-0.03-1.32-0.09-1.31-0.15-1.29-0.21-1.27-0.27-1.25-0.32-1.22-0.37-1.2-0.43-1.17-0.48-1.14-0.53-1.11-0.57-1.08-0.63-1.05-0.66-1.02-0.71-0.98-0.76-0.94-0.79-0.9-0.84-0.87-0.87-0.82-0.91-0.78-0.95-0.74-0.98-0.69-1.01-0.65-1.05-0.59-1.07-0.55-1.11-0.5-1.13-0.44-1.15-0.39-1.18-0.33-1.21-0.27-1.22-0.22-1.24-0.16-1.27-0.09-1.28-0.03-1.3 0.03-1.29 0.09-1.28 0.16-1.27 0.22-1.24 0.27-1.23 0.33-1.2 0.39-1.18 0.44-1.16 0.5-1.13 0.55-1.1 0.59-1.07 0.65-1.05 0.69-1.01 0.74-0.98 0.78-0.95 0.82-0.91 0.87-0.87 0.9-0.84 0.94-0.79 0.98-0.76 1.02-0.71 1.05-0.67 1.08-0.62 1.11-0.57 1.14-0.53 1.17-0.48 1.2-0.43 1.22-0.37 1.25-0.32 1.27-0.27 1.29-0.21 1.31-0.15 1.32-0.09 1.35-0.03 1.34 0.03 1.33 0.09zm-9.33 50.5 0.59 0.14 0.58 0.13 0.59 0.12 0.6 0.11 0.6 0.09 0.61 0.08 0.61 0.06 0.61 0.05 0.62 0.04 0.62 0.02 0.63 0.01 0.74-0.01 0.73-0.04 0.74-0.05 0.72-0.07 0.72-0.09 0.71-0.11 0.71-0.12 0.7-0.15 0.69-0.16 0.69-0.19 0.67-0.2 0.67-0.22-0.02-0.02-0.01-0.03-0.02-0.03-0.01-0.02-0.04-0.06-0.01-0.03-0.02-0.02-0.02-0.06-0.02-0.03-0.01-0.03-7.86-20.8-7.68 21.53 0.57 0.16zm-17.28-32.57-0.26 0.68-0.23 0.69-0.21 0.7-0.2 0.71-0.17 0.72-0.15 0.72-0.13 0.73-0.11 0.74-0.08 0.75-0.06 0.75-0.03 0.76-0.02 0.76 0.09 2.08 0.26 2.02 0.43 1.98 0.59 1.91 0.74 1.84 0.88 1.77 1.02 1.69 1.15 1.59 1.28 1.51 1.39 1.4 1.5 1.29 1.61 1.18 1.7 1.05 1.78 0.92-12.2-32.28-0.3 0.66-0.27 0.68zm46.43-2.8 0.02 0.18 0.02 0.17 0.01 0.18 0.02 0.18 0.01 0.18 0.02 0.18 0.01 0.18v0.19l0.02 0.38v0.19 0.19l-0.01 0.38-0.03 0.42-0.05 0.45-0.07 0.5-0.09 0.53-0.11 0.58-0.13 0.61-0.15 0.65-0.17 0.69-0.18 0.73-0.21 0.77-0.23 0.81-0.25 0.84-0.27 0.89-7.81 21.81 1.59-0.97 1.51-1.08 1.42-1.18 1.32-1.28 1.23-1.36 1.13-1.46 1.01-1.53 0.89-1.6 0.78-1.68 0.64-1.74 0.52-1.79 0.37-1.85 0.23-1.89 0.08-1.94-0.02-0.91-0.05-0.91-0.09-0.9-0.12-0.89-0.15-0.88-0.18-0.87-0.21-0.85-0.25-0.85-0.27-0.83-0.3-0.82-0.34-0.81-0.36-0.79-0.38-0.78-0.42-0.76 0.03 0.17 0.02 0.17zm-23.83-13.16-0.66 0.05-0.65 0.05-0.65 0.08-0.64 0.08-0.64 0.11-0.64 0.12-0.63 0.13-0.62 0.15-0.62 0.16-0.61 0.18-0.6 0.19-0.6 0.21-0.59 0.22-0.58 0.23-0.58 0.25-0.56 0.26-0.56 0.27-0.56 0.28-0.54 0.3-0.54 0.31-1.04 0.66-0.51 0.35-0.5 0.35-0.49 0.37-0.48 0.38-0.47 0.4-0.46 0.4-0.46 0.41-0.44 0.42-0.43 0.44-0.41 0.44-0.41 0.45-0.4 0.47-0.38 0.47-0.38 0.48-0.36 0.49-0.35 0.5h0.05 0.04 0.05 0.04 0.05 0.04l0.04 0.01h0.05 0.09 0.04 0.04 0.09 0.04 0.04l0.04 0.01h0.05 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04l0.04 0.01h0.04 0.03 0.04 0.04 0.03 0.04 0.04 0.2l0.21-0.01h0.21 0.22l0.22-0.01h0.22l0.23-0.01 0.22-0.01h0.23l1.15-0.05 0.22-0.01 0.22-0.02 0.44-0.02 0.42-0.02 0.2-0.01 0.2-0.02 0.38-0.02 0.51-0.03 0.15-0.01 0.28-0.02 0.12-0.01 0.11-0.01h0.11l0.09-0.01 0.07-0.01h0.07 0.05l0.04-0.01h0.03 0.1 0.09l0.1 0.02 0.16 0.04 0.08 0.03 0.08 0.04 0.06 0.04 0.07 0.04 0.11 0.11 0.05 0.06 0.08 0.12 0.04 0.07 0.03 0.07 0.04 0.14 0.01 0.08 0.01 0.07 0.01 0.08-0.01 0.07v0.08l-0.02 0.07-0.01 0.07-0.03 0.08-0.02 0.07-0.04 0.06-0.04 0.07-0.04 0.06-0.1 0.12-0.07 0.05-0.06 0.05-0.07 0.04-0.08 0.04-0.09 0.03-0.08 0.03-0.2 0.04h-0.04-0.02l-0.06 0.01h-0.04l-0.04 0.01h-0.04l-0.05 0.01h-0.05l-0.06 0.01h-0.06l-0.06 0.01-0.07 0.01h-0.07l-0.07 0.01-0.16 0.02h-0.08l-0.08 0.01-0.18 0.02h-0.09l-0.3 0.03h-0.1l-0.1 0.01-0.11 0.01-0.1 0.01-0.11 0.01h-0.11l-0.22 0.02h-0.12l-0.22 0.02h-0.12l9.32 26.76 5.6-16.21-3.99-10.55h-0.1l-0.1-0.01-0.11-0.01h-0.1l-0.2-0.02h-0.1l-0.1-0.01-0.09-0.01-0.1-0.01-0.09-0.01h-0.1l-0.18-0.02-0.08-0.01h-0.09l-0.24-0.03h-0.08l-0.21-0.03h-0.07l-0.12-0.02h-0.05l-0.05-0.01h-0.05l-0.05-0.01h-0.04l-0.04-0.01h-0.03-0.03l-0.02-0.01h-0.04-0.02l-0.1-0.01-0.1-0.02-0.09-0.02-0.08-0.03-0.08-0.04-0.14-0.08-0.06-0.05-0.05-0.06-0.05-0.05-0.05-0.07-0.04-0.06-0.06-0.14-0.04-0.14-0.01-0.08-0.01-0.07v-0.08l0.01-0.08v-0.07l0.02-0.08 0.02-0.07 0.02-0.08 0.06-0.14 0.04-0.06 0.05-0.07 0.05-0.06 0.11-0.11 0.06-0.04 0.07-0.05 0.07-0.03 0.08-0.04 0.08-0.02 0.18-0.04h0.1 0.1l0.07 0.01h0.05 0.07l0.08 0.01 0.09 0.01h0.1l0.11 0.01 0.26 0.02 0.3 0.02 0.34 0.02 0.36 0.02 0.19 0.01 0.2 0.02 0.21 0.01 0.2 0.01 0.22 0.01 0.21 0.01 0.22 0.01 0.22 0.02 0.22 0.01 0.23 0.01 0.22 0.01 0.23 0.01 0.22 0.01 0.23 0.01h0.22l0.44 0.02h0.22l0.21 0.01h0.2 0.21l0.19 0.01h0.2 0.2l0.21-0.01h0.21 0.22l0.22-0.01h0.22l0.23-0.01 0.22-0.01h0.23l0.92-0.04 0.22-0.01 0.23-0.01 0.22-0.02 0.44-0.02 0.42-0.02 0.2-0.01 0.2-0.02 0.38-0.02 0.51-0.03 0.15-0.01 0.28-0.02 0.12-0.01 0.11-0.01h0.11l0.09-0.01 0.07-0.01h0.07 0.05l0.04-0.01h0.03 0.1 0.09l0.1 0.02 0.16 0.04 0.08 0.03 0.08 0.04 0.06 0.04 0.07 0.04 0.11 0.11 0.05 0.06 0.08 0.12 0.04 0.07 0.02 0.07 0.03 0.07 0.02 0.07 0.01 0.08 0.01 0.07v0.08 0.07l-0.01 0.08-0.01 0.07-0.02 0.07-0.02 0.08-0.03 0.07-0.03 0.06-0.04 0.07-0.04 0.06-0.05 0.06-0.06 0.06-0.06 0.05-0.07 0.05-0.07 0.04-0.08 0.04-0.08 0.03-0.09 0.03-0.09 0.02-0.1 0.02h-0.04-0.03l-0.02 0.01h-0.03-0.04l-0.04 0.01h-0.04l-0.05 0.01h-0.05l-0.06 0.01h-0.06l-0.06 0.01-0.07 0.01h-0.07l-0.07 0.01-0.16 0.02h-0.08l-0.08 0.01-0.18 0.02h-0.1l-0.09 0.01-0.2 0.02h-0.1l-0.1 0.01-0.11 0.01-0.1 0.01-0.11 0.01h-0.11l-0.22 0.02h-0.12l-0.22 0.02h-0.12l9.25 26.55 2.55-8.23 0.09-0.24 0.1-0.23 0.09-0.24 0.09-0.23 0.08-0.23 0.09-0.23 0.16-0.46 0.08-0.22 0.21-0.66 0.07-0.21 0.06-0.22 0.12-0.42 0.06-0.2 0.06-0.21 0.15-0.6 0.04-0.2 0.16-0.76 0.03-0.19 0.06-0.36 0.02-0.18 0.03-0.18 0.02-0.18 0.02-0.17 0.01-0.17 0.02-0.17 0.02-0.34v-0.16-0.16l0.01-0.16-0.01-0.23v-0.22l-0.01-0.22-0.02-0.22-0.01-0.22-0.03-0.21-0.02-0.2-0.03-0.21-0.03-0.2-0.04-0.19-0.04-0.2-0.08-0.38-0.05-0.18-0.05-0.19-0.05-0.18-0.05-0.17-0.06-0.18-0.12-0.34-0.06-0.16-0.06-0.17-0.07-0.16-0.06-0.16-0.07-0.15-0.07-0.16-0.14-0.3-0.07-0.14-0.08-0.15-0.14-0.28-0.08-0.14-0.07-0.13-0.08-0.14-0.14-0.26-0.08-0.13-0.07-0.12-0.07-0.13-0.2-0.3-0.09-0.15-0.1-0.15-0.09-0.15-0.1-0.14-0.09-0.15-0.09-0.14-0.09-0.15-0.09-0.14-0.09-0.15-0.09-0.14-0.08-0.14-0.09-0.14-0.08-0.15-0.16-0.28-0.14-0.28-0.08-0.14-0.06-0.14-0.07-0.14-0.06-0.14-0.06-0.15-0.12-0.28-0.1-0.28-0.04-0.15-0.05-0.14-0.03-0.14-0.04-0.15-0.03-0.15-0.03-0.14-0.06-0.45-0.01-0.15v-0.15l-0.01-0.15 0.03-0.51 0.03-0.16 0.03-0.17 0.03-0.16 0.04-0.17 0.1-0.32 0.06-0.15 0.07-0.16 0.14-0.3 0.08-0.14 0.18-0.28 0.1-0.14 0.1-0.13 0.11-0.13 0.11-0.12 0.24-0.24 0.12-0.11 0.13-0.1 0.14-0.1 0.13-0.1 0.15-0.09 0.14-0.08 0.15-0.08 0.16-0.08 0.48-0.18 0.17-0.05 0.17-0.04 0.36-0.06 0.18-0.02 0.18-0.01h0.19 0.01 0.02 0.02 0.01 0.02 0.01 0.02 0.02l0.03 0.01h0.03 0.03l0.06 0.01h0.03 0.02l-0.34-0.3-0.35-0.29-0.36-0.29-0.72-0.56-0.38-0.26-0.37-0.27-0.38-0.25-0.39-0.25-0.39-0.24-0.4-0.24-0.4-0.23-0.4-0.22-0.41-0.22-1.26-0.6-0.86-0.36-0.44-0.17-0.43-0.17-0.9-0.3-0.9-0.28-0.92-0.24-0.47-0.11-0.46-0.1-0.47-0.09-0.96-0.16-0.48-0.07-0.48-0.06-0.49-0.04-0.48-0.05-0.5-0.03-0.49-0.02-0.5-0.01-0.49-0.01-0.67 0.01-0.67 0.02z"/>
+                      <path id="c3jNa1REb" d="m298.04 183.76v-33.67h44.35v33.67h-44.35zm5.54-4.2 8.32-6.32 5.54 2.11 8.31-8.42 11.09 11.22v-23.85h-33.26v25.26zm10.1-20.51 0.19 0.01 0.2 0.03 0.19 0.02 0.19 0.03 0.18 0.04 0.18 0.05 0.18 0.04 0.18 0.06 0.34 0.12 0.17 0.07 0.16 0.07 0.15 0.08 0.16 0.08 0.14 0.08 0.15 0.09 0.14 0.1 0.26 0.2 0.12 0.1 0.12 0.11 0.12 0.12 0.1 0.11 0.11 0.12 0.09 0.12 0.09 0.13 0.16 0.26 0.07 0.13 0.06 0.14 0.06 0.13 0.05 0.15 0.08 0.28 0.03 0.15 0.02 0.15 0.01 0.15v0.15 0.15l-0.01 0.15-0.02 0.15-0.03 0.15-0.04 0.14-0.04 0.15-0.05 0.14-0.06 0.13-0.06 0.14-0.07 0.13-0.16 0.26-0.09 0.13-0.09 0.12-0.11 0.12-0.1 0.12-0.24 0.22-0.12 0.1-0.26 0.2-0.14 0.1-0.15 0.09-0.14 0.08-0.16 0.08-0.15 0.08-0.16 0.07-0.17 0.07-0.34 0.12-0.18 0.06-0.18 0.05-0.36 0.08-0.19 0.03-0.19 0.02-0.2 0.03-0.19 0.01-0.2 0.01h-0.2-0.2l-0.2-0.01-0.19-0.01-0.2-0.03-0.19-0.02-0.18-0.03-0.19-0.04-0.18-0.04-0.18-0.05-0.18-0.06-0.34-0.12-0.32-0.14-0.16-0.08-0.3-0.16-0.15-0.09-0.13-0.1-0.14-0.1-0.13-0.1-0.12-0.1-0.12-0.11-0.11-0.11-0.11-0.12-0.2-0.24-0.09-0.13-0.16-0.26-0.07-0.13-0.06-0.14-0.06-0.13-0.05-0.14-0.04-0.15-0.04-0.14-0.06-0.45v-0.15-0.15l0.06-0.45 0.08-0.28 0.05-0.15 0.06-0.13 0.06-0.14 0.07-0.13 0.16-0.26 0.09-0.13 0.2-0.24 0.11-0.11 0.11-0.12 0.12-0.11 0.12-0.1 0.13-0.1 0.14-0.1 0.13-0.1 0.15-0.09 0.3-0.16 0.16-0.08 0.32-0.14 0.34-0.12 0.18-0.06 0.18-0.04 0.18-0.05 0.19-0.04 0.18-0.03 0.19-0.02 0.2-0.03 0.19-0.01 0.2-0.01h0.2 0.2l0.2 0.01z"/>
+                      <path id="h2Q0j2aKii" d="m170.98 153.28h-14.09v27.6h24.5v-20.17h3.68v23.35h-31.86v-33.97h17.77v3.19zm2.45 5.58v-8.77l11.64 8.77h-11.64z"/>
+                      <path id="e1so2YuQoS" d="m493.52 150.09c3.02 0 5.47 2.45 5.47 5.47v0c0 3.02-2.45 5.46-5.47 5.46h-23.65c-3.02 0-5.47-2.44-5.47-5.46v0c0-3.02 2.45-5.47 5.47-5.47h23.65z"/>
+                      <path id="dxqpMBjzs" d="m493.54 160c3.01 0 5.46 2.45 5.46 5.46v0c0 3.02-2.45 5.47-5.46 5.47h-23.66c-3.02 0-5.46-2.45-5.46-5.47v0c0-3.01 2.44-5.46 5.46-5.46h23.66z"/>
+                      <path id="bvDmRvhnd" d="m493.52 171.95c3.02 0 5.47 2.45 5.47 5.47v0c0 3.02-2.45 5.46-5.47 5.46h-23.65c-3.02 0-5.47-2.44-5.47-5.46v0c0-3.02 2.45-5.47 5.47-5.47h23.65z"/>
+                      <path id="aMAV3Si2q" d="m394.71 377.36h-150.16"/>
+                    </defs>
+                    <use fill-opacity="0" stroke="#4285f4" stroke-width="2" xlink:href="#aHIf0e791"/>
+                    <use fill="#000000" fill-opacity="0" xlink:href="#aebH7nnDc"/>
+                    <use fill-opacity="0" stroke="#a434b7" stroke-width="2" xlink:href="#aebH7nnDc"/>
+                    <use fill-opacity="0" stroke="#77c800" stroke-width="2" xlink:href="#d1deglR8f3"/>
+                    <use fill-opacity="0" stroke="#a434b7" stroke-width="2" xlink:href="#f3pTna63Hq"/>
+                    <use fill="#a434b7" xlink:href="#e2xrknzxtr"/>
+                    <use fill-opacity="0" stroke="#a334b7" stroke-opacity="0" xlink:href="#e2xrknzxtr"/>
+                    <use fill-opacity="0" stroke="#a434b7" stroke-width="2" xlink:href="#d2zIsGwE5p"/>
+                    <use fill="#a434b7" xlink:href="#a5lG4suEpl"/>
+                    <use fill="#a434b7" xlink:href="#aj6LbcupC"/>
+                    <use fill-opacity="0" stroke="#a334b7" stroke-opacity="0" xlink:href="#aj6LbcupC"/>
+                    <use fill="#a434b7" xlink:href="#jOHMth2jB"/>
+                    <use fill="#a434b7" xlink:href="#c3jNa1REb"/>
+                    <use fill="#4285f4" xlink:href="#h2Q0j2aKii"/>
+                    <use fill-opacity="0" stroke="#77c800" stroke-width="2" xlink:href="#e1so2YuQoS"/>
+                    <use fill-opacity="0" stroke="#77c800" stroke-width="2" xlink:href="#dxqpMBjzs"/>
+                    <use fill-opacity="0" stroke="#77c800" stroke-width="2" xlink:href="#bvDmRvhnd"/>
+                    <use fill-opacity="0" stroke="#a434b7" stroke-width="2" xlink:href="#aMAV3Si2q" class="purple-section-line"/>
+                    </svg>
                 </div>
                 <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
-                  <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">You own what you create. We deliver it. Faster, farther, better.</h3>
+                  <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Focus on content, we deliver it. Focus on audience, we help you grow it.</h3>
                   <p>You've invested time and energy into creating amazing content for your readers. Finally, a publishing platform worthy of your effort. HyperPress leverages what's best about WordPress content management combined with a beautiful progressive web application (PWA) frontend your readers will love. Own your content, decide when and how to monitize it.</p>
                 </div>
               </div>
@@ -236,8 +314,8 @@ class TSHome extends PageViewElement {
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
-                          <polyline points="1,9 17,9" stroke="#800080" stroke-width="2" fill="none"></polyline>
-                          <polyline points="9,1 17,9 9,17" stroke="#800080" stroke-width="2" fill="none"></polyline>
+                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
                         </svg>
                       </div>
                   </section>
@@ -245,7 +323,7 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">Baked in Performance</h1>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">Powered by Google Cloud</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Pagespeed optimization service">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}pagespeed/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="workloadMigration" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="pagespeed-optimization">Hyper Optimized Delivery</h2>
@@ -255,8 +333,8 @@ class TSHome extends PageViewElement {
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
-                          <polyline points="1,9 17,9" stroke="#800080" stroke-width="2" fill="none"></polyline>
-                          <polyline points="9,1 17,9 9,17" stroke="#800080" stroke-width="2" fill="none"></polyline>
+                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
                         </svg>
                       </div>
                   </section>
@@ -274,8 +352,8 @@ class TSHome extends PageViewElement {
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
-                          <polyline points="1,9 17,9" stroke="#800080" stroke-width="2" fill="none"></polyline>
-                          <polyline points="9,1 17,9 9,17" stroke="#800080" stroke-width="2" fill="none"></polyline>
+                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
                         </svg>
                       </div>
                   </section>
@@ -283,7 +361,7 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">Preceisely Maintained</h1>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">Precisely Maintained</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-security-62x62.svg" alt="In depth security program">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}security/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="securityResponse" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="security-response">Backups and Updates</h2>
@@ -293,8 +371,8 @@ class TSHome extends PageViewElement {
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
-                          <polyline points="1,9 17,9" stroke="#800080" stroke-width="2" fill="none"></polyline>
-                          <polyline points="9,1 17,9 9,17" stroke="#800080" stroke-width="2" fill="none"></polyline>
+                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
                         </svg>
                       </div>
                   </section>
@@ -312,8 +390,8 @@ class TSHome extends PageViewElement {
                     <div class="ts-card__arrow">
                       <svg width="18px" height="18px" viewBox="0 0 18 18">
                         <title>Arrow</title>
-                        <polyline points="1,9 17,9" stroke="#800080" stroke-width="2" fill="none"></polyline>
-                        <polyline points="9,1 17,9 9,17" stroke="#800080" stroke-width="2" fill="none"></polyline>
+                        <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                        <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
                       </svg>
                     </div>
                   </section>
@@ -332,15 +410,15 @@ class TSHome extends PageViewElement {
             <div class="ts-grid--alternate ts-copy__inner ts-copy--two-column">
               <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">WordPress Gutenberg goodness</h4>
-                <p>The latest WordPress backend dashboard streamlined for productive writing and publishing. Focus on great writing using great writing tools.</p>
+                <p>The latest WordPress backend dashboard streamlined for productive editing and publishing. Focus on great writing using familiar writing and content management tools.</p>
               </div>
               <div class="ts-grid__col ts-copy__text is-6 is-5__large">
-                <h4 class="ts-headline4">Progressive Web Application (PWA).</h4>
-                <p>No more theme mess. Just our beautiful PWA frontend, built with Google LitElement, Material Design, and web components fully decoupled from WordPress.</p>
+                <h4 class="ts-headline4">Control your content</h4>
+                <p>HyperPress doesn't capitalize on your content like other services. We don't use paywalls or advertisements&#8212;that's for you to decide. Moving your content is as easy as moving any other self-hosted WordPress site.</p>
               </div>
               <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
-                <h4 class="ts-headline4">You own your content</h4>
-                <p>HyperPress doesn't capitalize on your content like other services. We don't use paywalls or advertisements&#8212;that's for your to decide. Moving your content is as easy as moving any other self-hosted WordPress site.</p>
+                <h4 class="ts-headline4">Progressive Web Application (PWA).</h4>
+                <p>No more theme mess. Just our beautiful PWA frontend, built with Google LitElement, Material Design, and web components fully decoupled from WordPress.</p>
               </div>
               <div class="ts-grid__col ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Smooth and natural</h4>

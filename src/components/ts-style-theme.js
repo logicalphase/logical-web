@@ -21,6 +21,7 @@ export const TsTheme = css`
   --app-accent-color: var(--app-primary-color);
   --app-primary-link-color: var(--app-primary-color);
   --app-primary-icon-color: #3c4043;
+  --app-primary-ts-icon-color: var(--app-primary-color);
   
   /* Drawer */
   --app-drawer-width: 326px;
