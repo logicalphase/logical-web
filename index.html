@@ -51,6 +51,14 @@
   <meta property="og:image" content="images/manifest/icon-144x144.png" />
 
   <script>
+    // Interim fix for constructable stylesheets being converted to 
+    // 'user agent stylesheet in Chrome Dev Tools - CSS inspector. This
+    // prevented styles from being editable in the inspector. Please see 
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=946537 for details
+    //  
+    // This should be removed for production to avoid negative performance impact.
+    delete Document.prototype.adoptedStyleSheets;
+
     // Load and register pre-caching Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {

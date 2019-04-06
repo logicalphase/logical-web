@@ -11,6 +11,55 @@ export const TsLayoutStyle = css`
     position: relative
 }
 
+.ts-visually-hidden {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px)
+}
+
+.ts-visually-show {
+    position: static;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    clip: auto
+}
+
+.ts-text-left {
+    text-align: left
+}
+
+.ts-text-right,
+[dir=rtl] .ts-text-left {
+    text-align: right
+}
+
+[dir=rtl] .ts-text-right {
+    text-align: left
+}
+
+.ts-text-center {
+    text-align: center
+}
+
+.ts-text-justify {
+    text-align: justify
+}
+
+.ts-valign-bottom {
+    vertical-align: bottom
+}
+
+.ts-valign-middle {
+    vertical-align: middle
+}
+
+.ts-valign-top {
+    vertical-align: top
+}
+
 .ts-text-center {
     text-align: center
 }

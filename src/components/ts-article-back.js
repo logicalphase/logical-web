@@ -1,10 +1,10 @@
-import { LitElement, html, css } from 'lit-element';
-import { repeat } from 'lit-html/directives/repeat';
-import { unsafeHTML } from 'lit-html/directives/unsafe-html';
-import { connect } from 'pwa-helpers/connect-mixin';
-import { updateMetadata } from 'pwa-helpers/metadata';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { repeat } from 'lit-html/directives/repeat.js';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+import { connect } from 'pwa-helpers/connect-mixin.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 import { formatDistance } from 'date-fns/esm';
-
 import {
   GooglePlus,
   Twitter,
@@ -14,10 +14,8 @@ import {
 } from './ts-icons.js';
 
 import { SharedStyles } from './ts-style-shared';
-import { TsGridStyle } from "./ts-style-grid";
 import { TsElevationStyle } from './ts-style-elevation';
 import { TsTypographyStyle } from './ts-style-typography';
-import { TsLayoutStyle } from './ts-style-layout';
 import { TsTableStyles } from './ts-style-table';
 import { TsWordPressStyles } from './ts-style-wp';
 
@@ -36,15 +34,13 @@ store.addReducers({
   article
 });
 
-class TSDetail extends connect(store)(LitElement) {
+class TSDetail extends connect(store)(PageViewElement) {
   static get styles() {
     return [
-      TsGridStyle,
+      SharedStyles,
       TsTableStyles,
       TsElevationStyle,
       TsTypographyStyle,
-      TsLayoutStyle,
-      SharedStyles,
       TsWordPressStyles,
       css`
 
@@ -52,7 +48,24 @@ class TSDetail extends connect(store)(LitElement) {
         display: block;
         padding: 0px;
       }
-   
+
+      h1, h2 {
+        font-weight: 400;
+        margin: 14px 0px 14px 0px
+      }
+
+      h2 {
+        font-size: 1.15rem;
+      }
+
+      h3 {
+        padding: 0; 
+      }
+
+      p {
+          font-weight: 300;
+      }
+      
       ol {
         margin-left: 0px;
         padding-left: 0px;
@@ -63,7 +76,7 @@ class TSDetail extends connect(store)(LitElement) {
       }
 
       ol li, ul li {
-
+        font-size:1rem;
         margin-right: 10px
       }
 
@@ -101,30 +114,16 @@ class TSDetail extends connect(store)(LitElement) {
         font-family: 'Times New Roman', Times, serif;
         font-size: 62px;
       }
-      cite {
-        font-size: 14px;
-        margin-top: 14px;
-      }
-      cite a {
-        border-bottom: 1px solid var(--app-primary-color);
-      }
 
-      #ts-site .ts-display3 {
-        margin-bottom: 14px;
-      }
-
-      .rich-text, p {
-        font-size: 14px;
-        letter-spacing: .25px;
-        line-height: 24px;
+      section {
+        max-width: 748px;
+        box-sizing: border-box;
       }
       .content-wrapper {
-        padding: 0;
-        border-top: 1px solid var(--app-primary-border-color);
+        padding: 10px 24px;
       }
       .item {
         display: flex;
-        
       }
       .cover {
         position: relative;
@@ -145,8 +144,18 @@ class TSDetail extends connect(store)(LitElement) {
       .flex {
         flex: 1;
       }
+      .title {
+        margin: 14px 0 4px;
+        font-size: 1.45rem;
+        font-weight: 300;
+        line-height: 1.2;
+      }
+      .item-item {
+        padding: 8px 0 34px 0;
+        font-size: 1rem;
+      }
       .desc {
-        padding: 0px 0 22px 0;
+        padding: 8px 0 22px 0;
       }
       .desc > h3 {
         font-size: 22px;
@@ -272,32 +281,6 @@ class TSDetail extends connect(store)(LitElement) {
       [hidden] {
         display: none !important;
       }
-
-      .article-meta__content {
-          background-color: hsla(0,0%,100%,.6);
-          font-size: .9em;
-          padding-left: 0px;
-          margin-top: 14px;
-          font-weight: 300;
-      }
-      .article-meta__author {
-          margin-bottom: 15px;
-      }
-      .article-meta__author-name {
-          font-weight: 500;
-      }
-      .article-meta__author {
-          margin-bottom: 16px;
-      }
-      .article-image__caption, .article-meta__published-at, .utility-copy {
-          color: #757575;
-          font-size: .88888889em;
-          line-height: 22px;
-      }
-      .article-meta__published-at {
-        margin-top: 44px;
-        font-size: normal;
-      }
       /* desktop screen */
       @media (min-width: 648px) {
         :host {
@@ -323,30 +306,24 @@ class TSDetail extends connect(store)(LitElement) {
         blockquote p {
           margin-bottom: 0px;
         }
-        cite {
-          font-size: 12px;
-          margin-top: 8px;
-        }
         small {
           margin-bottom: -24px;
         }
         section {
-          margin-top:0px;
-        }
-        #ts-site .ts-display3 {
-          margin-bottom: 0px;
-          letter-spacing: -1px;
+          margin: 0 auto;
         }
         .content-wrapper {
           padding: 0px;
-          margin-left: -34px;
-          max-width: 644px;
-          border-top: 0px solid var(--app-primary-border-color);
         }
         .item-desc {
           margin-left: 24px;
         }
-
+        .title {
+          margin-bottom: 8px;
+          font-size: 2rem;
+          line-height: 1.3;
+          text-align: left;
+        }
         .fav-btn-container,
         .preview-btn-container {
           display: flex;
@@ -360,38 +337,6 @@ class TSDetail extends connect(store)(LitElement) {
         }
         .desc {
           padding: 16px 0;
-        }
-      }
-
-      @media (min-width: 600px) {
-        .rich-text, p {
-          font-size: 14px;
-          letter-spacing: .25px;
-          line-height: 24px;
-        }
-        .article-meta__published-at {
-          margin-top: 24px;
-          font-size: normal;
-        }
-      }
-
-      @media (min-width: 1024px) {
-        .rich-text, p {
-          font-size: 16px;
-          letter-spacing: 0;
-          line-height: 26px;
-        }
-        .article-image__caption, .article-meta__published-at, .utility-copy {
-            line-height: 24px;
-        }
-        .article-meta__content {
-          margin-top: 30px;
-          padding-left: 10px;
-          max-width: 220px;
-        }
-        .article-meta__published-at {
-          margin-top: 24px;
-          font-size: normal;
         }
       }
     `
@@ -426,67 +371,49 @@ class TSDetail extends connect(store)(LitElement) {
     });
 
     return html `
-    <div class="hypersite-main-content clearfix">
-      <article id="ts-site">
-        <section ?hidden="${_showOffline}">
-          <div class="item">
-            <aside class="cover">
-              ${repeat(categories, (item) => html`
-                  <p class="ts-eyebrow">${item}</p>
-              `)}
-              <h1 class="ts-display3 fade-in title">${title}</h1>
-              <article-image class="article-image--full-aspect article-module" .src="${thumbnail}" .alt="${alt}"></article-image>
-            </aside>
+      <section id="ts-site" ?hidden="${_showOffline}">
+        <div class="item">
+          <div class="cover">
+            ${repeat(categories, (item) => html`
+                <p class="ts-eyebrow">${item}</p>
+            `)}
+            <h1 class="ts-display3 fade-in title">${title}</h1>
+            <div class="fade-in item-item" ?hidden="${!author}">By ${author} - Updated: ${date} ago.</div>
+            <article-image .src="${thumbnail}" .alt="${alt}"></article-image>
           </div>
-          <div class="ts-grid ts-grid__no-gap">
-            <div class="ts-quote__resources is-12 is-3__large">
-              <div class="article-meta__content">
-                <div class="article-meta__author ">
-                  <div class="article-meta__author-name"> 
-                    <div class="item-item" ?hidden="${!author}"> ${author}</div> 
-                  </div>
-                  <div class="article-meta__author-title">Google Cloud Architect</div>
-                  <span class="article-meta__published-at">Updated: ${date} ago.</span>
-                </div>
+        </div>
+        <div class="content-wrapper">
+          <div class="delayed-fade-in desc">
+            ${unsafeHTML(item.content && item.content.rendered || item.subtitle || 'None')}
+          </div>
+          <div class="ts-read-more" ?hidden="${categories.length === 0}">
+            <div class="meta-container">
+              <div class="article-footer">  
+                <h4>Category</h4>
+                <ul>
+                  ${repeat(categories, (item) => html`
+                    <li class="meta-list-item">${SubTitleIcon}<span>${item}</span></li>
+                  `)}
+                </ul>
               </div>
             </div>
-            <div class="is-12 is-9__large">
-              <div class="content-wrapper">
-                <div class="delayed-fade-in desc">
-                  ${unsafeHTML(item.content && item.content.rendered || item.subtitle || 'None')}
-                </div>
-                <div class="ts-read-more" ?hidden="${categories.length === 0}">
-                  <div class="meta-container">
-                    <div class="article-footer">  
-                      <h4>Posted in:</h4>
-                      <ul>
-                        ${repeat(categories, (item) => html`
-                          <li class="meta-list-item">${SubTitleIcon}<span>${item}</span></li>
-                        `)}
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="social-container">
-                    <div class="article-footer">
-                      <h4>Share me!</h4>
-                      <div class="social_share">
-                        <div class="slide-icons slide-left">
-                          <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
-                          <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
-                          <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
-                          <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
-                        </div>
-                      </div>
-                    </div>
+            <div class="social-container">
+              <div class="article-footer">
+                <h4>Share me!</h4>
+                <div class="social_share">
+                  <div class="slide-icons slide-left">
+                    <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
+                    <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
+                    <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
+                    <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/article/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </article>
-    </div>
-    <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
+        </div>
+      </section>
+      <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
     `;
   }
 

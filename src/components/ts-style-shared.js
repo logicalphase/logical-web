@@ -83,7 +83,7 @@ export const SharedStyles = css `
     margin-bottom: 28px;
   }
 
-  img {
+  img, embed, object, video {
     height: auto;
     /* Make sure images are scaled correctly. */
     max-width: 100%;
@@ -223,7 +223,10 @@ export const SharedStyles = css `
   li, li p {
     margin: 8px 0;
     padding: 0; 
-    font-size: 1rem; }
+    font-size: 16px; 
+    font-weight: 300;
+    letter-spacing: 0;
+  }
 
   ul.body-checks {
     list-style: none;
@@ -358,5 +361,15 @@ export const SharedStyles = css `
       padding: 40px 0;
     }
   }
+
+  @media (min-width: 1024px) {
+    .article-image--full, .article-image--full-aspect {
+      width: 100%;
+    }
+    .article-module {
+      margin: 35px 0 0 0 !important;
+    }
+  }
+
 
 `;

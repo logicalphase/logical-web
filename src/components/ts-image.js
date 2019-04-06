@@ -41,9 +41,9 @@ class ArticleImage extends LitElement {
     const { alt, placeholder, src, _loaded } = this;
     return html`
       <div id="placeholder" style="${placeholder ? `background-image: url('${placeholder}');` : ''}" ?loaded="${_loaded}">
-        <img src="${src}" alt="${alt}"
-            @load="${() => this._loaded = true}"
-            @error="${() => this._onImgError()}">
+        <picture>
+          <img src="${src}" alt="${alt}" @load="${() => this._loaded = true}" @error="${() => this._onImgError()}">
+        </picture>
       </div>
     `;
   }

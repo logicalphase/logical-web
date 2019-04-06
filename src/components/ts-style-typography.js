@@ -186,11 +186,11 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-eyebrow {
-    color: #5f6368;
-    font-size: 13px;
+    color: var(--app-primary-text-thin-color);
+    font-size: 14px;
     font-weight: 400;
-    letter-spacing: 1px;
-    line-height: 1;
+    letter-spacing: 1.5px;
+    line-height: 22px;
     overflow: visible;
     text-transform: uppercase
 }
@@ -204,10 +204,11 @@ export const TsTypographyStyle = css`
     font-family: Roboto Mono, monospace;
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     line-height: 1;
     margin: 0;
-    overflow: visible
+    overflow: visible;
+    text-transform: uppercase
 }
 
 #ts-site .ts-eyebrow--large strong {
