@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.4.2",
     "@polymer/test-fixture": "^4.0.2",
     "axe-core": "^3.2.2",
-    "babel-plugin-template-html-minifier": "^2.2.1",
+    "babel-plugin-template-html-minifier": "^3.0.0",
     "chai": "^4.2.0",
     "del": "^4.0.0",
     "eslint": "^5.15.3",
