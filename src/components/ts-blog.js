@@ -27,16 +27,22 @@ import { SharedStyles } from "./ts-style-shared";
 import { TsButtonStyle } from './ts-style-button';
 import { TsElevationStyle } from './ts-style-elevation';
 import { TsTypographyStyle } from './ts-style-typography';
+import { TsGridStyle } from './ts-style-grid';
+import { TsLayoutStyle } from './ts-style-layout';
+import { TsTheme } from './ts-style-theme';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
 class TSBlog extends connect(store)(PageViewElement) {
   static get styles() {
     return [
-      SharedStyles,
       TsButtonStyle,
-      TsElevationStyle,
+      TsGridStyle,
       TsTypographyStyle,
+      TsLayoutStyle,
+      TsTheme,
+      TsElevationStyle,
+      SharedStyles,
       css`
       :host {
         display: block;
@@ -106,22 +112,22 @@ class TSBlog extends connect(store)(PageViewElement) {
         background-color: var(--app-reverse-text-color);
         width: 210px;
         margin-left: 34px;
-        margin-top: 5px;
+        margin-top: 0px;
       }
 
       .nav li h3 {
         color: var(--app-primary-text-color);
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: 400;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         margin: 5px 0px 5px;
-        padding-bottom: 0;
-        padding-left: 20px;
+        padding: 20px 0 20px 20px;
       }
 
       .nav li {
-        margin-right: 17px;
+        margin-right: 0px;
       }
 
       ul.right-side-nav {
@@ -174,12 +180,22 @@ class TSBlog extends connect(store)(PageViewElement) {
 
       @media (min-width: 460px) {
         .hero {
-          background-position: 94% center;
+          background-position: 99% center;
         }
         .ts-content-wrapper {
           padding: 0; 
           background: var(--app-primary-section-background-color);
         }
+        .background-grey {
+          background: white;
+        }
+        .text-uppercase {
+          border-top: 0px;
+        }
+        .ts-pad-bottom-12 {
+          padding-bottom: 96px;
+          border-top: 1px solid var(--app-primary-hover-color);
+}
       }
       `
     ];
@@ -200,56 +216,59 @@ class TSBlog extends connect(store)(PageViewElement) {
     });
 
     return html`
-
-    <article id="ts-site" class="ts-blog">
-      <header class="hero">
-        <div class=" fade-in ts-header-wrapper">
-          <h1 class="paper-font-display2 paper-font-light">WordPress Blog</h1>
-          <h2 class="paper-font-title paper-font-light">Pro tips for making the most of your WordPress site</h2>
-          <div class="center-button">
-            <a href="/contact/" 
-              class="button button-large button-logo ts-button" 
-              track-type="navigateTo" track-name="home"
-              track-metadata-position="banner">Contact a WordPress Pro
-            </a>
-          </div>
-        </div>
-      </header>
-      <div class="ts-content-wrapper">
-        <section class="content background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
-          <div class="columns">
-            <main class="main">
-              <div class="ts-content-grid-box" ?hidden="${!_query}">
-                ${repeat(_data, item => html`
-                  <div class="ts-blog-list-item">
-                    <div class="flex-hover-card">
-                      <ts-item .item="${item}"></ts-item>
-                    </div>
+    <div class="hypersite-main-content clearfix">
+      <article id="ts-site" class="ts-blog">
+          <header class="ts-hero hero">
+            <div class="ts-grid">
+              <div class="ts-grid__column is-7 is-6__large">
+                <header class="ts-grid__column is-7 is-6__large">
+                  <div class="fade-in content-set">
+                    <h1 class="ts-section-header__eyebrow ts-eyebrow">The blog for professional publishers</h1>
+                    <h2 class="ts-display3">Articles designed by editors, readers and SEO specialists.</h2>
+                    <p class="ts-headline4 ts-why-google__intro-text">Create great content that drives readership and your goals.</p>
                   </div>
-                `)}
+                </header>
               </div>
-            </main>
-            <aside class="sidebar">
-              <div class="nav">
-                <div class="sticky">
-                  <ul class="fade-in right-side-nav l-space-bottom-5">
-                    <li>
-                      <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="more-about-serverless">Blog Categories</h3>
-                    </li>
-                    ${repeat( _data, item => html`
-                      <li>
-                        <a id="${item.categories_names}" track-type="category${item.categories_names}" track-name="blog-page" track-metadata-position="body" href="https://logicalphase.com/category/${ item.categories_names }">${item.categories_names}</a>
-                      </li>
-                    `)}
-                  </ul>
+              <div class="cloud-grid__col is-5">
+              </div>
+            </div>
+          </header>
+        <div class="ts-content-wrapper">
+          <section class="content background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
+            <div class="columns">
+              <main class="main">
+                <div class="ts-content-grid-box" ?hidden="${!_query}">
+                  ${repeat(_data, item => html`
+                    <div class="ts-blog-list-item">
+                      <div class="flex-hover-card mdc-elevation--z3">
+                        <ts-item .item="${item}"></ts-item>
+                      </div>
+                    </div>
+                  `)}
                 </div>
-              </div>
-            </aside>
-          </div>
-        </section>
-        <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
-      </div>
-    </article>
+              </main>
+              <aside class="sidebar mdc-elevation--z3">
+                <div class="nav">
+                  <div class="sticky">
+                    <ul class="fade-in right-side-nav l-space-bottom-5">
+                      <li>
+                        <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="more-about-serverless">Blog Categories</h3>
+                      </li>
+                      ${repeat( _data, item => html`
+                        <li>
+                          <a id="${item.categories_names}" track-type="category${item.categories_names}" track-name="blog-page" track-metadata-position="body" href="https://logicalphase.com/category/${ item.categories_names }">${item.categories_names}</a>
+                        </li>
+                      `)}
+                    </ul>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </section>
+          <ts-offline ?hidden="${!_showOffline}" @refresh="${() => store.dispatch(refreshPage())}"></ts-offline>
+        </div>
+      </article>
+    </div>
     `;
   }
   static get properties() {
