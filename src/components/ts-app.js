@@ -489,7 +489,7 @@ class TSApp extends connect(store)(LitElement) {
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar class="masthead">
             <a href="/" alt="${appTitle} home">
-              <img rel="dns-prefetch" class="ts-brand-site-logo" src="https://cdn1-themesurgesonslt.netdna-ssl.com/images/hyperpress-logo-254x46.png" alt="${appTitle}">  
+              <img rel="dns-prefetch" class="ts-brand-site-logo" src="/images/hyperpress-logo-254x46.png" alt="${appTitle}">  
             </a>           
             <div class="ts-title" main-title>
               <span class="hypersite-site-name">${appTitle}</span>

@@ -306,7 +306,7 @@ class TSHome extends PageViewElement {
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">PWA Designed Frontend</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-pwa-62x-62.svg" alt="Progressive web application design">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}design/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="design/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="progressive-web-frontend">Inviting and Engaging</h2>
                       </a>
                     </header>

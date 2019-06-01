@@ -16,6 +16,7 @@ export const TsTheme = css`
   --app-primary-background-color: #ffffff;
   --app-secondary-background-color: #f7f7f7;
   --app-primary-navigation-background: #edf0f2;
+  --app-primary-text-thin-color: rgb(95, 99, 104);
 
   /* Link and Accent */
   --app-accent-color: var(--app-primary-color);
