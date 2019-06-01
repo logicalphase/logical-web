@@ -44,7 +44,7 @@
     "deep-extend": ">=0.5.1",
     "del": "^4.0.0",
     "eslint": "^5.15.3",
-    "eslint-config-google": "^0.12.0",
+    "eslint-config-google": "^0.13.0",
     "eslint-plugin-lit": "^0.6.0",
     "extend": ">=3.0.2",
     "fs": "0.0.1-security",
