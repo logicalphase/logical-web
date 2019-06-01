@@ -41,6 +41,7 @@
     "axe-core": "^3.2.2",
     "babel-plugin-template-html-minifier": "^2.2.1",
     "chai": "^4.2.0",
+    "deep-extend": ">=0.5.1",
     "del": "^4.0.0",
     "eslint": "^5.15.3",
     "eslint-config-google": "^0.12.0",
