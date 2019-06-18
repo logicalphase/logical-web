@@ -47,7 +47,6 @@
     "eslint-plugin-lit": "^1.0.0",
     "eslint-config-google": "^0.13.0",
     "extend": ">=3.0.2",
-    "fs": "0.0.1-security",
     "gulp": "^4.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
