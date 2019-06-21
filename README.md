@@ -9,7 +9,7 @@
 npm i && polymer serve
 ```
 
-IMPORTANT: This project currently makes use of bleeding edge technologies and subject to significant breaking changes. It should not be considered safe for production use. 
+Please refer to Polymer Documentation at https://www.polymer-project.org/ for information on lit-element, lit-html, and PWA Starter Kit for reference.
 
 - PWA goodness (manifest, service worker)
 - Lit-element @sorville, and lit-html by @justin and contributors
