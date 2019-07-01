@@ -45,7 +45,6 @@ class TSSocial extends LitElement {
     const { link, placeholder, _loaded } = this;
     return html`
     <div id="placeholder">
-      <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/${slug}/`} @click=${(e) => this._getDataHref(e)}>${GooglePlus}</span>
       <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
       <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
       <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>

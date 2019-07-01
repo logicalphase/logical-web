@@ -50,20 +50,24 @@ class TSItem extends LitElement {
       }
       .gplus-icon:hover {
         fill: #db4437;
+        cursor: pointer;
       }
       .blogger-icon:hover {
         fill: #fb8f3d;
+        cursor: pointer;
       }
       .twitter-icon:hover {
         fill: #1da1f2;
+        cursor: pointer;
       }
       .facebook-icon:hover {
         fill: #3b5998;
+        cursor: pointer;
       }
       .linkedin-icon:hover {
         fill: #007bb5;
+        cursor: pointer;
       }
-
       .ts-blog-meta-calendar svg {
         vertical-align: bottom;
       }
@@ -180,7 +184,6 @@ class TSItem extends LitElement {
       <div class="social_container">
         <div class="social_share">
           <div class="slide-icons slide-left">
-            <span class="social-icon gplus-icon" .link=${ `https://plus.google.com/share?url=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${GooglePlus}</span>
             <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Twitter}</span>
             <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Linkedin}</span>
             <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Facebook}</span>
