@@ -34,7 +34,7 @@
     "@polymer/test-fixture": "^4.0.2",
     "axe-core": "^3.2.2",
     "chai": "^4.2.0",
-    "del": "^4.1.1",
+    "del": "^5.0.0",
     "eslint": "^6.0.1",
     "eslint-config-google": "^0.13.0",
     "eslint-plugin-lit": "^1.1.1",
