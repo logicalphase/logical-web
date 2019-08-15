@@ -58,7 +58,7 @@ export const TsTypographyStyle = css`
 
 #ts-site .ts-display3 {
     font-size: 36px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0;
     line-height: 44px;
     margin: 24px 0 0 -4px;
@@ -142,7 +142,7 @@ export const TsTypographyStyle = css`
 
 #ts-site .ts-headline4 {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0;
     line-height: 30px;
     margin: 24px 0 0 0;
@@ -268,16 +268,16 @@ export const TsTypographyStyle = css`
 .ts-body-text, p {
     font-size: 16px;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 185%;
 }
-.ts-body-text .ts-superscript, p .ts-superscript {
+.ts-superscript, p .ts-superscript {
     font-size: 10px;
     line-height: 1;
 }
 .ts-body-text__small {
     font-size: 14px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 185%;
 }
 .ts-body-text__small .ts-superscript {
     font-size: 10px;
