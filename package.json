@@ -35,7 +35,7 @@
     "chai": "^4.2.0",
     "del": "^5.0.0",
     "eslint": "^6.1.0",
-    "eslint-config-google": "^0.13.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-plugin-lit": "^1.2.0",
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
