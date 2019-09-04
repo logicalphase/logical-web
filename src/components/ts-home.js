@@ -426,13 +426,13 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">Precisely Maintained</h1>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Security</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-security-62x62.svg" alt="In depth security program">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}security/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="securityResponse" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="security-response">Backups and Updates</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="security-response">Security Services</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">Focus on creating, leave the maintaining to us. Live encrypted backups of your content, always up-to-date, no muss, no fuss.</p>
+                    <p class="ts-card__body">We investigate, audit, and restore compromised sites that mitigate loss and prevent future attacks.</p>
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
@@ -445,13 +445,32 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">Precisely Maintained</h1>
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="WordPress Preventive Care">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}care/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="wordpressRelocation" track-metadata-position="body">
+                        <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">Annual Preventive Care</h2>
+                      </a>
+                    </header>
+                    <p class="ts-card__body">Focus on creating, leave the maintaining to us. 24-7 monitoring, updates, backups and more.</p>
+                    <div class="ts-card__arrow">
+                      <svg width="18px" height="18px" viewBox="0 0 18 18">
+                        <title>Arrow</title>
+                        <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                        <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                      </svg>
+                    </div>
+                  </section>
+                </div>
+                <div class="ts-grid__col is-6 is-4__large">
+                  <section class="ts-card ts-card--solution">
+                    <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">Migration Services</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-migrations-62x62.svg" alt="WordPress migration">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}migrations/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="wordpressRelocation" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">WordPress Relocation</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">Existing WordPress content? No problem. We'll safely move your content to it's new HyperPress home.</p>
+                    <p class="ts-card__body">Existing WordPress site? No problem. We'll safely move your site to it's new home without interruption.</p>
                     <div class="ts-card__arrow">
                       <svg width="18px" height="18px" viewBox="0 0 18 18">
                         <title>Arrow</title>

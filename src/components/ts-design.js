@@ -55,34 +55,6 @@ class TSDesign extends PageViewElement {
           grid-row-start: 1;
         }
 
-        path {
-        stroke-width: 2;
-        }
-
-        .first-line {
-          stroke-dasharray: 1200 30;
-          stroke-dashoffset: 2700;
-          animation: draw 3s linear infinite;
-          animation-direction: linear;
-        }
-
-        .second-line {
-          stroke-dasharray: 1200 30;
-          stroke-dashoffset: 2700;
-          animation: draw 5s linear infinite;
-        }
-
-        .third-line {
-          stroke-dasharray: 1200 30;
-          stroke-dashoffset: 2700;
-          animation: draw 7s linear infinite;
-        }
-
-        @keyframes draw {
-          from {
-            stroke-dashoffset: 0
-          }
-        }
       }
 
       @media (max-width: 800px) {
@@ -118,7 +90,7 @@ class TSDesign extends PageViewElement {
                         class="ts-button ts-button--primary" 
                         track-type="navigateTo" 
                         track-name="home"
-                        track-metadata-position="banner">Contact a WordPress pro</a>
+                        track-metadata-position="banner">Let's build your dream site</a>
                     </div>
                   </div>
                 </header>
@@ -134,8 +106,16 @@ class TSDesign extends PageViewElement {
                     <img class="ts-content-grid-image" src="/images/content/ts-pwa-design-200x200-opt.svg" alt="Containerize On Prem Applications" />
                   </div>
                   <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
-                    <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Engaging Experiences Regardless of Screen Size</h3>
+                    <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Engaging Regardless of Screen Size</h3>
                     <p>You've invested a great deal of time and money into creating products or services that amaze your customers. Finally, a WordPress web site worthy of your enterprise and your dreams. HyperPress leverages what's best about WordPress, the editing workflow, and combines it with a beautiful progressive web application (PWA) frontend.</p>
+                    <div class="ts-content-header__link ts-element-align">
+                      <a 
+                        href="/contact/" 
+                        class="ts-button ts-button--primary ts-content-button ts-element-display" 
+                        track-type="navigateTo" 
+                        track-name="design"
+                        track-metadata-position="banner">Contact our design team</a>
+                    </div> 
                   </div>
                 </div>
               </section>
@@ -146,11 +126,19 @@ class TSDesign extends PageViewElement {
               <section class="ts-copy">
                 <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center">
                   <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
-                    <img src="/images/content/ts-pwa-conversions-200x200-opt.svg" alt="Increased site traffic and conversions" />
+                    <img class="ts-content-grid-image" src="/images/content/ts-pwa-conversions-200x200-opt.svg" alt="Increased site traffic and conversions" />
                   </div>
                   <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
                     <h3 class="ts-headline3" id="hyperpress-increases-traffic-conversions">Increase Traffic and Revenue</h3>
                     <p>We breath life into online vision. We create high-quality Progressive Web Applications using the same tools Google uses to build theirs, including <a href="https://www.polymer-project.org/">Polymer</a>, <a href="https://material.io/">Material Design</a>, and Golang. We leverage <a href="https://wordpress.org">WordPress</a> REST API to build remarkable, reliable, and secure web experiences.</p>
+                    <div class="ts-content-header__link ts-element-align">
+                      <a 
+                        href="/contact/" 
+                        class="ts-button ts-button--primary ts-content-button ts-element-display" 
+                        track-type="navigateTo" 
+                        track-name="design"
+                        track-metadata-position="banner">Let's build your dream site</a>
+                    </div> 
                   </div>
                 </div>
               </section>

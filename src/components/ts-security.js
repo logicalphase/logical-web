@@ -137,7 +137,6 @@ class TSSecurity extends PageViewElement {
                       <li>Data Modification Attacks</li>
                       <li>Denial of Service (DDoS)</li>
                       <li>Brute Force Password Attacks</li>
-                      <li>Denial of Service (DDoS) Attacks</li>
                       <li>Eavesdropping and Theft of Trade Secrets</li>
                       <li>Industrial Sabotage (domestic and international)</li>
                       <li>Hacktivisim</li>
