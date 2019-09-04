@@ -5,8 +5,8 @@ export const TsTheme = css`
   display: block;
    
   /* Theme Colors */
-  --app-primary-color: #8d008d;
-  --app-primary-hover-color: #600060;
+  --app-primary-color: #600060;
+  --app-primary-hover-color: #8d008d;
   --app-secondary-color: #000000;
 
   --app-primary-text-color: #212121;

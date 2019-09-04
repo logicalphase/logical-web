@@ -193,17 +193,17 @@ export const TsLayoutStyle = css`
 }
 
 @media screen and (max-width:720px) {
-    .ts-full-width-page .ts-main-content,
-    .ts-landing-page .ts-main-content,
-    .ts-products-page .ts-main-content,
-    .ts-main-content {
-        padding: 0 16px
-    }
-    .ts-section-nav+.ts-article,
-    .ts-section-nav+.ts-page-nav+.ts-article {
-        margin: 0;
-        width: 100%
-    }
+  .ts-full-width-page .ts-main-content,
+  .ts-landing-page .ts-main-content,
+  .ts-products-page .ts-main-content,
+  .ts-main-content {
+      padding: 0 16px
+  }
+  .ts-section-nav+.ts-article,
+  .ts-section-nav+.ts-page-nav+.ts-article {
+      margin: 0;
+      width: 100%
+  }
 }
 
 .hypersite-main-content  {
@@ -270,7 +270,10 @@ export const TsLayoutStyle = css`
 }
 
 .ts-section-header__link {
-  padding-top: 60px;
+  padding-top: 40px;
+}
+.ts-content-header__link {
+  padding-top: 30px;
 }
 
 @media all and (min-width: 600px) {

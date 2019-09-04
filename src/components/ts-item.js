@@ -4,7 +4,6 @@ import { unsafeHTML } from "lit-html/directives/unsafe-html";
 
 import {
   Calendar,
-  GooglePlus,
   Twitter,
   Facebook,
   Linkedin
@@ -24,7 +23,7 @@ class TSItem extends LitElement {
 
       p {
         word-spacing: 0.1px;
-        font-size: 14px;
+
       }
 
       .ts-read-more {
@@ -113,8 +112,6 @@ class TSItem extends LitElement {
         line-height: 14px;
       }
 
-
-
       .category-vertical-lr a {
         color: var(--app-reverse-text-color);
       }
@@ -122,7 +119,6 @@ class TSItem extends LitElement {
       @media (min-width: 460px) {
         p {
           word-spacing: 0.1px;
-          font-size: 15px;
         }
         .inner {
           margin-right: 0px;

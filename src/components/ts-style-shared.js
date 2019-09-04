@@ -236,11 +236,12 @@ export const SharedStyles = css `
 
   ul.body-checks li {
     background-image: url('/images/icons/ts-check-purple.svg');
-    fill: var(--app-primary-color);
+    stroke: var(--app-primary-color);
+    font-size: 17px;
+    font-weight: 400;
     background-repeat: no-repeat;
-    line-height: 24px;
     padding: 5px 0 0 36px;
-    background-position: 0px 4px; }
+    background-position: 0px 5px; }
 
   .ts-icon{
     fill: var(--app-primary-color);
@@ -302,14 +303,23 @@ export const SharedStyles = css `
     margin-bottom: 26px;
   }
 
-  .ts-content-grid-image {
-    padding-bottom: 24px;
+  .ts-content-grid-image,
+  .ts-content-grid-image-lower {
+    padding-bottom: 64px;
+    padding-top: 36px;
   }
 
   .ts-products-and-solutions 
   .card-cta-image 
   .ts-button__set {
     margin-bottom: 24px;
+  }
+
+  .ts-element-align {
+    text-align: center;
+  }
+  .ts-element-display {
+    display: block;
   }
 
   /* All screens larger than 460px */
@@ -332,7 +342,7 @@ export const SharedStyles = css `
     }
 
     .ts-hero .content-set {
-      margin: 80px 0 40px 0;
+      margin: 80px 14px 40px 14px;
     }
 
     .ts-grid-wrapper-standard {
@@ -359,6 +369,12 @@ export const SharedStyles = css `
 
     .ts-section {
       padding: 40px 0;
+    }
+    .ts-element-align {
+      text-align: left;
+    }
+    .ts-element-display {
+      display: block;
     }
   }
 

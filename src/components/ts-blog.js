@@ -212,7 +212,7 @@ class TSBlog extends connect(store)(PageViewElement) {
     }
     updateMetadata({
       title: `HyperPress Articles`,
-      description: "WordPress How to's, tutorials, and pro tips to get the most from your site"
+      description: `WordPress How to's, tutorials, and pro tips to get the most from your site`
     });
 
     return html`

@@ -420,7 +420,7 @@ class TSDetail extends connect(store)(LitElement) {
 
     // @ts-ignore
     updateMetadata({
-      title: `${title} - HyperPress Blog Article`,
+      title: title,
       description: title,
       image: thumbnail
     });
@@ -493,7 +493,7 @@ class TSDetail extends connect(store)(LitElement) {
   static get properties() {
     return {
       _isFetching: { type: Boolean },
-      _data: { type: Array },
+      _data: { type: Object },
       _lastVisitedListPage: { type: Boolean },
       _showOffline:{ type: Boolean }
     };

@@ -149,6 +149,7 @@ export const TsButtonStyle = css`
     color: #202124;
     text-transform: none;
   }
+
   @media all and (min-width: 600px) {
     .ts-button--flat__heading {
       font-size: 22px;
@@ -280,5 +281,9 @@ export const TsButtonStyle = css`
     background-color: transparent;
     color: inherit;
     outline: none;
+  }
+
+  .ts-content-button {
+    margin-bottom: 34px;
   }
 `;

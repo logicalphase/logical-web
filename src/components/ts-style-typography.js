@@ -130,8 +130,11 @@ export const TsTypographyStyle = css`
 
 @media all and (min-width: 600px) {
     #ts-site .ts-headline3 {
-        font-size: 32px;
-        line-height: 40px
+        font-size: 28px;
+        line-height: 40px;
+    }
+    #ts-site .ts-headline3 {
+        margin: 24px 16px 0 0;
     }
 }
 
@@ -141,18 +144,12 @@ export const TsTypographyStyle = css`
 }
 
 #ts-site .ts-headline4 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 30px;
     margin: 24px 0 0 0;
     color: var(--app-primary-text-color);
-}
-
-@media all and (min-width: 600px) {
-    #ts-site .ts-headline4 {
-        font-size: 22px
-    }
 }
 
 #ts-site .ts-headline4 strong {
@@ -266,7 +263,7 @@ export const TsTypographyStyle = css`
     line-height: 1;
 }
 .ts-body-text, p {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 185%;
 }

@@ -33,11 +33,10 @@ class TSDesign extends PageViewElement {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-design-header.svg') no-repeat;
-        background-size: contain;
-        background-position: center center;
+        background: var(--app-reverse-text-color) url('/images/header/ts-design-header-opt.svg') no-repeat;
+        background-size: 380px;
+        background-position: 93% 80px;
       }
-
 
       @media (min-width: 460px) {
 
@@ -49,10 +48,6 @@ class TSDesign extends PageViewElement {
           max-width: 600px;
         }
 
-        .hero {
-          background-size: 400px;
-          background-position: 90% center;
-        }
         section.ts-copy {
           margin: 0;
         }
@@ -90,9 +85,9 @@ class TSDesign extends PageViewElement {
         }
       }
 
-        @media (max-width: 800px) {
+      @media (max-width: 800px) {
         .hero {
-          background-position: 97% center !important;
+          background: none;
         }
       }   
       `
@@ -114,9 +109,17 @@ class TSDesign extends PageViewElement {
               <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
                 <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
-                    <h1 class="ts-section-header__eyebrow ts-eyebrow">HyperPress Progressive Web Application</h1>
-                    <h2 class="ts-display3">From accessibility to typography: What a view</h2>
-                    <p class="ts-headline4 ts-why-google__intro-text">Keep your readers engaged with inviting page and article views no matter the screen size.</p>
+                    <h1 class="ts-section-header__eyebrow ts-eyebrow">Progressive Web Application (PWA)</h1>
+                    <h2 class="ts-display3">From accessibility to typography</h2>
+                    <p class="ts-headline4 ts-why-hyperpress__intro-text">Keep your visitors engaged with attractive, inviting page and article views specifically designed around your brand.</p>
+                    <div class="ts-section-header__link">
+                      <a 
+                        href="/contact/" 
+                        class="ts-button ts-button--primary" 
+                        track-type="navigateTo" 
+                        track-name="home"
+                        track-metadata-position="banner">Contact a WordPress pro</a>
+                    </div>
                   </div>
                 </header>
               </div>
@@ -146,8 +149,8 @@ class TSDesign extends PageViewElement {
                     <img src="/images/content/ts-pwa-conversions-200x200-opt.svg" alt="Increased site traffic and conversions" />
                   </div>
                   <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
-                    <h3 class="ts-headline3" id="hyperpress-increases-traffic-conversions">HyperPress Increases Traffic and Conversions</h3>
-                    <p>We breath life into online vision. We create high-quality Progressive Web Applications using the same tools Google uses to build theirs, including <a href="https://www.polymer-project.org/">Polymer</a>, <a href="https://material.io/">Material Design</a>, and Golang. We also leverage <a href="https://wordpress.org">WordPress</a> REST API to build remarkable, reliable, and secure web experiences..</p>
+                    <h3 class="ts-headline3" id="hyperpress-increases-traffic-conversions">Increase Traffic and Revenue</h3>
+                    <p>We breath life into online vision. We create high-quality Progressive Web Applications using the same tools Google uses to build theirs, including <a href="https://www.polymer-project.org/">Polymer</a>, <a href="https://material.io/">Material Design</a>, and Golang. We leverage <a href="https://wordpress.org">WordPress</a> REST API to build remarkable, reliable, and secure web experiences.</p>
                   </div>
                 </div>
               </section>

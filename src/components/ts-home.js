@@ -44,13 +44,17 @@ class TSHome extends PageViewElement {
         background-position: center center;
       }
 
-      .ts-section-right-image {
+      .ts-card .ts-section-right-image {
         width: 100%;
         height: auto;
       }
 
       #ts-site .ts-headline3 {
         margin-top: 24px;
+      }
+
+      .ts-link .ts-headline4 {
+        margin-right: 14px;
       }
 
       .ts-section-elevated-padding {
@@ -100,11 +104,11 @@ class TSHome extends PageViewElement {
       }
       @keyframes wp-draw {
         0% {
-          stroke: #0273d4;
+          stroke: #600066;
           opacity: 1;
         }
         25% {
-          stroke: #600066;
+          stroke: #f4b400;
         }
         50% {
           stroke: #008c3a;
@@ -113,11 +117,11 @@ class TSHome extends PageViewElement {
           stroke: #ff3102;
         }
         100% {
-          stroke: #f4b400;
+          stroke: #600066;
         }
         0% {
-          stroke: #0273d4;
-          opacity: 0.3;
+          stroke: #600066;
+          opacity: 0.9;
         }
       }
       @keyframes FadeIn { 
@@ -152,14 +156,18 @@ class TSHome extends PageViewElement {
         .ts-content-grid-image {
           padding: 44px 0 24px 0;
         }
+
+        .ts-card .ts-link .ts-headline4 {
+          margin-right: 14px !important;
+        }
       }
 
       @media only screen and (min-width: 1024px) {
         .wordpress-animated-bg {
           display: inline-block;
           position: relative;
-          top: 16px;
-          right: -40px;
+          top: 28px;
+          right: 0px;
           min-width: auto;
           min-height: 500px;
         }
@@ -167,8 +175,13 @@ class TSHome extends PageViewElement {
         .ts-section-right-image {
           width: 370px;
           height: auto;
+          margin-left: 34px;
           object-fit:var(--lazy-image-fit);
           position: relative;
+        }
+
+        .ts-promo-box-light p {
+          padding-right: 34px;
         }
 
         .ts-section-elevated-padding {
@@ -194,7 +207,7 @@ class TSHome extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: "Home - HyperPress",
+      title: "High Availability Hosting and Managed Services for WordPres - Logical Phase",
       description: "Home page"
     });
 
@@ -206,9 +219,17 @@ class TSHome extends PageViewElement {
             <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
               <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                 <div class="content-set">
-                  <h1 class="ts-section-header__eyebrow ts-eyebrow">HyperPress Publishing System</h1>
-                  <h2 class="ts-display3">From design to delivery: WordPress for writers.</h2>
-                  <p class="ts-headline4 ts-why-google__intro-text">Designed for professional online publishers. Create great content, grow your audience, monitize your work.</p>
+                  <h1 class="ts-section-header__eyebrow ts-eyebrow">We make WordPress better</h1>
+                  <h2 class="ts-display3">High Availability Hosting and Managed Services for WordPress</h2>
+                  <p class="ts-headline4 ts-why-google__intro-text">Hyperfast. Functionally superior. Fiercely defended.</p>
+                  <div class="ts-section-header__link">
+                      <a 
+                        href="/contact/" 
+                        class="ts-button ts-button--primary" 
+                        track-type="navigateTo" 
+                        track-name="home"
+                        track-metadata-position="banner">Contact a WordPress pro</a>
+                  </div>
                 </div>
               </header>
             </div>
@@ -302,9 +323,9 @@ class TSHome extends PageViewElement {
                     </svg>
                   </lazy-image>
                 </div>
-                <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
+                <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start ts-promo-box-light">
                   <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Focus on content, we deliver it. Focus on audience, we help you grow it.</h3>
-                  <p>You've invested time and energy into creating amazing content for your readers. Finally, a publishing platform worthy of your effort. HyperPress leverages what's best about WordPress content management combined with a beautiful progressive web application (PWA) frontend your readers will love. Own your content, decide when and how to monitize it.</p>
+                  <p>You've invested a lot of time and energy into creating amazing content, services, and products for your customers. We provide managed WordPress hosting and professional services worthy of your efforts. HyperPress leverages what's best about WordPress, and makes it so much better.</p>
                 </div>
               </div>
             </section>
@@ -316,7 +337,7 @@ class TSHome extends PageViewElement {
               <div class="ts-grid ts-grid__no-gap">
                 <header class="ts-grid__col is-6 is-4__large ts-section-header ts-section-header--solutions">
                   <h1 class="ts-section-header__eyebrow ts-eyebrow">The HyperPress difference</h1>
-                  <h2 class="ts-section-header__heading ts-headline3" id="wordpress-you-need-solutions-you-deserve">A smarter online publishing platform</h2>
+                  <h2 class="ts-section-header__heading ts-headline3" id="wordpress-you-need-solutions-you-deserve">Smarter, faster, superior WordPress.</h2>
                   <div class="ts-section-header__link">
                     <a 
                       href="/contact/" 
@@ -329,13 +350,51 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">Powered by Google Cloud</h1>
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-pwa-62x-62.svg" alt="Pagespeed optimization service">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}hosting/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="workloadMigration" track-metadata-position="body">
+                        <h2 class="ts-card__heading ts-headline4" id="pagespeed-optimization">Hyper Optimized Hosting</h2>
+                      </a>
+                    </header>
+                    <p class="ts-card__body">Supercharged fully managed WordPress hosting globally delivered to any screen.</p>
+                      <div class="ts-card__arrow">
+                        <svg width="18px" height="18px" viewBox="0 0 18 18">
+                          <title>Arrow</title>
+                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                        </svg>
+                      </div>
+                  </section>
+                </div>
+                <div class="ts-grid__col is-6 is-4__large">
+                  <section class="ts-card ts-card--solution">
+                    <header>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Performance</h1>
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Progressive web application design">
+                      <a class="ts-link ts-card__link ts-card__link-text" href="pagespeed/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
+                        <h2 class="ts-card__heading ts-headline4" id="progressive-web-frontend">PageSpeed Optimizations</h2>
+                      </a>
+                    </header>
+                    <p class="ts-card__body">We make slow loading WordPress sites lightning fast and Google search rank friendly.</p>
+                      <div class="ts-card__arrow">
+                        <svg width="18px" height="18px" viewBox="0 0 18 18">
+                          <title>Arrow</title>
+                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
+                        </svg>
+                      </div>
+                  </section>
+                </div>
+                <div class="ts-grid__col is-6 is-4__large">
+                  <section class="ts-card ts-card--solution">
+                    <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">PWA Designed Frontend</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-pwa-62x-62.svg" alt="Progressive web application design">
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Progressive web application design">
                       <a class="ts-link ts-card__link ts-card__link-text" href="design/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="progressive-web-frontend">Inviting and Engaging</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">HyperPress transforms WordPress into responsive, instant loading, accessible, progressive web application.</p>
+                    <p class="ts-card__body">We transform WordPress into responsive, fast, accessible, progressive web application.</p>
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
@@ -348,32 +407,13 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">Powered by Google Cloud</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Pagespeed optimization service">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}pagespeed/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="workloadMigration" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="pagespeed-optimization">Hyper Optimized Delivery</h2>
-                      </a>
-                    </header>
-                    <p class="ts-card__body">We've supercharged HyperPress to globally deliver lightning fast, secure content to any screen.</p>
-                      <div class="ts-card__arrow">
-                        <svg width="18px" height="18px" viewBox="0 0 18 18">
-                          <title>Arrow</title>
-                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
-                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
-                        </svg>
-                      </div>
-                  </section>
-                </div>
-                <div class="ts-grid__col is-6 is-4__large">
-                  <section class="ts-card ts-card--solution">
-                    <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">HyperPress Reliability</h1>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Repairs</h1>
                       <lazy-image class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="Monitored and maintained"></lazy-image>
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}emergency/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="emergencyResponse" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">Automated Health Checks</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">Emergency Response</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">We constantly monitor the health of your site taking immediate action to prevent service interruptions 24/7.</p>
+                    <p class="ts-card__body">Site emergency? Our Site Emergency Response Team (SERT) will have you back up and running in no time.</p>
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>

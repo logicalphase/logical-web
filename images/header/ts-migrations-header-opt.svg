@@ -1,12 +1,1 @@
-<svg width="640" height="420" version="1.1" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <path id="boxcLf0zO" d="m375.22 83.06c78.14 0 141.49 54.21 141.49 121.09 0 2.52-0.08 5.04-0.28 7.51 56.44 10.17 97.94 44.23 97.94 84.69 0 48.48-59.58 87.79-133.08 87.79h-333.83c-73.49 0-133.09-39.31-133.09-87.79 0-42.28 45.29-77.56 105.59-85.9 5.41-45.84 50.61-81.6 105.58-81.6 12.09 0 23.67 1.73 34.5 4.9 25.69-30.68 67.7-50.69 115.18-50.69z"/>
-  <path id="bEEBpyEHr" d="m266.98 167.2-89.29 71.91 89.29 71.9v-46.74h122.2v46.74l89.3-71.9-89.3-71.91v46.74h-122.2v-46.74z"/>
- </defs>
- <g transform="translate(4,-18)">
-  <use width="100%" height="100%" fill-opacity="0" xlink:href="#boxcLf0zO"/>
-  <use width="100%" height="100%" fill-opacity="0" stroke="#f5f5f5" stroke-width="15" xlink:href="#boxcLf0zO"/>
-  <use width="100%" height="100%" fill-opacity="0" xlink:href="#bEEBpyEHr"/>
-  <use width="100%" height="100%" fill-opacity="0" stroke="#f5f5f5" stroke-width="15" xlink:href="#bEEBpyEHr"/>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="420"><defs><path d="M375.22 83.06c78.14 0 141.49 54.21 141.49 121.09 0 2.52-.08 5.04-.28 7.51 56.44 10.17 97.94 44.23 97.94 84.69 0 48.48-59.58 87.79-133.08 87.79H147.46c-73.49 0-133.09-39.31-133.09-87.79 0-42.28 45.29-77.56 105.59-85.9 5.41-45.84 50.61-81.6 105.58-81.6 12.09 0 23.67 1.73 34.5 4.9 25.69-30.68 67.7-50.69 115.18-50.69z" id="a"/><path d="M266.98 167.2l-89.29 71.91 89.29 71.9v-46.74h122.2v46.74l89.3-71.9-89.3-71.91v46.74h-122.2V167.2z" id="b"/></defs><g transform="translate(4 -18)"><use xlink:href="#a" width="100%" height="100%" fill="#fff" fill-opacity="0"/><use xlink:href="#a" width="100%" height="100%" fill-opacity="0" stroke="#600060" stroke-width="5"/></g><g transform="translate(4 -18)"><use xlink:href="#b" width="100%" height="100%" fill="#fff" fill-opacity="0"/><use xlink:href="#b" width="100%" height="100%" fill-opacity="0" stroke="#600060" stroke-width="5"/></g></svg>
