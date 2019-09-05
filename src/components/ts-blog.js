@@ -56,9 +56,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       /* Smaller than 460 */
 
       .hero {
-        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-design-header-opt.svg') no-repeat;
-        background-size: contain;
-        background-position: center center;
+        background: none;
       }
 
       .ts-content-wrapper {
@@ -180,7 +178,9 @@ class TSBlog extends connect(store)(PageViewElement) {
 
       @media (min-width: 460px) {
         .hero {
-          background-position: 99% center;
+          background: var(--app-reverse-text-color) url('/images/header/ts-design-header-opt.svg') no-repeat;
+          background-size: 380px;
+          background-position: 93% 80px;
         }
         .ts-content-wrapper {
           padding: 0; 
@@ -223,9 +223,9 @@ class TSBlog extends connect(store)(PageViewElement) {
               <div class="ts-grid__column is-7 is-6__large">
                 <header class="ts-grid__column is-7 is-6__large">
                   <div class="fade-in content-set">
-                    <h1 class="ts-section-header__eyebrow ts-eyebrow">The blog for professional publishers</h1>
-                    <h2 class="ts-display3">Articles designed by editors, readers and SEO specialists.</h2>
-                    <p class="ts-headline4 ts-why-google__intro-text">Create great content that drives readership and your goals.</p>
+                    <h1 class="ts-section-header__eyebrow ts-eyebrow">Resources for WordPress</h1>
+                    <h2 class="ts-display3">How to get the most out of your WordPress site</h2>
+                    <p class="ts-headline4 ts-why-google__intro-text">Articles written by WordPress professionals for site owners, developers, and designers.</p>
                   </div>
                 </header>
               </div>

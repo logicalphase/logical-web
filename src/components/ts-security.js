@@ -130,7 +130,7 @@ class TSSecurity extends PageViewElement {
                     <img class="ts-content-grid-image" src="/images/content/ts-security-badguy-200x200-opt.svg" alt="Understanding WordPress Security Threats" />
                   </div>
                   <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
-                    <h3 class="ts-headline3 ts-element-align" id="engaging-experiences-regardless-screen-size">Understanding Security Threats</h3>
+                    <h3 class="ts-headline3 ts-element-align" id="understanding-sescurity-threats">Understanding Security Threats</h3>
                     <p>What makes WordPress so popular also makes WordPress sites tempting targets for cybercriminals. In fact, WordPress is constantly under assault, from the largest corporate sites to the smallest blogs. The sophistication, number, and range of attacks are rising exponentially, while the purpetrators require less and less knowledge to launch attacks. Common threats include:</p>
                     <ul class="body-checks">
                       <li>Malware and Ransomware Attacks</li>

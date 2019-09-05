@@ -52,6 +52,12 @@ class TSDetail extends connect(store)(LitElement) {
         display: block;
         padding: 0px;
       }
+
+      #ts-site .ts-display2 {
+        line-height: 1.17857143;
+        font-size: 53px;
+        letter-spacing: -1.9px;
+      }
    
       ol {
         margin-left: 0px;
@@ -63,8 +69,9 @@ class TSDetail extends connect(store)(LitElement) {
       }
 
       ol li, ul li {
-
-        margin-right: 10px
+        margin-right: 10px;
+        font-weight: 300;
+        font-size: 17px;
       }
 
       li ul {
@@ -114,7 +121,7 @@ class TSDetail extends connect(store)(LitElement) {
       }
 
       .rich-text, p {
-        font-size: 14px;
+        font-size: 16px;
         letter-spacing: .25px;
         line-height: 24px;
       }
@@ -148,9 +155,10 @@ class TSDetail extends connect(store)(LitElement) {
       .desc {
         padding: 0px 0 22px 0;
       }
-      .desc > h3 {
-        font-size: 22px;
+      .desc > h2 {
+        font-size: 44px;
         font-weight: 400;
+        line-height: 1.188888;
         text-align: left;
       }
       .desc > ul {
@@ -306,13 +314,19 @@ class TSDetail extends connect(store)(LitElement) {
         p {
           font-weight: 300;
         }
+        h1.ts-display2 {
+          font-size: 46px;
+        }
         h2, h3 {
           margin: 20px 0px 25px 0px;
           padding: 0;
         }
 
         h2 {
-          font-size: 1.5rem;
+          line-height: 1.18181818;
+          font-size: 34px;
+          font-weight: 400;
+          letter-spacing: -.5px;
         }
         blockquote {
           margin-block-start: 1em;
@@ -365,7 +379,7 @@ class TSDetail extends connect(store)(LitElement) {
 
       @media (min-width: 600px) {
         .rich-text, p {
-          font-size: 14px;
+          font-size: 17px;
           letter-spacing: .25px;
           line-height: 24px;
         }
@@ -373,16 +387,19 @@ class TSDetail extends connect(store)(LitElement) {
           margin-top: 24px;
           font-size: normal;
         }
+        h1.ts-display2 {
+          font-size: 46px;
+        }
       }
 
       @media (min-width: 1024px) {
         .rich-text, p {
-          font-size: 16px;
+          font-size: 17px;
           letter-spacing: 0;
           line-height: 26px;
         }
         .article-image__caption, .article-meta__published-at, .utility-copy {
-            line-height: 24px;
+          line-height: 24px;
         }
         .article-meta__content {
           margin-top: 30px;
@@ -434,7 +451,7 @@ class TSDetail extends connect(store)(LitElement) {
               ${repeat(categories, (item) => html`
                   <p class="ts-eyebrow">${item}</p>
               `)}
-              <h1 class="ts-display3 fade-in title">${title}</h1>
+              <h1 class="ts-display2 fade-in title">${title}</h1>
               <article-image class="article-image--full-aspect article-module" .src="${thumbnail}" .alt="${alt}"></article-image>
             </aside>
           </div>
