@@ -1,9 +1,15 @@
 import { HP_HOST } from './config';
 
 import { html, css, unsafeCSS } from 'lit-element';
-import { PageViewElement } from './page-view-element.js';
+import { PageViewElement } from "./page-view-element.js";
+import { updateMetadata } from "pwa-helpers/metadata.js";
 
-import { SharedStyles } from './ts-style-shared';
+import { SharedStyles } from "./ts-style-shared";
+import { TsTypographyStyle } from "./ts-style-typography";
+import { TsLayoutStyle } from "./ts-style-layout";
+import { TsGridStyle } from "./ts-style-grid";
+import { TsCard } from "./ts-style-card";
+import { TsButtonStyle } from "./ts-style-button";
 import { TsFormStyle } from './ts-style-form';
 import { TsInputStyle } from './ts-style-input';
 import { TsSelectStyle } from './ts-style-select';
@@ -16,12 +22,17 @@ class TSContact extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
+      TsTypographyStyle,
+      TsLayoutStyle,
+      TsGridStyle,
+      TsCard,
+      TsButtonStyle,
       TsFormStyle,
       TsInputStyle,
       TsSelectStyle,
       TsTextAreaStyle,
-      css`
 
+      css`
       :host {
         display: block;
         padding: 0px;
@@ -31,12 +42,6 @@ class TSContact extends PageViewElement {
 
       #contactForm {
         margin-top: 40px;
-      }
-
-      .hero {
-        background: var(--app-light-text-color) url('https://${cdnHost}/images/header/ts-care-header-opt.svg') no-repeat;
-        background-size: contain;
-        background-position: center center;
       }
 
       h3 {
@@ -77,7 +82,9 @@ class TSContact extends PageViewElement {
         }
 
         .hero {
-          background-position: 92% center;
+          background: var(--app-reverse-text-color) url('/images/header/ts-care-header-opt.svg') no-repeat;
+          background-size: 380px;
+          background-position: 93% 80px;
         }
 
         .hero>div {
@@ -163,8 +170,6 @@ class TSContact extends PageViewElement {
         .grid > section:not(:first-child) {
             margin-left: 0;
           }
-        #ts-site.ts-care {
-          background-position: 100% 140px !important; }
 
         .ts-right {
           float: none !important;
@@ -176,14 +181,29 @@ class TSContact extends PageViewElement {
   } 
 
   render() {
+    updateMetadata({
+      title: 'Contact a WordPress Exxpert - Logical Phase',
+      description: 'We\'re experts at relocating WordPress'
+    });
+
     const requestip = location.hostname; 
     const { _response, _state, _waiting } = this;
+
     return html `
-    <article id="ts-site" class="ts-care">
-      <header class="hero">
-        <div class="ts-header-wrapper fade-in">
-          <h1 class="paper-font-display2 paper-font-light">Contact Us</h1>
-          <h2 class="paper-font-title paper-font-light">Touch base with one of our WordPress experts</h2>
+    <div class="hypersite-main-content clearfix">
+    <article id="ts-site" class="ts-contact">
+      <header class="ts-hero hero">
+        <div class="ts-grid">
+          <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
+            <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
+              <div class="fade-in content-set">
+                <h1 class="ts-section-header__eyebrow ts-eyebrow">Contact us</h1>
+                <h2 class="ts-display3">Let's get acquainted</h2>
+                <p class="ts-headline4 ts-why-hyperpress__intro-text">Fast, reliable, WordPress hosting and managed services you can trust.</p>
+              </div>
+            </header>
+          </div>
+          <div class="cloud-grid__col is-5"></div>
         </div>
       </header>
       <div class="ts-contact-wrapper delayed-fade-in">
@@ -278,7 +298,8 @@ class TSContact extends PageViewElement {
           </div>  
         </div>
       </div>
-    </article> 
+    </article>
+    </div> 
   <!-- Show spinner when waiting for the server to repond -->
   <paper-spinner-lite ?active="${_waiting}"></paper-spinner-lite>
   `;

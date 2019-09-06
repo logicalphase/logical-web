@@ -4,10 +4,9 @@ import { unsafeHTML } from "lit-html/directives/unsafe-html";
 
 import {
   Calendar,
-  Twitter,
-  Facebook,
-  Linkedin
 } from "./ts-icons.js";
+
+import "./ts-social.js";
 
 class TSItem extends LitElement {
   static get styles() {
@@ -179,11 +178,7 @@ class TSItem extends LitElement {
     <div class="ts-read-more"><a id="${id}" aria-label="Read ${title}" href="/article/${slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
       <div class="social_container">
         <div class="social_share">
-          <div class="slide-icons slide-left">
-            <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Twitter}</span>
-            <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Linkedin}</span>
-            <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Facebook}</span>
-          </div>
+        <ts-social .item="${item}"></ts-social>
         </div>
       </div>
     </div>

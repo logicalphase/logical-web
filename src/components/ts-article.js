@@ -55,8 +55,9 @@ class TSDetail extends connect(store)(LitElement) {
 
       #ts-site .ts-display2 {
         line-height: 1.17857143;
-        font-size: 53px;
+        font-size: 44px;
         letter-spacing: -1.9px;
+        padding-bottom: 24px;
       }
    
       ol {
@@ -88,10 +89,15 @@ class TSDetail extends connect(store)(LitElement) {
         margin-inline-start: 40px;
         margin-inline-end: 40px;
         font-size: 1.5rem;
+        quotes: "“" "”";
       }
 
-      blockquote p {
-        quotes: "“" "”";
+      blockquote p{
+        font-size: 32px !important;
+        line-height: 39px !important;
+        font-weight: 300;
+        color: var(--app-primary-color);
+        
       }
 
       blockquote p::before {
@@ -101,12 +107,6 @@ class TSDetail extends connect(store)(LitElement) {
         color: var(--app-primary-color);
         margin-left: -28px;
         margin-bottom: -20px;
-      }
-      blockquote p::after {
-        display:none;
-        content: open-quote;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 62px;
       }
       cite {
         font-size: 14px;
@@ -120,10 +120,13 @@ class TSDetail extends connect(store)(LitElement) {
         margin-bottom: 14px;
       }
 
-      .rich-text, p {
-        font-size: 16px;
-        letter-spacing: .25px;
-        line-height: 24px;
+      .rich-text, p, ol, li {
+        font-size: 17px;
+        line-height: 1.725;
+        font-weight: 300;
+      }
+      .ts-article-spacing {
+        margin-top: 34px;
       }
       .content-wrapper {
         padding: 0;
@@ -156,7 +159,7 @@ class TSDetail extends connect(store)(LitElement) {
         padding: 0px 0 22px 0;
       }
       .desc > h2 {
-        font-size: 44px;
+        font-size: 34px;
         font-weight: 400;
         line-height: 1.188888;
         text-align: left;
@@ -167,6 +170,9 @@ class TSDetail extends connect(store)(LitElement) {
 
       .desc > ol {
         padding-left: 20px;
+      }
+      .desc p {
+        font-size: 18px;
       }
 
       .article-button {
@@ -347,6 +353,12 @@ class TSDetail extends connect(store)(LitElement) {
         section {
           margin-top:0px;
         }
+        #ts-site .ts-display2 {
+          line-height: 1.17857143;
+          font-size: 54px;
+          letter-spacing: -1.9px;
+          padding-bottom: 26px;
+        }
         #ts-site .ts-display3 {
           margin-bottom: 0px;
           letter-spacing: -1px;
@@ -375,13 +387,19 @@ class TSDetail extends connect(store)(LitElement) {
         .desc {
           padding: 16px 0;
         }
+        .desc p {
+          font-size: 18px;
+        }
       }
 
       @media (min-width: 600px) {
-        .rich-text, p {
-          font-size: 17px;
+        .rich-text, p, li {
+          font-size: 18px;
           letter-spacing: .25px;
-          line-height: 24px;
+          line-height: 26px;
+        }
+        :only-child {
+          font-size: 16px;
         }
         .article-meta__published-at {
           margin-top: 24px;
@@ -394,9 +412,9 @@ class TSDetail extends connect(store)(LitElement) {
 
       @media (min-width: 1024px) {
         .rich-text, p {
-          font-size: 17px;
+          font-size: 18px;
           letter-spacing: 0;
-          line-height: 26px;
+          line-height: 28px;
         }
         .article-image__caption, .article-meta__published-at, .utility-copy {
           line-height: 24px;
@@ -455,7 +473,7 @@ class TSDetail extends connect(store)(LitElement) {
               <article-image class="article-image--full-aspect article-module" .src="${thumbnail}" .alt="${alt}"></article-image>
             </aside>
           </div>
-          <div class="ts-grid ts-grid__no-gap">
+          <div class="ts-grid ts-grid__no-gap ts-article-spacing">
             <div class="ts-quote__resources is-12 is-3__large">
               <div class="article-meta__content">
                 <div class="article-meta__author ">

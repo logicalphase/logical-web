@@ -89,7 +89,7 @@ class TSMigrations extends PageViewElement {
                         class="ts-button ts-button--primary" 
                         track-type="navigateTo" 
                         track-name="siteMigration"
-                        track-metadata-position="banner">Let's get moving</a>
+                        track-metadata-position="banner">Contact a WordPress Pro</a>
                     </div>
                   </div>
                 </header>

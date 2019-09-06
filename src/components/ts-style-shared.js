@@ -235,8 +235,7 @@ export const SharedStyles = css `
   }
 
   ul.body-checks li {
-    background-image: url('/images/icons/ts-check-purple.svg');
-    stroke: var(--app-primary-color);
+    background-image: url('/images/icons/ts-check-purple-opt.svg');
     font-size: 17px;
     font-weight: 400;
     background-repeat: no-repeat;

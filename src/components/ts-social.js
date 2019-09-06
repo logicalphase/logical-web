@@ -1,9 +1,16 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
+
+import {
+  Calendar,
+  Twitter,
+  Facebook,
+  Linkedin
+} from "./ts-icons.js";
 
 class TSSocial extends LitElement {
   static get styles() {
     return [
-      SharedStyles,
+
       css`
       :host {
         display: block;
@@ -37,19 +44,50 @@ class TSSocial extends LitElement {
         opacity: 1;
         transition: 0.5s opacity;
       }
+
+
+      .small-print .social-icon {
+        padding-left: 0px;
+      }
+
+      .social-icon {
+        fill: #111;
+        padding-left: 7px;
+      }
+      .gplus-icon:hover {
+        fill: #db4437;
+        cursor: pointer;
+      }
+      .blogger-icon:hover {
+        fill: #fb8f3d;
+        cursor: pointer;
+      }
+      .twitter-icon:hover {
+        fill: #1da1f2;
+        cursor: pointer;
+      }
+      .facebook-icon:hover {
+        fill: #3b5998;
+        cursor: pointer;
+      }
+      .linkedin-icon:hover {
+        fill: #007bb5;
+        cursor: pointer;
+      }
     `
     ];
   }  
   
   render() {
-    const { link, placeholder, _loaded } = this;
+    const { link, placeholder, _loaded, slug } = this;
+    
     return html`
     <div id="placeholder">
-      <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Twitter}</span>
-      <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Linkedin}</span>
-      <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/`} @click=${(e) => this._getDataHref(e)}>${Facebook}</span>
-          @load="${() => this._loaded = true}"
-          @error="${() => this._onSocialError()}">
+      <div class="slide-icons slide-left">
+        <span class="social-icon twitter-icon" .link=${ `https://twitter.com/share?url=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Twitter}</span>
+        <span class="social-icon linkedin-icon" .link=${ `https://www.linkedin.com/cws/share?url=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Linkedin}</span>
+        <span class="social-icon facebook-icon" .link=${ `https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/` } @click=${e => this._getDataHref(e)}>${Facebook}</span>
+      </div>
     </div>
   `;
   }
