@@ -1,0 +1,44 @@
+{
+  "/": {
+    "src/components/ts-app.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/components/ts-home.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    }
+  },
+  "/blog": {
+    "src/components/ts-app.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/components/ts-blog.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    }
+  },
+  "/article": {
+    "src/components/ts-app.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/components/ts-article.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    }
+  }
+}
