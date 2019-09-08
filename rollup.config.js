@@ -24,6 +24,7 @@ export default [{
       // - see: https://github.com/rollup/rollup/wiki/pkg.module
       jsnext: true,  // Default: false
     }),
+    
     terser()
   ]
 },
