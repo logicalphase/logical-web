@@ -3,7 +3,6 @@ import { HP_HOST } from "./config";
 import { html, css } from "lit-element";
 import { PageViewElement } from "./page-view-element.js";
 import { updateMetadata } from "pwa-helpers/metadata.js";
-import "/node_modules/@power-elements/lazy-image/lazy-image.js";
 
 import { TsLayoutStyle } from "./ts-style-layout";
 import { TsButtonStyle } from "./ts-style-button";
@@ -38,10 +37,13 @@ class TSHome extends PageViewElement {
         display: none;
       }
 
-      .hero {
-        background: var(--app-reverse-text-color) url('/images/header/home-page-mobile-opt.svg') no-repeat;
-        background-size: contain;
-        background-position: center center;
+      .ts-grid--alternate {
+          grid-column-gap: 15px;
+          grid-template-columns: repeat(1, 1fr);
+      }
+
+      svg.ts-section-right-image {
+        width: 100%;
       }
 
       .ts-card .ts-section-right-image {
@@ -59,6 +61,10 @@ class TSHome extends PageViewElement {
 
       .ts-section-elevated-padding {
           padding: 34px 24px 24px 24px;
+      }
+
+      .ts-grid__col--horizontal-center {
+        justify-self: inherit;
       }
 
       path {
@@ -141,8 +147,17 @@ class TSHome extends PageViewElement {
 
       @media (min-width: 460px) {
 
-        .hero {
-          background: none;
+        .wordpress-animated-bg {
+          display: inline-block;
+          position: relative;
+          top: 28px;
+          right: 0px;
+          min-width: auto;
+          min-height: 500px;
+        }
+
+        .ts-grid__col--horizontal-center {
+          justify-self: center;
         }
 
         section.ts-copy {
@@ -158,7 +173,19 @@ class TSHome extends PageViewElement {
         }
 
         .ts-card .ts-link .ts-headline4 {
-          margin-right: 14px !important;
+          margin-right: 14px;
+        }
+      }
+
+      @media only screen and (min-width: 800px) {
+        .ts-grid--alternate.ts-grid--vertical-center, 
+        .ts-grid.ts-grid--vertical-center {
+            align-items: center;
+        }
+
+        .ts-grid--alternate {
+          grid-column-gap: 15px;
+          grid-template-columns: repeat(12, 1fr);
         }
       }
 
@@ -166,7 +193,7 @@ class TSHome extends PageViewElement {
         .wordpress-animated-bg {
           display: inline-block;
           position: relative;
-          top: 28px;
+          top: 68px;
           right: 0px;
           min-width: auto;
           min-height: 500px;
@@ -195,7 +222,7 @@ class TSHome extends PageViewElement {
           background: url('/images/header/homepage-bg-left.svg') no-repeat;
           position: absolute;
           left: -112px;
-          top: 54px;
+          top: 64px;
           z-index: 0;
         }
       }
@@ -221,7 +248,7 @@ class TSHome extends PageViewElement {
                 <div class="content-set">
                   <h1 class="ts-section-header__eyebrow ts-eyebrow">We make WordPress better</h1>
                   <h2 class="ts-display3">High Availability Hosting and Managed Services for WordPress</h2>
-                  <p class="ts-headline4 ts-why-google__intro-text">Hyperfast. Functionally superior. Fiercely defended.</p>
+                  <p class="ts-headline4 ts-why-google__intro-text">Hyperfast. Technically superior. Fiercely defended.</p>
                   <div class="ts-section-header__link">
                       <a 
                         href="/contact/" 
@@ -283,8 +310,7 @@ class TSHome extends PageViewElement {
             <section class="ts-copy">
               <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center mdc-elevation--z20 ts-section-elevated-padding">
                 <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
-                    <lazy-image alt="Finally, a real WordPress publisher.">
-                    <svg slot="placeholder" class="ts-section-right-image" version="1.1" viewBox="2 122.3 637.26 349.3" xmlns="http://www.w3.org/2000/svg" xlink:href="#placeholder-svg">
+                  <svg slot="placeholder" class="ts-section-right-image" version="1.1" viewBox="2 122.3 637.26 349.3" xmlns="http://www.w3.org/2000/svg" xlink:href="#placeholder-svg">
                     <defs>
                       <path id="aHIf0e791" d="m164.42 134.68v-0.42c0-5.83-4.95-10.6-10.99-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.83c6.04 0 10.98-4.77 10.98-10.6v-47.19c0-5.83-4.94-10.61-10.98-10.61h-50.4z"/>
                       <path id="aebH7nnDc" d="m317.32 134.68v-0.42c0-5.83-4.94-10.6-10.98-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.82c6.04 0 10.99-4.77 10.99-10.6v-47.19c0-5.83-4.95-10.61-10.99-10.61h-50.4z"/>
@@ -320,8 +346,7 @@ class TSHome extends PageViewElement {
                     <use fill-opacity="0" stroke="#77c800" stroke-width="2" xlink:href="#dxqpMBjzs"/>
                     <use fill-opacity="0" stroke="#77c800" stroke-width="2" xlink:href="#bvDmRvhnd"/>
                     <use fill-opacity="0" stroke="#a434b7" stroke-width="2" xlink:href="#aMAV3Si2q" class="purple-section-line"/>
-                    </svg>
-                  </lazy-image>
+                  </svg>
                 </div>
                 <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start ts-promo-box-light">
                   <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Focus on content, we deliver it. Focus on audience, we help you grow it.</h3>
@@ -372,7 +397,7 @@ class TSHome extends PageViewElement {
                       <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Performance</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Progressive web application design">
                       <a class="ts-link ts-card__link ts-card__link-text" href="pagespeed/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="progressive-web-frontend">PageSpeed Optimizations</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="pwa">PageSpeed Optimizations</h2>
                       </a>
                     </header>
                     <p class="ts-card__body">We make slow loading WordPress sites lightning fast and Google search rank friendly.</p>
@@ -408,7 +433,7 @@ class TSHome extends PageViewElement {
                   <section class="ts-card ts-card--solution">
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Repairs</h1>
-                      <lazy-image class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="Monitored and maintained"></lazy-image>
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="Monitored and maintained"/>
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}emergency/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="emergencyResponse" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">Emergency Response</h2>
                       </a>
@@ -467,7 +492,7 @@ class TSHome extends PageViewElement {
                       <h1 class="ts-card__eyebrow ts-eyebrow">Migration Services</h1>
                       <img class="ts-card__icon" src="/images/icons/ts-icon-migrations-62x62.svg" alt="WordPress migration">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}migrations/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="wordpressRelocation" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">WordPress Relocation</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="migration">WordPress Relocation</h2>
                       </a>
                     </header>
                     <p class="ts-card__body">Existing WordPress site? No problem. We'll safely move your site to it's new home without interruption.</p>
@@ -501,7 +526,7 @@ class TSHome extends PageViewElement {
                 <p>HyperPress doesn't capitalize on your content like other services. We don't use paywalls or advertisements&#8212;that's for you to decide. Moving your content is as easy as moving any other self-hosted WordPress site.</p>
               </div>
               <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
-                <h4 class="ts-headline4">Progressive Web Application (PWA).</h4>
+                <h4 class="ts-headline4">Progressive Web Application</h4>
                 <p>No more theme mess. Just our beautiful PWA frontend, built with Google LitElement, Material Design, and web components fully decoupled from WordPress.</p>
               </div>
               <div class="ts-grid__col ts-copy__text is-6 is-5__large">

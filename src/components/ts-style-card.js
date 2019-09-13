@@ -24,72 +24,39 @@ export const TsCard = css`
     min-height: 272px;
   }
 
-  @media all and (min-width: 600px) {
-    .ts-card__container .ts-card {
-      flex: 0 1 calc(50% - 24px);
-      margin-left: 12px;
-      margin-right: 12px;
-    }
+  #ts-site .ts-card--four-columns .ts-card__container {
+    flex-wrap: initial;
   }
 
-  @media all and (min-width: 1024px) {
-    .ts-card__container .ts-card {
-      flex-basis: calc(25% - 24px);
-    }
+  #ts-site .ts-card--four-columns .ts-headline1 {
+    font-size: 22px;
+    line-height: 30px;
   }
 
-  @media all and (min-width: 600px) {
-    .ts-card__container .ts-card--large {
-      max-width: 408px;
-    }
+  #ts-site .ts-card--four-columns .ts-headline3 {
+    font-size: 28px;
+    line-height: 34px;
   }
 
-  @media all and (min-width: 1024px) {
-    .ts-card__container .ts-card--large {
-      flex-basis: calc(33.3% - 24px);
-    }
+  #ts-site .ts-card--four-columns .ts-headline4 {
+    font-size: 22px;
+    text-transform: uppercase;
   }
 
-  @media all and (min-width: 600px) {
-    .ts-card__container .ts-card--extra-large {
-      max-width: 496px;
-    }
-  }
-
-  @media all and (min-width: 1024px) {
-    .ts-card__container .ts-card--extra-large {
-      flex-basis: calc(50% - 24px);
-    }
+  #ts-site .ts-card--four-columns .highlight-price {
+    color: #202124;
+    font-size: 30px;
+    font-weight: 500;
   }
 
   .ts-card__container--left-aligned {
     justify-content: left;
   }
 
-  @media all and (min-width: 600px) {
-    .ts-card__container--left-aligned {
-      margin-left: -12px;
-      margin-right: -12px;
-    }
-  }
-
-  @media all and (min-width: 600px) {
-    .ts-card__container--left-aligned.ts-card__container--3up {
-      margin-left: -12px;
-      margin-right: -12px;
-    }
-  }
-
   .ts-card__container--3up {
     margin-left: auto;
     margin-right: auto;
     max-width: 1038px;
-  }
-
-  @media all and (min-width: 1024px) {
-    .ts-card__container--3up .ts-card {
-      flex-basis: calc(33.3% - 24px);
-    }
   }
 
   .ts-card {
@@ -148,12 +115,6 @@ export const TsCard = css`
     background-size: cover;
     height: 160px;
     padding: 0;
-  }
-
-  @media all and (min-width: 1024px) {
-    .ts-card__logo.ts-card__logo--bg {
-      height: 170px;
-    }
   }
 
   .ts-card__media {
@@ -248,56 +209,62 @@ export const TsCard = css`
     top: 132px;
   }
 
-  @media all and (min-width: 1024px) {
-    .ts-card__fab {
-      top: 142px;
-    }
-  }
-
   #ts-site .ts-card--four-columns {
     padding: 0;
   }
 
+  @media all and (min-width: 600px) {
+    .ts-card__container .ts-card {
+      flex: 0 1 calc(50% - 24px);
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+    .ts-card__container .ts-card--large {
+      max-width: 408px;
+    }
+    .ts-card__container .ts-card--extra-large {
+      max-width: 496px;
+    }
+    .ts-card__container--left-aligned {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .ts-card__container--left-aligned.ts-card__container--3up {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .ts-section-body,
+    .ts-card__body {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
   @media all and (min-width: 1024px) {
+    .ts-card__container .ts-card {
+      flex-basis: calc(25% - 24px);
+    }
+    .ts-card__container .ts-card--large {
+      flex-basis: calc(33.3% - 24px);
+    }
+    .ts-card__container .ts-card--extra-large {
+      flex-basis: calc(50% - 24px);
+    }
+    .ts-card__container--3up .ts-card {
+      flex-basis: calc(33.3% - 24px);
+    }
+    .ts-card__logo.ts-card__logo--bg {
+      height: 170px;
+    }
+    .ts-card__fab {
+      top: 142px;
+    }
+
     #ts-site .ts-card--four-columns {
       flex-basis: calc(50% - 36px);
       margin: 0 18px 36px;
     }
-  }
 
-  @media all and (min-width: 1440px) {
-    #ts-site .ts-card--four-columns {
-      flex-basis: calc(25% - 24px);
-      margin: 0 12px 24px;
-    }
-  }
-
-  #ts-site .ts-card--four-columns .ts-card__container {
-    flex-wrap: initial;
-  }
-
-  #ts-site .ts-card--four-columns .ts-headline1 {
-    font-size: 22px;
-    line-height: 30px;
-  }
-
-  #ts-site .ts-card--four-columns .ts-headline3 {
-    font-size: 28px;
-    line-height: 34px;
-  }
-
-  #ts-site .ts-card--four-columns .ts-headline4 {
-    font-size: 22px;
-    text-transform: uppercase;
-  }
-
-  #ts-site .ts-card--four-columns .highlight-price {
-    color: #202124;
-    font-size: 30px;
-    font-weight: 500;
-  }
-
-  @media all and (min-width: 1024px) {
     .ts-card--contact {
       background-color: #34a853; /* $green-500 */
       background-image: url("/images/home/contact-bg.svg");
@@ -316,7 +283,7 @@ export const TsCard = css`
       border: 1px solid #eee;
       border-radius: 0;
       height: 100%;
-      padding: 36px;
+      padding: 26px;
       margin: 0 -1px -1px 0;
     }
 
@@ -347,16 +314,7 @@ export const TsCard = css`
     .ts-card--solution .ts-card__link {
       margin-top: 24px;
     }
-  }
 
-  @media only screen and (min-width: 600px) {
-    .ts-section-body,
-    .ts-card__body {
-      font-size: 16px;
-      line-height: 24px;
-    }
-  }
-  @media only screen and (min-width: 1024px) {
     .ts-hero::before,
     .ts-hero::after {
       height: 650px;
@@ -389,6 +347,13 @@ export const TsCard = css`
 
     .ts-card--product .ts-card__heading, .ts-card__arrow{
       padding-top: 24px;
+    }
+  }
+
+  @media all and (min-width: 1440px) {
+    #ts-site .ts-card--four-columns {
+      flex-basis: calc(25% - 24px);
+      margin: 0 12px 24px;
     }
   }
 `;

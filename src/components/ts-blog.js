@@ -195,7 +195,10 @@ class TSBlog extends connect(store)(PageViewElement) {
         .ts-pad-bottom-12 {
           padding-bottom: 96px;
           border-top: 1px solid var(--app-primary-hover-color);
-}
+        }
+        #ts-site .ts-headline4 {
+          padding-right: 0;
+        }
       }
       `
     ];

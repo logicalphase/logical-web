@@ -304,7 +304,7 @@ export const SharedStyles = css `
 
   .ts-content-grid-image,
   .ts-content-grid-image-lower {
-    padding-bottom: 64px;
+    padding-bottom: 34px;
     padding-top: 36px;
   }
 
@@ -374,6 +374,11 @@ export const SharedStyles = css `
     }
     .ts-element-display {
       display: block;
+    }
+    .ts-content-grid-image,
+    .ts-content-grid-image-lower {
+      padding-bottom: 34px;
+      padding-top: 56px;
     }
   }
 

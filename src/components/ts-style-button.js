@@ -9,13 +9,13 @@ export const TsButtonStyle = css`
     box-sizing: border-box;
     cursor: pointer;
     display: inline-flex;
-    font: 500 14px "Roboto", Arial, sans-serif;
+    font: 500 1em "Roboto", Arial, sans-serif;
     height: 44px;
     justify-content: center;
     letter-spacing: 0.5px;
     min-width: auto;
     outline: none;
-    padding: 0 24px;
+    padding: 1.7em 24px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -25,9 +25,9 @@ export const TsButtonStyle = css`
   .ts-button:disabled,
   .ts-button:disabled:focus,
   .ts-button:disabled:hover {
-    background-color: #dadce0;
-    border-color: #dadce0;
-    color: #fff;
+    background-color: var(--app-button-disabled-background-color);
+    border-color: var(--app-button-disabled-background-color);
+    color: var(--app-reverse-text-color);
     cursor: default;
   }
   .ts-button:active {
@@ -38,7 +38,7 @@ export const TsButtonStyle = css`
   }
   .ts-button--primary {
     background-color: var(--app-primary-color);
-    color: #fff;
+    color: var(--app-reverse-text-color);
   }
   .ts-button--primary:hover {
     background-color: var(--app-primary-hover-color);
@@ -52,7 +52,7 @@ export const TsButtonStyle = css`
   }
   .ts-button--primary:active::before,
   .ts-button--primary:focus::before {
-    background-color: #fff;
+    background-color: var(--app-reverse-text-color);
     content: "";
     height: 100%;
     opacity: 0.24;
@@ -60,30 +60,30 @@ export const TsButtonStyle = css`
     width: 100%;
   }
   .ts-button--primary.ts-button--reversed {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--app-reverse-text-color);
+    color: var(--app-secondary-color);
   }
   .ts-button--primary.ts-button--reversed:focus,
   .ts-button--primary.ts-button--reversed:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color:var(--app-button-primary-reversed);
   }
   .ts-button--secondary {
-    background-color: #fff;
-    border: 1px solid #dadce0;
+    background-color: var(--app-reverse-text-color);
+    border: 1px solid var(--app-button-disabled-background-color);
     color: var(--app-primary-color);
     padding: 0 23px;
   }
   .ts-button--secondary:active,
   .ts-button--secondary:focus,
   .ts-button--secondary:hover {
-    border-color: #d2e3fc;
+    border-color: var(--app-button-secondary-border);
   }
   .ts-button--secondary:hover {
-    background-color: #eff5fd;
+    background-color: var(--app-primary-section-background-color);
   }
   .ts-button--secondary:active,
   .ts-button--secondary:focus {
-    background-color: #d8e7fb;
+    background-color: var(--app-button-disabled-background-color);
   }
   .ts-button--secondary.ts-button--dark,
   .ts-button--secondary.ts-button--reversed {
@@ -93,16 +93,16 @@ export const TsButtonStyle = css`
     padding-right: 22px;
   }
   .ts-button--secondary.ts-button--reversed {
-    border-color: #fff;
+    border-color: var(--app-reverse-text-color);
     border-width: 2px;
-    color: #fff;
+    color: var(--app-reverse-text-color);
   }
   .ts-button--secondary.ts-button--reversed:active,
   .ts-button--secondary.ts-button--reversed:focus,
   .ts-button--secondary.ts-button--reversed:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-color: rgba(255, 255, 255, 0.7);
-    color: #000;
+    background-color:var(--app-button-primary-reversed);
+    border-color:var(--app-button-primary-reversed);
+    color: var(--app-secondary-color);
   }
   .ts-button--flat {
     border-radius: 0;
@@ -118,8 +118,8 @@ export const TsButtonStyle = css`
     color: var(--app-primary-color);
   }
   .ts-button--flat:focus {
-    background-color: #f1f3f4;
-    outline: 10px solid #f1f3f4;
+    background-color: var(--app-button-flat-background-color);
+    outline: 10px solid var(--app-button-flat-background-color);
   }
   .ts-button--flat .ts-button__icon {
     display: inherit;
@@ -146,7 +146,7 @@ export const TsButtonStyle = css`
     letter-spacing: 0;
     line-height: 30px;
     margin: 0;
-    color: #202124;
+    color: var(--app-primary-text-color);
     text-transform: none;
   }
 
@@ -161,7 +161,7 @@ export const TsButtonStyle = css`
   }
   .ts-button--flat__heading:focus,
   .ts-button--flat__heading:hover {
-    color: #202124;
+    color: var(--app-primary-text-color);
     transition: background-color .3s ease-out;
     -webkit-transition: background-color .3s ease-out;
     -o-transition: background-color .3s ease-out;
@@ -179,18 +179,18 @@ export const TsButtonStyle = css`
     width: 24px;
   }
   .ts-button--flat.ts-button--reversed {
-    color: #fff;
+    color: var(--app-reverse-text-color);
   }
   .ts-button--flat.ts-button--reversed:hover {
-    color: rgba(255, 255, 255, 0.7);
+    color:var(--app-button-primary-reversed);
     transition: background-color .3s ease-out;
     -webkit-transition: background-color .3s ease-out;
     -o-transition: background-color .3s ease-out;
   }
   .ts-button--flat.ts-button--reversed:focus {
-    background-color: #f1f3f4;
-    color: #202124;
-    outline: 10px solid #f1f3f4;
+    background-color: var(--app-button-flat-background-color);
+    color: var(--app-primary-text-color);
+    outline: 10px solid var(--app-button-flat-background-color);
   }
   .ts-button--flat.ts-button--reversed .ts-button__icon {
     color: inherit;
@@ -203,7 +203,7 @@ export const TsButtonStyle = css`
   }
   .ts-button.ts-button--dark {
     border-color: rgba(32, 33, 36, 0.4);
-    color: #202124;
+    color: var(--app-primary-text-color);
   }
   .ts-button.ts-button--dark:hover {
     color: rgba(32, 33, 36, 0.7);
@@ -244,15 +244,15 @@ export const TsButtonStyle = css`
     text-decoration: none;
   }
   .ts-button-fab--red {
-    background-color: #d93025;
+    background-color: var(--app-button-fab-red);
   }
   .ts-button-fab--red:focus,
   .ts-button-fab--red:hover {
-    background-color: #a50e0e;
+    background-color:var(--app-button-fab-red-hover);
   }
   .ts-button-fab .material-icons {
     background: transparent;
-    color: #fff;
+    color: var(--app-reverse-text-color);
   }
   .ts-button__set .ts-button {
     margin-right: 16px;

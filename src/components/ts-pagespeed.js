@@ -32,9 +32,7 @@ class TSPagespeed extends PageViewElement {
 
       /* Smaller than 460 */
       .hero {
-        background: var(--app-reverse-text-color) url('/images/header/ts-pagespeed-header-opt.svg') no-repeat;
-        background-size: 384px;
-        background-position: 93% 80px;
+        background: none;
       }
       .ts-section {
           padding-top: 0px;
@@ -50,6 +48,11 @@ class TSPagespeed extends PageViewElement {
       }
 
       @media (min-width: 460px) {
+        .hero {
+          background: var(--app-reverse-text-color) url('/images/header/ts-pagespeed-header-opt.svg') no-repeat;
+          background-size: 384px;
+          background-position: 95% 90px;
+        }
 
         h3 {
           padding-top: 20px; 
@@ -77,10 +80,15 @@ class TSPagespeed extends PageViewElement {
         }
       }
 
-      @media (max-width: 800px) {
+      @media (min-width: 800px) {
+
+      }   
+      @media (min-width: 1401px) {
         .hero {
-          background: none;
-          }
+          background: var(--app-reverse-text-color) url('/images/header/ts-pagespeed-header-opt.svg') no-repeat;
+          background-size: 384px;
+          background-position: 95% 50px;
+        }
       }   
       `
     ];
@@ -128,7 +136,14 @@ class TSPagespeed extends PageViewElement {
                   <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
                     <h3 class="ts-headline3 ts-element-align" id="engaging-experiences-regardless-screen-size">Milliseconds Matter</h3>
                     <p>You've spent time and money building a WordPress site you can be proud of, but a slow site can undo all that hard work and hurt more than it helps. We've optimized hundreds of WordPress sites of all sizes and stripes. We know what slows WordPress down and how to make it lightning fast across all devices. Need help?</p> 
-                    <p class="ts-element-align"><a href="/contact" track-type="navigateTo" track-type="pageSpeed" track-metadata-position="banner">WordPress PageSpeed Optimization</a>.</p>
+                    <div class="ts-content-header__link ts-element-align">
+                      <a 
+                        href="/contact/" 
+                        class="ts-button ts-button--primary ts-content-button ts-element-display" 
+                        track-type="navigateTo" 
+                        track-name="Pagespeed"
+                        track-metadata-position="banner">Schedule your Optimization</a>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -161,7 +176,7 @@ class TSPagespeed extends PageViewElement {
                         class="ts-button ts-button--primary ts-content-button ts-element-display" 
                         track-type="navigateTo" 
                         track-name="Pagespeed"
-                        track-metadata-position="banner">Optimize My WordPress Site!</a>
+                        track-metadata-position="banner">Free Performance Assessment</a>
                     </div>
                   </div>
                 </div>

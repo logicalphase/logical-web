@@ -504,6 +504,7 @@ class TSApp extends connect(store)(LitElement) {
           <app-toolbar class="desktop-menu toolbar-list" sticky>
             <nav class="main-navigation" role="navigation">
               <a ?selected="${_page === "home"}" href="/">Home</a>
+              <a ?selected="${_page === "hosting"}" href="/hosting">Hosting</a>
               <a ?selected="${_page === "blog"}" href="/blog">Blog</a>
               <a ?selected="${_page === "contact"}" href="/contact">Contact</a>
               <a ?selected="${_page === "support"}" href="/support" style="float:right">Support</a>
@@ -524,6 +525,7 @@ class TSApp extends connect(store)(LitElement) {
           </form>
           <a ?selected="${_page === "home"}" href="/">Home</a>
           <a class="submenu" ?selected="${_page === "design"}" href="/design">Progressive Web Design</a>
+          <a class="submenu" ?selected="${_page === "hosting"}" href="/hosting">Managed Hosting</a>
           <a class="submenu" ?selected="${_page === "pagespeed"}" href="/pagespeed">PageSpeed Optimization</a>
           <a class="submenu" ?selected="${_page === "emergency"}" href="/emergency">WordPress 911</a>
           <a class="submenu" ?selected="${_page === "security"}" href="/security">Security Services</a>
@@ -539,6 +541,7 @@ class TSApp extends connect(store)(LitElement) {
         <ts-home class="page" ?active="${_page === "home"}"></ts-home>
         <ts-care class="page" ?active="${_page === "care"}"></ts-care>
         <ts-design class="page" ?active="${_page === "design"}"></ts-design>
+        <ts-hosting class="page" ?active="${_page === "hosting"}"></ts-hosting>
         <ts-emergency class="page" ?active="${_page === "emergency"}"></ts-emergency>
         <ts-migrations class="page" ?active="${_page === "migrations"}"></ts-migrations>
         <ts-pagespeed  class="page" ?active="${_page === "pagespeed"}"></ts-pagespeed>
@@ -649,6 +652,6 @@ class TSApp extends connect(store)(LitElement) {
     this._query = state.articles && state.articles.query;
     this._articleSlug = state.article && state.article.slug;
   }
+  
 }
-
 window.customElements.define("ts-app", TSApp);

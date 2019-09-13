@@ -9,9 +9,10 @@
   "scripts": {
     "start": "polymer serve",
     "build": "polymer build --auto-base-path && gulp prpl-server",
-    "build:rollup": "rm -rf public && rollup -c && gulp rollup",
+    "build:rollup": "rm -rf public && rollup -c && gulp generate-service-worker && gulp rollup ",
     "build:static": "polymer build",
     "serve": "prpl-server --root server/build",
+    "serve:rollup": "polymer serve --port 3000 public",
     "serve:static": "polymer serve --port 5000 build/es5-bundled",
     "test": "npm run test:unit && npm run test:integration",
     "test:integration": "mocha test/integration --timeout=10000",
@@ -23,13 +24,17 @@
     "@polymer/app-layout": "^3.1.0",
     "@polymer/polymer": "^3.3.0",
     "@power-elements/lazy-image": "^2.1.1",
-    "date-fns": "^2.1.0",
+    "date-fns": "^2.2.1",
+    "install": "^0.13.0",
     "lit-element": "^2.2.1",
     "pwa-helpers": "^0.9.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "systemjs": "^6.0.0"
+    "rollup-plugin-modulepreload": "^1.2.2",
+    "systemjs": "^6.1.0",
+    "workbox-build": "^4.3.1",
+    "workbox-cli": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -52,9 +57,11 @@
     "polyserve": "^0.27.15",
     "prpl-server": "^1.4.0",
     "puppeteer": "^1.19.0",
-    "rollup": "^1.21.0",
+    "rollup": "^1.21.2",
     "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-minify-html-literals": "^1.2.2",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
     "wct-mocha": "^1.0.1"
   }
 }

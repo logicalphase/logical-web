@@ -19,9 +19,9 @@ export const TsTheme = css`
   --app-primary-text-thin-color: rgb(95, 99, 104);
 
   /* Link and Accent */
+  --app-primary-icon-color: #3c4043;
   --app-accent-color: var(--app-primary-color);
   --app-primary-link-color: var(--app-primary-color);
-  --app-primary-icon-color: #3c4043;
   --app-primary-ts-icon-color: var(--app-primary-color);
   
   /* Drawer */
@@ -48,5 +48,14 @@ export const TsTheme = css`
   --app-form-border-color: #cccccc; 
   --app-form-text-color: #999999;
   --app-form-field-background-color: #ededed;
+
+  /* Buttons */
+  --app-button-disabled-background-color: #dadce0;
+  --app-button-primary-reversed: rgba(255, 255, 255, 0.7);
+  --app-button-secondary-border: var(--app-button-secondary-border);
+  --app-button-secondary-background-color: #d8e7fb;
+  --app-button-flat-background-color: #f1f3f4;
+  --app-button-fab-red: #d93025;
+  --app-button-fab-red-hover: #a50e0e;
 }
 `;
