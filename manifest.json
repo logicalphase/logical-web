@@ -4,8 +4,8 @@
   "description": "Functionally superior, lightning fast, PWA",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#a434b7",
-  "background_color": "#a434b7",
+  "theme_color": "#600060",
+  "background_color": "#600060",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",

@@ -1,15 +1,18 @@
-<!DOCTYPE html><html lang="en"><head>
+<!doctype html>
+<html lang="en">
+
+<head>
   <meta charset="utf-8">
-  <meta name="generator" content="HyperPress by Theme Surgeons">
+  <meta name="generator" content="Logical Phase by Theme Surgeons">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-  <title>HyperPress by Theme Surgeons</title>
+  <title>Logical Phase by Theme Surgeons</title>
   <meta name="description" content="Making a better WordPress. Lightning fast, functionally superior, masters of self-defense.">
 
   <base href="/">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <link rel="preconnect" href="https://api.hyperpress.app/" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preconnect" href="https://api.hyperpress.app/" crossorigin>
   
   <link rel="icon" href="images/favicon.ico">
 
@@ -17,16 +20,16 @@
   <link rel="manifest" href="manifest.json">
 
   <!-- See https://goo.gl/qRE0vM -->
-  <meta name="theme-color" content="#a434b7">
+  <meta name="theme-color" content="#600060">
 
   <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="HyperPress by Theme Surgeons">
+  <meta name="application-name" content="Logical Phase by Theme Surgeons">
 
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="HyperPress by Theme Surgeons">
+  <meta name="apple-mobile-web-app-title" content="Logical Phase by Theme Surgeons">
 
   <!-- Homescreen icons -->
   <link rel="apple-touch-icon" href="images/manifest/icon-48x48.png">
@@ -37,15 +40,15 @@
 
   <!-- Tile icon for Windows 8 (144x144 + tile color) -->
   <meta name="msapplication-TileImage" content="images/manifest/icon-144x144.png">
-  <meta name="msapplication-TileColor" content="#a434b7">
+  <meta name="msapplication-TileColor" content="#600060">
   <meta name="msapplication-tap-highlight" content="no">
 
   <!-- Default twitter cards -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@username">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="HyperPress by Theme Surgeons">
-  <meta property="og:image" content="images/manifest/icon-144x144.png">
+  <meta property="og:site_name" content="Logical Phase by Theme Surgeons">
+  <meta property="og:image" content="images/manifest/icon-144x144.png" />
 
   <script>
     // Interim fix for constructable stylesheets being converted to 
@@ -54,7 +57,7 @@
     // https://bugs.chromium.org/p/chromium/issues/detail?id=946537 for details
     //  
     // This should be removed for production to avoid negative performance impact.
-    delete Document.prototype.adoptedStyleSheets;
+    //delete Document.prototype.adoptedStyleSheets;
 
     // Load and register pre-caching Service Worker
     if ('serviceWorker' in navigator) {
@@ -104,14 +107,19 @@
         overflow: visible;
       }
   </style>
+</head>
 
-</head><body><ts-app apptitle="HyperPress" unresolved=""></ts-app>
+<body class="hypersite-full-width-page" data-navigation="dropdown">
+  <ts-app appTitle="Logical Phase" unresolved></ts-app>
   <noscript>
     <h1>JavaScript Appears to be Disabled</h1>
     <p>This site uses modern JavaScript to help load faster, and to provide you with the best interactive experience</p> 
-    <p>enable JavaScript to view this website.</p>
+    <p>Please enable JavaScript to view this website.</p>
   </noscript>
-  <script rel="modulepreload " type="module" src="src/components/ts-app.js" crossorigin=""></script>
+  <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs 
+  <script rel="preload" src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" as="script"></script> -->
+  <!-- Built with love using PWA Starter Kit -->
+  <script rel="modulepreload " type="module" src="src/components/ts-app.js" crossorigin></script>
+</body>
 
-
-</body></html>
+</html>

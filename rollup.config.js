@@ -1,26 +1,7 @@
-import minifyHTML from 'rollup-plugin-minify-html-literals';
-import modulepreload from 'rollup-plugin-modulepreload';
-import { terser } from 'rollup-plugin-terser';
+import { createDefaultConfig } from '@open-wc/building-rollup';
 
-//const production = !process.env.ROLLUP_WATCH;
+// if you need to support IE11 use "modern-and-legacy-config" instead.
+// import { createCompatibilityConfig } from '@open-wc/building-rollup';
+// export default createCompatibilityConfig({ input: './index.html' });
 
-export default [{
-  input: './src/components/ts-app.js',
-  output: [
-    {
-      dir: 'public/dist',
-      format: 'esm',
-      sourcemap: true
-    }
-  ],
-  plugins: [
-    modulepreload({
-      prefix: 'dist',
-      index: 'index.html',
-    }),
-    minifyHTML({
-      failOnError: true,
-    }),
-    terser()
-  ]
-}];
+export default createDefaultConfig({ input: './index.html' });
