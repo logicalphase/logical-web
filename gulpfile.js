@@ -21,38 +21,7 @@ gulp.task('prpl-server:clean', () => {
   return del('server/build');
 });
 
-/**
- * Copies the prpl-server build to the server directory while renaming the
- * node_modules directory so services like App Engine will upload it.
- */
-gulp.task('generate-service-worker', function(callback) {
-  var path = require('path');
-  var swPrecache = require('sw-precache');
-  var rootDir = 'public';
-
-  swPrecache.write(path.join(rootDir, 'service-worker.js'), {
-    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg}'],
-    stripPrefix: rootDir
-  }, callback);
-});
-
 gulp.task('prpl-server', gulp.series(
   'prpl-server:clean',
   'prpl-server:build'
 ));
-
-/**
- * Copies assets not handled by rollup into the public/ directory.
- */
-gulp.task('rollup', () => {
-  return gulp.src([
-    'images/**',
-    'node_modules/@webcomponents/webcomponentsjs/**',
-    'node_modules/regenerator-runtime/runtime.js',
-    'node_modules/systemjs/dist/s.min.js',
-    'index.html',
-    'manifest.json',
-    'sw.js'
-  ], {base: '.'})
-    .pipe(gulp.dest('public'));
-});

@@ -7,9 +7,10 @@
   "license": "BSD-3-Clause",
   "repository": "hyperpress/pressmedics",
   "scripts": {
-    "start": "polymer serve",
-    "build": "rimraf dist && rollup -c rollup.config.js",
-    "build:rollup": "rm -rf public && rollup -c && gulp generate-service-worker && gulp rollup-move ",
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
+    "start:compatibility": "es-dev-server --compatibility all --app-index index.html --node-resolve --watch --open",
+    "build": "rimraf dist && rollup -c rollup.config.js && workbox generateSW workbox-config.js",
+    "build:rollup": "rimraf && rollup -c && gulp generate-service-worker && gulp rollup-move ",
     "build:static": "polymer build",
     "serve": "prpl-server --root server/build",
     "serve:rollup": "polymer serve --port 3000 public",

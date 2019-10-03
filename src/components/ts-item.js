@@ -14,15 +14,14 @@ class TSItem extends LitElement {
       css`
       
       h3.paper-font-headline {
-        font-size: 1.14rem;
-        font-weight: 400;
+        font-size: 1.3rem;
+        font-weight: 500;
         margin: 10px 0;
         color: var(--app-primary-text-color);
       }
 
       p {
         word-spacing: 0.1px;
-
       }
 
       .ts-read-more {
@@ -82,7 +81,7 @@ class TSItem extends LitElement {
       }
 
       .inner {
-        padding: 20px 55px 10px 24px;
+        padding: 20px 45px 10px 24px;
         background-color: #ffffff;
         border-bottom: 1px solid #e4e4e4;
       }
@@ -167,21 +166,22 @@ class TSItem extends LitElement {
     const date_postfix = " ago.";
 
     return html`
-    
+    <a id="${id}" aria-label="Read ${title}" href="/article/${slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">
     <div class="inner">
       <h3 class="paper-font-headline">${title}</h3>
       ${excerpt}
       <p class="small-print"><i class="ts-blog-meta-calendar social-icon">${Calendar}</i> ${ date_prefix + date + date_postfix }</p>
       <span class="category">${category}</span>
     </div>
-    
-    <div class="ts-read-more"><a id="${id}" aria-label="Read ${title}" href="/article/${slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
+    </a>
+    <div class="ts-read-more"><a aria-label="Read ${title}" href="/article/${slug}/" track-type="navigateTo" track-name="/solutions/headlessWordPress">Read Article</a>
       <div class="social_container">
         <div class="social_share">
         <ts-social .item="${item}"></ts-social>
         </div>
       </div>
     </div>
+    
   `;
   }
   static get properties() {

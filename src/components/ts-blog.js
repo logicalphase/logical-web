@@ -60,17 +60,18 @@ class TSBlog extends connect(store)(PageViewElement) {
       }
 
       .ts-content-wrapper {
-        padding: 0px 24px 0px 5px; 
-        background: var(--app-primary-section-background-color);
+        padding: 0px; 
+        background: var(--app-reverse-text-color);
       }
 
       .columns {
         max-width: 987px;
         margin: 0 auto;
-        padding-top: 34px; }
+        padding-top: 34px; 
+        background: var(--app-reverse-text-color);}
 
       .sticky {
-        display:block;
+        display:none;
       }
 
       .ts-content-grid-box {
@@ -198,6 +199,9 @@ class TSBlog extends connect(store)(PageViewElement) {
         }
         #ts-site .ts-headline4 {
           padding-right: 0;
+        }
+        .sticky {
+          display: block;
         }
       }
       `

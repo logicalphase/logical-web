@@ -83,10 +83,10 @@ export const TsTypographyStyle = css`
   }
 
   #ts-site .ts-headline3 {
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 32px;
+    font-weight: 400;
     letter-spacing: 0;
-    line-height: 32px;
+    line-height: 38px;
     margin: 0;
   }
 
@@ -97,7 +97,7 @@ export const TsTypographyStyle = css`
 
   #ts-site .ts-headline4 {
     color: var(--app-primary-text-color);
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 30px;
@@ -303,7 +303,7 @@ export const TsTypographyStyle = css`
       line-height: 52px;
     }
     #ts-site .ts-headline3 {
-      font-size: 25px;
+      font-size: 32px;
       line-height: 40px;
       margin: 24px 16px 0 0;
     }
