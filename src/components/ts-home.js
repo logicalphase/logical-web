@@ -144,7 +144,7 @@ class TSHome extends PageViewElement {
           transform: scale(1);
         }
       }
-
+      
       @media (min-width: 460px) {
 
         .wordpress-animated-bg {
@@ -154,10 +154,6 @@ class TSHome extends PageViewElement {
           right: 0px;
           min-width: auto;
           min-height: 500px;
-        }
-
-        .ts-grid__col--horizontal-center {
-          justify-self: center;
         }
 
         section.ts-copy {
@@ -308,7 +304,7 @@ class TSHome extends PageViewElement {
         <div class="ts-section ts-section--border">
           <div class="ts-section__spacer">
             <section class="ts-copy">
-              <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center mdc-elevation--z20 ts-section-elevated-padding">
+              <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center mdc-elevation--z14 ts-section-elevated-padding">
                 <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
                   <svg slot="placeholder" class="ts-section-right-image" version="1.1" viewBox="2 122.3 637.26 349.3" xmlns="http://www.w3.org/2000/svg" xlink:href="#placeholder-svg">
                     <defs>
@@ -419,7 +415,7 @@ class TSHome extends PageViewElement {
                         <h2 class="ts-card__heading ts-headline4" id="progressive-web-frontend">Inviting and Engaging</h2>
                       </a>
                     </header>
-                    <p class="ts-card__body">We transform WordPress into responsive, fast, accessible, progressive web application.</p>
+                    <p class="ts-card__body">We transform WordPress into fast, mobile first, accessible, modern progressive web applications.</p>
                       <div class="ts-card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>

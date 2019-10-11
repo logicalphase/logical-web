@@ -65,6 +65,9 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
     case "security":
       await import("../components/ts-security.js");
       break;
+    case "terms":
+      await import("../components/ts-site-terms.js");
+      break;
     case "contact":
       await import("../components/ts-contact.js");
       break;

@@ -35,9 +35,7 @@ export const TsWordPressStyles = css`
     margin: 1em 0;
     /* Extra wide images within figure tags don't overflow the content area. */
   }
-
-
-
+  
   .alignleft img,
   .alignright img,
   .alignleft figcaption,

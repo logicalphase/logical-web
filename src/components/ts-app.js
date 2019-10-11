@@ -546,6 +546,7 @@ class TSApp extends connect(store)(LitElement) {
         <ts-migrations class="page" ?active="${_page === "migrations"}"></ts-migrations>
         <ts-pagespeed  class="page" ?active="${_page === "pagespeed"}"></ts-pagespeed>
         <ts-privacy class="page" ?active="${_page === "privacy"}"></ts-privacy>
+        <ts-terms class="page" ?active="${_page === "terms"}"></ts-terms>
         <ts-security class="page" ?active="${_page === "security"}"></ts-security>
         <ts-blog class="page" ?active="${_page === "blog"}"></ts-blog>
         <ts-article class="page" ?active="${_page === "article"}"></ts-article>
@@ -561,7 +562,7 @@ class TSApp extends connect(store)(LitElement) {
         <nav class="hypersite-utility-footer-nav hypersite-nav hypersite-full-site-width">
           <div class="hypersite-utility-footer-nav-left">
             <span class="hypersite-footer-links">
-              <a class="hypersite-utility-footer-link gc-analytics-event" href="/site-terms">Site Terms</a>
+              <a class="hypersite-utility-footer-link gc-analytics-event" href="/terms">Site Terms</a>
               <a class="hypersite-utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
             </span>
           </div>

@@ -39,9 +39,11 @@ class TSHosting extends PageViewElement {
       }
       img.ts-content-grid-image, 
       img.ts-content-grid-image-lower {
-        height: auto;
-        max-width: 100%;
-        width: 100%;
+        width: 80%;
+        clear: both;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
       .ts-grid__col--horizontal-center {
         justify-self: normal;

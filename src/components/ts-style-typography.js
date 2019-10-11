@@ -97,7 +97,7 @@ export const TsTypographyStyle = css`
 
   #ts-site .ts-headline4 {
     color: var(--app-primary-text-color);
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 30px;
@@ -107,7 +107,7 @@ export const TsTypographyStyle = css`
 
   #ts-site .ts-headline4 strong {
     color: var(--app-primary-color);
-    font-weight: inherit;
+    font-weight: 500;
   }
 
   #ts-site .ts-headline4 .ts-superscript {
@@ -203,7 +203,7 @@ export const TsTypographyStyle = css`
   .ts-body-text,
   p {
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 185%;
   }
   .ts-superscript,

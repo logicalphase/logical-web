@@ -3,12 +3,16 @@ import { CDN_HOST_URL } from './config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
-import { TsTableStyles } from './ts-style-table';
 
 import './ts-sidebar-nav';
 
-import { SharedStyles } from './ts-style-shared';
-import { TsTypographyStyle } from './ts-style-typography';
+import { SharedStyles } from "./ts-style-shared";
+import { TsTypographyStyle } from "./ts-style-typography";
+import { TsLayoutStyle } from "./ts-style-layout";
+import { TsTableStyles } from "./ts-style-table";
+import { TsGridStyle } from "./ts-style-grid";
+import { TsCard } from "./ts-style-card";
+import { TsButtonStyle } from "./ts-style-button";
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
@@ -17,19 +21,28 @@ class TSPrivacy extends PageViewElement {
     return [
       SharedStyles,
       TsTypographyStyle,
+      TsLayoutStyle,
       TsTableStyles,
+      TsGridStyle,
+      TsCard,
+      TsButtonStyle,
       css`
       :host {
+        body {
+          scroll-behavior: smooth;
+        }
         display: block;
         padding: 0px;
       }
 
       /* Smaller than 460 */
 
-      .hero {
-        background: var(--app-reverse-text-color) url('https://${cdnHost}/images/header/ts-design-header.svg') no-repeat;
-        background-size: contain;
-        background-position: center center;
+      aside {
+        display:none;
+      }
+
+      .ts-privacy {
+        margin-right: 0px;
       }
 
       .text-headline {
@@ -39,9 +52,6 @@ class TSPrivacy extends PageViewElement {
       li.childlist {
         margin-left:16px;
         list-style-type: square;
-      }
-      strong {
-        font-weight:500;
       }
 
       h1.paper-font-display2 {
@@ -66,9 +76,11 @@ class TSPrivacy extends PageViewElement {
         color:var(--app-secondary-color);
       }
 
+
       @media (min-width: 460px) {
-        .hero {
-          background-position: 97% center;
+
+        .ts-privacy {
+          margin-right: 200px;
         }
 
         h3 {
@@ -76,7 +88,16 @@ class TSPrivacy extends PageViewElement {
         }
 
         aside {
+          display: block;
           margin-top: 30px;
+        }
+
+        .sticky {
+          display: block;
+          position: fixed;
+          top: 140px;
+          right: 170px;
+          padding-bottom: 170px;
         }
 
         p {
@@ -91,12 +112,6 @@ class TSPrivacy extends PageViewElement {
           white-space: nowrap;
         }
 
-        .hero>div {
-          min-height: 120px;
-        }
-        .main{
-          padding-top: 24px;
-        }
         .ts-content-grid-box p {
           text-align: left;
           margin-bottom:16px;
@@ -107,7 +122,7 @@ class TSPrivacy extends PageViewElement {
           min-height: 40px !important; 
           text-align: left;
           background-color: var(--app-reverse-text-color);
-          padding: 0px 34px 0px 34px;
+          padding: 0px 34px 0px 0px;
           margin-right: 44px; 
         }
         
@@ -122,6 +137,17 @@ class TSPrivacy extends PageViewElement {
           padding-left: 14px;
         }
       } 
+      @media (max-width: 460px) {
+        .ts-privacy {
+          margin-right: 0px;
+        }
+      }
+      @media (min-height: 300px) {
+        nav ul {
+          position: sticky;
+          top: 0;
+        }
+      }
     `
     ];
   } 
@@ -132,21 +158,22 @@ class TSPrivacy extends PageViewElement {
       description: 'About page'
     });
 
-    return html`
+  return html`
+    <div class="hypersite-main-content clearfix">
       <article id="ts-site" class="ts-privacy">
-        <header class="hero">
-          <div class="ts-header-wrapper fade-in">
-            <h1 class="paper-font-display2 paper-font-light">Privacy Statement</h1>
-            <h2 class="paper-font-title paper-font-light">Privacy is built into our services</h2>
-            <p>Effective date: 25 May 2018</p>
-          </div>
-        </header>
         <div class="ts-content-wrapper">
           <section class="content full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
             <div class="columns">
               <main class="main fade-in">
+                <header class="privacy-header">
+                  <div class="ts-header-wrapper fade-in">
+                    <h1 class="paper-font-display2 paper-font-light">Privacy Statement</h1>
+                    <h2 class="paper-font-title paper-font-light">Privacy is built into our services</h2>
+                    <p>Effective date: 25 May 2018</p>
+                  </div>
+                </header>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Introduction</h2>
+                  <h2 class="text-headline">1. Introduction</h2>
                   <p>We are both <a href="https://gdpr-info.eu/chapter-4/">Controllers and Processors</a> of data and we want you to understand how and why we collect, store, and use data for our business purposes and to comply with legal requirements. For simplicity, using the term "We" and "Our" means the same as the below listed Entities Covered section.</p>
                   <h3>Compliance with GDPR regardless of location</h3>
                   <p>In the interest of treating the privacy of all of our customers and visitors with equal respect, we have, to the legal extent possible, adopted the European Union's <a href="https://gdpr-info.eu/">General Data Protection Regulations (GDPR)</a> regarding how we manage customer privacy and their data. We reserve the right to ammend this privacy statement if changes become necessary.</p>
@@ -159,7 +186,7 @@ class TSPrivacy extends PageViewElement {
                   <p>We collect and use personally identifying information to facilitate the business relationships we have with our customers, to comply with financial regulations and other legal obligations, and to pursue our legitimate business interests. We also use personally identifying information to complete payment transactions and to provide payment-based services to our Users. We rely upon a number of legal grounds to ensure that our use of your personally identifying information is compliant with applicable law. </p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Entities Covered by This Privacy Statement</h2>
+                  <h2 class="text-headline">2. Entities Covered by This Privacy Statement</h2>
                   <p>This privacy statement covers the following web site domains, subdomains, and business entities of:</p>
                   <ul>
                     <li>Pressmedics LLC and pressmedics.com</li>
@@ -168,12 +195,12 @@ class TSPrivacy extends PageViewElement {
                   </ul>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Legal Authority</h2>
+                  <h2 class="text-headline">3. Legal Authority</h2>
                   <p>We are subject to the laws and regulations of the United States and the State of Minnesota, and we may be required to disclose personally identifying information in our possession if lawfully ordered to do so.</p>
                   <p>We comply with the EU–US Privacy Shield framework and the U.S.–Swiss Privacy Shield framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personally identifying information from European Union member countries and Switzerland. We certify that it adheres to Privacy Shield Framework principles of notice, choice, onward transfer, security, data integrity, access, and enforcement. To learn more visit the <a href="https://www.privacyshield.gov/welcome">Privacy Shield Framework</a>.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Types of data we collect</h2>
+                  <h2 class="text-headline">4. Types of data we collect</h2>
                   <p>The following situations require us to collect and store information that can be used to identify you.</p>
                   <h3>personally identifying information</h3>                  
                   <h4>User account creation</h4>
@@ -231,7 +258,7 @@ class TSPrivacy extends PageViewElement {
                   <p>We use technical data to help us better understand how our websites and applications are being used, make our site more appealing and informative, and for security reasons. We do not share that data with any other party unless required by law.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">How we use the data we collect</h2>
+                  <h2 class="text-headline">5. How we use the data we collect</h2>
                   <p>The following explains how we use data we collect.</p>
                   <h3 class="text-headline">Use of personally identifying information</h3>                  
                   <h4>Sales, marketing, and financial transactions</h4>
@@ -240,7 +267,7 @@ class TSPrivacy extends PageViewElement {
                   <p>We obviously need to communicate with our customers, and we use personally identifying information like email addresses, telephone numbers, chat handles, and billing addresses to facilitate that communication and effectively support our paying customers. We also periodically prepare newsletters we send to customers and users who opt in for that service.</p>
                   <h4>Legal compliance</h4>
                   <p>We are required to comply with certain laws and regulations of the United States of America, the State of Minnesota, and the laws of other locations we choose to do business in. For example, we are required to take reasonable steps to store accurate financial records such as invoices, receipts, and for banking and tax regulations for specific periods.</p>
-                  <h3 class="text-headline">Use of technical data</h2>
+                  <h3 class="text-headline">Use of technical data</h3>
                   <p>The following explains how we use non-personally identifying information technical data</p>
                   <h4>Security</h4>
                   <p>We use technical data, including visitor IP addresses, referring websites, browser type, URL patterns, and other related data to help us monitor, identify, and act to keep our data and our customers data secure and private.</p>
@@ -252,7 +279,7 @@ class TSPrivacy extends PageViewElement {
                   <p>When accessing web pages on the Website, We may log your IP address, access URL, time of access, geographic location, browser type, and referral URL in order to provide Us with internal information regarding site traffic and usage statistics, to identify errors and bugs, and to help us tune our servers and systems. This information may also be used to identify users who are using the service for spam or other activity that is deemed in conflict with Our Terms of Service. Otherwise, this information is used in the aggregate, and is never linked back to any personal information.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Where we store personally identifying information</h2>
+                  <h2 class="text-headline">6. Where we store personally identifying information</h2>
                   <p>Where we store both personally identifying information and non-personally identifying information We collect and host.</p>
                   <h3>International data transfers</h3>
                   <p>Visitor and user data may be transferred to, and processed in, countries other than the country in which they reside. Specifically, Our websites and services are hosted on servers located in the United States of America and on third party service provider and partner servers internationally. This means that when We collect visitor and user data, that data may be processed in other countries. For example, our hosting services leverage Google Cloud Platform servers that are in datacenters located in advantageous locations around the world. For more information about how we transfer visitor and user data, please contact privacy@pressmedics.com.</p>
@@ -333,7 +360,7 @@ class TSPrivacy extends PageViewElement {
                   </div>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">How we protect personally identifying information</h2>
+                  <h2 class="text-headline">7. How we protect personally identifying information</h2>
                   <p>The security and privacy of our customers data is of paramount importance to us, and we take multiple steps to protect that data from unauthorized disclosure.</p>
                   <h4>Authentication, Integrity, and Encryption</h4>
                   <p>Both We and Our Internet as a Service (IaaS) provider, Google Cloud Platform, employ several security measures to help ensure the authenticity, integrity, and privacy of data in transit and while at rest.</p>
@@ -364,7 +391,7 @@ class TSPrivacy extends PageViewElement {
                   <p>One of the primary reasons why we chose Google as our Internet as a Service (IaaS) provider is because of the extraordinary level and focus they have on physical and virtual security. They employ some of the world's foremost experts in information, application, and network security. We use their model in creating our own. Learn more about <a href="https://cloud.google.com/security/overview/whitepaper">Google Cloud security</a>.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Sharing of personally identifying information</h2>
+                  <h2 class="text-headline">8. Sharing of personally identifying information</h2>
                   <p>This Website contains links to other sites that are not owned or controlled by Pressmedics LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
                   <h4>By lawful order</h4>
                   <p>Like all businesses operating in the United States and elsewhere we are legally required to divulge any information so ordered and executed by proper legal authority. In cases where we disagree with an order we may pursue relief from an order, but we are ultimately required to comply with the legal outcomes of those challenges.</p>
@@ -377,7 +404,7 @@ class TSPrivacy extends PageViewElement {
                   <p>Our Internet as a Service (IaaS) provider requires datacenters located outside the United States, and the European Union, to agree to and comply with the same security and best practives they depend inside those bounderies. The most important point about inernational data transfers is that we live in a connected world where information is transmitted at the speed of light to datacenters and carriers all over the globe. However, we take reasonable precautions to make sure your data is secured while in transit and while at rest no matter the location.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">How long do we store personally identifying information?</h2>
+                  <h2 class="text-headline">9. How long do we store personally identifying information?</h2>
                   <p>This Website contains links to other sites that are not owned or controlled by Pressmedics LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
                   <h4>Current retention policy</h4>
                   <p>Business financial transactions - 10 years.</p>
@@ -388,25 +415,25 @@ class TSPrivacy extends PageViewElement {
                   <p>Any of the above listed types of data may be retained for an declared or unlimited period, if lawfully ordered or for other legal purposes related to our business entities.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Links to Other Sites</h2>
+                  <h2 class="text-headline">10. Links to Other Sites</h2>
                   <p>This Website contains links to other sites that are not owned or controlled by Pressmedics LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
                   <p>We encourage you to be aware when you leave Our site and to read the privacy policies of each and every website that collects personal information. You will receive a notification when you leave Pressmedics.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Cookies and similar browser technologies</h2>
+                  <h2 class="text-headline">11. Cookies and similar browser technologies</h2>
                   <p>Our websites only use cookies solely to enable our websites and applications to function properly. We do not use tracking cookies and nor do we use any third party cookies.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Children under the age of 13</h2>
+                  <h2 class="text-headline">12. Children under the age of 13</h2>
                   <p>Our websites and online services are not directed to children under the age of 13, and We do not knowingly collect personal information from children under 13. If We become aware that a child under 13 has provided Us with personal information, We will delete such information from Our files.</p>
                   <p>We do not allow persons under the age of 18 to enter into contractual, subscription, or services with Us without a parent's or guardian's written permission.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">MISC</h2>
+                  <h2 class="text-headline">13. MISC</h2>
                   <p>We take your privacy seriously. We do not sell, lease, or exchange your personally identifying information to, or otherwise share your personally identifying information with, third parties in ways other than described in this Privacy Statement. By using Pressmedics services, and services available at the other above listed domains, you are using a service provided by Pressmedics LLC. (collectively, the “Service”) and you agree to be bound by the Terms of Service and this Privacy Statement. Some capitalized terms used in this Privacy Statement and not otherwise defined may be defined in the Terms of Service. This Privacy Statement only addresses activities from servers under Our control.</p>
                 </div>
                 <div class="ts-content-grid-box">
-                  <h2 class="text-headline">Third party vendors and partners</h2>
+                  <h2 class="text-headline">13. Third party vendors and partners</h2>
                   <p>We partner with several third party businesses that meet our standards of data collection, use, security, and privacy. These partner businesses maintain their own separate privacy policies, and we have prepared the following list of those partners, why we partner with them, and a link to their specific privacy policies.</p>
                   <div class="table-responsive-vertical mdc-elevation--z1">
                     <!-- Table starts here -->
@@ -509,29 +536,29 @@ class TSPrivacy extends PageViewElement {
                 </div>
               </main>
               <aside class="sidebar">
-                <div class="nav">
+                <div class="nav navbar">
                   <div class="sticky">
-                    <ul class="right-side-nav l-space-bottom-5">
+                    <ul class="right-side-nav navbar-items l-space-bottom-5">
                       <li>
                         <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">On this page</h3>
                       </li>
                       <li>
-                        <a style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;" class="privacy" track-type="privacyStatement" track-name="web-page" track-metadata-position="sidebar" href="/privacy">Introduction</a>
+                        <a style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;" class="privacy" track-type="privacyStatement" track-name="web-page" track-metadata-position="sidebar" href="#section-1">1. Introduction</a>
                       </li>
                       <li>
-                        <a class="transparency" track-type="transparency" track-name="web-page" track-metadata-position="sidebar" href="/transparency">Entities Covered</a>
+                        <a class="transparency" track-type="transparency" track-name="web-page" track-metadata-position="sidebar" href="#section-2">2. Entities Covered</a>
                       </li>
                       <li>
-                        <a class="aup" track-type="acceptableUse" track-name="web-page" track-metadata-position="sidebar" href="/acceptable-use-policy">Legal Authority</a>
+                        <a class="aup" track-type="acceptableUse" track-name="web-page" track-metadata-position="sidebar" href="#section-3">3.Legal Authority</a>
                       </li>
                       <li>
-                        <a class="security" track-type="securityGuarantee" track-name="web-page" track-metadata-position="sidebar" href="/security-guarantee">Data We Collect</a>
+                        <a class="security" track-type="securityGuarantee" track-name="web-page" track-metadata-position="sidebar" href="#section-4">4. Data We Collect</a>
                       </li>
                       <li>
-                        <a class="sla" track-type="serviceLevelAgreement" track-name="web-page" track-metadata-position="sidebar" href="/sla">Website Visitors</a>
+                        <a class="sla" track-type="serviceLevelAgreement" track-name="web-page" track-metadata-position="sidebar" href="#section-5">5. Website Visitors</a>
                       </li>
                       <li>
-                        <a track-type="vendors" track-name="web-page" track-metadata-position="sidebar" href="/vendors">Links to Sites</a>
+                        <a track-type="vendors" track-name="web-page" track-metadata-position="sidebar" href="#section-6">6. Links to Sites</a>
                       </li>
                     </ul>
                   </div>
@@ -541,6 +568,7 @@ class TSPrivacy extends PageViewElement {
           </section>
         </div>
       </article>
+    </div>
     `;
   }
 }
