@@ -1,4 +1,4 @@
-import copy from 'rollup-plugin-cpy';
+import cpy from 'rollup-plugin-cpy';
 import { createDefaultConfig } from '@open-wc/building-rollup';
 
 
@@ -15,7 +15,7 @@ export default [
     ...config,
     plugins: [
       ...config.plugins,
-      copy({
+      cpy({
         files: [
           'images/**', 
           'manifest.json',
