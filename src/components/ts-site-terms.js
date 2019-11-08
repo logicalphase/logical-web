@@ -163,6 +163,32 @@ class TSTerms extends PageViewElement {
                     <p>Effective date: 25 May 2019</p>
                   </div>
                 </header>
+                <ul class="right-side-nav l-space-bottom-5">
+                  <li>
+                    <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">On this page</h3>
+                  </li>
+                  <li>
+                    <a style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;" class="privacy" track-type="privacyStatement" track-name="web-page" track-metadata-position="sidebar" href="section-1">1. What We Own</a>
+                  </li>
+                  <li>
+                    <a class="transparency" track-type="transparency" track-name="web-page" track-metadata-position="sidebar" href="section-2">2. Rights to Use</a>
+                  </li>
+                  <li>
+                    <a class="aup" track-type="acceptableUse" track-name="web-page" track-metadata-position="sidebar" href="section-3">3. What You Provide</a>
+                  </li>
+                  <li>
+                    <a class="security" track-type="securityGuarantee" track-name="web-page" track-metadata-position="sidebar" href="/security-guarantee">4. Access to Accounts</a>
+                  </li>
+                  <li>
+                    <a class="sla" track-type="serviceLevelAgreement" track-name="web-page" track-metadata-position="sidebar" href="/sla">6. Monitoring</a>
+                  </li>
+                  <li>
+                    <a track-type="vendors" track-name="web-page" track-metadata-position="sidebar" href="/vendors">7. Copyright Policy</a>
+                  </li>
+                  <li>
+                    <a track-type="vendors" track-name="web-page" track-metadata-position="sidebar" href="/vendors">8. Rules</a>
+                  </li>
+                </ul>
                 <section>
                 <div class="ts-content-grid-box">
                   <p>This Terms of Service Agreement (the “Agreement”) is an agreement between you (the “User”) and Logical Phase, LLC. (“Logical Phase”, “we”, or “us”). We provide Users with access to certain Materials (as defined below) to help our customers create and manage websites by providing general and personalized content, website hosting services, communication tools and forums, mobile applications, and ecommerce tools and services (collectively, the “Services”) directly and through the website and associated domains of http://Logical Phase.com (the “Site”). We’ve tried really hard to keep this Agreement as readable and straightforward as possible. If you have suggestions that can help us improve it or any questions about this Agreement, please email us and let us know. This Agreement explains our obligations to you, and your obligations to us. This Agreement is the entire Agreement between us. By using the Site in any way you are agreeing to comply with these terms, our Privacy Policy and any other legal notices or conditions or guidelines posted on the Site.</p>

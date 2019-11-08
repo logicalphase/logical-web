@@ -110,7 +110,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       .sidebar {
         background-color: var(--app-reverse-text-color);
         width: 210px;
-        margin-left: 34px;
+        margin-left: 124px;
         margin-top: 0px;
       }
 
@@ -180,8 +180,8 @@ class TSBlog extends connect(store)(PageViewElement) {
       @media (min-width: 460px) {
         .hero {
           background: var(--app-reverse-text-color) url('/images/header/ts-design-header-opt.svg') no-repeat;
-          background-size: 380px;
-          background-position: 93% 80px;
+          background-size: 280px;
+          background-position: 100% 30px;
         }
         .ts-content-wrapper {
           padding: 0; 
@@ -231,13 +231,12 @@ class TSBlog extends connect(store)(PageViewElement) {
                 <header class="ts-grid__column is-7 is-6__large">
                   <div class="fade-in content-set">
                     <h1 class="ts-section-header__eyebrow ts-eyebrow">Resources for WordPress</h1>
-                    <h2 class="ts-display3">How to get the most out of your WordPress site</h2>
+                    <h2 class="ts-display3">HyperPress Blog</h2>
                     <p class="ts-headline4 ts-why-google__intro-text">Articles written by WordPress professionals for site owners, developers, and designers.</p>
                   </div>
                 </header>
               </div>
-              <div class="cloud-grid__col is-5">
-              </div>
+              <div class="cloud-grid__col is-5"></div>
             </div>
           </header>
         <div class="ts-content-wrapper">

@@ -44,17 +44,11 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
     case "care":
       await import("../components/ts-care.js");
       break;
-    case "design":
-      await import("../components/ts-design.js");
-      break;
     case "hosting":
       await import("../components/ts-hosting.js");
       break;
     case "emergency":
       await import("../components/ts-emergency.js");
-      break;
-    case "migrations":
-      await import("../components/ts-migrations.js");
       break;
     case "pagespeed":
       await import("../components/ts-pagespeed.js");

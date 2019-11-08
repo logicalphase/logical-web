@@ -109,7 +109,7 @@ class TSHosting extends PageViewElement {
                 <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="ts-section-header__eyebrow ts-eyebrow">Managed Hosting for WordPress</h1>
-                    <h2 class="ts-display3">Highly available, instantly scalable hosting for WordPress</h2>
+                    <h2 class="ts-display3">Highly available, instantly scalable, secure hosting for WordPress</h2>
                     <p class="ts-headline4 ts-why-google__intro-text">Built on Google Cloud Platform and fully managed by WordPress experts. </p>
                     <div class="ts-section-header__link">
                       <a 

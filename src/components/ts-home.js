@@ -306,7 +306,7 @@ class TSHome extends PageViewElement {
             <section class="ts-copy">
               <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center mdc-elevation--z14 ts-section-elevated-padding">
                 <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
-                  <svg slot="placeholder" class="ts-section-right-image" version="1.1" viewBox="2 122.3 637.26 349.3" xmlns="http://www.w3.org/2000/svg" xlink:href="#placeholder-svg">
+                  <svg slot="placeholder" loading="lazy" class="ts-section-right-image" version="1.1" viewBox="2 122.3 637.26 349.3" xmlns="http://www.w3.org/2000/svg" xlink:href="#placeholder-svg">
                     <defs>
                       <path id="aHIf0e791" d="m164.42 134.68v-0.42c0-5.83-4.95-10.6-10.99-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.83c6.04 0 10.98-4.77 10.98-10.6v-47.19c0-5.83-4.94-10.61-10.98-10.61h-50.4z"/>
                       <path id="aebH7nnDc" d="m317.32 134.68v-0.42c0-5.83-4.94-10.6-10.98-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.82c6.04 0 10.99-4.77 10.99-10.6v-47.19c0-5.83-4.95-10.61-10.99-10.61h-50.4z"/>
@@ -372,7 +372,7 @@ class TSHome extends PageViewElement {
                   <section class="ts-card ts-card--solution">
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">Powered by Google Cloud</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-pwa-62x-62.svg" alt="Pagespeed optimization service">
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-pwa-62x-62.svg" alt="Pagespeed optimization service" loading="lazy">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}hosting/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="workloadMigration" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="pagespeed-optimization">Hyper Optimized Hosting</h2>
                       </a>
@@ -391,7 +391,7 @@ class TSHome extends PageViewElement {
                   <section class="ts-card ts-card--solution">
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Performance</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Progressive web application design">
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Progressive web application design" loading="lazy">
                       <a class="ts-link ts-card__link ts-card__link-text" href="pagespeed/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="pwa">PageSpeed Optimizations</h2>
                       </a>
@@ -409,27 +409,8 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">PWA Designed Frontend</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-pagespeed-62x62.svg" alt="Progressive web application design">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="design/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="progressiveWebDesign" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="progressive-web-frontend">Inviting and Engaging</h2>
-                      </a>
-                    </header>
-                    <p class="ts-card__body">We transform WordPress into fast, mobile first, accessible, modern progressive web applications.</p>
-                      <div class="ts-card__arrow">
-                        <svg width="18px" height="18px" viewBox="0 0 18 18">
-                          <title>Arrow</title>
-                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
-                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
-                        </svg>
-                      </div>
-                  </section>
-                </div>
-                <div class="ts-grid__col is-6 is-4__large">
-                  <section class="ts-card ts-card--solution">
-                    <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Repairs</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="Monitored and maintained"/>
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="Monitored and maintained" loading="lazy">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}emergency/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="emergencyResponse" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">Emergency Response</h2>
                       </a>
@@ -447,51 +428,13 @@ class TSHome extends PageViewElement {
                 <div class="ts-grid__col is-6 is-4__large">
                   <section class="ts-card ts-card--solution">
                     <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Security</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-security-62x62.svg" alt="In depth security program">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}security/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="securityResponse" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="security-response">Security Services</h2>
-                      </a>
-                    </header>
-                    <p class="ts-card__body">We investigate, audit, and restore compromised sites that mitigate loss and prevent future attacks.</p>
-                      <div class="ts-card__arrow">
-                        <svg width="18px" height="18px" viewBox="0 0 18 18">
-                          <title>Arrow</title>
-                          <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
-                          <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
-                        </svg>
-                      </div>
-                  </section>
-                </div>
-                <div class="ts-grid__col is-6 is-4__large">
-                  <section class="ts-card ts-card--solution">
-                    <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">Precisely Maintained</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="WordPress Preventive Care">
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="WordPress Preventive Care" loading="lazy">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}care/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="wordpressRelocation" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">Annual Preventive Care</h2>
+                        <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">Total Preventive Care</h2>
                       </a>
                     </header>
                     <p class="ts-card__body">Focus on creating, leave the maintaining to us. 24-7 monitoring, updates, backups and more.</p>
-                    <div class="ts-card__arrow">
-                      <svg width="18px" height="18px" viewBox="0 0 18 18">
-                        <title>Arrow</title>
-                        <polyline points="1,9 17,9" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
-                        <polyline points="9,1 17,9 9,17" stroke="var(--app-primary-ts-icon-color)" stroke-width="2" fill="none"></polyline>
-                      </svg>
-                    </div>
-                  </section>
-                </div>
-                <div class="ts-grid__col is-6 is-4__large">
-                  <section class="ts-card ts-card--solution">
-                    <header>
-                      <h1 class="ts-card__eyebrow ts-eyebrow">Migration Services</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-migrations-62x62.svg" alt="WordPress migration">
-                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}migrations/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="wordpressRelocation" track-metadata-position="body">
-                        <h2 class="ts-card__heading ts-headline4" id="migration">WordPress Relocation</h2>
-                      </a>
-                    </header>
-                    <p class="ts-card__body">Existing WordPress site? No problem. We'll safely move your site to it's new home without interruption.</p>
                     <div class="ts-card__arrow">
                       <svg width="18px" height="18px" viewBox="0 0 18 18">
                         <title>Arrow</title>
@@ -508,7 +451,7 @@ class TSHome extends PageViewElement {
         <div class="ts-section ts-section--border">
           <div class="ts-section__header ts-text-center ts-grid">
             <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
-              <h2 class="ts-headline3" id="features">HyperPress Features</h2>
+              <h2 class="ts-headline3" id="features">Professional WordPress Consultants</h2>
             </div>
           </div>
           <section class="ts-copy">
