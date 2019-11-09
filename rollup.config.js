@@ -26,9 +26,9 @@ export default [
         options: {
           verbose: true,
           parents: true
+          
         }
       })
     ]
-
   }
 ];
