@@ -306,7 +306,7 @@ class TSHome extends PageViewElement {
             <section class="ts-copy">
               <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center mdc-elevation--z14 ts-section-elevated-padding">
                 <div class="ts-grid__col ts-copy--flipped ts-grid__col--horizontal-center ts-copy__img is-4 is-8--offset is-7__large--offset ts-grid-row-start">
-                  <svg slot="placeholder" loading="lazy" class="ts-section-right-image" version="1.1" viewBox="2 122.3 637.26 349.3" xmlns="http://www.w3.org/2000/svg" xlink:href="#placeholder-svg">
+                  <svg slot="placeholder" class="ts-section-right-image" version="1.1" viewBox="2 122.3 637.26 349.3" xmlns="http://www.w3.org/2000/svg" xlink:href="#placeholder-svg">
                     <defs>
                       <path id="aHIf0e791" d="m164.42 134.68v-0.42c0-5.83-4.95-10.6-10.99-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.83c6.04 0 10.98-4.77 10.98-10.6v-47.19c0-5.83-4.94-10.61-10.98-10.61h-50.4z"/>
                       <path id="aebH7nnDc" d="m317.32 134.68v-0.42c0-5.83-4.94-10.6-10.98-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.82c6.04 0 10.99-4.77 10.99-10.6v-47.19c0-5.83-4.95-10.61-10.99-10.61h-50.4z"/>
