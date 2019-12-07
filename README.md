@@ -1,6 +1,11 @@
 [![Built with pwa–starter–kit](https://img.shields.io/badge/built_with-pwa–starter–kit_-blue.svg)](https://github.com/Polymer/pwa-starter-kit "Built with pwa–starter–kit")
+<<<<<<< HEAD
 [![Greenkeeper badge](https://badges.greenkeeper.io/hyperpress/pressmedics.svg?token=c1c4c312e9e2b874d02b0622ada6020f06d31e4c93594d0923b5da68eb1d2d85&ts=1532501095011)](https://greenkeeper.io/)
 [![CircleCI](https://circleci.com/gh/hyperpress/pressmedics.svg?style=svg&circle-token=a56a8a61431cb26b7f1a29d42b44f776e48620fe)](https://circleci.com/gh/hyperpress/pressmedics)
+=======
+[![Greenkeeper badge](https://badges.greenkeeper.io/logicalphase/pressmedics.svg?token=c1c4c312e9e2b874d02b0622ada6020f06d31e4c93594d0923b5da68eb1d2d85&ts=1532501095011)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/hyperpress/logicalphase.svg?style=svg)](https://circleci.com/gh/hyperpress/logicalphase)
+>>>>>>> ae5439b0fa14a88a91aa7e39e5e0c09a58d2947c
 
 # PWA starter site built with lit-element, lit-html, and open-wc
 
