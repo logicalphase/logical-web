@@ -22,7 +22,7 @@
     "test:regenerate_screenshots": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=15000"
   },
   "dependencies": {
-    "@open-wc/building-rollup": "^0.15.0",
+    "@open-wc/building-rollup": "^0.15.3",
     "@polymer/app-layout": "^3.1.0",
     "@polymer/polymer": "^3.3.1",
     "@power-elements/lazy-image": "^2.1.1",
@@ -41,12 +41,12 @@
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/plugin-syntax-import-meta": "^7.7.4",
-    "@babel/preset-env": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
     "@polymer/test-fixture": "^4.0.2",
     "axe-core": "^3.4.0",
     "chai": "^4.2.0",
     "del": "^5.1.0",
-    "es-dev-server": "^1.29.0",
+    "es-dev-server": "^1.31.0",
     "eslint": "^6.7.2",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-lit": "^1.2.0",
@@ -61,7 +61,7 @@
     "polyserve": "^0.27.15",
     "prpl-server": "^1.4.0",
     "puppeteer": "^2.0.0",
-    "rollup": "^1.27.8",
+    "rollup": "^1.27.9",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-cpy": "^2.0.1",
     "rollup-plugin-minify-html-literals": "^1.2.2",
