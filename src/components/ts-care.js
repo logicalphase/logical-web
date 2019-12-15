@@ -96,7 +96,7 @@ class TSCare extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: 'WordPress Preventive Care Program - HyperPress',
+      title: 'WordPress Preventive Care Program - Logical Phase',
       description: 'Complete protection and monitoring for WordPress'
     });
 
@@ -164,7 +164,7 @@ class TSCare extends PageViewElement {
           <div class="ts-section ts-section--border">
             <div class="ts-section__header ts-text-center ts-grid">
               <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="ts-headline3" id="features">HyperPress Features</h2>
+                <h2 class="ts-headline3" id="features">Logical Phase Features</h2>
               </div>
             </div>
           </div>

@@ -108,10 +108,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       }
 
       .sidebar {
-        background-color: var(--app-reverse-text-color);
-        width: 210px;
-        margin-left: 124px;
-        margin-top: 0px;
+        display: none;
       }
 
       .nav li h3 {
@@ -181,11 +178,17 @@ class TSBlog extends connect(store)(PageViewElement) {
         .hero {
           background: var(--app-reverse-text-color) url('/images/header/ts-design-header-opt.svg') no-repeat;
           background-size: 280px;
-          background-position: 100% 30px;
+          background-position: 90% 60px;
         }
         .ts-content-wrapper {
           padding: 0; 
           background: var(--app-primary-section-background-color);
+        }
+        .sidebar {
+          display: block;
+          width: 160px;
+          margin-left: 34px;
+          margin-top: 0;
         }
         .background-grey {
           background: white;
@@ -218,7 +221,7 @@ class TSBlog extends connect(store)(PageViewElement) {
       return html`<p class="ts-loader" style="padding-left: 34px;">An error occurred while retrieving blog list. Please reload.</p>`;
     }
     updateMetadata({
-      title: `HyperPress Articles`,
+      title: `Logical Phase Articles`,
       description: `WordPress How to's, tutorials, and pro tips to get the most from your site`
     });
 
@@ -227,11 +230,11 @@ class TSBlog extends connect(store)(PageViewElement) {
       <article id="ts-site" class="ts-blog">
           <header class="ts-hero hero">
             <div class="ts-grid">
-              <div class="ts-grid__column is-7 is-6__large">
-                <header class="ts-grid__column is-7 is-6__large">
+              <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
+                <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="ts-section-header__eyebrow ts-eyebrow">Resources for WordPress</h1>
-                    <h2 class="ts-display3">HyperPress Blog</h2>
+                    <h2 class="ts-display3">Logical Phase Blog</h2>
                     <p class="ts-headline4 ts-why-google__intro-text">Articles written by WordPress professionals for site owners, developers, and designers.</p>
                   </div>
                 </header>

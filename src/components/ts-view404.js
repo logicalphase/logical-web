@@ -24,7 +24,7 @@ class TSView404 extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: '404 Page Not Found - HyperPress',
+      title: '404 Page Not Found - Logical Phase',
       description: 'The page you\'re looking for doesn\'t seem to exist'
     });
 

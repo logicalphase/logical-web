@@ -36,7 +36,7 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           background: none;
         }
       }   
-      `]}render(){(0,_tsApp.updateMetadata)({title:"Progressive Web App Design - HyperPress",description:"We create high-quality Progressive Web Applications using the same tools Google uses"});return _tsApp.html`
+      `]}render(){(0,_tsApp.updateMetadata)({title:"Progressive Web App Design - Logical Phase",description:"We create high-quality Progressive Web Applications using the same tools Google uses"});return _tsApp.html`
       <div class="hypersite-main-content clearfix">
         <article id="ts-site" class="ts-design">
           <header class="ts-hero hero">
@@ -70,7 +70,7 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
                   </div>
                   <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
                     <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Engaging Regardless of Screen Size</h3>
-                    <p>You've invested a great deal of time and money into creating products or services that amaze your customers. Finally, a WordPress web site worthy of your enterprise and your dreams. HyperPress leverages what's best about WordPress, the editing workflow, and combines it with a beautiful progressive web application (PWA) frontend.</p>
+                    <p>You've invested a great deal of time and money into creating products or services that amaze your customers. Finally, a WordPress web site worthy of your enterprise and your dreams. Logical Phase leverages what's best about WordPress, the editing workflow, and combines it with a beautiful progressive web application (PWA) frontend.</p>
                     <div class="ts-content-header__link ts-element-align">
                       <a 
                         href="/contact/" 
@@ -110,7 +110,7 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           <div class="ts-section ts-section--border">
             <div class="ts-section__header ts-text-center ts-grid">
               <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="ts-headline3" id="features">HyperPress Features</h2>
+                <h2 class="ts-headline3" id="features">Logical Phase Features</h2>
               </div>
             </div>
             <section class="ts-copy">

@@ -7,7 +7,7 @@ define(["./ts-app.js"],function(_tsApp){"use strict";class TSView404 extends _ts
         font-weight: 300;
         margin-bottom: 20px;
       }
-      `]}render(){(0,_tsApp.updateMetadata)({title:"404 Page Not Found - HyperPress",description:"The page you're looking for doesn't seem to exist"});return _tsApp.html`
+      `]}render(){(0,_tsApp.updateMetadata)({title:"404 Page Not Found - Logical Phase",description:"The page you're looking for doesn't seem to exist"});return _tsApp.html`
       <section>
         <h2 class="title">Oops! You hit a 404</h2>
         <p>The page you're looking for doesn't seem to exist. Head back <a href="/">home</a> and try again?</p>

@@ -36,7 +36,7 @@ import{CDN_HOST_URL,unsafeCSS,css,html,PageViewElement,updateMetadata,SharedStyl
           background: none;
         }
       }   
-      `]}render(){updateMetadata({title:"WordPress Relocation - HyperPress",description:"We're experts at relocating WordPress"});return html`
+      `]}render(){updateMetadata({title:"WordPress Relocation - Logical Phase",description:"We're experts at relocating WordPress"});return html`
       <div class="hypersite-main-content clearfix">
         <article id="ts-site" class="ts-migrations">
           <header class="ts-hero hero">
@@ -119,7 +119,7 @@ import{CDN_HOST_URL,unsafeCSS,css,html,PageViewElement,updateMetadata,SharedStyl
           <div class="ts-section ts-section--border">
             <div class="ts-section__header ts-text-center ts-grid">
               <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="ts-headline3 ts-element-align" id="features">HyperPress Features</h2>
+                <h2 class="ts-headline3 ts-element-align" id="features">Logical Phase Features</h2>
               </div>
             </div>
             <section class="ts-copy">

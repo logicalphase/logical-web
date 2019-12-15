@@ -68,7 +68,7 @@ class TSMigrations extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: 'WordPress Relocation - HyperPress',
+      title: 'WordPress Relocation - Logical Phase',
       description: 'We\'re experts at relocating WordPress'
     });
 
@@ -155,7 +155,7 @@ class TSMigrations extends PageViewElement {
           <div class="ts-section ts-section--border">
             <div class="ts-section__header ts-text-center ts-grid">
               <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="ts-headline3 ts-element-align" id="features">HyperPress Features</h2>
+                <h2 class="ts-headline3 ts-element-align" id="features">Logical Phase Features</h2>
               </div>
             </div>
             <section class="ts-copy">

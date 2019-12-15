@@ -102,7 +102,7 @@ import{CDN_HOST_URL,unsafeCSS,css,html,PageViewElement,updateMetadata,TsTableSty
           padding-left: 14px;
         }
       } 
-    `]}render(){updateMetadata({title:"PageSpeed Optimizations - HyperPress",description:"About page"});return html`
+    `]}render(){updateMetadata({title:"PageSpeed Optimizations - Logical Phase",description:"About page"});return html`
       <article id="ts-site" class="ts-privacy">
         <header class="hero">
           <div class="ts-header-wrapper fade-in">

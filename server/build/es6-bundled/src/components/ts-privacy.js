@@ -102,7 +102,7 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           padding-left: 14px;
         }
       } 
-    `]}render(){(0,_tsApp.updateMetadata)({title:"PageSpeed Optimizations - HyperPress",description:"About page"});return _tsApp.html`
+    `]}render(){(0,_tsApp.updateMetadata)({title:"PageSpeed Optimizations - Logical Phase",description:"About page"});return _tsApp.html`
       <article id="ts-site" class="ts-privacy">
         <header class="hero">
           <div class="ts-header-wrapper fade-in">

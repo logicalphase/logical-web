@@ -14002,7 +14002,7 @@ shouldUpdate(){return this.active}static get properties(){return{active:{type:Bo
                 </div>
                 <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start ts-promo-box-light">
                   <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Focus on content, we deliver it. Focus on audience, we help you grow it.</h3>
-                  <p>You've invested a lot of time and energy into creating amazing content, services, and products for your customers. We provide managed WordPress hosting and professional services worthy of your efforts. HyperPress leverages what's best about WordPress, and makes it so much better.</p>
+                  <p>You've invested a lot of time and energy into creating amazing content, services, and products for your customers. We provide managed WordPress hosting and professional services worthy of your efforts. Logical Phase leverages what's best about WordPress, and makes it so much better.</p>
                 </div>
               </div>
             </section>
@@ -14013,7 +14013,7 @@ shouldUpdate(){return this.active}static get properties(){return{active:{type:Bo
             <iron-selector selected="[[page]]" attr-for-selected="name" class="main-navigation" role="navigation">
               <div class="ts-grid ts-grid__no-gap">
                 <header class="ts-grid__col is-6 is-4__large ts-section-header ts-section-header--solutions">
-                  <h1 class="ts-section-header__eyebrow ts-eyebrow">The HyperPress difference</h1>
+                  <h1 class="ts-section-header__eyebrow ts-eyebrow">The Logical Phase difference</h1>
                   <h2 class="ts-section-header__heading ts-headline3" id="wordpress-you-need-solutions-you-deserve">Smarter, faster, superior WordPress.</h2>
                   <div class="ts-section-header__link">
                     <a 
@@ -14021,7 +14021,7 @@ shouldUpdate(){return this.active}static get properties(){return{active:{type:Bo
                       class="ts-button ts-button--primary" 
                       track-type="navigateTo" 
                       track-name="home"
-                      track-metadata-position="banner">Contact a HyperPress expert</a>
+                      track-metadata-position="banner">Contact a Logical Phase expert</a>
                   </div>
                 </header>
                 <div class="ts-grid__col is-6 is-4__large">
@@ -14164,7 +14164,7 @@ shouldUpdate(){return this.active}static get properties(){return{active:{type:Bo
         <div class="ts-section ts-section--border">
           <div class="ts-section__header ts-text-center ts-grid">
             <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
-              <h2 class="ts-headline3" id="features">HyperPress Features</h2>
+              <h2 class="ts-headline3" id="features">Logical Phase Features</h2>
             </div>
           </div>
           <section class="ts-copy">
@@ -14175,7 +14175,7 @@ shouldUpdate(){return this.active}static get properties(){return{active:{type:Bo
               </div>
               <div class="ts-grid__col ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Control your content</h4>
-                <p>HyperPress doesn't capitalize on your content like other services. We don't use paywalls or advertisements&#8212;that's for you to decide. Moving your content is as easy as moving any other self-hosted WordPress site.</p>
+                <p>Logical Phase doesn't capitalize on your content like other services. We don't use paywalls or advertisements&#8212;that's for you to decide. Moving your content is as easy as moving any other self-hosted WordPress site.</p>
               </div>
               <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Progressive Web Application</h4>
@@ -14187,11 +14187,11 @@ shouldUpdate(){return this.active}static get properties(){return{active:{type:Bo
               </div>
               <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Installable and always up-to-date</h4>
-                <p>Users can optionally install your HyperPress PWA just like any native application. Best of all, PWAs don't take up any storage memory and they're updated to the latest version without any user effort.</p>
+                <p>Users can optionally install your Logical Phase PWA just like any native application. Best of all, PWAs don't take up any storage memory and they're updated to the latest version without any user effort.</p>
               </div>
               <div class="ts-grid__col ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Fast loading and reliable</h4>
-                <p>HyperPress PWAs load instantly even in spotty internet conditions. Your readers can continue to read your posts offline uninterrupted.</p>
+                <p>Logical Phase PWAs load instantly even in spotty internet conditions. Your readers can continue to read your posts offline uninterrupted.</p>
               </div>
             </div>
           </section>
@@ -14501,7 +14501,7 @@ store.addReducers({app:app$1});var store$1={store:store};const TsTheme=css`
         background: var(--app-footer-primary-background-color);
         border-bottom: solid 1px var(--app-form-border-color);
         color: var(--app-footer-primary-background-color);
-        content: "HyperPress";
+        content: "Logical Phase";
         display: block;
         height: 73px;
         margin: 0 24px;
@@ -14751,7 +14751,7 @@ store.addReducers({app:app$1});var store$1={store:store};const TsTheme=css`
           <a class="submenu" ?selected="${"security"===_page}" href="/security">Security Services</a>
           <a class="submenu" ?selected="${"care"===_page}" href="/care">Preventive Care</a>
           <a class="submenu" ?selected="${"migrations"===_page}" href="/migrations">WordPress Migrations</a>
-          <a ?selected="${"blog"===_page}" href="/blog">HyperPress Blog</a>
+          <a ?selected="${"blog"===_page}" href="/blog">Logical Phase Blog</a>
           <a ?selected="${"privacy"===_page}" href="/privacy">Privacy</a>
           <a ?selected="${"contact"===_page}" href="/contact">Contact</a>
         </nav>

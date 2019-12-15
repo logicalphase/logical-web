@@ -154,7 +154,7 @@ class TSPrivacy extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: 'PageSpeed Optimizations - HyperPress',
+      title: 'PageSpeed Optimizations - Logical Phase',
       description: 'About page'
     });
 

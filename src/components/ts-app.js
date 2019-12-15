@@ -267,7 +267,7 @@ class TSApp extends connect(store)(LitElement) {
         background: var(--app-footer-primary-background-color);
         border-bottom: solid 1px var(--app-form-border-color);
         color: var(--app-footer-primary-background-color);
-        content: "HyperPress";
+        content: "Logical Phase";
         display: block;
         height: 73px;
         margin: 0 24px;
@@ -531,7 +531,7 @@ class TSApp extends connect(store)(LitElement) {
           <a class="submenu" ?selected="${_page === "security"}" href="/security">Security Services</a>
           <a class="submenu" ?selected="${_page === "care"}" href="/care">Preventive Care</a>
           <a class="submenu" ?selected="${_page === "migrations"}" href="/migrations">WordPress Migrations</a>
-          <a ?selected="${_page === "blog"}" href="/blog">HyperPress Blog</a>
+          <a ?selected="${_page === "blog"}" href="/blog">Logical Phase Blog</a>
           <a ?selected="${_page === "privacy"}" href="/privacy">Privacy</a>
           <a ?selected="${_page === "contact"}" href="/contact">Contact</a>
         </nav>

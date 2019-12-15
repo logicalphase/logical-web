@@ -37,6 +37,17 @@ class TSHome extends PageViewElement {
         display: none;
       }
 
+      .industry {
+        background-color: #008c3a;
+        color: var(--app-reverse-text-color);
+      }
+      .industry header .ts-eyebrow,
+      .industry .ts-headline4,
+      .ts-card__body
+      {
+        color: var(--app-reverse-text-color) !important;
+      }
+
       .ts-grid--alternate {
           grid-column-gap: 15px;
           grid-template-columns: repeat(1, 1fr);
@@ -60,7 +71,7 @@ class TSHome extends PageViewElement {
       }
 
       .ts-section-elevated-padding {
-          padding: 34px 24px 24px 24px;
+        padding: 34px 24px 24px 24px;
       }
 
       .ts-grid__col--horizontal-center {
@@ -301,7 +312,7 @@ class TSHome extends PageViewElement {
             </div>
           </div>
         </header>
-        <div class="ts-section ts-section--border">
+        <div class="ts-section">
           <div class="ts-section__spacer">
             <section class="ts-copy">
               <div class="ts-grid--alternate ts-copy__inner ts-copy--60-40 ts-grid--vertical-center mdc-elevation--z14 ts-section-elevated-padding">
@@ -346,7 +357,7 @@ class TSHome extends PageViewElement {
                 </div>
                 <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start ts-promo-box-light">
                   <h3 class="ts-headline3" id="engaging-experiences-regardless-screen-size">Focus on content, we deliver it. Focus on audience, we help you grow it.</h3>
-                  <p>You've invested a lot of time and energy into creating amazing content, services, and products for your customers. We provide managed WordPress hosting and professional services worthy of your efforts. HyperPress leverages what's best about WordPress, and makes it so much better.</p>
+                  <p>You've invested time and energy into creating amazing content, services, and products for your customers. We provide managed WordPress hosting and professional services worthy of your efforts. Logical Phase leverages what's best about WordPress, and makes it so much better.</p>
                 </div>
               </div>
             </section>
@@ -357,7 +368,7 @@ class TSHome extends PageViewElement {
             <iron-selector selected="[[page]]" attr-for-selected="name" class="main-navigation" role="navigation">
               <div class="ts-grid ts-grid__no-gap">
                 <header class="ts-grid__col is-6 is-4__large ts-section-header ts-section-header--solutions">
-                  <h1 class="ts-section-header__eyebrow ts-eyebrow">The HyperPress difference</h1>
+                  <h1 class="ts-section-header__eyebrow ts-eyebrow">The Logical Phase difference</h1>
                   <h2 class="ts-section-header__heading ts-headline3" id="wordpress-you-need-solutions-you-deserve">Smarter, faster, superior WordPress.</h2>
                   <div class="ts-section-header__link">
                     <a 
@@ -365,7 +376,7 @@ class TSHome extends PageViewElement {
                       class="ts-button ts-button--primary" 
                       track-type="navigateTo" 
                       track-name="home"
-                      track-metadata-position="banner">Contact a HyperPress expert</a>
+                      track-metadata-position="banner">Contact the experts</a>
                   </div>
                 </header>
                 <div class="ts-grid__col is-6 is-4__large">
@@ -410,7 +421,7 @@ class TSHome extends PageViewElement {
                   <section class="ts-card ts-card--solution">
                     <header>
                       <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Repairs</h1>
-                      <img class="ts-card__icon" src="/images/icons/ts-icon-stethescope-62x62-opt.svg" alt="Monitored and maintained" loading="lazy">
+                      <img class="ts-card__icon" src="/images/icons/ts-icon-ambulance-62x62.svg" alt="Monitored and maintained" loading="lazy">
                       <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}emergency/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="emergencyResponse" track-metadata-position="body">
                         <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">Emergency Response</h2>
                       </a>
@@ -444,6 +455,24 @@ class TSHome extends PageViewElement {
                     </div>
                   </section>
                 </div>
+                <div class="ts-grid__col is-6 is-4__large">
+                  <section class="ts-card ts-card--solution industry">
+                    <header>
+                      <h1 class="ts-card__eyebrow ts-eyebrow">Professional Consulting</h1>
+                      <a class="ts-link ts-card__link ts-card__link-text" href="${HP_HOST}care/" track-type="navigateTo" track-name="solution" track-metadata-eventdetail="wordpressRelocation" track-metadata-position="body">
+                        <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">Site Assessment</h2>
+                      </a>
+                    </header>
+                    <p class="ts-card__body">Let us perform a complete assessment of your site, including performance and search.</p>
+                    <div class="ts-card__arrow">
+                      <svg width="18px" height="18px" viewBox="0 0 18 18">
+                        <title>Arrow</title>
+                        <polyline points="1,9 17,9" stroke="var(--app-reverse-text-color)" stroke-width="2" fill="none"></polyline>
+                        <polyline points="9,1 17,9 9,17" stroke="var(--app-reverse-text-color)" stroke-width="2" fill="none"></polyline>
+                      </svg>
+                    </div>
+                  </section>
+                </div>
               </div>
             </iron-selector>
           </section>
@@ -462,7 +491,7 @@ class TSHome extends PageViewElement {
               </div>
               <div class="ts-grid__col ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Control your content</h4>
-                <p>HyperPress doesn't capitalize on your content like other services. We don't use paywalls or advertisements&#8212;that's for you to decide. Moving your content is as easy as moving any other self-hosted WordPress site.</p>
+                <p>Logical Phase doesn't capitalize on your content like other services. We don't use paywalls or advertisements&#8212;that's for you to decide. Moving your content is as easy as moving any other self-hosted WordPress site.</p>
               </div>
               <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Progressive Web Application</h4>
@@ -474,11 +503,11 @@ class TSHome extends PageViewElement {
               </div>
               <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Installable and always up-to-date</h4>
-                <p>Users can optionally install your HyperPress PWA just like any native application. Best of all, PWAs don't take up any storage memory and they're updated to the latest version without any user effort.</p>
+                <p>Users can optionally install your Logical Phase PWA just like any native application. Best of all, PWAs don't take up any storage memory and they're updated to the latest version without any user effort.</p>
               </div>
               <div class="ts-grid__col ts-copy__text is-6 is-5__large">
                 <h4 class="ts-headline4">Fast loading and reliable</h4>
-                <p>HyperPress PWAs load instantly even in spotty internet conditions. Your readers can continue to read your posts offline uninterrupted.</p>
+                <p>Logical Phase PWAs load instantly even in spotty internet conditions. Your readers can continue to read your posts offline uninterrupted.</p>
               </div>
             </div>
           </section>

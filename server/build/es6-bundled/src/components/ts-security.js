@@ -61,7 +61,7 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           margin-bottom: 36px;
         }
       }   
-      `]}render(){(0,_tsApp.updateMetadata)({title:"Security Solutions - HyperPress",description:"Defense in depth security that protect data and reputations"});return _tsApp.html`
+      `]}render(){(0,_tsApp.updateMetadata)({title:"Security Solutions - Logical Phase",description:"Defense in depth security that protect data and reputations"});return _tsApp.html`
       <div class="hypersite-main-content clearfix">
         <article id="ts-site" class="ts-design">
           <header class="ts-hero hero">
@@ -190,7 +190,7 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           <div class="ts-section ts-section--border">
             <div class="ts-section__header ts-text-center ts-grid">
               <div class="ts-grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="ts-headline3" id="features">HyperPress Features</h2>
+                <h2 class="ts-headline3" id="features">Logical Phase Features</h2>
               </div>
             </div>
           </div>

@@ -396,7 +396,7 @@ window.open(link,"_blank","scrollbars=yes,resizable=yes,top=300,left=500,width=5
         }
       }
       `]}render(){const{_query,_data,_showOffline}=this;// Don't render if there is no item.
-if(_data){until(_data,html`<p class="ts-loader" style="padding-left: 34px;">Loading. . .</p>`)}else{return html`<p class="ts-loader" style="padding-left: 34px;">An error occurred while retrieving blog list. Please reload.</p>`}updateMetadata({title:`HyperPress Articles`,description:`WordPress How to's, tutorials, and pro tips to get the most from your site`});return html`
+if(_data){until(_data,html`<p class="ts-loader" style="padding-left: 34px;">Loading. . .</p>`)}else{return html`<p class="ts-loader" style="padding-left: 34px;">An error occurred while retrieving blog list. Please reload.</p>`}updateMetadata({title:`Logical Phase Articles`,description:`WordPress How to's, tutorials, and pro tips to get the most from your site`});return html`
     <div class="hypersite-main-content clearfix">
       <article id="ts-site" class="ts-blog">
           <header class="ts-hero hero">
