@@ -1,0 +1,9 @@
+{
+  "name": ".circleci",
+  "version": "1.0.0",
+  "description": "Circle CI testing suite.",
+  "main": "index.html",
+  "repository": "https://github.com/hyperpress/logicalphase",
+  "author": "John Teague",
+  "license": "MIT"
+}
