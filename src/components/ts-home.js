@@ -198,7 +198,7 @@ class TSHome extends PageViewElement {
           .wordpress-animated-bg {
             display: inline-block;
             position: relative;
-            top: 68px;
+            top: 34px;
             right: 0px;
             min-width: auto;
             min-height: 500px;
@@ -256,16 +256,6 @@ class TSHome extends PageViewElement {
                     <p class="ts-headline4 ts-why-google__intro-text">
                       Hyperfast. Technically superior. Fiercely defended.
                     </p>
-                    <div class="ts-section-header__link">
-                      <a
-                        href="/contact/"
-                        class="ts-button ts-button--primary"
-                        track-type="navigateTo"
-                        track-name="home"
-                        track-metadata-position="banner"
-                        >Contact a WordPress pro</a
-                      >
-                    </div>
                   </div>
                 </header>
               </div>
