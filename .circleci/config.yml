@@ -2,7 +2,6 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-project: hyperpress/logicalphase
 version: 2
 jobs:
   build:
@@ -33,21 +32,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-
-      # Upload app to BrowserStack and set app url in an environment variable.
-      # Here replace app-debug.apk with name of your apk.
-      - run:
-          name : App upload and Set app id in environment variable.
-          command : |
-            APP_UPLOAD_RESPONSE=$(curl -u "johnteague2:Wzp4zpaQZExqe2rvpiw1" -X POST https://api-cloud.browserstack.com/app-automate/upload -F "file=@app/build/outputs/apk/debug/app-debug.apk")
-            APP_ID=$(echo $APP_UPLOAD_RESPONSE | jq -r ".app_url")
-            if [ $APP_ID != null ]; then
-              echo "Apk uploaded to BrowserStack with app id : ",$APP_ID;
-              echo "export BROWSERSTACK_APP_ID=$APP_ID" >> $BASH_ENV;
-              source $BASH_ENV;
-              echo "Setting value of BROWSERSTACK_APP_ID in environment variables to  ",$APP_ID;
-            else
-              UPLOAD_ERROR_MESSAGE=$(echo $APP_UPLOAD_RESPONSE | jq -r ".error")
-              echo "App upload failed, reason : ",$UPLOAD_ERROR_MESSAGE
-              exit 1;
-            fi
+      - run: yarn install
