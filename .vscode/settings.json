@@ -26,5 +26,4 @@
     "*.sublime-*": true,
     "env*": true
   }
-
 }
