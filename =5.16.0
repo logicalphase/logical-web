@@ -1,0 +1,22 @@
+yarn add v1.19.1
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info fsevents@2.1.1: The platform "linux" is incompatible with this module.
+info "fsevents@2.1.1" is an optional dependency and failed compatibility check. Excluding it from installation.
+info fsevents@1.2.9: The platform "linux" is incompatible with this module.
+info "fsevents@1.2.9" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+success Saved 4 new dependencies.
+info Direct dependencies
+├─ @typescript-eslint/eslint-plugin@2.12.0
+├─ @typescript-eslint/parser@2.12.0
+├─ eslint-config-google@0.14.0
+└─ eslint@6.7.2
+info All dependencies
+├─ @typescript-eslint/eslint-plugin@2.12.0
+├─ @typescript-eslint/parser@2.12.0
+├─ eslint-config-google@0.14.0
+└─ eslint@6.7.2
+Done in 13.61s.

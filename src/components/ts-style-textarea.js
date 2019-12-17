@@ -1,5 +1,3 @@
-
-
 import { css } from 'lit-element';
 
 export const TsTextAreaStyle = css`
@@ -104,7 +102,8 @@ export const TsTextAreaStyle = css`
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
   }
-  _:-ms-lang(x), ts-textarea > textarea + ts-md-decorator > label {
+  _:-ms-lang(x),
+  ts-textarea > textarea + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
@@ -115,7 +114,10 @@ export const TsTextAreaStyle = css`
     opacity: 1;
   }
   /* Underline */
-  ts-textarea > textarea:not(:focus):not(:placeholder-shown):invalid + ts-md-decorator > ts-underline {
+  ts-textarea
+    > textarea:not(:focus):not(:placeholder-shown):invalid
+    + ts-md-decorator
+    > ts-underline {
     background-color: #dd2c00;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);

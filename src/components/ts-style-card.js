@@ -1,4 +1,4 @@
-import { css } from "lit-element";
+import { css } from 'lit-element';
 
 export const TsCard = css`
   .ts-section--reversed,
@@ -76,7 +76,7 @@ export const TsCard = css`
   }
 
   .ts-card__arrow {
-     margin-top: 0;
+    margin-top: 0;
   }
 
   .ts-card:hover {
@@ -267,14 +267,14 @@ export const TsCard = css`
 
     .ts-card--contact {
       background-color: #34a853; /* $green-500 */
-      background-image: url("/images/home/contact-bg.svg");
+      background-image: url('/images/home/contact-bg.svg');
       background-position: 50% 50%;
       background-size: cover;
     }
 
     .ts-card--industry {
       background-color: #fbbc04;
-      background-image: url("/images/home/industry-bg.svg");
+      background-image: url('/images/home/industry-bg.svg');
       background-position: 50% 50%;
       background-size: cover;
     }
@@ -345,7 +345,8 @@ export const TsCard = css`
       padding: 32px 56px 72px;
     }
 
-    .ts-card--product .ts-card__heading, .ts-card__arrow{
+    .ts-card--product .ts-card__heading,
+    .ts-card__arrow {
       padding-top: 24px;
     }
   }

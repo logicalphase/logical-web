@@ -1,4 +1,16 @@
-define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);class TSDesign extends _tsApp.PageViewElement{static get styles(){return[_tsApp.SharedStyles,_tsApp.TsTypographyStyle,_tsApp.TsLayoutStyle,_tsApp.TsGridStyle,_tsApp.TsCard,_tsApp.TsButtonStyle,_tsApp.css`
+define(['./ts-app.js'], function(_tsApp) {
+  'use strict';
+  const cdnHost = (0, _tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);
+  class TSDesign extends _tsApp.PageViewElement {
+    static get styles() {
+      return [
+        _tsApp.SharedStyles,
+        _tsApp.TsTypographyStyle,
+        _tsApp.TsLayoutStyle,
+        _tsApp.TsGridStyle,
+        _tsApp.TsCard,
+        _tsApp.TsButtonStyle,
+        _tsApp.css`
       :host {
         display: block;
         padding: 0px;
@@ -36,7 +48,16 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           background: none;
         }
       }   
-      `]}render(){(0,_tsApp.updateMetadata)({title:"Progressive Web App Design - Logical Phase",description:"We create high-quality Progressive Web Applications using the same tools Google uses"});return _tsApp.html`
+      `,
+      ];
+    }
+    render() {
+      (0, _tsApp.updateMetadata)({
+        title: 'Progressive Web App Design - Logical Phase',
+        description:
+          'We create high-quality Progressive Web Applications using the same tools Google uses',
+      });
+      return _tsApp.html`
       <div class="hypersite-main-content clearfix">
         <article id="ts-site" class="ts-design">
           <header class="ts-hero hero">
@@ -136,4 +157,8 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           </div>
         </article>
       </div>
-    `}}window.customElements.define("ts-design",TSDesign)});
+    `;
+    }
+  }
+  window.customElements.define('ts-design', TSDesign);
+});

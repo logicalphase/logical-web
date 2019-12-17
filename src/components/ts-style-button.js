@@ -1,4 +1,4 @@
-import { css } from "lit-element";
+import { css } from 'lit-element';
 
 export const TsButtonStyle = css`
   .ts-button {
@@ -9,7 +9,7 @@ export const TsButtonStyle = css`
     box-sizing: border-box;
     cursor: pointer;
     display: inline-flex;
-    font: 500 1em "Roboto", Arial, sans-serif;
+    font: 500 1em 'Roboto', Arial, sans-serif;
     height: 44px;
     justify-content: center;
     letter-spacing: 0.5px;
@@ -42,9 +42,9 @@ export const TsButtonStyle = css`
   }
   .ts-button--primary:hover {
     background-color: var(--app-primary-hover-color);
-    transition: background-color .3s ease-out;
-    -webkit-transition: background-color .3s ease-out;
-    -o-transition: background-color .3s ease-out;
+    transition: background-color 0.3s ease-out;
+    -webkit-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
   }
   .ts-button--primary:active,
   .ts-button--primary:focus {
@@ -53,7 +53,7 @@ export const TsButtonStyle = css`
   .ts-button--primary:active::before,
   .ts-button--primary:focus::before {
     background-color: var(--app-reverse-text-color);
-    content: "";
+    content: '';
     height: 100%;
     opacity: 0.24;
     position: absolute;
@@ -65,7 +65,7 @@ export const TsButtonStyle = css`
   }
   .ts-button--primary.ts-button--reversed:focus,
   .ts-button--primary.ts-button--reversed:hover {
-    background-color:var(--app-button-primary-reversed);
+    background-color: var(--app-button-primary-reversed);
   }
   .ts-button--secondary {
     background-color: var(--app-reverse-text-color);
@@ -100,8 +100,8 @@ export const TsButtonStyle = css`
   .ts-button--secondary.ts-button--reversed:active,
   .ts-button--secondary.ts-button--reversed:focus,
   .ts-button--secondary.ts-button--reversed:hover {
-    background-color:var(--app-button-primary-reversed);
-    border-color:var(--app-button-primary-reversed);
+    background-color: var(--app-button-primary-reversed);
+    border-color: var(--app-button-primary-reversed);
     color: var(--app-secondary-color);
   }
   .ts-button--flat {
@@ -162,16 +162,16 @@ export const TsButtonStyle = css`
   .ts-button--flat__heading:focus,
   .ts-button--flat__heading:hover {
     color: var(--app-primary-text-color);
-    transition: background-color .3s ease-out;
-    -webkit-transition: background-color .3s ease-out;
-    -o-transition: background-color .3s ease-out;
+    transition: background-color 0.3s ease-out;
+    -webkit-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
   }
   .ts-button--flat__heading:focus .ts-button__icon,
   .ts-button--flat__heading:hover .ts-button__icon {
     color: var(--app-primary-hover-color);
-    transition: background-color .3s ease-out;
-    -webkit-transition: background-color .3s ease-out;
-    -o-transition: background-color .3s ease-out;
+    transition: background-color 0.3s ease-out;
+    -webkit-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
   }
   .ts-button--flat svg {
     fill: currentColor;
@@ -182,10 +182,10 @@ export const TsButtonStyle = css`
     color: var(--app-reverse-text-color);
   }
   .ts-button--flat.ts-button--reversed:hover {
-    color:var(--app-button-primary-reversed);
-    transition: background-color .3s ease-out;
-    -webkit-transition: background-color .3s ease-out;
-    -o-transition: background-color .3s ease-out;
+    color: var(--app-button-primary-reversed);
+    transition: background-color 0.3s ease-out;
+    -webkit-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
   }
   .ts-button--flat.ts-button--reversed:focus {
     background-color: var(--app-button-flat-background-color);
@@ -207,9 +207,9 @@ export const TsButtonStyle = css`
   }
   .ts-button.ts-button--dark:hover {
     color: rgba(32, 33, 36, 0.7);
-    transition: background-color .3s ease-out;
-    -webkit-transition: background-color .3s ease-out;
-    -o-transition: background-color .3s ease-out;
+    transition: background-color 0.3s ease-out;
+    -webkit-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
   }
   .ts-button.ts-button--dark:focus {
     background-color: rgba(32, 33, 36, 0.2);
@@ -224,8 +224,7 @@ export const TsButtonStyle = css`
     align-items: center;
     background-color: var(--app-primary-color);
     border-radius: 50%;
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
-      0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
     display: inline-flex;
     height: 56px;
     justify-content: center;
@@ -239,8 +238,8 @@ export const TsButtonStyle = css`
   .ts-button-fab:focus,
   .ts-button-fab:hover {
     background-color: var(--app-primary-hover-color);
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12);
     text-decoration: none;
   }
   .ts-button-fab--red {
@@ -248,7 +247,7 @@ export const TsButtonStyle = css`
   }
   .ts-button-fab--red:focus,
   .ts-button-fab--red:hover {
-    background-color:var(--app-button-fab-red-hover);
+    background-color: var(--app-button-fab-red-hover);
   }
   .ts-button-fab .material-icons {
     background: transparent;

@@ -1,4 +1,8 @@
-define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.defineProperty(_exports,"__esModule",{value:!0});_exports.TsTextAreaStyle=_exports.TsSelectStyle=_exports.TsInputStyle=_exports.TsFormStyle=_exports.$tsStyleTextarea=_exports.$tsStyleSelect=_exports.$tsStyleInput=_exports.$tsStyleForm=void 0;const TsFormStyle=_tsApp.css`
+define(['exports', './ts-app.js'], function(_exports, _tsApp) {
+  'use strict';
+  Object.defineProperty(_exports, '__esModule', { value: !0 });
+  _exports.TsTextAreaStyle = _exports.TsSelectStyle = _exports.TsInputStyle = _exports.TsFormStyle = _exports.$tsStyleTextarea = _exports.$tsStyleSelect = _exports.$tsStyleInput = _exports.$tsStyleForm = void 0;
+  const TsFormStyle = _tsApp.css`
   :host {
     display: block;
   }
@@ -18,7 +22,11 @@ define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.d
     font-weight: 300;
     padding-bottom: 14px;
   }
-`;_exports.TsFormStyle=TsFormStyle;var tsStyleForm={TsFormStyle:TsFormStyle};_exports.$tsStyleForm=tsStyleForm;const TsInputStyle=_tsApp.css`
+`;
+  _exports.TsFormStyle = TsFormStyle;
+  var tsStyleForm = { TsFormStyle: TsFormStyle };
+  _exports.$tsStyleForm = tsStyleForm;
+  const TsInputStyle = _tsApp.css`
   ts-input {
     display: inline-block;
     margin: 5px 0px 5px 0px;
@@ -186,7 +194,11 @@ define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.d
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
   }
-`;_exports.TsInputStyle=TsInputStyle;var tsStyleInput={TsInputStyle:TsInputStyle};_exports.$tsStyleInput=tsStyleInput;const TsSelectStyle=_tsApp.css`
+`;
+  _exports.TsInputStyle = TsInputStyle;
+  var tsStyleInput = { TsInputStyle: TsInputStyle };
+  _exports.$tsStyleInput = tsStyleInput;
+  const TsSelectStyle = _tsApp.css`
   ts-select {
     display: inline-block;
     margin: 10px 0px 20px 0px;
@@ -271,7 +283,11 @@ define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.d
     opacity: 1;
     pointer-events: none;
   }
-`;_exports.TsSelectStyle=TsSelectStyle;var tsStyleSelect={TsSelectStyle:TsSelectStyle};_exports.$tsStyleSelect=tsStyleSelect;const TsTextAreaStyle=_tsApp.css`
+`;
+  _exports.TsSelectStyle = TsSelectStyle;
+  var tsStyleSelect = { TsSelectStyle: TsSelectStyle };
+  _exports.$tsStyleSelect = tsStyleSelect;
+  const TsTextAreaStyle = _tsApp.css`
   ts-textarea {
     display: inline-block;
     margin: 5px 0px 5px 0px;
@@ -440,7 +456,25 @@ define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.d
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
   }
-`;_exports.TsTextAreaStyle=TsTextAreaStyle;var tsStyleTextarea={TsTextAreaStyle:TsTextAreaStyle};_exports.$tsStyleTextarea=tsStyleTextarea;const cdnHost=(0,_tsApp.unsafeCSS)(_tsApp.HP_HOST);class TSContact extends _tsApp.PageViewElement{static get styles(){return[_tsApp.SharedStyles,_tsApp.TsTypographyStyle,_tsApp.TsLayoutStyle,_tsApp.TsGridStyle,_tsApp.TsCard,_tsApp.TsButtonStyle,TsFormStyle,TsInputStyle,TsSelectStyle,TsTextAreaStyle,_tsApp.css`
+`;
+  _exports.TsTextAreaStyle = TsTextAreaStyle;
+  var tsStyleTextarea = { TsTextAreaStyle: TsTextAreaStyle };
+  _exports.$tsStyleTextarea = tsStyleTextarea;
+  const cdnHost = (0, _tsApp.unsafeCSS)(_tsApp.HP_HOST);
+  class TSContact extends _tsApp.PageViewElement {
+    static get styles() {
+      return [
+        _tsApp.SharedStyles,
+        _tsApp.TsTypographyStyle,
+        _tsApp.TsLayoutStyle,
+        _tsApp.TsGridStyle,
+        _tsApp.TsCard,
+        _tsApp.TsButtonStyle,
+        TsFormStyle,
+        TsInputStyle,
+        TsSelectStyle,
+        TsTextAreaStyle,
+        _tsApp.css`
       :host {
         display: block;
         padding: 0px;
@@ -584,7 +618,17 @@ define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.d
           margin: 24px 30px 5px; }
         } 
       }
-    `]}render(){(0,_tsApp.updateMetadata)({title:"Contact a WordPress Exxpert - Logical Phase",description:"We're experts at relocating WordPress"});const requestip=location.hostname,{_response,_state,_waiting}=this;return _tsApp.html`
+    `,
+      ];
+    }
+    render() {
+      (0, _tsApp.updateMetadata)({
+        title: 'Contact a WordPress Exxpert - Logical Phase',
+        description: "We're experts at relocating WordPress",
+      });
+      const requestip = location.hostname,
+        { _response, _state, _waiting } = this;
+      return _tsApp.html`
     <div class="hypersite-main-content clearfix">
     <article id="ts-site" class="ts-contact">
       <header class="ts-hero hero">
@@ -602,7 +646,7 @@ define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.d
         </div>
       </header>
       <div class="ts-contact-wrapper delayed-fade-in">
-        <div class="${_waiting?"main-frame waiting":"main-frame"}">
+        <div class="${_waiting ? 'main-frame waiting' : 'main-frame'}">
           <div state="init">
             <form id="contactForm">
               <input type="hidden" id="requestip" name="requestip" value="${requestip}">
@@ -685,7 +729,7 @@ define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.d
                     </ts-textarea>
                   </div>
                   <ts-button responsive id="submitBox">
-                    <input type="button" @click="${e=>this._submit()}" value="Submit Inquiry">
+                    <input type="button" @click="${e => this._submit()}" value="Submit Inquiry">
                   </ts-button>
                 </section>
               </div>
@@ -697,18 +741,82 @@ define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.d
     </div> 
   <!-- Show spinner when waiting for the server to repond -->
   <paper-spinner-lite ?active="${_waiting}"></paper-spinner-lite>
-  `}static get properties(){return{_waiting:{type:Boolean},_type:{type:String},_response:{type:Object}}}stateChanged(state){this._type=state.contact.type}_submit(){const contactForm=this.shadowRoot.querySelector("#contactForm");if(this._validateForm(contactForm)){this._sendRequest(contactForm).then(res=>res.json()).then(data=>this._didReceiveResponse(data)).catch(_=>this._didReceiveResponse({error:1,errorMessage:"Transaction failed."}))}}/**
+  `;
+    }
+    static get properties() {
+      return { _waiting: { type: Boolean }, _type: { type: String }, _response: { type: Object } };
+    }
+    stateChanged(state) {
+      this._type = state.contact.type;
+    }
+    _submit() {
+      const contactForm = this.shadowRoot.querySelector('#contactForm');
+      if (this._validateForm(contactForm)) {
+        this._sendRequest(contactForm)
+          .then(res => res.json())
+          .then(data => this._didReceiveResponse(data))
+          .catch(_ => this._didReceiveResponse({ error: 1, errorMessage: 'Transaction failed.' }));
+      }
+    }
+    /**
      * Validates the form's inputs and adds the `aria-invalid` attribute to the inputs
      * that don't match the pattern specified in the markup.
-     */_validateForm(form){let firstInvalid=!1;for(let el,i=0;el=form.elements[i],i<form.elements.length;i++){if(el.checkValidity()){el.removeAttribute("aria-invalid")}else{if(!firstInvalid){// announce error message
-if(el.nextElementSibling){//dispatch(announceLabel(el.nextElementSibling.getAttribute('error-message')));
-}if(el.scrollIntoViewIfNeeded){// safari, chrome
-el.scrollIntoViewIfNeeded()}else{// firefox, edge, ie
-el.scrollIntoView(!1)}el.focus();firstInvalid=!0}el.setAttribute("aria-invalid","true")}}return!firstInvalid}/**
+     */ _validateForm(form) {
+      let firstInvalid = !1;
+      for (let el, i = 0; (el = form.elements[i]), i < form.elements.length; i++) {
+        if (el.checkValidity()) {
+          el.removeAttribute('aria-invalid');
+        } else {
+          if (!firstInvalid) {
+            // announce error message
+            if (el.nextElementSibling) {
+              //dispatch(announceLabel(el.nextElementSibling.getAttribute('error-message')));
+            }
+            if (el.scrollIntoViewIfNeeded) {
+              // safari, chrome
+              el.scrollIntoViewIfNeeded();
+            } else {
+              // firefox, edge, ie
+              el.scrollIntoView(!1);
+            }
+            el.focus();
+            firstInvalid = !0;
+          }
+          el.setAttribute('aria-invalid', 'true');
+        }
+      }
+      return !firstInvalid;
+    }
+    /**
      * Sends form and cart data to the server and updates the UI to reflect
      * the waiting state.
-     */_sendRequest(form){this._waiting=!0;return fetch("https://localhost:10443/api/content/create?type=Contact",{mode:"no-cors",method:"POST",body:JSON.stringify({// ccExpMonth: form.elements.ccExpMonth.value,
-FirstName:form.elements.first_name.value,LastName:form.elements.last_name.value,Email:form.elements.email.value,Subject:form.elements.type.value,Website:form.elements.website.value,Description:form.elements.description.value}),headers:{"Content-Type":"multipart/form-data; boundary=------------------------d74496d66958873e--"}})}/**
+     */ _sendRequest(form) {
+      this._waiting = !0;
+      return fetch('https://localhost:10443/api/content/create?type=Contact', {
+        mode: 'no-cors',
+        method: 'POST',
+        body: JSON.stringify({
+          // ccExpMonth: form.elements.ccExpMonth.value,
+          FirstName: form.elements.first_name.value,
+          LastName: form.elements.last_name.value,
+          Email: form.elements.email.value,
+          Subject: form.elements.type.value,
+          Website: form.elements.website.value,
+          Description: form.elements.description.value,
+        }),
+        headers: {
+          'Content-Type':
+            'multipart/form-data; boundary=------------------------d74496d66958873e--',
+        },
+      });
+    }
+    /**
      * Handles the response from the server by checking the response status
      * and transitioning to the success or error UI.
-     */_didReceiveResponse(response){this._response=response;this._waiting=!1}}window.customElements.define("ts-contact",TSContact)});
+     */ _didReceiveResponse(response) {
+      this._response = response;
+      this._waiting = !1;
+    }
+  }
+  window.customElements.define('ts-contact', TSContact);
+});

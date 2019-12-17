@@ -1,4 +1,16 @@
-define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);class TSHosting extends _tsApp.PageViewElement{static get styles(){return[_tsApp.SharedStyles,_tsApp.TsTypographyStyle,_tsApp.TsLayoutStyle,_tsApp.TsGridStyle,_tsApp.TsCard,_tsApp.TsButtonStyle,_tsApp.css`
+define(['./ts-app.js'], function(_tsApp) {
+  'use strict';
+  const cdnHost = (0, _tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);
+  class TSHosting extends _tsApp.PageViewElement {
+    static get styles() {
+      return [
+        _tsApp.SharedStyles,
+        _tsApp.TsTypographyStyle,
+        _tsApp.TsLayoutStyle,
+        _tsApp.TsGridStyle,
+        _tsApp.TsCard,
+        _tsApp.TsButtonStyle,
+        _tsApp.css`
       :host {
         display: block;
         padding: 0px;
@@ -62,7 +74,15 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           margin-bottom: 36px;
         }
       }   
-      `]}render(){(0,_tsApp.updateMetadata)({title:"Security Solutions - Logical Phase",description:"Defense in depth security that protect data and reputations"});return _tsApp.html`
+      `,
+      ];
+    }
+    render() {
+      (0, _tsApp.updateMetadata)({
+        title: 'Security Solutions - Logical Phase',
+        description: 'Defense in depth security that protect data and reputations',
+      });
+      return _tsApp.html`
       <div class="hypersite-main-content clearfix">
         <article id="ts-site" class="ts-hosting">
           <header class="ts-hero hero">
@@ -197,4 +217,8 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           </div>
         </article>
       </div>
-    `}}window.customElements.define("ts-hosting",TSHosting)});
+    `;
+    }
+  }
+  window.customElements.define('ts-hosting', TSHosting);
+});

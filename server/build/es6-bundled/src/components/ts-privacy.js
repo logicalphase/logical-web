@@ -1,4 +1,13 @@
-define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);class TSPrivacy extends _tsApp.PageViewElement{static get styles(){return[_tsApp.SharedStyles,_tsApp.TsTypographyStyle,_tsApp.TsTableStyles,_tsApp.css`
+define(['./ts-app.js'], function(_tsApp) {
+  'use strict';
+  const cdnHost = (0, _tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);
+  class TSPrivacy extends _tsApp.PageViewElement {
+    static get styles() {
+      return [
+        _tsApp.SharedStyles,
+        _tsApp.TsTypographyStyle,
+        _tsApp.TsTableStyles,
+        _tsApp.css`
       :host {
         display: block;
         padding: 0px;
@@ -102,7 +111,15 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           padding-left: 14px;
         }
       } 
-    `]}render(){(0,_tsApp.updateMetadata)({title:"PageSpeed Optimizations - Logical Phase",description:"About page"});return _tsApp.html`
+    `,
+      ];
+    }
+    render() {
+      (0, _tsApp.updateMetadata)({
+        title: 'PageSpeed Optimizations - Logical Phase',
+        description: 'About page',
+      });
+      return _tsApp.html`
       <article id="ts-site" class="ts-privacy">
         <header class="hero">
           <div class="ts-header-wrapper fade-in">
@@ -511,4 +528,8 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           </section>
         </div>
       </article>
-    `}}window.customElements.define("ts-privacy",TSPrivacy)});
+    `;
+    }
+  }
+  window.customElements.define('ts-privacy', TSPrivacy);
+});

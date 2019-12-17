@@ -19,7 +19,9 @@
     "test:integration": "mocha test/integration --timeout=10000",
     "test:unit": "polymer test --module-resolution=node --npm",
     "test:sauce": "polymer test --module-resolution=node --npm -s 'windows 10/microsoftedge@17' -s 'macos 10.13/safari@11'",
-    "test:regenerate_screenshots": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=15000"
+    "test:regenerate_screenshots": "mocha test/integration/screenshots-baseline/regenerate.js --timeout=15000",
+    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore"
   },
   "dependencies": {
     "@open-wc/building-rollup": "0.16.0",
@@ -34,21 +36,22 @@
     "redux-thunk": "2.3.0",
     "reselect": "4.0.0",
     "rollup-plugin-modulepreload": "1.2.2",
-    "systemjs": "6.1.7",
-    "workbox-build": "4.3.1",
-    "workbox-cli": "4.3.1"
+    "systemjs": "6.1.7"
   },
   "devDependencies": {
     "@babel/core": "7.7.5",
     "@babel/plugin-syntax-import-meta": "7.7.4",
     "@babel/preset-env": "7.7.6",
+    "@open-wc/prettier-config": "^0.1.13",
     "@polymer/test-fixture": "4.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
     "axe-core": "3.4.0",
     "chai": "4.2.0",
     "del": "5.1.0",
     "es-dev-server": "1.31.1",
-    "eslint": "6.7.2",
-    "eslint-config-google": "0.14.0",
+    "eslint": "^6.7.2",
+    "eslint-config-google": "^0.14.0",
     "eslint-plugin-lit": "1.2.0",
     "gulp": "4.0.2",
     "gulp-rename": "2.0.0",
@@ -59,6 +62,8 @@
     "pixelmatch": "5.1.0",
     "polymer-cli": "1.9.11",
     "polyserve": "0.27.15",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
     "prpl-server": "1.4.0",
     "puppeteer": "2.0.0",
     "rollup": "1.27.13",
@@ -67,6 +72,13 @@
     "rollup-plugin-minify-html-literals": "1.2.2",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "5.1.3",
-    "wct-mocha": "1.0.1"
-  }
+    "wct-mocha": "1.0.1",
+    "workbox-build": "^4.3.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-prettier"
+    ]
+  },
+  "prettier": "@open-wc/prettier-config"
 }

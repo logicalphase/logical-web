@@ -1,10 +1,10 @@
-import { WP_REST_API_HOST, WP_REST_PATH } from "../components/config";
+import { WP_REST_API_HOST, WP_REST_PATH } from '../components/config';
 
 export const REQUEST_ARTICLE = 'REQUEST_ARTICLE';
 export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
 export const FAIL_ARTICLE = 'FAIL_ARTICLE';
 
-export const fetchArticle = (slug) => (dispatch, getState) => {
+export const fetchArticle = slug => (dispatch, getState) => {
   dispatch(requestArticle(slug));
   const state = getState();
   const article = state.articles && state.articles.data && state.articles.data[slug];
@@ -17,8 +17,8 @@ export const fetchArticle = (slug) => (dispatch, getState) => {
     // fetch article data given the article id.
     // also return a promise to wait for.
     return fetch(`https://${WP_REST_API_HOST}/${WP_REST_PATH}/posts?slug=${slug}`, {
-    //mode: "no-cors" // no-cors, cors, *same-origin
-    })    
+      //mode: "no-cors" // no-cors, cors, *same-origin
+    })
       .then(res => res.json())
       .then(data => {
         if (data.error) {
@@ -27,14 +27,14 @@ export const fetchArticle = (slug) => (dispatch, getState) => {
           dispatch(receiveArticle(slug, data[0]));
         }
       })
-      .catch((e) => dispatch(failArticle(slug)));
+      .catch(e => dispatch(failArticle(slug)));
   }
 };
 
-const requestArticle = (slug) => {
+const requestArticle = slug => {
   return {
     type: REQUEST_ARTICLE,
-    slug
+    slug,
   };
 };
 
@@ -42,13 +42,13 @@ const receiveArticle = (slug, data) => {
   return {
     type: RECEIVE_ARTICLE,
     slug,
-    data
+    data,
   };
 };
 
-const failArticle = (slug) => {
+const failArticle = slug => {
   return {
     type: FAIL_ARTICLE,
-    slug
+    slug,
   };
 };

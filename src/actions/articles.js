@@ -1,10 +1,10 @@
-import { WP_REST_API_HOST, WP_REST_PATH } from "../components/config";
+import { WP_REST_API_HOST, WP_REST_PATH } from '../components/config';
 
 export const REQUEST_ARTICLES = 'REQUEST_ARTICLES';
 export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES';
 export const FAIL_ARTICLES = 'FAIL_ARTICLES';
 
-export const fetchArticles = (query) => (dispatch, getState) => {
+export const fetchArticles = query => (dispatch, getState) => {
   // Check to see if the cached results are from the same query.
   // This is useful for avoiding a network request.
   if (shouldFetchArticles(getState(), query)) {
@@ -22,13 +22,13 @@ export const fetchArticles = (query) => (dispatch, getState) => {
 };
 
 const shouldFetchArticles = (state, query) => {
-  return state.articles.failure || state.articles.query !== query && !state.articles.isFetching;
-}
+  return state.articles.failure || (state.articles.query !== query && !state.articles.isFetching);
+};
 
-const requestArticles = (query) => {
+const requestArticles = query => {
   return {
     type: REQUEST_ARTICLES,
-    query
+    query,
   };
 };
 
@@ -36,14 +36,14 @@ const receiveArticles = (query, data) => {
   return {
     type: RECEIVE_ARTICLES,
     query,
-    data
+    data,
   };
 };
 
-const failArticles = (query) => {
+const failArticles = query => {
   return {
     type: FAIL_ARTICLES,
-    query
+    query,
   };
 };
 

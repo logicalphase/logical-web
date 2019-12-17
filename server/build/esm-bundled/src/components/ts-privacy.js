@@ -1,4 +1,22 @@
-import{CDN_HOST_URL,unsafeCSS,css,html,PageViewElement,updateMetadata,TsTableStyles,SharedStyles,TsTypographyStyle}from"./ts-app.js";const cdnHost=unsafeCSS(CDN_HOST_URL);class TSPrivacy extends PageViewElement{static get styles(){return[SharedStyles,TsTypographyStyle,TsTableStyles,css`
+import {
+  CDN_HOST_URL,
+  unsafeCSS,
+  css,
+  html,
+  PageViewElement,
+  updateMetadata,
+  TsTableStyles,
+  SharedStyles,
+  TsTypographyStyle,
+} from './ts-app.js';
+const cdnHost = unsafeCSS(CDN_HOST_URL);
+class TSPrivacy extends PageViewElement {
+  static get styles() {
+    return [
+      SharedStyles,
+      TsTypographyStyle,
+      TsTableStyles,
+      css`
       :host {
         display: block;
         padding: 0px;
@@ -102,7 +120,12 @@ import{CDN_HOST_URL,unsafeCSS,css,html,PageViewElement,updateMetadata,TsTableSty
           padding-left: 14px;
         }
       } 
-    `]}render(){updateMetadata({title:"PageSpeed Optimizations - Logical Phase",description:"About page"});return html`
+    `,
+    ];
+  }
+  render() {
+    updateMetadata({ title: 'PageSpeed Optimizations - Logical Phase', description: 'About page' });
+    return html`
       <article id="ts-site" class="ts-privacy">
         <header class="hero">
           <div class="ts-header-wrapper fade-in">
@@ -511,4 +534,7 @@ import{CDN_HOST_URL,unsafeCSS,css,html,PageViewElement,updateMetadata,TsTableSty
           </section>
         </div>
       </article>
-    `}}window.customElements.define("ts-privacy",TSPrivacy);
+    `;
+  }
+}
+window.customElements.define('ts-privacy', TSPrivacy);

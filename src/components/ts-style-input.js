@@ -1,5 +1,3 @@
-
-
 import { css } from 'lit-element';
 
 export const TsInputStyle = css`
@@ -103,7 +101,8 @@ export const TsInputStyle = css`
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;
   }
-  _:-ms-lang(x), ts-input > input + ts-md-decorator > label {
+  _:-ms-lang(x),
+  ts-input > input + ts-md-decorator > label {
     -webkit-transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     transform: translate3d(0px, -3.4em, 0px) scale(0.8, 0.8);
     opacity: 1;

@@ -1,5 +1,3 @@
-
-
 import { css } from 'lit-element';
 
 export const TsCheckboxStyle = css`
@@ -11,7 +9,7 @@ export const TsCheckboxStyle = css`
     border: 2px solid var(--app-accent-color);
     border-radius: 2px;
   }
-  ts-checkbox > input[type=checkbox] {
+  ts-checkbox > input[type='checkbox'] {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,7 +34,7 @@ export const TsCheckboxStyle = css`
     transition: opacity 0.1s;
     will-change: opacity;
   }
-  ts-checkbox > input[type=checkbox]:checked + ts-md-decorator::after {
+  ts-checkbox > input[type='checkbox']:checked + ts-md-decorator::after {
     opacity: 1;
   }
   /* Focused state */
@@ -57,7 +55,7 @@ export const TsCheckboxStyle = css`
     transition: transform 0.1s;
     will-change: transform;
   }
-  ts-checkbox > input[type=checkbox]:focus + ts-md-decorator::before {
+  ts-checkbox > input[type='checkbox']:focus + ts-md-decorator::before {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }

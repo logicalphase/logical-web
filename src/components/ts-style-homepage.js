@@ -134,7 +134,7 @@ export const TsHomePageStyle = css`
   }
 
   .ts-card--contact {
-    background-color: #34A853; /* $green-500 */
+    background-color: #34a853; /* $green-500 */
     background-image: url('/images/home/contact-bg.svg');
     background-position: 50% 50%;
     background-size: cover;
@@ -157,7 +157,7 @@ export const TsHomePageStyle = css`
   }
 
   .ts-card--industry {
-    background-color: #FBBC04;
+    background-color: #fbbc04;
     background-image: url('/images/home/industry-bg.svg');
     background-position: 50% 50%;
     background-size: cover;

@@ -1,4 +1,16 @@
-define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);class TSMigrations extends _tsApp.PageViewElement{static get styles(){return[_tsApp.SharedStyles,_tsApp.TsTypographyStyle,_tsApp.TsLayoutStyle,_tsApp.TsGridStyle,_tsApp.TsCard,_tsApp.TsButtonStyle,_tsApp.css`
+define(['./ts-app.js'], function(_tsApp) {
+  'use strict';
+  const cdnHost = (0, _tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);
+  class TSMigrations extends _tsApp.PageViewElement {
+    static get styles() {
+      return [
+        _tsApp.SharedStyles,
+        _tsApp.TsTypographyStyle,
+        _tsApp.TsLayoutStyle,
+        _tsApp.TsGridStyle,
+        _tsApp.TsCard,
+        _tsApp.TsButtonStyle,
+        _tsApp.css`
       :host {
         display: block;
         padding: 0px;
@@ -36,7 +48,15 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           background: none;
         }
       }   
-      `]}render(){(0,_tsApp.updateMetadata)({title:"WordPress Relocation - Logical Phase",description:"We're experts at relocating WordPress"});return _tsApp.html`
+      `,
+      ];
+    }
+    render() {
+      (0, _tsApp.updateMetadata)({
+        title: 'WordPress Relocation - Logical Phase',
+        description: "We're experts at relocating WordPress",
+      });
+      return _tsApp.html`
       <div class="hypersite-main-content clearfix">
         <article id="ts-site" class="ts-migrations">
           <header class="ts-hero hero">
@@ -145,4 +165,8 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           </div>
         </article>
       </div>
-    `}}window.customElements.define("ts-migrations",TSMigrations)});
+    `;
+    }
+  }
+  window.customElements.define('ts-migrations', TSMigrations);
+});

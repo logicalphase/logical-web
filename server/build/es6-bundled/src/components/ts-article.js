@@ -1,9 +1,85 @@
-define(["exports","./ts-app.js"],function(_exports,_tsApp){"use strict";Object.defineProperty(_exports,"__esModule",{value:!0});_exports.fetchArticle$1=_exports.fetchArticle=_exports.articleSelector=_exports.article=_exports.TsWordPressStyles=_exports.REQUEST_ARTICLE=_exports.RECEIVE_ARTICLE=_exports.FAIL_ARTICLE=_exports.$tsStyleWp=_exports.$tsArticle=_exports.$article$1=_exports.$article=void 0;function ownKeys(object,enumerableOnly){var keys=Object.keys(object);if(Object.getOwnPropertySymbols){var symbols=Object.getOwnPropertySymbols(object);if(enumerableOnly)symbols=symbols.filter(function(sym){return Object.getOwnPropertyDescriptor(object,sym).enumerable});keys.push.apply(keys,symbols)}return keys}function _objectSpread(target){for(var i=1,source;i<arguments.length;i++){source=null!=arguments[i]?arguments[i]:{};if(i%2){ownKeys(source,!0).forEach(function(key){babelHelpers.defineProperty(target,key,source[key])})}else if(Object.getOwnPropertyDescriptors){Object.defineProperties(target,Object.getOwnPropertyDescriptors(source))}else{ownKeys(source).forEach(function(key){Object.defineProperty(target,key,Object.getOwnPropertyDescriptor(source,key))})}}return target}const REQUEST_ARTICLE="REQUEST_ARTICLE";_exports.REQUEST_ARTICLE=REQUEST_ARTICLE;const RECEIVE_ARTICLE="RECEIVE_ARTICLE";_exports.RECEIVE_ARTICLE=RECEIVE_ARTICLE;const FAIL_ARTICLE="FAIL_ARTICLE";_exports.FAIL_ARTICLE=FAIL_ARTICLE;const fetchArticle=slug=>(dispatch,getState)=>{dispatch(requestArticle(slug));const state=getState(),article=state.articles&&state.articles.data&&state.articles.data[slug];if(article){// article found in state.articles.items or state.favorites.items
-dispatch(receiveArticle(slug));// let the calling code know there's nothing to wait for.
-return Promise.resolve()}else{// fetch article data given the article id.
-// also return a promise to wait for.
-return fetch(`https://${_tsApp.WP_REST_API_HOST}/${_tsApp.WP_REST_PATH}/posts?slug=${slug}`,{//mode: "no-cors" // no-cors, cors, *same-origin
-}).then(res=>res.json()).then(data=>{if(data.error){dispatch(failArticle(slug))}else{dispatch(receiveArticle(slug,data[0]))}}).catch(e=>dispatch(failArticle(slug)))}};_exports.fetchArticle$1=_exports.fetchArticle=fetchArticle;const requestArticle=slug=>{return{type:REQUEST_ARTICLE,slug}},receiveArticle=(slug,data)=>{return{type:RECEIVE_ARTICLE,slug,data}},failArticle=slug=>{return{type:FAIL_ARTICLE,slug}};var article={REQUEST_ARTICLE:REQUEST_ARTICLE,RECEIVE_ARTICLE:RECEIVE_ARTICLE,FAIL_ARTICLE:FAIL_ARTICLE,fetchArticle:fetchArticle};_exports.$article=article;const TsWordPressStyles=_tsApp.css`
+define(['exports', './ts-app.js'], function(_exports, _tsApp) {
+  'use strict';
+  Object.defineProperty(_exports, '__esModule', { value: !0 });
+  _exports.fetchArticle$1 = _exports.fetchArticle = _exports.articleSelector = _exports.article = _exports.TsWordPressStyles = _exports.REQUEST_ARTICLE = _exports.RECEIVE_ARTICLE = _exports.FAIL_ARTICLE = _exports.$tsStyleWp = _exports.$tsArticle = _exports.$article$1 = _exports.$article = void 0;
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly)
+        symbols = symbols.filter(function(sym) {
+          return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        });
+      keys.push.apply(keys, symbols);
+    }
+    return keys;
+  }
+  function _objectSpread(target) {
+    for (var i = 1, source; i < arguments.length; i++) {
+      source = null != arguments[i] ? arguments[i] : {};
+      if (i % 2) {
+        ownKeys(source, !0).forEach(function(key) {
+          babelHelpers.defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(source).forEach(function(key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+    return target;
+  }
+  const REQUEST_ARTICLE = 'REQUEST_ARTICLE';
+  _exports.REQUEST_ARTICLE = REQUEST_ARTICLE;
+  const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
+  _exports.RECEIVE_ARTICLE = RECEIVE_ARTICLE;
+  const FAIL_ARTICLE = 'FAIL_ARTICLE';
+  _exports.FAIL_ARTICLE = FAIL_ARTICLE;
+  const fetchArticle = slug => (dispatch, getState) => {
+    dispatch(requestArticle(slug));
+    const state = getState(),
+      article = state.articles && state.articles.data && state.articles.data[slug];
+    if (article) {
+      // article found in state.articles.items or state.favorites.items
+      dispatch(receiveArticle(slug)); // let the calling code know there's nothing to wait for.
+      return Promise.resolve();
+    } else {
+      // fetch article data given the article id.
+      // also return a promise to wait for.
+      return fetch(`https://${_tsApp.WP_REST_API_HOST}/${_tsApp.WP_REST_PATH}/posts?slug=${slug}`, {
+        //mode: "no-cors" // no-cors, cors, *same-origin
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.error) {
+            dispatch(failArticle(slug));
+          } else {
+            dispatch(receiveArticle(slug, data[0]));
+          }
+        })
+        .catch(e => dispatch(failArticle(slug)));
+    }
+  };
+  _exports.fetchArticle$1 = _exports.fetchArticle = fetchArticle;
+  const requestArticle = slug => {
+      return { type: REQUEST_ARTICLE, slug };
+    },
+    receiveArticle = (slug, data) => {
+      return { type: RECEIVE_ARTICLE, slug, data };
+    },
+    failArticle = slug => {
+      return { type: FAIL_ARTICLE, slug };
+    };
+  var article = {
+    REQUEST_ARTICLE: REQUEST_ARTICLE,
+    RECEIVE_ARTICLE: RECEIVE_ARTICLE,
+    FAIL_ARTICLE: FAIL_ARTICLE,
+    fetchArticle: fetchArticle,
+  };
+  _exports.$article = article;
+  const TsWordPressStyles = _tsApp.css`
 
   /*--------------------------------------------------------------
   # Image Captions
@@ -112,7 +188,14 @@ return fetch(`https://${_tsApp.WP_REST_API_HOST}/${_tsApp.WP_REST_PATH}/posts?sl
     }
   }
 
-`;_exports.TsWordPressStyles=TsWordPressStyles;var tsStyleWp={TsWordPressStyles:TsWordPressStyles};_exports.$tsStyleWp=tsStyleWp;class ArticleImage extends _tsApp.LitElement{static get styles(){return[_tsApp.css`
+`;
+  _exports.TsWordPressStyles = TsWordPressStyles;
+  var tsStyleWp = { TsWordPressStyles: TsWordPressStyles };
+  _exports.$tsStyleWp = tsStyleWp;
+  class ArticleImage extends _tsApp.LitElement {
+    static get styles() {
+      return [
+        _tsApp.css`
         :host {
           display: block;
           position: relative;
@@ -142,13 +225,85 @@ return fetch(`https://${_tsApp.WP_REST_API_HOST}/${_tsApp.WP_REST_PATH}/posts?sl
           opacity: 1;
           transition: 0.5s opacity;
         }
-      `]}render(){const{alt,placeholder,src,_loaded}=this;return _tsApp.html`
-      <div id="placeholder" style="${placeholder?`background-image: url('${placeholder}');`:""}" ?loaded="${_loaded}">
+      `,
+      ];
+    }
+    render() {
+      const { alt, placeholder, src, _loaded } = this;
+      return _tsApp.html`
+      <div id="placeholder" style="${
+        placeholder ? `background-image: url('${placeholder}');` : ''
+      }" ?loaded="${_loaded}">
         <picture>
-          <img src="${src}" alt="${alt}" @load="${()=>this._loaded=!0}" @error="${()=>this._onImgError()}">
+          <img src="${src}" alt="${alt}" @load="${() => (this._loaded = !0)}" @error="${() =>
+        this._onImgError()}">
         </picture>
       </div>
-    `}static get properties(){return{alt:{type:String},src:{type:String},placeholder:{type:String},_loaded:{type:Boolean}}}update(changedProps){if(changedProps.has("src")){this._loaded=!1}super.update(changedProps)}_onImgError(){if(!this.placeholder){this.src="data:image/svg+xml,"+encodeURIComponent("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"#ccc\" d=\"M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z\"/></svg>")}}}customElements.define("article-image",ArticleImage);const article$1=(state={},action)=>{switch(action.type){case REQUEST_ARTICLE:return _objectSpread({},state,{slug:action.slug,failure:!1,isFetching:!0});case RECEIVE_ARTICLE:return _objectSpread({},state,{data:action.data,failure:!1,isFetching:!1});case FAIL_ARTICLE:return _objectSpread({},state,{failure:!0,isFetching:!1});default:return state;}};_exports.article=article$1;const idSelector=state=>state.article.slug,itemSelector=state=>state.article.data,articleSelector=(0,_tsApp.createSelector)(idSelector,_tsApp.itemsSelector,itemSelector,(slug,data,item)=>{return data&&data[slug]||data||item});_exports.articleSelector=articleSelector;var article$2={article:article$1,articleSelector:articleSelector};_exports.$article$1=article$2;_tsApp.store.addReducers({article:article$1});class TSDetail extends(0,_tsApp.connect)(_tsApp.store)(_tsApp.LitElement){static get styles(){return[_tsApp.TsGridStyle,_tsApp.TsTableStyles,_tsApp.TsElevationStyle,_tsApp.TsTypographyStyle,_tsApp.TsLayoutStyle,_tsApp.SharedStyles,TsWordPressStyles,_tsApp.css`
+    `;
+    }
+    static get properties() {
+      return {
+        alt: { type: String },
+        src: { type: String },
+        placeholder: { type: String },
+        _loaded: { type: Boolean },
+      };
+    }
+    update(changedProps) {
+      if (changedProps.has('src')) {
+        this._loaded = !1;
+      }
+      super.update(changedProps);
+    }
+    _onImgError() {
+      if (!this.placeholder) {
+        this.src =
+          'data:image/svg+xml,' +
+          encodeURIComponent(
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#ccc" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>',
+          );
+      }
+    }
+  }
+  customElements.define('article-image', ArticleImage);
+  const article$1 = (state = {}, action) => {
+    switch (action.type) {
+      case REQUEST_ARTICLE:
+        return _objectSpread({}, state, { slug: action.slug, failure: !1, isFetching: !0 });
+      case RECEIVE_ARTICLE:
+        return _objectSpread({}, state, { data: action.data, failure: !1, isFetching: !1 });
+      case FAIL_ARTICLE:
+        return _objectSpread({}, state, { failure: !0, isFetching: !1 });
+      default:
+        return state;
+    }
+  };
+  _exports.article = article$1;
+  const idSelector = state => state.article.slug,
+    itemSelector = state => state.article.data,
+    articleSelector = (0, _tsApp.createSelector)(
+      idSelector,
+      _tsApp.itemsSelector,
+      itemSelector,
+      (slug, data, item) => {
+        return (data && data[slug]) || data || item;
+      },
+    );
+  _exports.articleSelector = articleSelector;
+  var article$2 = { article: article$1, articleSelector: articleSelector };
+  _exports.$article$1 = article$2;
+  _tsApp.store.addReducers({ article: article$1 });
+  class TSDetail extends (0, _tsApp.connect)(_tsApp.store)(_tsApp.LitElement) {
+    static get styles() {
+      return [
+        _tsApp.TsGridStyle,
+        _tsApp.TsTableStyles,
+        _tsApp.TsElevationStyle,
+        _tsApp.TsTypographyStyle,
+        _tsApp.TsLayoutStyle,
+        _tsApp.SharedStyles,
+        TsWordPressStyles,
+        _tsApp.css`
 
       :host {
         display: block;
@@ -531,17 +686,35 @@ return fetch(`https://${_tsApp.WP_REST_API_HOST}/${_tsApp.WP_REST_PATH}/posts?sl
           font-size: normal;
         }
       }
-    `]}render(){const{_data,_showOffline}=this;// Don't render if there is no item.
-if(!_data){return _tsApp.html`<p class="ts-loader">Loading. . .</p>`}const item=_data,title=item.title&&item.title.rendered,author="John Teague",date=(0,_tsApp.formatDistance)(new Date(item.date),new Date),thumbnail=item.tsapi_featured_image&&item.tsapi_featured_image.source_url,alt=item.tsapi_featured_image&&item.tsapi_featured_image.alt_text,slug=item.slug,categories=item.categories_names||[];// @ts-ignore
-(0,_tsApp.updateMetadata)({title:title,description:title,image:thumbnail});return _tsApp.html`
+    `,
+      ];
+    }
+    render() {
+      const { _data, _showOffline } = this; // Don't render if there is no item.
+      if (!_data) {
+        return _tsApp.html`<p class="ts-loader">Loading. . .</p>`;
+      }
+      const item = _data,
+        title = item.title && item.title.rendered,
+        author = 'John Teague',
+        date = (0, _tsApp.formatDistance)(new Date(item.date), new Date()),
+        thumbnail = item.tsapi_featured_image && item.tsapi_featured_image.source_url,
+        alt = item.tsapi_featured_image && item.tsapi_featured_image.alt_text,
+        slug = item.slug,
+        categories = item.categories_names || []; // @ts-ignore
+      (0, _tsApp.updateMetadata)({ title: title, description: title, image: thumbnail });
+      return _tsApp.html`
     <div class="hypersite-main-content clearfix">
       <article id="ts-site">
         <section ?hidden="${_showOffline}">
           <div class="item">
             <aside class="cover">
-              ${(0,_tsApp.repeat)(categories,item=>_tsApp.html`
+              ${(0, _tsApp.repeat)(
+                categories,
+                item => _tsApp.html`
                   <p class="ts-eyebrow">${item}</p>
-              `)}
+              `,
+              )}
               <h1 class="ts-display2 fade-in title">${title}</h1>
               <article-image class="article-image--full-aspect article-module" .src="${thumbnail}" .alt="${alt}"></article-image>
             </aside>
@@ -561,16 +734,21 @@ if(!_data){return _tsApp.html`<p class="ts-loader">Loading. . .</p>`}const item=
             <div class="is-12 is-9__large">
               <div class="content-wrapper">
                 <div class="delayed-fade-in desc">
-                  ${(0,_tsApp.unsafeHTML)(item.content&&item.content.rendered||item.subtitle||"None")}
+                  ${(0, _tsApp.unsafeHTML)(
+                    (item.content && item.content.rendered) || item.subtitle || 'None',
+                  )}
                 </div>
-                <div class="ts-read-more" ?hidden="${0===categories.length}">
+                <div class="ts-read-more" ?hidden="${0 === categories.length}">
                   <div class="meta-container">
                     <div class="article-footer">  
                       <h4>Posted in:</h4>
                       <ul>
-                        ${(0,_tsApp.repeat)(categories,item=>_tsApp.html`
+                        ${(0, _tsApp.repeat)(
+                          categories,
+                          item => _tsApp.html`
                           <li class="meta-list-item">${_tsApp.SubTitleIcon}<span>${item}</span></li>
-                        `)}
+                        `,
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -579,10 +757,14 @@ if(!_data){return _tsApp.html`<p class="ts-loader">Loading. . .</p>`}const item=
                       <h4>Share me!</h4>
                       <div class="social_share">
                         <div class="slide-icons slide-left">
-                          <span class="social-icon gplus-icon" .link=${`https://plus.google.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${e=>this._getDataHref(e)}>${_tsApp.GooglePlus}</span>
-                          <span class="social-icon twitter-icon" .link=${`https://twitter.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${e=>this._getDataHref(e)}>${_tsApp.Twitter}</span>
-                          <span class="social-icon linkedin-icon" .link=${`https://www.linkedin.com/cws/share?url=https://themesurgeons.com/article/${slug}/`} @click=${e=>this._getDataHref(e)}>${_tsApp.Linkedin}</span>
-                          <span class="social-icon facebook-icon" .link=${`https://www.facebook.com/sharer.php?u=https://themesurgeons.com/article/${slug}/`} @click=${e=>this._getDataHref(e)}>${_tsApp.Facebook}</span>
+                          <span class="social-icon gplus-icon" .link=${`https://plus.google.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${e =>
+        this._getDataHref(e)}>${_tsApp.GooglePlus}</span>
+                          <span class="social-icon twitter-icon" .link=${`https://twitter.com/share?url=https://themesurgeons.com/article/${slug}/`} @click=${e =>
+        this._getDataHref(e)}>${_tsApp.Twitter}</span>
+                          <span class="social-icon linkedin-icon" .link=${`https://www.linkedin.com/cws/share?url=https://themesurgeons.com/article/${slug}/`} @click=${e =>
+        this._getDataHref(e)}>${_tsApp.Linkedin}</span>
+                          <span class="social-icon facebook-icon" .link=${`https://www.facebook.com/sharer.php?u=https://themesurgeons.com/article/${slug}/`} @click=${e =>
+        this._getDataHref(e)}>${_tsApp.Facebook}</span>
                         </div>
                       </div>
                     </div>
@@ -594,7 +776,33 @@ if(!_data){return _tsApp.html`<p class="ts-loader">Loading. . .</p>`}const item=
         </section>
       </article>
     </div>
-    <ts-offline ?hidden="${!_showOffline}" @refresh="${()=>_tsApp.store.dispatch((0,_tsApp.refreshPage)())}"></ts-offline>
-    `}static get properties(){return{_isFetching:{type:Boolean},_data:{type:Object},_lastVisitedListPage:{type:Boolean},_showOffline:{type:Boolean}}}// This is called every time something is updated in the store.
-stateChanged(state){this._data=articleSelector(state);this._lastVisitedListPage=state.app.lastVisitedListPage;this._showOffline=state.app.offline&&state.article.failure}_getDataHref(e){let link=e.currentTarget.link;// Pop a new window for specific social media platform
-window.open(link,"_blank","scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500")}}window.customElements.define("ts-article",TSDetail);var tsArticle={fetchArticle:fetchArticle};_exports.$tsArticle=tsArticle});
+    <ts-offline ?hidden="${!_showOffline}" @refresh="${() =>
+        _tsApp.store.dispatch((0, _tsApp.refreshPage)())}"></ts-offline>
+    `;
+    }
+    static get properties() {
+      return {
+        _isFetching: { type: Boolean },
+        _data: { type: Object },
+        _lastVisitedListPage: { type: Boolean },
+        _showOffline: { type: Boolean },
+      };
+    } // This is called every time something is updated in the store.
+    stateChanged(state) {
+      this._data = articleSelector(state);
+      this._lastVisitedListPage = state.app.lastVisitedListPage;
+      this._showOffline = state.app.offline && state.article.failure;
+    }
+    _getDataHref(e) {
+      let link = e.currentTarget.link; // Pop a new window for specific social media platform
+      window.open(
+        link,
+        '_blank',
+        'scrollbars=yes,resizable=yes,top=300,left=500,width=570,height=500',
+      );
+    }
+  }
+  window.customElements.define('ts-article', TSDetail);
+  var tsArticle = { fetchArticle: fetchArticle };
+  _exports.$tsArticle = tsArticle;
+});

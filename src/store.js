@@ -26,10 +26,10 @@ const compose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || origCompose;
 // https://github.com/Polymer/pwa-starter-kit/wiki/4.-Redux-and-state-management
 export const store = createStore(
   (state, action) => state,
-  compose(lazyReducerEnhancer(combineReducers), applyMiddleware(thunk))
+  compose(lazyReducerEnhancer(combineReducers), applyMiddleware(thunk)),
 );
 
 // Initially loaded reducers.
 store.addReducers({
-  app
+  app,
 });

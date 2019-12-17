@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
-const {startServer} = require('polyserve');
+const { startServer } = require('polyserve');
 const path = require('path');
 const fs = require('fs');
 const PNG = require('pngjs').PNG;
@@ -23,22 +23,26 @@ describe('👀 page screenshots are correct', function() {
   let polyserve, browser, page;
 
   before(async function() {
-    polyserve = await startServer({port:4444, root:path.join(__dirname, '../..'), moduleResolution:'node'});
+    polyserve = await startServer({
+      port: 4444,
+      root: path.join(__dirname, '../..'),
+      moduleResolution: 'node',
+    });
 
     // Create the test directory if needed.
-    if (!fs.existsSync(currentDir)){
+    if (!fs.existsSync(currentDir)) {
       fs.mkdirSync(currentDir);
     }
     // And it's subdirectories.
-    if (!fs.existsSync(`${currentDir}/wide`)){
+    if (!fs.existsSync(`${currentDir}/wide`)) {
       fs.mkdirSync(`${currentDir}/wide`);
     }
-    if (!fs.existsSync(`${currentDir}/narrow`)){
+    if (!fs.existsSync(`${currentDir}/narrow`)) {
       fs.mkdirSync(`${currentDir}/narrow`);
     }
   });
 
-  after((done) => polyserve.close(done));
+  after(done => polyserve.close(done));
 
   beforeEach(async function() {
     browser = await puppeteer.launch();
@@ -49,7 +53,7 @@ describe('👀 page screenshots are correct', function() {
 
   describe('wide screen', function() {
     beforeEach(async function() {
-      return page.setViewport({width: 800, height: 600});
+      return page.setViewport({ width: 800, height: 600 });
     });
 
     it('/index.html', async function() {
@@ -71,7 +75,7 @@ describe('👀 page screenshots are correct', function() {
 
   describe('narrow screen', function() {
     beforeEach(async function() {
-      return page.setViewport({width: 375, height: 667});
+      return page.setViewport({ width: 375, height: 667 });
     });
 
     it('/index.html', async function() {
@@ -97,7 +101,7 @@ async function takeAndCompareScreenshot(page, route, filePrefix) {
   let fileName = filePrefix + '/' + (route ? route : 'index');
 
   await page.goto(`http://127.0.0.1:4444/${route}`);
-  await page.screenshot({path: `${currentDir}/${fileName}.png`});
+  await page.screenshot({ path: `${currentDir}/${fileName}.png` });
   return compareScreenshots(fileName);
 }
 
@@ -111,8 +115,14 @@ function compareScreenshots(view) {
     //   .on('end', function () {
     //     console.log('\n\n')
     //   });
-    const img1 = fs.createReadStream(`${currentDir}/${view}.png`).pipe(new PNG()).on('parsed', doneReading);
-    const img2 = fs.createReadStream(`${baselineDir}/${view}.png`).pipe(new PNG()).on('parsed', doneReading);
+    const img1 = fs
+      .createReadStream(`${currentDir}/${view}.png`)
+      .pipe(new PNG())
+      .on('parsed', doneReading);
+    const img2 = fs
+      .createReadStream(`${baselineDir}/${view}.png`)
+      .pipe(new PNG())
+      .on('parsed', doneReading);
 
     let filesRead = 0;
     function doneReading() {
@@ -124,13 +134,19 @@ function compareScreenshots(view) {
       expect(img1.height, 'image heights are the same').equal(img2.height);
 
       // Do the visual diff.
-      const diff = new PNG({width: img1.width, height: img1.height});
+      const diff = new PNG({ width: img1.width, height: img1.height });
 
       // Skip the bottom/rightmost row of pixels, since it seems to be
       // noise on some machines :/
-      const numDiffPixels = pixelmatch(img1.data, img2.data, diff.data,
-          img1.width-1, img1.height-1, {threshold: 0.2});
-      const percentDiff = numDiffPixels/(img2.height*img1.height)*100;
+      const numDiffPixels = pixelmatch(
+        img1.data,
+        img2.data,
+        diff.data,
+        img1.width - 1,
+        img1.height - 1,
+        { threshold: 0.2 },
+      );
+      const percentDiff = (numDiffPixels / (img2.height * img1.height)) * 100;
 
       const stats = fs.statSync(`${currentDir}/${view}.png`);
       const fileSizeInBytes = stats.size;

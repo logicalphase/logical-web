@@ -1,12 +1,9 @@
-
-
 import { css } from 'lit-element';
 
 export const TsWordPressStyles = css`
-
   /*--------------------------------------------------------------
   # Image Captions
-  --------------------------------------------------------------*/  
+  --------------------------------------------------------------*/
 
   img {
     padding: 1px;
@@ -35,7 +32,7 @@ export const TsWordPressStyles = css`
     margin: 1em 0;
     /* Extra wide images within figure tags don't overflow the content area. */
   }
-  
+
   .alignleft img,
   .alignright img,
   .alignleft figcaption,
@@ -108,5 +105,4 @@ export const TsWordPressStyles = css`
       margin-right: auto;
     }
   }
-
 `;

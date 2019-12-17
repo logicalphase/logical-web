@@ -1,4 +1,16 @@
-define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);class TSPagespeed extends _tsApp.PageViewElement{static get styles(){return[_tsApp.SharedStyles,_tsApp.TsTypographyStyle,_tsApp.TsLayoutStyle,_tsApp.TsGridStyle,_tsApp.TsCard,_tsApp.TsButtonStyle,_tsApp.css`
+define(['./ts-app.js'], function(_tsApp) {
+  'use strict';
+  const cdnHost = (0, _tsApp.unsafeCSS)(_tsApp.CDN_HOST_URL);
+  class TSPagespeed extends _tsApp.PageViewElement {
+    static get styles() {
+      return [
+        _tsApp.SharedStyles,
+        _tsApp.TsTypographyStyle,
+        _tsApp.TsLayoutStyle,
+        _tsApp.TsGridStyle,
+        _tsApp.TsCard,
+        _tsApp.TsButtonStyle,
+        _tsApp.css`
       :host {
         display: block;
         padding: 0px;
@@ -64,7 +76,15 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           background-position: 95% 50px;
         }
       }   
-      `]}render(){(0,_tsApp.updateMetadata)({title:"WordPress PageSpeed Optimization Service - Logical Phase",description:"We make slow WordPress lightning fast WordPress. Guaranteed"});return _tsApp.html`
+      `,
+      ];
+    }
+    render() {
+      (0, _tsApp.updateMetadata)({
+        title: 'WordPress PageSpeed Optimization Service - Logical Phase',
+        description: 'We make slow WordPress lightning fast WordPress. Guaranteed',
+      });
+      return _tsApp.html`
       <div class="hypersite-main-content clearfix">
         <article id="ts-site" class="ts-design">
           <header class="ts-hero hero">
@@ -155,4 +175,8 @@ define(["./ts-app.js"],function(_tsApp){"use strict";const cdnHost=(0,_tsApp.uns
           </div>
         </article>
       </div>
-    `}}window.customElements.define("ts-pagespeed",TSPagespeed)});
+    `;
+    }
+  }
+  window.customElements.define('ts-pagespeed', TSPagespeed);
+});

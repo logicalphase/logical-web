@@ -1,5 +1,3 @@
-
-
 import { css } from 'lit-element';
 
 export const TsSelectStyle = css`
@@ -24,8 +22,8 @@ export const TsSelectStyle = css`
     bottom: calc(50% - 0.75em);
     right: 8px;
     speak: none;
-    -webkit-transform: scaleY(.6);
-    transform: scaleY(.6);
+    -webkit-transform: scaleY(0.6);
+    transform: scaleY(0.6);
     color: var(--app-secondary-color);
     pointer-events: none;
   }

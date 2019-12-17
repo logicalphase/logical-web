@@ -8,9 +8,7 @@ module.exports = {
   cleanupOutdatedCaches: true,
   cacheId: 'LP-PWA',
   globDirectory: 'dist/',
-  globPatterns: [
-    "**/*.{js,svg,jpg,webp,png,ico,html,json,txt}"
-  ],
+  globPatterns: ['**/*.{js,svg,jpg,webp,png,ico,html,json,txt}'],
   navigateFallback: '/index.html',
   navigateFallbackWhitelist: [/^(?!.*\.html).*/],
   navigateFallbackBlacklist: [/xml/],
