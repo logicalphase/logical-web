@@ -29,7 +29,7 @@
     "install": "0.13.0",
     "lit-element": "2.2.1",
     "pwa-helpers": "0.9.1",
-    "redux": "4.0.4",
+    "redux": "4.0.5",
     "redux-thunk": "2.3.0",
     "reselect": "4.0.0",
     "rollup-plugin-modulepreload": "1.2.2",
