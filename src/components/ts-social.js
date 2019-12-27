@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 
-import { Calendar, Twitter, Facebook, Linkedin } from './ts-icons.js';
+import { Calendar, Mail, Twitter, Facebook, Linkedin,  Blogger } from './ts-icons.js';
 
 class TSSocial extends LitElement {
   static get styles() {
@@ -42,37 +42,37 @@ class TSSocial extends LitElement {
         .small-print .social-icon {
           padding-left: 0px;
         }
-
+        .social-icon svg {
+          border:1px solid var(--app-primary-text-thin-color);
+          border-radius: 5px;
+          padding: 3px;
+        }
         .social-icon {
           fill: #111;
           padding-left: 7px;
+          cursor: pointer;
         }
         .gplus-icon:hover {
           fill: #db4437;
-          cursor: pointer;
         }
         .blogger-icon:hover {
           fill: #fb8f3d;
-          cursor: pointer;
         }
         .twitter-icon:hover {
           fill: #1da1f2;
-          cursor: pointer;
         }
         .facebook-icon:hover {
           fill: #3b5998;
-          cursor: pointer;
         }
         .linkedin-icon:hover {
           fill: #007bb5;
-          cursor: pointer;
         }
       `,
     ];
   }
 
   render() {
-    const { link, placeholder, _loaded, slug } = this;
+    const { link, title, placeholder, _loaded, slug } = this;
 
     return html`
       <div id="placeholder">
@@ -94,6 +94,18 @@ class TSSocial extends LitElement {
             .link=${`https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/`}
             @click=${e => this._getDataHref(e)}
             >${Facebook}</span
+          >
+          <span
+            class="social-icon blogger-icon"
+            .link=${`https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/`}
+            @click=${e => this._getDataHref(e)}
+            >${Blogger}</span
+          >
+          <span
+            class="social-icon mail-icon"
+            .link=${`mailto:?subject=${title}">`}
+            @click=${e => this._getDataHref(e)}
+            >${Mail}</span
           >
         </div>
       </div>

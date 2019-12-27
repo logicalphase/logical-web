@@ -31,46 +31,43 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
     case 'home':
       break;
     case 'blog':
-      module = await import('../components/ts-blog.js');
+      module = await import('../components/ts-blog');
       dispatch(module.fetchArticles(query));
       break;
     case 'article':
-      module = await import('../components/ts-article.js');
+      module = await import('../components/ts-article');
       await dispatch(module.fetchArticle(articleSlug));
       if (isFetchArticleFailed(getState().article)) {
         page = '404';
       }
       break;
     case 'care':
-      await import('../components/ts-care.js');
+      await import('../components/ts-care');
       break;
     case 'hosting':
-      await import('../components/ts-hosting.js');
+      await import('../components/ts-hosting');
       break;
     case 'emergency':
-      await import('../components/ts-emergency.js');
+      await import('../components/ts-emergency');
       break;
     case 'pagespeed':
-      await import('../components/ts-pagespeed.js');
+      await import('../components/ts-pagespeed');
       break;
     case 'privacy':
-      await import('../components/ts-privacy.js');
-      break;
-    case 'security':
-      await import('../components/ts-security.js');
+      await import('../components/ts-privacy');
       break;
     case 'terms':
-      await import('../components/ts-site-terms.js');
+      await import('../components/ts-site-terms');
       break;
     case 'contact':
-      await import('../components/ts-contact.js');
+      await import('../components/ts-contact');
       break;
     default:
       page = '404';
   }
 
   if (page === '404') {
-    import('../components/ts-view404.js');
+    await import('../components/ts-view404');
   }
 
   dispatch(updatePage(page));
@@ -130,18 +127,18 @@ export const updateOffline = offline => (dispatch, getState) => {
   }
 };
 
-export const updateLayout = wide => (dispatch, getState) => {
-  if (getState().app.drawerOpened) {
-    dispatch(updateDrawerState(false));
-  }
-};
-
 export const updateDrawerState = opened => (dispatch, getState) => {
   if (getState().app.drawerOpened !== opened) {
     dispatch({
       type: UPDATE_DRAWER_STATE,
       opened,
     });
+  }
+};
+
+export const updateLayout = wide => (dispatch, getState) => {
+  if (getState().app.drawerOpened) {
+    dispatch(updateDrawerState(false));
   }
 };
 

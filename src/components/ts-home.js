@@ -237,7 +237,7 @@ class TSHome extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: 'High Availability Hosting and Managed Services for WordPres - Logical Phase',
+      title: 'Highly Available Managed Hosting and Services for WordPress - Logical Phase',
       description: 'Home page',
     });
 

@@ -17,6 +17,7 @@ import { TsWordPressStyles } from './ts-style-wp';
 
 import './ts-offline.js';
 import './ts-image.js';
+import './ts-social';
 
 // This element is connected to the redux store.
 import { store } from '../store.js';
@@ -117,12 +118,12 @@ class TSDetail extends connect(store)(LitElement) {
         p,
         ol,
         li {
-          font-size: 17px;
+          font-size: 16px;
           line-height: 1.725;
           font-weight: 300;
         }
         .ts-article-spacing {
-          margin-top: 34px;
+          margin-top: 0px;
         }
         .content-wrapper {
           padding: 0;
@@ -167,7 +168,7 @@ class TSDetail extends connect(store)(LitElement) {
           padding-left: 20px;
         }
         .desc p {
-          font-size: 18px;
+          font-size: 16px;
         }
 
         .article-button {
@@ -243,7 +244,7 @@ class TSDetail extends connect(store)(LitElement) {
           text-align: right;
         }
         .social-container h4 {
-          margin-right: 48px;
+          margin-right: 8px;
         }
         .article-footer ul {
           margin: 0;
@@ -257,26 +258,6 @@ class TSDetail extends connect(store)(LitElement) {
         .article-footer .meta-list-item span {
           vertical-align: text-bottom;
           padding-left: 5px;
-        }
-        .social-icon {
-          fill: #888;
-          cursor: pointer;
-          margin-right: 5px;
-        }
-        .gplus-icon:hover {
-          fill: #db4437;
-        }
-        .blogger-icon:hover {
-          fill: #fb8f3d;
-        }
-        .twitter-icon:hover {
-          fill: #1da1f2;
-        }
-        .facebook-icon:hover {
-          fill: #3b5998;
-        }
-        .linkedin-icon:hover {
-          fill: #007bb5;
         }
         [hidden] {
           display: none !important;
@@ -312,7 +293,7 @@ class TSDetail extends connect(store)(LitElement) {
         /* desktop screen */
         @media (min-width: 648px) {
           :host {
-            padding: 48px 24px 24px;
+            padding: 38px 24px 24px;
           }
           p {
             font-weight: 300;
@@ -383,10 +364,10 @@ class TSDetail extends connect(store)(LitElement) {
             padding: 24px 0;
           }
           .desc {
-            padding: 16px 0;
+            padding: 0;
           }
           .desc p {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
 
@@ -394,12 +375,9 @@ class TSDetail extends connect(store)(LitElement) {
           .rich-text,
           p,
           li {
-            font-size: 18px;
+            font-size: 16px;
             letter-spacing: 0.25px;
             line-height: 26px;
-          }
-          :only-child {
-            font-size: 16px;
           }
           .article-meta__published-at {
             margin-top: 24px;
@@ -411,9 +389,12 @@ class TSDetail extends connect(store)(LitElement) {
         }
 
         @media (min-width: 1024px) {
+          .hypersite-main-content {
+            padding: 0 80px 0 110px;
+          }
           .rich-text,
           p {
-            font-size: 18px;
+            font-size: 16px;
             letter-spacing: 0;
             line-height: 28px;
           }
@@ -423,13 +404,16 @@ class TSDetail extends connect(store)(LitElement) {
             line-height: 24px;
           }
           .article-meta__content {
-            margin-top: 30px;
-            padding-left: 10px;
+            margin-top: 18px;
+            padding-left: 0px;
             max-width: 220px;
           }
           .article-meta__published-at {
             margin-top: 24px;
             font-size: normal;
+          }
+          .article-meta__author-title {
+            margin-top: 10px;
           }
         }
       `,
@@ -475,11 +459,14 @@ class TSDetail extends connect(store)(LitElement) {
                   `,
                 )}
                 <h1 class="ts-display2 fade-in title">${title}</h1>
+                <!-- We're not using featured images but some may want to so
+                we're leaving the reference to the image element here if others want to. 
                 <article-image
                   class="article-image--full-aspect article-module"
                   .src="${thumbnail}"
                   .alt="${alt}"
                 ></article-image>
+                -->
               </aside>
             </div>
             <div class="ts-grid ts-grid__no-gap ts-article-spacing">
@@ -519,32 +506,7 @@ class TSDetail extends connect(store)(LitElement) {
                       <div class="article-footer">
                         <h4>Share me!</h4>
                         <div class="social_share">
-                          <div class="slide-icons slide-left">
-                            <span
-                              class="social-icon gplus-icon"
-                              .link=${`https://plus.google.com/share?url=https://themesurgeons.com/article/${slug}/`}
-                              @click=${e => this._getDataHref(e)}
-                              >${GooglePlus}</span
-                            >
-                            <span
-                              class="social-icon twitter-icon"
-                              .link=${`https://twitter.com/share?url=https://themesurgeons.com/article/${slug}/`}
-                              @click=${e => this._getDataHref(e)}
-                              >${Twitter}</span
-                            >
-                            <span
-                              class="social-icon linkedin-icon"
-                              .link=${`https://www.linkedin.com/cws/share?url=https://themesurgeons.com/article/${slug}/`}
-                              @click=${e => this._getDataHref(e)}
-                              >${Linkedin}</span
-                            >
-                            <span
-                              class="social-icon facebook-icon"
-                              .link=${`https://www.facebook.com/sharer.php?u=https://themesurgeons.com/article/${slug}/`}
-                              @click=${e => this._getDataHref(e)}
-                              >${Facebook}</span
-                            >
-                          </div>
+                          <ts-social></ts-social>
                         </div>
                       </div>
                     </div>

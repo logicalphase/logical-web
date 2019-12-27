@@ -45,7 +45,7 @@ class ArticleImage extends LitElement {
         style="${placeholder ? `background-image: url('${placeholder}');` : ''}"
         ?loaded="${_loaded}"
       >
-        <picture>
+        <picture id="featured_image">
           <img
             src="${src}"
             alt="${alt}"
@@ -59,9 +59,10 @@ class ArticleImage extends LitElement {
 
   static get properties() {
     return {
+      picture: { type: Object },
       alt: { type: String },
       src: { type: String },
-      placeholder: { type: String },
+      placeholder: { type: Object },
       _loaded: { type: Boolean },
     };
   }
@@ -74,7 +75,7 @@ class ArticleImage extends LitElement {
   }
 
   _onImgError() {
-    if (!this.placeholder) {
+    if (this.placeholder) {
       this.src =
         'data:image/svg+xml,' +
         encodeURIComponent(

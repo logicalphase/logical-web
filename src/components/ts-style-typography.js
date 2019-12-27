@@ -4,6 +4,9 @@ export const TsTypographyStyle = css`
   /* Material Design Typography */
 
   /* All screens smaller than 460px */
+  strong {
+    font-weight: 400;
+  }
 
   .paper-font-light {
     font-weight: 300;

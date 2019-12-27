@@ -1,5 +1,7 @@
+import { HP_HOST } from './config';
+
 import { LitElement, html, css } from 'lit-element';
-import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings.js';
+import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 
 import './ts-home.js';
 import './snack-bar.js';
@@ -18,7 +20,7 @@ import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 
-import { navigate, updateOffline, updateDrawerState, updateLayout } from '../actions/app.js';
+import { navigate, updateOffline, updateDrawerState, updateLayout } from '../actions/app';
 
 import { TsTheme } from './ts-style-theme';
 class TSApp extends connect(store)(LitElement) {
@@ -364,9 +366,9 @@ class TSApp extends connect(store)(LitElement) {
 
         input[type='search'] {
           background: var(--app-secondary-background-color) url('/images/bg/icon-search.svg')
-            no-repeat 9px 8px;
+            no-repeat 7px right;
           border: solid 1px var(--app-form-border-color);
-          padding: 7px 10px 7px 38px;
+          padding: 7px 34px 7px 34px;
           width: 230px;
           margin-top: 6px;
           margin-bottom: 14px;
@@ -418,9 +420,9 @@ class TSApp extends connect(store)(LitElement) {
 
           input[type='search'] {
             background: var(--app-secondary-background-color) url('/images/bg/icon-search.svg')
-              no-repeat 9px 8px;
+              no-repeat right 7px;
             border: solid 1px var(--app-form-border-color);
-            padding: 5px 10px 5px 32px;
+            padding: 7px 40px 7px 18px;
             width: 140px;
             margin-top: 0;
             margin-bottom: 0;
@@ -488,7 +490,7 @@ class TSApp extends connect(store)(LitElement) {
               <span class="hypersite-site-name">${appTitle}</span>
             </div>
             <div class="cta-header toolbar-list">
-              <form style="float:right">
+              <form style="float:right" action="${HP_HOST}">
                 <input type="search" aria-label="Search box" placeholder="Search" />
               </form>
             </div>
