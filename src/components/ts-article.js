@@ -441,9 +441,8 @@ class TSDetail extends connect(store)(LitElement) {
 
     // @ts-ignore
     updateMetadata({
-      title: title,
-      description: title,
-      image: thumbnail,
+      title: `Logical Phase Blog`,
+      description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
     });
 
     return html`

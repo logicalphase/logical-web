@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { formatDistance } from 'date-fns/esm';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import { Calendar } from './ts-icons.js';
 
@@ -160,6 +161,11 @@ class TSItem extends LitElement {
 
     const date_prefix = 'Updated ';
     const date_postfix = ' ago.';
+
+    updateMetadata({
+      title: `Logical Phase Blog`,
+      description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
+    });
 
     return html`
       <a

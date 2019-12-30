@@ -167,7 +167,7 @@ const clearAnnouncerLabel = () => {
   };
 };
 
-let announcerTimer = 0;
+const announcerTimer = 0;
 
 export const announceLabel = label => dispatch => {
   dispatch(clearAnnouncerLabel());

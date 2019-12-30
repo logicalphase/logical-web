@@ -200,11 +200,11 @@ class TSPrivacy extends PageViewElement {
                       protect that data from unauthorized use or disclosure.
                     </p>
                     <p>
-                      You can contact us about your privacy concerns at privacy@pressmedics.com, or
+                      You can contact us about your privacy concerns at privacy@logicalphase.com, or
                       in writing to:
                     </p>
                     <p>
-                      <strong>Pressmedics LLC</strong><br />C/O Legal and Compliance<br />241 109th
+                      <strong>Logical Phase LLC</strong><br />C/O Legal and Compliance<br />241 109th
                       Avenue Northwest<br />Minneapolis, MN 55448
                     </p>
                     <p>
@@ -232,7 +232,7 @@ class TSPrivacy extends PageViewElement {
                       business entities of:
                     </p>
                     <ul>
-                      <li>Pressmedics LLC and pressmedics.com</li>
+                      <li>Logical Phase LLC and logicalphase.com</li>
                       <li>Theme Surgeons and themesurgeons.com</li>
                       <li>GEMServers and gemservers.com</li>
                     </ul>
@@ -332,7 +332,7 @@ class TSPrivacy extends PageViewElement {
                     <p>
                       Your personal and credit card information is kept on file on the payment
                       processor's secured datacenters in order to process recurring invoices. Upon
-                      discontinuation of Pressmedics service, your credit card information will be
+                      discontinuation of Logical Phase service, your credit card information will be
                       permanently deleted from our payment processor's system. If We are unable to
                       process your subscription for a given month, your personal information along
                       with your account information may be used to contact you and for the purposes
@@ -362,7 +362,7 @@ class TSPrivacy extends PageViewElement {
                     <p>
                       Users hosting websites with Us are given tools that may ask you to optionally
                       enter your email address when making comments on their website, or contacting
-                      them through their website. Since users on Pressmedics can manipulate the HTML
+                      them through their website. Since users on Logical Phase can manipulate the HTML
                       code on their site directly, there are opportunities available for a malicious
                       user to inject code that would log your information before it reaches Our
                       system. In addition, once in Our system, website owners will have the
@@ -524,7 +524,7 @@ class TSPrivacy extends PageViewElement {
                       countries. For example, our hosting services leverage Google Cloud Platform
                       servers that are in datacenters located in advantageous locations around the
                       world. For more information about how we transfer visitor and user data,
-                      please contact privacy@pressmedics.com.
+                      please contact privacy@logicalphase.com.
                     </p>
                     <h3 class="text-headline">Local server storage</h3>
                     <h4>In-house data storage</h4>
@@ -826,7 +826,7 @@ class TSPrivacy extends PageViewElement {
                     <h2 class="text-headline">8. Sharing of personally identifying information</h2>
                     <p>
                       This Website contains links to other sites that are not owned or controlled by
-                      Pressmedics LLC. Please be aware that We are not responsible for the privacy
+                      Logical Phase LLC. Please be aware that We are not responsible for the privacy
                       practices of such other sites.
                     </p>
                     <h4>By lawful order</h4>
@@ -882,7 +882,7 @@ class TSPrivacy extends PageViewElement {
                     </h2>
                     <p>
                       This Website contains links to other sites that are not owned or controlled by
-                      Pressmedics LLC. Please be aware that We are not responsible for the privacy
+                      Logical Phase LLC. Please be aware that We are not responsible for the privacy
                       practices of such other sites.
                     </p>
                     <h4>Current retention policy</h4>
@@ -905,13 +905,13 @@ class TSPrivacy extends PageViewElement {
                     <h2 class="text-headline">10. Links to Other Sites</h2>
                     <p>
                       This Website contains links to other sites that are not owned or controlled by
-                      Pressmedics LLC. Please be aware that We are not responsible for the privacy
+                      Logical Phase LLC. Please be aware that We are not responsible for the privacy
                       practices of such other sites.
                     </p>
                     <p>
                       We encourage you to be aware when you leave Our site and to read the privacy
                       policies of each and every website that collects personal information. You
-                      will receive a notification when you leave Pressmedics.
+                      will receive a notification when you leave Logical Phase.
                     </p>
                   </div>
                   <div class="ts-content-grid-box">
@@ -942,9 +942,9 @@ class TSPrivacy extends PageViewElement {
                       We take your privacy seriously. We do not sell, lease, or exchange your
                       personally identifying information to, or otherwise share your personally
                       identifying information with, third parties in ways other than described in
-                      this Privacy Statement. By using Pressmedics services, and services available
+                      this Privacy Statement. By using Logical Phase services, and services available
                       at the other above listed domains, you are using a service provided by
-                      Pressmedics LLC. (collectively, the “Service”) and you agree to be bound by
+                      Logical Phase LLC. (collectively, the “Service”) and you agree to be bound by
                       the Terms of Service and this Privacy Statement. Some capitalized terms used
                       in this Privacy Statement and not otherwise defined may be defined in the
                       Terms of Service. This Privacy Statement only addresses activities from

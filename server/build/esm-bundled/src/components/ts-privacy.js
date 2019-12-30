@@ -145,8 +145,8 @@ class TSPrivacy extends PageViewElement {
                   <p>In the interest of treating the privacy of all of our customers and visitors with equal respect, we have, to the legal extent possible, adopted the European Union's <a href="https://gdpr-info.eu/">General Data Protection Regulations (GDPR)</a> regarding how we manage customer privacy and their data. We reserve the right to ammend this privacy statement if changes become necessary.</p>
                   <h4>How to contact us with privacy questions or concerns</h4>
                   <p>My name is <strong>John Teague</strong>, and I'm in charge of how our technology collects data, how we use it, and safeguards we have in place to protect that data from unauthorized use or disclosure.</p>
-                  <p>You can contact us about your privacy concerns at privacy@pressmedics.com, or in writing to:</p>
-                  <p><strong>Pressmedics LLC</strong><br>C/O Legal and Compliance<br>241 109th Avenue Northwest<br>Minneapolis, MN 55448</p>
+                  <p>You can contact us about your privacy concerns at privacy@logicalphase.com, or in writing to:</p>
+                  <p><strong>Logical Phase LLC</strong><br>C/O Legal and Compliance<br>241 109th Avenue Northwest<br>Minneapolis, MN 55448</p>
                   <p>We will promptly address your data privacy concerns, free of charge, and assist by answering questions you have about how your personally identifying information is handled. We will also assist you with disclosure, management, removal, accuracy and other aspects of your personally identifying information.</p>
                   <h4>Why we collect personally identifying information?</h4>
                   <p>We collect and use personally identifying information to facilitate the business relationships we have with our customers, to comply with financial regulations and other legal obligations, and to pursue our legitimate business interests. We also use personally identifying information to complete payment transactions and to provide payment-based services to our Users. We rely upon a number of legal grounds to ensure that our use of your personally identifying information is compliant with applicable law. </p>
@@ -155,7 +155,7 @@ class TSPrivacy extends PageViewElement {
                   <h2 class="text-headline">Entities Covered by This Privacy Statement</h2>
                   <p>This privacy statement covers the following web site domains, subdomains, and business entities of:</p>
                   <ul>
-                    <li>Pressmedics LLC and pressmedics.com</li>
+                    <li>Logical Phase LLC and logicalphase.com</li>
                     <li>Theme Surgeons and themesurgeons.com</li>
                     <li>GEMServers and gemservers.com</li>
                   </ul>
@@ -202,12 +202,12 @@ class TSPrivacy extends PageViewElement {
                     <li>Postal Code</li>
                     <li>Other information used to verify that you are authorized to make a purchase with the credit card</li>  
                   </ul>
-                  <p>Your personal and credit card information is kept on file on the payment processor's secured datacenters in order to process recurring invoices. Upon discontinuation of Pressmedics service, your credit card information will be permanently deleted from our payment processor's system. If We are unable to process your subscription for a given month, your personal information along with your account information may be used to contact you and for the purposes of collecting a debt should the need arise.</p>
+                  <p>Your personal and credit card information is kept on file on the payment processor's secured datacenters in order to process recurring invoices. Upon discontinuation of Logical Phase service, your credit card information will be permanently deleted from our payment processor's system. If We are unable to process your subscription for a given month, your personal information along with your account information may be used to contact you and for the purposes of collecting a debt should the need arise.</p>
                   <p>We use the services of Google Cloud Platform, Stackpath, Serverpilot, Sendgrid, and other strategic technology partners. Personal information hosted by or through Us is subject to that vendors privacy policies which may or may not contain terms as strong as this Privacy Statement. A current list of our vendor and partner privacy policies are available on their respective websites and at the bottom of this page.</p>
                   <h4>Login access to existing accounts for contracted services</h4>
                   <p>Some of Our services may require access to existing web hosting, domain registration, and supporting services accounts. This may include a username and password with certain permissions we need to perform required work. If you choose to provide this information, we recommend that you create a separate account that is strictly used by Us. You should not share existing login information for security reasons. However, if you choose to supply login access for these types of accounts we will store tham in a hashed and encrypted state, and they will be destroyed at the conclusion of the contracted work.</p>
                   <h4>Hosted websites</h4>
-                  <p>Users hosting websites with Us are given tools that may ask you to optionally enter your email address when making comments on their website, or contacting them through their website. Since users on Pressmedics can manipulate the HTML code on their site directly, there are opportunities available for a malicious user to inject code that would log your information before it reaches Our system. In addition, once in Our system, website owners will have the opportunity to review and modify any information entered into their website. Since We do not have full control over how members use their individual sites, this Privacy Statement does not apply to any hosted website We host or do not own. You should make sure you trust the owner of a particular website before submitting personal information on that site.</p>
+                  <p>Users hosting websites with Us are given tools that may ask you to optionally enter your email address when making comments on their website, or contacting them through their website. Since users on Logical Phase can manipulate the HTML code on their site directly, there are opportunities available for a malicious user to inject code that would log your information before it reaches Our system. In addition, once in Our system, website owners will have the opportunity to review and modify any information entered into their website. Since We do not have full control over how members use their individual sites, this Privacy Statement does not apply to any hosted website We host or do not own. You should make sure you trust the owner of a particular website before submitting personal information on that site.</p>
                   <h4>Social media</h4>
                   <p>The Website provides users the opportunity to interact and post content through various social media sites. Your interactions with such tools, and any information you provide in connection with these interactions are publicly viewable outside of the Website domain. Each social media site has its own privacy policies, that may be more or less protective than this Policy. If you do not wish for this information to be disclosed, then you should not use these tools. We are not responsible for information you choose to post with such tools.</p>
                   <p>Our site also includes Social Media Features, such as the Facebook button, and Widgets, such as the Share this button or interactive mini-programs that run on Our site. These Features may collect your IP address, which page you are visiting on Our site, and may set a cookie to enable the Feature to function properly. Social Media Features and Widgets are either hosted by a third party or hosted directly on Our Site. Your interactions with these Features are governed by the Privacy Statement of the company providing it.</p>
@@ -248,7 +248,7 @@ class TSPrivacy extends PageViewElement {
                   <h2 class="text-headline">Where we store personally identifying information</h2>
                   <p>Where we store both personally identifying information and non-personally identifying information We collect and host.</p>
                   <h3>International data transfers</h3>
-                  <p>Visitor and user data may be transferred to, and processed in, countries other than the country in which they reside. Specifically, Our websites and services are hosted on servers located in the United States of America and on third party service provider and partner servers internationally. This means that when We collect visitor and user data, that data may be processed in other countries. For example, our hosting services leverage Google Cloud Platform servers that are in datacenters located in advantageous locations around the world. For more information about how we transfer visitor and user data, please contact privacy@pressmedics.com.</p>
+                  <p>Visitor and user data may be transferred to, and processed in, countries other than the country in which they reside. Specifically, Our websites and services are hosted on servers located in the United States of America and on third party service provider and partner servers internationally. This means that when We collect visitor and user data, that data may be processed in other countries. For example, our hosting services leverage Google Cloud Platform servers that are in datacenters located in advantageous locations around the world. For more information about how we transfer visitor and user data, please contact privacy@logicalphase.com.</p>
                   <h3 class="text-headline">Local server storage</h3>
                   <h4>In-house data storage</h4>
                   <p>We store personally identifying information and associated technical data on our in-house private cloud servers, business management software, project management software, and calendars and email software. In-house data storage may be moved to one of our Google Cloud Storage or Google Drive storage (now referred to as Google One) upon completion of work or upon termination of a customers hosting or managed services subscription.</p>
@@ -358,7 +358,7 @@ class TSPrivacy extends PageViewElement {
                 </div>
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">Sharing of personally identifying information</h2>
-                  <p>This Website contains links to other sites that are not owned or controlled by Pressmedics LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
+                  <p>This Website contains links to other sites that are not owned or controlled by Logical Phase LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
                   <h4>By lawful order</h4>
                   <p>Like all businesses operating in the United States and elsewhere we are legally required to divulge any information so ordered and executed by proper legal authority. In cases where we disagree with an order we may pursue relief from an order, but we are ultimately required to comply with the legal outcomes of those challenges.</p>
                   <h4>Legal proceedings</h4>
@@ -371,7 +371,7 @@ class TSPrivacy extends PageViewElement {
                 </div>
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">How long do we store personally identifying information?</h2>
-                  <p>This Website contains links to other sites that are not owned or controlled by Pressmedics LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
+                  <p>This Website contains links to other sites that are not owned or controlled by Logical Phase LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
                   <h4>Current retention policy</h4>
                   <p>Business financial transactions - 10 years.</p>
                   <p>Backups of account data  - 10 years.</p>
@@ -382,8 +382,8 @@ class TSPrivacy extends PageViewElement {
                 </div>
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">Links to Other Sites</h2>
-                  <p>This Website contains links to other sites that are not owned or controlled by Pressmedics LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
-                  <p>We encourage you to be aware when you leave Our site and to read the privacy policies of each and every website that collects personal information. You will receive a notification when you leave Pressmedics.</p>
+                  <p>This Website contains links to other sites that are not owned or controlled by Logical Phase LLC. Please be aware that We are not responsible for the privacy practices of such other sites.</p>
+                  <p>We encourage you to be aware when you leave Our site and to read the privacy policies of each and every website that collects personal information. You will receive a notification when you leave Logical Phase.</p>
                 </div>
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">Cookies and similar browser technologies</h2>
@@ -396,7 +396,7 @@ class TSPrivacy extends PageViewElement {
                 </div>
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">MISC</h2>
-                  <p>We take your privacy seriously. We do not sell, lease, or exchange your personally identifying information to, or otherwise share your personally identifying information with, third parties in ways other than described in this Privacy Statement. By using Pressmedics services, and services available at the other above listed domains, you are using a service provided by Pressmedics LLC. (collectively, the “Service”) and you agree to be bound by the Terms of Service and this Privacy Statement. Some capitalized terms used in this Privacy Statement and not otherwise defined may be defined in the Terms of Service. This Privacy Statement only addresses activities from servers under Our control.</p>
+                  <p>We take your privacy seriously. We do not sell, lease, or exchange your personally identifying information to, or otherwise share your personally identifying information with, third parties in ways other than described in this Privacy Statement. By using Logical Phase services, and services available at the other above listed domains, you are using a service provided by Logical Phase LLC. (collectively, the “Service”) and you agree to be bound by the Terms of Service and this Privacy Statement. Some capitalized terms used in this Privacy Statement and not otherwise defined may be defined in the Terms of Service. This Privacy Statement only addresses activities from servers under Our control.</p>
                 </div>
                 <div class="ts-content-grid-box">
                   <h2 class="text-headline">Third party vendors and partners</h2>
