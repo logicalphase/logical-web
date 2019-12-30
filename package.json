@@ -41,7 +41,7 @@
     "@babel/preset-env": "7.7.7",
     "@open-wc/karma-esm": "2.11.14",
     "@open-wc/prettier-config": "0.1.13",
-    "@open-wc/testing-karma-bs": "1.3.21",
+    "@open-wc/testing-karma-bs": "1.3.24",
     "@polymer/test-fixture": "4.0.2",
     "axe-core": "3.4.1",
     "chai": "4.2.0",
