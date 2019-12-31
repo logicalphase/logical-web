@@ -1,5 +1,8 @@
 # Logical Phase Site
-### PWA site built with #lit-element created web components built using @open-wc and WordPress WP-REST API backend.
+PWA built with lit-element created web components.
+
+WordPress WP-REST API is used for our backend, but it can easily be modified to use virtually any backend CMS.
+
 [![Built with pwa–starter–kit](https://img.shields.io/badge/built_with-pwa–starter–kit_-blue.svg)](https://github.com/Polymer/pwa-starter-kit "Built with pwa–starter–kit")
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![CircleCI](https://circleci.com/gh/hyperpress/logicalphase.svg?style=svg)](https://circleci.com/gh/hyperpress/logicalphase)
