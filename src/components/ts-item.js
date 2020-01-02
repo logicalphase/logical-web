@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { formatDistance } from 'date-fns/esm';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
-import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import { Calendar } from './ts-icons.js';
 
@@ -33,35 +32,6 @@ class TSItem extends LitElement {
         .ts-read-more .social_container {
           float: right;
           padding: 0px;
-        }
-
-        .small-print .social-icon {
-          padding-left: 0px;
-        }
-
-        .social-icon {
-          fill: #888;
-          padding-left: 7px;
-        }
-        .gplus-icon:hover {
-          fill: #db4437;
-          cursor: pointer;
-        }
-        .blogger-icon:hover {
-          fill: #fb8f3d;
-          cursor: pointer;
-        }
-        .twitter-icon:hover {
-          fill: #1da1f2;
-          cursor: pointer;
-        }
-        .facebook-icon:hover {
-          fill: #3b5998;
-          cursor: pointer;
-        }
-        .linkedin-icon:hover {
-          fill: #007bb5;
-          cursor: pointer;
         }
         .ts-blog-meta-calendar svg {
           vertical-align: bottom;
@@ -161,11 +131,6 @@ class TSItem extends LitElement {
 
     const date_prefix = 'Updated ';
     const date_postfix = ' ago.';
-
-    updateMetadata({
-      title: `Logical Phase Blog`,
-      description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
-    });
 
     return html`
       <a

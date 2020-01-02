@@ -1,3 +1,5 @@
+import { updateMetadata } from 'pwa-helpers/metadata.js';
+
 export const UPDATE_PAGE = 'UPDATE_PAGE';
 export const UPDATE_OFFLINE = 'UPDATE_OFFLINE';
 export const UPDATE_DRAWER_STATE = 'UPDATE_DRAWER_STATE';
@@ -37,6 +39,10 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
     case 'article':
       module = await import('../components/ts-article');
       await dispatch(module.fetchArticle(articleSlug));
+      updateMetadata({
+        title: `Logical Phase Blog`,
+        description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
+      });
       if (isFetchArticleFailed(getState().article)) {
         page = '404';
       }

@@ -5,7 +5,7 @@ import { connect } from 'pwa-helpers/connect-mixin';
 import { updateMetadata } from 'pwa-helpers/metadata';
 import { formatDistance } from 'date-fns/esm';
 
-import { GooglePlus, Twitter, Facebook, Linkedin, SubTitleIcon } from './ts-icons.js';
+import { SubTitleIcon } from './ts-icons.js';
 
 import { SharedStyles } from './ts-style-shared';
 import { TsGridStyle } from './ts-style-grid';
@@ -439,12 +439,6 @@ class TSDetail extends connect(store)(LitElement) {
     const slug = item.slug;
     const categories = item.categories_names || [];
 
-    // @ts-ignore
-    updateMetadata({
-      title: `Logical Phase Blog`,
-      description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
-    });
-
     return html`
       <div class="hypersite-main-content clearfix">
         <article id="ts-site">
@@ -505,7 +499,7 @@ class TSDetail extends connect(store)(LitElement) {
                       <div class="article-footer">
                         <h4>Share me!</h4>
                         <div class="social_share">
-                          <ts-social></ts-social>
+                          <ts-social .item="${item}"></ts-social>
                         </div>
                       </div>
                     </div>
@@ -528,7 +522,7 @@ class TSDetail extends connect(store)(LitElement) {
       _isFetching: { type: Boolean },
       _data: { type: Object },
       _lastVisitedListPage: { type: Boolean },
-      _showOffline: { type: Boolean },
+      _showOffline: { type: Boolean }
     };
   }
 

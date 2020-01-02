@@ -1,7 +1,6 @@
 import { HP_HOST } from './config';
 
-import { html, css, unsafeCSS } from 'lit-element';
-import { PageViewElement } from './page-view-element.js';
+import { html, css, unsafeCSS, LitElement } from 'lit-element';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import { SharedStyles } from './ts-style-shared';
@@ -18,7 +17,7 @@ import { announceLabel } from '../actions/app.js';
 
 const cdnHost = unsafeCSS(HP_HOST);
 
-class TSContact extends PageViewElement {
+class TSContact extends LitElement {
   static get styles() {
     return [
       SharedStyles,

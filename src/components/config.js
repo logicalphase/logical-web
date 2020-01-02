@@ -11,6 +11,7 @@
 */
 
 export const HP_HOST = window.location.href;
+export const WP_HOST = 'logicalphase.com';
 export const WP_REST_API_HOST = 'api.logicalphase.com';
 export const WP_REST_PATH = 'wp-json/wp/v2';
 export const CDN_HOST_URL = 'cdn1-themesurgesonslt.netdna-ssl.com';

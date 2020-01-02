@@ -1,5 +1,5 @@
 import { CDN_HOST_URL } from './config';
-import { html, css, unsafeCSS } from 'lit-element';
+import { html, css, unsafeCSS, LitElement } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 
 import { until } from 'lit-html/directives/until.js';
@@ -33,7 +33,7 @@ import { TsTheme } from './ts-style-theme';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSBlog extends connect(store)(PageViewElement) {
+class TSBlog extends connect(store)(LitElement) {
   static get styles() {
     return [
       TsButtonStyle,
@@ -296,11 +296,11 @@ class TSBlog extends connect(store)(PageViewElement) {
                           item => html`
                             <li>
                               <a
-                                id="${item.categories_names}"
+                                id="${item.id}"
                                 track-type="category${item.categories_names}"
                                 track-name="blog-page"
                                 track-metadata-position="body"
-                                href="https://logicalphase.com/category/${item.categories_names}"
+                                href="https://logicalphase.com/category/${item.categories}"
                                 >${item.categories_names}</a
                               >
                             </li>

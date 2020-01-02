@@ -1,6 +1,6 @@
+import { WP_HOST } from './config';
 import { LitElement, html, css } from 'lit-element';
-
-import { Calendar, Mail, Twitter, Facebook, Linkedin,  Blogger } from './ts-icons.js';
+import { Mail, Twitter, Facebook, Linkedin, Blogger } from './ts-icons.js';
 
 class TSSocial extends LitElement {
   static get styles() {
@@ -72,38 +72,41 @@ class TSSocial extends LitElement {
   }
 
   render() {
-    const { link, title, placeholder, _loaded, slug } = this;
+
+    const { item } = this;
+    const title = item.title && item.title.rendered;
+    const slug = item.slug;
 
     return html`
       <div id="placeholder">
         <div class="slide-icons slide-left">
           <span
             class="social-icon twitter-icon"
-            .link=${`https://twitter.com/share?url=https://themesurgeons.com/${slug}/`}
+            .link=${`https://twitter.com/share?url=https://${WP_HOST}/article/${slug}/`}
             @click=${e => this._getDataHref(e)}
             >${Twitter}</span
           >
           <span
             class="social-icon linkedin-icon"
-            .link=${`https://www.linkedin.com/cws/share?url=https://themesurgeons.com/${slug}/`}
+            .link=${`https://www.linkedin.com/cws/share?url=https://${WP_HOST}/article/${slug}/`}
             @click=${e => this._getDataHref(e)}
             >${Linkedin}</span
           >
           <span
             class="social-icon facebook-icon"
-            .link=${`https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/`}
+            .link=${`https://www.facebook.com/sharer.php?u=https://${WP_HOST}/article/${slug}/`}
             @click=${e => this._getDataHref(e)}
             >${Facebook}</span
           >
           <span
             class="social-icon blogger-icon"
-            .link=${`https://www.facebook.com/sharer.php?u=https://themesurgeons.com/${slug}/`}
+            .link=${`https://www.facebook.com/sharer.php?u=https://${WP_HOST}/article/${slug}/`}
             @click=${e => this._getDataHref(e)}
             >${Blogger}</span
           >
           <span
             class="social-icon mail-icon"
-            .link=${`mailto:?subject=${title}">`}
+            .link=${`mailto:?subject=From Logical Phase Blog: ${title}"`}
             @click=${e => this._getDataHref(e)}
             >${Mail}</span
           >
@@ -116,7 +119,9 @@ class TSSocial extends LitElement {
     return {
       src: { type: String },
       link: { type: String },
-      _loaded: { type: Boolean },
+      title: { type: String },
+      slug: {type: String },
+      _loaded: { type: Boolean }
     };
   }
 

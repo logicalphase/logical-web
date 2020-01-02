@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": "hyperpress/logicalphase",
   "scripts": {
-    "start": "es-dev-server --base-path '/usr/bin/chromium-browser' --app-index index.html --hostname 192.168.1.45 --port 8803 --node-resolve --watch --open",
+    "start": "es-dev-server --app-index index.html --hostname 192.168.1.45 --port 8803 --node-resolve --watch --open",
     "start:compatibility": "es-dev-server --compatibility all --app-index index.html --node-resolve --watch --open",
     "build": "rimraf dist && rollup -c rollup.config.js && workbox generateSW workbox-config.js",
     "build:rollup": "rimraf && rollup -c && gulp generate-service-worker && gulp rollup-move ",
