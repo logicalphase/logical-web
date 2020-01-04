@@ -16,7 +16,7 @@ const app = (state = { drawerOpened: false }, action) => {
       return {
         ...state,
         page: p,
-        lastVisitedListPage: p === 'blog' ? p : state.lastVisitedListPage,
+        lastVisitedListPage: p === 'blog' || p === 'category' ? p : state.lastVisitedListPage,
       };
     case CLEAR_ANNOUNCER_LABEL:
       return {

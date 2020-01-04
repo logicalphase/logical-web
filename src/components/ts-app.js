@@ -546,7 +546,8 @@ class TSApp extends connect(store)(LitElement) {
           <a class="submenu" ?selected="${_page === 'migrations'}" href="/migrations"
             >WordPress Migrations</a
           >
-          <a ?selected="${_page === 'blog'}" href="/blog">Logical Phase Blog</a>
+          <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
+          <a ?selected="${_page === 'category'}" href="/category">Blog Categories</a>
           <a ?selected="${_page === 'privacy'}" href="/privacy">Privacy</a>
           <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
         </nav>
@@ -564,6 +565,7 @@ class TSApp extends connect(store)(LitElement) {
         <ts-terms class="page" ?active="${_page === 'terms'}"></ts-terms>
         <ts-security class="page" ?active="${_page === 'security'}"></ts-security>
         <ts-blog class="page" ?active="${_page === 'blog'}"></ts-blog>
+        <ts-category class="page" ?active="${_page === 'category'}"></ts-category>
         <ts-article class="page" ?active="${_page === 'article'}"></ts-article>
         <ts-contact class="page" ?active="${_page === 'contact'}"></ts-contact>
         <ts-view404 class="page" ?active="${_page === '404'}"></ts-view404>
@@ -600,6 +602,9 @@ class TSApp extends connect(store)(LitElement) {
         type: String,
       },
       _query: {
+        type: String,
+      },
+      _categoryId: {
         type: String,
       },
       _page: {
@@ -673,6 +678,7 @@ class TSApp extends connect(store)(LitElement) {
     this._data = state.article && state.article.data;
     this._item = state.article && state.article.item;
     this._query = state.articles && state.articles.query;
+    this._categoryId = state.categories && state.categories.categoryId;
     this._articleSlug = state.article && state.article.slug;
   }
 }

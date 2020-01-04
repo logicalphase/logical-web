@@ -48,7 +48,7 @@ class TSSocial extends LitElement {
           padding: 3px;
         }
         .social-icon {
-          fill: #111;
+          fill: var(--app-primary-icon-color);
           padding-left: 7px;
           cursor: pointer;
         }

@@ -19,15 +19,16 @@ export const navigate = location => dispatch => {
   const page = parts[0] || 'home';
   // post id is in the path: /detail/{postId}
   const articleSlug = parts[1];
+  const categoryId = parts[1];
 
   //let query = 'Article';
   let query = 'posts';
 
-  dispatch(loadPage(page, query, articleSlug));
+  dispatch(loadPage(page, query, articleSlug, categoryId));
   dispatch(updateDrawerState(false));
 };
 
-const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
+const loadPage = (page, query, articleSlug, categoryId) => async (dispatch, getState) => {
   let module;
   switch (page) {
     case 'home':
@@ -36,6 +37,10 @@ const loadPage = (page, query, articleSlug) => async (dispatch, getState) => {
       module = await import('../components/ts-blog');
       dispatch(module.fetchArticles(query));
       break;
+    case 'category':
+        module = await import('../components/ts-category');
+        dispatch(module.fetchCategories(categoryId));
+        break;
     case 'article':
       module = await import('../components/ts-article');
       await dispatch(module.fetchArticle(articleSlug));
@@ -87,6 +92,7 @@ export const refreshPage = () => (dispatch, getState) => {
       state.app.page,
       state.articles && state.articles.query,
       state.article && state.article.slug,
+      state.categories && state.categories.categoryId,
     ),
   );
 };
