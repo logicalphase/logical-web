@@ -16,7 +16,9 @@ import { TsSelectStyle } from './ts-style-select';
 import { TsTextAreaStyle } from './ts-style-textarea';
 import { announceLabel } from '../actions/app.js';
 
-class TSContact extends PageViewElement {
+const cdnHost = unsafeCSS(HP_HOST);
+
+class TSSupport extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
@@ -94,22 +96,22 @@ class TSContact extends PageViewElement {
             min-height: 120px;
           }
 
-          .ts-contact-body {
+          .ts-support-body {
             margin-bottom: 24px;
           }
 
-          .ts-contact-wrapper {
+          .ts-support-wrapper {
             background-color: var(--app-light-text-color);
             border-top: 1px solid var(--app-form-border-color);
           }
 
-          .ts-contact-inner {
+          .ts-support-inner {
             max-width: 744px;
             margin: 0 auto;
             padding-top: 30px;
           }
 
-          .ts-contact-body h2 {
+          .ts-support-body h2 {
             margin-bottom: 16px;
           }
 
@@ -194,28 +196,22 @@ class TSContact extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: `Contact a WordPress Expert`,
-      description: `WordPress general inquiry form. Get in touch with a WordPress professional.`,
+      title: `Theme Surgeons Customer Support Form`,
+      description: `Customer support request form. Get in touch with a WordPress professional.`,
     });
-
-    const requestip = location.hostname;
 
     return html`
       <div class="hypersite-main-content clearfix">
-        <article id="ts-site" class="ts-contact">
+        <article id="ts-site" class="ts-support">
           <header class="ts-hero hero">
             <div class="ts-grid">
               <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
                 <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="ts-section-header__eyebrow ts-eyebrow">Contact us</h1>
-                    <h2 class="ts-display3">Let's get connected</h2>
-                    <p class="ts-headline5 ts-why-hyperpress__intro-text">
-                      Please fill out this form to discuss your needs. If you are a customer
-                      and need technical support, please visit
-                      <a id="ts-technical-support" href="https://${HP_HOST}/support/"
-                        >Customer Support</a
-                      >.
+                    <h2 class="ts-display3">Let's get acquainted</h2>
+                    <p class="ts-headline4 ts-why-hyperpress__intro-text">
+                      Fast, reliable, WordPress hosting and managed services you can trust.
                     </p>
                   </div>
                 </header>
@@ -223,17 +219,16 @@ class TSContact extends PageViewElement {
               <div class="cloud-grid__col is-5"></div>
             </div>
           </header>
-          <div class="ts-contact-wrapper delayed-fade-in">
-            <div class="ts-contact-inner">
+          <div class="ts-support-wrapper delayed-fade-in">
+            <div class="ts-support-inner">
               <div state="init">
                 <iframe
-                  src="//api.logicalphase.com/gfembed/?f=1"
+                  src="//api.logicalphase.com/gfembed/?f=5"
                   width="100%"
-                  height="1300"
+                  height="1200"
                   frameborder="0"
                   class="gfiframe"
-                >
-                </iframe>
+                ></iframe>
                 <script
                   src="//api.logicalphase.com/wp-content/plugins/gravity-forms-iframe-master/assets/scripts/gfembed.min.js"
                   type="text/javascript"
@@ -255,4 +250,4 @@ class TSContact extends PageViewElement {
     };
   }
 }
-window.customElements.define('ts-contact', TSContact);
+window.customElements.define('ts-support', TSSupport);

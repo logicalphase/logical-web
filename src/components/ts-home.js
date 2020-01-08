@@ -726,7 +726,7 @@ class TSHome extends PageViewElement {
                           href="pagespeed/"
                           track-type="navigateTo"
                           track-name="solution"
-                          track-metadata-eventdetail="progressiveWebDesign"
+                          track-metadata-eventdetail="pagespeed-performance"
                           track-metadata-position="body"
                         >
                           <h2 class="ts-card__heading ts-headline4" id="pwa">
@@ -821,7 +821,7 @@ class TSHome extends PageViewElement {
                           track-metadata-eventdetail="wordpressRelocation"
                           track-metadata-position="body"
                         >
-                          <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">
+                          <h2 class="ts-card__heading ts-headline4" id="wordpress-preventive-care">
                             Total Preventive Care
                           </h2>
                         </a>

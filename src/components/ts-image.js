@@ -1,6 +1,8 @@
-import { LitElement, html, css } from 'lit-element';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
 
-class ArticleImage extends LitElement {
+
+class ArticleImage extends PageViewElement {
   static get styles() {
     return [
       css`

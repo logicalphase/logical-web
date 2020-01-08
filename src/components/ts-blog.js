@@ -1,12 +1,12 @@
 import { CDN_HOST_URL, HP_HOST } from './config';
-import { html, css, unsafeCSS, LitElement } from 'lit-element';
+import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import { until } from 'lit-html/directives/until.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 
 import { repeat } from 'lit-html/directives/repeat.js';
-import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import './ts-item.js';
 import './ts-offline.js';
@@ -33,7 +33,7 @@ import { TsTheme } from './ts-style-theme';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSBlog extends connect(store)(LitElement) {
+class TSBlog extends connect(store)(PageViewElement) {
   static get styles() {
     return [
       TsButtonStyle,
@@ -192,7 +192,7 @@ class TSBlog extends connect(store)(LitElement) {
           }
           .sidebar {
             display: block;
-            width: 160px;
+            width: 270px;
             margin-left: 34px;
             margin-top: 0;
           }
@@ -235,6 +235,7 @@ class TSBlog extends connect(store)(LitElement) {
         </p>
       `;
     }
+
     updateMetadata({
       title: `Logical Phase Articles`,
       description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,

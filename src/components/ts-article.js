@@ -1,8 +1,11 @@
-import { LitElement, html, css } from 'lit-element';
+import { html, css } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata';
+
 import { repeat } from 'lit-html/directives/repeat';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import { connect } from 'pwa-helpers/connect-mixin';
-import { updateMetadata } from 'pwa-helpers/metadata';
+
 import { formatDistance } from 'date-fns/esm';
 
 import { SubTitleIcon } from './ts-icons.js';
@@ -31,7 +34,7 @@ store.addReducers({
   article,
 });
 
-class TSDetail extends connect(store)(LitElement) {
+class TSDetail extends connect(store)(PageViewElement) {
   static get styles() {
     return [
       TsGridStyle,
@@ -332,6 +335,9 @@ class TSDetail extends connect(store)(LitElement) {
           section {
             margin-top: 0px;
           }
+          table {
+            width: 100%;
+          }
           #ts-site .ts-display2 {
             line-height: 1.17857143;
             font-size: 54px;
@@ -430,6 +436,13 @@ class TSDetail extends connect(store)(LitElement) {
       `;
     }
 
+    function stripHtml(html)
+    {
+      var tmp = document.createElement("DIV");
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || "";
+    }
+
     const item = _data;
     const title = item.title && item.title.rendered;
     const author = 'John Teague';
@@ -438,6 +451,12 @@ class TSDetail extends connect(store)(LitElement) {
     const alt = item.tsapi_featured_image && item.tsapi_featured_image.alt_text;
     const slug = item.slug;
     const categories = item.categories_names || [];
+    const excerpt = stripHtml(item.excerpt && item.excerpt.rendered);
+
+    updateMetadata({
+      title: `${title}`,
+      description: `${excerpt}`,
+    });
 
     return html`
       <div class="hypersite-main-content clearfix">
@@ -452,14 +471,6 @@ class TSDetail extends connect(store)(LitElement) {
                   `,
                 )}
                 <h1 class="ts-display2 fade-in title">${title}</h1>
-                <!-- We're not using featured images but some may want to so
-                we're leaving the reference to the image element here if others want to. 
-                <article-image
-                  class="article-image--full-aspect article-module"
-                  .src="${thumbnail}"
-                  .alt="${alt}"
-                ></article-image>
-                -->
               </aside>
             </div>
             <div class="ts-grid ts-grid__no-gap ts-article-spacing">

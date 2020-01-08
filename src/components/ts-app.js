@@ -547,7 +547,6 @@ class TSApp extends connect(store)(LitElement) {
             >WordPress Migrations</a
           >
           <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
-          <a ?selected="${_page === 'category'}" href="/category">Blog Categories</a>
           <a ?selected="${_page === 'privacy'}" href="/privacy">Privacy</a>
           <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
         </nav>
@@ -572,11 +571,11 @@ class TSApp extends connect(store)(LitElement) {
       </main>
 
       <!-- Footer content -->
-      <footer class="hypersite-footer-linkboxes nocontent hypersite-footer-linkboxes-all-backup">
-        <nav class="hypersite-full-site-width"></nav>
+      <footer title="footer-links" class="hypersite-footer-linkboxes nocontent hypersite-footer-linkboxes-all-backup">
+        <nav role="navigation" class="hypersite-full-site-width"></nav>
       </footer>
-      <footer class="hypersite-utility-footer">
-        <nav class="hypersite-utility-footer-nav hypersite-nav hypersite-full-site-width">
+      <footer title="footer-navigation" class="hypersite-utility-footer">
+        <nav role="navigation" class="hypersite-utility-footer-nav hypersite-nav hypersite-full-site-width">
           <div class="hypersite-utility-footer-nav-left">
             <span class="hypersite-footer-links">
               <a class="hypersite-utility-footer-link gc-analytics-event" href="/terms"

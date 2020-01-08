@@ -1,5 +1,6 @@
 import { CDN_HOST_URL, HP_HOST } from './config';
-import { html, css, unsafeCSS, LitElement } from 'lit-element';
+import { html, css, unsafeCSS } from 'lit-element';
+import { PageViewElement } from './page-view-element.js';
 
 import { until } from 'lit-html/directives/until.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
@@ -32,7 +33,7 @@ import { TsTheme } from './ts-style-theme';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSCategory extends connect(store)(LitElement) {
+class TSCategory extends connect(store)(PageViewElement) {
   static get styles() {
     return [
       TsButtonStyle,
@@ -191,7 +192,7 @@ class TSCategory extends connect(store)(LitElement) {
           }
           .sidebar {
             display: block;
-            width: 160px;
+            width: 270px;
             margin-left: 34px;
             margin-top: 0;
           }
@@ -248,7 +249,9 @@ class TSCategory extends connect(store)(LitElement) {
                 <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="ts-section-header__eyebrow ts-eyebrow">Resources for WordPress by Category</h1>
-                    <h2 class="ts-display3" .item="${category}">Blog Category: ${category}</h2>
+                    <h2 class="ts-display3">
+                      Blog Category: ${this._data.map(item => html`<span>${item.categories_names}</a></span>`)}
+                    </h2>
                     <p class="ts-headline4 ts-why-google__intro-text">
                       Blog articles from our WordPress and hosting engineers at Logical Phase.
                     </p>
@@ -277,6 +280,37 @@ class TSCategory extends connect(store)(LitElement) {
                     )}
                   </div>
                 </main>
+                <aside class="sidebar mdc-elevation--z3">
+                  <div class="nav">
+                    <div class="sticky">
+                      <ul class="fade-in right-side-nav l-space-bottom-5">
+                        <li>
+                          <h3
+                            class="l-pad-right-2 l-pad-left-2 text-uppercase"
+                            id="more-about-serverless"
+                          >
+                            Blog Category
+                          </h3>
+                        </li>
+                        ${repeat(
+                          _data,
+                          item => html`
+                            <li>
+                              <a
+                                id="${item.id}"
+                                track-type="category${item.categories_names}"
+                                track-name="category-page"
+                                track-metadata-position="body"
+                                href="/category/${item.categories}"
+                                >${item.categories_names}</a
+                              >
+                            </li>
+                          `,
+                        )}
+                      </ul>
+                    </div>
+                  </div>
+                </aside>
               </div>
             </section>
             <ts-offline
