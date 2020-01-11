@@ -33,7 +33,7 @@
     "redux-thunk": "2.3.0",
     "reselect": "4.0.0",
     "rollup-plugin-modulepreload": "1.2.2",
-    "systemjs": "6.1.8"
+    "systemjs": "6.1.9"
   },
   "devDependencies": {
     "@babel/core": "7.7.7",
