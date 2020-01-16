@@ -25,25 +25,14 @@
     "@polymer/app-layout": "3.1.0",
     "@polymer/polymer": "3.3.1",
     "@power-elements/lazy-image": "2.1.1",
-<<<<<<< HEAD
-    "date-fns": "2.8.1",
-    "dropdown-select": "^3.1.1",
-    "html-include-element": "^0.1.3",
-=======
     "date-fns": "2.9.0",
->>>>>>> 7cdd9b163d5ee30a25307cfbcc8ef4078d0b1998
     "install": "0.13.0",
     "lit-element": "2.2.1",
     "pwa-helpers": "0.9.1",
     "redux": "4.0.5",
     "redux-thunk": "2.3.0",
     "reselect": "4.0.0",
-<<<<<<< HEAD
     "rollup-plugin-modulepreload": "1.2.2"
-=======
-    "rollup-plugin-modulepreload": "1.2.2",
-    "systemjs": "6.1.9"
->>>>>>> 7cdd9b163d5ee30a25307cfbcc8ef4078d0b1998
   },
   "devDependencies": {
     "@babel/core": "7.8.3",
