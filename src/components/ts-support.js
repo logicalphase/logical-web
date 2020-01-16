@@ -196,7 +196,7 @@ class TSSupport extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: `Theme Surgeons Customer Support Form`,
+      title: `Logical Phase Customer Support Form`,
       description: `Customer support request form. Get in touch with a WordPress professional.`,
     });
 
@@ -208,10 +208,10 @@ class TSSupport extends PageViewElement {
               <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
                 <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
-                    <h1 class="ts-section-header__eyebrow ts-eyebrow">Contact us</h1>
-                    <h2 class="ts-display3">Let's get acquainted</h2>
-                    <p class="ts-headline4 ts-why-hyperpress__intro-text">
-                      Fast, reliable, WordPress hosting and managed services you can trust.
+                    <h1 class="ts-section-header__eyebrow ts-eyebrow">Customer Support</h1>
+                    <h2 class="ts-display3">Let's solve the issue</h2>
+                    <p class="ts-headline5 ts-why-hyperpress__intro-text">
+                      Please fill out this form to discuss your needs with our customer support team. 
                     </p>
                   </div>
                 </header>
@@ -225,7 +225,7 @@ class TSSupport extends PageViewElement {
                 <iframe
                   src="//api.logicalphase.com/gfembed/?f=5"
                   width="100%"
-                  height="1200"
+                  height="2500"
                   frameborder="0"
                   class="gfiframe"
                 ></iframe>

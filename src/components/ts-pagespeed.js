@@ -40,8 +40,9 @@ class TSPagespeed extends PageViewElement {
         img.ts-content-grid-image,
         img.ts-content-grid-image-lower {
           height: auto;
-          max-width: 100%;
+          max-width: 80%;
           width: 100%;
+          margin: 0 auto;
         }
         .ts-grid__col--horizontal-center {
           justify-self: normal;
@@ -51,7 +52,7 @@ class TSPagespeed extends PageViewElement {
           .hero {
             background: var(--app-reverse-text-color)
               url('/images/header/ts-pagespeed-header-opt.svg') no-repeat;
-            background-size: 384px;
+            background-size: 354px;
             background-position: 95% 90px;
           }
 
@@ -66,7 +67,7 @@ class TSPagespeed extends PageViewElement {
           }
 
           .content-set p {
-            max-width: 600px;
+            max-width: 580px;
           }
 
           section.ts-copy {
@@ -87,8 +88,8 @@ class TSPagespeed extends PageViewElement {
           .hero {
             background: var(--app-reverse-text-color)
               url('/images/header/ts-pagespeed-header-opt.svg') no-repeat;
-            background-size: 384px;
-            background-position: 95% 50px;
+            background-size: 354px;
+            background-position: 95% 40px;
           }
         }
       `,

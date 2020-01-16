@@ -43,8 +43,9 @@ class TSEmergency extends PageViewElement {
         img.ts-content-grid-image,
         img.ts-content-grid-image-lower {
           height: auto;
-          max-width: 100%;
+          max-width: 80%;
           width: 100%;
+          margin: 0 auto;
         }
         .ts-grid__col--horizontal-center {
           justify-self: normal;

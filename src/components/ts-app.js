@@ -21,12 +21,14 @@ import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 
 import { navigate, updateOffline, updateDrawerState, updateLayout } from '../actions/app';
-
 import { TsTheme } from './ts-style-theme';
+import { MenuStyles } from './ts-style-menu';
+
 class TSApp extends connect(store)(LitElement) {
   static get styles() {
     return [
       TsTheme,
+      MenuStyles,
       css`
         /*--------------------------------------------------------------
       # Accessibility
@@ -106,37 +108,6 @@ class TSApp extends connect(store)(LitElement) {
           transform: uppercase;
         }
 
-        .desktop-menu {
-          height: 46px;
-          background-color: var(--app-secondary-background-color);
-          border-bottom: 1px solid var(--app-primary-border-color);
-        }
-
-        .main-navigation a {
-          display: inline-block;
-          margin: 0 20px;
-          padding-top: 14px;
-          height: 65%;
-          font-weight: 400;
-        }
-
-        .main-navigation a,
-        .main-navigation a:visited {
-          text-decoration: none;
-          font-size: 14px;
-          color: rgba(0, 0, 0, 0.54);
-        }
-
-        .main-navigation a:hover {
-          color: var(--app-primary-color);
-        }
-
-        .main-navigation a[selected] {
-          color: rgba(0, 0, 0, 0.87);
-          font-weight: 500;
-          border-bottom: 2px solid var(--app-primary-color);
-        }
-
         .cta-header {
           font-size: 14px;
           margin-right: 24px;
@@ -177,15 +148,6 @@ class TSApp extends connect(store)(LitElement) {
         .toolbar-list > a[selected] {
           color: var(--app-header-selected-color);
           border-bottom: 4px solid var(--app-header-selected-color);
-        }
-
-        .menu-btn {
-          background: none;
-          border: none;
-          cursor: pointer;
-          width: 44px;
-          padding-top: 6px;
-          margin-left: auto;
         }
 
         .search-btn {
@@ -469,7 +431,7 @@ class TSApp extends connect(store)(LitElement) {
       `,
     ];
   }
-
+  
   render() {
     const { appTitle, _page, _offline, _drawerOpened, _snackbarOpened } = this;
 
@@ -503,12 +465,27 @@ class TSApp extends connect(store)(LitElement) {
             </button>
           </app-toolbar>
           <app-toolbar class="desktop-menu toolbar-list" sticky>
-            <nav class="main-navigation" role="navigation">
-              <a ?selected="${_page === 'home'}" href="/">Home</a>
-              <a ?selected="${_page === 'hosting'}" href="/hosting">Hosting</a>
-              <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
-              <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
-              <a ?selected="${_page === 'support'}" href="/support" style="float:right">Support</a>
+            <nav role="navigation" aria-label="Header Navigation Menu">
+              <ul class="main-navigation">
+                <li><a ?selected="${_page === 'home'}" href="/">Home</a></li>
+                <li><button id="dropdownMenuButton" class="toolbar-platform-chooser__button" @click="${this._toggleDropdownMenu}">
+                  <span class="toolbar-platform-chooser__label">Solutions</span>
+                  <svg class="triangle dropdown__arrow closed" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <title>Open drop down menu</title>
+                      <path d="M7 10l5 5 5-5z"></path>
+                    </svg>
+                </button>
+                <div id="dropdownListElement" class="dropdown-menu hide" data-target="slide-content" aria-hidden="true" tabindex="-1">
+                  <a class="dropdown-item submenu" ?selected="${_page === 'hosting'}" href="/hosting" tabindex="-1">Hosting</a>
+                  <a class="dropdown-item submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed" tabindex="-1">Site Performance</a>
+                  <a class="dropdown-item submenu" ?selected="${_page === 'emergency'}" href="/emergency" tabindex="-1">Emergency Response</a>
+                  <a class="dropdown-item submenu" ?selected="${_page === 'care'}" href="/care" tabindex="-1">Preventive Care</a>
+                  <a class="dropdown-item submenu" ?selected="${_page === 'migrations'}" href="/migrations" tabindex="-1">Site Migrations</a>
+                </div>
+                </li>
+                <li><a ?selected="${_page === 'blog'}" href="/blog">Learn</a></li>
+                <a ?selected="${_page === 'support'}" href="/contact" style="float:right">Contact</a>
+              </ul>
             </nav>
           </app-toolbar>
         </app-header>
@@ -529,26 +506,15 @@ class TSApp extends connect(store)(LitElement) {
             <input type="search" tabindex="-1" placeholder="Search" />
           </form>
           <a ?selected="${_page === 'home'}" href="/">Home</a>
-          <a class="submenu" ?selected="${_page === 'design'}" href="/design"
-            >Progressive Web Design</a
-          >
-          <a class="submenu" ?selected="${_page === 'hosting'}" href="/hosting">Managed Hosting</a>
-          <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed"
-            >PageSpeed Optimization</a
-          >
-          <a class="submenu" ?selected="${_page === 'emergency'}" href="/emergency"
-            >WordPress 911</a
-          >
-          <a class="submenu" ?selected="${_page === 'security'}" href="/security"
-            >Security Services</a
-          >
-          <a class="submenu" ?selected="${_page === 'care'}" href="/care">Preventive Care</a>
-          <a class="submenu" ?selected="${_page === 'migrations'}" href="/migrations"
-            >WordPress Migrations</a
-          >
-          <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
-          <a ?selected="${_page === 'privacy'}" href="/privacy">Privacy</a>
+          <a class="submenu" ?selected="${_page === 'hosting'}" href="/hosting">Hosting</a>
+          <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">Performance</a>
+          <a class="submenu" ?selected="${_page === 'emergency'}" href="/emergency">Emergency</a>
+          <a class="submenu" ?selected="${_page === 'care'}" href="/care">Care</a>
+          <a class="submenu" ?selected="${_page === 'migrations'}" href="/migrations">Site Migrations</a>
+          <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
           <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
+          <a ?selected="${_page === 'support'}" href="/support">Support</a>
+          <a ?selected="${_page === 'privacy'}" href="/privacy">Privacy</a>
         </nav>
       </app-drawer>
       <!-- Main content -->
@@ -567,6 +533,7 @@ class TSApp extends connect(store)(LitElement) {
         <ts-category class="page" ?active="${_page === 'category'}"></ts-category>
         <ts-article class="page" ?active="${_page === 'article'}"></ts-article>
         <ts-contact class="page" ?active="${_page === 'contact'}"></ts-contact>
+        <ts-support class="page" ?active="${_page === 'support'}"></ts-support>
         <ts-view404 class="page" ?active="${_page === '404'}"></ts-view404>
       </main>
 
@@ -636,6 +603,9 @@ class TSApp extends connect(store)(LitElement) {
       _articleSlug: {
         type: String,
       },
+      dropdownList: {
+        type: String,
+      }
     };
   }
 
@@ -663,8 +633,42 @@ class TSApp extends connect(store)(LitElement) {
         description: pageTitle,
         // This object also takes an image property, that points to an img src.
       });
+      // Maybe move this into a store, but for now I need a quick and dirty way
+      // to make sure the dropdown menu element closes after a menu selection 
+      // and to properly update aria attributes.
+      this._hideDropdownButtonBlur();
+ 
       window.scrollTo(0, 0);
     }
+  }
+
+  _toggleDropdownMenu(e) {
+    const dropdownButton = this.shadowRoot.getElementById('dropdownMenuButton');
+    const dropdownList = this.shadowRoot.getElementById("dropdownListElement");
+    const dropdownArrow = this.shadowRoot.querySelector('.dropdown__arrow');
+    if (dropdownList.classList.contains('hide')) {
+      dropdownList.classList.replace('hide','show');
+      dropdownArrow.classList.replace('closed','open');
+      dropdownButton.setAttribute("aria-expanded", 'true');
+      dropdownList.setAttribute("aria-hidden", 'false');
+      console.log(dropdownList.classList);
+    } else {
+      dropdownList.classList.replace('show','hide');
+      dropdownArrow.classList.replace('open','closed');
+      dropdownButton.setAttribute("aria-expanded", 'false');
+      dropdownList.setAttribute("aria-hidden", 'true');
+      console.log(dropdownList.classList);
+    }  
+  }
+
+  _hideDropdownButtonBlur(e) {
+    const dropdownButton = this.shadowRoot.getElementById('dropdownMenuButton');
+    const dropdownList = this.shadowRoot.getElementById("dropdownListElement");
+    const dropdownArrow = this.shadowRoot.querySelector('.dropdown__arrow');
+    dropdownList.classList.replace('show','hide');
+    dropdownArrow.classList.replace('open','closed');
+    dropdownButton.setAttribute("aria-expanded", 'false');
+    dropdownList.setAttribute("aria-hidden", 'true');
   }
 
   stateChanged(state) {

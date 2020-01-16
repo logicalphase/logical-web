@@ -12,11 +12,13 @@ key.pem
 ## npm yarn
 /node_modules/
 /npm-debug.log
+yarn-error.log
 yarn.lock
 
 ## testing
 /coverage/
 test/integration/screenshots-current
+local.log
 
 ## temp folders
 /.tmp/

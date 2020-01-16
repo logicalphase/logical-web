@@ -73,6 +73,9 @@ const loadPage = (page, query, articleSlug, categoryId) => async (dispatch, getS
     case 'contact':
       await import('../components/ts-contact');
       break;
+    case 'support':
+      await import('../components/ts-support');
+      break;
     default:
       page = '404';
   }

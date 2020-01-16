@@ -16,7 +16,7 @@ import { TsSelectStyle } from './ts-style-select';
 import { TsTextAreaStyle } from './ts-style-textarea';
 import { announceLabel } from '../actions/app.js';
 
-class TSContact extends PageViewElement {
+class TsContact extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
@@ -255,4 +255,4 @@ class TSContact extends PageViewElement {
     };
   }
 }
-window.customElements.define('ts-contact', TSContact);
+window.customElements.define('ts-contact', TsContact);
