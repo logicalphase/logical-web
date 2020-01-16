@@ -672,6 +672,8 @@ class TSHome extends PageViewElement {
                         <img
                           class="ts-card__icon"
                           src="/images/icons/ts-icon-pwa-62x-62.svg"
+                          height="72"
+                          width="72"
                           alt="Pagespeed optimization service"
                           loading="lazy"
                         />
@@ -718,6 +720,8 @@ class TSHome extends PageViewElement {
                         <img
                           class="ts-card__icon"
                           src="/images/icons/ts-icon-pagespeed-62x62.svg"
+                          height="72"
+                          width="72"
                           alt="Progressive web application design"
                           loading="lazy"
                         />
@@ -764,6 +768,8 @@ class TSHome extends PageViewElement {
                         <img
                           class="ts-card__icon"
                           src="/images/icons/ts-icon-ambulance-62x62.svg"
+                          height="72"
+                          width="72"
                           alt="Monitored and maintained"
                           loading="lazy"
                         />
@@ -810,6 +816,8 @@ class TSHome extends PageViewElement {
                         <img
                           class="ts-card__icon"
                           src="/images/icons/ts-icon-stethescope-62x62-opt.svg"
+                          height="72"
+                          width="72"
                           alt="WordPress Preventive Care"
                           loading="lazy"
                         />
