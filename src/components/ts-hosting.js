@@ -200,7 +200,7 @@ class TSHosting extends PageViewElement {
                   >
                     <h3
                       class="ts-headline3 ts-element-align"
-                      id="hyperpress-increases-traffic-conversions"
+                      id="lp-managed-hosting"
                     >
                       Has Your Site Has Been Hacked?
                     </h3>
@@ -255,7 +255,7 @@ class TSHosting extends PageViewElement {
                   >
                     <h3
                       class="ts-headline3 ts-element-align"
-                      id="hyperpress-increases-traffic-conversions"
+                      id="lp-highly-available-hosting"
                     >
                       Serious Security for WordPress
                     </h3>

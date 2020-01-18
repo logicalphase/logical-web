@@ -10,7 +10,7 @@ import { connect } from 'pwa-helpers/connect-mixin';
 import { installRouter } from 'pwa-helpers/router';
 import { installOfflineWatcher } from 'pwa-helpers/network';
 import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
-import { updateMetadata } from 'pwa-helpers/metadata';
+import { updateMetadata, setMetaTag } from 'pwa-helpers/metadata';
 
 import { menuIcon } from './ts-icons.js';
 import { store } from '../store.js';
@@ -330,7 +330,7 @@ class TSApp extends connect(store)(LitElement) {
           background: var(--app-secondary-background-color) url('/images/bg/icon-search.svg')
             no-repeat 7px right;
           border: solid 1px var(--app-form-border-color);
-          padding: 7px 34px 7px 34px;
+          padding: 7px 12px 7px 34px;
           width: 230px;
           margin-top: 6px;
           margin-bottom: 14px;
@@ -376,6 +376,11 @@ class TSApp extends connect(store)(LitElement) {
         changes to a wide layout. 
       */
         @media (min-width: 460px) {
+
+          #dropdownMenuButton {
+            margin-right: 3px;
+          }
+
           .toolbar-list {
             display: block;
           }
@@ -418,12 +423,16 @@ class TSApp extends connect(store)(LitElement) {
             padding: 0px 18px;
           }
 
+          ul.nav-right {
+            width: 50%;
+          }
+
           .main-content {
             padding-top: 96px;
           }
 
           /* The drawer button isn't shown in the wide layout, so we don't
-      need to offset the title */
+          need to offset the title */
           [main-title] {
             padding-right: 0px;
           }
@@ -434,6 +443,15 @@ class TSApp extends connect(store)(LitElement) {
   
   render() {
     const { appTitle, _page, _offline, _drawerOpened, _snackbarOpened } = this;
+
+    updateMetadata({
+      title: `Digital Experience Platform by Logical Phase Solutions`,
+      description: `Combining powerful digital cloud technologies that keep you ahead of the competition`,
+      image: `https://storage.googleapis.com/logicalphase.com/assets/9a6ed0c3-bg-homepage-container.jpg`,
+    });
+
+    setMetaTag('name', 'twitter:card', 'photo');
+    setMetaTag('name', 'twitter:url', 'https://logicalphase.com/');
 
     return html`
       <!-- Header -->
@@ -466,26 +484,26 @@ class TSApp extends connect(store)(LitElement) {
           </app-toolbar>
           <app-toolbar class="desktop-menu toolbar-list" sticky>
             <nav role="navigation" aria-label="Header Navigation Menu">
-              <ul class="main-navigation">
-                <li><a ?selected="${_page === 'home'}" href="/">Home</a></li>
-                <li><button id="dropdownMenuButton" class="toolbar-platform-chooser__button" @click="${this._toggleDropdownMenu}">
+              <div class="main-navigation">
+                <a ?selected="${_page === 'home'}" href="/">Home</a>
+                <a id="dropdownMenuButton" class="toolbar-platform-chooser__button" @click="${this._toggleDropdownMenu}">
                   <span class="toolbar-platform-chooser__label">Solutions</span>
                   <svg class="triangle dropdown__arrow closed" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <title>Open drop down menu</title>
-                      <path d="M7 10l5 5 5-5z"></path>
-                    </svg>
-                </button>
-                <div id="dropdownListElement" class="dropdown-menu hide" data-target="slide-content" aria-hidden="true" tabindex="-1">
-                  <a class="dropdown-item submenu" ?selected="${_page === 'hosting'}" href="/hosting" tabindex="-1">Hosting</a>
-                  <a class="dropdown-item submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed" tabindex="-1">Site Performance</a>
-                  <a class="dropdown-item submenu" ?selected="${_page === 'emergency'}" href="/emergency" tabindex="-1">Emergency Response</a>
-                  <a class="dropdown-item submenu" ?selected="${_page === 'care'}" href="/care" tabindex="-1">Preventive Care</a>
-                  <a class="dropdown-item submenu" ?selected="${_page === 'migrations'}" href="/migrations" tabindex="-1">Site Migrations</a>
-                </div>
-                </li>
-                <li><a ?selected="${_page === 'blog'}" href="/blog">Learn</a></li>
-                <a ?selected="${_page === 'support'}" href="/contact" style="float:right">Contact</a>
-              </ul>
+                    <path d="M7 10l5 5 5-5z"></path>
+                  </svg>
+                </a>
+                <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
+                <a ?selected="${_page === 'support'}" href="/contact">Contact</a>
+                <a ?selected="${_page === 'support'}" href="/contact" class="login-nav-item">Log in</a>
+              </div>
+              <div id="dropdownListElement" class="main-navigation dropdown-menu hide" data-target="slide-content" aria-hidden="true" tabindex="-1">
+                <a class="dropdown-item submenu" ?selected="${_page === 'hosting'}" href="/hosting" tabindex="-1">Hosting</a>
+                <a class="dropdown-item submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed" tabindex="-1">Site Performance</a>
+                <a class="dropdown-item submenu" ?selected="${_page === 'emergency'}" href="/emergency" tabindex="-1">Emergency Response</a>
+                <a class="dropdown-item submenu" ?selected="${_page === 'care'}" href="/care" tabindex="-1">Preventive Care</a>
+                <a class="dropdown-item submenu" ?selected="${_page === 'migration'}" href="/migration" tabindex="-1">Site Migrations</a>
+              </div>
             </nav>
           </app-toolbar>
         </app-header>
@@ -510,7 +528,7 @@ class TSApp extends connect(store)(LitElement) {
           <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">Performance</a>
           <a class="submenu" ?selected="${_page === 'emergency'}" href="/emergency">Emergency</a>
           <a class="submenu" ?selected="${_page === 'care'}" href="/care">Care</a>
-          <a class="submenu" ?selected="${_page === 'migrations'}" href="/migrations">Site Migrations</a>
+          <a class="submenu" ?selected="${_page === 'migration'}" href="/migration">Site Migrations</a>
           <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
           <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
           <a ?selected="${_page === 'support'}" href="/support">Support</a>
@@ -524,7 +542,7 @@ class TSApp extends connect(store)(LitElement) {
         <ts-design class="page" ?active="${_page === 'design'}"></ts-design>
         <ts-hosting class="page" ?active="${_page === 'hosting'}"></ts-hosting>
         <ts-emergency class="page" ?active="${_page === 'emergency'}"></ts-emergency>
-        <ts-migrations class="page" ?active="${_page === 'migrations'}"></ts-migrations>
+        <ts-migration class="page" ?active="${_page === 'migration'}"></ts-migration>
         <ts-pagespeed class="page" ?active="${_page === 'pagespeed'}"></ts-pagespeed>
         <ts-privacy class="page" ?active="${_page === 'privacy'}"></ts-privacy>
         <ts-terms class="page" ?active="${_page === 'terms'}"></ts-terms>
@@ -539,10 +557,10 @@ class TSApp extends connect(store)(LitElement) {
 
       <!-- Footer content -->
       <footer title="footer-links" class="hypersite-footer-linkboxes nocontent hypersite-footer-linkboxes-all-backup">
-        <nav role="navigation" class="hypersite-full-site-width"></nav>
+        <nav aria-label="Footer Links" class="hypersite-full-site-width"></nav>
       </footer>
       <footer title="footer-navigation" class="hypersite-utility-footer">
-        <nav role="navigation" class="hypersite-utility-footer-nav hypersite-nav hypersite-full-site-width">
+        <nav aria-label="Policy Links" class="hypersite-utility-footer-nav hypersite-nav hypersite-full-site-width">
           <div class="hypersite-utility-footer-nav-left">
             <span class="hypersite-footer-links">
               <a class="hypersite-utility-footer-link gc-analytics-event" href="/terms"

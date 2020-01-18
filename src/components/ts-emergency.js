@@ -15,7 +15,7 @@ import { TsButtonStyle } from './ts-style-button';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSEmergency extends PageViewElement {
+class TsEmergency extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
@@ -43,7 +43,7 @@ class TSEmergency extends PageViewElement {
         img.ts-content-grid-image,
         img.ts-content-grid-image-lower {
           height: auto;
-          max-width: 80%;
+          max-width: 70%;
           width: 100%;
           margin: 0 auto;
         }
@@ -152,7 +152,7 @@ class TSEmergency extends PageViewElement {
                       class="ts-headline3 ts-element-align"
                       id="engaging-experiences-regardless-screen-size"
                     >
-                      If it's WordPress we can fix it.
+                      If it's WordPress we can repair it.
                     </h3>
                     <p>
                       Even the best WordPress sites can suffer unexpected errors and outages. Our
@@ -198,4 +198,4 @@ class TSEmergency extends PageViewElement {
     `;
   }
 }
-window.customElements.define('ts-emergency', TSEmergency);
+window.customElements.define('ts-emergency', TsEmergency);

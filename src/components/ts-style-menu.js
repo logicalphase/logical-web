@@ -12,6 +12,12 @@ export const MenuStyles = css`
     display: inline-block;
   }
 
+  /* Login menu button */
+  .login-nav-item {
+    float: right;
+    margin-right: 20px !important;
+  }
+
   .menu-btn {
     background: none;
     border: none;
@@ -28,12 +34,12 @@ export const MenuStyles = css`
   }
 
   .main-navigation a {
-    display: inline-block;
-    margin: 0 20px;
+    margin: 0 10px 0 20px;
     padding-top: 14px;
     padding-bottom: 12px;
     font-weight: 400;
   }
+
 
   .main-navigation a,
   .main-navigation a:visited {
@@ -65,7 +71,6 @@ export const MenuStyles = css`
     -ms-flex-pack: start;
     justify-content: flex-start;
     margin: 0 5px 0 10px;
-    padding-top: 12px;
     padding-bottom: 12px;
     background: none;
     border: none;
@@ -85,9 +90,6 @@ export const MenuStyles = css`
   }
 
   .toolbar-platform-chooser__button .triangle {
-    position: relative;
-    right: 2px;
-    top: 51%;
     transition: transform .2s linear;
     fill: rgba(0, 0, 0, 0.54);
   }

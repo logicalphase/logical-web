@@ -266,6 +266,7 @@ class TSHome extends PageViewElement {
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink"
                 >
+                  <title>WordPress logo with connected to smaller cloud icons</title>
                   <defs>
                     <path
                       id="b"
@@ -481,6 +482,7 @@ class TSHome extends PageViewElement {
                       xmlns="http://www.w3.org/2000/svg"
                       xlink:href="#placeholder-svg"
                     >
+                      <title>WordPress laptop connected by storage, media, and data icons</title>
                       <defs>
                         <path
                           id="aHIf0e791"
@@ -645,15 +647,15 @@ class TSHome extends PageViewElement {
                   <header
                     class="ts-grid__col is-6 is-4__large ts-section-header ts-section-header--solutions"
                   >
-                    <h1 class="ts-section-header__eyebrow ts-eyebrow">
+                    <h2 class="ts-section-header__eyebrow ts-eyebrow">
                       The Logical Phase difference
-                    </h1>
-                    <h2
+                    </h2>
+                    <h3
                       class="ts-section-header__heading ts-headline3"
                       id="wordpress-you-need-solutions-you-deserve"
                     >
                       Smarter, faster, superior WordPress.
-                    </h2>
+                    </h3>
                     <div class="ts-section-header__link">
                       <a
                         href="/contact/"
@@ -668,7 +670,7 @@ class TSHome extends PageViewElement {
                   <div class="ts-grid__col is-6 is-4__large">
                     <section class="ts-card ts-card--solution">
                       <header>
-                        <h1 class="ts-card__eyebrow ts-eyebrow">Powered by Google Cloud</h1>
+                        <h2 class="ts-card__eyebrow ts-eyebrow">Powered by Google Cloud</h2>
                         <img
                           class="ts-card__icon"
                           src="/images/icons/ts-icon-pwa-62x-62.svg"
@@ -685,9 +687,9 @@ class TSHome extends PageViewElement {
                           track-metadata-eventdetail="workloadMigration"
                           track-metadata-position="body"
                         >
-                          <h2 class="ts-card__heading ts-headline4" id="pagespeed-optimization">
+                          <h3 class="ts-card__heading ts-headline4" id="pagespeed-optimization">
                             Hyper Optimized Hosting
-                          </h2>
+                          </h3>
                         </a>
                       </header>
                       <p class="ts-card__body">
@@ -716,13 +718,13 @@ class TSHome extends PageViewElement {
                   <div class="ts-grid__col is-6 is-4__large">
                     <section class="ts-card ts-card--solution">
                       <header>
-                        <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Performance</h1>
+                        <h2 class="ts-card__eyebrow ts-eyebrow">WordPress Performance</h2>
                         <img
                           class="ts-card__icon"
                           src="/images/icons/ts-icon-pagespeed-62x62.svg"
                           height="72"
                           width="72"
-                          alt="Progressive web application design"
+                          alt="WordPress PageSpeed Lighthouse Performance"
                           loading="lazy"
                         />
                         <a
@@ -733,9 +735,9 @@ class TSHome extends PageViewElement {
                           track-metadata-eventdetail="pagespeed-performance"
                           track-metadata-position="body"
                         >
-                          <h2 class="ts-card__heading ts-headline4" id="pwa">
+                          <h3 class="ts-card__heading ts-headline4" id="pwa">
                             PageSpeed Optimizations
-                          </h2>
+                          </h3>
                         </a>
                       </header>
                       <p class="ts-card__body">
@@ -764,13 +766,13 @@ class TSHome extends PageViewElement {
                   <div class="ts-grid__col is-6 is-4__large">
                     <section class="ts-card ts-card--solution">
                       <header>
-                        <h1 class="ts-card__eyebrow ts-eyebrow">WordPress Repairs</h1>
+                        <h2 class="ts-card__eyebrow ts-eyebrow">WordPress Repairs</h2>
                         <img
                           class="ts-card__icon"
                           src="/images/icons/ts-icon-ambulance-62x62.svg"
                           height="72"
                           width="72"
-                          alt="Monitored and maintained"
+                          alt="WordPress site repairs and restoration"
                           loading="lazy"
                         />
                         <a
@@ -781,9 +783,9 @@ class TSHome extends PageViewElement {
                           track-metadata-eventdetail="emergencyResponse"
                           track-metadata-position="body"
                         >
-                          <h2 class="ts-card__heading ts-headline4" id="repairs-restoration">
+                          <h3 class="ts-card__heading ts-headline4" id="repairs-restoration">
                             Emergency Response
-                          </h2>
+                          </h3>
                         </a>
                       </header>
                       <p class="ts-card__body">
@@ -812,13 +814,13 @@ class TSHome extends PageViewElement {
                   <div class="ts-grid__col is-6 is-4__large">
                     <section class="ts-card ts-card--solution">
                       <header>
-                        <h1 class="ts-card__eyebrow ts-eyebrow">Precisely Maintained</h1>
+                        <h2 class="ts-card__eyebrow ts-eyebrow">Precisely Maintained</h2>
                         <img
                           class="ts-card__icon"
                           src="/images/icons/ts-icon-stethescope-62x62-opt.svg"
                           height="72"
                           width="72"
-                          alt="WordPress Preventive Care"
+                          alt="We precisely maintain your WordPress site"
                           loading="lazy"
                         />
                         <a
@@ -829,9 +831,9 @@ class TSHome extends PageViewElement {
                           track-metadata-eventdetail="wordpressRelocation"
                           track-metadata-position="body"
                         >
-                          <h2 class="ts-card__heading ts-headline4" id="wordpress-preventive-care">
+                          <h3 class="ts-card__heading ts-headline4" id="wordpress-preventive-care">
                             Total Preventive Care
-                          </h2>
+                          </h3>
                         </a>
                       </header>
                       <p class="ts-card__body">
@@ -860,7 +862,7 @@ class TSHome extends PageViewElement {
                   <div class="ts-grid__col is-6 is-4__large">
                     <section class="ts-card ts-card--solution industry">
                       <header>
-                        <h1 class="ts-card__eyebrow ts-eyebrow">Professional Consulting</h1>
+                        <h2 class="ts-card__eyebrow ts-eyebrow">Professional Consulting</h2>
                         <a
                           class="ts-link ts-card__link ts-card__link-text"
                           href="${HP_HOST}care/"
@@ -869,9 +871,9 @@ class TSHome extends PageViewElement {
                           track-metadata-eventdetail="wordpressRelocation"
                           track-metadata-position="body"
                         >
-                          <h2 class="ts-card__heading ts-headline4" id="wordpress-relocation">
+                          <h3 class="ts-card__heading ts-headline4" id="wordpress-relocation">
                             Site Assessment
-                          </h2>
+                          </h3>
                         </a>
                       </header>
                       <p class="ts-card__body">
@@ -910,7 +912,7 @@ class TSHome extends PageViewElement {
             <section class="ts-copy">
               <div class="ts-grid--alternate ts-copy__inner ts-copy--two-column">
                 <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
-                  <h4 class="ts-headline4">WordPress Gutenberg goodness</h4>
+                  <h3 class="ts-headline4">WordPress Gutenberg goodness</h3>
                   <p>
                     The latest WordPress backend dashboard streamlined for productive editing and
                     publishing. Focus on great writing using familiar writing and content management
@@ -918,22 +920,22 @@ class TSHome extends PageViewElement {
                   </p>
                 </div>
                 <div class="ts-grid__col ts-copy__text is-6 is-5__large">
-                  <h4 class="ts-headline4">Control your content</h4>
+                  <h3 class="ts-headline4">Control your content</h3>
                   <p>
                     Logical Phase doesn't capitalize on your content like other services. We don't
-                    use paywalls or advertisements&#8212;that's for you to decide. Moving your
+                    use paywalls or advertisements that's for you to decide. Moving your
                     content is as easy as moving any other self-hosted WordPress site.
                   </p>
                 </div>
                 <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
-                  <h4 class="ts-headline4">Progressive Web Application</h4>
+                  <h3 class="ts-headline4">Progressive Web Application</h3>
                   <p>
                     No more theme mess. Just our beautiful PWA frontend, built with Google
                     LitElement, Material Design, and web components fully decoupled from WordPress.
                   </p>
                 </div>
                 <div class="ts-grid__col ts-copy__text is-6 is-5__large">
-                  <h4 class="ts-headline4">Smooth and natural</h4>
+                  <h3 class="ts-headline4">Smooth and natural</h3>
                   <p>
                     Quick smooth transitions and animations are baked right in to make for a more
                     natural, pleasing application look and feel. No more janking, confusing view
@@ -941,7 +943,7 @@ class TSHome extends PageViewElement {
                   </p>
                 </div>
                 <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
-                  <h4 class="ts-headline4">Installable and always up-to-date</h4>
+                  <h3 class="ts-headline4">Installable and always up-to-date</h3>
                   <p>
                     Users can optionally install your Logical Phase PWA just like any native
                     application. Best of all, PWAs don't take up any storage memory and they're
@@ -949,7 +951,7 @@ class TSHome extends PageViewElement {
                   </p>
                 </div>
                 <div class="ts-grid__col ts-copy__text is-6 is-5__large">
-                  <h4 class="ts-headline4">Fast loading and reliable</h4>
+                  <h3 class="ts-headline4">Fast loading and reliable</h3>
                   <p>
                     Logical Phase PWAs load instantly even in spotty internet conditions. Your
                     readers can continue to read your posts offline uninterrupted.

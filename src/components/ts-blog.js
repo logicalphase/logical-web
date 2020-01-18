@@ -33,7 +33,7 @@ import { TsTheme } from './ts-style-theme';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSBlog extends connect(store)(PageViewElement) {
+class TsBlog extends connect(store)(PageViewElement) {
   static get styles() {
     return [
       TsButtonStyle,
@@ -337,6 +337,6 @@ class TSBlog extends connect(store)(PageViewElement) {
     this._showOffline = state.app.offline && state.articles.failure;
   }
 }
-window.customElements.define('ts-blog', TSBlog);
+window.customElements.define('ts-blog', TsBlog);
 
 export { fetchArticles, refreshPage };

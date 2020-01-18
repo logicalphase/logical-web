@@ -1,6 +1,6 @@
 import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
-import { updateMetadata } from 'pwa-helpers/metadata';
+import { updateMetadata, setMetaTag } from 'pwa-helpers/metadata';
 
 import { repeat } from 'lit-html/directives/repeat';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
@@ -34,7 +34,7 @@ store.addReducers({
   article,
 });
 
-class TSDetail extends connect(store)(PageViewElement) {
+class TsDetail extends connect(store)(PageViewElement) {
   static get styles() {
     return [
       TsGridStyle,
@@ -438,7 +438,7 @@ class TSDetail extends connect(store)(PageViewElement) {
 
     function stripHtml(html)
     {
-      var tmp = document.createElement("DIV");
+      const tmp = document.createElement("DIV");
       tmp.innerHTML = html;
       return tmp.textContent || tmp.innerText || "";
     }
@@ -447,15 +447,18 @@ class TSDetail extends connect(store)(PageViewElement) {
     const title = item.title && item.title.rendered;
     const author = 'John Teague';
     const date = formatDistance(new Date(item.date), new Date());
-    const thumbnail = item.tsapi_featured_image && item.tsapi_featured_image.source_url;
-    const alt = item.tsapi_featured_image && item.tsapi_featured_image.alt_text;
     const slug = item.slug;
     const categories = item.categories_names || [];
     const excerpt = stripHtml(item.excerpt && item.excerpt.rendered);
 
+    setMetaTag('name', 'twitter:card', 'photo');
+    setMetaTag('name', 'twitter:url', 'https://hyperpress.com/article/avada-theme-slow-what-you-need-to-know/');
+    setMetaTag('name', 'twitter:image', 'https://storage.googleapis.com/logicalphase.com/assets/9a6ed0c3-bg-homepage-container.jpg');
+
     updateMetadata({
       title: `${title}`,
       description: `${excerpt}`,
+      image: `https://storage.googleapis.com/logicalphase.com/assets/2018/11/speed-300x121.jpg`,
     });
 
     return html`
@@ -463,7 +466,7 @@ class TSDetail extends connect(store)(PageViewElement) {
         <article id="ts-site">
           <section ?hidden="${_showOffline}">
             <div class="item">
-              <aside class="cover">
+              <div class="cover">
                 ${repeat(
                   categories,
                   item => html`
@@ -471,7 +474,7 @@ class TSDetail extends connect(store)(PageViewElement) {
                   `,
                 )}
                 <h1 class="ts-display2 fade-in title">${title}</h1>
-              </aside>
+              </div>
             </div>
             <div class="ts-grid ts-grid__no-gap ts-article-spacing">
               <div class="ts-quote__resources is-12 is-3__large">
@@ -533,7 +536,7 @@ class TSDetail extends connect(store)(PageViewElement) {
       _isFetching: { type: Boolean },
       _data: { type: Object },
       _lastVisitedListPage: { type: Boolean },
-      _showOffline: { type: Boolean }
+      _showOffline: { type: Boolean },
     };
   }
 
@@ -555,6 +558,6 @@ class TSDetail extends connect(store)(PageViewElement) {
   }
 }
 
-window.customElements.define('ts-article', TSDetail);
+window.customElements.define('ts-article', TsDetail);
 
 export { fetchArticle };

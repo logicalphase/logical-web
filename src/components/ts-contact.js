@@ -209,7 +209,7 @@ class TsContact extends PageViewElement {
                 <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="ts-section-header__eyebrow ts-eyebrow">Contact us</h1>
-                    <h2 class="ts-display3">Let's get connected</h2>
+                    <h2 class="ts-display3">Let's connect</h2>
                     <p class="ts-headline5 ts-why-hyperpress__intro-text">
                       Please fill out this form to discuss your needs. If you are a customer
                       and need technical support, please visit

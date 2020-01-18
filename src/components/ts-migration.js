@@ -15,7 +15,7 @@ import { TsButtonStyle } from "./ts-style-button";
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSMigrations extends PageViewElement {
+class TsMigrations extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
@@ -149,7 +149,7 @@ class TSMigrations extends PageViewElement {
                     <img class="ts-content-grid-image" src="/images/content/ts-migrations-towp-200x200-opt.svg" alt="Safe, fast, no interruption WordPress migrations" />
                   </div>
                   <div class="ts-grid__col is-1__large--offset ts-copy__text is-7 is-6__large ts-grid-row-start">
-                    <h3 class="ts-headline3 ts-element-align" id="hyperpress-increases-traffic-conversions">Migrating to WordPress</h3>
+                    <h3 class="ts-headline3 ts-element-align" id="lp-site-migrations">Migrating to WordPress</h3>
                     <p>You've heard great things about WordPress, but your site was built using some other software or content mangement system (CMS), and he idea of trying to move your site into WordPress seems impossibly complex. Don't let that stop you. We built migration tools that automate importing your content into a brand new WordPress instance, quickly, safely, and without error. So, if you're ready to move to WordPress, we can make it happen.</p>
                     <div class="ts-content-header__link ts-element-align">
                       <a 
@@ -196,4 +196,4 @@ class TSMigrations extends PageViewElement {
     `;
   }
 }
-window.customElements.define("ts-migrations", TSMigrations);
+window.customElements.define("ts-migration", TsMigrations);

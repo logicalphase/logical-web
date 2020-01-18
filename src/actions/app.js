@@ -61,6 +61,9 @@ const loadPage = (page, query, articleSlug, categoryId) => async (dispatch, getS
     case 'emergency':
       await import('../components/ts-emergency');
       break;
+    case 'migration':
+      await import('../components/ts-migration');
+      break;
     case 'pagespeed':
       await import('../components/ts-pagespeed');
       break;
