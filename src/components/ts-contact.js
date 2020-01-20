@@ -1,6 +1,6 @@
 import { HP_HOST } from './config';
 
-import { html, css, unsafeCSS } from 'lit-element';
+import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 
@@ -9,12 +9,6 @@ import { TsTypographyStyle } from './ts-style-typography';
 import { TsLayoutStyle } from './ts-style-layout';
 import { TsGridStyle } from './ts-style-grid';
 import { TsCard } from './ts-style-card';
-import { TsButtonStyle } from './ts-style-button';
-import { TsFormStyle } from './ts-style-form';
-import { TsInputStyle } from './ts-style-input';
-import { TsSelectStyle } from './ts-style-select';
-import { TsTextAreaStyle } from './ts-style-textarea';
-import { announceLabel } from '../actions/app.js';
 
 class TsContact extends PageViewElement {
   static get styles() {
@@ -24,12 +18,6 @@ class TsContact extends PageViewElement {
       TsLayoutStyle,
       TsGridStyle,
       TsCard,
-      TsButtonStyle,
-      TsFormStyle,
-      TsInputStyle,
-      TsSelectStyle,
-      TsTextAreaStyle,
-
       css`
         :host {
           display: block;
@@ -38,8 +26,8 @@ class TsContact extends PageViewElement {
 
         /* Smaller than 460 */
 
-        #contactForm {
-          margin-top: 40px;
+        #contactForm, .gfiframe {
+          margin-top: 35px;
         }
 
         h3 {
@@ -73,6 +61,10 @@ class TsContact extends PageViewElement {
         }
 
         @media (min-width: 460px) {
+          section {
+            margin: 2px 0 0 0;
+          }
+
           .ts-hero .content-set {
             margin: 30px 0 30px 0;
           }
@@ -86,7 +78,7 @@ class TsContact extends PageViewElement {
           .hero {
             background: var(--app-reverse-text-color) url('/images/header/ts-care-header-opt.svg')
               no-repeat;
-            background-size: 380px;
+            background-size: 320px;
             background-position: 93% 10px;
           }
 
@@ -223,28 +215,39 @@ class TsContact extends PageViewElement {
               <div class="cloud-grid__col is-5"></div>
             </div>
           </header>
-          <div class="ts-contact-wrapper delayed-fade-in">
-            <div class="ts-contact-inner">
-              <div state="init">
-                <iframe
-                  src="//api.logicalphase.com/gfembed/?f=1"
-                  width="100%"
-                  height="1300"
-                  frameborder="0"
-                  class="gfiframe"
-                >
-                </iframe>
-                <script
-                  src="//api.logicalphase.com/wp-content/plugins/gravity-forms-iframe-master/assets/scripts/gfembed.min.js"
-                  type="text/javascript"
-                ></script>
+          <section class="ts-contact-wrapper delayed-fade-in">
+            <div class="ts-grid--alternate ts-copy__inner ts-copy--two-column">
+              <div class="ts-grid__col is-1__large--offset ts-copy__text is-6 is-5__large">
+                <div state="init">
+                  <iframe
+                    src="//api.logicalphase.com/gfembed/?f=1"
+                    title="Contact form."
+                    width="100%"
+                    height="1300"
+                    frameborder="0"
+                    class="gfiframe"
+                  >
+                  </iframe>
+                  <script
+                    src="//api.logicalphase.com/wp-content/plugins/gravity-forms-iframe-master/assets/scripts/gfembed.min.js"
+                    type="text/javascript"
+                  ></script>
+                </div>
+              </div>
+              <div class="ts-grid__col ts-copy__text is-6 is-5__large">
+                <h3 class="ts-headline4">Control your content</h3>
+                <p>
+                  Logical Phase doesn't capitalize on your content like other services. We don't
+                  use paywalls or advertisements that's for you to decide. Moving your
+                  content is as easy as moving any other self-hosted WordPress site.
+                </p>
               </div>
             </div>
-          </div>
+          </section>
         </article>
       </div>
-      <!-- Show spinner when waiting for the server to repond -->
-    `;
+    <!-- Show spinner when waiting for the server to repond -->
+  `;
   }
 
   static get properties() {

@@ -4,8 +4,6 @@ import { html, css, unsafeCSS } from "lit-element";
 import { PageViewElement } from "./page-view-element.js";
 import { updateMetadata } from "pwa-helpers/metadata.js";
 
-import "./ts-sidebar-nav";
-
 import { SharedStyles } from "./ts-style-shared";
 import { TsTypographyStyle } from "./ts-style-typography";
 import { TsLayoutStyle } from "./ts-style-layout";

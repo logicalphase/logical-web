@@ -28,7 +28,7 @@ class TSHome extends PageViewElement {
       TsHomePageStyle,
       css`
         :host {
-          display: ${displayType};
+          display: block;
           padding: 0px;
         }
         /* Smaller than 460 */
@@ -38,7 +38,7 @@ class TSHome extends PageViewElement {
         }
 
         .industry {
-          background-color: #008c3a;
+          background-color: var(--app-primary-color);
           color: var(--app-reverse-text-color);
         }
         .industry header .ts-eyebrow,

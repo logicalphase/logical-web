@@ -131,7 +131,7 @@ export const TsTypographyStyle = css`
   }
 
   #ts-site .ts-eyebrow {
-    color: var(--app-primary-color);
+    color: var(--app-primary-text-color);
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 1.5px;
@@ -141,7 +141,7 @@ export const TsTypographyStyle = css`
   }
 
   #ts-site .ts-eyebrow strong {
-    color: var(--app-primary-color);
+    color: var(--app-primary-text-color);
     font-weight: inherit;
   }
 

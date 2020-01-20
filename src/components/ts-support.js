@@ -9,16 +9,10 @@ import { TsTypographyStyle } from './ts-style-typography';
 import { TsLayoutStyle } from './ts-style-layout';
 import { TsGridStyle } from './ts-style-grid';
 import { TsCard } from './ts-style-card';
-import { TsButtonStyle } from './ts-style-button';
-import { TsFormStyle } from './ts-style-form';
-import { TsInputStyle } from './ts-style-input';
-import { TsSelectStyle } from './ts-style-select';
-import { TsTextAreaStyle } from './ts-style-textarea';
-import { announceLabel } from '../actions/app.js';
 
 const cdnHost = unsafeCSS(HP_HOST);
 
-class TSSupport extends PageViewElement {
+class TsSupport extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
@@ -26,12 +20,6 @@ class TSSupport extends PageViewElement {
       TsLayoutStyle,
       TsGridStyle,
       TsCard,
-      TsButtonStyle,
-      TsFormStyle,
-      TsInputStyle,
-      TsSelectStyle,
-      TsTextAreaStyle,
-
       css`
         :host {
           display: block;
@@ -40,8 +28,8 @@ class TSSupport extends PageViewElement {
 
         /* Smaller than 460 */
 
-        #contactForm {
-          margin-top: 40px;
+        #contactForm  .gfiframe {
+          margin-top: 35px;
         }
 
         h3 {
@@ -75,6 +63,10 @@ class TSSupport extends PageViewElement {
         }
 
         @media (min-width: 460px) {
+          section {
+            margin: 2px 0 0 0;
+          }
+
           .ts-hero .content-set {
             margin: 30px 0 30px 0;
           }
@@ -88,7 +80,7 @@ class TSSupport extends PageViewElement {
           .hero {
             background: var(--app-reverse-text-color) url('/images/header/ts-care-header-opt.svg')
               no-repeat;
-            background-size: 380px;
+            background-size: 320px;
             background-position: 93% 10px;
           }
 
@@ -250,4 +242,4 @@ class TSSupport extends PageViewElement {
     };
   }
 }
-window.customElements.define('ts-support', TSSupport);
+window.customElements.define('ts-support', TsSupport);

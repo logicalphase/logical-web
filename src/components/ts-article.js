@@ -340,7 +340,7 @@ class TsDetail extends connect(store)(PageViewElement) {
           }
           #ts-site .ts-display2 {
             line-height: 1.17857143;
-            font-size: 54px;
+            font-size:48px;
             letter-spacing: -1.9px;
             padding-bottom: 26px;
           }
@@ -450,16 +450,19 @@ class TsDetail extends connect(store)(PageViewElement) {
     const slug = item.slug;
     const categories = item.categories_names || [];
     const excerpt = stripHtml(item.excerpt && item.excerpt.rendered);
-
-    setMetaTag('name', 'twitter:card', 'photo');
-    setMetaTag('name', 'twitter:url', 'https://hyperpress.com/article/avada-theme-slow-what-you-need-to-know/');
-    setMetaTag('name', 'twitter:image', 'https://storage.googleapis.com/logicalphase.com/assets/9a6ed0c3-bg-homepage-container.jpg');
+    const thumbnail = item.tsapi_featured_image && item.tsapi_featured_image.source_url;
+    const alt = item.tsapi_featured_image && item.tsapi_featured_image.alt_text;
 
     updateMetadata({
       title: `${title}`,
       description: `${excerpt}`,
-      image: `https://storage.googleapis.com/logicalphase.com/assets/2018/11/speed-300x121.jpg`,
+      image: `${thumbnail}`,
     });
+
+    setMetaTag('name', 'twitter:title', 'summary');
+    setMetaTag('name', 'twitter:card', 'summary');
+    setMetaTag('name', 'twitter:url', 'https://hyperpress.com/article/' );
+    setMetaTag('name', 'twitter:image', 'https://storage.googleapis.com/logicalphase.com/assets/9a6ed0c3-bg-homepage-container.jpg');
 
     return html`
       <div class="hypersite-main-content clearfix">
@@ -474,6 +477,7 @@ class TsDetail extends connect(store)(PageViewElement) {
                   `,
                 )}
                 <h1 class="ts-display2 fade-in title">${title}</h1>
+                <article-image class="article-image--full-aspect article-module" .src="${thumbnail}" .alt="${alt}"></article-image>
               </div>
             </div>
             <div class="ts-grid ts-grid__no-gap ts-article-spacing">

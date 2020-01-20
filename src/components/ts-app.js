@@ -21,14 +21,17 @@ import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 
 import { navigate, updateOffline, updateDrawerState, updateLayout } from '../actions/app';
+
 import { TsTheme } from './ts-style-theme';
 import { MenuStyles } from './ts-style-menu';
+import { TsButtonStyle } from './ts-style-button';
 
 class TSApp extends connect(store)(LitElement) {
   static get styles() {
     return [
       TsTheme,
       MenuStyles,
+      TsButtonStyle,
       css`
         /*--------------------------------------------------------------
       # Accessibility
@@ -494,8 +497,8 @@ class TSApp extends connect(store)(LitElement) {
                   </svg>
                 </a>
                 <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
-                <a ?selected="${_page === 'support'}" href="/contact">Contact</a>
-                <a ?selected="${_page === 'support'}" href="/contact" class="login-nav-item">Log in</a>
+                <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
+                <a ?selected="${_page === 'support'}" href="/support" class="login-nav-item">Log in</a>
               </div>
               <div id="dropdownListElement" class="main-navigation dropdown-menu hide" data-target="slide-content" aria-hidden="true" tabindex="-1">
                 <a class="dropdown-item submenu" ?selected="${_page === 'hosting'}" href="/hosting" tabindex="-1">Hosting</a>
@@ -528,7 +531,7 @@ class TSApp extends connect(store)(LitElement) {
           <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">Performance</a>
           <a class="submenu" ?selected="${_page === 'emergency'}" href="/emergency">Emergency</a>
           <a class="submenu" ?selected="${_page === 'care'}" href="/care">Care</a>
-          <a class="submenu" ?selected="${_page === 'migration'}" href="/migration">Site Migrations</a>
+          <a class="submenu" ?selected="${_page === 'migration'}" href="/migration">Migration</a>
           <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
           <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
           <a ?selected="${_page === 'support'}" href="/support">Support</a>

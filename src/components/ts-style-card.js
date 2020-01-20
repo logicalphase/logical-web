@@ -288,11 +288,11 @@ export const TsCard = css`
     }
 
     .ts-card--solution .ts-card__icon {
-      height: 62px;
+      height: 72px;
+      width: 72px;
       margin-bottom: 21px;
       margin-left: -4px;
-      padding-top: 28px;
-      width: 72px;
+      padding-top: 21px;     
     }
 
     .ts-card--solution .ts-card__link {

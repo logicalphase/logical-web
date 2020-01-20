@@ -4,8 +4,6 @@ import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 
-import './ts-sidebar-nav';
-
 import { SharedStyles } from './ts-style-shared';
 import { TsTypographyStyle } from './ts-style-typography';
 import { TsLayoutStyle } from './ts-style-layout';
@@ -570,8 +568,8 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  /></svg>
+                                </a>
                             </td>
                           </tr>
                           <tr>
