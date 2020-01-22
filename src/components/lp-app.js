@@ -3,7 +3,7 @@ import { HP_HOST } from './config';
 import { LitElement, html, css } from 'lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 
-import './ts-home.js';
+import './lp-home.js';
 import './snack-bar.js';
 
 import { connect } from 'pwa-helpers/connect-mixin';
@@ -12,7 +12,7 @@ import { installOfflineWatcher } from 'pwa-helpers/network';
 import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { updateMetadata, setMetaTag } from 'pwa-helpers/metadata';
 
-import { menuIcon } from './ts-icons.js';
+import { menuIcon } from './lp-icons.js';
 import { store } from '../store.js';
 
 import '@polymer/app-layout/app-drawer/app-drawer';
@@ -22,16 +22,16 @@ import '@polymer/app-layout/app-toolbar/app-toolbar';
 
 import { navigate, updateOffline, updateDrawerState, updateLayout } from '../actions/app';
 
-import { TsTheme } from './ts-style-theme';
-import { MenuStyles } from './ts-style-menu';
-import { TsButtonStyle } from './ts-style-button';
+import { Theme } from './style-theme';
+import { MenuStyles } from './style-menu';
+import { ButtonStyle } from './style-button';
 
-class TSApp extends connect(store)(LitElement) {
+class App extends connect(store)(LitElement) {
   static get styles() {
     return [
-      TsTheme,
+      Theme,
       MenuStyles,
-      TsButtonStyle,
+      ButtonStyle,
       css`
         /*--------------------------------------------------------------
       # Accessibility
@@ -100,7 +100,7 @@ class TSApp extends connect(store)(LitElement) {
           align-items: center;
         }
 
-        .ts-title {
+        .title {
           margin-left: 0px;
           font-weight: 300;
           color: var(--app-secondary-color);
@@ -216,15 +216,15 @@ class TSApp extends connect(store)(LitElement) {
           display: block;
         }
 
-        .hypersite-footer-linkboxes-all-backup,
-        .hypersite-footer-linkbox-cloud {
+        .footer-linkboxes-all-backup,
+        .footer-linkbox-cloud {
           background-color: var(--app-footer-primary-background-color);
         }
-        .hypersite-footer-linkboxes-all-backup {
+        .footer-linkboxes-all-backup {
           background: var(--app-footer-primary-background-color);
         }
 
-        .hypersite-footer-linkboxes > nav::before {
+        .footer-linkboxes > nav::before {
           background: var(--app-footer-primary-background-color);
           border-bottom: solid 1px var(--app-form-border-color);
           color: var(--app-footer-primary-background-color);
@@ -240,52 +240,52 @@ class TSApp extends connect(store)(LitElement) {
           -webkit-box-sizing: inherit;
           box-sizing: inherit;
         }
-        .hypersite-nav {
+        .nav {
           font-size: 13px;
         }
 
-        .hypersite-site-name {
+        .site-name {
           display: none;
         }
 
-        .hypersite-utility-footer-nav {
+        .utility-footer-nav {
           color: var(--app-reverse-text-color);
           overflow: auto;
           padding: 10px 24px;
         }
 
-        .hypersite-full-site-width,
-        .hypersite-toast-fill {
+        .full-site-width,
+        .toast-fill {
           margin: 0 auto;
           max-width: 1400px;
           color: var(--app-footer-text-color);
         }
 
-        .hypersite-footer-linkboxes-all-backup,
-        .hypersite-footer-linkbox-cloud {
+        .footer-linkboxes-all-backup,
+        .footer-linkbox-cloud {
           background-color: var(--app-footer-primary-background-color) !important;
         }
 
-        .hypersite-footer-linkboxes-all-backup {
+        .footer-linkboxes-all-backup {
           background: var(--app-footer-primary-background-color);
         }
 
-        .hypersite-footer-linkboxes {
+        .footer-linkboxes {
           background: #263238;
           font: 14px/16px Roboto, sans-serif;
         }
 
-        .hypersite-utility-footer {
+        .utility-footer {
           background: var(--app-footer-secondary-background-color);
           color: var(--app-footer-text-color);
           text-align: center;
         }
 
-        .hypersite-utility-footer-nav-left {
+        .utility-footer-nav-left {
           float: left;
         }
 
-        .hypersite-utility-footer-link + .hypersite-utility-footer-link::before {
+        .utility-footer-link + .utility-footer-link::before {
           content: '|';
           padding-left: 6px;
           padding-right: 8px;
@@ -294,15 +294,15 @@ class TSApp extends connect(store)(LitElement) {
           height: inherit;
         }
 
-        .hypersite-utility-footer-link {
+        .utility-footer-link {
           color: var(--app-reverse-text-color);
           font-size: 14px;
           font-weight: 400;
           text-decoration: none;
         }
 
-        .hypersite-utility-footer-links,
-        .hypersite-utility-footer-newsletter-signup-text {
+        .utility-footer-links,
+        .utility-footer-newsletter-signup-text {
           font-weight: 500;
           margin-right: 16px;
         }
@@ -361,7 +361,7 @@ class TSApp extends connect(store)(LitElement) {
           color: var(--app-form-text-color);
         }
 
-        .ts-brand-site-logo {
+        .brand-site-logo {
           display: block;
           height: auto;
           width: 141px;
@@ -411,7 +411,7 @@ class TSApp extends connect(store)(LitElement) {
             padding: 5px 8px 5px 36px;
           }
 
-          .ts-brand-site-logo {
+          .brand-site-logo {
             display: block;
             height: auto;
             width: 161px;
@@ -458,19 +458,19 @@ class TSApp extends connect(store)(LitElement) {
 
     return html`
       <!-- Header -->
-      <app-header-layout id="ts-appheaderlayout" has-scrolling-region>
+      <app-header-layout id="appheaderlayout" has-scrolling-region>
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar class="masthead">
             <a href="/" alt="${appTitle} home">
               <img
                 rel="dns-prefetch"
-                class="ts-brand-site-logo"
+                class="brand-site-logo"
                 src="/images/hyperpress-logo-254x46.png"
                 alt="${appTitle}"
               />
             </a>
-            <div class="ts-title" main-title>
-              <span class="hypersite-site-name">${appTitle}</span>
+            <div class="title" main-title>
+              <span class="site-name">${appTitle}</span>
             </div>
             <div class="cta-header toolbar-list">
               <form style="float:right" action="${HP_HOST}">
@@ -540,36 +540,36 @@ class TSApp extends connect(store)(LitElement) {
       </app-drawer>
       <!-- Main content -->
       <main class="main-content">
-        <ts-home class="page" ?active="${_page === 'home'}"></ts-home>
-        <ts-care class="page" ?active="${_page === 'care'}"></ts-care>
-        <ts-design class="page" ?active="${_page === 'design'}"></ts-design>
-        <ts-hosting class="page" ?active="${_page === 'hosting'}"></ts-hosting>
-        <ts-emergency class="page" ?active="${_page === 'emergency'}"></ts-emergency>
-        <ts-migration class="page" ?active="${_page === 'migration'}"></ts-migration>
-        <ts-pagespeed class="page" ?active="${_page === 'pagespeed'}"></ts-pagespeed>
-        <ts-privacy class="page" ?active="${_page === 'privacy'}"></ts-privacy>
-        <ts-terms class="page" ?active="${_page === 'terms'}"></ts-terms>
-        <ts-security class="page" ?active="${_page === 'security'}"></ts-security>
-        <ts-blog class="page" ?active="${_page === 'blog'}"></ts-blog>
-        <ts-category class="page" ?active="${_page === 'category'}"></ts-category>
-        <ts-article class="page" ?active="${_page === 'article'}"></ts-article>
-        <ts-contact class="page" ?active="${_page === 'contact'}"></ts-contact>
-        <ts-support class="page" ?active="${_page === 'support'}"></ts-support>
-        <ts-view404 class="page" ?active="${_page === '404'}"></ts-view404>
+        <lp-home class="page" ?active="${_page === 'home'}"></lp-home>
+        <lp-care class="page" ?active="${_page === 'care'}"></lp-care>
+        <lp-design class="page" ?active="${_page === 'design'}"></lp-design>
+        <lp-hosting class="page" ?active="${_page === 'hosting'}"></lp-hosting>
+        <lp-emergency class="page" ?active="${_page === 'emergency'}"></lp-emergency>
+        <lp-migration class="page" ?active="${_page === 'migration'}"></lp-migration>
+        <lp-pagespeed class="page" ?active="${_page === 'pagespeed'}"></lp-pagespeed>
+        <lp-privacy class="page" ?active="${_page === 'privacy'}"></lp-privacy>
+        <lp-terms class="page" ?active="${_page === 'terms'}"></lp-terms>
+        <lp-security class="page" ?active="${_page === 'security'}"></lp-security>
+        <lp-blog class="page" ?active="${_page === 'blog'}"></lp-blog>
+        <lp-category class="page" ?active="${_page === 'category'}"></lp-category>
+        <lp-article class="page" ?active="${_page === 'article'}"></lp-article>
+        <lp-contact class="page" ?active="${_page === 'contact'}"></lp-contact>
+        <lp-support class="page" ?active="${_page === 'support'}"></lp-support>
+        <lp-view404 class="page" ?active="${_page === '404'}"></lp-view404>
       </main>
 
       <!-- Footer content -->
-      <footer title="footer-links" class="hypersite-footer-linkboxes nocontent hypersite-footer-linkboxes-all-backup">
-        <nav aria-label="Footer Links" class="hypersite-full-site-width"></nav>
+      <footer title="footer-links" class="footer-linkboxes nocontent footer-linkboxes-all-backup">
+        <nav aria-label="Footer Links" class="full-site-width"></nav>
       </footer>
-      <footer title="footer-navigation" class="hypersite-utility-footer">
-        <nav aria-label="Policy Links" class="hypersite-utility-footer-nav hypersite-nav hypersite-full-site-width">
-          <div class="hypersite-utility-footer-nav-left">
-            <span class="hypersite-footer-links">
-              <a class="hypersite-utility-footer-link gc-analytics-event" href="/terms"
+      <footer title="footer-navigation" class="utility-footer">
+        <nav aria-label="Policy Links" class="utility-footer-nav nav full-site-width">
+          <div class="utility-footer-nav-left">
+            <span class="-footer-links">
+              <a class="utility-footer-link gc-analytics-event" href="/terms"
                 >Site Terms</a
               >
-              <a class="hypersite-utility-footer-link gc-analytics-event" href="/privacy"
+              <a class="utility-footer-link gc-analytics-event" href="/privacy"
                 >Privacy</a
               >
             </span>
@@ -706,4 +706,4 @@ class TSApp extends connect(store)(LitElement) {
     this._articleSlug = state.article && state.article.slug;
   }
 }
-window.customElements.define('ts-app', TSApp);
+window.customElements.define('lp-app', App);

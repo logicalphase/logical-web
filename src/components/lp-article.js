@@ -8,19 +8,19 @@ import { connect } from 'pwa-helpers/connect-mixin';
 
 import { formatDistance } from 'date-fns/esm';
 
-import { SubTitleIcon } from './ts-icons.js';
+import { SubTitleIcon } from './lp-icons.js';
 
-import { SharedStyles } from './ts-style-shared';
-import { TsGridStyle } from './ts-style-grid';
-import { TsElevationStyle } from './ts-style-elevation';
-import { TsTypographyStyle } from './ts-style-typography';
-import { TsLayoutStyle } from './ts-style-layout';
-import { TsTableStyles } from './ts-style-table';
-import { TsWordPressStyles } from './ts-style-wp';
+import { SharedStyles } from './style-shared';
+import { GridStyle } from './style-grid';
+import { ElevationStyle } from './style-elevation';
+import { TypographyStyle } from './style-typography';
+import { LayoutStyle } from './style-layout';
+import { TableStyles } from './style-table';
+import { WordPressStyles } from './style-wp';
 
-import './ts-offline.js';
-import './ts-image.js';
-import './ts-social';
+import './lp-offline.js';
+import './lp-image.js';
+import './lp-social';
 
 // This element is connected to the redux store.
 import { store } from '../store.js';
@@ -34,23 +34,23 @@ store.addReducers({
   article,
 });
 
-class TsDetail extends connect(store)(PageViewElement) {
+class Detail extends connect(store)(PageViewElement) {
   static get styles() {
     return [
-      TsGridStyle,
-      TsTableStyles,
-      TsElevationStyle,
-      TsTypographyStyle,
-      TsLayoutStyle,
+      GridStyle,
+      TableStyles,
+      ElevationStyle,
+      TypographyStyle,
+      LayoutStyle,
       SharedStyles,
-      TsWordPressStyles,
+      WordPressStyles,
       css`
         :host {
           display: block;
           padding: 0px;
         }
 
-        #ts-site .ts-display2 {
+        #site .display2 {
           line-height: 1.17857143;
           font-size: 44px;
           letter-spacing: -1.9px;
@@ -113,7 +113,7 @@ class TsDetail extends connect(store)(PageViewElement) {
           border-bottom: 1px solid var(--app-primary-color);
         }
 
-        #ts-site .ts-display3 {
+        #site .display3 {
           margin-bottom: 14px;
         }
 
@@ -125,7 +125,7 @@ class TsDetail extends connect(store)(PageViewElement) {
           line-height: 1.725;
           font-weight: 300;
         }
-        .ts-article-spacing {
+        .article-spacing {
           margin-top: 0px;
         }
         .content-wrapper {
@@ -230,7 +230,7 @@ class TsDetail extends connect(store)(PageViewElement) {
           margin-right: 8px;
         }
 
-        .ts-read-more {
+        .read-more {
           display: grid;
         }
         .article-footer {
@@ -301,7 +301,7 @@ class TsDetail extends connect(store)(PageViewElement) {
           p {
             font-weight: 300;
           }
-          h1.ts-display2 {
+          h1.display2 {
             font-size: 46px;
           }
           h2,
@@ -338,13 +338,13 @@ class TsDetail extends connect(store)(PageViewElement) {
           table {
             width: 100%;
           }
-          #ts-site .ts-display2 {
+          #site .display2 {
             line-height: 1.17857143;
             font-size:48px;
             letter-spacing: -1.9px;
             padding-bottom: 26px;
           }
-          #ts-site .ts-display3 {
+          #site .display3 {
             margin-bottom: 0px;
             letter-spacing: -1px;
           }
@@ -389,13 +389,13 @@ class TsDetail extends connect(store)(PageViewElement) {
             margin-top: 24px;
             font-size: normal;
           }
-          h1.ts-display2 {
+          h1.display2 {
             font-size: 46px;
           }
         }
 
         @media (min-width: 1024px) {
-          .hypersite-main-content {
+          .main-content {
             padding: 0 80px 0 110px;
           }
           .rich-text,
@@ -432,7 +432,7 @@ class TsDetail extends connect(store)(PageViewElement) {
     // Don't render if there is no item.
     if (!_data) {
       return html`
-        <p class="ts-loader">Loading. . .</p>
+        <p class="loader">Loading. . .</p>
       `;
     }
 
@@ -465,23 +465,23 @@ class TsDetail extends connect(store)(PageViewElement) {
     setMetaTag('name', 'twitter:image', 'https://storage.googleapis.com/logicalphase.com/assets/9a6ed0c3-bg-homepage-container.jpg');
 
     return html`
-      <div class="hypersite-main-content clearfix">
-        <article id="ts-site">
+      <div class="main-content clearfix">
+        <article id="site">
           <section ?hidden="${_showOffline}">
             <div class="item">
               <div class="cover">
                 ${repeat(
                   categories,
                   item => html`
-                    <p class="ts-eyebrow">${item}</p>
+                    <p class="eyebrow">${item}</p>
                   `,
                 )}
-                <h1 class="ts-display2 fade-in title">${title}</h1>
+                <h1 class="display2 fade-in title">${title}</h1>
                 <article-image class="article-image--full-aspect article-module" .src="${thumbnail}" .alt="${alt}"></article-image>
               </div>
             </div>
-            <div class="ts-grid ts-grid__no-gap ts-article-spacing">
-              <div class="ts-quote__resources is-12 is-3__large">
+            <div class="grid grid__no-gap article-spacing">
+              <div class="quote__resources is-12 is-3__large">
                 <div class="article-meta__content">
                   <div class="article-meta__author ">
                     <div class="article-meta__author-name">
@@ -499,7 +499,7 @@ class TsDetail extends connect(store)(PageViewElement) {
                       (item.content && item.content.rendered) || item.subtitle || 'None',
                     )}
                   </div>
-                  <div class="ts-read-more" ?hidden="${categories.length === 0}">
+                  <div class="read-more" ?hidden="${categories.length === 0}">
                     <div class="meta-container">
                       <div class="article-footer">
                         <h4>Posted in:</h4>
@@ -517,7 +517,7 @@ class TsDetail extends connect(store)(PageViewElement) {
                       <div class="article-footer">
                         <h4>Share me!</h4>
                         <div class="social_share">
-                          <ts-social .item="${item}"></ts-social>
+                          <lp-social .item="${item}"></lp-social>
                         </div>
                       </div>
                     </div>
@@ -528,10 +528,10 @@ class TsDetail extends connect(store)(PageViewElement) {
           </section>
         </article>
       </div>
-      <ts-offline
+      <lp-offline
         ?hidden="${!_showOffline}"
         @refresh="${() => store.dispatch(refreshPage())}"
-      ></ts-offline>
+      ></lp-offline>
     `;
   }
 
@@ -562,6 +562,6 @@ class TsDetail extends connect(store)(PageViewElement) {
   }
 }
 
-window.customElements.define('ts-article', TsDetail);
+window.customElements.define('lp-article', Detail);
 
 export { fetchArticle };

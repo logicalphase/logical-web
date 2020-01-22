@@ -17,7 +17,7 @@ export const navigate = location => dispatch => {
   const pathname = location.pathname;
   const parts = pathname.slice(1).split('/');
   const page = parts[0] || 'home';
-  // post id is in the path: /detail/{postId}
+  // post id is in the path: /article/{articleSlug}
   const articleSlug = parts[1];
   const categoryId = parts[1];
 
@@ -34,15 +34,15 @@ const loadPage = (page, query, articleSlug, categoryId) => async (dispatch, getS
     case 'home':
       break;
     case 'blog':
-      module = await import('../components/ts-blog');
+      module = await import('../components/lp-blog');
       dispatch(module.fetchArticles(query));
       break;
     case 'category':
-        module = await import('../components/ts-category');
+        module = await import('../components/lp-category');
         dispatch(module.fetchCategories(categoryId));
         break;
     case 'article':
-      module = await import('../components/ts-article');
+      module = await import('../components/lp-article');
       await dispatch(module.fetchArticle(articleSlug));
       updateMetadata({
         title: `Logical Phase Blog`,
@@ -53,38 +53,38 @@ const loadPage = (page, query, articleSlug, categoryId) => async (dispatch, getS
       }
       break;
     case 'care':
-      await import('../components/ts-care');
+      await import('../components/lp-care');
       break;
     case 'hosting':
-      await import('../components/ts-hosting');
+      await import('../components/lp-hosting');
       break;
     case 'emergency':
-      await import('../components/ts-emergency');
+      await import('../components/lp-emergency');
       break;
     case 'migration':
-      await import('../components/ts-migration');
+      await import('../components/lp-migration');
       break;
     case 'pagespeed':
-      await import('../components/ts-pagespeed');
+      await import('../components/lp-pagespeed');
       break;
     case 'privacy':
-      await import('../components/ts-privacy');
+      await import('../components/lp-privacy');
       break;
     case 'terms':
-      await import('../components/ts-site-terms');
+      await import('../components/lp-site-terms');
       break;
     case 'contact':
-      await import('../components/ts-contact');
+      await import('../components/lp-contact');
       break;
     case 'support':
-      await import('../components/ts-support');
+      await import('../components/lp-support');
       break;
     default:
       page = '404';
   }
 
   if (page === '404') {
-    await import('../components/ts-view404');
+    await import('../components/lp-view404');
   }
 
   dispatch(updatePage(page));

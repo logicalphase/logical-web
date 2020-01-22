@@ -18,7 +18,7 @@ export const SharedStyles = css`
 
   /* Base Styles */
 
-  body #ts-site {
+  body #site {
     color: #202124;
   }
 
@@ -205,20 +205,20 @@ export const SharedStyles = css`
 
   /* Classes - Section Layout */
 
-  .ts-section {
+  .section {
     padding: 42px 0;
   }
-  .ts-section--border {
+  .section--border {
     border-top: 1px solid #dadce0;
   }
-  .ts-section--no-padding-bottom {
+  .section--no-padding-bottom {
     padding-bottom: 0;
   }
-  .ts-section--no-padding-top {
+  .section--no-padding-top {
     padding-top: 0;
   }
-  .ts-section__header,
-  .ts-section__spacer {
+  .section__header,
+  .section__spacer {
     margin-bottom: 56px;
   }
 
@@ -228,16 +228,16 @@ export const SharedStyles = css`
     color: var(--app-reverse-text-color);
   }
 
-  .ts-max-width-standard {
+  .max-width-standard {
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     max-width: 1024px;
   }
 
-  .ts-full-bleed-section,
-  #ts-social-footer.ts-full-bleed-section,
-  .ts-max-width-standard {
+  .full-bleed-section,
+  #social-footer.full-bleed-section,
+  .max-width-standard {
     margin-left: -10000px;
     margin-right: -10000px;
     padding-left: 10000px;
@@ -248,15 +248,15 @@ export const SharedStyles = css`
     background: var(--app-secondary-background-color);
   }
 
-  .ts-pad-bottom-12 {
+  .pad-bottom-12 {
     padding-bottom: 96px;
   }
 
-  .ts-pad-top-6 {
+  .pad-top-6 {
     padding-top: 3px;
   }
 
-  .ts-content-body {
+  .content-body {
     padding: 0px 34px 0 34px;
   }
 
@@ -287,7 +287,7 @@ export const SharedStyles = css`
   }
 
   ul.body-checks li {
-    background-image: url('/images/icons/ts-check-purple-opt.svg');
+    background-image: url('/images/icons/check-purple-opt.svg');
     font-size: 17px;
     font-weight: 400;
     background-repeat: no-repeat;
@@ -295,7 +295,7 @@ export const SharedStyles = css`
     background-position: 0px 5px;
   }
 
-  .ts-icon {
+  .icon {
     fill: var(--app-primary-color);
   }
 
@@ -346,34 +346,34 @@ export const SharedStyles = css`
     -o-transition: background-color 0.3s ease-out;
   }
 
-  .ts-hero .content-set {
+  .hero .content-set {
     margin: 50px 0 40px 0;
     padding-bottom: 26px;
   }
 
-  .ts-section--border {
+  .section--border {
     margin-top: 32px;
   }
 
-  .ts-section__header,
-  .ts-section__spacer {
+  .section__header,
+  .section__spacer {
     margin-bottom: 26px;
   }
 
-  .ts-content-grid-image,
-  .ts-content-grid-image-lower {
+  .content-grid-image,
+  .content-grid-image-lower {
     padding-bottom: 34px;
     padding-top: 36px;
   }
 
-  .ts-products-and-solutions .card-cta-image .ts-button__set {
+  .producand-solutions .card-cta-image .button__set {
     margin-bottom: 24px;
   }
 
-  .ts-element-align {
+  .element-align {
     text-align: center;
   }
-  .ts-element-display {
+  .element-display {
     display: block;
   }
 
@@ -395,21 +395,21 @@ export const SharedStyles = css`
       padding: 0 5px;
     }
 
-    .ts-hero .content-set {
+    .hero .content-set {
       margin: 80px 14px 40px 14px;
     }
 
-    .ts-grid-wrapper-standard {
+    .grid-wrapper-standard {
       margin: auto auto;
       max-width: 1024px;
     }
 
-    .ts-left {
+    .left {
       float: none;
       margin: 0;
       text-align: center;
     }
-    .ts-right {
+    .right {
       float: right;
       margin: 24px 30px 5px;
     }
@@ -424,17 +424,17 @@ export const SharedStyles = css`
       margin: 62px 0 0 0;
     }
 
-    .ts-section {
+    .section {
       padding: 40px 0;
     }
-    .ts-element-align {
+    .element-align {
       text-align: left;
     }
-    .ts-element-display {
+    .element-display {
       display: block;
     }
-    .ts-content-grid-image,
-    .ts-content-grid-image-lower {
+    .content-grid-image,
+    .content-grid-image-lower {
       padding-bottom: 34px;
       padding-top: 56px;
     }

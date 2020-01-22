@@ -1,47 +1,47 @@
-import { CDN_HOST_URL, HP_HOST } from './config';
+import { CDN_HOST_URL } from './config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import { until } from 'lit-html/directives/until.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 
 import { repeat } from 'lit-html/directives/repeat.js';
-import { updateMetadata } from 'pwa-helpers/metadata.js';
 
-import './ts-item.js';
-import './ts-offline.js';
+import './lp-item.js';
+import './lp-offline.js';
 
 // This element is connected to the redux store.
 import { store } from '../store.js';
 
-import { fetchCategories } from '../actions/categories.js';
+import { fetchArticles } from '../actions/articles.js';
 import { refreshPage } from '../actions/app.js';
-import { categories, itemListSelector } from '../reducers/categories.js';
+import { articles, itemListSelector } from '../reducers/articles.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
-  categories,
+  articles,
 });
 
-import { SharedStyles } from './ts-style-shared';
-import { TsButtonStyle } from './ts-style-button';
-import { TsElevationStyle } from './ts-style-elevation';
-import { TsTypographyStyle } from './ts-style-typography';
-import { TsGridStyle } from './ts-style-grid';
-import { TsLayoutStyle } from './ts-style-layout';
-import { TsTheme } from './ts-style-theme';
+import { SharedStyles } from './style-shared';
+import { ButtonStyle } from './style-button';
+import { ElevationStyle } from './style-elevation';
+import { TypographyStyle } from './style-typography';
+import { GridStyle } from './style-grid';
+import { LayoutStyle } from './style-layout';
+import { Theme } from './style-theme';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSCategory extends connect(store)(PageViewElement) {
+class Blog extends connect(store)(PageViewElement) {
   static get styles() {
     return [
-      TsButtonStyle,
-      TsGridStyle,
-      TsTypographyStyle,
-      TsLayoutStyle,
-      TsTheme,
-      TsElevationStyle,
+      ButtonStyle,
+      GridStyle,
+      TypographyStyle,
+      LayoutStyle,
+      Theme,
+      ElevationStyle,
       SharedStyles,
       css`
         :host {
@@ -59,7 +59,7 @@ class TSCategory extends connect(store)(PageViewElement) {
           background: none;
         }
 
-        .ts-content-wrapper {
+        .content-wrapper {
           padding: 0px;
           background: var(--app-reverse-text-color);
         }
@@ -75,20 +75,20 @@ class TSCategory extends connect(store)(PageViewElement) {
           display: none;
         }
 
-        .ts-content-grid-box {
+        .content-grid-box {
           max-width: 100%;
         }
 
-        .ts-content-grid-box p {
+        .content-grid-box p {
           max-width: 580px;
         }
 
-        .ts-grid-wrapper-auto-fill {
+        .grid-wrapper-auto-fill {
           grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
           justify-items: left;
         }
 
-        .ts-category-list-item {
+        .blog-list-item {
           margin-bottom: 24px;
         }
 
@@ -160,33 +160,33 @@ class TSCategory extends connect(store)(PageViewElement) {
           }
         }
 
-        .ts-category-list-item .flex-hover-card:nth-child(0) {
+        .blog-list-item .flex-hover-card:nth-child(0) {
           animation-delay: 0s;
           animation: FadeIn 0.5s ease;
           animation-fill-mode: both;
         }
 
-        .ts-category-list-item .flex-hover-card:nth-child(1) {
+        .blog-list-item .flex-hover-card:nth-child(1) {
           animation-delay: 1.6s;
           animation: FadeIn 0.5s ease;
           animation-fill-mode: both;
         }
 
-        .ts-category-list-item .flex-hover-card:nth-child(3) {
+        .blog-list-item .flex-hover-card:nth-child(3) {
           animation-delay: 1.8s;
         }
-        .ts-category-list-item .flex-hover-card:nth-child(4) {
+        .blog-list-item .flex-hover-card:nth-child(4) {
           animation-delay: 2.6s;
         }
 
         @media (min-width: 460px) {
           .hero {
-            background: var(--app-reverse-text-color) url('/images/header/ts-design-header-opt.svg')
+            background: var(--app-reverse-text-color) url('/images/header/design-header-opt.svg')
               no-repeat;
             background-size: 280px;
             background-position: 90% 60px;
           }
-          .ts-content-wrapper {
+          .content-wrapper {
             padding: 0;
             background: var(--app-primary-section-background-color);
           }
@@ -202,11 +202,11 @@ class TSCategory extends connect(store)(PageViewElement) {
           .text-uppercase {
             border-top: 0px;
           }
-          .ts-pad-bottom-12 {
+          .pad-bottom-12 {
             padding-bottom: 96px;
             border-top: 1px solid var(--app-primary-hover-color);
           }
-          #ts-site .ts-headline4 {
+          #site .headline4 {
             padding-right: 0;
           }
           .sticky {
@@ -218,42 +218,42 @@ class TSCategory extends connect(store)(PageViewElement) {
   }
 
   render() {
-    const { _categoryId, _data, _showOffline, category  } = this;
-    
+    const { _query, _data, _showOffline } = this;
+
     // Don't render if there is no item.
     if (_data) {
       until(
         _data,
         html`
-          <p class="ts-loader" style="padding-left: 34px;">Loading. . .</p>
+          <p class="loader" style="padding-left: 34px;">Loading. . .</p>
         `,
       );
     } else {
       return html`
-        <p class="ts-loader" style="padding-left: 34px;">
-          An error occurred while retrieving category list. Please reload.
+        <p class="loader" style="padding-left: 34px;">
+          An error occurred while retrieving blog list. Please reload.
         </p>
       `;
     }
+
     updateMetadata({
-      title: `Logical Phase Blog Categories`,
+      title: `Logical Phase Articles`,
       description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
     });
 
     return html`
-      <div class="hypersite-main-content clearfix">
-        <article id="ts-site" class="ts-category">
-          <header class="ts-hero hero">
-            <div class="ts-grid">
-              <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
-                <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
+      <div class="main-content clearfix">
+        <article id="site" class="blog">
+          <header class="hero hero">
+            <div class="grid">
+              <div class="grid__column is-7 is-6__large is-1__large--offset">
+                <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
-                    <h1 class="ts-section-header__eyebrow ts-eyebrow">Resources for WordPress by Category</h1>
-                    <h2 class="ts-display3">
-                      Blog Category: ${this._data.map(item => html`<span>${item.categories_names}</a></span>`)}
-                    </h2>
-                    <p class="ts-headline4 ts-why-google__intro-text">
-                      Blog articles from our WordPress and hosting engineers at Logical Phase.
+                    <h1 class="section-header__eyebrow eyebrow">Resources for WordPress</h1>
+                    <h2 class="display3">Logical Phase Blog</h2>
+                    <p class="headline4 why-google__intro-text">
+                      Articles written by WordPress professionals for site owners, developers, and
+                      designers.
                     </p>
                   </div>
                 </header>
@@ -261,19 +261,19 @@ class TSCategory extends connect(store)(PageViewElement) {
               <div class="cloud-grid__col is-5"></div>
             </div>
           </header>
-          <div class="ts-content-wrapper">
+          <div class="content-wrapper">
             <section
-              class="content background-grey full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home"
+              class="content background-grey full-bleed-section pad-top-6 pad-bottom-12 home"
             >
               <div class="columns">
                 <main class="main">
-                  <div class="ts-content-grid-box" ?hidden="${!_categoryId}">
+                  <div class="content-grid-box" ?hidden="${!_query}">
                     ${repeat(
                       _data,
                       item => html`
-                        <div class="ts-category-list-item">
+                        <div class="blog-list-item">
                           <div class="flex-hover-card mdc-elevation--z3">
-                            <ts-item .item="${item}"></ts-item>
+                            <lp-item .item="${item}"></lp-item>
                           </div>
                         </div>
                       `,
@@ -289,7 +289,7 @@ class TSCategory extends connect(store)(PageViewElement) {
                             class="l-pad-right-2 l-pad-left-2 text-uppercase"
                             id="more-about-serverless"
                           >
-                            Blog Category
+                            Blog Categories
                           </h3>
                         </li>
                         ${repeat(
@@ -299,7 +299,7 @@ class TSCategory extends connect(store)(PageViewElement) {
                               <a
                                 id="${item.id}"
                                 track-type="category${item.categories_names}"
-                                track-name="category-page"
+                                track-name="blog-page"
                                 track-metadata-position="body"
                                 href="/category/${item.categories}"
                                 >${item.categories_names}</a
@@ -313,10 +313,10 @@ class TSCategory extends connect(store)(PageViewElement) {
                 </aside>
               </div>
             </section>
-            <ts-offline
+            <lp-offline
               ?hidden="${!_showOffline}"
               @refresh="${() => store.dispatch(refreshPage())}"
-            ></ts-offline>
+            ></lp-offline>
           </div>
         </article>
       </div>
@@ -324,20 +324,19 @@ class TSCategory extends connect(store)(PageViewElement) {
   }
   static get properties() {
     return {
-      _categoryId: { type: String },
+      _query: { type: String },
       _data: { type: Array },
       _showOffline: { type: Boolean },
-      _categories_names: { type: String }
     };
   }
 
   // This is called every time something is updated in the store.
   stateChanged(state) {
-    this._categoryId = state.categories.categoryId;
+    this._query = state.articles.query;
     this._data = itemListSelector(state);
-    this._showOffline = state.app.offline && state.categories.failure;
+    this._showOffline = state.app.offline && state.articles.failure;
   }
 }
-window.customElements.define('ts-category', TSCategory);
+window.customElements.define('lp-blog', Blog);
 
-export { fetchCategories, refreshPage };
+export { fetchArticles, refreshPage };

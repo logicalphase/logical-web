@@ -1,12 +1,12 @@
 import { LitElement, html, css } from 'lit-element';
-import { SharedStyles } from './ts-style-shared';
-import { TsTypographyStyle } from './ts-style-typography';
+import { SharedStyles } from './style-shared';
+import { TypographyStyle } from './style-typography';
 
-class TSOffline extends LitElement {
+class Offline extends LitElement {
   static get styles() {
     return [
       SharedStyles,
-      TsTypographyStyle,
+      TypographyStyle,
       css`
         :host {
           padding: 16px;
@@ -30,4 +30,4 @@ class TSOffline extends LitElement {
   }
 }
 
-window.customElements.define('ts-offline', TSOffline);
+window.customElements.define('lp-offline', Offline);

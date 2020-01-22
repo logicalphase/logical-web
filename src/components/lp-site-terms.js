@@ -4,20 +4,20 @@ import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 
-import { SharedStyles } from './ts-style-shared';
-import { TsTypographyStyle } from './ts-style-typography';
-import { TsLayoutStyle } from './ts-style-layout';
-import { TsGridStyle } from './ts-style-grid';
+import { SharedStyles } from './style-shared';
+import { TypographyStyle } from './style-typography';
+import { LayoutStyle } from './style-layout';
+import { GridStyle } from './style-grid';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSTerms extends PageViewElement {
+class Terms extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
-      TsTypographyStyle,
-      TsLayoutStyle,
-      TsGridStyle,
+      TypographyStyle,
+      LayoutStyle,
+      GridStyle,
       css`
         :host {
           display: block;
@@ -35,7 +35,7 @@ class TSTerms extends PageViewElement {
           font-weight: 400;
         }
 
-        .ts-terms {
+        .terms {
           margin-right: 0px;
         }
 
@@ -60,13 +60,13 @@ class TSTerms extends PageViewElement {
           color: var(--app-secondary-color);
         }
 
-        .ts-content-grid-box h2 {
+        .content-grid-box h2 {
           text-transform: uppercase;
           font-size: 28px;
           font-weight: 400;
           color: var(--app-secondary-color);
         }
-        .ts-content-grid-box h3 {
+        .content-grid-box h3 {
           text-transform: uppercase;
           font-size: 24px;
           color: var(--app-secondary-color);
@@ -76,7 +76,7 @@ class TSTerms extends PageViewElement {
         }
 
         @media (min-width: 460px) {
-          .ts-terms {
+          .terms {
             margin-right: 200px;
           }
 
@@ -109,13 +109,13 @@ class TSTerms extends PageViewElement {
             white-space: nowrap;
           }
 
-          .ts-content-grid-box p {
+          .content-grid-box p {
             text-align: left;
             margin-bottom: 16px;
             max-width: 100%;
             margin-right: 24px;
           }
-          .ts-content-grid-box {
+          .content-grid-box {
             min-height: 40px !important;
             text-align: left;
             background-color: var(--app-reverse-text-color);
@@ -135,7 +135,7 @@ class TSTerms extends PageViewElement {
           }
         }
         @media (max-width: 460px) {
-          .ts-terms {
+          .terms {
             margin-right: 0px;
           }
         }
@@ -150,14 +150,14 @@ class TSTerms extends PageViewElement {
     });
 
     return html`
-      <div class="hypersite-main-content clearfix">
-        <article id="ts-site" class="ts-terms">
-          <div class="ts-content-wrapper">
-            <section class="content full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
+      <div class="main-content clearfix">
+        <article id="site" class="terms">
+          <div class="content-wrapper">
+            <section class="content full-bleed-section pad-top-6 pad-bottom-12 home">
               <div class="columns">
                 <main class="main fade-in">
                   <header class="privacy-header">
-                    <div class="ts-header-wrapper fade-in">
+                    <div class="header-wrapper fade-in">
                       <h1 class="paper-font-display2 paper-font-light">
                         Terms of Service Agreement
                       </h1>
@@ -241,7 +241,7 @@ class TSTerms extends PageViewElement {
                     </li>
                   </ul>
                   <section>
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <p>
                         This Terms of Service Agreement (the “Agreement”) is an agreement between
                         you (the “User”) and Logical Phase, LLC. (“Logical Phase”, “we”, or “us”).
@@ -262,7 +262,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-1">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>1. What We Own</h2>
                       <p>
                         All material and services available on the Site, and all material and
@@ -288,7 +288,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-2">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>2. Rights to Use What We Own</h2>
                       <p>
                         Subject to this Agreement, Logical Phase hereby grants you a limited,
@@ -333,7 +333,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-3">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>3. What You Provide to Us</h2>
                       <p>
                         You are legally responsible for all information, data, text, software,
@@ -350,7 +350,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-4">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>4. Giving Us Access to Other Accounts and Services</h2>
                       <p>
                         Some of our Services may require you to give us access to or require you to
@@ -364,7 +364,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-5">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>5. Comments and Feedback</h2>
                       <p>
                         Any questions, comments, suggestions, ideas, feedback, or other information
@@ -377,7 +377,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-6">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>6. Monitoring What You Provide Us</h2>
                       <p>
                         Logical Phase may, but has no obligation to, monitor Content on the Site or
@@ -399,7 +399,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-7">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>7. Copyright Complaint Policy</h2>
                       <p>
                         If you believe any Materials infringe your copyrighted works, you may
@@ -410,7 +410,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-8">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>8. Rules</h2>
                       <p>You agree to all of the following:</p>
                       <p>
@@ -521,7 +521,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-9">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>9. Selling Through Logical Phase</h2>
                       <p>
                         Some of our Services and Materials may offer you the opportunity to sell or
@@ -585,7 +585,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-10">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>10. Fees</h2>
                       <p>
                         a. You may agree to a one (1) month, or twelve (12) month service agreement
@@ -650,7 +650,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-11">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>11. Taxes</h2>
                       <p>
                         You take full responsibility for all taxes and fees of any nature associated
@@ -672,7 +672,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-12">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>12. Termination</h2>
                       <p>a. Services may be terminated by us, without cause, at any time.</p>
                       <p>
@@ -694,7 +694,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-13">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>13. ERRORS AND ACCESS TO SITE</h2>
                       <p>
                         YOU ARE SOLELY RESPONSIBLE FOR THE ACCURACY AND APPROPRIATENESS OF ALL DATA
@@ -709,7 +709,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-14">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>
                         14. Third Party Websites; Third Party Services; No Implied Endorsement
                       </h2>
@@ -740,7 +740,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-15">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>15. DISCLAIMER OF WARRANTY</h2>
                       <p>
                         THE SITE, SERVICES AND MATERIALS ARE PROVIDED “AS IS,” “AS AVAILABLE,” “WITH
@@ -798,7 +798,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-16">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>16. LIMITATION OF LIABILITY</h2>
                       <p>
                         WE ARE NOT LIABLE TO YOU OR ANY OTHER PERSON FOR DAMAGES OF ANY KIND,
@@ -825,7 +825,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-17">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>17. EXCLUSIVE REMEDY</h2>
                       <p>
                         IN THE EVENT OF ANY PROBLEM WITH THE SITE, THE SERVICES, THE MATERIALS, YOU
@@ -847,7 +847,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-18">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>18. Termination/Exclusion</h2>
                       <p>
                         We may modify, replace, refuse access to, suspend or discontinue the
@@ -864,7 +864,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-19">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>19. Indemnification</h2>
                       <p>
                         You agree to indemnify, hold harmless, and defend Logical Phase and its
@@ -887,7 +887,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-20">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>20. Amendments</h2>
                       <p>
                         We reserve the right, in our sole discretion, to modify or replace any part
@@ -914,7 +914,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-21">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>21. Disputes</h2>
                       <p>
                         The formation, interpretation and performance of this Agreement and any
@@ -932,7 +932,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-22">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>22. Privacy</h2>
                       <p>
                         We encourage you to read the <a href="/privacy">Privacy Policy</a>, and to
@@ -951,7 +951,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-23">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>23. Other</h2>
                       <p>
                         You acknowledge that a violation or attempted violation of any of this
@@ -977,7 +977,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-24">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>24. Terms You Must Post on Your Site</h2>
                       <p>
                         You are responsible for drafting the terms of use and privacy policy for any
@@ -1003,7 +1003,7 @@ class TSTerms extends PageViewElement {
                     </div>
                   </section>
                   <section id="section-25">
-                    <div class="ts-content-grid-box">
+                    <div class="content-grid-box">
                       <h2>25. Miscellaneous</h2>
                       <p>
                         a. If any portion of this Agreement is found to be unenforceable, the
@@ -1127,4 +1127,4 @@ class TSTerms extends PageViewElement {
     `;
   }
 }
-window.customElements.define('ts-terms', TSTerms);
+window.customElements.define('lp-terms', Terms);

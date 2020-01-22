@@ -1,71 +1,71 @@
 import { css } from 'lit-element';
 
-export const TsHomePageStyle = css`
+export const HomePageStyle = css`
   /* Material Design Typography */
 
-  .ts-home-sections {
+  .home-sections {
     margin-bottom: 100px;
   }
 
-  .ts-section--reversed {
+  .section--reversed {
     padding: 72px 0 60px;
   }
 
-  .ts-section--centered {
+  .section--centered {
     text-align: center;
   }
 
-  #ts-site .ts-section--centered .ts-section-header__heading {
+  #site .section--centered .section-header__heading {
     margin: 0 auto;
     max-width: 524px;
   }
 
-  .ts-card {
+  .card {
     display: flex;
     flex-direction: column;
     position: relative;
   }
 
-  .ts-card:hover {
+  .card:hover {
     z-index: 1;
   }
 
-  .ts-card--center {
+  .card--center {
     text-align: center;
   }
 
-  .ts-card--tall {
+  .card--tall {
     min-height: 480px;
   }
 
-  .ts-card--center .ts-card__body {
+  .card--center .card__body {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .ts-card--center .ts-card__footer {
+  .card--center .card__footer {
     align-self: center;
     margin-top: 0;
   }
 
-  #ts-site .ts-card--center .ts-card__heading {
+  #site .card--center .card__heading {
     margin: 0 auto;
   }
 
-  .ts-card__heading {
+  .card__heading {
     max-width: 360px;
     padding: 0;
   }
 
-  .ts-card__arrow {
+  .card__arrow {
     margin-top: 8px;
   }
 
-  .ts-card__link {
+  .card__link {
     position: static;
   }
 
-  .ts-card__link::after {
+  .card__link::after {
     content: '';
     display: block;
     height: 100%;
@@ -76,20 +76,20 @@ export const TsHomePageStyle = css`
     width: 100%;
   }
 
-  .ts-card__link--text {
+  .card__link--text {
     color: unset;
   }
 
-  .ts-home-sections .ts-section-events {
+  .home-sections .section-events {
     margin-top: 40px;
   }
 
-  .ts-section-events {
+  .section-events {
     position: relative;
   }
 
-  .ts-section-events.next::before,
-  .ts-section-events.next::after {
+  .section-events.next::before,
+  .section-events.next::after {
     background-repeat: no-repeat;
     background-size: 36%;
     content: '';
@@ -99,16 +99,16 @@ export const TsHomePageStyle = css`
     z-index: -1;
   }
 
-  .ts-home-sections .ts-section-customers__container {
+  .home-sections .section-customers__container {
     background-color: var(--app-secondary-background-color);
   }
 
-  #ts-site .ts-section-customers__container .ts-section-header {
+  #site .section-customers__container .section-header {
     margin-bottom: 20px;
     padding-bottom: 0;
   }
 
-  .ts-section-customers__logos {
+  .section-customers__logos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -116,7 +116,7 @@ export const TsHomePageStyle = css`
     padding: 0;
   }
 
-  .ts-section-customers__logos li {
+  .section-customers__logos li {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -124,27 +124,27 @@ export const TsHomePageStyle = css`
     padding: 8px 18px;
   }
 
-  .ts-section-customers__logos .ts-section-customers__logos__logo--no-padding {
+  .section-customers__logos .section-customers__logos__logo--no-padding {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .ts-section-customers__logos img {
+  .section-customers__logos img {
     max-width: none;
   }
 
-  .ts-card--contact {
+  .card--contact {
     background-color: #34a853; /* $green-500 */
     background-image: url('/images/home/contact-bg.svg');
     background-position: 50% 50%;
     background-size: cover;
   }
 
-  .ts-section-header.ts-section-header--solutions {
+  .section-header.section-header--solutions {
     padding: 0 36px 36px 0;
   }
 
-  .ts-card--solution {
+  .card--solution {
     border: 1px solid #eee;
     border-radius: 0;
     height: 100%;
@@ -152,22 +152,22 @@ export const TsHomePageStyle = css`
     margin: 0 -1px -1px 0;
   }
 
-  .ts-card--solution.ts-card--product {
+  .card--solution.card--product {
     padding: 24px 36px 40px;
   }
 
-  .ts-card--industry {
+  .card--industry {
     background-color: #fbbc04;
     background-image: url('/images/home/industry-bg.svg');
     background-position: 50% 50%;
     background-size: cover;
   }
 
-  .ts-card--solution .ts-card__eyebrow {
+  .card--solution .card__eyebrow {
     padding-bottom: 20px;
   }
 
-  .ts-card--solution .ts-card__icon {
+  .card--solution .card__icon {
     height: 72px;
     margin-bottom: 16px;
     margin-left: 0px;
@@ -175,19 +175,19 @@ export const TsHomePageStyle = css`
     width: 72px;
   }
 
-  .ts-card--solution .ts-card__link:hover {
+  .card--solution .card__link:hover {
     text-decoration: none;
   }
 
-  .ts-card--solution .ts-card__link:hover .ts-card__heading {
+  .card--solution .card__link:hover .card__heading {
     color: #202124;
   }
 
-  .ts-card--solution .ts-card__body {
+  .card--solution .card__body {
     flex-grow: 1;
   }
 
-  .ts-card--solution .ts-card__link {
+  .card--solution .card__link {
     margin-top: 24px;
   }
 `;

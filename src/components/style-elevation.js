@@ -1,6 +1,6 @@
 import { css } from 'lit-element';
 
-export const TsElevationStyle = css`
+export const ElevationStyle = css`
   /* Material Design Elevation */
 
   .mdc-elevation--z0 {

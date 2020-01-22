@@ -1,7 +1,7 @@
 import { css } from 'lit-element';
 
-export const TsSelectStyle = css`
-  ts-select {
+export const SelectStyle = css`
+  lp-select {
     display: inline-block;
     margin: 10px 0px 20px 0px;
     position: relative;
@@ -9,13 +9,13 @@ export const TsSelectStyle = css`
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
-  ts-select > ts-md-decorator {
+  lp-select > lp-md-decorator {
     display: block;
     border-top: 1px solid var(--app-primary-border-color);
     height: 1px;
     speak: none;
   }
-  ts-select > ts-md-decorator::after {
+  lp-select > md-decorator::after {
     content: '\\25BC';
     display: block;
     position: absolute;
@@ -27,7 +27,7 @@ export const TsSelectStyle = css`
     color: var(--app-secondary-color);
     pointer-events: none;
   }
-  ts-select > select {
+  lp-select > select {
     width: 100%;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -44,10 +44,10 @@ export const TsSelectStyle = css`
     margin: 0;
     outline: none;
   }
-  ts-select > select::-ms-expand {
+  lp-select > select::-ms-expand {
     display: none;
   }
-  ts-select > ts-md-decorator > ts-underline {
+  lp-select > lp-md-decorator > lp-underline {
     display: block;
     background-color: var(--app-accent-color);
     height: 2px;
@@ -60,23 +60,23 @@ export const TsSelectStyle = css`
     transition: -webkit-transform 0.2s ease-in;
     transition: transform 0.2s ease-in;
   }
-  ts-select > select:focus + ts-md-decorator > ts-underline {
+  lp-select > select:focus + lp-md-decorator > lp-underline {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
   }
-  ts-select > select:focus + ts-md-decorator::before,
-  ts-select > select:focus + ts-md-decorator::after,
-  ts-select > select:focus {
+  lp-select > select:focus + md-decorator::before,
+  lp-select > select:focus + md-decorator::after,
+  lp-select > select:focus {
     color: black;
   }
   /* hide the focus ring in firefox */
-  ts-select > select:focus:-moz-focusring {
+  lp-select > select:focus:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 var(--app-secondary-color);
   }
-  ts-select > [prefix] {
+  lp-select > [prefix] {
     position: absolute;
     left: 0px;
     top: calc(50% - 8px);

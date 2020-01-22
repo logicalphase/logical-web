@@ -1,25 +1,21 @@
-import { HP_HOST } from './config';
-
-import { html, css, unsafeCSS } from 'lit-element';
+import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 
-import { SharedStyles } from './ts-style-shared';
-import { TsTypographyStyle } from './ts-style-typography';
-import { TsLayoutStyle } from './ts-style-layout';
-import { TsGridStyle } from './ts-style-grid';
-import { TsCard } from './ts-style-card';
+import { SharedStyles } from './style-shared';
+import { TypographyStyle } from './style-typography';
+import { LayoutStyle } from './style-layout';
+import { GridStyle } from './style-grid';
+import { Card } from './style-card';
 
-const cdnHost = unsafeCSS(HP_HOST);
-
-class TsSupport extends PageViewElement {
+class Contact extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
-      TsTypographyStyle,
-      TsLayoutStyle,
-      TsGridStyle,
-      TsCard,
+      TypographyStyle,
+      LayoutStyle,
+      GridStyle,
+      Card,
       css`
         :host {
           display: block;
@@ -28,15 +24,16 @@ class TsSupport extends PageViewElement {
 
         /* Smaller than 460 */
 
-        #contactForm  .gfiframe {
+        .gfiframe {
           margin-top: 35px;
+          height: 1350px !important;
         }
 
         h3 {
           padding-top: 20px;
         }
 
-        ts-button > * {
+        lp-button > * {
           display: inline-block;
           box-sizing: border-box;
           border: 2px solid var(--app-secondary-color);
@@ -56,10 +53,20 @@ class TsSupport extends PageViewElement {
           width: 100%;
         }
 
-        ts-input,
-        ts-select,
-        ts-textarea {
+        lp-input,
+        lp-select,
+        lp-textarea {
           width: 100%;
+        }
+
+        .hero .content-set {
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+
+        #site h3.heading4 {
+          margin-top: 0;
+          padding-top: 0;
         }
 
         @media (min-width: 460px) {
@@ -67,7 +74,7 @@ class TsSupport extends PageViewElement {
             margin: 2px 0 0 0;
           }
 
-          .ts-hero .content-set {
+          .hero .content-set {
             margin: 30px 0 30px 0;
           }
 
@@ -78,7 +85,7 @@ class TsSupport extends PageViewElement {
           }
 
           .hero {
-            background: var(--app-reverse-text-color) url('/images/header/ts-care-header-opt.svg')
+            background: var(--app-reverse-text-color) url('/images/header/care-header-opt.svg')
               no-repeat;
             background-size: 320px;
             background-position: 93% 10px;
@@ -88,26 +95,25 @@ class TsSupport extends PageViewElement {
             min-height: 120px;
           }
 
-          .ts-support-body {
+          .contact-body {
             margin-bottom: 24px;
           }
 
-          .ts-support-wrapper {
+          .contact-wrapper {
             background-color: var(--app-light-text-color);
             border-top: 1px solid var(--app-form-border-color);
           }
 
-          .ts-support-inner {
+          .contact-inner {
             max-width: 744px;
             margin: 0 auto;
             padding-top: 30px;
           }
 
-          .ts-support-body h2 {
+          .contact-body h2 {
             margin-bottom: 16px;
           }
-
-          #ts-site .ts-pad-right-4 {
+          #site .pad-right-4 {
             padding-right: 32px;
           }
 
@@ -117,9 +123,9 @@ class TsSupport extends PageViewElement {
           .main-frame.waiting {
             opacity: 0.1;
           }
-          ts-input,
-          ts-select,
-          ts-textarea {
+          lp-input,
+          lp-select,
+          lp-textarea {
             font-size: 1.15rem;
           }
           .billing-address-picker {
@@ -140,6 +146,10 @@ class TsSupport extends PageViewElement {
           .grid > section:not(:first-child) {
             margin-left: 80px;
           }
+          .grid--alternate {
+            grid-column-gap: 38px;
+            grid-template-columns: repeat(12,1fr);
+          }
           .row {
             display: flex;
             align-items: flex-end;
@@ -155,7 +165,7 @@ class TsSupport extends PageViewElement {
           .input-row > *:not(:first-child) {
             margin-left: 8px;
           }
-          label.ts-select-label {
+          label.select-label {
             line-height: 20px;
             color: #ccc;
           }
@@ -168,6 +178,10 @@ class TsSupport extends PageViewElement {
           }
 
           @media (max-width: 767px) {
+            .grid .is-5__large, .grid--alternate .is-5__large {
+              grid-column: span 5 / span 5;
+              grid-auto-rows: auto;
+            }
             .grid {
               display: block;
               margin-top: 0;
@@ -176,7 +190,7 @@ class TsSupport extends PageViewElement {
               margin-left: 0;
             }
 
-            .ts-right {
+            .right {
               float: none !important;
               margin: 24px 30px 5px;
             }
@@ -188,22 +202,26 @@ class TsSupport extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: `Logical Phase Customer Support Form`,
-      description: `Customer support request form. Get in touch with a WordPress professional.`,
+      title: `Contact a WordPress Expert`,
+      description: `WordPress general inquiry form. Get in touch with a WordPress professional.`,
     });
 
     return html`
-      <div class="hypersite-main-content clearfix">
-        <article id="ts-site" class="ts-support">
-          <header class="ts-hero hero">
-            <div class="ts-grid">
-              <div class="ts-grid__column is-7 is-6__large is-1__large--offset">
-                <header class="ts-grid__column is-7 is-6__large is-1__large--offset">
+      <div class="main-content clearfix">
+        <article id="site" class="contact">
+          <header class="hero hero">
+            <div class="grid">
+              <div class="grid__column is-7 is-6__large is-1__large--offset">
+                <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
-                    <h1 class="ts-section-header__eyebrow ts-eyebrow">Customer Support</h1>
-                    <h2 class="ts-display3">Let's solve the issue</h2>
-                    <p class="ts-headline5 ts-why-hyperpress__intro-text">
-                      Please fill out this form to discuss your needs with our customer support team. 
+                    <h1 class="section-header__eyebrow eyebrow">Contact us</h1>
+                    <h2 class="display3">Let's connect</h2>
+                    <p class="headline5 why-hyperpress__intro-text">
+                      Please fill out this form to discuss your needs. If you are a customer
+                      and need technical support, please visit
+                      <a id="technical-support" href="/support/"
+                        >Customer Support</a
+                      >.
                     </p>
                   </div>
                 </header>
@@ -211,27 +229,39 @@ class TsSupport extends PageViewElement {
               <div class="cloud-grid__col is-5"></div>
             </div>
           </header>
-          <div class="ts-support-wrapper delayed-fade-in">
-            <div class="ts-support-inner">
-              <div state="init">
-                <iframe
-                  src="//api.logicalphase.com/gfembed/?f=5"
-                  width="100%"
-                  height="2500"
-                  frameborder="0"
-                  class="gfiframe"
-                ></iframe>
-                <script
-                  src="//api.logicalphase.com/wp-content/plugins/gravity-forms-iframe-master/assets/scripts/gfembed.min.js"
-                  type="text/javascript"
-                ></script>
+          <section class="contact-wrapper delayed-fade-in">
+            <div class="grid--alternate copy__inner copy--two-column">
+              <div class="grid__col is-1__large--offset copy__text is-6 is-5__large">
+                <div state="init">
+                  <iframe
+                    src="//api.logicalphase.com/gfembed/?f=1"
+                    title="Contact form."
+                    width="100%"
+                    height="1000"
+                    frameborder="0"
+                    class="gfiframe"
+                  >
+                  </iframe>
+                  <script
+                    src="//api.logicalphase.com/wp-content/plugins/gravity-forms-iframe-master/assets/scripts/gfembed.min.js"
+                    type="text/javascript"
+                  ></script>
+                </div>
+              </div>
+              <div class="grid__col copy__text is-6 is-5__large">
+                <h3 class="headline4">Control your content</h3>
+                <p>
+                  Logical Phase doesn't capitalize on your content like other services. We don't
+                  use paywalls or advertisements that's for you to decide. Moving your
+                  content is as easy as moving any other self-hosted WordPress site.
+                </p>
               </div>
             </div>
-          </div>
+          </section>
         </article>
       </div>
-      <!-- Show spinner when waiting for the server to repond -->
-    `;
+    <!-- Show spinner when waiting for the server to repond -->
+  `;
   }
 
   static get properties() {
@@ -242,4 +272,4 @@ class TsSupport extends PageViewElement {
     };
   }
 }
-window.customElements.define('ts-support', TsSupport);
+window.customElements.define('lp-contact', Contact);

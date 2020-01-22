@@ -1,8 +1,8 @@
 import { WP_HOST } from './config';
 import { LitElement, html, css } from 'lit-element';
-import { Mail, Twitter, Facebook, Linkedin, Blogger } from './ts-icons.js';
+import { Mail, Twitter, Facebook, Linkedin, Blogger } from './lp-icons.js';
 
-class TSSocial extends LitElement {
+class Social extends LitElement {
   static get styles() {
     return [
       css`
@@ -121,7 +121,8 @@ class TSSocial extends LitElement {
       link: { type: String },
       title: { type: String },
       slug: {type: String },
-      _loaded: { type: Boolean }
+      _loaded: { type: Boolean },
+      placeholder: { type: Object }
     };
   }
 
@@ -151,4 +152,4 @@ class TSSocial extends LitElement {
   }
 }
 
-customElements.define('ts-social', TSSocial);
+customElements.define('lp-social', Social);

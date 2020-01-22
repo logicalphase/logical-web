@@ -1,6 +1,6 @@
 import { css } from 'lit-element';
 
-export const TsWordPressStyles = css`
+export const WordPressStyles = css`
   /*--------------------------------------------------------------
   # Image Captions
   --------------------------------------------------------------*/

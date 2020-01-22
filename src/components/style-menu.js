@@ -250,6 +250,4 @@ export const MenuStyles = css`
     top: 100%;
     z-index: 1000;
   }
-
-
 `;

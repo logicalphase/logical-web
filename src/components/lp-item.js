@@ -2,11 +2,11 @@ import { LitElement, html, css } from 'lit-element';
 import { formatDistance } from 'date-fns/esm';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
-import { Calendar } from './ts-icons.js';
+import { Calendar } from './lp-icons.js';
 
-import './ts-social.js';
+import './lp-social.js';
 
-class TSItem extends LitElement {
+class Item extends LitElement {
   static get styles() {
     return [
       css`
@@ -21,19 +21,19 @@ class TSItem extends LitElement {
           word-spacing: 0.1px;
         }
 
-        .ts-read-more {
+        .lp-read-more {
           padding: 13px 24px;
           background-color: var(--app-reverse-text-color);
         }
-        .ts-read-more a {
+        .lp-read-more a {
           color: var(--app-primary-color);
           text-decoration: none;
         }
-        .ts-read-more .social_container {
+        .lp-read-more .social_container {
           float: right;
           padding: 0px;
         }
-        .ts-blog-meta-calendar svg {
+        .lp-blog-meta-calendar svg {
           vertical-align: bottom;
         }
 
@@ -144,14 +144,14 @@ class TSItem extends LitElement {
           <h3 class="paper-font-headline">${title}</h3>
           ${excerpt}
           <p class="small-print">
-            <i class="ts-blog-meta-calendar social-icon">${Calendar}</i> ${date_prefix +
+            <i class="lp-blog-meta-calendar social-icon">${Calendar}</i> ${date_prefix +
               date +
               date_postfix}
           </p>
           <span class="category">${category}</span>
         </div>
       </a>
-      <div class="ts-read-more">
+      <div class="lp-read-more">
         <a
           aria-label="Read ${title}"
           href="/article/${slug}/"
@@ -161,7 +161,7 @@ class TSItem extends LitElement {
         >
         <div class="social_container">
           <div class="social_share">
-            <ts-social .item="${item}"></ts-social>
+            <lp-social .item="${item}"></lp-social>
           </div>
         </div>
       </div>
@@ -183,4 +183,4 @@ class TSItem extends LitElement {
     );
   }
 }
-window.customElements.define('ts-item', TSItem);
+window.customElements.define('lp-item', Item);

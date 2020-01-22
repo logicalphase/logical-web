@@ -4,26 +4,26 @@ import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 
-import { SharedStyles } from './ts-style-shared';
-import { TsTypographyStyle } from './ts-style-typography';
-import { TsLayoutStyle } from './ts-style-layout';
-import { TsTableStyles } from './ts-style-table';
-import { TsGridStyle } from './ts-style-grid';
-import { TsCard } from './ts-style-card';
-import { TsButtonStyle } from './ts-style-button';
+import { SharedStyles } from './style-shared';
+import { TypographyStyle } from './style-typography';
+import { LayoutStyle } from './style-layout';
+import { TableStyles } from './style-table';
+import { GridStyle } from './style-grid';
+import { Card } from './style-card';
+import { ButtonStyle } from './style-button';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class TSPrivacy extends PageViewElement {
+class Privacy extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
-      TsTypographyStyle,
-      TsLayoutStyle,
-      TsTableStyles,
-      TsGridStyle,
-      TsCard,
-      TsButtonStyle,
+      TypographyStyle,
+      LayoutStyle,
+      TableStyles,
+      GridStyle,
+      Card,
+      ButtonStyle,
       css`
         :host {
           body {
@@ -39,7 +39,7 @@ class TSPrivacy extends PageViewElement {
           display: none;
         }
 
-        .ts-privacy {
+        .privacy {
           margin-right: 0px;
         }
 
@@ -64,20 +64,20 @@ class TSPrivacy extends PageViewElement {
           color: var(--app-secondary-color);
         }
 
-        .ts-content-grid-box h2 {
+        .content-grid-box h2 {
           text-transform: uppercase;
           font-size: 28px;
           font-weight: 400;
           color: var(--app-secondary-color);
         }
-        .ts-content-grid-box h3 {
+        .content-grid-box h3 {
           text-transform: uppercase;
           font-size: 24px;
           color: var(--app-secondary-color);
         }
 
         @media (min-width: 460px) {
-          .ts-privacy {
+          .privacy {
             margin-right: 200px;
           }
 
@@ -110,13 +110,13 @@ class TSPrivacy extends PageViewElement {
             white-space: nowrap;
           }
 
-          .ts-content-grid-box p {
+          .content-grid-box p {
             text-align: left;
             margin-bottom: 16px;
             max-width: 100%;
             margin-right: 24px;
           }
-          .ts-content-grid-box {
+          .content-grid-box {
             min-height: 40px !important;
             text-align: left;
             background-color: var(--app-reverse-text-color);
@@ -136,7 +136,7 @@ class TSPrivacy extends PageViewElement {
           }
         }
         @media (max-width: 460px) {
-          .ts-privacy {
+          .privacy {
             margin-right: 0px;
           }
         }
@@ -152,19 +152,19 @@ class TSPrivacy extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: 'PageSpeed Optimizations - Logical Phase',
-      description: 'About page',
+      title: 'Privacy Statement - Logical Phase',
+      description: 'A full description of our current privacy policy.',
     });
 
     return html`
-      <div class="hypersite-main-content clearfix">
-        <article id="ts-site" class="ts-privacy">
-          <div class="ts-content-wrapper">
-            <section class="content full-bleed-section ts-pad-top-6 ts-pad-bottom-12 ts-home">
+      <div class="main-content clearfix">
+        <article id="site" class="privacy">
+          <div class="content-wrapper">
+            <section class="content full-bleed-section pad-top-6 pad-bottom-12 home">
               <div class="columns">
                 <main class="main fade-in">
                   <header class="privacy-header">
-                    <div class="ts-header-wrapper fade-in">
+                    <div class="header-wrapper fade-in">
                       <h1 class="paper-font-display2 paper-font-light">Privacy Statement</h1>
                       <h2 class="paper-font-title paper-font-light">
                         Privacy is built into our services
@@ -172,7 +172,7 @@ class TSPrivacy extends PageViewElement {
                       <p>Effective date: 25 May 2018</p>
                     </div>
                   </header>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">1. Introduction</h2>
                     <p>
                       We are both
@@ -223,7 +223,7 @@ class TSPrivacy extends PageViewElement {
                       identifying information is compliant with applicable law.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">2. Entities Covered by This Privacy Statement</h2>
                     <p>
                       This privacy statement covers the following web site domains, subdomains, and
@@ -235,7 +235,7 @@ class TSPrivacy extends PageViewElement {
                       <li>GEMServers and gemservers.com</li>
                     </ul>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">3. Legal Authority</h2>
                     <p>
                       We are subject to the laws and regulations of the United States and the State
@@ -252,7 +252,7 @@ class TSPrivacy extends PageViewElement {
                       <a href="https://www.privacyshield.gov/welcome">Privacy Shield Framework</a>.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">4. Types of data we collect</h2>
                     <p>
                       The following situations require us to collect and store information that can
@@ -438,7 +438,7 @@ class TSPrivacy extends PageViewElement {
                       required by law.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">5. How we use the data we collect</h2>
                     <p>The following explains how we use data we collect.</p>
                     <h3 class="text-headline">Use of personally identifying information</h3>
@@ -504,7 +504,7 @@ class TSPrivacy extends PageViewElement {
                       linked back to any personal information.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">
                       6. Where we store personally identifying information
                     </h2>
@@ -586,7 +586,8 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
+                                  />
+                                </svg>
                               ></a>
                             </td>
                           </tr>
@@ -604,8 +605,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -624,8 +626,8 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  /></svg>
+                                </a>
                             </td>
                           </tr>
                           <tr>
@@ -644,8 +646,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -662,8 +665,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -682,8 +686,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -700,15 +705,16 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">
                       7. How we protect personally identifying information
                     </h2>
@@ -820,7 +826,7 @@ class TSPrivacy extends PageViewElement {
                       >.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">8. Sharing of personally identifying information</h2>
                     <p>
                       This Website contains links to other sites that are not owned or controlled by
@@ -874,7 +880,7 @@ class TSPrivacy extends PageViewElement {
                       rest no matter the location.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">
                       9. How long do we store personally identifying information?
                     </h2>
@@ -899,7 +905,7 @@ class TSPrivacy extends PageViewElement {
                       our business entities.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">10. Links to Other Sites</h2>
                     <p>
                       This Website contains links to other sites that are not owned or controlled by
@@ -912,7 +918,7 @@ class TSPrivacy extends PageViewElement {
                       will receive a notification when you leave Logical Phase.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">11. Cookies and similar browser technologies</h2>
                     <p>
                       Our websites only use cookies solely to enable our websites and applications
@@ -920,7 +926,7 @@ class TSPrivacy extends PageViewElement {
                       third party cookies.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">12. Children under the age of 13</h2>
                     <p>
                       Our websites and online services are not directed to children under the age of
@@ -934,7 +940,7 @@ class TSPrivacy extends PageViewElement {
                       permission.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">13. MISC</h2>
                     <p>
                       We take your privacy seriously. We do not sell, lease, or exchange your
@@ -949,7 +955,7 @@ class TSPrivacy extends PageViewElement {
                       servers under Our control.
                     </p>
                   </div>
-                  <div class="ts-content-grid-box">
+                  <div class="content-grid-box">
                     <h2 class="text-headline">13. Third party vendors and partners</h2>
                     <p>
                       We partner with several third party businesses that meet our standards of data
@@ -985,8 +991,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1003,8 +1010,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1021,8 +1029,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1041,8 +1050,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1061,8 +1071,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1081,8 +1092,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1101,8 +1113,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1119,8 +1132,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1139,8 +1153,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1159,8 +1174,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg >
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1177,8 +1193,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg >
+                              </a>
                             </td>
                           </tr>
                           <tr>
@@ -1199,8 +1216,9 @@ class TSPrivacy extends PageViewElement {
                                     fill="var(--app-primary-color)"
                                     d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
                                     title="External link"
-                                  /></svg
-                              ></a>
+                                  />
+                                </svg>
+                              </a>
                             </td>
                           </tr>
                         </tbody>
@@ -1289,4 +1307,4 @@ class TSPrivacy extends PageViewElement {
     `;
   }
 }
-window.customElements.define('ts-privacy', TSPrivacy);
+window.customElements.define('lp-privacy', Privacy);

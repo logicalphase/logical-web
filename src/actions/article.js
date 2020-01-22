@@ -1,4 +1,4 @@
-import { WP_REST_API_HOST, WP_REST_PATH } from '../components/config';
+import { WP_REST_HOST, WP_REST_PATH } from '../components/config';
 
 export const REQUEST_ARTICLE = 'REQUEST_ARTICLE';
 export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
@@ -16,7 +16,7 @@ export const fetchArticle = slug => (dispatch, getState) => {
   } else {
     // fetch article data given the article id.
     // also return a promise to wait for.
-    return fetch(`https://${WP_REST_API_HOST}/${WP_REST_PATH}/posts?slug=${slug}`, {
+    return fetch(`https://${WP_REST_HOST}/${WP_REST_PATH}/posts?slug=${slug}`, {
       //mode: "no-cors" // no-cors, cors, *same-origin
     })
       .then(res => res.json())

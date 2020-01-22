@@ -1,14 +1,14 @@
 import { html, css } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
-import { SharedStyles } from './ts-style-shared';
-import { TsTypographyStyle } from './ts-style-typography';
+import { SharedStyles } from './style-shared';
+import { TypographyStyle } from './style-typography';
 
-class TSView404 extends PageViewElement {
+class View404 extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
-      TsTypographyStyle,
+      TypographyStyle,
       css`
         :host {
           display: block;
@@ -40,4 +40,4 @@ class TSView404 extends PageViewElement {
   }
 }
 
-window.customElements.define('ts-view404', TSView404);
+window.customElements.define('lp-view404', View404);

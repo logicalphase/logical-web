@@ -1,4 +1,4 @@
-import { WP_REST_API_HOST, WP_REST_PATH } from '../components/config';
+import { WP_REST_HOST, WP_REST_PATH } from '../components/config';
 
 export const REQUEST_CATEGORIES = 'REQUEST_CATEGORIES';
 export const RECEIVE_CATEGORIES = 'RECEIVE_CATEGORIES';
@@ -11,7 +11,7 @@ export const fetchCategories = categoryId => (dispatch, getState) => {
   if (shouldFetchCategories(getState(), categoryId)) {
     dispatch(requestCategories(categoryId));
     if (categoryId) {
-      fetch(`https://${WP_REST_API_HOST}/${WP_REST_PATH}/posts?categories=${categoryId}`, {})
+      fetch(`https://${WP_REST_HOST}/${WP_REST_PATH}/posts?categories=${categoryId}`, {})
         .then(res => res.json())
         .then(data => dispatch(receiveCategories(categoryId, data)))
         .catch(() => dispatch(failCategories(categoryId)));

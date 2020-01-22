@@ -1,6 +1,6 @@
 import { css } from 'lit-element';
 
-export const TsTableStyles = css`
+export const TableStyles = css`
   .table {
     width: 100%;
     max-width: 100%;

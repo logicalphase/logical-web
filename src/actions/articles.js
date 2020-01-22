@@ -1,4 +1,4 @@
-import { WP_REST_API_HOST, WP_REST_PATH } from '../components/config';
+import { WP_REST_HOST, WP_REST_PATH } from '../components/config';
 
 export const REQUEST_ARTICLES = 'REQUEST_ARTICLES';
 export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES';
@@ -10,7 +10,7 @@ export const fetchArticles = query => (dispatch, getState) => {
   if (shouldFetchArticles(getState(), query)) {
     dispatch(requestArticles(query));
     if (query) {
-      fetch(`https://${WP_REST_API_HOST}/${WP_REST_PATH}/${query}/?per_page=10`, {})
+      fetch(`https://${WP_REST_HOST}/${WP_REST_PATH}/${query}/?per_page=10`, {})
         .then(res => res.json())
         .then(data => dispatch(receiveArticles(query, data)))
         .catch(() => dispatch(failArticles(query)));
