@@ -227,7 +227,7 @@ class Home extends PageViewElement {
             background: url('/images/header/homepage-bg-left.svg') no-repeat;
             position: absolute;
             left: -112px;
-            top: 64px;
+            top: -30px;
             z-index: 0;
           }
         }
@@ -244,7 +244,7 @@ class Home extends PageViewElement {
     return html`
       <div class="main-content clearfix">
         <article id="site" class="home">
-          <header class="hero hero">
+          <header class="hero">
             <div class="grid">
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
@@ -681,7 +681,7 @@ class Home extends PageViewElement {
                         />
                         <a
                           class="link card__link card__link-text"
-                          href="${HP_HOST}hosting/"
+                          href="/hosting/"
                           track-type="navigateTo"
                           track-name="solution"
                           track-metadata-eventdetail="workloadMigration"
@@ -777,7 +777,7 @@ class Home extends PageViewElement {
                         />
                         <a
                           class="link card__link card__link-text"
-                          href="${HP_HOST}emergency/"
+                          href="/emergency/"
                           track-type="navigateTo"
                           track-name="solution"
                           track-metadata-eventdetail="emergencyResponse"
@@ -825,7 +825,7 @@ class Home extends PageViewElement {
                         />
                         <a
                           class="link card__link card__link-text"
-                          href="${HP_HOST}care/"
+                          href="/care/"
                           track-type="navigateTo"
                           track-name="solution"
                           track-metadata-eventdetail="wordpressRelocation"
@@ -865,7 +865,7 @@ class Home extends PageViewElement {
                         <h2 class="card__eyebrow eyebrow">Professional Consulting</h2>
                         <a
                           class="link card__link card__link-text"
-                          href="${HP_HOST}care/"
+                          href="/care/"
                           track-type="navigateTo"
                           track-name="solution"
                           track-metadata-eventdetail="wordpressRelocation"

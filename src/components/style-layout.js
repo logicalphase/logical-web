@@ -140,19 +140,19 @@ export const LayoutStyle = css`
     float: left;
     width: 100%;
   }
-  .hypersite-main-content {
+  .main-content {
     padding: 0 24px;
   }
 
-  .hypersite-full-width-page .hypersite-main-content {
+  .full-width-page .main-content {
     margin-bottom: 0;
   }
 
-  .hypersite-full-width-page .hypersite-main-content {
+  .full-width-page .main-content {
     margin: 0 auto;
   }
 
-  .hypersite-full-width-page .hypersite-banner {
+  .full-width-page .banner {
     margin-top: 0;
   }
 
@@ -241,7 +241,7 @@ export const LayoutStyle = css`
       margin: 0;
       width: 100%;
     }
-    .hypersite-main-content {
+    .main-content {
       padding: 0 40px;
     }
     .hero .content-set hr {
@@ -276,7 +276,7 @@ export const LayoutStyle = css`
       margin: 0;
       width: 100%;
     }
-    .hypersite-main-content {
+    .main-content {
       padding: 0 80px;
     }
     .hero img.hero__image--scaled {

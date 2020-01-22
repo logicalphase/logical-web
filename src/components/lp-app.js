@@ -204,7 +204,7 @@ class App extends connect(store)(LitElement) {
         }
 
         .main-content {
-          padding-top: 59px;
+          padding-top: 55px;
           min-height: 100vh;
         }
 
@@ -428,10 +428,6 @@ class App extends connect(store)(LitElement) {
 
           ul.nav-right {
             width: 50%;
-          }
-
-          .main-content {
-            padding-top: 96px;
           }
 
           /* The drawer button isn't shown in the wide layout, so we don't

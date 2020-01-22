@@ -209,7 +209,7 @@ class Contact extends PageViewElement {
     return html`
       <div class="main-content clearfix">
         <article id="site" class="contact">
-          <header class="hero hero">
+          <header class="hero">
             <div class="grid">
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
