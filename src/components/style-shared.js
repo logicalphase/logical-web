@@ -396,7 +396,7 @@ export const SharedStyles = css`
     }
 
     .hero .content-set {
-      margin: 80px 14px 40px 14px;
+      margin: 80px 14px 40px -14px;
     }
 
     .grid-wrapper-standard {

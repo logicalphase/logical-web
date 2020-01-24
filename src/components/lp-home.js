@@ -156,6 +156,12 @@ class Home extends PageViewElement {
         }
 
         @media (min-width: 460px) {
+          #site .display3 {
+            font-size: 46px;
+            letter-spacing: -0.5px;
+            line-height: 66px;
+          }
+
           .wordpress-animated-bg {
             display: inline-block;
             position: relative;
@@ -195,13 +201,18 @@ class Home extends PageViewElement {
         }
 
         @media only screen and (min-width: 1024px) {
+          #site .display3 {
+            font-size: 46px;
+            letter-spacing: -0.5px;
+            line-height: 66px;
+          }
           .wordpress-animated-bg {
             display: inline-block;
             position: relative;
             top: 34px;
             right: 0px;
-            min-width: auto;
-            min-height: 500px;
+            min-width: 450px;
+            min-height: 450px;
           }
 
           .section-right-image {
