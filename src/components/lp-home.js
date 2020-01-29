@@ -704,8 +704,8 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        Supercharged fully managed WordPress hosting globally delivered to any
-                        screen.
+                        Supercharged fully managed, optimized WordPress hosting globally delivered to any
+                        screen. 
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">

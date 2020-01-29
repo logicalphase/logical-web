@@ -204,7 +204,7 @@ class App extends connect(store)(LitElement) {
         }
 
         .main-content {
-          padding-top: 55px;
+          padding-top: 20px;
           min-height: 100vh;
         }
 
@@ -414,7 +414,7 @@ class App extends connect(store)(LitElement) {
           .brand-site-logo {
             display: block;
             height: auto;
-            width: 161px;
+            width: 168px;
             margin-left: 0px;
           }
 
@@ -429,6 +429,12 @@ class App extends connect(store)(LitElement) {
           ul.nav-right {
             width: 50%;
           }
+
+          .main-content {
+            padding-top: 55px;
+          }
+
+
 
           /* The drawer button isn't shown in the wide layout, so we don't
           need to offset the title */
@@ -461,8 +467,8 @@ class App extends connect(store)(LitElement) {
               <img
                 rel="dns-prefetch"
                 class="brand-site-logo"
-                src="/images/hyperpress-logo-254x46.png"
-                alt="${appTitle}"
+                src="/images/logicalphase-default-logo.svg"
+                alt="${appTitle} logo"
               />
             </a>
             <div class="title" main-title>
