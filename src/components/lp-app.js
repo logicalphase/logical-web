@@ -467,7 +467,7 @@ class App extends connect(store)(LitElement) {
               <img
                 rel="dns-prefetch"
                 class="brand-site-logo"
-                src="/images/logicalphase-default-logo.svg"
+                src="https://storage.googleapis.com/logicalphase.com/assets/c94fa1b3-logicalphase-default-logo.svg"
                 alt="${appTitle} logo"
               />
             </a>

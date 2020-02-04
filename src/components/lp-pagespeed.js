@@ -1,4 +1,4 @@
-import { CDN_HOST_URL } from './config';
+import { CDN_HOST_URL, CDN_BUCKET_NAME } from './config';
 
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
@@ -141,7 +141,7 @@ class Pagespeed extends PageViewElement {
                   >
                     <img
                       class="content-grid-image"
-                      src="https://hyperpress.app/images/content/pagespeed-ms-to-dollars-200x200-opt.svg"
+                      src="https://logicalphase.com/images/content/pagespeed-ms-to-dollars-200x200-opt.svg"
                       alt="WordPress PageSpeed Optimizations"
                     />
                   </div>
@@ -185,7 +185,7 @@ class Pagespeed extends PageViewElement {
                   >
                     <img
                       class="content-grid-image-lower extra-margin"
-                      src="/images/content/pagespeed-screen-200x200-opt.svg"
+                      src="https://logicalphase.com/images/content/pagespeed-ms-to-dollars-200x200-opt.svg"
                       alt="When it comes to page loading, time really is money!"
                     />
                   </div>
