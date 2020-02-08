@@ -108,6 +108,11 @@ class Blog extends connect(store)(PageViewElement) {
           text-align: center;
         }
 
+        #site .headline4 {
+          font-size: 18px;
+          font-weight: 400;
+        }
+
         .sidebar {
           display: none;
         }
@@ -208,6 +213,8 @@ class Blog extends connect(store)(PageViewElement) {
           }
           #site .headline4 {
             padding-right: 0;
+            font-size: 22px;
+            font-weight: 400;
           }
           .sticky {
             display: block;
@@ -237,7 +244,7 @@ class Blog extends connect(store)(PageViewElement) {
     }
 
     updateMetadata({
-      title: `Logical Phase Articles`,
+      title: `Logical Articles`,
       description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
     });
 
@@ -251,7 +258,7 @@ class Blog extends connect(store)(PageViewElement) {
                   <div class="fade-in content-set">
                     <h1 class="section-header__eyebrow eyebrow">Resources for WordPress</h1>
                     <h2 class="display3">Logical Phase Blog</h2>
-                    <p class="headline4 why-google__intro-text">
+                    <p class="headline4 intro-text">
                       Articles written by WordPress professionals for site owners, developers, and
                       designers.
                     </p>
@@ -262,65 +269,65 @@ class Blog extends connect(store)(PageViewElement) {
             </div>
           </header>
           <div class="content-wrapper">
-            <section
-              class="content background-grey full-bleed-section pad-top-6 pad-bottom-12 home"
-            >
-              <div class="columns">
-                <main class="main">
-                  <div class="content-grid-box" ?hidden="${!_query}">
-                    ${repeat(
-                      _data,
-                      item => html`
-                        <div class="blog-list-item">
-                          <div class="flex-hover-card mdc-elevation--z3">
-                            <lp-item .item="${item}"></lp-item>
-                          </div>
+          <section
+            class="content background-grey full-bleed-section pad-top-6 pad-bottom-12 home"
+          >
+            <div class="columns">
+              <main class="main">
+                <div class="content-grid-box" ?hidden="${!_query}">
+                  ${repeat(
+                    _data,
+                    item => html`
+                      <div class="blog-list-item">
+                        <div class="flex-hover-card mdc-elevation--z3">
+                          <lp-item .item="${item}"></lp-item>
                         </div>
-                      `,
-                    )}
+                      </div>
+                    `,
+                  )}
+                </div>
+              </main>
+              <aside class="sidebar mdc-elevation--z3">
+                <div class="nav">
+                  <div class="sticky">
+                    <ul class="fade-in right-side-nav l-space-bottom-5">
+                      <li>
+                        <h3
+                          class="l-pad-right-2 l-pad-left-2 text-uppercase"
+                          id="more-about-serverless"
+                        >
+                          Blog Categories
+                        </h3>
+                      </li>
+                      ${repeat(
+                        _data,
+                        item => html`
+                          <li>
+                            <a
+                              id="${item.id}"
+                              track-type="category${item.categories_names}"
+                              track-name="blog-page"
+                              track-metadata-position="body"
+                              href="/category/${item.categories}"
+                              >${item.categories_names}</a
+                            >
+                          </li>
+                        `,
+                      )}
+                    </ul>
                   </div>
-                </main>
-                <aside class="sidebar mdc-elevation--z3">
-                  <div class="nav">
-                    <div class="sticky">
-                      <ul class="fade-in right-side-nav l-space-bottom-5">
-                        <li>
-                          <h3
-                            class="l-pad-right-2 l-pad-left-2 text-uppercase"
-                            id="more-about-serverless"
-                          >
-                            Blog Categories
-                          </h3>
-                        </li>
-                        ${repeat(
-                          _data,
-                          item => html`
-                            <li>
-                              <a
-                                id="${item.id}"
-                                track-type="category${item.categories_names}"
-                                track-name="blog-page"
-                                track-metadata-position="body"
-                                href="/category/${item.categories}"
-                                >${item.categories_names}</a
-                              >
-                            </li>
-                          `,
-                        )}
-                      </ul>
-                    </div>
-                  </div>
-                </aside>
-              </div>
-            </section>
-            <lp-offline
-              ?hidden="${!_showOffline}"
-              @refresh="${() => store.dispatch(refreshPage())}"
-            ></lp-offline>
-          </div>
-        </article>
-      </div>
-    `;
+                </div>
+              </aside>
+            </div>
+          </section>
+          <lp-offline
+            ?hidden="${!_showOffline}"
+            @refresh="${() => store.dispatch(refreshPage())}"
+          ></lp-offline>
+        </div>
+      </article>
+    </div>
+  `;
   }
   static get properties() {
     return {

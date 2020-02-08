@@ -235,14 +235,7 @@ export const SharedStyles = css`
     max-width: 1024px;
   }
 
-  .full-bleed-section,
-  #social-footer.full-bleed-section,
-  .max-width-standard {
-    margin-left: -10000px;
-    margin-right: -10000px;
-    padding-left: 10000px;
-    padding-right: 10000px;
-  }
+
 
   .background-grey {
     background: var(--app-secondary-background-color);
@@ -347,8 +340,8 @@ export const SharedStyles = css`
   }
 
   .hero .content-set {
-    margin: 50px 0 40px 0;
-    padding-bottom: 26px;
+    margin: 50px 0 0 0;
+    padding-bottom: 16px;
   }
 
   .section--border {
@@ -437,6 +430,14 @@ export const SharedStyles = css`
     .content-grid-image-lower {
       padding-bottom: 34px;
       padding-top: 56px;
+    }
+    .full-bleed-section,
+    #social-footer.full-bleed-section,
+    .max-width-standard {
+      margin-left: -10000px;
+      margin-right: -10000px;
+      padding-left: 10000px;
+      padding-right: 10000px;
     }
   }
 

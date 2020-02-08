@@ -185,7 +185,7 @@ class Pagespeed extends PageViewElement {
                   >
                     <img
                       class="content-grid-image-lower extra-margin"
-                      src="https://logicalphase.com/images/content/pagespeed-ms-to-dollars-200x200-opt.svg"
+                      src="https://logicalphase.com/images/content/pagespeed-screen-200x200-opt.svg"
                       alt="When it comes to page loading, time really is money!"
                     />
                   </div>

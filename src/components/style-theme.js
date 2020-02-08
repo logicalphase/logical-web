@@ -36,7 +36,7 @@ export const Theme = css`
     --app-header-selected-color: var(--app-primary-color);
 
     /* App Footer */
-    --app-footer-primary-background-color: var(--app-primary-icon-color);
+    --app-footer-primary-background-color: #313131;
     --app-footer-secondary-background-color: #5f6368;
     --app-footer-text-color: var(--app-reverse-text-color);
 

@@ -65,7 +65,7 @@
     // https://bugs.chromium.org/p/chromium/issues/detail?id=946537 for details
     //  
     // This should be removed for production to avoid negative performance impact.
-    // delete Document.prototype.adoptedStyleSheets;
+    delete Document.prototype.adoptedStyleSheets;
 
     // Load and register pre-caching Service Worker
     if ('serviceWorker' in navigator) {

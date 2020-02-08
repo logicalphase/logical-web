@@ -48,7 +48,7 @@ class Social extends LitElement {
           padding: 3px;
         }
         .social-icon {
-          fill: var(--app-primary-icon-color);
+          fill: var(--app-primary-text-thin-color);
           padding-left: 7px;
           cursor: pointer;
         }

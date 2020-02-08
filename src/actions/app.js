@@ -1,5 +1,3 @@
-import { updateMetadata } from 'pwa-helpers/metadata.js';
-
 export const UPDATE_PAGE = 'UPDATE_PAGE';
 export const UPDATE_OFFLINE = 'UPDATE_OFFLINE';
 export const UPDATE_DRAWER_STATE = 'UPDATE_DRAWER_STATE';
@@ -20,15 +18,16 @@ export const navigate = location => dispatch => {
   // post id is in the path: /article/{articleSlug}
   const articleSlug = parts[1];
   const categoryId = parts[1];
+  const searchTerms = parts[1];
 
   //let query = 'Article';
   let query = 'posts';
 
-  dispatch(loadPage(page, query, articleSlug, categoryId));
+  dispatch(loadPage(page, query, articleSlug, categoryId, searchTerms));
   dispatch(updateDrawerState(false));
 };
 
-const loadPage = (page, query, articleSlug, categoryId) => async (dispatch, getState) => {
+const loadPage = (page, query, articleSlug, categoryId, searchTerms) => async (dispatch, getState) => {
   let module;
   switch (page) {
     case 'home':
@@ -38,16 +37,16 @@ const loadPage = (page, query, articleSlug, categoryId) => async (dispatch, getS
       dispatch(module.fetchArticles(query));
       break;
     case 'category':
-        module = await import('../components/lp-category');
-        dispatch(module.fetchCategories(categoryId));
-        break;
+      module = await import('../components/lp-category');
+      dispatch(module.fetchCategories(categoryId));
+      break;
+    case 'search':
+      module = await import('../components/lp-search');
+      dispatch(module.fetchSearchResults(searchTerms));
+      break;
     case 'article':
       module = await import('../components/lp-article');
       await dispatch(module.fetchArticle(articleSlug));
-      updateMetadata({
-        title: `Logical Phase Blog`,
-        description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
-      });
       if (isFetchArticleFailed(getState().article)) {
         page = '404';
       }
@@ -99,6 +98,7 @@ export const refreshPage = () => (dispatch, getState) => {
       state.articles && state.articles.query,
       state.article && state.article.slug,
       state.categories && state.categories.categoryId,
+      state.search_results && state.search_results.searchTerms
     ),
   );
 };

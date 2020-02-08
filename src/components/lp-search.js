@@ -1,12 +1,12 @@
-import { CDN_HOST_URL, HP_HOST } from './config';
+import { CDN_HOST_URL } from './config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
+import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import { until } from 'lit-html/directives/until.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 
 import { repeat } from 'lit-html/directives/repeat.js';
-import { updateMetadata } from 'pwa-helpers/metadata.js';
 
 import './lp-item.js';
 import './lp-offline.js';
@@ -14,13 +14,13 @@ import './lp-offline.js';
 // This element is connected to the redux store.
 import { store } from '../store.js';
 
-import { fetchCategories } from '../actions/categories.js';
+import { fetchSearchResults } from '../actions/search.js';
 import { refreshPage } from '../actions/app.js';
-import { categories, itemListSelector } from '../reducers/categories.js';
+import { search_results, itemListSelector } from '../reducers/search.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
-  categories,
+  search_results,
 });
 
 import { SharedStyles } from './style-shared';
@@ -33,7 +33,7 @@ import { Theme } from './style-theme';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class Categories extends connect(store)(PageViewElement) {
+class Search extends connect(store)(PageViewElement) {
   static get styles() {
     return [
       ButtonStyle,
@@ -88,7 +88,7 @@ class Categories extends connect(store)(PageViewElement) {
           justify-items: left;
         }
 
-        .category-list-item {
+        .blog-list-item {
           margin-bottom: 24px;
         }
 
@@ -165,22 +165,22 @@ class Categories extends connect(store)(PageViewElement) {
           }
         }
 
-        .category-list-item .flex-hover-card:nth-child(0) {
+        .blog-list-item .flex-hover-card:nth-child(0) {
           animation-delay: 0s;
           animation: FadeIn 0.5s ease;
           animation-fill-mode: both;
         }
 
-        .category-list-item .flex-hover-card:nth-child(1) {
+        .blog-list-item .flex-hover-card:nth-child(1) {
           animation-delay: 1.6s;
           animation: FadeIn 0.5s ease;
           animation-fill-mode: both;
         }
 
-        .category-list-item .flex-hover-card:nth-child(3) {
+        .blog-list-item .flex-hover-card:nth-child(3) {
           animation-delay: 1.8s;
         }
-        .category-list-item .flex-hover-card:nth-child(4) {
+        .blog-list-item .flex-hover-card:nth-child(4) {
           animation-delay: 2.6s;
         }
 
@@ -189,7 +189,7 @@ class Categories extends connect(store)(PageViewElement) {
             background: var(--app-reverse-text-color) url('/images/header/design-header-opt.svg')
               no-repeat;
             background-size: 280px;
-            background-position: 90% 60px;
+            background-position: 90% 34px;
           }
           .content-wrapper {
             padding: 0;
@@ -213,8 +213,6 @@ class Categories extends connect(store)(PageViewElement) {
           }
           #site .headline4 {
             padding-right: 0;
-            font-size: 22px;
-            font-weight: 400;
           }
           .sticky {
             display: block;
@@ -225,8 +223,8 @@ class Categories extends connect(store)(PageViewElement) {
   }
 
   render() {
-    const { _categoryId, _data, _showOffline, category  } = this;
-    
+    const { _searchTerms, _data, _showOffline } = this;
+
     // Don't render if there is no item.
     if (_data) {
       until(
@@ -238,29 +236,28 @@ class Categories extends connect(store)(PageViewElement) {
     } else {
       return html`
         <p class="loader" style="padding-left: 34px;">
-          An error occurred while retrieving category list. Please reload.
+          An error occurred while retrieving blog list. Please reload.
         </p>
       `;
     }
+
     updateMetadata({
-      title: `Logical Phase Blog Categories`,
-      description: `WordPress How to's, tutorials, and pro tips to get the most from your site`,
+      title: `Search Logical Phase`,
+      description: `Search for services, how to's, tutorials, and pro tips to get the most from your site`,
     });
 
     return html`
       <div class="main-content clearfix">
-        <article id="site" class="category">
+        <article id="site" class="search">
           <header class="hero">
             <div class="grid">
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
-                    <h1 class="section-header__eyebrow eyebrow">Resources for WordPress by Category</h1>
-                    <h2 class="display3">
-                      Blog Category: ${this._data.map(item => html`<span>${item.categories_names}</a></span>`)}
-                    </h2>
+                    <h1 class="section-header__eyebrow eyebrow">Search Results</h1>
+                    <h2 class="display3">Show search results</h2>
                     <p class="headline4 why-google__intro-text">
-                      Blog articles from our WordPress and hosting engineers at Logical Phase.
+                      Looking for something? 
                     </p>
                   </div>
                 </header>
@@ -274,11 +271,11 @@ class Categories extends connect(store)(PageViewElement) {
             >
               <div class="columns">
                 <main class="main">
-                  <div class="content-grid-box" ?hidden="${!_categoryId}">
+                  <div class="content-grid-box" ?hidden="${!_searchTerms}">
                     ${repeat(
                       _data,
                       item => html`
-                        <div class="category-list-item">
+                        <div class="blog-list-item">
                           <div class="flex-hover-card mdc-elevation--z3">
                             <lp-item .item="${item}"></lp-item>
                           </div>
@@ -296,7 +293,7 @@ class Categories extends connect(store)(PageViewElement) {
                             class="l-pad-right-2 l-pad-left-2 text-uppercase"
                             id="more-about-serverless"
                           >
-                            Blog Category
+                            Blog Categories
                           </h3>
                         </li>
                         ${repeat(
@@ -306,7 +303,7 @@ class Categories extends connect(store)(PageViewElement) {
                               <a
                                 id="${item.id}"
                                 track-type="category${item.categories_names}"
-                                track-name="category-page"
+                                track-name="search-page"
                                 track-metadata-position="body"
                                 href="/category/${item.categories}"
                                 >${item.categories_names}</a
@@ -331,20 +328,19 @@ class Categories extends connect(store)(PageViewElement) {
   }
   static get properties() {
     return {
-      _categoryId: { type: String },
+      _searchTerms: { type: String },
       _data: { type: Array },
       _showOffline: { type: Boolean },
-      _categories_names: { type: String }
     };
   }
 
   // This is called every time something is updated in the store.
   stateChanged(state) {
-    this._categoryId = state.categories.categoryId;
+    this._searchTerms = state.search_results.searchTerms;
     this._data = itemListSelector(state);
-    this._showOffline = state.app.offline && state.categories.failure;
+    this._showOffline = state.app.offline && state.search_results.failure;
   }
 }
-window.customElements.define('lp-category', Categories);
+window.customElements.define('lp-search', Search);
 
-export { fetchCategories, refreshPage };
+export { fetchSearchResults, refreshPage };

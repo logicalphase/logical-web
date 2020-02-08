@@ -1,6 +1,6 @@
 import { HP_HOST } from './config';
 
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, property, html, css } from 'lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 
 import './lp-home.js';
@@ -25,6 +25,7 @@ import { navigate, updateOffline, updateDrawerState, updateLayout } from '../act
 import { Theme } from './style-theme';
 import { MenuStyles } from './style-menu';
 import { ButtonStyle } from './style-button';
+import { SearchIcon } from './lp-icons';
 
 class App extends connect(store)(LitElement) {
   static get styles() {
@@ -32,6 +33,7 @@ class App extends connect(store)(LitElement) {
       Theme,
       MenuStyles,
       ButtonStyle,
+      SearchIcon,
       css`
         /*--------------------------------------------------------------
       # Accessibility
@@ -112,8 +114,89 @@ class App extends connect(store)(LitElement) {
         }
 
         .cta-header {
+          background: var(--app-secondary-background-color);
           font-size: 14px;
           margin-right: 24px;
+          padding: 0px 36px 0px 14px;
+          border: solid 1px var(--app-form-border-color);
+          -webkit-border-radius: 10em;
+          -moz-border-radius: 10em;
+          border-radius: 10em;
+        }
+
+        input[type='search'] {
+          background: var(--app-secondary-background-color);
+          padding: 5px 12px 5px 10px;
+          width: 150pxx;
+          margin-top: 6px;
+          margin-bottom: 14px;
+
+        }
+
+        input[type='search'] {
+          outline: none;
+          box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          -webkit-appearance: textfield;
+          -webkit-box-sizing: content-box;
+          font-family: inherit;
+          font-size: 1rem;
+        }
+
+        .cta-header:focus-within {
+          background-color: var(--app-reverse-text-color);
+          -webkit-box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
+          -moz-box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
+          box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
+        }
+
+        input::-webkit-search-decoration,
+        input::-webkit-search-cancel-button {
+          display: none;
+        }
+
+        .search-btn {
+          background: var(--app-reverse-text-color);
+          border: 1px solid var(--app-primary-icon-color);
+          fill: var(--app-primary-icon-color);
+          cursor: pointer;
+          width:36px;
+          height: 36px;
+          position: absolute;
+          top: 25px;
+          right: 24px;
+          padding: 5px;
+        }
+
+        .search-btn:hover {
+          background: var(--app-primary-icon-color);
+          fill: var(--app-reverse-text-color);
+        }
+
+        input[type='search'] {
+          background: var(--app-secondary-background-color);
+          padding: 8px 12px 8px 8px;
+          width: 220px;
+          margin-top: 14px;
+          margin-bottom: 14px;
+          border-top: 1px solid var(--app-form-border-color);
+          border-right: 0px solid var(--app-form-border-color);
+          border-left: 1px solid var(--app-form-border-color);
+          border-bottom: 1px solid var(--app-form-border-color);
+        }
+
+        input[type='search']:focus {
+          background-color: var(--app-reverse-text-color);
+        }
+
+        input:-moz-placeholder,
+        input::-webkit-input-placeholder {
+          color: var(--app-footer-secondary-background-color);
+        }
+
+        input:-moz-placeholder:focus,
+        input::-webkit-input-placeholder:focus {
+          color: var(--app-form-text-color);
         }
 
         .toolbar-top {
@@ -151,16 +234,6 @@ class App extends connect(store)(LitElement) {
         .toolbar-list > a[selected] {
           color: var(--app-header-selected-color);
           border-bottom: 4px solid var(--app-header-selected-color);
-        }
-
-        .search-btn {
-          background: none;
-          border: none;
-          fill: var(--app-header-text-color);
-          cursor: pointer;
-          width: 44px;
-          margin-left: -20px;
-          margin-right: 10px;
         }
 
         /* 
@@ -220,9 +293,6 @@ class App extends connect(store)(LitElement) {
         .footer-linkbox-cloud {
           background-color: var(--app-footer-primary-background-color);
         }
-        .footer-linkboxes-all-backup {
-          background: var(--app-footer-primary-background-color);
-        }
 
         .footer-linkboxes > nav::before {
           background: var(--app-footer-primary-background-color);
@@ -263,11 +333,7 @@ class App extends connect(store)(LitElement) {
 
         .footer-linkboxes-all-backup,
         .footer-linkbox-cloud {
-          background-color: var(--app-footer-primary-background-color) !important;
-        }
-
-        .footer-linkboxes-all-backup {
-          background: var(--app-footer-primary-background-color);
+          background-color: var(--app-footer-primary-background-color);
         }
 
         .footer-linkboxes {
@@ -307,59 +373,7 @@ class App extends connect(store)(LitElement) {
           margin-right: 16px;
         }
 
-        input[type='search'] {
-          outline: none;
-        }
 
-        input[type='search'] {
-          box-sizing: content-box;
-          -moz-box-sizing: content-box;
-          -webkit-appearance: textfield;
-          -webkit-box-sizing: content-box;
-          font-family: inherit;
-          font-size: 1rem;
-        }
-
-        input::-webkit-search-decoration,
-        input::-webkit-search-cancel-button {
-          display: none;
-        }
-
-        .search-icon {
-          fill: var(--app-primary-icon-color);
-        }
-
-        input[type='search'] {
-          background: var(--app-secondary-background-color) url('/images/bg/icon-search.svg')
-            no-repeat 7px right;
-          border: solid 1px var(--app-form-border-color);
-          padding: 7px 12px 7px 34px;
-          width: 230px;
-          margin-top: 6px;
-          margin-bottom: 14px;
-          -webkit-border-radius: 10em;
-          -moz-border-radius: 10em;
-          border-radius: 10em;
-        }
-
-        input[type='search']:focus {
-          width: 230px;
-          background-color: var(--app-reverse-text-color);
-          border-color: var(--app-primary-color);
-          -webkit-box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
-          -moz-box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
-          box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
-        }
-
-        input:-moz-placeholder,
-        input::-webkit-input-placeholder {
-          color: var(--app-footer-secondary-background-color);
-        }
-
-        input:-moz-placeholder:focus,
-        input::-webkit-input-placeholder:focus {
-          color: var(--app-form-text-color);
-        }
 
         .brand-site-logo {
           display: block;
@@ -389,22 +403,29 @@ class App extends connect(store)(LitElement) {
           }
 
           input[type='search'] {
-            background: var(--app-secondary-background-color) url('/images/bg/icon-search.svg')
-              no-repeat right 7px;
-            border: solid 1px var(--app-form-border-color);
-            padding: 7px 40px 7px 18px;
             width: 140px;
             margin-top: 0;
             margin-bottom: 0;
-            -webkit-border-radius: 10em;
-            -moz-border-radius: 10em;
-            border-radius: 10em;
+            border: none;
+            padding: 6px 5px 6px 5px;
             -webkit-transition: all 0.5s;
             -moz-transition: all 0.5s;
             transition: all 0.5s;
           }
           input[type='search']:focus {
             width: 330px;
+          }
+
+          .search-btn {
+            background: none;
+            border: none;
+            fill: var(--app-primary-icon-color);
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 6px;
+            right: 36px;
           }
 
           .masthead {
@@ -434,7 +455,18 @@ class App extends connect(store)(LitElement) {
             padding-top: 55px;
           }
 
+          nav.full-site-width {
+            background-color: #212121 !important;
+          }
 
+          .footer-linkboxes > nav::before {
+            background-color:  var(--app-footer-primary-background-color) !important;
+            color: var(--app-secondary-background-color);
+            content: "Logical Phase";
+            display: block;
+            min-height: 73px;
+            margin: 0px 24px;
+          }
 
           /* The drawer button isn't shown in the wide layout, so we don't
           need to offset the title */
@@ -447,7 +479,7 @@ class App extends connect(store)(LitElement) {
   }
   
   render() {
-    const { appTitle, _page, _offline, _drawerOpened, _snackbarOpened } = this;
+    const { appTitle, _page, _offline, _drawerOpened, _snackbarOpened, _searchTerms, _searchAction } = this;
 
     updateMetadata({
       title: `Digital Experience Platform by Logical Phase Solutions`,
@@ -467,7 +499,7 @@ class App extends connect(store)(LitElement) {
               <img
                 rel="dns-prefetch"
                 class="brand-site-logo"
-                src="https://storage.googleapis.com/logicalphase.com/assets/c94fa1b3-logicalphase-default-logo.svg"
+                src="https://logicalphase.com/images/logicalphase-logo.svg"
                 alt="${appTitle} logo"
               />
             </a>
@@ -475,8 +507,21 @@ class App extends connect(store)(LitElement) {
               <span class="site-name">${appTitle}</span>
             </div>
             <div class="cta-header toolbar-list">
-              <form style="float:right" action="${HP_HOST}">
-                <input type="search" aria-label="Search box" placeholder="Search" />
+              <form class="header-search" style="float:right" name="toolbar-search" action="/search/wordpress">
+                <input 
+                  class="search-field" 
+                  type="search" 
+                  aria-label="Search box" 
+                  placeholder="Search..." 
+                  value="" 
+                />
+                <button
+                  class="search-btn"
+                  title="Search"
+                  @click="${() => this._getValueFromSearchField() }"
+                >
+                  ${SearchIcon}
+                </button>
               </form>
             </div>
             <button
@@ -525,9 +570,24 @@ class App extends connect(store)(LitElement) {
           ${appTitle}
         </app-toolbar>
         <nav class="drawer-list">
-          <form>
-            <input type="search" tabindex="-1" placeholder="Search" />
+          <div class="search-wrapper">
+          <form class="header-search-drawer" name="toolbar-search-drawer" action="/search/wordpress">
+            <input 
+              class="search-field-drawer" 
+              type="search" 
+              aria-label="Search box" 
+              placeholder="Search..." 
+              value="" 
+            />
+            <button
+              class="search-btn"
+              title="Search"
+              @click="${() => this._getValueFromSearchFieldDrawer() }"
+            >
+              ${SearchIcon}
+            </button>
           </form>
+          </div>
           <a ?selected="${_page === 'home'}" href="/">Home</a>
           <a class="submenu" ?selected="${_page === 'hosting'}" href="/hosting">Hosting</a>
           <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">Performance</a>
@@ -556,6 +616,7 @@ class App extends connect(store)(LitElement) {
         <lp-category class="page" ?active="${_page === 'category'}"></lp-category>
         <lp-article class="page" ?active="${_page === 'article'}"></lp-article>
         <lp-contact class="page" ?active="${_page === 'contact'}"></lp-contact>
+        <lp-search class="page" ?active="${_page === 'search'}"></lp-search>
         <lp-support class="page" ?active="${_page === 'support'}"></lp-support>
         <lp-view404 class="page" ?active="${_page === '404'}"></lp-view404>
       </main>
@@ -628,6 +689,15 @@ class App extends connect(store)(LitElement) {
       },
       dropdownList: {
         type: String,
+      },
+      searchFieldValue: {
+        type: String,
+      },
+      searchTerms: {
+        type: Object,
+      },
+      _searchAction: {
+        type: Object,
       }
     };
   }
@@ -645,6 +715,7 @@ class App extends connect(store)(LitElement) {
     installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`, matches =>
       store.dispatch(updateLayout(matches)),
     );
+    
     this.removeAttribute('unresolved');
   }
 
@@ -660,7 +731,7 @@ class App extends connect(store)(LitElement) {
       // to make sure the dropdown menu element closes after a menu selection 
       // and to properly update aria attributes.
       this._hideDropdownButtonBlur();
- 
+
       window.scrollTo(0, 0);
     }
   }
@@ -694,6 +765,20 @@ class App extends connect(store)(LitElement) {
     dropdownList.setAttribute("aria-hidden", 'true');
   }
 
+  // To get our search to work we need to get the value of the search field
+  // and set the action attribute of our form action. We should add a condition
+  // so if the search form is empty, return a message we need an actual search term.
+
+  _getValueFromSearchField(e) {
+    const searchTerms = this.shadowRoot.querySelector('.search-field').value;
+    const searchAction = (this.shadowRoot.querySelector('.header-search').action = "/search/"+searchTerms);
+  }
+  
+  _getValueFromSearchFieldDrawer(e) {
+    const searchTermsDrawer = this.shadowRoot.querySelector('.search-field-drawer').value;
+    const searchActionDrawer = (this.shadowRoot.querySelector('.header-search-drawer').action = "/search/"+searchTermsDrawer);
+  }
+
   stateChanged(state) {
     this.appTitle = state.app.appTitle;
     this._page = state.app.page;
@@ -706,6 +791,8 @@ class App extends connect(store)(LitElement) {
     this._query = state.articles && state.articles.query;
     this._categoryId = state.categories && state.categories.categoryId;
     this._articleSlug = state.article && state.article.slug;
+    this._searchTerms = state.search_results && state.search_results.searchTerms;
+    this._searchAction = state.search_results && state.search_results._searchAction;
   }
 }
 window.customElements.define('lp-app', App);
