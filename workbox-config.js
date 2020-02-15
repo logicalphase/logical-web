@@ -24,7 +24,7 @@ module.exports = {
       options: {
         cacheName: 'static-cache',
         expiration: {
-          maxEntries: 200,
+          maxEntries: 100,
         },
       },
     },
@@ -34,7 +34,7 @@ module.exports = {
       options: {
         cacheName: 'img-cache',
         expiration: {
-          maxEntries: 200,
+          maxEntries: 100,
         },
       },
     },
