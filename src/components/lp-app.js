@@ -1,10 +1,13 @@
 import { HP_HOST } from './config';
 
-import { LitElement, property, html, css } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 
-import './lp-home.js';
+import { menuIcon } from './lp-icons.js';
 import './snack-bar.js';
+import './search-imput-decorator';
+import './speech-mic.js';
+import './lp-home.js';
 
 import { connect } from 'pwa-helpers/connect-mixin';
 import { installRouter } from 'pwa-helpers/router';
@@ -12,7 +15,6 @@ import { installOfflineWatcher } from 'pwa-helpers/network';
 import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { updateMetadata, setMetaTag } from 'pwa-helpers/metadata';
 
-import { menuIcon } from './lp-icons.js';
 import { store } from '../store.js';
 
 import '@polymer/app-layout/app-drawer/app-drawer';
@@ -20,7 +22,7 @@ import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 
-import { navigate, updateOffline, updateDrawerState, updateLayout } from '../actions/app';
+import { navigate, updateOffline, updateDrawerState, updateLayout, updateLocationURL } from '../actions/app';
 
 import { Theme } from './style-theme';
 import { MenuStyles } from './style-menu';
@@ -117,31 +119,13 @@ class App extends connect(store)(LitElement) {
           background: var(--app-secondary-background-color);
           font-size: 14px;
           margin-right: 24px;
-          padding: 0px 36px 0px 14px;
+          padding: 0px 0px 0px 10px;
           border: solid 1px var(--app-form-border-color);
           -webkit-border-radius: 10em;
           -moz-border-radius: 10em;
           border-radius: 10em;
         }
 
-        input[type='search'] {
-          background: var(--app-secondary-background-color);
-          padding: 5px 12px 5px 10px;
-          width: 150pxx;
-          margin-top: 6px;
-          margin-bottom: 14px;
-
-        }
-
-        input[type='search'] {
-          outline: none;
-          box-sizing: content-box;
-          -moz-box-sizing: content-box;
-          -webkit-appearance: textfield;
-          -webkit-box-sizing: content-box;
-          font-family: inherit;
-          font-size: 1rem;
-        }
 
         .cta-header:focus-within {
           background-color: var(--app-reverse-text-color);
@@ -150,21 +134,15 @@ class App extends connect(store)(LitElement) {
           box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
         }
 
-        input::-webkit-search-decoration,
-        input::-webkit-search-cancel-button {
-          display: none;
-        }
-
         .search-btn {
           background: var(--app-reverse-text-color);
           border: 1px solid var(--app-primary-icon-color);
           fill: var(--app-primary-icon-color);
           cursor: pointer;
-          width:36px;
-          height: 36px;
+          width:34px;
+          height: 34px;
           position: absolute;
-          top: 25px;
-          right: 24px;
+          top: 24px;
           padding: 5px;
         }
 
@@ -175,7 +153,7 @@ class App extends connect(store)(LitElement) {
 
         input[type='search'] {
           background: var(--app-secondary-background-color);
-          padding: 8px 12px 8px 8px;
+          padding: 8px 0px 8px 8px;
           width: 220px;
           margin-top: 14px;
           margin-bottom: 14px;
@@ -373,8 +351,6 @@ class App extends connect(store)(LitElement) {
           margin-right: 16px;
         }
 
-
-
         .brand-site-logo {
           display: block;
           height: auto;
@@ -402,30 +378,53 @@ class App extends connect(store)(LitElement) {
             display: block;
           }
 
+          .cta-header {
+            background: var(--app-secondary-background-color);
+            margin-right: 24px;
+            border: solid 1px var(--app-form-border-color);
+            -webkit-border-radius: 10em;
+            -moz-border-radius: 10em;
+            border-radius: 10em;
+          }
+
+          .cta-header:focus-within {
+            background-color: var(--app-reverse-text-color);
+            -webkit-box-shadow: 0 0 10px rgba(164, 52, 183, 0.8);
+            -moz-box-shadow: 0 0 10px rgba(164, 52, 183, 0.8);
+            box-shadow: 0 0 10px rgba(164, 52, 183, 0.8);
+            border: solid 1px rgba(164, 52, 183, 0.8);
+          }
+
+          input[type='search']::placeholder {
+            font-size: 14px;
+          }
+
           input[type='search'] {
-            width: 140px;
-            margin-top: 0;
-            margin-bottom: 0;
-            border: none;
-            padding: 6px 5px 6px 5px;
+            background: var(--app-secondary-background-color);
+            width: 170px;
+            font-size: 1.2rem;
+            padding: 8px 0px 8px 8px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            border: 0px solid;
             -webkit-transition: all 0.5s;
             -moz-transition: all 0.5s;
             transition: all 0.5s;
           }
+
+
           input[type='search']:focus {
-            width: 330px;
+            width: 380px;
+            background-color: var(--app-reverse-text-color);
           }
 
-          .search-btn {
-            background: none;
-            border: none;
-            fill: var(--app-primary-icon-color);
-            cursor: pointer;
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: 6px;
-            right: 36px;
+          lp-input-decorator {
+            max-width: 460px;
+            transform: translate3d(0, 0, 0);
+          }
+          lp-input-decorator[top] {
+            transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translate3d(0, 0, 0);
           }
 
           .masthead {
@@ -473,13 +472,29 @@ class App extends connect(store)(LitElement) {
           [main-title] {
             padding-right: 0px;
           }
+
+
+          html[dir=rtl] .microphone-icon {
+            left: 0;
+            right: auto;
+          }
+
+          #realbox-input-wrapper > :-webkit-any(.google-g-icon, .microphone-icon,
+          .search-icon) {
+            z-index: 3;
+          }
         }
       `,
     ];
   }
   
   render() {
-    const { appTitle, _page, _offline, _drawerOpened, _snackbarOpened, _searchTerms, _searchAction } = this;
+    const { appTitle, _page, _offline, _drawerOpened, _snackbarOpened,  _searchAction, _searchTerms } = this;
+
+    const hideInput = !_page;
+    // True to make the search input aligns at the top inside the header instead of inside the main content.
+    const inputAtTop = ('ontouchstart' in window || !_page);
+    const searchTerms = _page ? '' : _searchTerms;
 
     updateMetadata({
       title: `Digital Experience Platform by Logical Phase Solutions`,
@@ -507,22 +522,11 @@ class App extends connect(store)(LitElement) {
               <span class="site-name">${appTitle}</span>
             </div>
             <div class="cta-header toolbar-list">
-              <form class="header-search" style="float:right" name="toolbar-search" action="/search/wordpress">
-                <input 
-                  class="search-field" 
-                  type="search" 
-                  aria-label="Search box" 
-                  placeholder="Search..." 
-                  value="" 
-                />
-                <button
-                  class="search-btn"
-                  title="Search"
-                  @click="${() => this._getValueFromSearchField() }"
-                >
-                  ${SearchIcon}
-                </button>
-              </form>
+            <lp-input-decorator ?top="${inputAtTop}" ?hidden="${hideInput}">
+              <input slot="input" id="input" aria-label="Search Content" type="search" placeholder="Enter search term" value="${decodeURI(searchTerms)}"
+                  @change="${(e) => store.dispatch(updateLocationURL(`/search/${e.target.value}`))}">
+              <speech-mic slot="button" continuous interimResults @result="${(e) => this._micResult(e)}"></speech-mic>
+            </lp-input-decorator>
             </div>
             <button
               class="menu-btn"
@@ -717,6 +721,7 @@ class App extends connect(store)(LitElement) {
     );
     
     this.removeAttribute('unresolved');
+    this._input = this.shadowRoot.getElementById('input');
   }
 
   updated(changedProps) {
@@ -765,15 +770,10 @@ class App extends connect(store)(LitElement) {
     dropdownList.setAttribute("aria-hidden", 'true');
   }
 
-  // To get our search to work we need to get the value of the search field
+  // To get our drawer search to work we need to get the value of the search field
   // and set the action attribute of our form action. We should add a condition
   // so if the search form is empty, return a message we need an actual search term.
 
-  _getValueFromSearchField(e) {
-    const searchTerms = this.shadowRoot.querySelector('.search-field').value;
-    const searchAction = (this.shadowRoot.querySelector('.header-search').action = "/search/"+searchTerms);
-  }
-  
   _getValueFromSearchFieldDrawer(e) {
     const searchTermsDrawer = this.shadowRoot.querySelector('.search-field-drawer').value;
     const searchActionDrawer = (this.shadowRoot.querySelector('.header-search-drawer').action = "/search/"+searchTermsDrawer);
@@ -793,6 +793,15 @@ class App extends connect(store)(LitElement) {
     this._articleSlug = state.article && state.article.slug;
     this._searchTerms = state.search_results && state.search_results.searchTerms;
     this._searchAction = state.search_results && state.search_results._searchAction;
+  }
+
+  _micResult(e) {
+    const d = e.detail;
+    const value = d.completeTranscript;
+    this._input.value = value;
+    if (d.isFinal) {
+      store.dispatch(updateLocationURL(`/search/${value}`));
+    }
   }
 }
 window.customElements.define('lp-app', App);

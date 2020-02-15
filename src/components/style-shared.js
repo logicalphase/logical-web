@@ -18,7 +18,7 @@ export const SharedStyles = css`
 
   /* Base Styles */
 
-  body #site {
+  body {
     color: #202124;
   }
 
@@ -184,7 +184,7 @@ export const SharedStyles = css`
   }
 
   .sidebar {
-    background: var(--app-secondary-background-color);
+    background: var(--app-primary-background-color);
   }
 
   .sidebar a,

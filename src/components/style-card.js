@@ -3,10 +3,10 @@ import { css } from 'lit-element';
 export const Card = css`
   .section--reversed,
   .card--reversed,
-  #site .section--reversed .section-header__eyebrow,
-  #site .section--reversed .section-header__heading,
-  #site .card--reversed .card__eyebrow,
-  #site .card--reversed .card__heading {
+  .section--reversed .section-header__eyebrow,
+  .section--reversed .section-header__heading,
+  .card--reversed .card__eyebrow,
+  .card--reversed .card__heading {
     color: #fff;
   }
 
@@ -24,26 +24,26 @@ export const Card = css`
     min-height: 272px;
   }
 
-  #site .card--four-columns .card__container {
+  .card--four-columns .card__container {
     flex-wrap: initial;
   }
 
-  #site .card--four-columns .headline1 {
+  .card--four-columns .headline1 {
     font-size: 22px;
     line-height: 30px;
   }
 
-  #site .card--four-columns .headline3 {
+  .card--four-columns .headline3 {
     font-size: 28px;
     line-height: 34px;
   }
 
-  #site .card--four-columns .headline4 {
+  .card--four-columns .headline4 {
     font-size: 22px;
     text-transform: uppercase;
   }
 
-  #site .card--four-columns .highlight-price {
+  .card--four-columns .highlight-price {
     color: #202124;
     font-size: 30px;
     font-weight: 500;
@@ -101,6 +101,14 @@ export const Card = css`
 
   .card__icon svg path {
     fill: currentColor;
+  }
+
+  .card--solution {
+    border: 1px solid #eee;
+    border-radius: 0;
+    height: 100%;
+    padding: 36px 22px;
+    margin: 0 -1px -1px 0;
   }
 
   .card__logo {
@@ -209,7 +217,7 @@ export const Card = css`
     top: 132px;
   }
 
-  #site .card--four-columns {
+  .card--four-columns {
     padding: 0;
   }
 
@@ -260,7 +268,7 @@ export const Card = css`
       top: 142px;
     }
 
-    #site .card--four-columns {
+    .card--four-columns {
       flex-basis: calc(50% - 36px);
       margin: 0 18px 36px;
     }
@@ -352,7 +360,7 @@ export const Card = css`
   }
 
   @media all and (min-width: 1440px) {
-    #site .card--four-columns {
+    .card--four-columns {
       flex-basis: calc(25% - 24px);
       margin: 0 12px 24px;
     }

@@ -2,10 +2,8 @@ import { CDN_HOST_URL } from './config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
-
 import { until } from 'lit-html/directives/until.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
-
 import { repeat } from 'lit-html/directives/repeat.js';
 
 import './lp-item.js';
@@ -22,6 +20,8 @@ import { search_results, itemListSelector } from '../reducers/search.js';
 store.addReducers({
   search_results,
 });
+
+import { menuIcon, SearchIcon } from './lp-icons.js';
 
 import { SharedStyles } from './style-shared';
 import { ButtonStyle } from './style-button';
@@ -108,7 +108,7 @@ class Search extends connect(store)(PageViewElement) {
           text-align: center;
         }
 
-        #site .headline4 {
+        .headline4 {
           font-size: 18px;
           font-weight: 400;
         }
@@ -188,9 +188,13 @@ class Search extends connect(store)(PageViewElement) {
           .hero {
             background: var(--app-reverse-text-color) url('/images/header/design-header-opt.svg')
               no-repeat;
-            background-size: 280px;
-            background-position: 90% 34px;
+            background-size: 200px;
+            background-position: 90% 44px;
           }
+          .hero .content-set {
+            margin: 60px 14px 20px -14px;
+          }
+
           .content-wrapper {
             padding: 0;
             background: var(--app-primary-section-background-color);
@@ -211,27 +215,26 @@ class Search extends connect(store)(PageViewElement) {
             padding-bottom: 96px;
             border-top: 1px solid var(--app-primary-hover-color);
           }
-          #site .headline4 {
+          .headline4 {
             padding-right: 0;
           }
           .sticky {
             display: block;
           }
+
         }
       `,
     ];
   }
 
   render() {
-    const { _searchTerms, _data, _showOffline } = this;
+    const { _searchTerms, _data, _showOffline, _page } = this;
 
     // Don't render if there is no item.
     if (_data) {
       until(
         _data,
-        html`
-          <p class="loader" style="padding-left: 34px;">Loading. . .</p>
-        `,
+        html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`,
       );
     } else {
       return html`
@@ -254,10 +257,10 @@ class Search extends connect(store)(PageViewElement) {
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
-                    <h1 class="section-header__eyebrow eyebrow">Search Results</h1>
-                    <h2 class="display3">Show search results</h2>
+                    <h1 class="section-header__eyebrow eyebrow">${this._data.map(item => html`<span>${item}</a></span>`).length} Search Results</h1>
+                    <h2 class="display3">Search Logical Phase</h2>
                     <p class="headline4 why-google__intro-text">
-                      Looking for something? 
+                      Can't find something you need? <a href="/contact">Contact</a> us.
                     </p>
                   </div>
                 </header>
@@ -266,13 +269,11 @@ class Search extends connect(store)(PageViewElement) {
             </div>
           </header>
           <div class="content-wrapper">
-            <section
-              class="content background-grey full-bleed-section pad-top-6 pad-bottom-12 home"
-            >
+            <section class="content background-grey full-bleed-section pad-top-6 pad-bottom-12 home">
               <div class="columns">
                 <main class="main">
                   <div class="content-grid-box" ?hidden="${!_searchTerms}">
-                    ${repeat(
+                    ${until(repeat(
                       _data,
                       item => html`
                         <div class="blog-list-item">
@@ -281,10 +282,11 @@ class Search extends connect(store)(PageViewElement) {
                           </div>
                         </div>
                       `,
-                    )}
+                    ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
                   </div>
+                  <h3 ?hidden="${_data.length != 0}">Search found 0 results. Please expand your search and try again.</h3>
                 </main>
-                <aside class="sidebar mdc-elevation--z3">
+                <aside class="sidebar mdc-elevation--z3" ?hidden="${!_data.length}">
                   <div class="nav">
                     <div class="sticky">
                       <ul class="fade-in right-side-nav l-space-bottom-5">
@@ -296,7 +298,7 @@ class Search extends connect(store)(PageViewElement) {
                             Blog Categories
                           </h3>
                         </li>
-                        ${repeat(
+                        ${until(repeat(
                           _data,
                           item => html`
                             <li>
@@ -310,7 +312,7 @@ class Search extends connect(store)(PageViewElement) {
                               >
                             </li>
                           `,
-                        )}
+                        ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
                       </ul>
                     </div>
                   </div>
@@ -328,17 +330,32 @@ class Search extends connect(store)(PageViewElement) {
   }
   static get properties() {
     return {
+      _page: { type: String },
       _searchTerms: { type: String },
       _data: { type: Array },
       _showOffline: { type: Boolean },
+     // hidden: { type: Boolean },
     };
+  }
+
+  firstUpdated() {
+    this._input = this.shadowRoot.getElementById('input');
   }
 
   // This is called every time something is updated in the store.
   stateChanged(state) {
+    this._page = state.app.page;
     this._searchTerms = state.search_results.searchTerms;
     this._data = itemListSelector(state);
     this._showOffline = state.app.offline && state.search_results.failure;
+  }
+  _micResult(e) {
+    const d = e.detail;
+    const searchTerms = d.completeTranscript;
+    this._input.value = searchTerms;
+    if (d.isFinal) {
+      store.dispatch(updateLocationURL(`/search=${searchTerms}`));
+    }
   }
 }
 window.customElements.define('lp-search', Search);

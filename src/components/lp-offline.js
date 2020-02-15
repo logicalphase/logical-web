@@ -1,12 +1,15 @@
 import { LitElement, html, css } from 'lit-element';
 import { SharedStyles } from './style-shared';
 import { TypographyStyle } from './style-typography';
+import { ButtonStyle } from './style-button';
+
 
 class Offline extends LitElement {
   static get styles() {
     return [
       SharedStyles,
       TypographyStyle,
+      ButtonStyle,
       css`
         :host {
           padding: 16px;

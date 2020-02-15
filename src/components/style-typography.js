@@ -20,7 +20,7 @@ export const TypographyStyle = css`
     font-weight: 500;
   }
 
-  #site .display1 {
+  .display1 {
     font-size: 40px;
     font-weight: 400;
     letter-spacing: 0;
@@ -28,12 +28,12 @@ export const TypographyStyle = css`
     margin: 0;
   }
 
-  #site .display1 strong {
+  .display1 strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
 
-  #site .display2 {
+  .display2 {
     font-size: 40px;
     font-weight: 400;
     letter-spacing: 0;
@@ -41,12 +41,12 @@ export const TypographyStyle = css`
     margin: 0;
   }
 
-  #site .display2 strong {
+  .display2 strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
 
-  #site .display3 {
+  .display3 {
     font-size: 36px;
     font-weight: 300;
     letter-spacing: 0;
@@ -54,12 +54,12 @@ export const TypographyStyle = css`
     margin: 24px 0 0 -4px;
   }
 
-  #site .display3 strong {
+  .display3 strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
 
-  #site .headline1 {
+  .headline1 {
     font-size: 36px;
     font-weight: 400;
     letter-spacing: 0;
@@ -67,12 +67,12 @@ export const TypographyStyle = css`
     margin: 0;
   }
 
-  #site .headline1 strong {
+  .headline1 strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
 
-  #site .headline2 {
+  .headline2 {
     font-size: 32px;
     font-weight: 500;
     letter-spacing: 0;
@@ -80,12 +80,12 @@ export const TypographyStyle = css`
     margin: 0;
   }
 
-  #site .headline2 strong {
+  .headline2 strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
 
-  #site .headline3 {
+  .headline3 {
     font-size: 32px;
     font-weight: 400;
     letter-spacing: 0;
@@ -93,12 +93,12 @@ export const TypographyStyle = css`
     margin: 0;
   }
 
-  #site .headline3 strong {
+  .headline3 strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
 
-  #site .headline4 {
+  .headline4 {
     color: var(--app-primary-text-color);
     font-size: 24px;
     font-weight: 400;
@@ -108,29 +108,29 @@ export const TypographyStyle = css`
     padding-right: 0px;
   }
 
-  #site .headline4 strong {
+  .headline4 strong {
     color: var(--app-primary-color);
     font-weight: 500;
   }
 
-  #site .headline4 .superscript {
+  .headline4 .superscript {
     font-size: 10px;
     line-height: 1;
   }
 
-  #site .quote-text {
+  .quote-text {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 30px;
   }
 
-  #site .quote-text strong {
+  .quote-text strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
 
-  #site .eyebrow {
+  .eyebrow {
     color: var(--app-primary-text-color);
     font-size: 14px;
     font-weight: 400;
@@ -140,12 +140,12 @@ export const TypographyStyle = css`
     text-transform: uppercase;
   }
 
-  #site .eyebrow strong {
+  .eyebrow strong {
     color: var(--app-primary-text-color);
     font-weight: inherit;
   }
 
-  #site .eyebrow--large {
+  .eyebrow--large {
     font-family: Roboto Mono, monospace;
     font-size: 16px;
     font-weight: 400;
@@ -156,19 +156,19 @@ export const TypographyStyle = css`
     text-transform: uppercase;
   }
 
-  #site .eyebrow--large strong {
+  .eyebrow--large strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
 
-  #site .subhead {
+  .subhead {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 26px;
   }
 
-  #site .subhead strong {
+  .subhead strong {
     color: var(--app-primary-color);
     font-weight: inherit;
   }
@@ -279,50 +279,50 @@ export const TypographyStyle = css`
   /* All screens larger than 460px */
 
   @media (min-width: 460px) {
-    #site .display1 {
+    .display1 {
       font-size: 72px;
       letter-spacing: -0.5px;
       line-height: 84px;
     }
-    #site .display2 {
+    .display2 {
       font-size: 64px;
       letter-spacing: -0.5px;
       line-height: 72px;
     }
-    #site .display3 {
+    .display3 {
       font-size: 56px;
       letter-spacing: -0.5px;
       line-height: 66px;
     }
-    #site .headline1 {
+    .headline1 {
       font-size: 48px;
       font-weight: 500;
       letter-spacing: -0.5px;
       line-height: 58px;
     }
-    #site .headline2 {
+    .headline2 {
       font-size: 40px;
       letter-spacing: -0.5px;
       line-height: 52px;
     }
-    #site .headline3 {
+    .headline3 {
       font-size: 32px;
       line-height: 40px;
       margin: 24px 16px 0 0;
     }
-    #site .headline4 {
+    .headline4 {
       font-size: 22px;
     }
-    #site .quote-text {
+    .quote-text {
       color: #202124;
       font-size: 30px;
       line-height: 40px;
     }
-    #site .subhead {
+    .subhead {
       font-size: 18px;
       line-height: 30px;
     }
-    #site h2.headline4 {
+    h2.headline4 {
       font-size: 24px;
       padding-right: 0px;
     }

@@ -50,7 +50,7 @@ class Detail extends connect(store)(PageViewElement) {
           padding: 0px;
         }
 
-        #site .display2 {
+        .display2 {
           line-height: 1.17857143;
           font-size: 44px;
           letter-spacing: -1.9px;
@@ -113,7 +113,7 @@ class Detail extends connect(store)(PageViewElement) {
           border-bottom: 1px solid var(--app-primary-color);
         }
 
-        #site .display3 {
+        .display3 {
           margin-bottom: 14px;
         }
 
@@ -338,13 +338,13 @@ class Detail extends connect(store)(PageViewElement) {
           table {
             width: 100%;
           }
-          #site .display2 {
+          .display2 {
             line-height: 1.17857143;
             font-size:48px;
             letter-spacing: -1.9px;
             padding-bottom: 26px;
           }
-          #site .display3 {
+          .display3 {
             margin-bottom: 0px;
             letter-spacing: -1px;
           }

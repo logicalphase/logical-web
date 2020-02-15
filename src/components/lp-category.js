@@ -1,10 +1,8 @@
 import { CDN_HOST_URL, HP_HOST } from './config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
-
 import { until } from 'lit-html/directives/until.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
-
 import { repeat } from 'lit-html/directives/repeat.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
 
@@ -108,7 +106,7 @@ class Categories extends connect(store)(PageViewElement) {
           text-align: center;
         }
 
-        #site .headline4 {
+        .headline4 {
           font-size: 18px;
           font-weight: 400;
         }
@@ -211,7 +209,7 @@ class Categories extends connect(store)(PageViewElement) {
             padding-bottom: 96px;
             border-top: 1px solid var(--app-primary-hover-color);
           }
-          #site .headline4 {
+          .headline4 {
             padding-right: 0;
             font-size: 22px;
             font-weight: 400;
@@ -225,7 +223,7 @@ class Categories extends connect(store)(PageViewElement) {
   }
 
   render() {
-    const { _categoryId, _data, _showOffline, category  } = this;
+    const { _categoryId, _data, _showOffline } = this;
     
     // Don't render if there is no item.
     if (_data) {
@@ -275,7 +273,7 @@ class Categories extends connect(store)(PageViewElement) {
               <div class="columns">
                 <main class="main">
                   <div class="content-grid-box" ?hidden="${!_categoryId}">
-                    ${repeat(
+                    ${until(repeat(
                       _data,
                       item => html`
                         <div class="category-list-item">
@@ -284,7 +282,7 @@ class Categories extends connect(store)(PageViewElement) {
                           </div>
                         </div>
                       `,
-                    )}
+                    ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
                   </div>
                 </main>
                 <aside class="sidebar mdc-elevation--z3">
@@ -299,7 +297,7 @@ class Categories extends connect(store)(PageViewElement) {
                             Blog Category
                           </h3>
                         </li>
-                        ${repeat(
+                        ${until(repeat(
                           _data,
                           item => html`
                             <li>
@@ -313,7 +311,7 @@ class Categories extends connect(store)(PageViewElement) {
                               >
                             </li>
                           `,
-                        )}
+                        ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
                       </ul>
                     </div>
                   </div>

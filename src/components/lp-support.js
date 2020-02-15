@@ -64,7 +64,7 @@ class Support extends PageViewElement {
           padding-bottom: 0;
         }
 
-        #site h3.heading4 {
+        h3.heading4 {
           margin-top: 0;
           padding-top: 0;
         }
@@ -113,7 +113,7 @@ class Support extends PageViewElement {
           .support-body h2 {
             margin-bottom: 16px;
           }
-          #site .pad-right-4 {
+          .pad-right-4 {
             padding-right: 32px;
           }
 

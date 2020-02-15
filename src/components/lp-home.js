@@ -61,7 +61,7 @@ class Home extends PageViewElement {
           height: auto;
         }
 
-        #site .headline3 {
+        .headline3 {
           margin-top: 24px;
         }
 
@@ -156,7 +156,7 @@ class Home extends PageViewElement {
         }
 
         @media (min-width: 460px) {
-          #site .display3 {
+          .display3 {
             font-size: 46px;
             letter-spacing: -0.5px;
             line-height: 66px;
@@ -201,7 +201,7 @@ class Home extends PageViewElement {
         }
 
         @media only screen and (min-width: 1024px) {
-          #site .display3 {
+          .display3 {
             font-size: 46px;
             letter-spacing: -0.5px;
             line-height: 66px;
@@ -262,7 +262,7 @@ class Home extends PageViewElement {
                   <div class="content-set">
                     <h1 class="section-header__eyebrow eyebrow">We make WordPress better</h1>
                     <h2 class="display3">
-                      Highly Available Managed Hosting and Services for WordPress
+                      Highly Available Managed Hosting and Digital Services for WordPress
                     </h2>
                     <p class="headline4 why-google__intro-text">
                       Hyperfast. Technically superior. Fiercely defended.
@@ -665,7 +665,7 @@ class Home extends PageViewElement {
                       class="section-header__heading headline3"
                       id="wordpress-you-need-solutions-you-deserve"
                     >
-                      Smarter, faster, superior WordPress.
+                      Smarter, faster, superior digital experience.
                     </h3>
                     <div class="section-header__link">
                       <a
@@ -704,8 +704,8 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        Supercharged fully managed, optimized WordPress hosting globally delivered to any
-                        screen. 
+                        Supercharged, fully managed, professionally optimized WordPress hosting instantly delivered to any
+                        screen, anywhere. 
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">

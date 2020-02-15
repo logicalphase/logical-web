@@ -16,3 +16,4 @@ export const WP_REST_HOST = 'api.logicalphase.com';
 export const WP_REST_PATH = 'wp-json/wp/v2';
 export const CDN_HOST_URL = 'storage.googleapis.com';
 export const CDN_BUCKET_NAME = 'logicalphase.com/assets';
+

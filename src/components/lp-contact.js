@@ -64,7 +64,7 @@ class Contact extends PageViewElement {
           padding-bottom: 0;
         }
 
-        #site h3.heading4 {
+        h3.heading4 {
           margin-top: 0;
           padding-top: 0;
         }
@@ -76,6 +76,7 @@ class Contact extends PageViewElement {
 
           .hero .content-set {
             margin: 30px 0 30px 0;
+            max-width: 550px;
           }
 
           paper-spinner-lite {
@@ -85,10 +86,14 @@ class Contact extends PageViewElement {
           }
 
           .hero {
-            background: var(--app-reverse-text-color) url('/images/header/care-header-opt.svg')
+            background: var(--app-reverse-text-color) url('/images/icons/icon-mail-opt.svg') 
               no-repeat;
             background-size: 320px;
-            background-position: 93% 10px;
+            background-position: 83% 50px;
+          }
+
+          .mail-icon {
+            fill: var(--app-primary-color);
           }
 
           .hero > div {
@@ -113,7 +118,7 @@ class Contact extends PageViewElement {
           .contact-body h2 {
             margin-bottom: 16px;
           }
-          #site .pad-right-4 {
+          .pad-right-4 {
             padding-right: 32px;
           }
 

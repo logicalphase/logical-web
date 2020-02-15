@@ -2,10 +2,8 @@ import { CDN_HOST_URL } from './config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { updateMetadata } from 'pwa-helpers/metadata.js';
-
 import { until } from 'lit-html/directives/until.js';
 import { connect } from 'pwa-helpers/connect-mixin.js';
-
 import { repeat } from 'lit-html/directives/repeat.js';
 
 import './lp-item.js';
@@ -108,7 +106,7 @@ class Blog extends connect(store)(PageViewElement) {
           text-align: center;
         }
 
-        #site .headline4 {
+        .headline4 {
           font-size: 18px;
           font-weight: 400;
         }
@@ -211,7 +209,7 @@ class Blog extends connect(store)(PageViewElement) {
             padding-bottom: 96px;
             border-top: 1px solid var(--app-primary-hover-color);
           }
-          #site .headline4 {
+          .headline4 {
             padding-right: 0;
             font-size: 22px;
             font-weight: 400;
@@ -275,7 +273,7 @@ class Blog extends connect(store)(PageViewElement) {
             <div class="columns">
               <main class="main">
                 <div class="content-grid-box" ?hidden="${!_query}">
-                  ${repeat(
+                  ${until(repeat(
                     _data,
                     item => html`
                       <div class="blog-list-item">
@@ -284,23 +282,23 @@ class Blog extends connect(store)(PageViewElement) {
                         </div>
                       </div>
                     `,
-                  )}
+                  ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
                 </div>
               </main>
-              <aside class="sidebar mdc-elevation--z3">
+              <aside class="sidebar mdc-elevation--z3" ?hidden="${!_query}">
                 <div class="nav">
                   <div class="sticky">
                     <ul class="fade-in right-side-nav l-space-bottom-5">
                       <li>
                         <h3
                           class="l-pad-right-2 l-pad-left-2 text-uppercase"
-                          id="more-about-serverless"
+                          id="blog-categories"
                         >
                           Blog Categories
                         </h3>
                       </li>
-                      ${repeat(
-                        _data,
+                      ${until(repeat(
+                        _data, 
                         item => html`
                           <li>
                             <a
@@ -313,7 +311,7 @@ class Blog extends connect(store)(PageViewElement) {
                             >
                           </li>
                         `,
-                      )}
+                      ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
                     </ul>
                   </div>
                 </div>
