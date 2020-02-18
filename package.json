@@ -24,7 +24,7 @@
     "@open-wc/building-rollup": "0.21.0",
     "@polymer/app-layout": "3.1.0",
     "@polymer/polymer": "3.3.1",
-    "@power-elements/lazy-image": "2.1.2",
+    "@power-elements/lazy-image": "2.2.0",
     "date-fns": "2.9.0",
     "lit-element": "2.2.1",
     "pwa-helpers": "0.9.1",
