@@ -52,6 +52,7 @@ class Pagespeed extends PageViewElement {
               url('/images/header/pagespeed-header-opt.svg') no-repeat;
             background-size: 354px;
             background-position: 95% 90px;
+            padding-bottom: 40px;
           }
 
           h3 {
@@ -113,7 +114,7 @@ class Pagespeed extends PageViewElement {
                     </h1>
                     <h2 class="display3">Lightning fast WordPress</h2>
                     <p class="headline4 why-google__intro-text">
-                      Slow loading sites hurt search rankings and conversions. Let us fix what's
+                      Slow loading sites hurt search rankings and conversions. I'll fix what's
                       slowing you down. Guaranteed.
                     </p>
                     <div class="section-header__link">
@@ -152,12 +153,12 @@ class Pagespeed extends PageViewElement {
                       class="headline3 element-align"
                       id="engaging-experiences-regardless-screen-size"
                     >
-                      Milliseconds Matter
+                      Milliseconds Are Money
                     </h3>
                     <p>
                       You've spent time and money building a WordPress site you can be proud of, but
-                      a slow site can undo all that hard work and hurt more than it helps. We've
-                      optimized hundreds of WordPress sites of all sizes and stripes. We know what
+                      a slow site can undo all that hard work and hurt more than it helps.I've
+                      optimized hundreds of WordPress sites of all sizes and stripes. I know what
                       slows WordPress down and how to make it lightning fast across all devices.
                       Need help?
                     </p>
@@ -199,9 +200,9 @@ class Pagespeed extends PageViewElement {
                       WordPress PageSpeed Optimization
                     </h3>
                     <p>
-                      We identify performance bottlenecks, create a prioritized plan of action, and
-                      fix what's slowing your site down. We provide a complete post-optimization
-                      site report that explains all changes we make and tips on how to keep your
+                      I'll identify performance bottlenecks, create a prioritized plan of action, and
+                      fix what's slowing your site down. You'll receive a complete post-optimization
+                      site report that explains all changes I made and tips on how to keep your
                       site super fast and Google Search friendly.
                     </p>
                     <h4 class="paper-font-subhead">Optimization Service includes:</h4>
@@ -228,13 +229,6 @@ class Pagespeed extends PageViewElement {
                   </div>
                 </div>
               </section>
-            </div>
-          </div>
-          <div class="section section--border">
-            <div class="section__header text-center grid">
-              <div class="grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="headline3" id="features">Logical Phase Features</h2>
-              </div>
             </div>
           </div>
         </article>

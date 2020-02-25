@@ -51,14 +51,17 @@ const loadPage = (page, query, articleSlug, categoryId, searchTerms) => async (d
         page = '404';
       }
       break;
-    case 'care':
-      await import('../components/lp-care');
+    case 'about':
+      await import('../components/lp-about');
+      break;
+    case 'design':
+      await import('../components/lp-design');
+      break;
+    case 'emergency':
+      await import('../components/lp-about');
       break;
     case 'hosting':
       await import('../components/lp-hosting');
-      break;
-    case 'emergency':
-      await import('../components/lp-emergency');
       break;
     case 'migration':
       await import('../components/lp-migration');
@@ -68,6 +71,9 @@ const loadPage = (page, query, articleSlug, categoryId, searchTerms) => async (d
       break;
     case 'privacy':
       await import('../components/lp-privacy');
+      break;
+    case 'security':
+      await import('../components/lp-security');
       break;
     case 'terms':
       await import('../components/lp-site-terms');

@@ -76,6 +76,9 @@ class Terms extends PageViewElement {
         }
 
         @media (min-width: 460px) {
+          .privacy-header {
+            margin-top: 34px;
+          }
           .terms {
             margin-right: 200px;
           }
@@ -161,85 +164,9 @@ class Terms extends PageViewElement {
                       <h1 class="paper-font-display2 paper-font-light">
                         Terms of Service Agreement
                       </h1>
-                      <p>Effective date: 25 May 2019</p>
+                      <p>Effective date: 25 February 2020</p>
                     </div>
                   </header>
-                  <ul class="right-side-nav l-space-bottom-5">
-                    <li>
-                      <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">
-                        On this page
-                      </h3>
-                    </li>
-                    <li>
-                      <a
-                        style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;"
-                        class="privacy"
-                        track-type="privacyStatement"
-                        track-name="web-page"
-                        track-metadata-position="sidebar"
-                        href="section-1"
-                        >1. What We Own</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="transparency"
-                        track-type="transparency"
-                        track-name="web-page"
-                        track-metadata-position="sidebar"
-                        href="section-2"
-                        >2. Rights to Use</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="aup"
-                        track-type="acceptableUse"
-                        track-name="web-page"
-                        track-metadata-position="sidebar"
-                        href="section-3"
-                        >3. What You Provide</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="security"
-                        track-type="securityGuarantee"
-                        track-name="web-page"
-                        track-metadata-position="sidebar"
-                        href="/security-guarantee"
-                        >4. Access to Accounts</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="sla"
-                        track-type="serviceLevelAgreement"
-                        track-name="web-page"
-                        track-metadata-position="sidebar"
-                        href="/sla"
-                        >6. Monitoring</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        track-type="vendors"
-                        track-name="web-page"
-                        track-metadata-position="sidebar"
-                        href="/vendors"
-                        >7. Copyright Policy</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        track-type="vendors"
-                        track-name="web-page"
-                        track-metadata-position="sidebar"
-                        href="/vendors"
-                        >8. Rules</a
-                      >
-                    </li>
-                  </ul>
                   <section>
                     <div class="content-grid-box">
                       <p>
@@ -1037,88 +964,6 @@ class Terms extends PageViewElement {
                     </div>
                   </section>
                 </main>
-                <aside class="sidebar">
-                  <div class="nav">
-                    <div class="sticky">
-                      <ul class="right-side-nav l-space-bottom-5">
-                        <li>
-                          <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">
-                            On this page
-                          </h3>
-                        </li>
-                        <li>
-                          <a
-                            style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;"
-                            class="privacy"
-                            track-type="privacyStatement"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="section-1"
-                            >1. What We Own</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="transparency"
-                            track-type="transparency"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="section-2"
-                            >2. Rights to Use</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="aup"
-                            track-type="acceptableUse"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="section-3"
-                            >3. What You Provide</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="security"
-                            track-type="securityGuarantee"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="/security-guarantee"
-                            >4. Access to Accounts</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="sla"
-                            track-type="serviceLevelAgreement"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="/sla"
-                            >6. Monitoring</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            track-type="vendors"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="/vendors"
-                            >7. Copyright Policy</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            track-type="vendors"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="/vendors"
-                            >8. Rules</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </aside>
               </div>
             </section>
           </div>

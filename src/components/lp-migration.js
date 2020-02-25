@@ -32,8 +32,8 @@ class Migrations extends PageViewElement {
 
       .hero {
         background: var(--app-reverse-text-color) url('/images/header/migrations-header-opt.svg') no-repeat;
-        background-size: 380px;
-        background-position: 93% 80px;
+        background-size: 410px;
+        background-position: 90% 60px;
       }
       .section {
         padding-top: 0px;
@@ -50,6 +50,10 @@ class Migrations extends PageViewElement {
       }
       @media (min-width: 460px) {
 
+        .hero {
+          padding-bottom: 24px;
+        }
+
         h3 {
           padding-top: 20px; 
         }
@@ -58,9 +62,18 @@ class Migrations extends PageViewElement {
           max-width: 600px;
         }
 
+        .content-button {
+          margin-bottom: 0;
+        }
+
         section.copy {
           margin: 0;
         }
+
+        .section {
+          padding-top: 44px;
+        }
+
         .grid-row-start {
           grid-row-start: 1;
         }
@@ -116,7 +129,7 @@ class Migrations extends PageViewElement {
                   </div>
                   <div class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start">
                     <h3 class="headline3 element-align" id="engaging-experiences-regardless-screen-size">Moving WordPress?</h3>
-                    <p>We've moved hundreds of WordPress sites to new hosting. We know exactly what needs to be done to eliminate downtime, protect your data, and complete all of other tasks needed to make your move a stress free one.</p>
+                    <p>I've moved hundreds of WordPress sites to new hosting and know exactly what needs to be done to eliminate downtime, protect your data, and complete all of other tasks needed to make your move a stress free one.</p>
                     <ul class="body-checks">
                       <li>Full backup of current site</li>
                       <li>Transfer site files and data</li>
@@ -148,7 +161,7 @@ class Migrations extends PageViewElement {
                   </div>
                   <div class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start">
                     <h3 class="headline3 element-align" id="site-migrations">Migrating to WordPress</h3>
-                    <p>You've heard great things about WordPress, but your site was built using some other software or content mangement system (CMS), and he idea of trying to move your site into WordPress seems impossibly complex. Don't let that stop you. We built migration tools that automate importing your content into a brand new WordPress instance, quickly, safely, and without error. So, if you're ready to move to WordPress, we can make it happen.</p>
+                    <p>You've heard great things about WordPress, but your site was built using some other software or content mangement system (CMS), and he idea of trying to move your site into WordPress seems impossibly complex. Don't let that stop you. I've built migration tools that automate importing your content into a brand new WordPress instance, quickly, safely and without error. So, if you're ready to move to WordPress, I can make it happen.</p>
                     <div class="content-header__link element-align">
                       <a 
                         href="/contact/" 
@@ -161,33 +174,6 @@ class Migrations extends PageViewElement {
                 </div>
               </section>
             </div>
-          </div>
-          <div class="section section--border">
-            <div class="section__header text-center grid">
-              <div class="grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="headline3 element-align" id="features">Logical Phase Features</h2>
-              </div>
-            </div>
-            <section class="copy">
-              <div class="grid--alternate copy__inner copy--two-column">
-                <div class="grid__col is-1__large--offset copy__text is-6 is-5__large">
-                  <h4 class="headline4">Fast loading and reliable</h4>
-                  <p>PWAs load instantly even in spotty internet conditions. Users are notified if they lose internet connection while continuing to browse your site with confidence while avoiding lost sales!</p>
-                </div>
-                <div class="grid__col copy__text is-6 is-5__large">
-                  <h4 class="headline4">Smooth and natural</h4>
-                  <p>Quick smooth transitions and animations are baked right in to make for a more natural, pleaseing application look and feel. No more janking, confusing view changes </p>
-                </div>
-                <div class="grid__col is-1__large--offset copy__text is-6 is-5__large">
-                  <h4 class="headline4">Inviting and engaging</h4>
-                  <p>A natural, inviting, immersive user experience where users can quickly find what they need and convert interest to action.</p>
-                </div>
-                <div class="grid__col copy__text is-6 is-5__large">
-                  <h4 class="headline4">Installable and always updated</h4>
-                  <p>.</p>
-                </div>
-              </div>
-            </section>
           </div>
         </article>
       </div>

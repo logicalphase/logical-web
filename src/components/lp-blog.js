@@ -186,17 +186,24 @@ class Blog extends connect(store)(PageViewElement) {
           .hero {
             background: var(--app-reverse-text-color) url('/images/header/design-header-opt.svg')
               no-repeat;
-            background-size: 280px;
-            background-position: 90% 60px;
+            background-size: 240px;
+            background-position: 90% 30px;
+          }
+          .hero .content-set {
+            margin: 50px 0 20px 0;
+            padding-bottom: 36px;
           }
           .content-wrapper {
             padding: 0;
             background: var(--app-primary-section-background-color);
           }
+          section {
+            margin: 0;
+          }
           .sidebar {
             display: block;
             width: 270px;
-            margin-left: 34px;
+            margin-left: 64px;
             margin-top: 0;
           }
           .background-grey {
@@ -217,6 +224,12 @@ class Blog extends connect(store)(PageViewElement) {
           .sticky {
             display: block;
           }
+          .loading {
+            position:absolute;
+            top:450px;
+            left: 400px;
+            color: blueviolet;
+          }
         }
       `,
     ];
@@ -226,20 +239,6 @@ class Blog extends connect(store)(PageViewElement) {
     const { _query, _data, _showOffline } = this;
 
     // Don't render if there is no item.
-    if (_data) {
-      until(
-        _data,
-        html`
-          <p class="loader" style="padding-left: 34px;">Loading. . .</p>
-        `,
-      );
-    } else {
-      return html`
-        <p class="loader" style="padding-left: 34px;">
-          An error occurred while retrieving blog list. Please reload.
-        </p>
-      `;
-    }
 
     updateMetadata({
       title: `Logical Articles`,
@@ -249,16 +248,15 @@ class Blog extends connect(store)(PageViewElement) {
     return html`
       <div class="main-content clearfix">
         <article id="site" class="blog">
-          <header class="hero">
+        <header class="hero">
             <div class="grid">
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="section-header__eyebrow eyebrow">Resources for WordPress</h1>
-                    <h2 class="display3">Logical Phase Blog</h2>
-                    <p class="headline4 intro-text">
-                      Articles written by WordPress professionals for site owners, developers, and
-                      designers.
+                    <h2 class="display3">Logical Learning Center</h2>
+                    <p class="headline5 why-hyperpress__intro-text">
+                      My cumulative knowledge center focused on WordPress site performance, security, and cloud hosting.
                     </p>
                   </div>
                 </header>
@@ -272,7 +270,7 @@ class Blog extends connect(store)(PageViewElement) {
           >
             <div class="columns">
               <main class="main">
-                <div class="content-grid-box" ?hidden="${!_query}">
+                <div class="content-grid-box" ?hidden="${!_data}">
                   ${until(repeat(
                     _data,
                     item => html`
@@ -282,13 +280,13 @@ class Blog extends connect(store)(PageViewElement) {
                         </div>
                       </div>
                     `,
-                  ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
+                  ), html`<p class="loading">Loading. . .</p>` )}
                 </div>
               </main>
-              <aside class="sidebar mdc-elevation--z3" ?hidden="${!_query}">
+              <aside class="sidebar mdc-elevation--z3">
                 <div class="nav">
                   <div class="sticky">
-                    <ul class="fade-in right-side-nav l-space-bottom-5">
+                    <ul class="fade-in right-side-nav l-space-bottom-5" ?hidden="${!_data}">
                       <li>
                         <h3
                           class="l-pad-right-2 l-pad-left-2 text-uppercase"
@@ -297,7 +295,7 @@ class Blog extends connect(store)(PageViewElement) {
                           Blog Categories
                         </h3>
                       </li>
-                      ${until(repeat(
+                      ${repeat(
                         _data, 
                         item => html`
                           <li>
@@ -311,7 +309,7 @@ class Blog extends connect(store)(PageViewElement) {
                             >
                           </li>
                         `,
-                      ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
+                      )}
                     </ul>
                   </div>
                 </div>

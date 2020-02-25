@@ -156,8 +156,12 @@ class Home extends PageViewElement {
         }
 
         @media (min-width: 460px) {
+          .hero {
+            padding-bottom: 60px;
+          }
+
           .display3 {
-            font-size: 46px;
+            font-size: 48px;
             letter-spacing: -0.5px;
             line-height: 66px;
           }
@@ -165,16 +169,35 @@ class Home extends PageViewElement {
           .wordpress-animated-bg {
             display: inline-block;
             position: relative;
-            top: 28px;
-            right: 0px;
-            min-width: auto;
+            top: -79px;
+            right: 103px;
+            min-width: 500px;
             min-height: 500px;
+            z-index: 50;
+          }
+
+          .content-set {
+            padding: 16px;
+          }
+
+          .header-image {
+            padding: 0px;
+            top: 124px;
+            max-height: 340px;
+            max-width: 340px;
+            position: relative;
+            left: 60px;
+            margin-bottom: 30px;
           }
 
           section.copy {
             margin: 0;
           }
 
+          .section__spacer {
+            margin-bottom: 26px;
+            margin-top: 30px;
+          }
           .grid-row-start {
             grid-row-start: 1;
           }
@@ -202,17 +225,18 @@ class Home extends PageViewElement {
 
         @media only screen and (min-width: 1024px) {
           .display3 {
-            font-size: 46px;
+            font-size: 54px;
             letter-spacing: -0.5px;
-            line-height: 66px;
+            line-height: 70px;
           }
           .wordpress-animated-bg {
             display: inline-block;
             position: relative;
-            top: 34px;
-            right: 0px;
-            min-width: 450px;
-            min-height: 450px;
+            top: -79px;
+            right: 103px;
+            min-width: 500px;
+            min-height: 500px;
+            z-index: 50;
           }
 
           .section-right-image {
@@ -221,6 +245,10 @@ class Home extends PageViewElement {
             margin-left: 34px;
             object-fit: var(--lazy-image-fit);
             position: relative;
+          }
+
+          .section-header.section-header--solutions {
+            padding: 0 24px 0 4px;
           }
 
           .promo-box-light p {
@@ -260,17 +288,17 @@ class Home extends PageViewElement {
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="content-set">
-                    <h1 class="section-header__eyebrow eyebrow">We make WordPress better</h1>
+                    <h1 class="section-header__eyebrow eyebrow">I make WordPress extraordinary</h1>
                     <h2 class="display3">
-                      Highly Available Managed Hosting and Digital Services for WordPress
+                      Mission Critical WordPress Solutions for Incredible Brands.
                     </h2>
                     <p class="headline4 why-google__intro-text">
-                      Hyperfast. Technically superior. Fiercely defended.
+                      Hyperfast. Functionally superior. Fiercely defended.
                     </p>
                   </div>
                 </header>
               </div>
-              <div class="cloud-grid__col is-5">
+              <div class="cloud-grid__col is-5 header-image">
                 <svg
                   class="wordpress-animated-bg"
                   viewBox="0 0 740 740"
@@ -485,161 +513,33 @@ class Home extends PageViewElement {
                   <div
                     class="grid__col copy--flipped grid__col--horizontal-center copy__img is-4 is-8--offset is-7__large--offset grid-row-start"
                   >
-                    <svg
-                      slot="placeholder"
-                      class="section-right-image"
-                      version="1.1"
-                      viewBox="2 122.3 637.26 349.3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xlink:href="#placeholder-svg"
-                    >
-                      <title>WordPress laptop connected by storage, media, and data icons</title>
-                      <defs>
-                        <path
-                          id="aHIf0e791"
-                          d="m164.42 134.68v-0.42c0-5.83-4.95-10.6-10.99-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.83c6.04 0 10.98-4.77 10.98-10.6v-47.19c0-5.83-4.94-10.61-10.98-10.61h-50.4z"
-                        />
-                        <path
-                          id="aebH7nnDc"
-                          d="m317.32 134.68v-0.42c0-5.83-4.94-10.6-10.98-10.6h-25.44c-6.04 0-10.98 4.77-10.98 10.6v11.03 24.04 23.15c0 5.83 4.94 10.6 10.98 10.6h86.82c6.04 0 10.99-4.77 10.99-10.6v-47.19c0-5.83-4.95-10.61-10.99-10.61h-50.4z"
-                        />
-                        <path
-                          id="d1deglR8f3"
-                          d="m470.97 134.33v-0.42c0-5.84-4.94-10.61-10.98-10.61h-25.44c-6.04 0-10.99 4.77-10.99 10.61v11.02 24.05 23.14c0 5.83 4.95 10.61 10.99 10.61h86.82c6.04 0 10.98-4.78 10.98-10.61v-47.19c0-5.83-4.94-10.6-10.98-10.6h-50.4z"
-                        />
-                        <path
-                          id="f3pTna63Hq"
-                          d="m33.52 438.46v-126.27c0-3.89 3.3-7.08 7.34-7.08h195.4c4.04 0 7.34 3.19 7.34 7.08v126.27h-210.08z"
-                        />
-                        <path
-                          id="e2xrknzxtr"
-                          d="m5.74 462.6c-1.51 0-2.74 0.69-2.74 1.52v2.96c0 0.83 1.23 1.52 2.74 1.52h267.02c1.5 0 2.73-0.69 2.73-1.52v-2.96c0-0.83-1.23-1.52-2.73-1.52h-267.02z"
-                        />
-                        <path
-                          id="d2zIsGwE5p"
-                          d="m394.29 438.46v-126.27c0-3.89 3.3-7.08 7.34-7.08h195.4c4.04 0 7.34 3.19 7.34 7.08v126.27h-210.08z"
-                        />
-                        <path
-                          id="a5lG4suEpl"
-                          d="m511.16 355.62v-0.07l0.01-0.07v-0.07l0.01-0.06 0.02-0.07 0.01-0.06 0.02-0.07 0.04-0.12 0.12-0.24 0.03-0.05 0.04-0.06 0.16-0.2 0.05-0.05 0.2-0.16 0.06-0.04 0.05-0.03 0.06-0.04 0.12-0.06 0.06-0.02 0.06-0.03 0.07-0.02 0.06-0.02 0.07-0.02 0.07-0.01 0.06-0.01 0.14-0.02h0.07l0.07-0.01h6.93l0.08 0.01h0.07l0.14 0.02 0.06 0.01 0.07 0.01 0.07 0.02 0.06 0.02 0.07 0.02 0.06 0.03 0.06 0.02 0.12 0.06 0.06 0.04 0.05 0.03 0.06 0.04 0.2 0.16 0.05 0.05 0.16 0.2 0.04 0.06 0.03 0.05 0.12 0.24 0.04 0.12 0.02 0.07 0.01 0.06 0.01 0.07 0.01 0.06 0.02 0.14v0.07 17.56l6.93 7.53h-6.93v23.42h-15.43v-0.01-0.07-16.25-0.07-0.08l-0.03-0.21-0.06-0.21-0.02-0.06-0.03-0.07-0.03-0.06-0.03-0.07-0.03-0.06-0.04-0.06-0.03-0.06-0.04-0.05-0.04-0.06-0.05-0.05-0.04-0.05-0.15-0.15-0.06-0.04-0.05-0.04-0.06-0.04-0.05-0.04-0.06-0.04-0.06-0.03-0.07-0.03-0.12-0.06-0.28-0.08-0.21-0.03h-0.07-0.08-7.15-0.07-0.08l-0.21 0.03-0.14 0.04-0.06 0.02-0.07 0.02-0.07 0.03-0.18 0.09-0.18 0.12-0.1 0.08-0.2 0.2-0.04 0.05-0.04 0.06-0.04 0.05-0.04 0.06-0.03 0.06-0.04 0.06-0.03 0.07-0.03 0.06-0.02 0.07-0.03 0.06-0.04 0.14-0.04 0.28-0.01 0.08v0.07 16.25 0.07 0.01h-15.42v-23.42h-6.93l27.72-30.11 10.39 11.29v-6.27z"
-                        />
-                        <path
-                          id="aj6LbcupC"
-                          d="m366.5 462.6c-1.5 0-2.73 0.69-2.73 1.52v2.96c0 0.83 1.23 1.52 2.73 1.52h267.02c1.51 0 2.74-0.69 2.74-1.52v-2.96c0-0.83-1.23-1.52-2.74-1.52h-267.02z"
-                        />
-                        <path
-                          id="jOHMth2jB"
-                          d="m135.4 350.72 1.3 0.15 1.29 0.21 1.27 0.27 1.25 0.32 1.22 0.37 1.2 0.43 1.17 0.48 1.14 0.53 1.11 0.57 1.08 0.62 1.05 0.67 1.02 0.71 0.98 0.76 0.94 0.79 0.91 0.84 0.86 0.87 0.83 0.91 0.78 0.95 0.73 0.98 0.7 1.01 0.64 1.05 0.6 1.07 0.54 1.1 0.5 1.13 0.44 1.16 0.39 1.18 0.33 1.2 0.28 1.23 0.21 1.24 0.16 1.27 0.09 1.28 0.04 1.29-0.04 1.3-0.09 1.28-0.16 1.27-0.21 1.24-0.28 1.22-0.33 1.21-0.39 1.18-0.44 1.15-0.5 1.13-0.54 1.11-0.6 1.07-0.64 1.05-0.7 1.01-0.73 0.98-0.78 0.95-0.83 0.91-0.86 0.87-0.91 0.84-0.94 0.79-0.98 0.76-1.02 0.71-1.05 0.66-1.08 0.63-1.11 0.57-1.14 0.53-1.17 0.48-1.2 0.43-1.22 0.37-1.25 0.32-1.27 0.27-1.29 0.21-1.3 0.15-1.33 0.09-1.34 0.03-1.35-0.03-1.32-0.09-1.31-0.15-1.29-0.21-1.27-0.27-1.25-0.32-1.22-0.37-1.2-0.43-1.17-0.48-1.14-0.53-1.11-0.57-1.08-0.63-1.05-0.66-1.02-0.71-0.98-0.76-0.94-0.79-0.9-0.84-0.87-0.87-0.82-0.91-0.78-0.95-0.74-0.98-0.69-1.01-0.65-1.05-0.59-1.07-0.55-1.11-0.5-1.13-0.44-1.15-0.39-1.18-0.33-1.21-0.27-1.22-0.22-1.24-0.16-1.27-0.09-1.28-0.03-1.3 0.03-1.29 0.09-1.28 0.16-1.27 0.22-1.24 0.27-1.23 0.33-1.2 0.39-1.18 0.44-1.16 0.5-1.13 0.55-1.1 0.59-1.07 0.65-1.05 0.69-1.01 0.74-0.98 0.78-0.95 0.82-0.91 0.87-0.87 0.9-0.84 0.94-0.79 0.98-0.76 1.02-0.71 1.05-0.67 1.08-0.62 1.11-0.57 1.14-0.53 1.17-0.48 1.2-0.43 1.22-0.37 1.25-0.32 1.27-0.27 1.29-0.21 1.31-0.15 1.32-0.09 1.35-0.03 1.34 0.03 1.33 0.09zm-9.33 50.5 0.59 0.14 0.58 0.13 0.59 0.12 0.6 0.11 0.6 0.09 0.61 0.08 0.61 0.06 0.61 0.05 0.62 0.04 0.62 0.02 0.63 0.01 0.74-0.01 0.73-0.04 0.74-0.05 0.72-0.07 0.72-0.09 0.71-0.11 0.71-0.12 0.7-0.15 0.69-0.16 0.69-0.19 0.67-0.2 0.67-0.22-0.02-0.02-0.01-0.03-0.02-0.03-0.01-0.02-0.04-0.06-0.01-0.03-0.02-0.02-0.02-0.06-0.02-0.03-0.01-0.03-7.86-20.8-7.68 21.53 0.57 0.16zm-17.28-32.57-0.26 0.68-0.23 0.69-0.21 0.7-0.2 0.71-0.17 0.72-0.15 0.72-0.13 0.73-0.11 0.74-0.08 0.75-0.06 0.75-0.03 0.76-0.02 0.76 0.09 2.08 0.26 2.02 0.43 1.98 0.59 1.91 0.74 1.84 0.88 1.77 1.02 1.69 1.15 1.59 1.28 1.51 1.39 1.4 1.5 1.29 1.61 1.18 1.7 1.05 1.78 0.92-12.2-32.28-0.3 0.66-0.27 0.68zm46.43-2.8 0.02 0.18 0.02 0.17 0.01 0.18 0.02 0.18 0.01 0.18 0.02 0.18 0.01 0.18v0.19l0.02 0.38v0.19 0.19l-0.01 0.38-0.03 0.42-0.05 0.45-0.07 0.5-0.09 0.53-0.11 0.58-0.13 0.61-0.15 0.65-0.17 0.69-0.18 0.73-0.21 0.77-0.23 0.81-0.25 0.84-0.27 0.89-7.81 21.81 1.59-0.97 1.51-1.08 1.42-1.18 1.32-1.28 1.23-1.36 1.13-1.46 1.01-1.53 0.89-1.6 0.78-1.68 0.64-1.74 0.52-1.79 0.37-1.85 0.23-1.89 0.08-1.94-0.02-0.91-0.05-0.91-0.09-0.9-0.12-0.89-0.15-0.88-0.18-0.87-0.21-0.85-0.25-0.85-0.27-0.83-0.3-0.82-0.34-0.81-0.36-0.79-0.38-0.78-0.42-0.76 0.03 0.17 0.02 0.17zm-23.83-13.16-0.66 0.05-0.65 0.05-0.65 0.08-0.64 0.08-0.64 0.11-0.64 0.12-0.63 0.13-0.62 0.15-0.62 0.16-0.61 0.18-0.6 0.19-0.6 0.21-0.59 0.22-0.58 0.23-0.58 0.25-0.56 0.26-0.56 0.27-0.56 0.28-0.54 0.3-0.54 0.31-1.04 0.66-0.51 0.35-0.5 0.35-0.49 0.37-0.48 0.38-0.47 0.4-0.46 0.4-0.46 0.41-0.44 0.42-0.43 0.44-0.41 0.44-0.41 0.45-0.4 0.47-0.38 0.47-0.38 0.48-0.36 0.49-0.35 0.5h0.05 0.04 0.05 0.04 0.05 0.04l0.04 0.01h0.05 0.09 0.04 0.04 0.09 0.04 0.04l0.04 0.01h0.05 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04l0.04 0.01h0.04 0.03 0.04 0.04 0.03 0.04 0.04 0.2l0.21-0.01h0.21 0.22l0.22-0.01h0.22l0.23-0.01 0.22-0.01h0.23l1.15-0.05 0.22-0.01 0.22-0.02 0.44-0.02 0.42-0.02 0.2-0.01 0.2-0.02 0.38-0.02 0.51-0.03 0.15-0.01 0.28-0.02 0.12-0.01 0.11-0.01h0.11l0.09-0.01 0.07-0.01h0.07 0.05l0.04-0.01h0.03 0.1 0.09l0.1 0.02 0.16 0.04 0.08 0.03 0.08 0.04 0.06 0.04 0.07 0.04 0.11 0.11 0.05 0.06 0.08 0.12 0.04 0.07 0.03 0.07 0.04 0.14 0.01 0.08 0.01 0.07 0.01 0.08-0.01 0.07v0.08l-0.02 0.07-0.01 0.07-0.03 0.08-0.02 0.07-0.04 0.06-0.04 0.07-0.04 0.06-0.1 0.12-0.07 0.05-0.06 0.05-0.07 0.04-0.08 0.04-0.09 0.03-0.08 0.03-0.2 0.04h-0.04-0.02l-0.06 0.01h-0.04l-0.04 0.01h-0.04l-0.05 0.01h-0.05l-0.06 0.01h-0.06l-0.06 0.01-0.07 0.01h-0.07l-0.07 0.01-0.16 0.02h-0.08l-0.08 0.01-0.18 0.02h-0.09l-0.3 0.03h-0.1l-0.1 0.01-0.11 0.01-0.1 0.01-0.11 0.01h-0.11l-0.22 0.02h-0.12l-0.22 0.02h-0.12l9.32 26.76 5.6-16.21-3.99-10.55h-0.1l-0.1-0.01-0.11-0.01h-0.1l-0.2-0.02h-0.1l-0.1-0.01-0.09-0.01-0.1-0.01-0.09-0.01h-0.1l-0.18-0.02-0.08-0.01h-0.09l-0.24-0.03h-0.08l-0.21-0.03h-0.07l-0.12-0.02h-0.05l-0.05-0.01h-0.05l-0.05-0.01h-0.04l-0.04-0.01h-0.03-0.03l-0.02-0.01h-0.04-0.02l-0.1-0.01-0.1-0.02-0.09-0.02-0.08-0.03-0.08-0.04-0.14-0.08-0.06-0.05-0.05-0.06-0.05-0.05-0.05-0.07-0.04-0.06-0.06-0.14-0.04-0.14-0.01-0.08-0.01-0.07v-0.08l0.01-0.08v-0.07l0.02-0.08 0.02-0.07 0.02-0.08 0.06-0.14 0.04-0.06 0.05-0.07 0.05-0.06 0.11-0.11 0.06-0.04 0.07-0.05 0.07-0.03 0.08-0.04 0.08-0.02 0.18-0.04h0.1 0.1l0.07 0.01h0.05 0.07l0.08 0.01 0.09 0.01h0.1l0.11 0.01 0.26 0.02 0.3 0.02 0.34 0.02 0.36 0.02 0.19 0.01 0.2 0.02 0.21 0.01 0.2 0.01 0.22 0.01 0.21 0.01 0.22 0.01 0.22 0.02 0.22 0.01 0.23 0.01 0.22 0.01 0.23 0.01 0.22 0.01 0.23 0.01h0.22l0.44 0.02h0.22l0.21 0.01h0.2 0.21l0.19 0.01h0.2 0.2l0.21-0.01h0.21 0.22l0.22-0.01h0.22l0.23-0.01 0.22-0.01h0.23l0.92-0.04 0.22-0.01 0.23-0.01 0.22-0.02 0.44-0.02 0.42-0.02 0.2-0.01 0.2-0.02 0.38-0.02 0.51-0.03 0.15-0.01 0.28-0.02 0.12-0.01 0.11-0.01h0.11l0.09-0.01 0.07-0.01h0.07 0.05l0.04-0.01h0.03 0.1 0.09l0.1 0.02 0.16 0.04 0.08 0.03 0.08 0.04 0.06 0.04 0.07 0.04 0.11 0.11 0.05 0.06 0.08 0.12 0.04 0.07 0.02 0.07 0.03 0.07 0.02 0.07 0.01 0.08 0.01 0.07v0.08 0.07l-0.01 0.08-0.01 0.07-0.02 0.07-0.02 0.08-0.03 0.07-0.03 0.06-0.04 0.07-0.04 0.06-0.05 0.06-0.06 0.06-0.06 0.05-0.07 0.05-0.07 0.04-0.08 0.04-0.08 0.03-0.09 0.03-0.09 0.02-0.1 0.02h-0.04-0.03l-0.02 0.01h-0.03-0.04l-0.04 0.01h-0.04l-0.05 0.01h-0.05l-0.06 0.01h-0.06l-0.06 0.01-0.07 0.01h-0.07l-0.07 0.01-0.16 0.02h-0.08l-0.08 0.01-0.18 0.02h-0.1l-0.09 0.01-0.2 0.02h-0.1l-0.1 0.01-0.11 0.01-0.1 0.01-0.11 0.01h-0.11l-0.22 0.02h-0.12l-0.22 0.02h-0.12l9.25 26.55 2.55-8.23 0.09-0.24 0.1-0.23 0.09-0.24 0.09-0.23 0.08-0.23 0.09-0.23 0.16-0.46 0.08-0.22 0.21-0.66 0.07-0.21 0.06-0.22 0.12-0.42 0.06-0.2 0.06-0.21 0.15-0.6 0.04-0.2 0.16-0.76 0.03-0.19 0.06-0.36 0.02-0.18 0.03-0.18 0.02-0.18 0.02-0.17 0.01-0.17 0.02-0.17 0.02-0.34v-0.16-0.16l0.01-0.16-0.01-0.23v-0.22l-0.01-0.22-0.02-0.22-0.01-0.22-0.03-0.21-0.02-0.2-0.03-0.21-0.03-0.2-0.04-0.19-0.04-0.2-0.08-0.38-0.05-0.18-0.05-0.19-0.05-0.18-0.05-0.17-0.06-0.18-0.12-0.34-0.06-0.16-0.06-0.17-0.07-0.16-0.06-0.16-0.07-0.15-0.07-0.16-0.14-0.3-0.07-0.14-0.08-0.15-0.14-0.28-0.08-0.14-0.07-0.13-0.08-0.14-0.14-0.26-0.08-0.13-0.07-0.12-0.07-0.13-0.2-0.3-0.09-0.15-0.1-0.15-0.09-0.15-0.1-0.14-0.09-0.15-0.09-0.14-0.09-0.15-0.09-0.14-0.09-0.15-0.09-0.14-0.08-0.14-0.09-0.14-0.08-0.15-0.16-0.28-0.14-0.28-0.08-0.14-0.06-0.14-0.07-0.14-0.06-0.14-0.06-0.15-0.12-0.28-0.1-0.28-0.04-0.15-0.05-0.14-0.03-0.14-0.04-0.15-0.03-0.15-0.03-0.14-0.06-0.45-0.01-0.15v-0.15l-0.01-0.15 0.03-0.51 0.03-0.16 0.03-0.17 0.03-0.16 0.04-0.17 0.1-0.32 0.06-0.15 0.07-0.16 0.14-0.3 0.08-0.14 0.18-0.28 0.1-0.14 0.1-0.13 0.11-0.13 0.11-0.12 0.24-0.24 0.12-0.11 0.13-0.1 0.14-0.1 0.13-0.1 0.15-0.09 0.14-0.08 0.15-0.08 0.16-0.08 0.48-0.18 0.17-0.05 0.17-0.04 0.36-0.06 0.18-0.02 0.18-0.01h0.19 0.01 0.02 0.02 0.01 0.02 0.01 0.02 0.02l0.03 0.01h0.03 0.03l0.06 0.01h0.03 0.02l-0.34-0.3-0.35-0.29-0.36-0.29-0.72-0.56-0.38-0.26-0.37-0.27-0.38-0.25-0.39-0.25-0.39-0.24-0.4-0.24-0.4-0.23-0.4-0.22-0.41-0.22-1.26-0.6-0.86-0.36-0.44-0.17-0.43-0.17-0.9-0.3-0.9-0.28-0.92-0.24-0.47-0.11-0.46-0.1-0.47-0.09-0.96-0.16-0.48-0.07-0.48-0.06-0.49-0.04-0.48-0.05-0.5-0.03-0.49-0.02-0.5-0.01-0.49-0.01-0.67 0.01-0.67 0.02z"
-                        />
-                        <path
-                          id="c3jNa1REb"
-                          d="m298.04 183.76v-33.67h44.35v33.67h-44.35zm5.54-4.2 8.32-6.32 5.54 2.11 8.31-8.42 11.09 11.22v-23.85h-33.26v25.26zm10.1-20.51 0.19 0.01 0.2 0.03 0.19 0.02 0.19 0.03 0.18 0.04 0.18 0.05 0.18 0.04 0.18 0.06 0.34 0.12 0.17 0.07 0.16 0.07 0.15 0.08 0.16 0.08 0.14 0.08 0.15 0.09 0.14 0.1 0.26 0.2 0.12 0.1 0.12 0.11 0.12 0.12 0.1 0.11 0.11 0.12 0.09 0.12 0.09 0.13 0.16 0.26 0.07 0.13 0.06 0.14 0.06 0.13 0.05 0.15 0.08 0.28 0.03 0.15 0.02 0.15 0.01 0.15v0.15 0.15l-0.01 0.15-0.02 0.15-0.03 0.15-0.04 0.14-0.04 0.15-0.05 0.14-0.06 0.13-0.06 0.14-0.07 0.13-0.16 0.26-0.09 0.13-0.09 0.12-0.11 0.12-0.1 0.12-0.24 0.22-0.12 0.1-0.26 0.2-0.14 0.1-0.15 0.09-0.14 0.08-0.16 0.08-0.15 0.08-0.16 0.07-0.17 0.07-0.34 0.12-0.18 0.06-0.18 0.05-0.36 0.08-0.19 0.03-0.19 0.02-0.2 0.03-0.19 0.01-0.2 0.01h-0.2-0.2l-0.2-0.01-0.19-0.01-0.2-0.03-0.19-0.02-0.18-0.03-0.19-0.04-0.18-0.04-0.18-0.05-0.18-0.06-0.34-0.12-0.32-0.14-0.16-0.08-0.3-0.16-0.15-0.09-0.13-0.1-0.14-0.1-0.13-0.1-0.12-0.1-0.12-0.11-0.11-0.11-0.11-0.12-0.2-0.24-0.09-0.13-0.16-0.26-0.07-0.13-0.06-0.14-0.06-0.13-0.05-0.14-0.04-0.15-0.04-0.14-0.06-0.45v-0.15-0.15l0.06-0.45 0.08-0.28 0.05-0.15 0.06-0.13 0.06-0.14 0.07-0.13 0.16-0.26 0.09-0.13 0.2-0.24 0.11-0.11 0.11-0.12 0.12-0.11 0.12-0.1 0.13-0.1 0.14-0.1 0.13-0.1 0.15-0.09 0.3-0.16 0.16-0.08 0.32-0.14 0.34-0.12 0.18-0.06 0.18-0.04 0.18-0.05 0.19-0.04 0.18-0.03 0.19-0.02 0.2-0.03 0.19-0.01 0.2-0.01h0.2 0.2l0.2 0.01z"
-                        />
-                        <path
-                          id="h2Q0j2aKii"
-                          d="m170.98 153.28h-14.09v27.6h24.5v-20.17h3.68v23.35h-31.86v-33.97h17.77v3.19zm2.45 5.58v-8.77l11.64 8.77h-11.64z"
-                        />
-                        <path
-                          id="e1so2YuQoS"
-                          d="m493.52 150.09c3.02 0 5.47 2.45 5.47 5.47v0c0 3.02-2.45 5.46-5.47 5.46h-23.65c-3.02 0-5.47-2.44-5.47-5.46v0c0-3.02 2.45-5.47 5.47-5.47h23.65z"
-                        />
-                        <path
-                          id="dxqpMBjzs"
-                          d="m493.54 160c3.01 0 5.46 2.45 5.46 5.46v0c0 3.02-2.45 5.47-5.46 5.47h-23.66c-3.02 0-5.46-2.45-5.46-5.47v0c0-3.01 2.44-5.46 5.46-5.46h23.66z"
-                        />
-                        <path
-                          id="bvDmRvhnd"
-                          d="m493.52 171.95c3.02 0 5.47 2.45 5.47 5.47v0c0 3.02-2.45 5.46-5.47 5.46h-23.65c-3.02 0-5.47-2.44-5.47-5.46v0c0-3.02 2.45-5.47 5.47-5.47h23.65z"
-                        />
-                        <path id="aMAV3Si2q" d="m394.71 377.36h-150.16" />
-                      </defs>
-                      <use
-                        fill-opacity="0"
-                        stroke="#4285f4"
-                        stroke-width="2"
-                        xlink:href="#aHIf0e791"
-                      />
-                      <use fill="#000000" fill-opacity="0" xlink:href="#aebH7nnDc" />
-                      <use
-                        fill-opacity="0"
-                        stroke="#a434b7"
-                        stroke-width="2"
-                        xlink:href="#aebH7nnDc"
-                      />
-                      <use
-                        fill-opacity="0"
-                        stroke="#77c800"
-                        stroke-width="2"
-                        xlink:href="#d1deglR8f3"
-                      />
-                      <use
-                        fill-opacity="0"
-                        stroke="#a434b7"
-                        stroke-width="2"
-                        xlink:href="#f3pTna63Hq"
-                      />
-                      <use fill="#a434b7" xlink:href="#e2xrknzxtr" />
-                      <use
-                        fill-opacity="0"
-                        stroke="#a334b7"
-                        stroke-opacity="0"
-                        xlink:href="#e2xrknzxtr"
-                      />
-                      <use
-                        fill-opacity="0"
-                        stroke="#a434b7"
-                        stroke-width="2"
-                        xlink:href="#d2zIsGwE5p"
-                      />
-                      <use fill="#a434b7" xlink:href="#a5lG4suEpl" />
-                      <use fill="#a434b7" xlink:href="#aj6LbcupC" />
-                      <use
-                        fill-opacity="0"
-                        stroke="#a334b7"
-                        stroke-opacity="0"
-                        xlink:href="#aj6LbcupC"
-                      />
-                      <use fill="#a434b7" xlink:href="#jOHMth2jB" />
-                      <use fill="#a434b7" xlink:href="#c3jNa1REb" />
-                      <use fill="#4285f4" xlink:href="#h2Q0j2aKii" />
-                      <use
-                        fill-opacity="0"
-                        stroke="#77c800"
-                        stroke-width="2"
-                        xlink:href="#e1so2YuQoS"
-                      />
-                      <use
-                        fill-opacity="0"
-                        stroke="#77c800"
-                        stroke-width="2"
-                        xlink:href="#dxqpMBjzs"
-                      />
-                      <use
-                        fill-opacity="0"
-                        stroke="#77c800"
-                        stroke-width="2"
-                        xlink:href="#bvDmRvhnd"
-                      />
-                      <use
-                        fill-opacity="0"
-                        stroke="#a434b7"
-                        stroke-width="2"
-                        xlink:href="#aMAV3Si2q"
-                        class="purple-section-line"
-                      />
-                    </svg>
+                  <svg class="section-right-image" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 919.606 697.808" style="enable-background:new 0 0 919.606 697.808;" xml:space="preserve">
+                  <g id="graph-8">
+                    <polygon style="fill:#600060;" points="128.965,626.622 128.965,572.037 262.559,482.404 262.559,626.622 128.965,626.622 	"/>
+                    <polygon style="fill:#600060;" points="314.497,626.622 314.497,460.783 448.092,357.607 448.092,626.622 314.497,626.622 	"/>
+                    <polygon style="fill:#600060;" points="500.039,626.622 500.039,318.375 633.7,215.216 633.7,626.622 500.039,626.622 	"/>
+                    <polygon style="fill:#600060;" points="685.657,626.622 685.657,173.628 819.248,70.384 819.248,626.622 685.657,626.622 	"/>
+                    <polygon style="fill:#D1D3D4;" points="0,697.808 0,662.847 885.995,662.847 885.995,26.695 919.606,26.695 919.606,662.847 
+                      919.606,697.808 885.995,697.808 0,697.808 	"/>
+                    <polygon style="fill:#600060;" points="124.695,500.747 124.695,456.974 673.87,54.654 634.623,26.695 771.461,0 703.725,121.963 
+                      691.256,83.552 124.695,500.747 	"/>
+                  </g>
+                  <g id="Layer_1">
+                  </g>
+                  </svg>
                   </div>
                   <div
                     class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start promo-box-light"
                   >
                     <h3 class="headline3" id="engaging-experiences-regardless-screen-size">
-                      Focus on content, we deliver it. Focus on audience, we help you grow it.
+                      Focus on content, I help deliver it. Focus on audience, I help you grow it.
                     </h3>
                     <p>
-                      You've invested time and energy into creating amazing content, services, and
-                      products for your customers. We provide managed WordPress hosting and
-                      professional services worthy of your efforts. Logical Phase leverages what's
-                      best about WordPress, and makes it so much better.
+                      You've invested time and energy into creating amazing products and services
+                      for your customers. I create mission critical hosting, web performance, and
+                      security solutions that <strong>maximize conversions and revenue</strong>. 
+                      <a href="/contact" >Let's talk</a> about your needs.
                     </p>
                   </div>
                 </div>
@@ -665,7 +565,7 @@ class Home extends PageViewElement {
                       class="section-header__heading headline3"
                       id="wordpress-you-need-solutions-you-deserve"
                     >
-                      Smarter, faster, superior digital experience.
+                      A smarter, faster, superior WordPress.
                     </h3>
                     <div class="section-header__link">
                       <a
@@ -674,62 +574,14 @@ class Home extends PageViewElement {
                         track-type="navigateTo"
                         track-name="home"
                         track-metadata-position="banner"
-                        >Contact the experts</a
+                        >Need help? Let's talk!</a
                       >
                     </div>
                   </header>
                   <div class="grid__col is-6 is-4__large">
                     <section class="card card--solution">
                       <header>
-                        <h2 class="card__eyebrow eyebrow">Powered by Google Cloud</h2>
-                        <img
-                          class="card__icon"
-                          src="/images/icons/icon-pwa-62x-62.svg"
-                          height="72"
-                          width="72"
-                          alt="Pagespeed optimization service"
-                          loading="lazy"
-                        />
-                        <a
-                          class="link card__link card__link-text"
-                          href="/hosting/"
-                          track-type="navigateTo"
-                          track-name="solution"
-                          track-metadata-eventdetail="workloadMigration"
-                          track-metadata-position="body"
-                        >
-                          <h3 class="card__heading headline4" id="pagespeed-optimization">
-                            Hyper Optimized Hosting
-                          </h3>
-                        </a>
-                      </header>
-                      <p class="card__body">
-                        Supercharged, fully managed, professionally optimized WordPress hosting instantly delivered to any
-                        screen, anywhere. 
-                      </p>
-                      <div class="card__arrow">
-                        <svg width="18px" height="18px" viewBox="0 0 18 18">
-                          <title>Arrow</title>
-                          <polyline
-                            points="1,9 17,9"
-                            stroke="var(--app-primary-icon-color)"
-                            stroke-width="2"
-                            fill="none"
-                          ></polyline>
-                          <polyline
-                            points="9,1 17,9 9,17"
-                            stroke="var(--app-primary-icon-color)"
-                            stroke-width="2"
-                            fill="none"
-                          ></polyline>
-                        </svg>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="grid__col is-6 is-4__large">
-                    <section class="card card--solution">
-                      <header>
-                        <h2 class="card__eyebrow eyebrow">WordPress Performance</h2>
+                        <h2 class="card__eyebrow eyebrow">Lightspeed Site Optimizations</h2>
                         <img
                           class="card__icon"
                           src="/images/icons/icon-pagespeed-62x62.svg"
@@ -747,13 +599,13 @@ class Home extends PageViewElement {
                           track-metadata-position="body"
                         >
                           <h3 class="card__heading headline4" id="pwa">
-                            PageSpeed Optimizations
+                            WordPress Performance
                           </h3>
                         </a>
                       </header>
                       <p class="card__body">
-                        We make slow loading WordPress sites lightning fast and Google search rank
-                        friendly.
+                        I turn painfully slow WordPress sites into lightning fast, Google Lighthouse
+                        happy WordPress sites.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -777,31 +629,77 @@ class Home extends PageViewElement {
                   <div class="grid__col is-6 is-4__large">
                     <section class="card card--solution">
                       <header>
-                        <h2 class="card__eyebrow eyebrow">WordPress Repairs</h2>
+                        <h2 class="card__eyebrow eyebrow">Professional Security Services</h2>
                         <img
                           class="card__icon"
                           src="/images/icons/icon-ambulance-62x62.svg"
                           height="72"
                           width="72"
-                          alt="WordPress site repairs and restoration"
+                          alt="Security repairs, restoration, and prevention for WordPress."
                           loading="lazy"
                         />
                         <a
                           class="link card__link card__link-text"
-                          href="/emergency/"
+                          href="/security/"
                           track-type="navigateTo"
                           track-name="solution"
-                          track-metadata-eventdetail="emergencyResponse"
+                          track-metadata-eventdetail="security"
                           track-metadata-position="body"
                         >
                           <h3 class="card__heading headline4" id="repairs-restoration">
-                            Emergency Response
+                            Think you've been hacked? 
                           </h3>
                         </a>
                       </header>
                       <p class="card__body">
-                        Site emergency? Our Site Emergency Response Team (SERT) will have you back
-                        up and running in no time.
+                        I'll assess, clean and restore your site, no matter how complex, and apply proven site protection against future attacks.
+                      </p>
+                      <div class="card__arrow">
+                        <svg width="18px" height="18px" viewBox="0 0 18 18">
+                          <title>Arrow Link to security details.</title>
+                          <polyline
+                            points="1,9 17,9"
+                            stroke="var(--app-primary-icon-color)"
+                            stroke-width="2"
+                            fill="none"
+                          ></polyline>
+                          <polyline
+                            points="9,1 17,9 9,17"
+                            stroke="var(--app-primary-icon-color)"
+                            stroke-width="2"
+                            fill="none"
+                          ></polyline>
+                        </svg>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="grid__col is-6 is-4__large">
+                    <section class="card card--solution">
+                      <header>
+                        <h2 class="card__eyebrow eyebrow">Headless WordPress PWA</h2>
+                        <img
+                          class="card__icon"
+                          src="/images/icons/icon-pwa-62x62.svg"
+                          height="72"
+                          width="72"
+                          alt="Headless WordPress Progressive Web Application Design and Devlopment."
+                          loading="lazy"
+                        />
+                        <a
+                          class="link card__link card__link-text"
+                          href="/design/"
+                          track-type="navigateTo"
+                          track-name="solution"
+                          track-metadata-eventdetail="wordpressRelocation"
+                          track-metadata-position="body"
+                        >
+                          <h3 class="card__heading headline4" id="wordpress-headless-pwa">
+                            Progressive Web Applications
+                          </h3>
+                        </a>
+                      </header>
+                      <p class="card__body">
+                        Raise your profile with an extraordinary, headless WordPress frontend designed exclusively for your brand. 
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -825,10 +723,10 @@ class Home extends PageViewElement {
                   <div class="grid__col is-6 is-4__large">
                     <section class="card card--solution">
                       <header>
-                        <h2 class="card__eyebrow eyebrow">Precisely Maintained</h2>
+                        <h2 class="card__eyebrow eyebrow">WordPress Site Migration</h2>
                         <img
                           class="card__icon"
-                          src="/images/icons/icon-stethescope-62x62-opt.svg"
+                          src="/images/icons/icon-migrations-62x62.svg"
                           height="72"
                           width="72"
                           alt="We precisely maintain your WordPress site"
@@ -836,20 +734,19 @@ class Home extends PageViewElement {
                         />
                         <a
                           class="link card__link card__link-text"
-                          href="/care/"
+                          href="/migration/"
                           track-type="navigateTo"
                           track-name="solution"
                           track-metadata-eventdetail="wordpressRelocation"
                           track-metadata-position="body"
                         >
                           <h3 class="card__heading headline4" id="wordpress-preventive-care">
-                            Total Preventive Care
+                            Zero Downtime Site Move
                           </h3>
                         </a>
                       </header>
                       <p class="card__body">
-                        Focus on creating, leave the maintaining to us. 24-7 monitoring, updates,
-                        backups and more.
+                        I've safely moved hundreds of WordPress sites and email accounts, from small to huge, with zero downtime.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -871,38 +768,45 @@ class Home extends PageViewElement {
                     </section>
                   </div>
                   <div class="grid__col is-6 is-4__large">
-                    <section class="card card--solution industry">
+                    <section class="card card--solution">
                       <header>
-                        <h2 class="card__eyebrow eyebrow">Professional Consulting</h2>
+                        <h2 class="card__eyebrow eyebrow">Mission Critical Hosting</h2>
+                        <img
+                          class="card__icon"
+                          src="/images/icons/icon-security-62x62.svg"
+                          height="72"
+                          width="72"
+                          alt="Custom tailored WordPress hosting using Google Cloud Platform."
+                          loading="lazy"
+                        />
                         <a
                           class="link card__link card__link-text"
-                          href="/care/"
+                          href="/hosting/"
                           track-type="navigateTo"
                           track-name="solution"
-                          track-metadata-eventdetail="wordpressRelocation"
+                          track-metadata-eventdetail="wordpressHosting"
                           track-metadata-position="body"
                         >
-                          <h3 class="card__heading headline4" id="wordpress-relocation">
-                            Site Assessment
+                          <h3 class="card__heading headline4" id="wordpress-hosting">
+                            GCP Hosting for WordPress
                           </h3>
                         </a>
                       </header>
                       <p class="card__body">
-                        Let us perform a complete assessment of your site, including performance and
-                        search.
+                        I design and fully manage mission critical, instantly scalable WordPress hosting atop Google Cloud Platform services.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
                           <title>Arrow</title>
                           <polyline
                             points="1,9 17,9"
-                            stroke="var(--app-reverse-text-color)"
+                            stroke="var(--app-primary-icon-color)"
                             stroke-width="2"
                             fill="none"
                           ></polyline>
                           <polyline
                             points="9,1 17,9 9,17"
-                            stroke="var(--app-reverse-text-color)"
+                            stroke="var(--app-primary-icon-color)"
                             stroke-width="2"
                             fill="none"
                           ></polyline>
@@ -917,58 +821,21 @@ class Home extends PageViewElement {
           <div class="section section--border">
             <div class="section__header text-center grid">
               <div class="grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="headline3" id="features">Professional WordPress Consultants</h2>
+                <h2 class="headline3" id="features">Logical Customers</h2>
               </div>
             </div>
             <section class="copy">
-              <div class="grid--alternate copy__inner copy--two-column">
-                <div class="grid__col is-1__large--offset copy__text is-6 is-5__large">
-                  <h3 class="headline4">WordPress Gutenberg goodness</h3>
-                  <p>
-                    The latest WordPress backend dashboard streamlined for productive editing and
-                    publishing. Focus on great writing using familiar writing and content management
-                    tools.
-                  </p>
-                </div>
-                <div class="grid__col copy__text is-6 is-5__large">
-                  <h3 class="headline4">Control your content</h3>
-                  <p>
-                    Logical Phase doesn't capitalize on your content like other services. We don't
-                    use paywalls or advertisements that's for you to decide. Moving your
-                    content is as easy as moving any other self-hosted WordPress site.
-                  </p>
-                </div>
-                <div class="grid__col is-1__large--offset copy__text is-6 is-5__large">
-                  <h3 class="headline4">Progressive Web Application</h3>
-                  <p>
-                    No more theme mess. Just our beautiful PWA frontend, built with Google
-                    LitElement, Material Design, and web components fully decoupled from WordPress.
-                  </p>
-                </div>
-                <div class="grid__col copy__text is-6 is-5__large">
-                  <h3 class="headline4">Smooth and natural</h3>
-                  <p>
-                    Quick smooth transitions and animations are baked right in to make for a more
-                    natural, pleasing application look and feel. No more janking, confusing view
-                    changes
-                  </p>
-                </div>
-                <div class="grid__col is-1__large--offset copy__text is-6 is-5__large">
-                  <h3 class="headline4">Installable and always up-to-date</h3>
-                  <p>
-                    Users can optionally install your Logical Phase PWA just like any native
-                    application. Best of all, PWAs don't take up any storage memory and they're
-                    updated to the latest version without any user effort.
-                  </p>
-                </div>
-                <div class="grid__col copy__text is-6 is-5__large">
-                  <h3 class="headline4">Fast loading and reliable</h3>
-                  <p>
-                    Logical Phase PWAs load instantly even in spotty internet conditions. Your
-                    readers can continue to read your posts offline uninterrupted.
-                  </p>
-                </div>
+
+            </section>
+          </div>
+          <div class="section section--border">
+            <div class="section__header text-center grid">
+              <div class="grid__col is-12 is-10__large is-1__large--offset">
+                <h2 class="headline3" id="features">Logical Technology Partners</h2>
               </div>
+            </div>
+            <section class="copy">
+
             </section>
           </div>
         </article>

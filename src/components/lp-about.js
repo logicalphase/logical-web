@@ -13,7 +13,7 @@ import { ButtonStyle } from './style-button';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
-class Emergency extends PageViewElement {
+class About extends PageViewElement {
   static get styles() {
     return [
       SharedStyles,
@@ -32,7 +32,7 @@ class Emergency extends PageViewElement {
         .hero {
           background: var(--app-reverse-text-color)
             url('/images/header/emergency-header-opt.svg') no-repeat;
-          background-size: 464px;
+          background-size: 400px;
           background-position: 93% 10px;
         }
         .section {
@@ -75,7 +75,7 @@ class Emergency extends PageViewElement {
           .section {
             padding-top: 40px;
           }
-          #site .headline4 {
+          .headline4 {
             margin-right: 56px;
           }
         }
@@ -95,8 +95,8 @@ class Emergency extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: 'Site Emergency Response Team - Logical Phase',
-      description: 'We fix WordPress. Guaranteed.',
+      title: 'About John Teague - Logical Phase',
+      description: 'I use considerable experience and skill sets to create and protect extraordinary WordPress sites.',
     });
 
     return html`
@@ -108,11 +108,11 @@ class Emergency extends PageViewElement {
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="section-header__eyebrow eyebrow">
-                      WordPress repair and restoration
+                      Professional Services for WordPress
                     </h1>
-                    <h2 class="display3">WP Emergency Response Desk</h2>
+                    <h2 class="display3">About Logical Phase</h2>
                     <p class="headline4 why-google__intro-text">
-                      When something goes wrong we make it right.
+                      Being able to help a site owner achieve success is always a great feeling. But building new friendship is even better.
                     </p>
                     <div class="section-header__link">
                       <a
@@ -196,4 +196,4 @@ class Emergency extends PageViewElement {
     `;
   }
 }
-window.customElements.define('lp-emergency', Emergency);
+window.customElements.define('lp-about', About);

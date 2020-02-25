@@ -81,6 +81,10 @@ class Privacy extends PageViewElement {
             margin-right: 200px;
           }
 
+          section {
+            margin-top: 102px;
+          }
+
           h3 {
             font-weight: 400;
           }
@@ -169,7 +173,7 @@ class Privacy extends PageViewElement {
                       <h2 class="paper-font-title paper-font-light">
                         Privacy is built into our services
                       </h2>
-                      <p>Effective date: 25 May 2018</p>
+                      <p>Effective date: 25 February 2020</p>
                     </div>
                   </header>
                   <div class="content-grid-box">
@@ -1226,79 +1230,6 @@ class Privacy extends PageViewElement {
                     </div>
                   </div>
                 </main>
-                <aside class="sidebar">
-                  <div class="nav navbar">
-                    <div class="sticky">
-                      <ul class="right-side-nav navbar-items l-space-bottom-5">
-                        <li>
-                          <h3 class="l-pad-right-2 l-pad-left-2 text-uppercase" id="privacy">
-                            On this page
-                          </h3>
-                        </li>
-                        <li>
-                          <a
-                            style="background:#edf0f2;color:var(--app-primary-color);text-decoration:none;"
-                            class="privacy"
-                            track-type="privacyStatement"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="#section-1"
-                            >1. Introduction</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="transparency"
-                            track-type="transparency"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="#section-2"
-                            >2. Entities Covered</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="aup"
-                            track-type="acceptableUse"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="#section-3"
-                            >3.Legal Authority</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="security"
-                            track-type="securityGuarantee"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="#section-4"
-                            >4. Data We Collect</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="sla"
-                            track-type="serviceLevelAgreement"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="#section-5"
-                            >5. Website Visitors</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            track-type="vendors"
-                            track-name="web-page"
-                            track-metadata-position="sidebar"
-                            href="#section-6"
-                            >6. Links to Sites</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </aside>
               </div>
             </section>
           </div>

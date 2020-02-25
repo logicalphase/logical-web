@@ -22,7 +22,13 @@ import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-toolbar/app-toolbar';
 
-import { navigate, updateOffline, updateDrawerState, updateLayout, updateLocationURL } from '../actions/app';
+import {
+  navigate,
+  updateOffline,
+  updateDrawerState,
+  updateLayout,
+  updateLocationURL,
+} from '../actions/app';
 
 import { Theme } from './style-theme';
 import { MenuStyles } from './style-menu';
@@ -117,15 +123,14 @@ class App extends connect(store)(LitElement) {
 
         .cta-header {
           background: var(--app-secondary-background-color);
-          font-size: 14px;
+          font-size: 1.2rem;
           margin-right: 24px;
-          padding: 0px 0px 0px 10px;
+          padding: 0px 10px 0px 10px;
           border: solid 1px var(--app-form-border-color);
           -webkit-border-radius: 10em;
           -moz-border-radius: 10em;
           border-radius: 10em;
         }
-
 
         .cta-header:focus-within {
           background-color: var(--app-reverse-text-color);
@@ -139,7 +144,7 @@ class App extends connect(store)(LitElement) {
           border: 1px solid var(--app-primary-icon-color);
           fill: var(--app-primary-icon-color);
           cursor: pointer;
-          width:34px;
+          width: 34px;
           height: 34px;
           position: absolute;
           top: 24px;
@@ -153,7 +158,7 @@ class App extends connect(store)(LitElement) {
 
         input[type='search'] {
           background: var(--app-secondary-background-color);
-          padding: 8px 0px 8px 8px;
+          padding: 8px 8px 8px 8px;
           width: 220px;
           margin-top: 14px;
           margin-bottom: 14px;
@@ -369,7 +374,6 @@ class App extends connect(store)(LitElement) {
         changes to a wide layout. 
       */
         @media (min-width: 460px) {
-
           #dropdownMenuButton {
             margin-right: 3px;
           }
@@ -380,19 +384,16 @@ class App extends connect(store)(LitElement) {
 
           .cta-header {
             background: var(--app-secondary-background-color);
+            font-size: 1.1rem;
             margin-right: 24px;
             border: solid 1px var(--app-form-border-color);
-            -webkit-border-radius: 10em;
-            -moz-border-radius: 10em;
-            border-radius: 10em;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
           }
 
           .cta-header:focus-within {
-            background-color: var(--app-reverse-text-color);
-            -webkit-box-shadow: 0 0 10px rgba(164, 52, 183, 0.8);
-            -moz-box-shadow: 0 0 10px rgba(164, 52, 183, 0.8);
-            box-shadow: 0 0 10px rgba(164, 52, 183, 0.8);
-            border: solid 1px rgba(164, 52, 183, 0.8);
+            border: none;
           }
 
           input[type='search']::placeholder {
@@ -402,16 +403,15 @@ class App extends connect(store)(LitElement) {
           input[type='search'] {
             background: var(--app-secondary-background-color);
             width: 170px;
-            font-size: 1.2rem;
-            padding: 8px 0px 8px 8px;
+            font-size: 1rem;
+            padding: 0px 0px 0px 8px;
             margin-top: 0px;
             margin-bottom: 0px;
-            border: 0px solid;
+            border: none;
             -webkit-transition: all 0.5s;
             -moz-transition: all 0.5s;
             transition: all 0.5s;
           }
-
 
           input[type='search']:focus {
             width: 380px;
@@ -459,9 +459,9 @@ class App extends connect(store)(LitElement) {
           }
 
           .footer-linkboxes > nav::before {
-            background-color:  var(--app-footer-primary-background-color) !important;
+            background-color: var(--app-footer-primary-background-color) !important;
             color: var(--app-secondary-background-color);
-            content: "Logical Phase";
+            content: 'Logical Phase';
             display: block;
             min-height: 73px;
             margin: 0px 24px;
@@ -473,27 +473,33 @@ class App extends connect(store)(LitElement) {
             padding-right: 0px;
           }
 
-
-          html[dir=rtl] .microphone-icon {
+          html[dir='rtl'] .microphone-icon {
             left: 0;
             right: auto;
           }
 
-          #realbox-input-wrapper > :-webkit-any(.google-g-icon, .microphone-icon,
-          .search-icon) {
+          #realbox-input-wrapper > :-webkit-any(.google-g-icon, .microphone-icon, .search-icon) {
             z-index: 3;
           }
         }
       `,
     ];
   }
-  
+
   render() {
-    const { appTitle, _page, _offline, _drawerOpened, _snackbarOpened,  _searchAction, _searchTerms } = this;
+    const {
+      appTitle,
+      _page,
+      _offline,
+      _drawerOpened,
+      _snackbarOpened,
+      _searchAction,
+      _searchTerms,
+    } = this;
 
     const hideInput = !_page;
     // True to make the search input aligns at the top inside the header instead of inside the main content.
-    const inputAtTop = ('ontouchstart' in window || !_page);
+    const inputAtTop = 'ontouchstart' in window || !_page;
     const searchTerms = _page ? '' : _searchTerms;
 
     updateMetadata({
@@ -514,7 +520,7 @@ class App extends connect(store)(LitElement) {
               <img
                 rel="dns-prefetch"
                 class="brand-site-logo"
-                src="/images/logicalphase-logo.svg"
+                src="/images/logicalphase-logo-204x36.svg"
                 alt="${appTitle} logo"
               />
             </a>
@@ -522,11 +528,23 @@ class App extends connect(store)(LitElement) {
               <span class="site-name">${appTitle}</span>
             </div>
             <div class="cta-header toolbar-list">
-            <lp-input-decorator ?top="${inputAtTop}" ?hidden="${hideInput}">
-              <input slot="input" id="input" aria-label="Search Content" type="search" placeholder="Enter search term" value="${decodeURI(searchTerms)}"
-                  @change="${(e) => store.dispatch(updateLocationURL(`/search/${e.target.value}`))}">
-              <speech-mic slot="button" continuous interimResults @result="${(e) => this._micResult(e)}"></speech-mic>
-            </lp-input-decorator>
+              <lp-input-decorator ?top="${inputAtTop}" ?hidden="${hideInput}">
+                <input
+                  slot="input"
+                  id="input"
+                  aria-label="Search Content"
+                  type="search"
+                  placeholder="Enter search term"
+                  value="${decodeURI(searchTerms)}"
+                  @change="${e => store.dispatch(updateLocationURL(`/search/${e.target.value}`))}"
+                />
+                <speech-mic
+                  slot="button"
+                  continuous
+                  interimResults
+                  @result="${e => this._micResult(e)}"
+                ></speech-mic>
+              </lp-input-decorator>
             </div>
             <button
               class="menu-btn"
@@ -540,23 +558,69 @@ class App extends connect(store)(LitElement) {
             <nav role="navigation" aria-label="Header Navigation Menu">
               <div class="main-navigation">
                 <a ?selected="${_page === 'home'}" href="/">Home</a>
-                <a id="dropdownMenuButton" class="toolbar-platform-chooser__button" @click="${this._toggleDropdownMenu}">
+                <a
+                  id="dropdownMenuButton"
+                  class="toolbar-platform-chooser__button"
+                  @click="${this._toggleDropdownMenu}"
+                >
                   <span class="toolbar-platform-chooser__label">Solutions</span>
-                  <svg class="triangle dropdown__arrow closed" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <svg
+                    class="triangle dropdown__arrow closed"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
                     <title>Open drop down menu</title>
                     <path d="M7 10l5 5 5-5z"></path>
                   </svg>
                 </a>
+                <a ?selected="${_page === 'about'}" href="/about">About</a>
                 <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
                 <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
-                <a ?selected="${_page === 'support'}" href="/support" class="login-nav-item">Log in</a>
+                <a ?selected="${_page === 'support'}" href="/support" class="login-nav-item"
+                  >Support</a
+                >
               </div>
-              <div id="dropdownListElement" class="main-navigation dropdown-menu hide" data-target="slide-content" aria-hidden="true" tabindex="-1">
-                <a class="dropdown-item submenu" ?selected="${_page === 'hosting'}" href="/hosting" tabindex="-1">Hosting</a>
-                <a class="dropdown-item submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed" tabindex="-1">Site Performance</a>
-                <a class="dropdown-item submenu" ?selected="${_page === 'emergency'}" href="/emergency" tabindex="-1">Emergency Response</a>
-                <a class="dropdown-item submenu" ?selected="${_page === 'care'}" href="/care" tabindex="-1">Preventive Care</a>
-                <a class="dropdown-item submenu" ?selected="${_page === 'migration'}" href="/migration" tabindex="-1">Site Migrations</a>
+              <div
+                id="dropdownListElement"
+                class="main-navigation dropdown-menu hide"
+                data-target="slide-content"
+                aria-hidden="true"
+                tabindex="-1"
+              >
+                <a
+                  class="dropdown-item submenu"
+                  ?selected="${_page === 'pagespeed'}"
+                  href="/pagespeed"
+                  tabindex="-1"
+                  >Site Performance</a
+                >
+                <a
+                  class="dropdown-item submenu"
+                  ?selected="${_page === 'security'}"
+                  href="/security"
+                  tabindex="-1"
+                  >Security Services</a
+                >
+                <a class="submenu" 
+                  ?selected="${_page === 'hosting'}" 
+                  tabindex="-1"
+                  href="/hosting">GCP Hosting Solutions</a
+                >
+                <a 
+                  class="submenu" 
+                  ?selected="${_page === 'design'}" 
+                  tabindex="-1"
+                  href="/design">Progressive Web Apps</a
+                >
+                <a
+                  class="dropdown-item submenu"
+                  ?selected="${_page === 'migration'}"
+                  href="/migration"
+                  tabindex="-1"
+                  >Site Migrations</a
+                >
               </div>
             </nav>
           </app-toolbar>
@@ -575,29 +639,35 @@ class App extends connect(store)(LitElement) {
         </app-toolbar>
         <nav class="drawer-list">
           <div class="search-wrapper">
-          <form class="header-search-drawer" name="toolbar-search-drawer" action="/search/wordpress">
-            <input 
-              class="search-field-drawer" 
-              type="search" 
-              aria-label="Search box" 
-              placeholder="Search..." 
-              value="" 
-            />
-            <button
-              class="search-btn"
-              title="Search"
-              @click="${() => this._getValueFromSearchFieldDrawer() }"
+            <form
+              class="header-search-drawer"
+              name="toolbar-search-drawer"
+              action="/search/wordpress"
             >
-              ${SearchIcon}
-            </button>
-          </form>
+              <input
+                class="search-field-drawer"
+                type="search"
+                aria-label="Search box"
+                placeholder="Search..."
+                value="" 
+                tabindex="-1"
+              />
+              <button
+                class="search-btn"
+                title="Search"
+                @click="${() => this._getValueFromSearchFieldDrawer()}"
+              >
+                ${SearchIcon}
+              </button>
+            </form>
           </div>
           <a ?selected="${_page === 'home'}" href="/">Home</a>
-          <a class="submenu" ?selected="${_page === 'hosting'}" href="/hosting">Hosting</a>
-          <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">Performance</a>
-          <a class="submenu" ?selected="${_page === 'emergency'}" href="/emergency">Emergency</a>
-          <a class="submenu" ?selected="${_page === 'care'}" href="/care">Care</a>
-          <a class="submenu" ?selected="${_page === 'migration'}" href="/migration">Migration</a>
+          <a ?selected="${_page === 'about'}" href="/about">About</a>
+          <a class="submenu" ?selected="${_page === 'pagespeed'}" href="/pagespeed">Site Performance</a>
+          <a class="submenu" ?selected="${_page === 'security'}" href="/security">Security Services</a>
+          <a class="submenu" ?selected="${_page === 'hosting'}" href="/hosting">Cloud Hosting</a>
+          <a class="submenu" ?selected="${_page === 'design'}" href="/design">Progressive Web Apps</a>
+          <a class="submenu" ?selected="${_page === 'migration'}" href="/migration">Site Migrations</a>
           <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
           <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
           <a ?selected="${_page === 'support'}" href="/support">Support</a>
@@ -607,21 +677,20 @@ class App extends connect(store)(LitElement) {
       <!-- Main content -->
       <main class="main-content">
         <lp-home class="page" ?active="${_page === 'home'}"></lp-home>
-        <lp-care class="page" ?active="${_page === 'care'}"></lp-care>
+        <lp-article class="page" ?active="${_page === 'article'}"></lp-article>
+        <lp-about class="page" ?active="${_page === 'about'}"></lp-about>
+        <lp-blog class="page" ?active="${_page === 'blog'}"></lp-blog>
+        <lp-contact class="page" ?active="${_page === 'contact'}"></lp-contact>
+        <lp-category class="page" ?active="${_page === 'category'}"></lp-category>
         <lp-design class="page" ?active="${_page === 'design'}"></lp-design>
         <lp-hosting class="page" ?active="${_page === 'hosting'}"></lp-hosting>
-        <lp-emergency class="page" ?active="${_page === 'emergency'}"></lp-emergency>
         <lp-migration class="page" ?active="${_page === 'migration'}"></lp-migration>
         <lp-pagespeed class="page" ?active="${_page === 'pagespeed'}"></lp-pagespeed>
         <lp-privacy class="page" ?active="${_page === 'privacy'}"></lp-privacy>
-        <lp-terms class="page" ?active="${_page === 'terms'}"></lp-terms>
-        <lp-security class="page" ?active="${_page === 'security'}"></lp-security>
-        <lp-blog class="page" ?active="${_page === 'blog'}"></lp-blog>
-        <lp-category class="page" ?active="${_page === 'category'}"></lp-category>
-        <lp-article class="page" ?active="${_page === 'article'}"></lp-article>
-        <lp-contact class="page" ?active="${_page === 'contact'}"></lp-contact>
         <lp-search class="page" ?active="${_page === 'search'}"></lp-search>
+        <lp-security class="page" ?active="${_page === 'security'}"></lp-security>
         <lp-support class="page" ?active="${_page === 'support'}"></lp-support>
+        <lp-terms class="page" ?active="${_page === 'terms'}"></lp-terms>
         <lp-view404 class="page" ?active="${_page === '404'}"></lp-view404>
       </main>
 
@@ -633,12 +702,8 @@ class App extends connect(store)(LitElement) {
         <nav aria-label="Policy Links" class="utility-footer-nav nav full-site-width">
           <div class="utility-footer-nav-left">
             <span class="-footer-links">
-              <a class="utility-footer-link gc-analytics-event" href="/terms"
-                >Site Terms</a
-              >
-              <a class="utility-footer-link gc-analytics-event" href="/privacy"
-                >Privacy</a
-              >
+              <a class="utility-footer-link gc-analytics-event" href="/terms">Site Terms</a>
+              <a class="utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
             </span>
           </div>
         </nav>
@@ -702,7 +767,7 @@ class App extends connect(store)(LitElement) {
       },
       _searchAction: {
         type: Object,
-      }
+      },
     };
   }
 
@@ -719,7 +784,7 @@ class App extends connect(store)(LitElement) {
     installMediaQueryWatcher(`(min-width: 648px) and (min-height: 648px)`, matches =>
       store.dispatch(updateLayout(matches)),
     );
-    
+
     this.removeAttribute('unresolved');
     this._input = this.shadowRoot.getElementById('input');
   }
@@ -733,7 +798,7 @@ class App extends connect(store)(LitElement) {
         // This object also takes an image property, that points to an img src.
       });
       // Maybe move this into a store, but for now I need a quick and dirty way
-      // to make sure the dropdown menu element closes after a menu selection 
+      // to make sure the dropdown menu element closes after a menu selection
       // and to properly update aria attributes.
       this._hideDropdownButtonBlur();
 
@@ -743,31 +808,31 @@ class App extends connect(store)(LitElement) {
 
   _toggleDropdownMenu(e) {
     const dropdownButton = this.shadowRoot.getElementById('dropdownMenuButton');
-    const dropdownList = this.shadowRoot.getElementById("dropdownListElement");
+    const dropdownList = this.shadowRoot.getElementById('dropdownListElement');
     const dropdownArrow = this.shadowRoot.querySelector('.dropdown__arrow');
     if (dropdownList.classList.contains('hide')) {
-      dropdownList.classList.replace('hide','show');
-      dropdownArrow.classList.replace('closed','open');
-      dropdownButton.setAttribute("aria-expanded", 'true');
-      dropdownList.setAttribute("aria-hidden", 'false');
+      dropdownList.classList.replace('hide', 'show');
+      dropdownArrow.classList.replace('closed', 'open');
+      dropdownButton.setAttribute('aria-expanded', 'true');
+      dropdownList.setAttribute('aria-hidden', 'false');
       console.log(dropdownList.classList);
     } else {
-      dropdownList.classList.replace('show','hide');
-      dropdownArrow.classList.replace('open','closed');
-      dropdownButton.setAttribute("aria-expanded", 'false');
-      dropdownList.setAttribute("aria-hidden", 'true');
+      dropdownList.classList.replace('show', 'hide');
+      dropdownArrow.classList.replace('open', 'closed');
+      dropdownButton.setAttribute('aria-expanded', 'false');
+      dropdownList.setAttribute('aria-hidden', 'true');
       console.log(dropdownList.classList);
-    }  
+    }
   }
 
   _hideDropdownButtonBlur(e) {
     const dropdownButton = this.shadowRoot.getElementById('dropdownMenuButton');
-    const dropdownList = this.shadowRoot.getElementById("dropdownListElement");
+    const dropdownList = this.shadowRoot.getElementById('dropdownListElement');
     const dropdownArrow = this.shadowRoot.querySelector('.dropdown__arrow');
-    dropdownList.classList.replace('show','hide');
-    dropdownArrow.classList.replace('open','closed');
-    dropdownButton.setAttribute("aria-expanded", 'false');
-    dropdownList.setAttribute("aria-hidden", 'true');
+    dropdownList.classList.replace('show', 'hide');
+    dropdownArrow.classList.replace('open', 'closed');
+    dropdownButton.setAttribute('aria-expanded', 'false');
+    dropdownList.setAttribute('aria-hidden', 'true');
   }
 
   // To get our drawer search to work we need to get the value of the search field
@@ -776,7 +841,8 @@ class App extends connect(store)(LitElement) {
 
   _getValueFromSearchFieldDrawer(e) {
     const searchTermsDrawer = this.shadowRoot.querySelector('.search-field-drawer').value;
-    const searchActionDrawer = (this.shadowRoot.querySelector('.header-search-drawer').action = "/search/"+searchTermsDrawer);
+    const searchActionDrawer = (this.shadowRoot.querySelector('.header-search-drawer').action =
+      '/search/' + searchTermsDrawer);
   }
 
   stateChanged(state) {

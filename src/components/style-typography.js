@@ -100,7 +100,7 @@ export const TypographyStyle = css`
 
   .headline4 {
     color: var(--app-primary-text-color);
-    font-size: 24px;
+    font-size: 19px;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 30px;
@@ -311,7 +311,7 @@ export const TypographyStyle = css`
       margin: 24px 16px 0 0;
     }
     .headline4 {
-      font-size: 22px;
+      font-size: 20px;
     }
     .quote-text {
       color: #202124;

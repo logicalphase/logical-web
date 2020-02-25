@@ -189,16 +189,27 @@ class Search extends connect(store)(PageViewElement) {
             background: var(--app-reverse-text-color) url('/images/header/design-header-opt.svg')
               no-repeat;
             background-size: 200px;
-            background-position: 90% 44px;
+            background-position: 90% 34px;
           }
           .hero .content-set {
-            margin: 60px 14px 20px -14px;
+            margin: 60px 14px 0px -14px;
+          }
+
+          section {
+            margin: 40px 0 0 0;
           }
 
           .content-wrapper {
             padding: 0;
             background: var(--app-primary-section-background-color);
           }
+
+          .display3 {
+            font-size: 2.6rem;
+            letter-spacing: -0.5px;
+            line-height: 66px;
+          }
+
           .sidebar {
             display: block;
             width: 270px;
@@ -257,8 +268,8 @@ class Search extends connect(store)(PageViewElement) {
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
-                    <h1 class="section-header__eyebrow eyebrow">${this._data.map(item => html`<span>${item}</a></span>`).length} Search Results</h1>
-                    <h2 class="display3">Search Logical Phase</h2>
+                    <h1 class="section-header__eyebrow eyebrow">Search Logical Phase</h1>
+                    <h2 class="display3">${this._data.map(item => html`<span>${item}</span>`).length} Search results for &ldquo;${this._data.map(item => html`<span>${decodeURI(_searchTerms)}</span>`)[0]}&rdquo;</h2>
                     <p class="headline4 why-google__intro-text">
                       Can't find something you need? <a href="/contact">Contact</a> us.
                     </p>

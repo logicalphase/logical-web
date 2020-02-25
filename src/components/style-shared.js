@@ -439,6 +439,9 @@ export const SharedStyles = css`
       padding-left: 10000px;
       padding-right: 10000px;
     }
+    .text-elevation {
+      padding: 24px;
+    }
   }
 
   @media (min-width: 1024px) {
