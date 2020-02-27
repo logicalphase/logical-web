@@ -31,17 +31,16 @@ Please refer to Polymer Documentation at https://www.polymer-project.org/ for in
 - Fast time-to-interactive and first-paint through the PRPL pattern
 - Easy deployment to prpl-server or static hosting
 - Unit and integrating testing starting points
+- Search and Chrome microphone search
 
 # We Proudly Use
 <a href="http://browserstack.com/" style="border: none;"><img src="https://github.com/open-wc/open-wc/blob/master/assets/images/Browserstack-logo.svg" width="200" alt="Browserstack Logo" /></a>
 
 # TODO List
 
-- Add favorites custom favorites feature
-- Add search and Chrome microphone search feature
+- Add favorites custom feature
 - Clean up element and shared CSS
 - Add authentication via Firebase
 - Add push notification via Firebase
-- Add contact forms
 - Add services order form
 - Add additional wp-rest api endpoints (pages, customs)
