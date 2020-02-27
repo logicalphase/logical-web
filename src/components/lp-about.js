@@ -10,6 +10,7 @@ import { LayoutStyle } from './style-layout';
 import { GridStyle } from './style-grid';
 import { Card } from './style-card';
 import { ButtonStyle } from './style-button';
+import { ElevationStyle } from './style-elevation';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
@@ -21,6 +22,7 @@ class About extends PageViewElement {
       LayoutStyle,
       GridStyle,
       Card,
+      ElevationStyle,
       ButtonStyle,
       css`
         :host {
@@ -31,34 +33,49 @@ class About extends PageViewElement {
         /* Smaller than 460 */
         .hero {
           background: var(--app-reverse-text-color)
-            url('/images/header/emergency-header-opt.svg') no-repeat;
-          background-size: 400px;
-          background-position: 93% 10px;
+            url('/images/header/lp-512x512px.svg') no-repeat;
+          background-size: 300px;
+          background-position: 90% 80px;
         }
         .section {
           padding-top: 0px;
         }
+        .section--border {
+          margin-top: 0px;
+        }
+        .copy {
+          margin-top: 64px;
+        }
         img.content-grid-image,
         img.content-grid-image-lower {
           height: auto;
-          max-width: 70%;
-          width: 100%;
+          width: 53%;
+          margin-top: 123px;
+          margin-left: 30px;
+          padding: 0;
           margin: 0 auto;
+
         }
         .grid__col--horizontal-center {
           justify-self: normal;
+        }
+        .element-align {
+          margin-top: 40px;
         }
         @media (min-width: 460px) {
           h3 {
             padding-top: 20px;
           }
+
           img.content-grid-image,
           img.content-grid-image-lower {
             height: auto;
             max-width: 100%;
-            width: 82%;
-            margin-top: 36px;
-            margin-bottom: 54px;
+            width: 53%;
+            margin-top: 123px;
+            margin-left: 30px;
+            padding: 0;
+            transform: rotate(10deg);
           }
 
           .content-set p {
@@ -78,15 +95,14 @@ class About extends PageViewElement {
           .headline4 {
             margin-right: 56px;
           }
+          .section--border {
+            margin-top: 62px;
+          }
         }
 
         @media (max-width: 800px) {
           .hero {
             background: none;
-          }
-          .content-grid-image-lower {
-            margin-top: 46px;
-            margin-bottom: 36px;
           }
         }
       `,
@@ -108,11 +124,11 @@ class About extends PageViewElement {
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="section-header__eyebrow eyebrow">
-                      Professional Services for WordPress
+                      Mission Critical Web Services
                     </h1>
                     <h2 class="display3">About Logical Phase</h2>
                     <p class="headline4 why-google__intro-text">
-                      Being able to help a site owner achieve success is always a great feeling. But building new friendship is even better.
+                      Helping a customer achieve success is a great feeling. Building a friendship is even better.
                     </p>
                     <div class="section-header__link">
                       <a
@@ -121,7 +137,7 @@ class About extends PageViewElement {
                         track-type="navigateTo"
                         track-name="emergency"
                         track-metadata-position="banner"
-                        >Let's get it fixed</a
+                        >How can I help?</a
                       >
                     </div>
                   </div>
@@ -138,9 +154,11 @@ class About extends PageViewElement {
                     class="grid__col copy--flipped grid__col--horizontal-center copy__img is-4 is-8--offset is-7__large--offset grid-row-start"
                   >
                     <img
-                      class="content-grid-image"
-                      src="/images/content/emergency-tools-200x200-opt.svg"
-                      alt="WordPress Emergency Repair and Restoration Services"
+                      class="content-grid-image mdc-elevation--z14"
+                      src="/images/content/jt-headshot-about-opt.jpg"
+                      height="344"
+                      width="276"
+                      alt="About John and Logical Phase"
                     />
                   </div>
                   <div
@@ -150,25 +168,19 @@ class About extends PageViewElement {
                       class="headline3 element-align"
                       id="engaging-experiences-regardless-screen-size"
                     >
-                      If it's WordPress we can repair it.
+                      Think Of Me As Your On-Call WordPress Engineer.
                     </h3>
                     <p>
-                      Even the best WordPress sites can suffer unexpected errors and outages. Our
-                      <strong>Site Emergency Response Team (S.E.R.T.)</strong> knows how to diagnose
-                      and restore your site quickly, and protect it with right solutions. We’ve
-                      repaired and restored hundreds of WordPress sites like yours, and we’ll have
-                      you back up and running in no time. Best of all, We guarantee our work. Our
-                      emergency response services include:
+                      I've been involved with WordPress and managed hosting for over fourteen years. During that period, I've assembled a lot of knowledge about delivering web pages generated using WordPress. I founded what one client called the "Ferrari of managed WordPress hosting" services. I've created more than three dozen web sites and web applications, the latest you're looking at right now.
                     </p>
-                    <ul class="body-checks">
-                      <li>Gathering diagnostic information</li>
-                      <li>Identifying the cause of the problem</li>
-                      <li>Plan of action, including cost</li>
-                      <li>Repairing the problem and testing results</li>
-                      <li>Post-op report with recommendations</li>
-                      <li>Follow up examination</li>
-                      <li>All work guaranteed</li>
-                    </ul>
+                    <p>
+                      I get the most joy from solving technical challenges by creating superior solutions that help site owners succeed. From designing attractive, inviting, easy to navigate pages ending with the desired action to creating and managing the fastest, most secure, most reliable hosting services possible . 
+                    </p>
+                    <p>
+                      Being the biggest doesn't inspire me. Being the very best does. So, let me show you how I can help you achieve your online goals. I'll make you glad you did.
+                    </p>
+                    <p>Very best,<br>John</p>
+                    <p>John Teague<br>Founder and CTO</p>
                     <div class="content-header__link element-align">
                       <a
                         href="/contact/"
@@ -176,19 +188,12 @@ class About extends PageViewElement {
                         track-type="navigateTo"
                         track-name="emergency"
                         track-metadata-position="banner"
-                        >Contact a WordPress expert</a
+                        >Let's talk about your needs</a
                       >
                     </div>
                   </div>
                 </div>
               </section>
-            </div>
-          </div>
-          <div class="section section--border">
-            <div class="section__header text-center grid">
-              <div class="grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="headline3" id="features">Logical Phase Features</h2>
-              </div>
             </div>
           </div>
         </article>

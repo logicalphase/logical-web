@@ -206,6 +206,19 @@ class Home extends PageViewElement {
             padding: 44px 0 24px 0;
           }
 
+          .copy {
+            margin: 0 auto;
+            text-align: center;
+          }
+
+          .copy img {
+            display:inline-block;
+            height: 120px;
+            max-height: 115px;
+            width: inherit;
+            padding: 14px;
+          }
+
           .card .link .headline4 {
             margin-right: 14px;
           }
@@ -245,6 +258,19 @@ class Home extends PageViewElement {
             margin-left: 34px;
             object-fit: var(--lazy-image-fit);
             position: relative;
+          }
+
+          .copy {
+            margin: 0 auto;
+            text-align: center;
+          }
+
+          .copy img {
+            display:inline-block;
+            height: 120px;
+            max-height: 115px;
+            width: inherit;
+            padding: 14px;
           }
 
           .section-header.section-header--solutions {
@@ -581,7 +607,7 @@ class Home extends PageViewElement {
                   <div class="grid__col is-6 is-4__large">
                     <section class="card card--solution">
                       <header>
-                        <h2 class="card__eyebrow eyebrow">Lightspeed Site Optimizations</h2>
+                        <h2 class="card__eyebrow eyebrow">WordPress Web Performance</h2>
                         <img
                           class="card__icon"
                           src="/images/icons/icon-pagespeed-62x62.svg"
@@ -599,13 +625,13 @@ class Home extends PageViewElement {
                           track-metadata-position="body"
                         >
                           <h3 class="card__heading headline4" id="pwa">
-                            WordPress Performance
+                            Google Lighthouse Optimization
                           </h3>
                         </a>
                       </header>
                       <p class="card__body">
                         I turn painfully slow WordPress sites into lightning fast, Google Lighthouse
-                        happy WordPress sites.
+                        happy, WordPress sites.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -820,12 +846,31 @@ class Home extends PageViewElement {
           </div>
           <div class="section section--border">
             <div class="section__header text-center grid">
-              <div class="grid__col is-12 is-10__large is-1__large--offset">
+              <div class="grid__col is-12 is-10__large is-1__large--offset client-images">
                 <h2 class="headline3" id="features">Logical Customers</h2>
               </div>
             </div>
             <section class="copy">
-
+              <picture>
+                <source type="image/webp" srcset="images/clients/katieparla.webp">
+                <img src="images/clients/katieparla.png"  height="120" width="377" loading="lazy" alt="Katie Parla">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/clients/caldwellbanker.webp">
+                <img src="images/clients/caldwellbanker.png" height="120" width="212" loading="lazy" alt="Caldwell Banker">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/clients/ucberkeley.webp">
+                <img src="images/clients/ucberkeley.png" height="120" width="302" loading="lazy" alt="Univercity of California at Berkeley">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/clients/exoduswear.webp">
+                <img src="images/clients/exoduswear.png" height="120" width="176" loading="lazy" alt="Exoduswear">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/clients/m2e.webp">
+                <img src="images/clients/m2e.png" height="120" width="265" loading="lazy" alt="M2E" >
+              </picture>
             </section>
           </div>
           <div class="section section--border">
@@ -835,7 +880,22 @@ class Home extends PageViewElement {
               </div>
             </div>
             <section class="copy">
-
+              <picture>
+                <source type="image/webp" srcset="images/partners/updraftcentral.webp">
+                <img src="images/partners/updraftcentral.png" height="120" width="120" loading="lazy" alt="Updraft Central" >
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/partners/googlelogobw.webp">
+                <img src="images/partners/googlelogobw.png" height="110" width="306" loading="lazy" alt="Google Cloud" >
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/partners/stackdriver.webp">
+                <img src="images/partners/stackdriver.png" height="120" width="120" loading="lazy" alt="Stackdriver" >
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/partners/lucidchartlogo.webp">
+                <img src="images/partners/lucidchartlogo.png" height="120" width="120" loading="lazy" alt="Lucid Chart" >
+              </picture>
             </section>
           </div>
         </article>

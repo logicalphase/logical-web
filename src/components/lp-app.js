@@ -284,7 +284,7 @@ class App extends connect(store)(LitElement) {
           content: 'Logical Phase';
           display: block;
           height: 73px;
-          margin: 0 24px;
+          padding: 24px;
         }
 
         *,
@@ -331,7 +331,10 @@ class App extends connect(store)(LitElement) {
         }
 
         .utility-footer-nav-left {
-          float: left;
+          display: inline-block;
+        }
+        .utility-footer-nav-right {
+          display: inline-block;
         }
 
         .utility-footer-link + .utility-footer-link::before {
@@ -458,13 +461,21 @@ class App extends connect(store)(LitElement) {
             background-color: #212121 !important;
           }
 
+          .utility-footer-nav-left {
+            float: left;
+          }
+
+          .utility-footer-nav-right {
+            float: right;
+          }
+
           .footer-linkboxes > nav::before {
             background-color: var(--app-footer-primary-background-color) !important;
             color: var(--app-secondary-background-color);
             content: 'Logical Phase';
             display: block;
             min-height: 73px;
-            margin: 0px 24px;
+            padding: 24px;
           }
 
           /* The drawer button isn't shown in the wide layout, so we don't
@@ -558,6 +569,7 @@ class App extends connect(store)(LitElement) {
             <nav role="navigation" aria-label="Header Navigation Menu">
               <div class="main-navigation">
                 <a ?selected="${_page === 'home'}" href="/">Home</a>
+                <a ?selected="${_page === 'about'}" href="/about">About</a>
                 <a
                   id="dropdownMenuButton"
                   class="toolbar-platform-chooser__button"
@@ -575,8 +587,7 @@ class App extends connect(store)(LitElement) {
                     <path d="M7 10l5 5 5-5z"></path>
                   </svg>
                 </a>
-                <a ?selected="${_page === 'about'}" href="/about">About</a>
-                <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
+                <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
                 <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
                 <a ?selected="${_page === 'support'}" href="/support" class="login-nav-item"
                   >Support</a
@@ -668,10 +679,11 @@ class App extends connect(store)(LitElement) {
           <a class="submenu" ?selected="${_page === 'hosting'}" href="/hosting">Cloud Hosting</a>
           <a class="submenu" ?selected="${_page === 'design'}" href="/design">Progressive Web Apps</a>
           <a class="submenu" ?selected="${_page === 'migration'}" href="/migration">Site Migrations</a>
-          <a ?selected="${_page === 'blog'}" href="/blog">Learn</a>
-          <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
-          <a ?selected="${_page === 'support'}" href="/support">Support</a>
+          <a ?selected="${_page === 'blog'}" href="/blog">Logical Blog</a>
+          <a ?selected="${_page === 'contact'}" href="/contact">Contact Us</a>
+          <a ?selected="${_page === 'support'}" href="/support">Client Support</a>
           <a ?selected="${_page === 'privacy'}" href="/privacy">Privacy</a>
+          <a ?selected="${_page === 'terms'}" href="/terms">Terms of Service</a>
         </nav>
       </app-drawer>
       <!-- Main content -->
@@ -701,9 +713,14 @@ class App extends connect(store)(LitElement) {
       <footer title="footer-navigation" class="utility-footer">
         <nav aria-label="Policy Links" class="utility-footer-nav nav full-site-width">
           <div class="utility-footer-nav-left">
-            <span class="-footer-links">
+            <span class="footer-links">
               <a class="utility-footer-link gc-analytics-event" href="/terms">Site Terms</a>
               <a class="utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
+            </span>
+          </div>
+          <div class="utility-footer-nav-right">
+            <span class="footer-links">
+              <span class="utility-footer-link gc-analytics-event">Copyright 2020 - All Rights Reserved</span>
             </span>
           </div>
         </nav>

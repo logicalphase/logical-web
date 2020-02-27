@@ -205,7 +205,7 @@ class Design extends PageViewElement {
                   <h3 class="headline4">Control your content</h3>
                   <p>
                     Logical Phase doesn't capitalize on your content like other services. We don't
-                    use paywalls or advertisements that's for you to decide. Moving your content is
+                    use paywalls or advertisements. That's for you to decide. Moving your content is
                     as easy as moving any other self-hosted WordPress site.
                   </p>
                 </div>

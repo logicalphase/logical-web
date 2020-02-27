@@ -51,7 +51,7 @@ export const TypographyStyle = css`
     font-weight: 300;
     letter-spacing: 0;
     line-height: 44px;
-    margin: 24px 0 0 -4px;
+    margin: 24px 0;
   }
 
   .display3 strong {
