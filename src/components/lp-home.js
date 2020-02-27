@@ -61,6 +61,25 @@ class Home extends PageViewElement {
           height: auto;
         }
 
+        .content-grid-image {
+            padding: 24px;
+          }
+
+          .copy {
+            margin: 0 auto;
+            text-align: center;
+          }
+
+        .copy img {
+            display:block;
+            height: 120px;
+            max-height: 115px;
+            width: inherit;
+            padding: 14px;
+            text-align:center;
+            margin: 0 auto;
+          }
+
         .headline3 {
           margin-top: 24px;
         }
