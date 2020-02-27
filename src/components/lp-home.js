@@ -56,29 +56,14 @@ class Home extends PageViewElement {
           width: 100%;
         }
 
+        .clients, .partners{
+          display:none;
+        }
+
         .card .section-right-image {
           width: 100%;
           height: auto;
         }
-
-        .content-grid-image {
-            padding: 24px;
-          }
-
-          .copy {
-            margin: 0 auto;
-            text-align: center;
-          }
-
-        .copy img {
-            display:block;
-            height: 120px;
-            max-height: 115px;
-            width: inherit;
-            padding: 14px;
-            text-align:center;
-            margin: 0 auto;
-          }
 
         .headline3 {
           margin-top: 24px;
@@ -219,6 +204,10 @@ class Home extends PageViewElement {
           }
           .grid-row-start {
             grid-row-start: 1;
+          }
+
+          .clients, .partners{
+            display:block;
           }
 
           .content-grid-image {
@@ -863,10 +852,10 @@ class Home extends PageViewElement {
               </iron-selector>
             </section>
           </div>
-          <div class="section section--border">
+          <div class="section section--border clients">
             <div class="section__header text-center grid">
               <div class="grid__col is-12 is-10__large is-1__large--offset client-images">
-                <h2 class="headline3" id="features">Logical Customers</h2>
+                <h2 class="headline3" id="customers">Logical Customers</h2>
               </div>
             </div>
             <section class="copy">
@@ -892,10 +881,10 @@ class Home extends PageViewElement {
               </picture>
             </section>
           </div>
-          <div class="section section--border">
+          <div class="section section--border partners">
             <div class="section__header text-center grid">
               <div class="grid__col is-12 is-10__large is-1__large--offset">
-                <h2 class="headline3" id="features">Logical Technology Partners</h2>
+                <h2 class="headline3" id="partners">Logical Technology Partners</h2>
               </div>
             </div>
             <section class="copy">
