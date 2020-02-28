@@ -310,7 +310,6 @@ class App extends connect(store)(LitElement) {
         .full-site-width,
         .toast-fill {
           margin: 0 auto;
-          max-width: 1400px;
           color: var(--app-footer-text-color);
         }
 
@@ -332,6 +331,7 @@ class App extends connect(store)(LitElement) {
 
         .utility-footer-nav-left {
           display: inline-block;
+          padding-right: 20px;
         }
         .utility-footer-nav-right {
           display: inline-block;
@@ -720,7 +720,7 @@ class App extends connect(store)(LitElement) {
           </div>
           <div class="utility-footer-nav-right">
             <span class="footer-links">
-              <span class="utility-footer-link gc-analytics-event">Copyright 2020 - All Rights Reserved</span>
+              <span class="utility-footer-link gc-analytics-event">Copyright © 2019 Logical Phase. All Rights Reserved</span>
             </span>
           </div>
         </nav>

@@ -36,29 +36,56 @@ class Design extends PageViewElement {
           background-size: 380px;
           background-position: 93% 80px;
         }
+        .section {
+        padding-top: 0px;
+      }
+      img.content-grid-image,
+      img.content-grid-image-lower {
+        height: auto;
+        max-width: 80%;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .grid__col--horizontal-center {
+        justify-self: normal;
+      }
+      @media (min-width: 460px) {
 
-        @media (min-width: 460px) {
-          h3 {
-            padding-top: 20px;
-          }
-
-          .content-set p {
-            max-width: 600px;
-          }
-
-          section.copy {
-            margin: 0;
-          }
-          .grid-row-start {
-            grid-row-start: 1;
-          }
+        .hero {
+          padding-bottom: 24px;
         }
 
-        @media (max-width: 800px) {
-          .hero {
-            background: none;
-          }
+        h3 {
+          padding-top: 20px; 
         }
+
+        .content-set p {
+          max-width: 600px;
+        }
+
+        .content-button {
+          margin-bottom: 0;
+        }
+
+        section.copy {
+          margin: 0;
+        }
+
+        .section {
+          padding-top: 44px;
+        }
+
+        .grid-row-start {
+          grid-row-start: 1;
+        }
+
+      }
+
+      @media (max-width: 800px) {
+        .hero {
+          background: none;
+        }
+      }   
       `,
     ];
   }
@@ -71,7 +98,7 @@ class Design extends PageViewElement {
     });
 
     return html`
-      <div class="hypersite-main-content clearfix">
+      <div class="main-content clearfix">
         <article id="site" class="design">
           <header class="hero hero">
             <div class="grid">
@@ -185,7 +212,7 @@ class Design extends PageViewElement {
               </section>
             </div>
           </div>
-          <div class="section section--border">
+          <div class="section">
             <div class="section__header text-center grid">
               <div class="grid__col is-12 is-10__large is-1__large--offset">
                 <h2 class="headline3" id="features">LitPress Features</h2>

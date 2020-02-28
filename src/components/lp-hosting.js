@@ -143,7 +143,7 @@ class Hosting extends PageViewElement {
                   >
                     <img
                       class="content-grid-image"
-                      src="/images/header/home-page-mobile-opt.svg"
+                      src="/images/content/home-page-mobile-opt.svg"
                       alt="Understanding WordPress Security Threats"
                     />
                   </div>
