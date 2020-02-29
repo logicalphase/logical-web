@@ -1,3 +1,5 @@
+### NOTICE: This repo contains code for my business site. I created a repo at https://github.com/hyperpress/litpress that is a generic version of this one, and it doesn't contain copyrighted content or images. You are welcome to use this repo as a reference, but you'll likely run into features that are specific to this site. Thank you.
+
 # Logical Phase Site
 PWA built with lit-element created web components.
 
