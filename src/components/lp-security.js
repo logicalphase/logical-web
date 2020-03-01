@@ -113,7 +113,7 @@ class Security extends PageViewElement {
                     </h1>
                     <h2 class="display3">Incident Response and Proactive Defense</h2>
                     <p class="headline4 why-google__intro-text">
-                      Hacked site restoration and defense in depth security protection for your
+                      Hacked site restoration and Defense in Depth security protection for your
                       WordPress site.
                     </p>
                     <div class="section-header__link">
@@ -207,9 +207,8 @@ class Security extends PageViewElement {
                     <p>
                       Cyber attacks come in a variety of methods. They can be internal and external
                       in nature, and caused accidentally or purposely. A compromised WordPress site
-                      is serious, and needs to be treated as such, but don't panic. I've helped
-                      scores of site owners who've experienced a security breach and I know how to
-                      respond and resolve the situation quickly and professionally.
+                      is serious, and needs to be treated as such. But don't panic. I've helped
+                      scores of site owners recover from security breaches. 
                     </p>
                     <p>Our <strong>Security Incident Response</strong></p>
                     <ul class="body-checks">
@@ -254,19 +253,19 @@ class Security extends PageViewElement {
                     class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start"
                   >
                     <h3 class="headline3 element-align" id="security-defense">
-                      PhasedDefense - Serious Security for WordPress
+                      HyperDefense - Serious Security for WordPress
                     </h3>
                     <p>
-                      I know what motivates an attacker and the strategies they use to launch their
+                      I understand what motivates an attacker, and the strategies they use to launch their
                       attacks. Leveraging powerful tools that protect data against unauthorized
                       internal and external access and discovery resulted in PhasedDefense.
                     </p>
                     <p>
-                      PhasedDefense is a multi-tiered, proactive, defense in depth service that
-                      includes artifical intelligence that continuously gathers and analyzes
-                      tarabytes of threat data from hundreds of sources into organized threat
-                      profiles, which in turn teaches our firewall and other defense applications to
-                      react faster with fewer false positives. 
+                      HyperDefense is a multi-tiered, proactive, Defense in Depth service. Using
+                      artifical intelligence, it gathers and analyzes
+                      tarabytes of threat data from hundreds of sources to develop organized threat
+                      profiles. These profiles teach the firewall and other defense applications to
+                      react faster, with fewer false positives. 
                     </p>
                     <p> You can rest easy knowing your site is being
                       closely monitored and protected. HyperDefense also includes:
@@ -285,7 +284,7 @@ class Security extends PageViewElement {
                     </ul>
                     <p>
                       Protect your organization against loss of revenue, reduce legal liability and
-                      serious harm to your reputation. Contact us today for a no obligation
+                      serious harm to your reputation. Contact me today for a no obligation
                       consultation.
                     </p>
                     <div class="content-header__link element-align">
