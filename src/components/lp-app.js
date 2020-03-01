@@ -571,6 +571,7 @@ class App extends connect(store)(LitElement) {
                 <a ?selected="${_page === 'home'}" href="/">Home</a>
                 <a ?selected="${_page === 'about'}" href="/about">About</a>
                 <a
+                  href="#"
                   id="dropdownMenuButton"
                   class="toolbar-platform-chooser__button"
                   @click="${this._toggleDropdownMenu}"
@@ -598,38 +599,33 @@ class App extends connect(store)(LitElement) {
                 class="main-navigation dropdown-menu hide"
                 data-target="slide-content"
                 aria-hidden="true"
-                tabindex="-1"
+
               >
                 <a
                   class="dropdown-item submenu"
                   ?selected="${_page === 'pagespeed'}"
                   href="/pagespeed"
-                  tabindex="-1"
                   >Site Performance</a
                 >
                 <a
                   class="dropdown-item submenu"
                   ?selected="${_page === 'security'}"
                   href="/security"
-                  tabindex="-1"
                   >Security Services</a
                 >
                 <a class="submenu" 
                   ?selected="${_page === 'hosting'}" 
-                  tabindex="-1"
                   href="/hosting">GCP Hosting Solutions</a
                 >
                 <a 
                   class="submenu" 
                   ?selected="${_page === 'design'}" 
-                  tabindex="-1"
                   href="/design">Progressive Web Apps</a
                 >
                 <a
                   class="dropdown-item submenu"
                   ?selected="${_page === 'migration'}"
                   href="/migration"
-                  tabindex="-1"
                   >Site Migrations</a
                 >
               </div>
