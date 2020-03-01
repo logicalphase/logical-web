@@ -96,8 +96,8 @@ class Security extends PageViewElement {
 
   render() {
     updateMetadata({
-      title: 'WordPress PageSpeed Optimization Service - Logical Phase',
-      description: 'We make slow WordPress lightning fast WordPress. Guaranteed',
+      title: 'Security Solutions - Logical Phase',
+      description: 'Defense in Depth security to protect data and reputations',
     });
 
     return html`
