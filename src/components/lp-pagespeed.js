@@ -98,7 +98,7 @@ class Pagespeed extends PageViewElement {
   render() {
     updateMetadata({
       title: 'WordPress PageSpeed Optimization Service - Logical Phase',
-      description: 'We make slow WordPress lightning fast WordPress. Guaranteed',
+      description: 'I make slow WordPress lightning fast WordPress. Guaranteed',
     });
 
     return html`
@@ -156,10 +156,10 @@ class Pagespeed extends PageViewElement {
                       Milliseconds Are Money
                     </h3>
                     <p>
-                      You've spent time and money building a WordPress site you can be proud of, but
-                      a slow site can undo all that hard work and hurt more than it helps.I've
+                      You've spent time and money building a WordPress site you can be proud of. But
+                      a slow site can undermine all your hard work by frustrating potential customers. I've
                       optimized hundreds of WordPress sites of all sizes and stripes. I know what
-                      slows WordPress down and how to make it lightning fast across all devices.
+                      slows WordPress down, and how to make it lightning fast across all devices.
                       Need help?
                     </p>
                     <div class="content-header__link element-align">
@@ -202,7 +202,7 @@ class Pagespeed extends PageViewElement {
                     <p>
                       I'll identify performance bottlenecks, create a prioritized plan of action, and
                       fix what's slowing your site down. You'll receive a complete post-optimization
-                      site report that explains all changes I made and tips on how to keep your
+                      site report that explains all changes I made, along with tips on keeping your
                       site super fast and Google Search friendly.
                     </p>
                     <h4 class="paper-font-subhead">Optimization Service includes:</h4>
