@@ -567,13 +567,16 @@ class Home extends PageViewElement {
                     class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start promo-box-light"
                   >
                     <h3 class="headline3" id="engaging-experiences-regardless-screen-size">
-                      Focus on content, I help deliver it. Focus on audience, I help you grow it.
+                      You treat your customers with care and respect. Your website should do the same.
                     </h3>
                     <p>
-                      You've invested time and energy into creating amazing products and services
-                      for your customers. I create mission critical hosting, web performance, and
-                      security solutions that <strong>maximize conversions and revenue</strong>. 
-                      <a href="/contact" >Let's talk</a> about your needs.
+                      A slow or buggy website is like a lazy or careless sales team. Both are bad for business.
+                    </p>
+                    <p>
+                      I create web performance, hosting, and security solutions that help your site be fast, efficient, and always at the ready. 
+                      So your website can take care of your customers and grow your business. 
+                    </p> 
+                      <a href="/contact" >Let's talk</a> about making your website work for you.
                     </p>
                   </div>
                 </div>
@@ -633,13 +636,13 @@ class Home extends PageViewElement {
                           track-metadata-position="body"
                         >
                           <h3 class="card__heading headline4" id="pwa">
-                            Google Lighthouse Optimization
+                            Stuck in the slow lane?
                           </h3>
                         </a>
                       </header>
                       <p class="card__body">
-                        I turn painfully slow WordPress sites into lightning fast, Google Lighthouse
-                        happy, WordPress sites.
+                        Your slow site is hurting your search rankings and conversion rates. 
+                        I can optimize your WordPress site to make it lightning fast across all devices.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
