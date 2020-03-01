@@ -689,7 +689,7 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        I'll assess, clean and restore your site, no matter how complex, and apply proven site protection against future attacks.
+                        Don't panic. I'll make your WordPress site healthy again, and protect it against future attacks.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -736,7 +736,7 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        Raise your profile with an extraordinary, headless WordPress frontend designed exclusively for your brand. 
+                        Raise your profile with a headless WordPress front end, designed exclusively for your brand. 
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -783,7 +783,7 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        I've safely moved hundreds of WordPress sites and email accounts, from small to huge, with zero downtime.
+                        I've moved hundreds of WordPress sites and email accounts&mdash;from tiny to huge&mdash;with zero downtime.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -825,12 +825,12 @@ class Home extends PageViewElement {
                           track-metadata-position="body"
                         >
                           <h3 class="card__heading headline4" id="wordpress-hosting">
-                            GCP Hosting for WordPress
+                            Google Cloud Hosting
                           </h3>
                         </a>
                       </header>
                       <p class="card__body">
-                        I design and fully manage mission critical, instantly scalable WordPress hosting atop Google Cloud Platform services.
+                        I design and deliver fully managed, scalable WordPress hosting solutions using Google Cloud Platform services.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
