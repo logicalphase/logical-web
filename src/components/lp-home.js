@@ -56,8 +56,9 @@ class Home extends PageViewElement {
           width: 100%;
         }
 
-        .clients, .partners{
-          display:none;
+        .clients,
+        .partners {
+          display: none;
         }
 
         .card .section-right-image {
@@ -74,7 +75,8 @@ class Home extends PageViewElement {
         }
 
         .section-elevated-padding {
-          padding: 34px 24px 24px 24px;
+          padding: 24px 24px 24px 24px;
+          text-align: left;
         }
 
         .grid__col--horizontal-center {
@@ -124,23 +126,23 @@ class Home extends PageViewElement {
         }
         @keyframes wp-draw {
           0% {
-            stroke: #600066;
+            stroke: #1c401a;
             opacity: 1;
           }
           25% {
-            stroke: #f4b400;
+            stroke: #1c401a;
           }
           50% {
-            stroke: #008c3a;
+            stroke: #1c401a;
           }
           75% {
-            stroke: #ff3102;
+            stroke: #1c401a;
           }
           100% {
-            stroke: #600066;
+            stroke: #1c401a;
           }
           0% {
-            stroke: #600066;
+            stroke: #1c401a;
             opacity: 0.9;
           }
         }
@@ -162,6 +164,10 @@ class Home extends PageViewElement {
         @media (min-width: 460px) {
           .hero {
             padding-bottom: 60px;
+          }
+
+          .headline3 {
+            margin: 0px;
           }
 
           .display3 {
@@ -206,8 +212,9 @@ class Home extends PageViewElement {
             grid-row-start: 1;
           }
 
-          .clients, .partners{
-            display:block;
+          .clients,
+          .partners {
+            display: block;
           }
 
           .content-grid-image {
@@ -220,7 +227,7 @@ class Home extends PageViewElement {
           }
 
           .copy img {
-            display:inline-block;
+            display: inline-block;
             height: 120px;
             max-height: 115px;
             width: inherit;
@@ -274,7 +281,7 @@ class Home extends PageViewElement {
           }
 
           .copy img {
-            display:inline-block;
+            display: inline-block;
             height: 120px;
             max-height: 115px;
             width: inherit;
@@ -338,6 +345,7 @@ class Home extends PageViewElement {
                   viewBox="0 0 740 740"
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink"
+                  loading="lazy"
                 >
                   <title>WordPress logo with connected to smaller cloud icons</title>
                   <defs>
@@ -408,26 +416,26 @@ class Home extends PageViewElement {
                     width="100%"
                     height="100%"
                     fill-opacity="0"
-                    stroke="#0273d4"
+                    stroke="#1c401a"
                     xlink:href="#b"
                     transform="translate(-94.495 -11.558)"
                   />
                   <g transform="translate(-94.495 -11.558)">
-                    <use width="100%" height="100%" fill="#008c3a" xlink:href="#c" />
+                    <use width="100%" height="100%" fill="#1c401a" xlink:href="#c" />
                     <use
                       class="green-line"
                       width="100%"
                       height="100%"
                       fill-opacity="0"
-                      stroke="#008c3a"
+                      stroke="#1c401a"
                       xlink:href="#d"
                     />
-                    <use width="100%" height="100%" fill="#008c3a" xlink:href="#e" />
+                    <use width="100%" height="100%" fill="#1c401a" xlink:href="#e" />
                     <use
                       width="100%"
                       height="100%"
                       fill-opacity="0"
-                      stroke="#008c3a"
+                      stroke="#1c401a"
                       stroke-width="1"
                       xlink:href="#f"
                     />
@@ -437,7 +445,7 @@ class Home extends PageViewElement {
                       transform="translate(-13.608 31.42)"
                       width="100%"
                       height="100%"
-                      fill="#600060"
+                      fill="#1c401a"
                       stroke-width="1"
                       xlink:href="#g"
                     />
@@ -445,14 +453,14 @@ class Home extends PageViewElement {
                       class="purple-line"
                       d="M283.31 301.97l-120.54-.582.577-54.171"
                       fill="none"
-                      stroke="#600060"
+                      stroke="#1c401a"
                       stroke-linejoin="round"
                     />
                     <use
                       transform="translate(-64 126)"
                       width="100%"
                       height="100%"
-                      fill="#600060"
+                      fill="#1c401a"
                       xlink:href="#h"
                     />
                     <use
@@ -460,7 +468,7 @@ class Home extends PageViewElement {
                       width="100%"
                       height="100%"
                       fill-opacity="0"
-                      stroke="#600060"
+                      stroke="#1c401a"
                       stroke-width="1"
                       xlink:href="#a"
                     />
@@ -470,7 +478,7 @@ class Home extends PageViewElement {
                       transform="translate(1.185)"
                       width="100%"
                       height="100%"
-                      fill="#f4b400"
+                      fill="#1c401a"
                       xlink:href="#i"
                     />
                     <use
@@ -478,7 +486,7 @@ class Home extends PageViewElement {
                       width="100%"
                       height="100%"
                       fill-opacity="0"
-                      stroke="#f4b400"
+                      stroke="#1c401a"
                       xlink:href="#j"
                       transform="matrix(.54882 0 0 .97058 120.34 11.327)"
                       stroke-width="1"
@@ -487,7 +495,7 @@ class Home extends PageViewElement {
                       transform="translate(88)"
                       width="100%"
                       height="100%"
-                      fill="#f4b400"
+                      fill="#1c401a"
                       xlink:href="#k"
                     />
                     <use
@@ -495,7 +503,7 @@ class Home extends PageViewElement {
                       width="100%"
                       height="100%"
                       fill-opacity="0"
-                      stroke="#f4b400"
+                      stroke="#1c401a"
                       stroke-width="1"
                       xlink:href="#l"
                     />
@@ -505,7 +513,7 @@ class Home extends PageViewElement {
                       transform="translate(65.23 -73.244)"
                       width="100%"
                       height="100%"
-                      fill="#ff3102"
+                      fill="#1c401a"
                       stroke-width="1"
                       xlink:href="#m"
                     />
@@ -513,14 +521,14 @@ class Home extends PageViewElement {
                       class="orange-line"
                       d="M164.16 521.99l.103-63.327 119.74.582"
                       fill="none"
-                      stroke="#ff3102"
+                      stroke="#1c401a"
                       stroke-linejoin="round"
                     />
                     <use
                       transform="translate(-131.36 -135.9)"
                       width="100%"
                       height="100%"
-                      fill="#ff3102"
+                      fill="#1c401a"
                       stroke-width="1"
                       xlink:href="#n"
                     />
@@ -529,7 +537,7 @@ class Home extends PageViewElement {
                       width="100%"
                       height="100%"
                       fill-opacity="0"
-                      stroke="#ff3102"
+                      stroke="#1c401a"
                       stroke-width="1"
                       xlink:href="#o"
                     />
@@ -547,36 +555,62 @@ class Home extends PageViewElement {
                   <div
                     class="grid__col copy--flipped grid__col--horizontal-center copy__img is-4 is-8--offset is-7__large--offset grid-row-start"
                   >
-                  <svg class="section-right-image" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 919.606 697.808" style="enable-background:new 0 0 919.606 697.808;" xml:space="preserve">
-                  <g id="graph-8">
-                    <polygon style="fill:#600060;" points="128.965,626.622 128.965,572.037 262.559,482.404 262.559,626.622 128.965,626.622 	"/>
-                    <polygon style="fill:#600060;" points="314.497,626.622 314.497,460.783 448.092,357.607 448.092,626.622 314.497,626.622 	"/>
-                    <polygon style="fill:#600060;" points="500.039,626.622 500.039,318.375 633.7,215.216 633.7,626.622 500.039,626.622 	"/>
-                    <polygon style="fill:#600060;" points="685.657,626.622 685.657,173.628 819.248,70.384 819.248,626.622 685.657,626.622 	"/>
-                    <polygon style="fill:#D1D3D4;" points="0,697.808 0,662.847 885.995,662.847 885.995,26.695 919.606,26.695 919.606,662.847 
-                      919.606,697.808 885.995,697.808 0,697.808 	"/>
-                    <polygon style="fill:#600060;" points="124.695,500.747 124.695,456.974 673.87,54.654 634.623,26.695 771.461,0 703.725,121.963 
-                      691.256,83.552 124.695,500.747 	"/>
-                  </g>
-                  <g id="Layer_1">
-                  </g>
-                  </svg>
+                    <svg
+                      class="section-right-image"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 919.606 697.808"
+                      style="enable-background:new 0 0 919.606 697.808;"
+                      xml:space="preserve"
+                      loading="lazy"
+                    >
+                      <g id="graph-8">
+                        <polygon
+                          style="fill:#1C401A;"
+                          points="128.965,626.622 128.965,572.037 262.559,482.404 262.559,626.622 128.965,626.622 	"
+                        />
+                        <polygon
+                          style="fill:#1C401A;"
+                          points="314.497,626.622 314.497,460.783 448.092,357.607 448.092,626.622 314.497,626.622 	"
+                        />
+                        <polygon
+                          style="fill:#1C401A;"
+                          points="500.039,626.622 500.039,318.375 633.7,215.216 633.7,626.622 500.039,626.622 	"
+                        />
+                        <polygon
+                          style="fill:#1C401A;"
+                          points="685.657,626.622 685.657,173.628 819.248,70.384 819.248,626.622 685.657,626.622 	"
+                        />
+                        <polygon
+                          style="fill:#D1D3D4;"
+                          points="0,697.808 0,662.847 885.995,662.847 885.995,26.695 919.606,26.695 919.606,662.847 
+                      919.606,697.808 885.995,697.808 0,697.808 	"
+                        />
+                        <polygon
+                          style="fill:#1C401A;"
+                          points="124.695,500.747 124.695,456.974 673.87,54.654 634.623,26.695 771.461,0 703.725,121.963 
+                      691.256,83.552 124.695,500.747 	"
+                        />
+                      </g>
+                      <g id="Layer_1"></g>
+                    </svg>
                   </div>
                   <div
                     class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start promo-box-light"
                   >
                     <h3 class="headline3" id="engaging-experiences-regardless-screen-size">
-                      You treat your customers with care and respect. Your website should do the same.
+                      You treat your customers with care and respect. Your website should do the
+                      same.
                     </h3>
                     <p>
-                      A slow or buggy website is like a lazy or careless sales team. Both are bad for business.
-                    </p>
-                    <p>
-                      I create web performance, hosting, and security solutions that help your site be fast, efficient, and always at the ready. 
-                      So your website can take care of your customers and grow your business. 
-                    </p> 
-                      <a href="/contact" >Let's talk</a> about making your website work for you.
+                      A slow or buggy website is like a lazy or careless sales team. Both are bad
+                      for business. I create web performance, hosting, and security solutions
+                      that'll make your site fast, efficient, and always at the ready to serve your
+                      customers and grow your business.
+                      <a href="/contact">Let's talk</a> about making your website work for you.
                     </p>
                   </div>
                 </div>
@@ -641,8 +675,8 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        Your slow site is hurting your search rankings and conversion rates. 
-                        I can optimize your WordPress site to make it lightning fast across all devices.
+                        Your slow site is hurting your search rankings and conversion rates. I can
+                        optimize your WordPress site to make it lightning fast across all devices.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -672,8 +706,8 @@ class Home extends PageViewElement {
                           src="/images/icons/icon-ambulance-62x62.svg"
                           height="72"
                           width="72"
-                          alt="Security repairs, restoration, and prevention for WordPress."
                           loading="lazy"
+                          alt="Security repairs, restoration, and prevention for WordPress."
                         />
                         <a
                           class="link card__link card__link-text"
@@ -684,12 +718,13 @@ class Home extends PageViewElement {
                           track-metadata-position="body"
                         >
                           <h3 class="card__heading headline4" id="repairs-restoration">
-                            Think you've been hacked? 
+                            Think you've been hacked?
                           </h3>
                         </a>
                       </header>
                       <p class="card__body">
-                        I'll assess, clean and restore your site, no matter how complex, and apply proven site protection against future attacks.
+                        I'll assess, clean and restore your site, no matter how complex, and apply
+                        proven site protection against future attacks.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -719,8 +754,8 @@ class Home extends PageViewElement {
                           src="/images/icons/icon-pwa-62x62.svg"
                           height="72"
                           width="72"
-                          alt="Headless WordPress Progressive Web Application Design and Devlopment."
                           loading="lazy"
+                          alt="Headless WordPress Progressive Web Application Design and Devlopment."
                         />
                         <a
                           class="link card__link card__link-text"
@@ -736,7 +771,8 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        Raise your profile with an extraordinary, headless WordPress frontend designed exclusively for your brand. 
+                        Raise your profile with an extraordinary, headless WordPress frontend
+                        designed exclusively for your brand.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -766,8 +802,8 @@ class Home extends PageViewElement {
                           src="/images/icons/icon-migrations-62x62.svg"
                           height="72"
                           width="72"
-                          alt="We precisely maintain your WordPress site"
                           loading="lazy"
+                          alt="We precisely maintain your WordPress site"
                         />
                         <a
                           class="link card__link card__link-text"
@@ -783,7 +819,8 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        I've safely moved hundreds of WordPress sites and email accounts, from small to huge, with zero downtime.
+                        I've safely moved hundreds of WordPress sites and email accounts, from small
+                        to huge, with zero downtime.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -813,8 +850,8 @@ class Home extends PageViewElement {
                           src="/images/icons/icon-security-62x62.svg"
                           height="72"
                           width="72"
-                          alt="Custom tailored WordPress hosting using Google Cloud Platform."
                           loading="lazy"
+                          alt="Custom tailored WordPress hosting using Google Cloud Platform."
                         />
                         <a
                           class="link card__link card__link-text"
@@ -830,7 +867,8 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        I design and fully manage mission critical, instantly scalable WordPress hosting atop Google Cloud Platform services.
+                        I design and fully manage mission critical, instantly scalable WordPress
+                        hosting atop Google Cloud Platform services.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -863,24 +901,56 @@ class Home extends PageViewElement {
             </div>
             <section class="copy">
               <picture>
-                <source type="image/webp" srcset="images/clients/katieparla.webp">
-                <img src="images/clients/katieparla.png"  height="120" width="377" loading="lazy" alt="Katie Parla">
+                <source type="image/webp" srcset="images/clients/katieparla.webp" />
+                <img
+                  src="images/clients/katieparla.png"
+                  height="120"
+                  width="377"
+                  height="72"
+                  width="72"
+                  loading="lazy"
+                  alt="Katie Parla"
+                />
               </picture>
               <picture>
-                <source type="image/webp" srcset="images/clients/caldwellbanker.webp">
-                <img src="images/clients/caldwellbanker.png" height="120" width="212" loading="lazy" alt="Caldwell Banker">
+                <source type="image/webp" srcset="images/clients/caldwellbanker.webp" />
+                <img
+                  src="images/clients/caldwellbanker.png"
+                  height="120"
+                  width="212"
+                  loading="lazy"
+                  alt="Caldwell Banker"
+                />
               </picture>
               <picture>
-                <source type="image/webp" srcset="images/clients/ucberkeley.webp">
-                <img src="images/clients/ucberkeley.png" height="120" width="302" loading="lazy" alt="Univercity of California at Berkeley">
+                <source type="image/webp" srcset="images/clients/ucberkeley.webp" />
+                <img
+                  src="images/clients/ucberkeley.png"
+                  height="120"
+                  width="302"
+                  loading="lazy"
+                  alt="Univercity of California at Berkeley"
+                />
               </picture>
               <picture>
-                <source type="image/webp" srcset="images/clients/exoduswear.webp">
-                <img src="images/clients/exoduswear.png" height="120" width="176" loading="lazy" alt="Exoduswear">
+                <source type="image/webp" srcset="images/clients/exoduswear.webp" />
+                <img
+                  src="images/clients/exoduswear.png"
+                  height="120"
+                  width="176"
+                  loading="lazy"
+                  alt="Exoduswear"
+                />
               </picture>
               <picture>
-                <source type="image/webp" srcset="images/clients/m2e.webp">
-                <img src="images/clients/m2e.png" height="120" width="265" loading="lazy" alt="M2E" >
+                <source type="image/webp" srcset="images/clients/m2e.webp" />
+                <img
+                  src="images/clients/m2e.png"
+                  height="120"
+                  width="265"
+                  loading="lazy"
+                  alt="M2E"
+                />
               </picture>
             </section>
           </div>
@@ -892,20 +962,44 @@ class Home extends PageViewElement {
             </div>
             <section class="copy">
               <picture>
-                <source type="image/webp" srcset="images/partners/updraftcentral.webp">
-                <img src="images/partners/updraftcentral.png" height="120" width="120" loading="lazy" alt="Updraft Central" >
+                <source type="image/webp" srcset="images/partners/updraftcentral.webp" />
+                <img
+                  src="images/partners/updraftcentral.png"
+                  height="120"
+                  width="120"
+                  loading="lazy"
+                  alt="Updraft Central"
+                />
               </picture>
               <picture>
-                <source type="image/webp" srcset="images/partners/googlelogobw.webp">
-                <img src="images/partners/googlelogobw.png" height="110" width="306" loading="lazy" alt="Google Cloud" >
+                <source type="image/webp" srcset="images/partners/googlelogobw.webp" />
+                <img
+                  src="images/partners/googlelogobw.png"
+                  height="110"
+                  width="306"
+                  loading="lazy"
+                  alt="Google Cloud"
+                />
               </picture>
               <picture>
-                <source type="image/webp" srcset="images/partners/stackdriver.webp">
-                <img src="images/partners/stackdriver.png" height="120" width="120" loading="lazy" alt="Stackdriver" >
+                <source type="image/webp" srcset="images/partners/stackdriver.webp" />
+                <img
+                  src="images/partners/stackdriver.png"
+                  height="120"
+                  width="120"
+                  loading="lazy"
+                  alt="Stackdriver"
+                />
               </picture>
               <picture>
-                <source type="image/webp" srcset="images/partners/lucidchartlogo.webp">
-                <img src="images/partners/lucidchartlogo.png" height="120" width="120" loading="lazy" alt="Lucid Chart" >
+                <source type="image/webp" srcset="images/partners/lucidchartlogo.webp" />
+                <img
+                  src="images/partners/lucidchartlogo.png"
+                  height="120"
+                  width="120"
+                  loading="lazy"
+                  alt="Lucid Chart"
+                />
               </picture>
             </section>
           </div>

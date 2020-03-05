@@ -514,7 +514,7 @@ class App extends connect(store)(LitElement) {
     const searchTerms = _page ? '' : _searchTerms;
 
     updateMetadata({
-      title: `Digital Experience Platform by Logical Phase Solutions`,
+      title: `Digital Experience Solutions by Logical`,
       description: `Combining powerful digital cloud technologies that keep you ahead of the competition`,
       image: `https://storage.googleapis.com/logicalphase.com/assets/9a6ed0c3-bg-homepage-container.jpg`,
     });
@@ -571,7 +571,6 @@ class App extends connect(store)(LitElement) {
                 <a ?selected="${_page === 'home'}" href="/">Home</a>
                 <a ?selected="${_page === 'about'}" href="/about">About</a>
                 <a
-                  href="#"
                   id="dropdownMenuButton"
                   class="toolbar-platform-chooser__button"
                   @click="${this._toggleDropdownMenu}"

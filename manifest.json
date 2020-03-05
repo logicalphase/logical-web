@@ -4,7 +4,7 @@
   "description": "Functionally superior, lightning fast, PWA",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#600060",
+  "theme_color": "#1C401A",
   "background_color": "#ffffff",
   "icons": [
     {

@@ -141,7 +141,7 @@ class Security extends PageViewElement {
                   >
                     <img
                       class="content-grid-image"
-                      src="https://logicalphase.com/images/content/security-badguy-200x200-opt.svg"
+                      src="/images/content/security-badguy-200x200-opt.svg"
                       alt="Understanding WordPress Security Threats"
                     />
                   </div>
@@ -191,7 +191,7 @@ class Security extends PageViewElement {
                   >
                     <img
                       class="content-grid-image-lower extra-margin"
-                      src="https://logicalphase.com/images/content/security-response-200x200-opt.svg"
+                      src="/images/content/security-response-200x200-opt.svg"
                       alt="WordPress Security Incident Response"
                     />
                   </div>
@@ -246,7 +246,7 @@ class Security extends PageViewElement {
                   >
                     <img
                       class="content-grid-image-lower extra-margin"
-                      src="https://logicalphase.com/images/content/security-vaccinated-200x200-opt.svg"
+                      src="/images/content/security-vaccinated-200x200-opt.svg"
                       alt="HyperDefense Security Protection for WordPress"
                     />
                   </div>

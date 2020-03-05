@@ -5,8 +5,8 @@ export const Theme = css`
     display: block;
 
     /* Theme Colors */
-    --app-primary-color: #600060;
-    --app-primary-hover-color: #8d008d;
+    --app-primary-color: #1c401a;
+    --app-primary-hover-color: #277022;
     --app-secondary-color: #000000;
 
     --app-primary-text-color: #212121;
