@@ -115,7 +115,7 @@ class Hosting extends PageViewElement {
                       Great Brands Thrive With Agile Hosting Solutions.
                     </h2>
                     <p class="headline4 why-google__intro-text">
-                      Custom built solutions atop Google Cloud Platform meticulously managed by a
+                      Custom built solutions atop Google Cloud Platform, meticulously managed by a
                       dedicated Site Reliability Engineer.
                     </p>
                     <div class="section-header__link">
@@ -159,10 +159,10 @@ class Hosting extends PageViewElement {
                       <a
                         href="https://logicalphase.com/article/choosing-best-wordpress-hosting-plan/"
                         >who will host your web site</a
-                      >. Choose poorly and you'll end up wasting all that time and money you spent
-                      building your site. I understand precisely what you'll need to get the most
-                      out of your site and how to reach and grow your audience. I thrive on creating
-                      and fully managing mission critical hosting that instantly scales when you
+                      >. Poor hosting will undermine even the best website.  
+                      I know precisely what you need from a host to get the most
+                      out of your site. I design, set up, 
+                      and fully manage mission-critical hosting that instantly scales when you
                       need it to.
                     </p>
                     <p></p>
@@ -204,10 +204,8 @@ class Hosting extends PageViewElement {
                       Let me help you choose the right hosting for your target audience.
                     </h3>
                     <p>
-                      From delivering web pages lightning fast to ultra-secure storage across
-                      multiple regions, partnering with Google Cloud Platform opens up access to the
-                      same hyperfast, hyperscale, and environmentally responsible services Google
-                      itself uses.
+                      I partner with Google Cloud Platform to provide
+                      hyperfast, hyperscale, ultra-secure, and environmentally responsible hosting services. 
                     </p>
                     <ul class="body-checks">
                       <li>
