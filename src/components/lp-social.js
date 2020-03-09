@@ -100,7 +100,7 @@ class Social extends LitElement {
           >
           <span
             class="social-icon blogger-icon"
-            .link=${`https://www.facebook.com/sharer.php?u=https://${WP_HOST}/article/${slug}/`}
+            .link=${`https://www.blogger.com/blog-this.g?u=https://${WP_HOST}/article/${slug}/`}
             @click=${e => this._getDataHref(e)}
             >${Blogger}</span
           >

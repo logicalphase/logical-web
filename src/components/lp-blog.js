@@ -187,7 +187,7 @@ class Blog extends connect(store)(PageViewElement) {
             background: var(--app-reverse-text-color) url('/images/header/design-header-opt.svg')
               no-repeat;
             background-size: 240px;
-            background-position: 90% 30px;
+            background-position: 88% 30px;
           }
           .hero .content-set {
             margin: 50px 0 20px 0;
@@ -254,7 +254,7 @@ class Blog extends connect(store)(PageViewElement) {
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="section-header__eyebrow eyebrow">Resources for WordPress</h1>
-                    <h2 class="display3">Logical Learning Center</h2>
+                    <h2 class="display3">Logical Blog</h2>
                     <p class="headline5 why-hyperpress__intro-text">
                       My cumulative knowledge center focused on WordPress site performance, security, and cloud hosting.
                     </p>

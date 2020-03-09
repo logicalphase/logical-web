@@ -329,9 +329,9 @@ class Home extends PageViewElement {
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="content-set">
-                    <h1 class="section-header__eyebrow eyebrow">I make WordPress extraordinary</h1>
+                    <h1 class="section-header__eyebrow eyebrow">Sustainable WordPress Services</h1>
                     <h2 class="display3">
-                      Mission Critical WordPress Solutions for Incredible Brands.
+                      Unbeatable Cloud Solutions Powered by Renewable Energy.
                     </h2>
                     <p class="headline4 why-google__intro-text">
                       Hyperfast. Functionally superior. Fiercely defended.
@@ -567,6 +567,7 @@ class Home extends PageViewElement {
                       xml:space="preserve"
                       loading="lazy"
                     >
+                      <title>Graph showing increase in objectives.</title>
                       <g id="graph-8">
                         <polygon
                           style="fill:#1C401A;"
@@ -925,7 +926,7 @@ class Home extends PageViewElement {
                   height="120"
                   width="302"
                   loading="lazy"
-                  alt="Univercity of California at Berkeley"
+                  alt="University of California at Berkeley"
                 />
               </picture>
               <picture>

@@ -3,7 +3,8 @@ import { HP_HOST } from './config';
 import { LitElement, html, css } from 'lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 
-import { menuIcon } from './lp-icons.js';
+import { menuIcon, Twitter, Facebook, Linkedin, Blogger, Github } from './lp-icons.js';
+
 import './snack-bar.js';
 import './search-imput-decorator';
 import './speech-mic.js';
@@ -134,9 +135,9 @@ class App extends connect(store)(LitElement) {
 
         .cta-header:focus-within {
           background-color: var(--app-reverse-text-color);
-          -webkit-box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
-          -moz-box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
-          box-shadow: 0 0 5px rgba(164, 52, 183, 0.5);
+          -webkit-box-shadow: 0 0 5px rgba(28, 64, 26, 0.9);
+          -moz-box-shadow: 0 0 5px rgba(28, 64, 26, 0.9);
+          box-shadow: 0 0 5px rgba(28, 64, 26, 0.9);
         }
 
         .search-btn {
@@ -145,10 +146,10 @@ class App extends connect(store)(LitElement) {
           fill: var(--app-primary-icon-color);
           cursor: pointer;
           width: 34px;
-          height: 34px;
+          height: 33px;
           position: absolute;
           top: 24px;
-          padding: 5px;
+          padding: 4px 5px 4px 5px;
         }
 
         .search-btn:hover {
@@ -379,6 +380,7 @@ class App extends connect(store)(LitElement) {
         @media (min-width: 460px) {
           #dropdownMenuButton {
             margin-right: 3px;
+            padding-top: 13px;
           }
 
           .toolbar-list {
@@ -397,6 +399,45 @@ class App extends connect(store)(LitElement) {
 
           .cta-header:focus-within {
             border: none;
+          }
+
+          .small-print .social-icon {
+            padding-left: 0px;
+          }
+
+          .get-social {
+            font-size: 16px;
+            font-weight: 400;
+          }
+          a.social-icon {
+            margin-right: 0px;
+            margin-left: 8px;
+          }
+          .social-icon svg {
+            border:1px solid var(--app-primary-text-thin-color);
+            border-radius: 5px;
+            padding: 3px;
+            margin-top: 8px;
+          }
+          .social-icon {
+            fill: var(--app-primary-text-thin-color);
+            padding-left: 0;
+            cursor: pointer;
+          }
+          .gplus-icon:hover {
+            fill: #db4437;
+          }
+          .blogger-icon:hover {
+            fill: #fb8f3d;
+          }
+          .twitter-icon:hover {
+            fill: #1da1f2;
+          }
+          .facebook-icon:hover {
+            fill: #3b5998;
+          }
+          .linkedin-icon:hover {
+            fill: #007bb5;
           }
 
           input[type='search']::placeholder {
@@ -499,12 +540,10 @@ class App extends connect(store)(LitElement) {
 
   render() {
     const {
-      appTitle,
       _page,
       _offline,
       _drawerOpened,
       _snackbarOpened,
-      _searchAction,
       _searchTerms,
     } = this;
 
@@ -512,10 +551,11 @@ class App extends connect(store)(LitElement) {
     // True to make the search input aligns at the top inside the header instead of inside the main content.
     const inputAtTop = 'ontouchstart' in window || !_page;
     const searchTerms = _page ? '' : _searchTerms;
+    const appTitle = "Digital Experience Solutions by Logical Phase";
 
     updateMetadata({
-      title: `Digital Experience Solutions by Logical`,
-      description: `Combining powerful digital cloud technologies that keep you ahead of the competition`,
+      title: `Digital Experience Solutions by Logical Phase`,
+      description: `Combining powerful cloud technologies that keep you ahead of the competition`,
       image: `https://storage.googleapis.com/logicalphase.com/assets/9a6ed0c3-bg-homepage-container.jpg`,
     });
 
@@ -524,10 +564,11 @@ class App extends connect(store)(LitElement) {
 
     return html`
       <!-- Header -->
+      <header class="header-wrapper">
       <app-header-layout id="appheaderlayout" has-scrolling-region>
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar class="masthead">
-            <a href="/" alt="${appTitle} home">
+            <a href="/">
               <img
                 rel="dns-prefetch"
                 class="brand-site-logo"
@@ -570,9 +611,13 @@ class App extends connect(store)(LitElement) {
               <div class="main-navigation">
                 <a ?selected="${_page === 'home'}" href="/">Home</a>
                 <a ?selected="${_page === 'about'}" href="/about">About</a>
-                <a
+                <button
                   id="dropdownMenuButton"
                   class="toolbar-platform-chooser__button"
+                  role="menu"
+                  aria-haspopup="true"
+                  aria-owns="dropdownListElement"
+                  aria-controls="dropdownListElement"
                   @click="${this._toggleDropdownMenu}"
                 >
                   <span class="toolbar-platform-chooser__label">Solutions</span>
@@ -586,19 +631,35 @@ class App extends connect(store)(LitElement) {
                     <title>Open drop down menu</title>
                     <path d="M7 10l5 5 5-5z"></path>
                   </svg>
-                </a>
+                </button>
                 <a ?selected="${_page === 'blog'}" href="/blog">Blog</a>
                 <a ?selected="${_page === 'contact'}" href="/contact">Contact</a>
-                <a ?selected="${_page === 'support'}" href="/support" class="login-nav-item"
-                  >Support</a
-                >
+                <div class="slide-icons slide-left login-nav-item">
+                  <span class="get-social">Get social</span>
+                  <a
+                    class="social-icon twitter-icon"
+                    href="https://twitter.com/logicalphase/"
+                    >${Twitter}</a
+                  >
+                  <a
+                    class="social-icon linkedin-icon"
+                    href="https://www.linkedin.com/in/john-t-teague/"
+                    >${Linkedin}</a
+                  >
+                  <a
+                    class="social-icon github-icon"
+                    href="https://github.com/logicalphase"
+                    >${Github}</a
+                  >
+                </div>
               </div>
               <div
                 id="dropdownListElement"
                 class="main-navigation dropdown-menu hide"
                 data-target="slide-content"
+                role="group"
+                aria-labelledby="dropdownMenuButton"
                 aria-hidden="true"
-
               >
                 <a
                   class="dropdown-item submenu"
@@ -632,6 +693,7 @@ class App extends connect(store)(LitElement) {
           </app-toolbar>
         </app-header>
       </app-header-layout>
+    </header>
 
       <!-- Drawer content -->
       <app-drawer
@@ -662,6 +724,7 @@ class App extends connect(store)(LitElement) {
                 class="search-btn"
                 title="Search"
                 @click="${() => this._getValueFromSearchFieldDrawer()}"
+                tabindex="-1"
               >
                 ${SearchIcon}
               </button>
@@ -703,22 +766,22 @@ class App extends connect(store)(LitElement) {
 
       <!-- Footer content -->
       <footer title="footer-links" class="footer-linkboxes nocontent footer-linkboxes-all-backup">
-        <nav aria-label="Footer Links" class="full-site-width"></nav>
-      </footer>
-      <footer title="footer-navigation" class="utility-footer">
-        <nav aria-label="Policy Links" class="utility-footer-nav nav full-site-width">
-          <div class="utility-footer-nav-left">
-            <span class="footer-links">
-              <a class="utility-footer-link gc-analytics-event" href="/terms">Site Terms</a>
-              <a class="utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
-            </span>
-          </div>
-          <div class="utility-footer-nav-right">
-            <span class="footer-links">
-              <span class="utility-footer-link gc-analytics-event">Copyright © 2019 Logical Phase. All Rights Reserved</span>
-            </span>
-          </div>
-        </nav>
+        <nav aria-label="footer" class="full-site-width"></nav>
+        <div title="footer-navigation" class="utility-footer">
+          <nav aria-label="policy" class="utility-footer-nav nav full-site-width">
+            <div class="utility-footer-nav-left">
+              <span class="footer-links">
+                <a class="utility-footer-link gc-analytics-event" href="/terms">Site Terms</a>
+                <a class="utility-footer-link gc-analytics-event" href="/privacy">Privacy</a>
+              </span>
+            </div>
+            <div class="utility-footer-nav-right">
+              <span class="footer-links">
+                <span class="utility-footer-link gc-analytics-event">Copyright © 2019 Logical Phase. All Rights Reserved</span>
+              </span>
+            </div>
+          </nav>
+        </div>
       </footer>
 
       <snack-bar ?active="${_snackbarOpened}">

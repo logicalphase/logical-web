@@ -124,7 +124,7 @@ class About extends PageViewElement {
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
                     <h1 class="section-header__eyebrow eyebrow">
-                      Mission Critical Web Services
+                      Mission Critical WordPress Services
                     </h1>
                     <h2 class="display3">About Logical Phase</h2>
                     <p class="headline4 why-google__intro-text">
@@ -168,7 +168,7 @@ class About extends PageViewElement {
                       class="headline3 element-align"
                       id="engaging-experiences-regardless-screen-size"
                     >
-                      Think Of Me As Your On-Call WordPress Engineer.
+                      Your On-Call WordPress Engineer.
                     </h3>
                     <p>
                       I've been involved with WordPress and managed hosting for over fourteen years. During that period, I've assembled a lot of knowledge about delivering web pages generated using WordPress. I founded what one client called the "Ferrari of managed WordPress hosting" services. I've created more than three dozen web sites and web applications, the latest you're looking at right now.
