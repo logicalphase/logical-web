@@ -1,4 +1,4 @@
-import { CDN_HOST_URL, HP_HOST } from './config';
+import { CDN_HOST_URL, WP_REST_HOST, HP_HOST } from './config';
 import { html, css, unsafeCSS } from 'lit-element';
 import { PageViewElement } from './page-view-element.js';
 import { until } from 'lit-html/directives/until.js';
@@ -70,7 +70,7 @@ class Categories extends connect(store)(PageViewElement) {
         }
 
         .sticky {
-          display: none;
+          display: block;
         }
 
         .content-grid-box {
@@ -112,7 +112,9 @@ class Categories extends connect(store)(PageViewElement) {
         }
 
         .sidebar {
-          display: none;
+          margin-top: 24px;
+          margin: 24px 0;
+          width: 100%;
         }
 
         .nav li h3 {
@@ -222,6 +224,8 @@ class Categories extends connect(store)(PageViewElement) {
     ];
   }
 
+
+
   render() {
     const { _categoryId, _data, _showOffline } = this;
     
@@ -268,7 +272,7 @@ class Categories extends connect(store)(PageViewElement) {
           </header>
           <div class="content-wrapper">
             <section
-              class="content background-grey full-bleed-section pad-top-6 pad-bottom-12 home"
+              class="content background-grey pad-top-6 pad-bottom-12 home"
             >
               <div class="columns">
                 <main class="main">
@@ -296,24 +300,28 @@ class Categories extends connect(store)(PageViewElement) {
                           >
                             Blog Category
                           </h3>
-                        </li>
-                        ${until(repeat(
-                          _data,
-                          item => html`
-                            <li>
-                              <a
-                                id="${item.id}"
-                                track-type="category${item.categories_names}"
-                                track-name="category-page"
-                                track-metadata-position="body"
-                                href="/category/${item.categories}"
-                                >${item.categories_names}</a
-                              >
-                            </li>
-                          `,
-                        ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
+                        </li>                       
+                        ${until(
+                          fetch('https://api.logicalphase.com/wp-json/wp/v2/categories')
+                            .then(res => res.json())
+                            .then(cat => {
+                              return html`
+                                ${repeat(
+                                  cat,
+                                  cat => cat.id,
+                                  cat => {
+                                    return html`
+                                    <li><a id="${cat.id}" href="/category/${cat.id}" track-name="caategories-page" track-metadata-position="body">${cat.name}</a></li>`;
+                                  }
+                                )}
+                              `;
+                            }),
+                          html`
+                            <span>💁‍ Getting some categories...</span>
+                          `
+                        )}                 
                       </ul>
-                    </div>
+                    </div>  
                   </div>
                 </aside>
               </div>
@@ -336,12 +344,15 @@ class Categories extends connect(store)(PageViewElement) {
     };
   }
 
+  
+
   // This is called every time something is updated in the store.
   stateChanged(state) {
     this._categoryId = state.categories.categoryId;
     this._data = itemListSelector(state);
     this._showOffline = state.app.offline && state.categories.failure;
   }
+
 }
 window.customElements.define('lp-category', Categories);
 

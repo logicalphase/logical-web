@@ -552,6 +552,7 @@ class App extends connect(store)(LitElement) {
     const inputAtTop = 'ontouchstart' in window || !_page;
     const searchTerms = _page ? '' : _searchTerms;
     const appTitle = "Digital Experience Solutions by Logical Phase";
+    const appShortTitle = "Logical Phase";
 
     updateMetadata({
       title: `Digital Experience Solutions by Logical Phase`,
@@ -665,27 +666,34 @@ class App extends connect(store)(LitElement) {
                   class="dropdown-item submenu"
                   ?selected="${_page === 'pagespeed'}"
                   href="/pagespeed"
+                  role="menuitem"
                   >Site Performance</a
                 >
                 <a
                   class="dropdown-item submenu"
                   ?selected="${_page === 'security'}"
                   href="/security"
+                  role="menuitem"
                   >Security Services</a
                 >
                 <a class="submenu" 
                   ?selected="${_page === 'hosting'}" 
-                  href="/hosting">GCP Hosting Solutions</a
+                  href="/hosting"
+                  role="menuitem"
+                >GCP Hosting Solutions</a
                 >
                 <a 
                   class="submenu" 
                   ?selected="${_page === 'design'}" 
-                  href="/design">Progressive Web Apps</a
+                  href="/design"
+                  role="menuitem"
+                >Progressive Web Apps</a
                 >
                 <a
                   class="dropdown-item submenu"
                   ?selected="${_page === 'migration'}"
                   href="/migration"
+                  role="menuitem"
                   >Site Migrations</a
                 >
               </div>
@@ -703,7 +711,7 @@ class App extends connect(store)(LitElement) {
         swipe-open
       >
         <app-toolbar>
-          ${appTitle}
+          ${appShortTitle}
         </app-toolbar>
         <nav class="drawer-list">
           <div class="search-wrapper">
@@ -793,6 +801,9 @@ class App extends connect(store)(LitElement) {
   static get properties() {
     return {
       appTitle: {
+        type: String,
+      },
+      appShortTitle: {
         type: String,
       },
       _query: {
