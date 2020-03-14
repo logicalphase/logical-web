@@ -276,7 +276,7 @@ class Blog extends connect(store)(PageViewElement) {
                   ${until(repeat(
                     _data,
                     item => html`
-                      <div class="blog-list-item">
+                      <div class="blog-list-item" @mouseover="${this._blogListItemHover}">
                         <div class="flex-hover-card mdc-elevation--z3">
                           <lp-item .item="${item}"></lp-item>
                         </div>
@@ -315,7 +315,7 @@ class Blog extends connect(store)(PageViewElement) {
                           html`
                             <span>💁‍ Getting some categories...</span>
                           `
-                        )}   
+                        )}
                     </ul>
                   </div>
                 </div>
@@ -336,6 +336,7 @@ class Blog extends connect(store)(PageViewElement) {
       _query: { type: String },
       _data: { type: Array },
       _showOffline: { type: Boolean },
+      _litBoxItem: { type: Boolean }
     };
   }
 

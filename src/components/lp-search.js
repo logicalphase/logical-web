@@ -188,11 +188,12 @@ class Search extends connect(store)(PageViewElement) {
           .hero {
             background: var(--app-reverse-text-color) url('/images/header/design-header-opt.svg')
               no-repeat;
-            background-size: 200px;
-            background-position: 90% 34px;
+            background-size: 240px;
+            background-position: 88% 30px;
           }
           .hero .content-set {
-            margin: 60px 14px 0px -14px;
+            margin: 50px 0 20px 0;
+            padding-bottom: 36px;
           }
 
           section {
@@ -209,11 +210,10 @@ class Search extends connect(store)(PageViewElement) {
             letter-spacing: -0.5px;
             line-height: 66px;
           }
-
           .sidebar {
             display: block;
             width: 270px;
-            margin-left: 34px;
+            margin-left: 64px;
             margin-top: 0;
           }
           .background-grey {
@@ -309,21 +309,35 @@ class Search extends connect(store)(PageViewElement) {
                             Blog Categories
                           </h3>
                         </li>
-                        ${until(repeat(
-                          _data,
-                          item => html`
-                            <li>
-                              <a
-                                id="${item.id}"
-                                track-type="category${item.categories_names}"
-                                track-name="search-page"
-                                track-metadata-position="body"
-                                href="/category/${item.categories}"
-                                >${item.categories_names}</a
-                              >
-                            </li>
+                        <li><a href="/blog">All</a></li> 
+                        ${until(
+                          fetch('https://api.logicalphase.com/wp-json/wp/v2/categories')
+                            .then(res => res.json())
+                            .then(cat => {
+                              return html`
+                                ${repeat(
+                                  cat,
+                                  cat => cat.id,
+                                  cat => {
+                                    return html`
+                                      <li>
+                                        <a
+                                          id="${cat.id}"
+                                          href="/category/${cat.id}"
+                                          track-name="caategories-page"
+                                          track-metadata-position="body"
+                                          >${cat.name}</a
+                                        >
+                                      </li>
+                                    `;
+                                  },
+                                )}
+                              `;
+                            }),
+                          html`
+                            <span>💁‍ Getting some categories...</span>
                           `,
-                        ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
+                        )}
                       </ul>
                     </div>
                   </div>

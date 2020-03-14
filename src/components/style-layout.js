@@ -37,10 +37,6 @@ export const LayoutStyle = css`
     text-align: left;
   }
 
-  .text-center {
-    text-align: center;
-  }
-
   .text-justify {
     text-align: justify;
   }

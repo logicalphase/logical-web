@@ -224,11 +224,9 @@ class Categories extends connect(store)(PageViewElement) {
     ];
   }
 
-
-
   render() {
     const { _categoryId, _data, _showOffline } = this;
-    
+
     // Don't render if there is no item.
     if (_data) {
       until(
@@ -257,9 +255,12 @@ class Categories extends connect(store)(PageViewElement) {
               <div class="grid__column is-7 is-6__large is-1__large--offset">
                 <header class="grid__column is-7 is-6__large is-1__large--offset">
                   <div class="fade-in content-set">
-                    <h1 class="section-header__eyebrow eyebrow">Resources for WordPress by Category</h1>
+                    <h1 class="section-header__eyebrow eyebrow">
+                      Resources for WordPress by Category
+                    </h1>
                     <h2 class="display3">
-                      Blog Category: ${this._data.map(item => html`<span>${item.categories_names}</a></span>`)}
+                      Blog Category:
+                      ${this._data.map(item => html`<span>${item.categories_names}</a></span>`)}
                     </h2>
                     <p class="headline4 why-google__intro-text">
                       Blog articles from our WordPress and hosting engineers at Logical Phase.
@@ -271,22 +272,25 @@ class Categories extends connect(store)(PageViewElement) {
             </div>
           </header>
           <div class="content-wrapper">
-            <section
-              class="content background-grey pad-top-6 pad-bottom-12 home"
-            >
+            <section class="content background-grey pad-top-6 pad-bottom-12 home">
               <div class="columns">
                 <main class="main">
                   <div class="content-grid-box" ?hidden="${!_categoryId}">
-                    ${until(repeat(
-                      _data,
-                      item => html`
-                        <div class="category-list-item">
-                          <div class="flex-hover-card mdc-elevation--z3">
-                            <lp-item .item="${item}"></lp-item>
+                    ${until(
+                      repeat(
+                        _data,
+                        item => html`
+                          <div class="category-list-item">
+                            <div class="flex-hover-card mdc-elevation--z3">
+                              <lp-item .item="${item}"></lp-item>
+                            </div>
                           </div>
-                        </div>
+                        `,
+                      ),
+                      html`
+                        <p class="loader" style="padding-left: 34px;">Loading. . .</p>
                       `,
-                    ), html`<p class="loader" style="padding-left: 34px;">Loading. . .</p>`)}
+                    )}
                   </div>
                 </main>
                 <aside class="sidebar mdc-elevation--z3">
@@ -300,7 +304,8 @@ class Categories extends connect(store)(PageViewElement) {
                           >
                             Blog Category
                           </h3>
-                        </li>                       
+                        </li>
+                        <li><a href="/blog">All</a></li> 
                         ${until(
                           fetch('https://api.logicalphase.com/wp-json/wp/v2/categories')
                             .then(res => res.json())
@@ -311,17 +316,26 @@ class Categories extends connect(store)(PageViewElement) {
                                   cat => cat.id,
                                   cat => {
                                     return html`
-                                    <li><a id="${cat.id}" href="/category/${cat.id}" track-name="caategories-page" track-metadata-position="body">${cat.name}</a></li>`;
-                                  }
+                                      <li>
+                                        <a
+                                          id="${cat.id}"
+                                          href="/category/${cat.id}"
+                                          track-name="caategories-page"
+                                          track-metadata-position="body"
+                                          >${cat.name}</a
+                                        >
+                                      </li>
+                                    `;
+                                  },
                                 )}
                               `;
                             }),
                           html`
                             <span>💁‍ Getting some categories...</span>
-                          `
-                        )}                 
+                          `,
+                        )}
                       </ul>
-                    </div>  
+                    </div>
                   </div>
                 </aside>
               </div>
@@ -340,11 +354,9 @@ class Categories extends connect(store)(PageViewElement) {
       _categoryId: { type: String },
       _data: { type: Array },
       _showOffline: { type: Boolean },
-      _categories_names: { type: String }
+      _categories_names: { type: String },
     };
   }
-
-  
 
   // This is called every time something is updated in the store.
   stateChanged(state) {
@@ -352,7 +364,6 @@ class Categories extends connect(store)(PageViewElement) {
     this._data = itemListSelector(state);
     this._showOffline = state.app.offline && state.categories.failure;
   }
-
 }
 window.customElements.define('lp-category', Categories);
 

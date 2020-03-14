@@ -44,7 +44,7 @@ class Item extends LitElement {
         }
 
         a {
-          color: black;
+          color: var(--app-primary-text-color);
           text-decoration: none;
         }
 
