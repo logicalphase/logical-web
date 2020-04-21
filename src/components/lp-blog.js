@@ -1,33 +1,33 @@
-import { CDN_HOST_URL } from './config';
-import { html, css, unsafeCSS } from 'lit-element';
-import { PageViewElement } from './page-view-element.js';
-import { updateMetadata } from 'pwa-helpers/metadata.js';
-import { until } from 'lit-html/directives/until.js';
-import { connect } from 'pwa-helpers/connect-mixin.js';
-import { repeat } from 'lit-html/directives/repeat.js';
+import {CDN_HOST_URL} from './config';
+import {html, css, unsafeCSS} from 'lit-element';
+import {PageViewElement} from './page-view-element.js';
+import {updateMetadata} from 'pwa-helpers/metadata.js';
+import {until} from 'lit-html/directives/until.js';
+import {connect} from 'pwa-helpers/connect-mixin.js';
+import {repeat} from 'lit-html/directives/repeat.js';
 
 import './lp-item.js';
 import './lp-offline.js';
 
 // This element is connected to the redux store.
-import { store } from '../store.js';
+import {store} from '../store.js';
 
-import { fetchArticles } from '../actions/articles.js';
-import { refreshPage } from '../actions/app.js';
-import { articles, itemListSelector } from '../reducers/articles.js';
+import {fetchArticles} from '../actions/articles.js';
+import {refreshPage} from '../actions/app.js';
+import {articles, itemListSelector} from '../reducers/articles.js';
 
 // We are lazy loading its reducer.
 store.addReducers({
   articles,
 });
 
-import { SharedStyles } from './style-shared';
-import { ButtonStyle } from './style-button';
-import { ElevationStyle } from './style-elevation';
-import { TypographyStyle } from './style-typography';
-import { GridStyle } from './style-grid';
-import { LayoutStyle } from './style-layout';
-import { Theme } from './style-theme';
+import {SharedStyles} from './style-shared';
+import {ButtonStyle} from './style-button';
+import {ElevationStyle} from './style-elevation';
+import {TypographyStyle} from './style-typography';
+import {GridStyle} from './style-grid';
+import {LayoutStyle} from './style-layout';
+import {Theme} from './style-theme';
 
 const cdnHost = unsafeCSS(CDN_HOST_URL);
 
@@ -238,7 +238,7 @@ class Blog extends connect(store)(PageViewElement) {
   }
 
   render() {
-    const { _query, _data, _showOffline } = this;
+    const {_query, _data, _showOffline} = this;
 
     // Don't render if there is no item.
 
@@ -274,15 +274,15 @@ class Blog extends connect(store)(PageViewElement) {
               <main class="main">
                 <div class="content-grid-box" ?hidden="${!_data}">
                   ${until(repeat(
-                    _data,
-                    item => html`
+      _data,
+      item => html`
                       <div class="blog-list-item" @mouseover="${this._blogListItemHover}">
                         <div class="flex-hover-card mdc-elevation--z3">
                           <lp-item .item="${item}"></lp-item>
                         </div>
                       </div>
                     `,
-                  ), html`<p class="loading">Loading. . .</p>` )}
+    ), html`<p class="loading">Loading. . .</p>`)}
                 </div>
               </main>
               <aside class="sidebar mdc-elevation--z3">
@@ -298,24 +298,24 @@ class Blog extends connect(store)(PageViewElement) {
                         </h3>
                       </li>
                       ${until(
-                          fetch('https://api.logicalphase.com/wp-json/wp/v2/categories')
-                            .then(res => res.json())
-                            .then(cat => {
-                              return html`
+      fetch('https://api.logicalphase.com/wp-json/wp/v2/categories')
+        .then(res => res.json())
+        .then(cat => {
+          return html`
                                 ${repeat(
-                                  cat,
-                                  cat => cat.id,
-                                  cat => {
-                                    return html`
+            cat,
+            cat => cat.id,
+            cat => {
+              return html`
                                     <li><a id="${cat.id}" href="/category/${cat.id}" track-name="caategories-page" track-metadata-position="body">${cat.name}</a></li>`;
-                                  }
-                                )}
+            }
+          )}
                               `;
-                            }),
-                          html`
+        }),
+      html`
                             <span>💁‍ Getting some categories...</span>
                           `
-                        )}
+    )}
                     </ul>
                   </div>
                 </div>
@@ -331,12 +331,13 @@ class Blog extends connect(store)(PageViewElement) {
     </div>
   `;
   }
+
   static get properties() {
     return {
-      _query: { type: String },
-      _data: { type: Array },
-      _showOffline: { type: Boolean },
-      _litBoxItem: { type: Boolean }
+      _query: {type: String},
+      _data: {type: Array},
+      _showOffline: {type: Boolean},
+      _litBoxItem: {type: Boolean}
     };
   }
 
@@ -347,6 +348,7 @@ class Blog extends connect(store)(PageViewElement) {
     this._showOffline = state.app.offline && state.articles.failure;
   }
 }
+
 window.customElements.define('lp-blog', Blog);
 
-export { fetchArticles, refreshPage };
+export {fetchArticles, refreshPage};
