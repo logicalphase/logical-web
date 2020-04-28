@@ -60,7 +60,7 @@
     "pixelmatch": "5.2.0",
     "prettier": "2.0.5",
     "prettier-eslint": "9.0.1",
-    "puppeteer": "3.0.1",
+    "puppeteer": "3.0.2",
     "rollup": "2.7.3",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-cpy": "2.0.1",
