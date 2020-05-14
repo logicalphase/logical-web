@@ -22,7 +22,7 @@ class Offline extends LitElement {
   render() {
     return html`
       <section>
-        <h3>Uh oh! You are offline and the request resource is unavailable.</h3>
+        <h3>Uh oh! You are offline and the requested resource is unavailable.</h3>
         <button class="article-button" @click="${() => this._refresh()}">Try Again...</button>
       </section>
     `;

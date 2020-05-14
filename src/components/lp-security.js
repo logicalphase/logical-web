@@ -155,7 +155,7 @@ class Security extends PageViewElement {
                       What makes WordPress so popular also makes WordPress sites tempting targets
                       for cybercriminals. In fact, WordPress is constantly under assault, from the
                       largest corporate sites to the smallest blogs. The sophistication, number, and
-                      range of attacks are rising exponentially, while the purpetrators require less
+                      range of attacks are rising exponentially, while the perpetrators require less
                       and less knowledge to launch attacks. Common threats include:
                     </p>
                     <ul class="body-checks">
@@ -207,8 +207,8 @@ class Security extends PageViewElement {
                     <p>
                       Cyber attacks come in a variety of methods. They can be internal and external
                       in nature, and caused accidentally or purposely. A compromised WordPress site
-                      is serious, and needs to be treated as such. But don't panic. I've helped
-                      scores of site owners recover from security breaches. 
+                      is serious, and needs to be treated as such. But don't panic. We've helped
+                      scores of site owners recover from security breaches.
                     </p>
                     <p>Our <strong>Security Incident Response</strong></p>
                     <ul class="body-checks">
@@ -256,16 +256,16 @@ class Security extends PageViewElement {
                       HyperDefense - Serious Security for WordPress
                     </h3>
                     <p>
-                      I understand what motivates an attacker, and the strategies they use to launch their
+                      We understand what motivates an attacker, and the strategies they use to launch their
                       attacks. Leveraging powerful tools that protect data against unauthorized
                       internal and external access and discovery resulted in PhasedDefense.
                     </p>
                     <p>
                       HyperDefense is a multi-tiered, proactive, Defense in Depth service. Using
-                      artifical intelligence, it gathers and analyzes
-                      tarabytes of threat data from hundreds of sources to develop organized threat
+                      artificial intelligence, it gathers and analyzes
+                      terabytes of threat data from hundreds of sources to develop organized threat
                       profiles. These profiles teach the firewall and other defense applications to
-                      react faster, with fewer false positives. 
+                      react faster, with fewer false positives.
                     </p>
                     <p> You can rest easy knowing your site is being
                       closely monitored and protected. HyperDefense also includes:

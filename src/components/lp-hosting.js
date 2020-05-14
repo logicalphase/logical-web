@@ -151,7 +151,7 @@ class Hosting extends PageViewElement {
                     class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start"
                   >
                     <h3 class="headline3 element-align" id="when-cheap-hosting-fails">
-                      I've crafted custom hosting solutions for WordPress site owners for more than
+                      W've crafted custom hosting solutions for WordPress site owners for more than
                       a decade.
                     </h3>
                     <p>
@@ -159,10 +159,9 @@ class Hosting extends PageViewElement {
                       <a
                         href="https://logicalphase.com/article/choosing-best-wordpress-hosting-plan/"
                         >who will host your web site</a
-                      >. Poor hosting will undermine even the best website.  
-                      I know precisely what you need from a host to get the most
-                      out of your site. I design, set up, 
-                      and fully manage mission-critical hosting that instantly scales when you
+                      >. Poor hosting will undermine even the best website.
+                      We know precisely what you need from a host to get the most
+                      out of your site. We design, set up, and fully manage mission-critical hosting that instantly scales when you
                       need it to.
                     </p>
                     <p></p>
@@ -201,21 +200,21 @@ class Hosting extends PageViewElement {
                     class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start"
                   >
                     <h3 class="headline3 element-align" id="lp-managed-hosting">
-                      Let me help you choose the right hosting for your target audience.
+                      Let us help you choose the right hosting plan for your target audience.
                     </h3>
                     <p>
-                      I partner with Google Cloud Platform to provide
-                      hyperfast, hyperscale, ultra-secure, and environmentally responsible hosting services. 
+                      We partner with Google Cloud Platform to provide
+                      hyperfast, hyperscale, ultra-secure, and environmentally responsible hosting services.
                     </p>
                     <ul class="body-checks">
                       <li>
-                        Datacenters located across 134 Locations in 200+ Countries and Territories
+                        Data centers located across 134 Locations in 200+ Countries and Territories
                       </li>
                       <li>
                         Assigned Site Reliability Engineers who manage every detail of your hosting
                       </li>
                       <li>
-                        Artifical intelligence based security and reliability drives our 99.97% SLA
+                        Artificial intelligence based security and reliability drives our 99.97% SLA
                       </li>
                       <li>
                         Leader in environmental responsibility with 100% renewable energy powered

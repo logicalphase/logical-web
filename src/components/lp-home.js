@@ -587,12 +587,12 @@ class Home extends PageViewElement {
                         />
                         <polygon
                           style="fill:#D1D3D4;"
-                          points="0,697.808 0,662.847 885.995,662.847 885.995,26.695 919.606,26.695 919.606,662.847 
+                          points="0,697.808 0,662.847 885.995,662.847 885.995,26.695 919.606,26.695 919.606,662.847
                       919.606,697.808 885.995,697.808 0,697.808 	"
                         />
                         <polygon
                           style="fill:#1C401A;"
-                          points="124.695,500.747 124.695,456.974 673.87,54.654 634.623,26.695 771.461,0 703.725,121.963 
+                          points="124.695,500.747 124.695,456.974 673.87,54.654 634.623,26.695 771.461,0 703.725,121.963
                       691.256,83.552 124.695,500.747 	"
                         />
                       </g>
@@ -608,7 +608,7 @@ class Home extends PageViewElement {
                     </h3>
                     <p>
                       A slow or buggy website is like a lazy or careless sales team. Both are bad
-                      for business. I create web performance, hosting, and security solutions
+                      for business. We create web performance, hosting, and security solutions
                       that'll make your site fast, efficient, and always at the ready to serve your
                       customers and grow your business.
                       <a href="/contact">Let's talk</a> about making your website work for you.
@@ -676,7 +676,7 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        Your slow site is hurting your search rankings and conversion rates. I can
+                        Your slow site is hurting your search rankings and conversion rates. We can
                         optimize your WordPress site to make it lightning fast across all devices.
                       </p>
                       <div class="card__arrow">
@@ -724,7 +724,7 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        Don't panic. I'll make your WordPress site healthy again, and protect it against future attacks.
+                        Don't panic. We'll make your WordPress site healthy again and protect it against future attacks.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -771,7 +771,7 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        Raise your profile with a headless WordPress front end, designed exclusively for your brand. 
+                        Raise your profile with a headless WordPress front end, designed exclusively for your brand.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -818,7 +818,7 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        I've moved hundreds of WordPress sites and email accounts&mdash;from tiny to huge&mdash;with zero downtime.
+                        We've moved hundreds of WordPress sites and email accounts&mdash;from tiny to huge&mdash;with zero downtime.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -865,7 +865,7 @@ class Home extends PageViewElement {
                         </a>
                       </header>
                       <p class="card__body">
-                        I design and deliver fully managed, scalable WordPress hosting solutions using Google Cloud Platform services.
+                        We design and deliver fully managed, scalable WordPress hosting solutions using Google Cloud Platform services.
                       </p>
                       <div class="card__arrow">
                         <svg width="18px" height="18px" viewBox="0 0 18 18">

@@ -114,7 +114,7 @@ class Pagespeed extends PageViewElement {
                     </h1>
                     <h2 class="display3">Lightning fast WordPress</h2>
                     <p class="headline4 why-google__intro-text">
-                      Slow loading sites hurt search rankings and conversions. I'll fix what's
+                      Slow loading sites hurt search rankings and conversions. We'll fix what's
                       slowing you down. Guaranteed.
                     </p>
                     <div class="section-header__link">
@@ -157,8 +157,8 @@ class Pagespeed extends PageViewElement {
                     </h3>
                     <p>
                       You've spent time and money building a WordPress site you can be proud of. But
-                      a slow site can undermine all your hard work by frustrating potential customers. I've
-                      optimized hundreds of WordPress sites of all sizes and stripes. I know what
+                      a slow site can undermine all your hard work by frustrating potential customers. We've
+                      optimized hundreds of WordPress sites of all sizes and stripes. We know what
                       slows WordPress down, and how to make it lightning fast across all devices.
                       Need help?
                     </p>
@@ -200,9 +200,9 @@ class Pagespeed extends PageViewElement {
                       WordPress PageSpeed Optimization
                     </h3>
                     <p>
-                      I'll identify performance bottlenecks, create a prioritized plan of action, and
+                      We'll identify performance bottlenecks, create a prioritized plan of action, and
                       fix what's slowing your site down. You'll receive a complete post-optimization
-                      site report that explains all changes I made, along with tips on keeping your
+                      site report that explains all changes we made, along with tips on keeping your
                       site super fast and Google Search friendly.
                     </p>
                     <h4 class="paper-font-subhead">Optimization Service includes:</h4>

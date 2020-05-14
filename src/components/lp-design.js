@@ -56,7 +56,7 @@ class Design extends PageViewElement {
         }
 
         h3 {
-          padding-top: 20px; 
+          padding-top: 20px;
         }
 
         .content-set p {
@@ -85,7 +85,7 @@ class Design extends PageViewElement {
         .hero {
           background: none;
         }
-      }   
+      }
       `,
     ];
   }
@@ -190,7 +190,7 @@ class Design extends PageViewElement {
                       Increase Traffic and Revenue
                     </h3>
                     <p>
-                      Breath life into your online vision. I create high-quality Progressive Web
+                      Breath life into your online vision. We create high-quality Progressive Web
                       Applications using the same exact tools Google uses to build theirs, including
                       <a href="https://www.polymer-project.org/">Polymer</a>,
                       <a href="https://material.io/">Material Design</a>, and Golang. We leverage

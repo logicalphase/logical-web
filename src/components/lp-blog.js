@@ -258,7 +258,7 @@ class Blog extends connect(store)(PageViewElement) {
                     <h1 class="section-header__eyebrow eyebrow">Resources for WordPress</h1>
                     <h2 class="display3">Logical Blog</h2>
                     <p class="headline5 why-hyperpress__intro-text">
-                      My cumulative knowledge center focused on WordPress site performance, security, and cloud hosting.
+                      Our cumulative knowledge center focused on WordPress site performance, security, and cloud hosting.
                     </p>
                   </div>
                 </header>

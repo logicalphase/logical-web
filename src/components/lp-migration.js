@@ -55,7 +55,7 @@ class Migrations extends PageViewElement {
         }
 
         h3 {
-          padding-top: 20px; 
+          padding-top: 20px;
         }
 
         .content-set p {
@@ -84,7 +84,7 @@ class Migrations extends PageViewElement {
         .hero {
           background: none;
         }
-      }   
+      }
       `
     ];
   }
@@ -107,10 +107,10 @@ class Migrations extends PageViewElement {
                     <h2 class="display3">Expert WordPress Relocation</h2>
                     <p class="headline4 why-hyperpress__intro-text">Fast, safe, no interruption WordPress migrations.</p>
                     <div class="section-header__link">
-                      <a 
-                        href="/contact/" 
-                        class="button button--primary" 
-                        track-type="navigateTo" 
+                      <a
+                        href="/contact/"
+                        class="button button--primary"
+                        track-type="navigateTo"
                         track-name="siteMigration"
                         track-metadata-position="banner">Contact a WordPress Pro</a>
                     </div>
@@ -129,7 +129,7 @@ class Migrations extends PageViewElement {
                   </div>
                   <div class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start">
                     <h3 class="headline3 element-align" id="engaging-experiences-regardless-screen-size">Moving WordPress?</h3>
-                    <p>I've moved hundreds of WordPress sites to new hosting and know exactly what needs to be done to eliminate downtime, protect your data, and complete all of other tasks needed to make your move a stress free one.</p>
+                    <p>We've moved hundreds of WordPress sites to new hosting and know exactly what needs to be done to eliminate downtime, protect your data, and complete all of other tasks needed to make your move a stress free one.</p>
                     <ul class="body-checks">
                       <li>Full backup of current site</li>
                       <li>Transfer site files and data</li>
@@ -138,15 +138,15 @@ class Migrations extends PageViewElement {
                       <li>DNS host record changes</li>
                       <li>Monitor DNS propagation</li>
                       <li>Testing site on your new host</li>
-                    </ul>                    
+                    </ul>
                     <div class="content-header__link element-align">
-                      <a 
-                        href="/contact/" 
-                        class="button button--primary content-button element-display" 
-                        track-type="navigateTo" 
+                      <a
+                        href="/contact/"
+                        class="button button--primary content-button element-display"
+                        track-type="navigateTo"
                         track-name="siteMigration"
-                        track-metadata-position="banner">Let's get moving</a>
-                    </div> 
+                        track-metadata-position="banner">Let's get a move on!</a>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -161,15 +161,15 @@ class Migrations extends PageViewElement {
                   </div>
                   <div class="grid__col is-1__large--offset copy__text is-7 is-6__large grid-row-start">
                     <h3 class="headline3 element-align" id="site-migrations">Migrating to WordPress</h3>
-                    <p>You've heard great things about WordPress, but your site was built using some other software or content mangement system (CMS), and he idea of trying to move your site into WordPress seems impossibly complex. Don't let that stop you. I've built migration tools that automate importing your content into a brand new WordPress instance, quickly, safely and without error. So, if you're ready to move to WordPress, I can make it happen.</p>
+                    <p>You've heard great things about WordPress, but your site was built using some other software or content management system (CMS), and the idea of trying to move your site into WordPress seems impossibly complex. Don't let that stop you. We've built migration tools that automate importing your content into a brand new WordPress instance, quickly, safely and without error. So, if you're ready to move to WordPress, we can make it happen.</p>
                     <div class="content-header__link element-align">
-                      <a 
-                        href="/contact/" 
-                        class="button button--primary content-button element-display" 
-                        track-type="navigateTo" 
+                      <a
+                        href="/contact/"
+                        class="button button--primary content-button element-display"
+                        track-type="navigateTo"
                         track-name="design"
                         track-metadata-position="banner">Migrate to WordPress CMS</a>
-                    </div> 
+                    </div>
                   </div>
                 </div>
               </section>

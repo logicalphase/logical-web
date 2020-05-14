@@ -156,7 +156,7 @@ class Care extends PageViewElement {
                     </p>
                     <p>
                       With our WordPress Preventive Care program you'll rest easy knowing your site
-                      is maticulously maintained and monitored 24-7 by WordPress experts. Our
+                      is meticulously maintained and monitored 24-7 by WordPress experts. Our
                       <strong>WordPress Preventive Care Program</strong> includes 12 months of:
                     </p>
                     <ul class="body-checks">

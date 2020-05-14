@@ -137,7 +137,7 @@ class About extends PageViewElement {
                         track-type="navigateTo"
                         track-name="emergency"
                         track-metadata-position="banner"
-                        >How can I help?</a
+                        >How can we help?</a
                       >
                     </div>
                   </div>
@@ -171,13 +171,13 @@ class About extends PageViewElement {
                       Your On-Call WordPress Engineer.
                     </h3>
                     <p>
-                      I've been involved with WordPress and managed hosting for over fourteen years. During that period, I've assembled a lot of knowledge about delivering web pages generated using WordPress. I founded what one client called the "Ferrari of managed WordPress hosting" services. I've created more than three dozen web sites and web applications, the latest you're looking at right now.
+                      We've been involved with WordPress and managed hosting for over fourteen years. During that period, we've assembled a lot of knowledge about delivering web pages generated using WordPress. I founded what one client called the "Ferrari of managed WordPress hosting" services. We've created more than three dozen web sites and web applications, the latest you're looking at right now.
                     </p>
                     <p>
-                      I get the most joy from solving technical challenges by creating superior solutions that help site owners succeed. From designing attractive, inviting, easy to navigate pages ending with the desired action to creating and managing the fastest, most secure, most reliable hosting services possible . 
+                      We get the most joy from solving technical challenges by creating superior solutions that help site owners succeed. From designing attractive, inviting, easy to navigate pages ending with the desired action to creating and managing the fastest, most secure, most reliable hosting services possible .
                     </p>
                     <p>
-                      Being the biggest doesn't inspire me. Being the very best does. So, let me show you how I can help you achieve your online goals. I'll make you glad you did.
+                      Being the biggest doesn't inspire us. Being the very best does. So, let me show you how we can help you achieve your online goals. We'll make you glad you did.
                     </p>
                     <p>Very best,<br>John</p>
                     <p>John Teague<br>Founder and CTO</p>
