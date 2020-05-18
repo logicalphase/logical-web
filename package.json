@@ -25,7 +25,7 @@
     "@polymer/app-layout": "3.1.0",
     "@polymer/polymer": "3.4.1",
     "@power-elements/lazy-image": "2.2.0",
-    "date-fns": "2.13.0",
+    "date-fns": "2.14.0",
     "lit-element": "2.3.1",
     "mega-material": "1.0.0-alpha.2",
     "pwa-helpers": "0.9.1",
