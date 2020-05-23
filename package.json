@@ -56,7 +56,7 @@
     "http-server": "0.12.3",
     "jshint": "2.11.1",
     "karma": "5.0.9",
-    "mocha": "7.1.2",
+    "mocha": "7.2.0",
     "pixelmatch": "5.2.0",
     "prettier": "2.0.5",
     "prettier-eslint": "10.1.0",
