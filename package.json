@@ -57,7 +57,7 @@
     "jshint": "2.11.1",
     "karma": "5.1.0",
     "mocha": "7.2.0",
-    "pixelmatch": "5.2.0",
+    "pixelmatch": "5.2.1",
     "prettier": "2.0.5",
     "prettier-eslint": "10.1.1",
     "puppeteer": "3.3.0",
