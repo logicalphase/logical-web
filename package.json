@@ -46,7 +46,7 @@
     "chai": "4.2.0",
     "deepmerge": "4.2.2",
     "del": "5.1.0",
-    "es-dev-server": "1.57.0",
+    "es-dev-server": "1.57.1",
     "eslint": "7.5.0",
     "eslint-config-google": "0.14.0",
     "eslint-plugin-lit": "1.2.2",
