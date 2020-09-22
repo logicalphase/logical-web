@@ -27,7 +27,7 @@
     "@power-elements/lazy-image": "2.2.0",
     "date-fns": "2.16.1",
     "lit-element": "2.4.0",
-    "mega-material": "1.0.0-alpha.2",
+    "mega-material": "1.0.0-alpha.3",
     "pwa-helpers": "0.9.1",
     "redux": "4.0.5",
     "redux-thunk": "2.3.0",
