@@ -58,7 +58,7 @@
     "karma": "5.2.3",
     "mocha": "8.2.1",
     "pixelmatch": "5.2.1",
-    "prettier": "2.1.2",
+    "prettier": "2.2.0",
     "prettier-eslint": "11.0.0",
     "puppeteer": "5.5.0",
     "rollup": "2.33.3",
