@@ -61,7 +61,7 @@
     "prettier": "2.2.1",
     "prettier-eslint": "11.0.0",
     "puppeteer": "5.5.0",
-    "rollup": "2.38.2",
+    "rollup": "2.38.3",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-cpy": "2.0.1",
     "rollup-plugin-minify-html-literals": "1.2.5",
