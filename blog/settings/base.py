@@ -99,6 +99,20 @@ DATABASES = {
     }
 }
 
+# Performance
+# Define CACHES for Redis and Memcached as needed
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'PASSWORD': 'T+1lZZnp88cLkIsZHuV2sX9773aefVAjxrFhmtPuHb/lGH2lVqOFeK07b3CjFrdCzlqQZBlz50vnPnjw',
+        }
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
