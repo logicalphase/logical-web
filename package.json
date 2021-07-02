@@ -47,7 +47,7 @@
     "deepmerge": "4.2.2",
     "del": "6.0.0",
     "es-dev-server": "2.1.0",
-    "eslint": "7.29.0",
+    "eslint": "7.30.0",
     "eslint-config-google": "0.14.0",
     "eslint-plugin-lit": "1.5.1",
     "gulp": "4.0.2",
