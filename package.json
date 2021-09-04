@@ -35,7 +35,7 @@
     "rollup-plugin-modulepreload": "1.2.3"
   },
   "devDependencies": {
-    "@babel/core": "7.15.4",
+    "@babel/core": "7.15.5",
     "@babel/plugin-syntax-import-meta": "7.10.4",
     "@babel/preset-env": "7.15.4",
     "@open-wc/karma-esm": "4.0.0",
