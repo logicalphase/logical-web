@@ -29,7 +29,7 @@
     "lit-element": "2.5.1",
     "mega-material": "1.0.0-alpha.3",
     "pwa-helpers": "0.9.1",
-    "redux": "4.2.0",
+    "redux": "4.2.1",
     "redux-thunk": "2.4.1",
     "reselect": "4.1.6",
     "rollup-plugin-modulepreload": "1.2.3"
