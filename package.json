@@ -45,7 +45,7 @@
     "axe-core": "4.10.2",
     "chai": "4.5.0",
     "deepmerge": "4.3.1",
-    "del": "6.1.1",
+    "del": "8.0.0",
     "es-dev-server": "2.1.0",
     "eslint": "7.32.0",
     "eslint-config-google": "0.14.0",
